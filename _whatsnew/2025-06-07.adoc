@@ -1,0 +1,40 @@
+= 增强型ONTAP卷仪表板
+:allow-uri-read: 
+
+
+
+
+=== 增强型ONTAP卷仪表板
+
+2025 年 4 月，我们推出了增强型ONTAP卷仪表板的预览版，它速度更快、效率更高。
+
+该仪表板旨在帮助处理大量工作负载的企业客户。即使对于拥有 20,000 卷的客户，新的仪表板也只需不到 10 秒即可加载。
+
+在预览成功并获得预览客户的良好反馈后，我们现在将其作为所有客户的默认体验。为极快的仪表板做好准备。
+
+有关详细信息，请参阅link:br-use-dashboard.html["在仪表板中查看保护健康状况"] 。
+
+
+
+=== Microsoft SQL Server 工作负载支持作为公共技术预览
+
+此版本的NetApp Backup and Recovery 提供了更新的用户界面，使您能够使用NetApp Backup and Recovery 中熟悉的 3-2-1 保护策略来管理 Microsoft SQL Server 工作负载。使用此新版本，您可以将这些工作负载备份到主存储，将其复制到辅助存储，然后将其备份到云对象存储。
+
+您可以通过完成此步骤来注册预览 https://forms.office.com/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOojtBW63mDRDv3ZK50MaTlJUNjdENllaVTRTVFJGSDQ2MFJIREcxN0EwQi4u&route=shorturl["预览注册表单"^]。
+
+
+NOTE: 本文档旨在介绍如何保护 Microsoft SQL Server 工作负载，目前仅提供技术预览版。NetAppNetApp在正式发布之前修改此预览版产品详细信息、内容和时间表的权利。
+
+此版本的NetApp Backup and Recovery 包括以下更新：
+
+* *3-2-1 备份功能*：此版本集成了SnapCenter功能，使您能够通过NetApp备份和恢复用户界面使用 3-2-1 数据保护策略来管理和保护您的SnapCenter资源。
+* *从SnapCenter导入*：您可以将SnapCenter备份数据和策略导入NetApp Backup and Recovery。
+* *重新设计的用户界面*为管理备份和恢复任务提供了更直观的体验。
+* *备份目标*：您可以在 Amazon Web Services (AWS)、Microsoft Azure Blob Storage、 StorageGRID和ONTAP S3 环境中添加存储桶，以用作 Microsoft SQL Server 工作负载的备份目标。
+* *工作负载支持*：此版本使您能够备份、恢复、验证和克隆 Microsoft SQL Server 数据库和可用性组。  （未来版本将添加对其他工作负载的支持。）
+* *灵活的恢复选项*：此版本使您能够在发生损坏或意外数据丢失的情况下将数据库恢复到原始位置和备用位置。
+* *即时生产副本*：在几分钟内（而不是几小时或几天）生成用于开发、测试或分析的节省空间的生产副本。
+* 此版本包括创建详细报告的功能。
+
+
+有关保护 Microsoft SQL Server 工作负载的详细信息，请参阅link:br-use-mssql-protect-overview.html["保护 Microsoft SQL Server 工作负载概述"]。

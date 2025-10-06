@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-register-snapcenter.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+---
+= SnapCenter Plug-in for VMware vSphere以与NetApp备份和恢复一起使用
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您应该在NetApp Backup and Recovery 中注册SnapCenter Plug-in for VMware vSphere，以便显示数据存储区和虚拟机。只有具有管理权限的用户才能注册SnapCenter Plug-in for VMware vSphere。
+
+[]
+====
+*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+
+====
+.步骤
+. 在NetApp控制台 UI 中，选择 *保护* > *备份和恢复* > *虚拟机*。
+. 从“*设置*”下拉菜单中，选择“SnapCenter Plug-in for VMware vSphere*”。
+. 选择*SnapCenter Plug-in for VMware vSphere*。
+. 指定以下详细信息：
++
+.. 在SnapCenter Plug-in for VMware vSphere中，指定SnapCenter Plug-in for VMware vSphere的 FQDN 或 IP 地址。
+.. 在端口字段中，指定运行SnapCenter Plug-in for VMware vSphere的端口号。
++
+您应该确保在默认 8144 端口上运行的SnapCenter Plug-in for VMware vSphere与可以在任何云提供商（Amazon Web Services、Microsoft Azure、Google Cloud Platform）或本地运行的控制台代理实例之间的通信畅通。
+
+.. 在用户名和密码字段中，指定具有管理员角色的 vCenter 用户的凭据。
+
+
+. 选择*注册*。
+
+
+*完成后*
+
+选择“*备份和恢复*”>“*虚拟机*”以查看使用已注册的SnapCenter Plug-in for VMware vSphere保护的所有数据存储和虚拟机。

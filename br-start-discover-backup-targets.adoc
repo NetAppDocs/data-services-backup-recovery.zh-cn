@@ -1,0 +1,157 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-backup-targets.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Microsoft SQL Server database, 
+summary: '完成几个步骤即可在NetApp Backup and Recovery 中发现异地备份目标。这些目标可能包括 Amazon Web Services (AWS) S3、Microsoft Azure Blob Storage、Google Cloud Storage 和StorageGRID。' 
+---
+= 在NetApp备份和恢复中发现异地备份目标
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+完成几个步骤即可在NetApp Backup and Recovery 中发现或手动添加异地备份目标。
+
+
+
+== 发现备份目标
+
+在使用NetApp Backup and Recovery 之前，您应该配置 Amazon Web Services (AWS) S3、Microsoft Azure Blob Storage、Google Cloud Storage 或StorageGRID的备份目标。
+
+您可以自动发现这些目标或手动添加它们。
+
+提供访问存储帐户系统所需的凭据。这些凭据用于发现您想要备份的工作负载。
+
+.开始之前
+要添加异地备份目标，必须发现至少一个工作负载。
+
+.步骤
+. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 选择*异地备份目标*选项卡。
+. 选择*发现备份目标*。
+. 选择以下备份目标类型之一：*Amazon Web Services (AWS) S3*、*Microsoft Azure Blob Storage*、* StorageGRID* 或 * ONTAP S3*。
+. 在“选择凭证位置”部分中，选择凭证所在的位置，然后选择如何关联凭证。
+. 选择“下一步”。
+. 输入凭据信息。根据您选择的备份目标类型和凭据位置，信息会有所不同。
++
+** 对于 AWS：
++
+*** *凭证名称*：输入 AWS 凭证名称。
+*** *访问密钥*：输入 AWS 密钥。
+*** *密钥*：输入 AWS 密钥。
+
+
+** 对于 Azure：
++
+*** *凭据名称*：输入 Azure Blob 存储凭据名称。
+*** *客户端密钥*：输入 Azure Blob 存储客户端密钥。
+*** *应用程序（客户端）ID*：选择 Azure Blob 存储应用程序 ID。
+*** *目录租户 ID*：输入 Azure Blob 存储租户 ID。
+
+
+** 对于StorageGRID：
++
+*** *凭证名称*：输入StorageGRID凭证名称。
+*** *网关节点 FQDN*：输入StorageGRID的 FQDN 名称。
+*** *端口*：输入StorageGRID的端口号。
+*** *访问密钥*：输入StorageGRID S3 访问密钥。
+*** *密钥*：输入StorageGRID S3 密钥。
+
+
+** 对于ONTAP S3：
++
+*** *凭证名称*：输入ONTAP S3 凭证名称。
+*** *网关节点 FQDN*：输入ONTAP S3 的 FQDN 名称。
+*** *端口*：输入ONTAP S3 的端口号。
+*** *访问密钥*：输入ONTAP S3 访问密钥。
+*** *密钥*：输入ONTAP S3 密钥。
+
+
+
+
+. 选择*发现*。
+
+
+
+
+== 为备份目标添加存储桶
+
+您可以手动将存储桶添加到异地备份目标，而不是让NetApp Backup and Recovery 自动发现存储桶。
+
+.步骤
+. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 选择*异地备份目标*。
+. 选择目标，然后在右侧选择“操作”image:icon-action.png["操作图标"]图标并选择*添加存储桶*。
+. 输入存储桶信息。根据您选择的备份目标类型，信息会有所不同。
++
+** 对于 AWS：
++
+*** *存储桶名称*：输入 S3 存储桶的名称。“netapp-backup”前缀是必需的前缀，会自动添加到您提供的名称中。
+*** *AWS 账户*：输入 AWS 账户名称。
+*** *存储桶区域*：输入存储桶的 AWS 区域。
+*** *启用 S3 对象锁*：选择此选项可为存储桶启用 S3 对象锁。 S3 对象锁可防止对象在指定的保留期内被删除或覆盖，从而提供额外的数据保护层。您只能在创建存储桶时启用此功能，并且以后无法将其关闭。
++
+**** *治理模式*：选择此选项可为 S3 对象锁定存储桶启用治理模式。治理模式使您能够保护对象不被大多数用户删除或覆盖，但允许某些用户更改保留设置。
+**** *合规模式*：选择此选项可为 S3 对象锁定存储桶启用合规模式。合规模式可防止任何用户（包括根用户）在保留期到期之前更改保留设置或删除对象。
+
+
+*** *版本控制*：选择此选项可为 S3 存储桶启用版本控制。版本控制使您能够在存储桶中保留对象的多个版本，这对于备份和恢复目的很有用。
+*** *标签*：选择 S3 存储桶的标签。标签是可用于组织和管理 S3 资源的键值对。
+*** *加密*：选择 S3 存储桶的加密类型。选项是 AWS S3 管理密钥或 AWS 密钥管理服务密钥。如果您选择 AWS Key Management Service 密钥，则必须提供密钥 ID。
+
+
+** 对于 Azure：
++
+*** *订阅*：选择 Azure Blob 存储容器的名称。
+*** *资源组*：选择 Azure 资源组的名称。
+*** *实例详情*：
++
+**** *存储帐户名称*：输入 Azure Blob 存储容器的名称。
+**** *Azure 区域*：输入容器的 Azure 区域。
+**** *性能类型*：为 Azure Blob 存储容器选择标准或高级性能类型，以指示所需的性能级别。
+**** *加密*：选择 Azure Blob 存储容器的加密类型。选项包括 Microsoft 管理的密钥或客户管理的密钥。如果选择客户管理的密钥，则必须提供密钥保管库名称和密钥名称。
+
+
+
+
+** 对于StorageGRID：
++
+*** *备份目标名称*：选择StorageGRID桶的名称。
+*** *存储桶名称*：输入StorageGRID桶的名称。
+*** *区域*：输入存储桶的StorageGRID区域。
+*** *启用版本控制*：选择此选项可为StorageGRID桶启用版本控制。版本控制使您能够在存储桶中保留对象的多个版本，这对于备份和恢复目的很有用。
+*** *对象锁定*：选择此选项可为StorageGRID桶启用对象锁定。对象锁定可防止对象在指定的保留期内被删除或覆盖，从而提供额外的数据保护层。您只能在创建存储桶时启用此功能，并且以后无法将其关闭。
+*** *容量*：输入StorageGRID桶的容量。这是存储桶中可以存储的最大数据量。
+
+
+** 对于ONTAP S3：
++
+*** *备份目标名称*：选择ONTAP S3 存储桶的名称。
+*** *存储桶目标名称*：输入ONTAP S3 存储桶的名称。
+*** *容量*：输入ONTAP S3 存储桶的容量。这是存储桶中可以存储的最大数据量。
+*** *启用版本控制*：选择此选项可为ONTAP S3 存储桶启用版本控制。版本控制使您能够在存储桶中保留对象的多个版本，这对于备份和恢复目的很有用。
+*** *对象锁定*：选择此选项可为ONTAP S3 存储桶启用对象锁定。对象锁定可防止对象在指定的保留期内被删除或覆盖，从而提供额外的数据保护层。您只能在创建存储桶时启用此功能，并且以后无法将其关闭。
+
+
+
+
+. 选择“*添加*”。
+
+
+
+
+== 更改备份目标的凭据
+
+输入访问备份目标所需的凭据。
+
+.步骤
+. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 选择*异地备份目标*。
+. 选择目标，然后在右侧选择“操作”image:icon-action.png["操作图标"]图标并选择*更改凭据*。
+. 输入备份目标的新凭据。根据您选择的备份目标类型，信息会有所不同。
+. 选择*完成*。
+

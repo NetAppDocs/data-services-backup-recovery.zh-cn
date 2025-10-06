@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore.html 
+keywords: restore, vmware, vm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+---
+= 使用NetApp备份和恢复恢复 VMware 工作负载
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用NetApp备份和恢复从快照副本、复制到二级存储的工作负载备份或存储在对象存储中的备份恢复 VMware 工作负载。
+
+.从这些位置恢复
+您可以从不同的起始位置恢复工作负载：
+
+* 从主位置恢复（本地快照）
+* 从二级存储上的复制资源恢复
+* 从对象存储备份恢复
+
+
+.恢复到这些点
+您可以将数据恢复到以下点：
+
+* 恢复到原始位置
+
+
+.从对象存储中恢复的注意事项
+如果您选择对象存储中的备份文件，并且该备份的勒索软件保护处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件保护），则系统会提示您在恢复数据之前对备份文件运行额外的完整性检查。我们建议您执行扫描。
+
+
+TIP: 您将需要向云提供商支付额外的出口费用才能访问备份文件的内容。
+
+
+
+== 恢复工作负载的工作原理
+
+恢复工作负载时，会发生以下情况：
+
+* 当您从本地备份文件恢复工作负载时， NetApp Backup and Recovery 会使用备份中的数据创建一个_新_资源。
+* 从复制的工作负载恢复时，您可以将工作负载恢复到原始系统或本地ONTAP系统。
++
+image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的图表"]
+
+* 从对象存储还原备份时，您可以将数据还原到原始系统或本地ONTAP系统。
+
+
+从“恢复”页面（也称为“搜索和恢复”），您可以恢复资源，即使您不记得确切的名称、它所在的位置或它最后处于良好状态的日期。您可以使用过滤器搜索快照。
+
+
+
+== 从恢复选项恢复工作负载数据（搜索和恢复）
+
+使用恢复选项恢复 VMware 工作负载。您可以按名称或使用过滤器来搜索快照。
+
+*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员、备份和恢复恢复管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+.步骤
+. 从NetApp备份和恢复菜单中，选择 *恢复*。
+. 从名称搜索字段右侧的下拉列表中，选择“*虚拟机*”。
+. 输入要恢复的资源的名称，或者筛选要恢复的资源所在的 vCenter、数据中心或数据存储。
++
+出现符合您的搜索条件的快照列表。
+
+. 选择要恢复的快照。
++
+出现恢复位置选项列表。
+
+. 选择要还原快照的还原位置：
++
+** 本地：将快照还原到原始位置。
+** 二级存储：将快照恢复到二级存储位置。
++
+如果选择二级存储，请输入源和目标位置信息以及日志的源和二级位置。
+
+** 对象存储：将快照恢复到对象存储位置。
++
+如果选择对象存储，请在恢复之前检查是否要再次扫描快照。
+
+
+
+. 选择“*完成*”或“*下一步*”继续进入“恢复目标设置”页面。
++
+接下来，您可以选择目标设置以及恢复前和恢复后选项。
+
+
+
+[discrete]
+===== 目的地选择
+
+. 选择目标设置以及恢复前和恢复后选项。
+
+
+[role="tabbed-block"]
+====
+.恢复到原始位置
+--
+在“还原目标详细信息”页面中，输入以下信息：
+
+. *启用快速恢复*：选择此选项可执行快速恢复操作。恢复的卷和数据将立即可用。请勿在需要高性能的卷上使用此功能，因为在快速恢复过程中，访问数据的速度可能比平时慢。
+. *预恢复选项*：输入应在恢复操作之前运行的脚本的完整路径以及该脚本所采用的任何参数。
+. *恢复后选项*：
++
+** *重新启动 VM*：选择此选项可在还原操作完成后以及应用还原后脚本后重新启动 VM。
+** *后记*：输入恢复操作后应运行的脚本的完整路径以及脚本所采用的任何参数。
+
+
+. *通知*部分：
++
+** *启用电子邮件通知*：选择此选项可接收有关恢复操作的电子邮件通知，并指示您想要接收的通知类型。
+
+
+. 选择*恢复*。
+
+
+--
+.恢复至备用位置
+--
+不适用于 VMware 预览版。
+
+. 选择*恢复*。
+
+
+--
+====
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]

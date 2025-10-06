@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: br-use-protect-kubernetes-applications.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: NetApp Backup and Recovery 使您能够管理工作负载主机信息、数据库信息和实例信息。您可以查看、编辑和删除库存的保护设置。 
+---
+= 添加和保护 Kubernetes 应用程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery 使您能够轻松发现 Kubernetes 集群，而无需生成和上传 kubeconfig 文件。您可以使用从NetApp控制台用户界面复制的简单命令连接 Kubernetes 集群并安装所需的软件。
+
+.所需的NetApp控制台角色
+组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp备份和恢复访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+
+
+== 添加并保护新的 Kubernetes 应用程序
+
+保护 Kubernetes 应用程序的第一步是在NetApp Backup and Recovery 中创建应用程序。创建应用程序时，您会让控制台了解 Kubernetes 集群上正在运行的应用程序。
+
+.开始之前
+在添加和保护 Kubernetes 应用程序之前，您需要link:br-start-discover.html["发现 Kubernetes 工作负载"] 。
+
+.步骤
+. 在NetApp Backup and Recovery 中，选择 *Inventory*。
+. 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
+. 选择“*应用程序*”选项卡。
+. 选择*创建应用程序*。
+. 输入应用程序的名称。
+. 或者，选择以下任意字段来搜索您想要保护的资源：
++
+** 关联集群
+** 关联的命名空间
+** 资源类型
+** 标签选择器
+
+
+. （可选）选择“集群范围资源”以选择任何在集群级别范围限定的资源。如果包含这些资源，它们会在创建应用程序时添加到应用程序中。
+. 或者，选择“*搜索*”以根据您的搜索条件查找资源。
++
+
+NOTE: 控制台不存储搜索参数或结果；这些参数用于在选定的 Kubernetes 集群中搜索可包含在应用程序中的资源。
+
+. 控制台显示符合您的搜索条件的资源列表。
+. 如果列表包含您想要保护的资源，请选择“下一步”。
+. （可选）在“*策略*”区域中，选择现有保护策略来保护应用程序，或者创建新策略。如果不选择策略，则创建的应用程序将不带保护策略。你可以link:br-use-policies-create.html#create-a-policy["添加保护策略"]之后。
+. 在*Prescripts and postscripts*区域中，启用并配置您想要在备份操作之前或之后运行的任何prescript或postscript执行挂钩。要启用处方或附言，您必须至少已创建了一个link:br-use-manage-execution-hook-templates.html["执行钩子模板"]。
+. 选择“*创建*”。
+
+
+.结果
+应用程序已创建并出现在 Kubernetes 清单的 *应用程序* 选项卡中的应用程序列表中。  NetApp控制台根据您的设置启用对应用程序的保护，并且您可以在备份和恢复的*监控*区域中监控进度。
+
+
+
+== 保护现有的 Kubernetes 应用程序
+
+在已添加的 Kubernetes 应用程序上启用保护策略。
+
+.步骤
+. 在NetApp Backup and Recovery 中，选择 *Inventory*。
+. 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
+. 选择“*应用程序*”选项卡。
+. 在应用程序列表中，选择您想要保护的应用程序并选择相关的操作菜单。
+. 选择*保护*。
+. 在“*策略*”区域中，选择现有的保护策略来保护应用程序或创建新策略。参考link:br-use-policies-create.html#create-a-policy["创建策略"]有关创建保护策略的更多信息。
+. 在*Prescripts and postscripts*区域中，启用并配置您想要在备份操作之前或之后运行的任何prescript或postscript执行挂钩。您可以配置执行钩子的类型、它使用的模板、参数和标签选择器。
+. 选择*完成*。
+
+
+.结果
+控制台根据您的设置启用对应用程序的保护，您可以在备份和恢复的*监控*区域中监控进度。一旦您启用应用程序保护，控制台就会创建该应用程序的完整备份。任何未来的增量备份都将根据您在与该应用程序关联的保护策略中定义的计划创建。
+
+
+
+== 立即备份 Kubernetes 应用程序
+
+手动创建 Kubernetes 应用程序的备份，为未来的备份和快照建立基线，或确保最新数据受到保护。
+
+.步骤
+. 在NetApp Backup and Recovery 中，选择 *Inventory*。
+. 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
+. 选择“*应用程序*”选项卡。
+. 在应用程序列表中，选择要备份的应用程序并选择相关的操作菜单。
+. 选择*立即备份*。
+. 确保选择了正确的应用程序名称。
+. 选择*备份*。
+
+
+.结果
+控制台创建应用程序的备份并在备份和恢复的*监控*区域中显示进度。该备份是根据与应用程序关联的保护策略创建的。

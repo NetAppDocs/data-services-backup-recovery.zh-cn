@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: br-use-restore-hyperv-vms.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: NetApp Backup and Recovery 使您能够恢复已通过保护策略保护的应用程序。 
+---
+= 恢复 Kubernetes 应用程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery 使您能够恢复已通过保护策略保护的应用程序。要恢复应用程序，应用程序需要至少有一个可用的恢复点。恢复点由本地快照或对象存储备份（或两者）组成。您可以使用本地、辅助或对象存储存档来恢复应用程序。
+
+.所需的NetApp控制台角色
+组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp备份和恢复访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+.步骤
+. 在NetApp Backup and Recovery 中，选择 *Inventory*。
+. 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
+. 选择“*应用程序*”选项卡。
+. 在应用程序列表中，选择要恢复的应用程序并选择相关的操作菜单。
+. 选择*查看和恢复*。
++
+出现还原点列表。
+
+. 打开您要使用的还原点的操作菜单，然后选择*还原*。
+
+
+[discrete]
+===== 常规设置
+
+. 选择要从中恢复的源（本地或对象存储）。
+. 从*Cluster*列表中选择目标集群。
+. 选择还原目标命名空间。
++
+您可以恢复到原始命名空间，也可以恢复到新的命名空间。
+
+. 选择“下一步”。
+
+
+[discrete]
+===== 资源选择
+
+. 选择是否要恢复与应用程序相关的所有资源，或者使用过滤器选择要恢复的特定资源：
+
+
+[role="tabbed-block"]
+====
+.恢复所有资源
+--
+. 选择*恢复所有资源*。
+. 选择“下一步”。
+
+
+--
+.恢复特定资源
+--
+. 选择*选择性资源*。
+. 选择资源过滤器的行为。如果您选择“*包括*”，则会恢复您选择的资源。如果您选择“*排除*”，则您选择的资源将不会被恢复。
+. 选择*添加规则*来添加定义选择资源的过滤器的规则。您至少需要一条规则来过滤资源。
++
+每个规则都可以根据资源命名空间、标签、组、版本和种类等标准进行过滤。
+
+. 选择*保存*来保存每条规则。
+. 添加完所有需要的规则后，选择*搜索*即可查看备份档案中符合过滤条件的可用资源。
++
+
+NOTE: 显示的资源是集群上当前存在的资源。
+
+. 对结果满意后，选择*下一步*。
+
+
+--
+====
+[discrete]
+===== 目的地设置
+
+. 选择恢复到默认存储类或其他存储类。
+. 或者，如果您选择还原到不同的存储类，请选择一个目标存储类来匹配每个源存储类。
+. 选择*恢复*。
+

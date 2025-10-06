@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-kvm.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, KVM, workloads, protect 
+summary: NetApp Backup and Recovery 需要首先发现工作负载，以便您保护它们。 
+---
+= 发现NetApp备份和恢复中的 KVM 工作负载
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery 需要首先发现 KVM 主机和虚拟机，以便您可以保护它们。
+
+*所需的控制台角色* 备份和恢复超级管理员。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+
+
+== 添加 KVM 主机并发现资源
+
+添加 KVM 主机信息并让NetApp Backup and Recovery 发现工作负载。在每个控制台代理中，选择您想要发现工作负载的系统。
+
+.步骤
+. 从NetApp控制台菜单中，选择“保护”>“备份和恢复”。
+. 在 KVM 图块中，选择 *发现和管理*。
++
+如果这是您第一次登录此服务，并且控制台中已经有一个系统，但尚未发现任何资源，则会出现“欢迎使用新的NetApp备份和恢复”登录页面并显示*发现资源*选项。
+
+. 选择*发现资源*。
+. 输入以下信息：
++
+.. *工作负载类型*：选择*KVM*。
+.. 如果您尚未存储此 KVM 主机的凭据，请选择“添加凭据”。
++
+... 选择与该主机一起使用的控制台代理。
+... 输入此凭证的名称。
+... 选择使用根凭据还是非根凭据。
+... 输入该帐户的用户名和密码。
+... 选择*完成*。
+
+
+.. *主机注册*：添加新的 KVM 主机。输入主机的 FQDN 或 IP 地址、凭据、控制台代理和端口号。
+
+
+. 选择*发现*。
++
+
+TIP: 此过程可能需要几分钟。
+
+
+
+.结果
+KVM 工作负载显示在“库存”页面的工作负载列表中。
+
+
+
+== 继续访问NetApp备份和恢复仪表板
+
+. 要显示NetApp备份和恢复仪表板，请从顶部菜单中选择“*仪表板*”。
+. 审查数据保护的健康状况。处于危险中或受保护的工作负载的数量会根据新发现、受保护和备份的工作负载而增加。
+

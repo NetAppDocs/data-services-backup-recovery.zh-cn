@@ -1,0 +1,96 @@
+---
+sidebar: sidebar 
+permalink: task-preview-enable.html 
+keywords: cloud backup, NetApp Backup and Recovery, backup, restore, preview, enable, object storage, third-party, MinIO, S3-compatible 
+summary: 您可以监控您启动或计划的本地快照、复制和备份到对象存储作业的状态，以及您启动或计划的还原作业。您可以查看已完成、正在进行或失败的作业，以便诊断和解决问题。使用通知中心，您可以启用通过电子邮件发送通知，这样即使您未登录系统也可以了解重要的系统活动。使用时间线，您可以查看通过 UI 或 API 发起的所有操作的详细信息。 
+---
+= 在NetApp Backup and Recovery 中启用预览功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery 提供预览功能，让您可以在新功能全面发布之前对其进行测试。这些功能旨在增强您的备份和恢复体验，但它们可能无法得到完全支持或不稳定。
+
+
+IMPORTANT: 这些功能处于预览模式，不应在生产环境中使用。它们仅用于测试和反馈目的。
+
+
+
+== 启用预览功能
+
+要启用NetApp Backup and Recovery 中的预览功能，您需要在控制台代理上设置一个标志。此标志允许您访问和测试服务中可用的预览功能。
+
+.步骤
+. 登录到控制台代理。
+. 切换到超级用户。运行以下命令：
++
+`sudo su`
+
+. 列出 Docker 卷并识别 CBS 卷。运行以下命令：
++
+[listing]
+----
+podman volume ls | grep cbs
+----
++
+预期输出：
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. 检查卷以获取挂载点。运行以下命令：
++
+[listing]
+----
+podman volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
+. 运行以下命令：
++
+[listing]
+----
+podman volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+预期输出：
+
++
+[listing]
+----
+Mountpoint:
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. 导航到 Docker Volumes 目录。将目录更改为上一步获得的挂载点：
++
+[listing]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
+
+----
+. 找到并编辑 `production-customer.json`文件。
+. 确保您位于正确的目录和 `production-customer.json`文件存在。
+. 打开 `production-customer.json`在您喜欢的文本编辑器中打开文件并添加以下 JSON 代码片段，确保正确维护 JSON 结构：
++
+[listing]
+----
+{
+   "feature-flags":
+    {
+        "volumes-dashboard-v2": true
+     }
+}
+----
+. 保存对文件的更改。
+. 重新启动NetApp Backup and Recovery Cloud Manager CBS 服务。运行以下命令：
++
+[listing]
+----
+podman restart cloudmanager_cbs
+----
+

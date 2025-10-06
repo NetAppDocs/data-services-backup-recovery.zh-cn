@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: br-use-reports.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+summary: 在NetApp Backup and Recovery 中，创建报告以查看备份状态，包括备份数量、成功备份数量和失败备份数量。您还可以查看每个备份的详细信息，包括备份类型、备份使用的存储系统以及备份的时间。 
+---
+= 在NetApp备份和恢复中为 Microsoft SQL Server 工作负载创建报告
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+在NetApp Backup and Recovery 中，为 Microsoft SQL Server 工作负载创建报告以查看备份状态，包括备份数量、成功备份数量和失败备份数量。您还可以查看每个备份的详细信息，包括备份类型、备份使用的存储系统以及备份的时间。
+
+
+
+== 创建报告
+
+*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+. 从NetApp备份和恢复菜单中，选择 *报告* 选项。
+. 选择*创建报告*。
+. 输入报告范围详细信息：
++
+** *报告名称*：输入报告的唯一名称。
+** *报告类型*：选择您想要按帐户还是按工作量（Microsoft SQL Server）报告。
+** *选择主机*：如果您按工作负载选择，请选择要为其生成报告的主机。
+** *选择内容*：选择报告是否包含所有备份的摘要或每个备份的详细信息。  （如果您选择“按帐户”）
+
+
+. 输入报告范围：选择您是否希望报告包含过去一天、过去 7 天、过去 30 天、上个季度或去年的数据。
+. 输入报告发送详情：如果您希望通过电子邮件发送报告，请选中*通过电子邮件发送报告*。输入您想要接收报告的电子邮件地址。
++
+在设置页面配置电子邮件通知。有关配置电子邮件通知的详细信息，请参阅link:br-use-settings-advanced.html["配置设置"]。
+
+

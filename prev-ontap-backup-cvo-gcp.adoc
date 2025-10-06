@@ -1,0 +1,522 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-backup-cvo-gcp.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+---
+= 使用NetApp备份和恢复将Cloud Volumes ONTAP数据备份到 Google Cloud Storage
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+完成NetApp备份和恢复中的几个步骤，开始将卷数据从Cloud Volumes ONTAP系统备份到 Google Cloud Storage。
+
+[]
+====
+*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+
+====
+
+
+== 验证对您的配置的支持
+
+在开始将卷备份到 Google Cloud Storage 之前，请阅读以下要求以确保您具有受支持的配置。
+
+下图显示了每个组件以及您需要在它们之间准备的连接。
+
+或者，您也可以使用公共或私有连接连接到用于复制卷的辅助ONTAP系统。
+
+image:diagram_cloud_backup_cvo_google.png["该图显示了NetApp Backup and Recovery 如何与源系统上的卷以及备份文件所在的目标存储进行通信。"]
+
+支持的ONTAP版本:: 最低版本为ONTAP 9.8；建议使用ONTAP 9.8P13 及更高版本。
+支持的 GCP 区域:: 所有 GCP 区域均支持NetApp Backup and Recovery。
+GCP 服务帐户:: 您需要在 Google Cloud 项目中拥有一个具有自定义角色的服务帐户。 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-creating-gcp-service-account.html["了解如何创建服务帐号"^] 。
+
+
+
+NOTE: 启用NetApp Backup and Recovery 来访问 Google Cloud Storage 存储桶的服务帐户不再需要存储管理员角色。
+
+
+
+== 验证许可证要求
+
+对于NetApp Backup and Recovery PAYGO 许可，可在 Google Marketplace 中订阅控制台，从而实现Cloud Volumes ONTAP和NetApp Backup and Recovery 的部署。你需要 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["订阅此控制台订阅"^]在启用NetApp备份和恢复之前。  NetApp Backup and Recovery 的计费通过此订阅完成。 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["您可以从系统向导的“详细信息和凭证”页面进行订阅"^] 。
+
+对于NetApp备份和恢复 BYOL 许可，您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。link:br-start-licensing.html["了解如何管理您的 BYOL 许可证"] 。
+
+并且您需要向 Google 订阅用于存储备份的存储空间。
+
+
+
+== 准备控制台代理
+
+控制台代理必须安装在可以访问互联网的 Google 区域。
+
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["了解控制台代理"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["在 Google Cloud 中部署控制台代理"^]
+
+
+
+
+=== 验证或添加控制台代理的权限
+
+要使用NetApp备份和恢复的“搜索和恢复”功能，您需要在控制台代理的角色中拥有特定权限，以便它可以访问 Google Cloud BigQuery 服务。请参阅下面的权限，如果需要修改策略，请按照以下步骤操作。
+
+.步骤
+. 在 https://console.cloud.google.com["Google 云端控制台"^]，转到*角色*页面。
+. 使用页面顶部的下拉列表，选择包含要编辑的角色的项目或组织。
+. 选择自定义角色。
+. 选择*编辑角色*来更新角色的权限。
+. 选择*添加权限*为角色添加以下新权限。
++
+[source, json]
+----
+bigquery.jobs.get
+bigquery.jobs.list
+bigquery.jobs.listAll
+bigquery.datasets.create
+bigquery.datasets.get
+bigquery.jobs.create
+bigquery.tables.get
+bigquery.tables.getData
+bigquery.tables.list
+bigquery.tables.create
+----
+. 选择*更新*以保存编辑的角色。
+
+
+
+
+=== 使用客户管理的加密密钥 (CMEK) 所需的信息
+
+您可以使用自己的客户管理密钥进行数据加密，而不是使用默认的 Google 管理加密密钥。跨区域和跨项目密钥均受支持，因此您可以为存储桶选择与 CMEK 密钥的项目不同的项目。如果您打算使用自己的客户管理密钥：
+
+* 您需要有密钥环和密钥名称，以便可以在激活向导中添加此信息。 https://cloud.google.com/kms/docs/cmek["了解有关客户管理加密密钥的更多信息"^] 。
+* 您需要验证控制台代理的角色是否包含这些必需的权限：
+
+
+[source, json]
+----
+cloudkms.cryptoKeys.get
+cloudkms.cryptoKeys.getIamPolicy
+cloudkms.cryptoKeys.list
+cloudkms.cryptoKeys.setIamPolicy
+cloudkms.keyRings.get
+cloudkms.keyRings.getIamPolicy
+cloudkms.keyRings.list
+cloudkms.keyRings.setIamPolicy
+----
+* 您需要验证您的项目中是否启用了 Google“云密钥管理服务 (KMS)”API。查看 https://cloud.google.com/apis/docs/getting-started#enabling_apis["Google Cloud 文档：启用 API"^]了解详情。
+
+
+*CMEK 注意事项：*
+
+* 支持 HSM（硬件支持）和软件生成的密钥。
+* 支持新创建或导入的 Cloud KMS 密钥。
+* 仅支持区域密钥；不支持全局密钥。
+* 目前仅支持“对称加密/解密”目的。
+* NetApp Backup and Recovery 为与存储帐户关联的服务代理分配了“CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)”IAM 角色。
+
+
+
+
+=== 创建您自己的存储桶
+
+默认情况下，该服务会为您创建存储桶。如果您想使用自己的存储桶，您可以在启动备份激活向导之前创建它们，然后在向导中选择这些存储桶。
+
+link:prev-ontap-protect-journey.html["了解有关创建您自己的存储桶的更多信息"] 。
+
+
+
+== 验证ONTAP复制卷的网络要求
+
+如果您计划使用NetApp Backup and Recovery 在辅助ONTAP系统上创建复制卷，请确保源系统和目标系统满足以下网络要求。
+
+
+
+==== 本地ONTAP网络要求
+
+* 如果集群位于您的场所，您应该从公司网络连接到云提供商中的虚拟网络。这通常是 VPN 连接。
+* ONTAP集群必须满足额外的子网、端口、防火墙和集群要求。
++
+由于您可以复制到Cloud Volumes ONTAP或本地系统，因此请查看本地ONTAP系统的对等要求。 https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["查看ONTAP文档中的集群对等前提条件"^] 。
+
+
+
+
+
+==== Cloud Volumes ONTAP网络要求
+
+* 实例的安全组必须包含所需的入站和出站规则：具体来说，ICMP 和端口 11104 和 11105 的规则。这些规则包含在预定义的安全组中。
+
+
+* 要在不同子网中的两个Cloud Volumes ONTAP系统之间复制数据，子网必须一起路由（这是默认设置）。
+
+
+
+
+== 在Cloud Volumes ONTAP上启用NetApp备份和恢复
+
+启用NetApp备份和恢复步骤略有不同，具体取决于您拥有的是现有Cloud Volumes ONTAP系统还是新系统。
+
+*在新系统上启用NetApp备份和恢复*
+
+当您完成系统向导以创建新的Cloud Volumes ONTAP系统时，可以启用NetApp Backup and Recovery。
+
+您必须已经配置了服务帐户。如果在创建Cloud Volumes ONTAP系统时未选择服务帐户，则需要关闭系统并从 GCP 控制台将服务帐户添加到Cloud Volumes ONTAP 。
+
+看 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["在 GCP 中启动Cloud Volumes ONTAP"^]了解创建Cloud Volumes ONTAP系统的要求和详细信息。
+
+.步骤
+. 从控制台*系统*页面，选择*添加系统*，选择云提供商，然后选择*添加新*。选择“创建Cloud Volumes ONTAP”。
+. *选择位置*：选择*Google Cloud Platform*。
+. *选择类型*：选择* Cloud Volumes ONTAP*（单节点或高可用性）。
+. *详细信息和凭证*：输入以下信息：
++
+.. 如果您要使用的项目与默认项目（控制台代理所在的项目）不同，请单击“*编辑项目*”并选择一个新项目。
+.. 指定集群名称。
+.. 启用*服务帐户*开关并选择具有预定义存储管理员角色的服务帐户。这是启用备份和分层所必需的。
+.. 指定凭据。
++
+确保已订阅 GCP Marketplace。
+
+
+
+. *服务*：保持NetApp备份和恢复处于启用状态，然后单击*继续*。
+. 完成向导中的页面以部署系统，如中所述 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["在 GCP 中启动Cloud Volumes ONTAP"^]。
+
+
+.结果
+系统上已启用NetApp Backup and Recovery。在这些Cloud Volumes ONTAP系统上创建卷后，启动NetApp Backup and Recovery 并link:prev-ontap-backup-manage.html["在您想要保护的每个卷上激活备份"]。
+
+*在现有系统上启用NetApp备份和恢复*
+
+您可以随时直接从系统启用NetApp Backup and Recovery。
+
+.步骤
+. 从控制台*系统*页面中，选择系统并选择右侧面板中备份和恢复旁边的*启用*。
++
+如果您的备份的 Google Cloud Storage 目标作为系统存在于控制台*系统*页面上，则可以将集群拖到 Google Cloud Storage 系统上以启动设置向导。
+
+
+
+
+
+== 准备 Google Cloud Storage 作为备份目标
+
+准备 Google Cloud Storage 作为备份目标涉及以下步骤：
+
+* 设置权限。
+* （可选）创建您自己的存储桶。  （如果您愿意，该服务将为您创建存储桶。）
+* （可选）设置客户管理的密钥以进行数据加密
+
+
+
+
+=== 设置权限
+
+您需要使用自定义角色为具有特定权限的服务帐户提供存储访问密钥。服务帐户使NetApp Backup and Recovery 能够验证和访问用于存储备份的 Cloud Storage 存储桶。需要密钥，以便 Google Cloud Storage 知道谁在发出请求。
+
+.步骤
+. 在 https://console.cloud.google.com["Google 云端控制台"^]，转到*角色*页面。
+. https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["创建新角色"^]具有以下权限：
++
+[source, json]
+----
+storage.buckets.create
+storage.buckets.delete
+storage.buckets.get
+storage.buckets.list
+storage.buckets.update
+storage.buckets.getIamPolicy
+storage.multipartUploads.create
+storage.objects.create
+storage.objects.delete
+storage.objects.get
+storage.objects.list
+storage.objects.update
+----
+. 在 Google Cloud 控制台中， https://console.cloud.google.com/iam-admin/serviceaccounts["前往服务帐户页面"^] 。
+. 选择您的云项目。
+. 选择*创建服务帐户*并提供所需信息：
++
+.. *服务帐户详细信息*：输入名称和描述。
+.. *授予此服务帐户访问项目的权限*：选择您刚刚创建的自定义角色。
+.. 选择*完成*。
+
+
+. 前往 https://console.cloud.google.com/storage/settings["GCP 存储设置"^]并为服务帐户创建访问密钥：
++
+.. 选择一个项目，然后选择*互操作性*。如果您还没有这样做，请选择*启用互操作性访问*。
+.. 在*服务帐户的访问密钥*下，选择*为服务帐户创建密钥*，选择刚刚创建的服务帐户，然后单击*创建密钥*。
++
+稍后配置备份服务时，您需要在NetApp Backup and Recovery 中输入密钥。
+
+
+
+
+
+
+
+=== 创建您自己的存储桶
+
+默认情况下，该服务会为您创建存储桶。或者，如果您想使用自己的存储桶，您可以在启动备份激活向导之前创建它们，然后在向导中选择这些存储桶。
+
+link:prev-ontap-protect-journey.html["了解有关创建您自己的存储桶的更多信息"] 。
+
+
+
+=== 设置客户管理的加密密钥 (CMEK) 以进行数据加密
+
+您可以使用自己的客户管理密钥进行数据加密，而不是使用默认的 Google 管理加密密钥。跨区域和跨项目密钥均受支持，因此您可以为存储桶选择与 CMEK 密钥的项目不同的项目。
+
+如果您打算使用自己的客户管理密钥：
+
+* 您需要有密钥环和密钥名称，以便可以在激活向导中添加此信息。 https://cloud.google.com/kms/docs/cmek["了解有关客户管理加密密钥的更多信息"^] 。
+* 您需要验证控制台代理的角色是否包含这些必需的权限：
++
+[source, json]
+----
+cloudkms.cryptoKeys.get
+cloudkms.cryptoKeys.getIamPolicy
+cloudkms.cryptoKeys.list
+cloudkms.cryptoKeys.setIamPolicy
+cloudkms.keyRings.get
+cloudkms.keyRings.getIamPolicy
+cloudkms.keyRings.list
+cloudkms.keyRings.setIamPolicy
+----
+* 您需要验证您的项目中是否启用了 Google“云密钥管理服务 (KMS)”API。查看 https://cloud.google.com/apis/docs/getting-started#enabling_apis["Google Cloud 文档：启用 API"^]了解详情。
+
+
+*CMEK 注意事项：*
+
+* 支持 HSM（硬件支持）和软件生成的密钥。
+* 支持新创建或导入的 Cloud KMS 密钥。
+* 仅支持区域密钥，不支持全局密钥。
+* 目前仅支持“对称加密/解密”目的。
+* NetApp Backup and Recovery 为与存储帐户关联的服务代理分配了“CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)”IAM 角色。
+
+
+
+
+== 激活ONTAP卷上的备份
+
+随时直接从您的本地系统激活备份。
+
+向导将引导您完成以下主要步骤：
+
+* <<选择要备份的卷>>
+* <<定义备份策略>>
+* <<检查您的选择>>
+
+
+您还可以<<显示 API 命令>>在审查步骤中，您可以复制代码来自动为未来的系统激活备份。
+
+
+
+=== 启动向导
+
+.步骤
+. 使用以下方式之一访问激活备份和恢复向导：
++
+** 从控制台*系统*页面*中，选择系统并选择右侧面板中备份和恢复旁边的*启用>备份卷*。
++
+如果备份的 GCP 目标作为系统存在于控制台*系统*页面上，则可以将ONTAP集群拖到 GCP 对象存储上。
+
+** 在备份和恢复栏中选择*卷*。从卷选项卡中，选择*操作*image:icon-action.png["操作图标"]图标并选择单个卷（尚未启用复制或备份到对象存储）的*激活备份*。
+
+
++
+向导的介绍页面显示保护选项，包括本地快照、复制和备份。如果您在此步骤中选择了第二个选项，则会出现“定义备份策略”页面，其中选择一个卷。
+
+. 继续以下选项：
++
+** 如果您已经有控制台代理，那么一切就绪了。只需选择*下一步*。
+** 如果您还没有控制台代理，则会出现“添加控制台代理”选项。请参阅<<准备控制台代理>> 。
+
+
+
+
+
+
+=== 选择要备份的卷
+
+选择您想要保护的卷。受保护的卷是具有以下一项或多项的卷：快照策略、复制策略、备份到对象策略。
+
+您可以选择保护FlexVol或FlexGroup卷；但是，在激活系统备份时不能选择这些卷的混合。了解如何link:prev-ontap-backup-manage.html["激活系统中附加卷的备份"]（FlexVol或FlexGroup）在为初始卷配置备份后。
+
+[NOTE]
+====
+* 您一次只能在单个FlexGroup卷上激活备份。
+* 您选择的卷必须具有相同的SnapLock设置。所有卷都必须启用SnapLock Enterprise或禁用SnapLock 。
+
+
+====
+.步骤
+请注意，如果您选择的卷已经应用了快照或复制策略，那么您稍后选择的策略将覆盖这些现有策略。
+
+. 在“选择卷”页面中，选择要保护的一个或多个卷。
++
+** 或者，过滤行以仅显示具有特定卷类型、样式等的卷，以便更轻松地进行选择。
+** 选择第一个卷后，您可以选择所有FlexVol卷（FlexGroup卷一次只能选择一个）。要备份所有现有的FlexVol卷，请先选中一个卷，然后选中标题行中的框。
+** 要备份单个卷，请选中每个卷对应的复选框。
+
+
+. 选择“下一步”。
+
+
+
+
+=== 定义备份策略
+
+定义备份策略涉及设置以下选项：
+
+* 您是否需要一个或所有备份选项：本地快照、复制和备份到对象存储
+* 架构
+* 本地快照策略
+* 复制目标和策略
++
+
+NOTE: 如果您选择的卷具有与您在此步骤中选择的策略不同的快照和复制策略，则现有策略将被覆盖。
+
+* 备份到对象存储信息（提供商、加密、网络、备份策略和导出选项）。
+
+
+.步骤
+. 在“定义备份策略”页面中，选择以下一项或全部。默认情况下，所有三个都被选中：
++
+** *本地快照*：如果您正在执行复制或备份到对象存储，则必须创建本地快照。
+** *复制*：在另一个ONTAP存储系统上创建复制卷。
+** *备份*：将卷备份到对象存储。
+
+
+. *架构*：如果您选择复制和备份，请选择以下信息流之一：
++
+** *级联*：信息从主存储系统流向辅助存储系统，再从辅助存储系统流向对象存储。
+** *扇出*：信息从主存储系统流向辅助存储系统，再从主存储系统流向对象存储。
++
+有关这些架构的详细信息，请参阅link:prev-ontap-protect-journey.html["规划您的保护之旅"]。
+
+
+
+. *本地快照*：选择现有的快照策略或创建一个。
++
+
+TIP: 要在激活备份之前创建自定义策略，请参阅link:br-use-policies-create.html["创建策略"]。
+
++
+要创建策略，请选择“创建新策略”并执行以下操作：
+
++
+** 输入策略的名称。
+** 选择最多五个时间表，通常频率不同。
+** 选择“*创建*”。
+
+
+. *复制*：设置以下选项：
++
+** *复制目标*：选择目标系统和 SVM。或者，选择将添加到复制卷名称的目标聚合或聚合以及前缀或后缀。
+** *复制策略*：选择现有的复制策略或创建一个。
++
+
+TIP: 要在激活复制之前创建自定义策略，请参阅link:br-use-policies-create.html["创建策略"]。
+
++
+要创建策略，请选择“创建新策略”并执行以下操作：
+
++
+*** 输入策略的名称。
+*** 选择最多五个时间表，通常频率不同。
+*** 选择“*创建*”。
+
+
+
+
+. *备份到对象*：如果您选择了*备份*，请设置以下选项：
++
+** *提供商*：选择*Google Cloud*。
+** *提供商设置*：输入提供商详细信息和存储备份的区域。
++
+创建新存储桶或选择现有存储桶。
+
+** *加密密钥*：如果您创建了新的 Google 存储桶，请输入提供商提供给您的加密密钥信息。选择是否使用默认的 Google Cloud 加密密钥，或者从您的 Google 帐户中选择您自己的客户管理密钥来管理您的数据加密。
++
+如果您选择使用自己的客户管理密钥，请输入密钥保管库和密钥信息。
+
+
+
++
+
+NOTE: 如果您选择了现有的 Google Cloud 存储桶，则加密信息已经可用，因此您现在无需输入。
+
++
+** *备份策略*：选择现有的备份到对象存储策略或创建一个。
++
+
+TIP: 要在激活备份之前创建自定义策略，请参阅link:br-use-policies-create.html["创建策略"]。
+
++
+要创建策略，请选择“创建新策略”并执行以下操作：
+
++
+*** 输入策略的名称。
+*** 选择最多五个时间表，通常频率不同。
+*** 选择“*创建*”。
+
+
+** *将现有的 Snapshot 副本导出到对象存储作为备份副本*：如果此系统中卷的任何本地 Snapshot 副本与您刚刚为此系统选择的备份计划标签（例如，每日、每周等）相匹配，则会显示此附加提示。选中此框可将所有历史快照复制到对象存储作为备份文件，以确保对您的卷进行最全面的保护。
+
+
+. 选择“下一步”。
+
+
+
+
+=== 检查您的选择
+
+这是审查您的选择并在必要时进行调整的机会。
+
+.步骤
+. 在“审核”页面中，审核您的选择。
+. （可选）选中复选框*自动将快照策略标签与复制和备份策略标签同步*。这将创建具有与复制和备份策略中的标签匹配的标签的快照。
+. 选择*激活备份*。
+
+
+.结果
+NetApp Backup and Recovery 开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括主存储系统数据的完整副本。后续传输包含 Snapshot 副本中包含的主存储系统数据的差异副本。
+
+在目标集群中创建一个复制卷，该卷将与主存储系统卷同步。
+
+在您输入的 Google 访问密钥和密钥指示的服务帐户中创建一个 Google Cloud Storage 存储桶，并将备份文件存储在那里。
+
+默认情况下，备份与_Standard_存储类相关联。您可以使用成本较低的_Nearline_、_Coldline_或_Archive_存储类。但是，您通过 Google 配置存储类，而不是通过NetApp Backup and Recovery UI。请参阅 Google 主题 https://cloud.google.com/storage/docs/changing-default-storage-class["更改存储桶的默认存储类别"^]了解详情。
+
+显示卷备份仪表板，以便您可以监控备份的状态。
+
+您还可以使用link:br-use-monitor-tasks.html["作业监控页面"]。
+
+
+
+=== 显示 API 命令
+
+您可能想要显示并选择性地复制激活备份和恢复向导中使用的 API 命令。您可能希望这样做以便在未来的系统中自动激活备份。
+
+.步骤
+. 从激活备份和恢复向导中，选择*查看 API 请求*。
+. 要将命令复制到剪贴板，请选择*复制*图标。
+
+
+
+
+== 下一步是什么？
+
+* 您可以link:prev-ontap-backup-manage.html["管理您的备份文件和备份策略"] 。这包括启动和停止备份、删除备份、添加和更改备份计划等。
+* 您可以link:prev-ontap-policy-object-advanced-settings.html["管理集群级备份设置"] 。这包括更改ONTAP用于访问云存储的存储密钥、更改可用于将备份上传到对象存储的网络带宽、更改未来卷的自动备份设置等等。
+* 您还可以link:prev-ontap-restore.html["从备份文件恢复卷、文件夹或单个文件"]到 AWS 中的Cloud Volumes ONTAP系统，或到本地ONTAP系统。
+

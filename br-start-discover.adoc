@@ -1,0 +1,202 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp Backup and Recovery 需要首先发现工作负载，以便您使用该服务。 
+---
+= 发现 Microsoft SQL Server 工作负载并可选择从NetApp Backup and Recovery 中的SnapCenter导入
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery 需要首先发现 Microsoft SQL Server 工作负载，您才能使用该服务。如果您已经安装了SnapCenter ，则可以选择从SnapCenter导入备份数据和策略。
+
+*所需的NetApp控制台角色* 备份和恢复超级管理员。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+
+
+== 发现 Microsoft SQL Server 工作负载并选择性地导入SnapCenter资源
+
+在发现过程中， NetApp Backup and Recovery 会分析组织内系统中的 Microsoft SQL Server 实例和数据库。
+
+NetApp Backup and Recovery 评估 Microsoft SQL Server 应用程序。该服务评估现有的保护级别，包括当前的备份保护策略、快照副本以及备份和恢复选项。
+
+发现以下列方式发生：
+
+* 如果您已有SnapCenter ，请使用NetApp Backup and Recovery UI 将SnapCenter资源导入NetApp Backup and Recovery。
++
+
+NOTE: 如果您已经拥有SnapCenter，请先检查以确保在从SnapCenter导入之前已满足先决条件。例如，您应该先将本地SnapCenter集群存储系统添加到NetApp控制台，然后再从SnapCenter导入。看link:concept-start-prereq-snapcenter-import.html["从SnapCenter导入资源的先决条件"] 。
+
+* 如果您还没有SnapCenter，您仍然可以通过手动添加 vCenter 并执行发现来发现工作负载。
+
+
+
+
+=== 如果已安装SnapCenter ，请将SnapCenter资源导入NetApp Backup and Recovery
+
+如果您已安装SnapCenter ，请按照以下步骤将SnapCenter资源导入NetApp Backup and Recovery。  NetApp Console 从SnapCenter发现资源、主机、凭据和计划；您不必重新创建所有这些信息。
+
+您可以通过以下方式执行此操作：
+
+* 在发现期间，选择一个选项从SnapCenter导入资源。
+* 发现后，从“清单”页面选择一个选项来导入SnapCenter资源。
+* 发现后，从“设置”菜单中选择一个选项来导入SnapCenter资源。有关详细信息，请参阅link:br-start-configure.html["配置NetApp备份和恢复"] 。
+
+
+这是一个由两部分组成的过程：
+
+* 导入SnapCenter Server 应用程序和主机资源
+* 管理选定的SnapCenter主机资源
+
+
+
+
+==== 导入SnapCenter Server 应用程序和主机资源
+
+第一步从SnapCenter导入主机资源，并在NetApp备份和恢复清单页面中显示这些资源。此时，资源尚未由NetApp Backup and Recovery 管理。
+
+
+TIP: 导入SnapCenter主机资源后， NetApp Backup and Recovery 不会自动接管保护管理。为此，您必须明确选择在NetApp Backup and Recovery 中管理导入的资源。这可确保您已准备好通过NetApp Backup and Recovery 备份这些资源。
+
+.步骤
+. 从NetApp控制台左侧导航中，选择 *保护* > *备份和恢复*。
+. 选择*库存*。
+. 选择*发现资源*。
+. 从NetApp Backup and Recovery Discover 工作负载资源页面中，选择 *从SnapCenter导入*。
+. 输入* SnapCenter应用程序凭据*：
++
+.. * SnapCenter FQDN 或 IP 地址*：输入SnapCenter应用程序本身的 FQDN 或 IP 地址。
+.. *端口*：输入SnapCenter服务器的端口号。
+.. *用户名*和*密码*：输入SnapCenter服务器的用户名和密码。
+.. *控制台代理*：选择SnapCenter的控制台代理。
+
+
+. 输入* SnapCenter服务器主机凭据*：
++
+.. *现有凭证*：如果选择此选项，则可以使用已添加的现有凭证。选择凭证名称。
+.. *添加新凭据*：如果您没有现有的SnapCenter主机凭据，则可以添加新凭据。输入凭证名称、身份验证模式、用户名和密码。
+
+
+. 选择“*导入*”来验证您的条目并注册SnapCenter服务器。
++
+
+NOTE: 如果SnapCenter服务器已注册，您可以更新现有的注册详细信息。
+
+
+
+.结果
+清单页面显示导入的SnapCenter资源，包括 MS SQL 主机、实例和数据库。
+
+要查看导入的SnapCenter资源的详细信息，请从“操作”菜单中选择“查看详细信息”选项。
+
+
+
+==== 管理SnapCenter主机资源
+
+导入SnapCenter资源后，在NetApp Backup and Recovery 中管理这些主机资源。选择管理这些资源后， NetApp Backup and Recovery 能够备份和恢复您从SnapCenter导入的资源。您不再在SnapCenter Server 中管理这些资源。
+
+.步骤
+. 导入SnapCenter资源后，从备份和恢复菜单中选择*Inventory*。
+. 从“清单”页面中，选择您希望从现在开始使用NetApp Backup and Recovery 进行管理的导入的SnapCenter主机。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*显示工作量详情。
+. 在清单 > 工作负载页面中，选择操作图标image:../media/icon-action.png["操作选项"]> *管理* 显示管理主机页面。
+. 选择*管理*。
+. 在管理主机页面中，选择使用现有 vCenter 或添加新的 vCenter。
+. 选择*管理*。
++
+库存页面显示新管理的SnapCenter资源。
+
+
+
+您可以选择从“操作”菜单中选择“生成报告”选项来创建管理资源的报告。
+
+
+
+==== 从清单页面发现后导入SnapCenter资源
+
+如果您已经发现资源，则可以从清单页面导入SnapCenter资源。
+
+.步骤
+. 从控制台左侧导航中，选择*保护*>*备份和恢复*。
+. 选择*库存*。
+. 从库存页面中，选择*导入SnapCenter资源*。
+. 按照上面“导入SnapCenter资源”部分中的步骤导入SnapCenter资源。
+
+
+
+
+=== 如果您尚未安装SnapCenter ，请添加 vCenter 并发现资源
+
+如果您尚未安装SnapCenter ，您可以添加 vCenter 信息并让NetApp备份和恢复发现工作负载。在每个控制台代理中，选择您想要发现工作负载的系统。
+
+如果您有 VMware 环境，这是可选的。
+
+.步骤
+. 从控制台左侧导航中，选择*保护*>*备份和恢复*。
++
+如果这是您第一次登录此服务，并且控制台中已经有一个系统，但尚未发现任何资源，则会出现“欢迎使用新的NetApp备份和恢复”登录页面并显示*发现资源*选项。
+
+. 选择*发现资源*。
+. 输入以下信息：
++
+.. *工作负载类型*：对于此版本，仅 Microsoft SQL Server 可用。
+.. *vCenter 设置*：选择现有的 vCenter 或添加新的 vCenter。要添加新的 vCenter，请输入 vCenter FQDN 或 IP 地址、用户名、密码、端口和协议。
++
+
+TIP: 如果要输入 vCenter 信息，请输入 vCenter 设置和主机注册的信息。如果您在这里添加或输入了 vCenter 信息，接下来您还需要在高级设置中添加插件信息。
+
+.. *主机注册*：选择*添加凭据*并输入包含您想要发现的工作负载的主机的信息。
++
+
+TIP: 如果要添加独立服务器而不是 vCenter 服务器，则仅输入主机信息。
+
+
+
+. 选择*发现*。
++
+
+TIP: 此过程可能需要几分钟。
+
+. 继续高级设置。
+
+
+
+
+==== 在发现期间设置高级设置选项并安装插件
+
+使用高级设置，您可以在所有注册的服务器上手动安装插件代理。这使您能够将所有SnapCenter工作负载导入NetApp Backup and Recovery，以便您可以在那里管理备份和恢复。  NetApp Backup and Recovery 显示了安装插件所需的步骤。
+
+.步骤
+. 在“发现资源”页面中，单击右侧的向下箭头继续进行“高级设置”。
+. 在发现工作负载资源页面中，输入以下信息。
++
+** *输入插件端口号*：输入插件使用的端口号。
+** *安装路径*：输入插件的安装路径。
+
+
+. 如果要手动安装SnapCenter代理，请选中以下选项的复选框：
++
+** *使用手动安装*：选中此框可手动安装插件。
+** *添加集群中的所有主机*：选中此框可在发现期间将集群中的所有主机添加到NetApp Backup and Recovery。
+** *跳过可选的预安装检查*：选中此框可跳过可选的预安装检查。例如，如果您知道内存或空间考虑因素将在不久的将来发生变化，并且您想立即安装插件，那么您可能想要这样做。
+
+
+. 选择*发现*。
+
+
+
+
+==== 继续访问NetApp备份和恢复仪表板
+
+. 要显示NetApp备份和恢复仪表板，请从备份和恢复菜单中选择 *仪表板*。
+. 审查数据保护的健康状况。处于危险中或受保护的工作负载的数量会根据新发现、受保护和备份的工作负载而增加。
++
+link:br-use-dashboard.html["了解仪表板显示的内容"] 。
+
+

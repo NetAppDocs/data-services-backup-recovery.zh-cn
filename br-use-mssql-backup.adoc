@@ -1,0 +1,158 @@
+---
+sidebar: sidebar 
+permalink: br-use-mssql-backup.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: 将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure、Google Cloud Platform 和StorageGRID ，以确保您的数据受到保护。备份会自动生成并存储在您的公共或私有云帐户的对象存储中。您可以实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。 
+---
+= 使用NetApp备份和恢复功能备份 Microsoft SQL Server 工作负载
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure 和StorageGRID ，以确保您的数据受到保护。备份会自动生成并存储在您的公共或私有云帐户的对象存储中。
+
+* 要按计划备份工作负载，请创建管理备份和还原操作的策略。看link:br-use-policies-create.html["创建策略"]以获取说明。
+* 在启动备份之前配置已发现主机的日志目录。
+* 立即备份工作负载（立即创建按需备份）。
+
+
+
+
+== 查看工作负载保护状态
+
+在启动备份之前，请查看工作负载的保护状态。
+
+*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+.步骤
+. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 选择一个工作负载来查看保护详细信息。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
+. 查看主机、保护组、可用性组、实例和数据库选项卡上的详细信息。
+
+
+
+
+== 配置发现主机的日志目录
+
+在备份工作负载之前，请设置已发现主机的活动日志的路径。这有助于您跟踪操作状态。
+
+*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员或备份和恢复恢复管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+.步骤
+. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 选择一个工作负载来查看保护详细信息。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
+. 选择主机。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *配置日志目录*。
+. 提供主机路径或浏览主机上的主机或节点主机列表，以找到您想要存储主机日志的位置。
+. 选择您想要存储日志的那些。
++
+
+NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障转移群集实例或独立实例。
+
+. 选择*保存*。
+
+
+
+
+== 创建保护组
+
+您可以创建一个保护组来管理一组工作负载的备份和还原操作。保护组是您想要一起保护的工作负载的逻辑分组。
+
+*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+.步骤
+. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 选择一个工作负载来查看保护详细信息。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
+. 选择*保护组*选项卡。
+. 选择*创建保护组*。
+. 为保护组提供一个名称。
+. 选择要包含在保护组中的实例或数据库。
+. 选择“下一步”。
+. 选择要应用于保护组的*备份策略*。
++
+如果要创建策略，请选择*创建新策略*并按照提示创建策略。看link:br-use-policies-create.html["创建策略"]了解更多信息。
+
+. 选择“下一步”。
+. 检查配置。
+. 选择“*创建*”来创建保护组。
+
+
+
+
+== 立即使用按需备份来备份工作负载
+
+立即创建按需备份。如果您要对系统进行更改并希望确保在开始之前有备份，则可能需要运行按需备份。
+
+*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+.步骤
+. 从菜单中选择*库存*。
+. 选择一个工作负载来查看保护详细信息。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
+. 选择“*保护组*”、“*实例*”或“*数据库*”选项卡。
+. 选择要备份的实例或数据库。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *立即备份*。
+. 选择要应用于备份的策略。
+. 选择计划层级。
+. 选择*立即备份*。
+
+
+
+
+== 暂停备份计划
+
+暂停计划会暂时阻止备份在预定的时间运行。如果您正在对系统进行维护或者遇到备份问题，您可能需要执行此操作。
+
+*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+.步骤
+. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 选择一个工作负载来查看保护详细信息。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
+. 选择“*保护组*”、“*实例*”或“*数据库*”选项卡。
+. 选择要暂停的保护组、实例或数据库。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *暂停*。
+
+
+
+
+== 删除保护组
+
+您可以创建一个保护组来管理一组工作负载的备份和还原操作。保护组是您想要一起保护的工作负载的逻辑分组。
+
+*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+.步骤
+. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 选择一个工作负载来查看保护详细信息。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
+. 选择*保护组*选项卡。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *删除保护组*。
+
+
+
+
+== 删除工作负载的保护
+
+如果您不再想要备份工作负载或者想要停止在NetApp Backup and Recovery 中管理工作负载，则可以从工作负载中删除保护。
+
+*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+.步骤
+. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 选择一个工作负载来查看保护详细信息。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
+. 选择“*保护组*”、“*实例*”或“*数据库*”选项卡。
+. 选择保护组、实例或数据库。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *移除保护*。
+. 在“删除保护”对话框中，选择是否要保留备份和元数据或删除它们。
+. 选择*删除*以确认操作。
+

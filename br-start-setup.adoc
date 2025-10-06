@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: br-start-setup.html 
+keywords: backup, back up, restore, recovery, aws, azure 
+summary: 在使用NetApp Backup and Recovery 之前，请执行几个步骤来设置备份目标。 
+---
+= 在使用NetApp Backup and Recovery 之前设置备份目标
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+在使用NetApp Backup and Recovery 之前，请执行几个步骤来设置备份目标。
+
+在开始之前，请查看link:concept-start-prereq.html["前提条件"]以确保您的环境已准备就绪。
+
+
+
+== 准备备份目标
+
+准备以下一个或多个备份目标：
+
+* NetAppStorageGRID。
++
+参考 https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover-storagegrid.html["了解StorageGRID"^]。
+
++
+参考 https://docs.netapp.com/us-en/storagegrid/index.html["StorageGRID文档"^]有关StorageGRID的详细信息。
+
+* 亚马逊网络服务。参考 https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Amazon S3 文档"^]。
++
+执行以下操作以准备将 AWS 作为备份目标：
+
++
+** 在 AWS 中设置一个帐户。
+** 在 AWS 中配置 S3 权限，列于下一节。
+** 有关在控制台中管理 AWS 存储的详细信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/task-viewing-amazon-s3.html["管理您的 Amazon S3 存储桶"^]。
+
+
+
+
+* 微软 Azure。
++
+** 参考 https://docs.netapp.com/us-en/storage-management-azure-netapp-files/index.html["Azure NetApp Files文档"^]。
+** 在 Azure 中设置一个帐户。
+** 配置 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions.html["Azure 权限"^]在 Azure 中。
+** 有关在控制台中管理 Azure 存储的详细信息，请参阅 https://docs.netapp.com/us-en/storage-management-blob-storage/task-view-azure-blob-storage.html["管理 Azure 存储帐户"^]。
+
+
+
+
+在备份目标本身中配置选项后，您稍后会将其配置为NetApp Backup and Recovery 中的备份目标。有关如何在NetApp Backup and Recovery 中配置备份目标的详细信息，请参阅link:br-start-discover-backup-targets.html["发现备份目标"]。
+
+
+
+== 设置 S3 权限
+
+您需要配置两组 AWS S3 权限：
+
+* 控制台代理创建和管理 S3 存储桶的权限。
+* 本地ONTAP集群的权限，以便它可以读取和写入 S3 存储桶的数据。
+
+
+.步骤
+. 确保控制台代理具有所需的权限。有关详细信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["NetApp控制台策略权限"]。
++
+
+NOTE: 在 AWS 中国区域创建备份时，您需要将 IAM 策略中所有_Resource_部分下的 AWS 资源名称“arn”从“aws”更改为“aws-cn”；例如 `arn:aws-cn:s3:::netapp-backup-*`。
+
+. 当您激活该服务时，备份向导将提示您输入访问密钥和密钥。这些凭证被传递到ONTAP集群，以便ONTAP可以将数据备份和恢复到 S3 存储桶。为此，您需要创建具有以下权限的 IAM 用户。
++
+请参阅 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS 文档：创建角色以将权限委托给 IAM 用户"^]。
+
++
+[%collapsible]
+====
+[source, json]
+----
+{
+    "Version": "2012-10-17",
+     "Statement": [
+        {
+           "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketLocation",
+                "s3:PutEncryptionConfiguration"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup-*",
+            "Effect": "Allow",
+            "Sid": "backupPolicy"
+        },
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListAllMyBuckets",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "s3:RestoreObject",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectRetention",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutObjectRetention"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*/*",
+            "Effect": "Allow"
+        }
+    ]
+}
+----
+====
+

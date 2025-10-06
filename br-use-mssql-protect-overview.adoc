@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: br-use-mssql-protect-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: 您可以将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure 和StorageGRID，确保您的数据受到保护。备份会自动生成并存储在您的公共或私有云帐户的对象存储中。您可以实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。 
+---
+= 使用NetApp备份和恢复保护 Microsoft SQL 工作负载概述
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用NetApp备份和恢复保护您的 Microsoft SQL Server 应用程序数据，从本地ONTAP系统到 Amazon Web Services、Microsoft Azure 或StorageGRID 。根据您创建的策略，备份会自动生成并存储在您的公共或私有云帐户的对象存储中。您可以实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。
+
+3-2-1 方法的优点包括：
+
+* 多个数据副本可提供多层保护，抵御内部（内部）和外部网络安全威胁。
+* 多种媒体类型可确保在一种媒体类型发生物理或逻辑故障时能够进行故障转移。
+* 现场副本有助于快速恢复，而异地副本则可在现场副本受损时使用。
+
+
+NetApp Backup and Recovery 利用NetApp SnapMirror数据复制技术，通过创建快照副本并将其传输到备份位置来确保所有备份完全同步。
+
+您可以实现以下保护目标：
+
+* link:concept-start-prereq-snapcenter-import.html["如果从SnapCenter导入，则配置其他项目"]
+* link:br-start-discover.html["发现 Microsoft SQL Server 工作负载并选择性地导入SnapCenter资源"]
+* link:br-use-mssql-backup.html["使用本地ONTAP主存储上的本地快照备份工作负载"]
+* link:br-use-mssql-backup.html["将工作负载复制到ONTAP二级存储"]
+* link:br-use-mssql-backup.html["将工作负载备份到对象存储位置"]
+* link:br-use-mssql-backup.html["立即备份工作负载"]
+* link:br-use-mssql-restore-overview.html["恢复工作负载"]
+* link:br-use-mssql-clone.html["克隆工作负载"]
+* link:br-use-manage-inventory.html["管理工作负载清单"]
+* link:br-use-manage-snapshots.html["管理快照"]
+
+
+要备份工作负载，通常需要创建管理备份和恢复操作的策略。看link:br-use-policies-create.html["创建策略"]了解更多信息。
+
+.支持的备份目标
+NetApp Backup and Recovery 使您能够将 Microsoft SQL Server 实例和数据库从以下源系统备份到公共和私有云提供商中的以下辅助系统和对象存储。快照副本驻留在源系统上。
+
+[cols="33,33,33"]
+|===
+| 源系统 | 辅助系统（复制） | 目标对象存储（备份） 
+
+
+| AWS 中的Cloud Volumes ONTAP | AWS 本地ONTAP系统中的Cloud Volumes ONTAP | 亚马逊 S3 ONTAP S3 
+
+
+| Azure 中的Cloud Volumes ONTAP | Azure 本地ONTAP系统中的Cloud Volumes ONTAP | Azure Blob ONTAP S3 
+
+
+| 本地ONTAP系统 | Cloud Volumes ONTAP本地ONTAP系统 | Amazon S3 Azure Blob NetApp StorageGRID ONTAP S3 
+
+
+| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | 不适用 ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
+|===
+.支持的还原目标
+您可以将 Microsoft SQL Server 实例和数据库从驻留在主存储或辅助系统（复制卷）或对象存储（备份文件）中的备份还原到以下系统。快照副本驻留在源系统上，并且只能还原到同一系统。
+
+[cols="33,33,33"]
+|===
+2+| 从备份文件位置 | 至目的地系统 
+
+
+| *对象存储（备份）* | *辅助系统（复制）* |  
+
+
+| Amazon S3 | AWS 本地ONTAP系统中的Cloud Volumes ONTAP | AWS 本地ONTAP系统ONTAP S3 中的云卷 
+
+
+| Azure Blob | Azure 本地ONTAP系统中的Cloud Volumes ONTAP | Azure 中的Cloud Volumes ONTAP本地ONTAP系统ONTAP S3 ifdef::gcp[] endif::gcp[] 
+
+
+| StorageGRID | Cloud Volumes ONTAP本地ONTAP系统 | 本地ONTAP系统ONTAP S3 
+
+
+| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | 不适用 
+|===
+
+NOTE: “本地ONTAP系统”包括FAS和AFF系统。

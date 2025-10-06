@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: br-limitations-kvm.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, KVM, SAP HANA database, virtual machine, vm 
+summary: 此版本的NetApp Backup and Recovery 具有以下已知限制。 
+---
+= NetApp Backup and Recovery 针对 KVM 工作负载的已知限制
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+已知限制标识了该产品的此版本不支持或不能与其正确互操作的平台、设备或功能。仔细审查这些限制。
+
+NetApp Backup and Recovery 中的 KVM 工作负载的私人预览版不支持以下操作和配置：
+
+
+
+== 不支持的操作
+
+私人预览版不支持以下操作：
+
+* 克隆、挂载或卸载虚拟机
+* 将虚拟机还原到备用位置
+* 保护存储在 SAN 上的虚拟机
+* 保护应用程序
+* 从对象存储备份或恢复
+* 编辑保护组
+* 使用来自多个 KVM 主机的虚拟机创建保护组
+* 创建用户定义的备份（仅支持从NetApp控制台启动的备份）
+
+
+
+
+== 不支持的配置
+
+不支持以下配置：
+
+* 基于角色的访问控制 (RBAC)
+* 直接连接到 KVM 主机的磁盘
+* 跨多个 NFS 挂载点或共享的磁盘
+* RAW磁盘格式
+* NetFS 以外的存储池类型（仅支持 NetFS）
+

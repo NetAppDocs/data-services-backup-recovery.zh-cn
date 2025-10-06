@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: prev-reference-gcp-archive-storage-tiers.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp Backup and Recovery 支持一个 Google 归档存储类和大多数区域。 
+---
+= NetApp备份和恢复支持 Google 归档存储层
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery 支持一个 Google 归档存储类和大多数区域。
+
+[]
+====
+*注意* 要切换到NetApp Backup and Recovery UI 版本，请参阅link:br-start-switch-ui.html["切换到以前的NetApp备份和恢复 UI"]。
+
+====
+
+
+== NetApp备份和恢复支持的 Google 归档存储类
+
+最初创建备份文件时，它们存储在_标准_存储中。此层针对存储不经常访问的数据进行了优化；但也允许您立即访问它。
+
+如果您的本地集群使用的是ONTAP 9.12.1 或更高版本，您可以选择在一定天数（通常超过 30 天）后将旧备份分层到NetApp备份和恢复 UI 中的“_Archive_”存储中，以进一步优化成本。此层中的数据将需要更高的检索成本，因此您需要考虑可能需要多久从这些存档的备份文件中恢复数据。请参阅此页面上有关从档案存储恢复数据的部分。
+
+请注意，当您使用此类生命周期规则配置NetApp Backup and Recovery 时，在 Google 帐户中设置存储桶时不得配置任何生命周期规则。
+
+https://cloud.google.com/storage/docs/storage-classes["了解 Google 存储类别"^] 。
+
+
+
+== 从档案存储中恢复数据
+
+虽然将较旧的备份文件存储在存档存储中比标准存储便宜得多，但从存档存储中的备份文件中访问数据进行恢复操作将花费更长的时间并且花费更多。
+
+从 Google Archive 恢复数据需要多少钱？:: 要了解按地区划分的 Google Cloud Storage 详细定价，请访问 https://cloud.google.com/storage/pricing["Google Cloud Storage 定价页面"^]。
+恢复我在 Google Archive 中存档的对象需要多长时间？:: 总还原时间由两部分组成：
++
+--
+* *检索时间*：从存档中检索备份文件并将其放置在标准存储中的时间。这有时被称为“补水”时间。与其他云提供商提供的“最冷”存储解决方案不同，您的数据可以在几毫秒内访问。
+* *恢复时间*：从标准存储中的备份文件恢复数据的时间。这次与不使用存档层时直接从标准存储进行的典型恢复操作没有什么不同。
+
+
+--
+

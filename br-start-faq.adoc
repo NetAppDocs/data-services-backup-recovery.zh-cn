@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: br-start-faq.html 
+keywords: backup and recovery faq, NetApp Backup and Recovery frequently asked questions 
+summary: 如果您只是想快速找到问题的答案，此常见问题解答可以为您提供帮助。 
+---
+= NetApp备份和恢复常见问题解答
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果您只是想快速找到问题的答案，此常见问题解答可以为您提供帮助。
+
+
+
+== 部署
+
+*您需要许可证才能使用NetApp Backup and Recovery 预览版吗？*
+
+您可以使用以下许可证类型：
+
+* 注册 30 天免费试用。
+
+
+*如何启用NetApp备份和恢复？* NetApp Backup and Recovery 不需要任何支持。备份和恢复选项在控制台左侧导航中自动启用。
+
+要开始使用，您需要注册或联系您的NetApp销售代表来试用此服务。然后，当您使用控制台代理时，它将包含适合该服务的功能。
+
+要开始使用NetApp Backup and Recovery，请从其初始登录页面选择“开始发现工作负载”。
+
+* NetApp Backup and Recovery 是否提供标准、受限和私有模式？*目前， NetApp Backup and Recovery 仅在标准模式下可用。敬请关注。
+
+有关所有NetApp数据服务中这些模式的说明，请参阅 https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["NetApp控制台部署模式"^]。
+
+
+
+== 使用权
+
+* NetApp备份和恢复 URL 是什么？*对于 URL，在浏览器中输入： https://console.netapp.com/["https://console.netapp.com/backup-and-recovery"^]访问NetApp控制台。
+
+*如何处理访问权限？*只有组织管理员才有能力启动服务并发现工作负载（因为这涉及承诺使用资源）。后续交互可以由任何角色完成。
+
+*什么设备分辨率最好？*  NetApp Backup and Recovery 的建议设备分辨率为 1920x1080 或更高。
+
+*我应该使用哪种浏览器？*任何现代浏览器都可以使用。
+
+
+
+== 与其他服务的交互
+
+* NetApp Backup and Recovery 是否知道NetApp ONTAP中所做的保护设置？*是的， NetApp Backup and Recovery 发现了在ONTAP中设置的快照计划。
+
+*如果您使用NetApp Backup and Recovery 设置策略，那么将来是否只需在此服务中进行更改？*我们建议您从NetApp Backup and Recovery 进行策略更改。
+
+
+
+== 工作负载
+
+*工作量由什么组成？*工作负载是 2025 预览版的应用程序。工作负载包括单个应用程序实例使用的所有卷。例如，部署在 mssql3.host.com 上的 Microsoft SQL Server DB 实例可以分别使用 vol1 和 vol2 来存储其数据和日志。这些卷共同构成了数据库实例的特定实例的工作负载。
+
+* NetApp Backup and Recovery 支持哪些工作负载？*
+
+对于预览版 2025， NetApp Backup and Recovery 可以识别以下工作负载：Microsoft SQL Server 应用程序。
+
+*什么是“受保护的”工作负载？*在NetApp备份和恢复中，当启用主要检测策略时，工作负载将显示“受保护”状态。
+
+*什么是“有风险”的工作负载？*如果工作负载没有启用主要检测策略，那么即使启用了备份和快照策略，它仍然“处于危险之中”。
+
+*添加了新的工作负载，但尚未出现* 如果您向环境中添加了新的工作负载，请再次启动发现并应用保护策略来保护该新资源。
+
+
+
+== 保护策略
+
+* NetApp Backup and Recovery 是否知道NetApp ONTAP中所做的保护设置？*
+
+是的， NetApp Backup and Recovery 会发现在ONTAP中设置的快照计划以及在发现的工作负载中是否启用了 ARP 和 FPolicy。您最初在仪表板中看到的信息是从其他NetApp解决方案和产品汇总而来的。
+
+* NetApp Backup and Recovery 是否知道SnapCenter中已经制定的策略？*
+
+是的，如果您在SnapCenter中管理工作负载，则这些产品管理的策略将被纳入NetApp Backup and Recovery。
+
+*您可以修改从SnapCenter继承的策略吗？*
+
+是的，您可以修改NetApp Backup and Recovery 中由SnapCenter管理的策略。
+
+*如果ONTAP中存在策略（已在系统管理器中启用，例如 ARP、FPolicy 和快照），那么这些策略是否会在NetApp备份和恢复中发生变化？*
+
+不会NetApp Backup and Recovery 不会修改ONTAP中的任何现有检测策略（ARP、FPolicy 设置）。
+
+*注册NetApp Backup and Recovery 后，如果在SnapCenter中添加新策略会发生什么情况？*
+
+NetApp Backup and Recovery 可识别在SnapCenter中创建的任何新策略。
+
+*您可以从ONTAP更改策略吗？*
+
+是的，您可以在NetApp Backup and Recovery 中从ONTAP更改策略。您还可以在NetApp Backup and Recovery 中创建新策略并将其应用于工作负载。此操作将使用在NetApp Backup and Recovery 中创建的策略替换现有的ONTAP策略。

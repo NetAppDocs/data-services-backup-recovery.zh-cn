@@ -1,0 +1,42 @@
+= SnapMirror到 Cloud Resync 用于卷迁移
+:allow-uri-read: 
+
+
+
+
+=== SnapMirror到 Cloud Resync 用于卷迁移
+
+SnapMirror到 Cloud Resync 功能简化了NetApp环境中卷迁移期间的数据保护和连续性。当使用SnapMirror逻辑复制 (LRSE) 将卷从一个本地NetApp部署迁移到另一个本地 NetApp 部署或迁移到基于云的解决方案（例如Cloud Volumes ONTAP或Cloud Volumes Service）时， SnapMirror到 Cloud Resync 可确保现有的云备份保持完整且可运行。
+
+此功能无需耗时且耗费资源的重新基线操作，使备份操作能够在迁移后继续进行。此功能在工作负载迁移场景中很有价值，支持 FlexVols 和 FlexGroups，并且从ONTAP版本 9.16.1 开始可用。
+
+通过保持跨环境的备份连续性， SnapMirror to Cloud Resync 提高了运营效率并降低了混合和多云数据管理的复杂性。
+
+有关如何执行重新同步操作的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-migrate-resync.html["使用SnapMirror将卷迁移到 Cloud Resync"]。
+
+
+
+=== 支持第三方 MinIO 对象存储（预览）
+
+NetApp Backup and Recovery 现在将其支持扩展到第三方对象存储，主要关注 MinIO。此新的预览功能使您能够利用任何与 S3 兼容的对象存储来满足您的备份和恢复需求。
+
+通过此预览版本，我们希望在推出完整功能之前确保与第三方对象存储的强大集成。我们鼓励您探索这一新功能并提供反馈以帮助增强服务。
+
+
+IMPORTANT: 此功能不应在生产中使用。
+
+*预览模式限制*
+
+虽然此功能处于预览状态，但存在某些限制：
+
+* 不支持自带水桶 (BYOB)。
+* 不支持在策略中启用 DataLock。
+* 不支持在策略中启用存档模式。
+* 仅支持本地ONTAP环境。
+* 不支持 MetroCluster。
+* 不支持启用存储桶级加密的选项。
+
+
+*入门*
+
+要开始使用此预览功能，您必须在控制台代理上启用一个标志。然后，您可以在保护工作流中通过在备份部分中选择*第三方兼容*对象存储来输入 MinIO 第三方对象存储的连接详细信息。

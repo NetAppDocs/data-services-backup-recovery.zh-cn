@@ -1,0 +1,446 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-protect-overview.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+---
+= 使用NetApp备份和恢复保护您的ONTAP卷数据
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery 提供备份和恢复功能，用于保护和长期存档您的ONTAP卷数据。您可以实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。
+
+[]
+====
+*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+
+====
+激活后，备份和恢复会创建块级、增量永久备份，这些备份存储在另一个ONTAP集群和云中的对象存储中。除了源卷之外，您还将拥有：
+
+* 源系统上卷的快照副本
+* 不同存储系统上的复制卷
+* 对象存储中的卷备份
+
+
+image:diagram-321-overview-unified.png["该图表显示了备份文件如何作为 Snapshot 副本存在于源系统上、作为辅助存储系统上的复制卷存在以及作为对象存储中的备份文件存在。"]
+
+NetApp Backup and Recovery 利用 NetApp 的SnapMirror数据复制技术，通过创建 Snapshot 副本并将其传输到备份位置来确保所有备份完全同步。
+
+3-2-1 方法的优点包括：
+
+* 多个数据副本可提供多层保护，抵御内部（内部）和外部网络安全威胁。
+* 多种媒体类型可确保在一种媒体类型发生物理或逻辑故障时能够进行故障转移。
+* 现场副本有助于快速恢复，而异地副本则随时准备着，以防现场副本受到损害。
+
+
+必要时，您可以将整个卷、文件夹或一个或多个文件从任何备份副本恢复到相同或不同的系统。
+
+
+
+== 功能
+
+*复制功能：*
+
+* 在ONTAP存储系统之间复制数据以支持备份和灾难恢复。
+* 通过高可用性确保您的 DR 环境的可靠性。
+* 通过两个系统之间的预共享密钥 (PSK) 设置的本机ONTAP动态加密。
+* 复制的数据是不可变的，直到您使其可写并可供使用为止。
+* 如果传输失败，复制可以自我修复。
+* 与……相比 https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp复制"^]， NetApp Backup and Recovery 中的复制包括以下功能：
++
+** 一次将多个FlexVol卷复制到辅助系统。
+** 使用 UI 将复制的卷还原到源系统或其他系统。
+
+
+
+
+看link:br-reference-limitations.html["ONTAP卷的复制限制"]了解NetApp Backup and Recovery for ONTAP卷不可用的复制功能列表。
+
+*备份到对象功能：*
+
+* 将数据卷的独立副本备份到低成本的对象存储。
+* 将单个备份策略应用于群集中的所有卷，或为具有唯一恢复点目标的卷分配不同的备份策略。
+* 创建一个备份策略，以应用于集群中创建的所有未来卷。
+* 制作不可变的备份文件，以便在保留期内锁定和保护它们。
+* 扫描备份文件以查找可能的勒索软件攻击 - 并自动删除/替换受感染的备份。
+* 将较旧的备份文件分层到档案存储以节省成本。
+* 删除备份关系，以便您可以存档不需要的源卷，同时保留卷备份。
+* 从云备份到云，从本地系统备份到公共云或私有云。
+* 备份数据在静态时通过 AES-256 位加密保护，在动态时通过 TLS 1.2 HTTPS 连接保护。
+* 使用您自己的客户管理密钥进行数据加密，而不是使用云提供商提供的默认加密密钥。
+* 支持单个卷最多 4,000 个备份。
+
+
+*恢复功能：*
+
+* 从本地 Snapshot 副本、复制的卷或对象存储中的备份卷恢复特定时间点的数据。
+* 将卷、文件夹或单个文件还原到源系统或其他系统。
+* 将数据恢复到使用不同订阅/帐户或位于不同区域的系统。
+* 将卷从云存储快速恢复到Cloud Volumes ONTAP系统或本地系统；非常适合需要尽快提供对卷的访问的灾难恢复情况。
+* 在块级别恢复数据，将数据直接放置在您指定的位置，同时保留原始 ACL。
+* 浏览和搜索文件目录，轻松选择单个文件夹和文件进行单个文件恢复。
+
+
+
+
+== 支持备份和恢复操作的系统
+
+NetApp Backup and Recovery 支持ONTAP系统以及公共和私有云提供商。
+
+
+
+=== 支持的区域
+
+NetApp Backup and Recovery 在许多 Amazon Web Services、Microsoft Azure 和 Google Cloud 区域中均支持Cloud Volumes ONTAP 。
+
+https://bluexp.netapp.com/cloud-volumes-global-regions?__hstc=177456119.0da05194dc19e7d38fcb4a4d94f105bc.1583956311718.1592507347473.1592829225079.52&__hssc=177456119.1.1592838591096&__hsfp=76784061&hsCtaTracking=c082a886-e2e2-4ef0-8ef2-89061b2b1955%7Cd07def13-e88c-40a0-b2a1-23b3b4e7a6e7#cvo["使用全球区域地图了解更多信息"^]
+
+
+
+=== 支持的备份目标
+
+NetApp Backup and Recovery 使您能够将ONTAP卷从以下源系统备份到以下辅助系统以及公共和私有云提供商中的对象存储。快照副本驻留在源系统上。
+
+[cols="33,33,33"]
+|===
+| 源系统 | 辅助系统（复制） | 目标对象存储（备份）ifdef::aws[] 
+
+
+| AWS 中的Cloud Volumes ONTAP | AWS 本地ONTAP系统中的Cloud Volumes ONTAP | 亚马逊 S3 endif::aws[] ifdef::azure[] 
+
+
+| Azure 中的Cloud Volumes ONTAP | Azure 本地ONTAP系统中的Cloud Volumes ONTAP | Azure Blob endif::azure[] ifdef::gcp[] 
+
+
+| Google 的Cloud Volumes ONTAP | Google 本地ONTAP系统中的Cloud Volumes ONTAP | Google 云端存储 endif::gcp[] 
+
+
+| 本地ONTAP系统 | Cloud Volumes ONTAP本地ONTAP系统 | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Azure Blob endif::azure[] ifdef::gcp[] Google Cloud Storage endif::gcp[] NetApp StorageGRID ONTAP S3 
+|===
+
+
+=== 支持的还原目标
+
+您可以将ONTAP数据从位于二级系统（复制卷）或对象存储（备份文件）中的备份文件还原到以下系统。快照副本驻留在源系统上，并且只能还原到同一系统。
+
+[cols="33,33,33"]
+|===
+2+| 备份文件位置 | 目的地系统 
+
+
+| *对象存储（备份）* | *辅助系统（复制）* | ifdef::aws[] 
+
+
+| Amazon S3 | AWS 本地ONTAP系统中的Cloud Volumes ONTAP | AWS 本地ONTAP系统中的Cloud Volumes ONTAP endif::aws[] ifdef::azure[] 
+
+
+| Azure Blob | Azure 本地ONTAP系统中的Cloud Volumes ONTAP | Azure 中的Cloud Volumes ONTAP本地ONTAP系统 endif::azure[] ifdef::gcp[] 
+
+
+| Google Cloud Storage | Google 本地ONTAP系统中的Cloud Volumes ONTAP | Google 本地ONTAP系统中的Cloud Volumes ONTAP endif::gcp[] 
+
+
+| NetAppStorageGRID | 本地ONTAP系统Cloud Volumes ONTAP | 本地ONTAP系统 
+
+
+| ONTAP S3 | 本地ONTAP系统Cloud Volumes ONTAP | 本地ONTAP系统 
+|===
+请注意，“本地ONTAP系统”包括FAS、 AFF和ONTAP Select系统。
+
+
+
+== 支持的卷
+
+NetApp Backup and Recovery 支持以下类型的卷：
+
+* FlexVol读写卷
+* FlexGroup卷（需要ONTAP 9.12.1 或更高版本）
+* SnapLock Enterprise卷（需要ONTAP 9.11.1 或更高版本）
+* 适用于本地卷的SnapLock Compliance （需要ONTAP 9.14 或更高版本）
+* SnapMirror数据保护 (DP) 目标卷
+
+
+
+NOTE: NetApp Backup and Recovery 不支持FlexCache卷的备份。
+
+请参阅link:br-reference-limitations.html["ONTAP卷的备份和还原限制"]了解其他要求和限制。
+
+
+
+== 成本
+
+使用NetApp Backup and Recovery 与ONTAP系统相关的成本有两种：资源费用和服务费用。这两项费用均针对服务的对象部分备份。
+
+除了存储 Snapshot 副本和复制卷所需的磁盘空间外，创建 Snapshot 副本或复制卷是免费的。
+
+*资源费用*
+
+资源费用是向云提供商支付的，用于对象存储容量以及将备份文件写入和读取到云中。
+
+* 对于备份到对象存储，您需要向云提供商支付对象存储费用。
++
+由于NetApp Backup and Recovery 保留了源卷的存储效率，因此您需要向云提供商对象存储支付ONTAP效率之后的数据费用（针对应用重复数据删除和压缩后的较少量的数据）。
+
+* 对于使用“搜索和还原”还原数据，您的云提供商会提供某些资源，并且您的搜索请求扫描的数据量会产生每 TiB 成本。  （浏览和恢复不需要这些资源。）
++
+ifdef::aws[]
+
++
+** 在 AWS 中， https://aws.amazon.com/athena/faqs/["亚马逊雅典娜"^]和 https://aws.amazon.com/glue/faqs/["AWS Glue"^]资源部署在新的 S3 存储桶中。
++
+endif::aws[]
+
+
+
++
+ifdef::azure[]
+
++
+** 在 Azure 中， https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapse 工作区"^]和 https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure 数据湖存储"^]在您的存储帐户中配置以存储和分析您的数据。
++
+endif::azure[]
+
+
+
+
+
+ifdef::gcp[]
+
+* 在 Google 中，部署了一个新的存储桶，并且 https://cloud.google.com/bigquery["Google Cloud BigQuery 服务"^]在帐户/项目级别进行配置。
+
+
+endif::gcp[]
+
+* 如果您计划从已移动到档案对象存储的备份文件中恢复卷数据，则云提供商会收取额外的每 GiB 检索费和每请求费。
+* 如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您已为云备份启用了 DataLock 和勒索软件保护），那么您还将产生来自云提供商的额外出口成本。
+
+
+*服务费*
+
+服务费用支付给NetApp ，涵盖创建对象存储备份的成本以及从这些备份中恢复卷或文件的成本。您只需为对象存储中保护的数据付费，该费用按备份到对象存储的ONTAP卷的源逻辑使用容量（ ONTAP效率之前）计算。此容量也称为前端兆字节 (FETB)。
+
+有三种方式可以支付备份服务费用。第一个选项是从您的云提供商处订阅，这样您就可以按月付费。第二种选择是签订年度合同。第三种选择是直接从NetApp购买许可证。
+
+
+
+== 许可
+
+NetApp Backup and Recovery 适用于以下消费模式：
+
+* *BYOL*：从NetApp购买的许可证，可与任何云提供商一起使用。
+* *PAYGO*：从云提供商的市场按小时订阅。
+* *年度*：来自云提供商市场的年度合同。
+
+
+仅当从对象存储进行备份和恢复时才需要备份许可证。创建 Snapshot 副本和复制卷不需要许可证。
+
+
+
+=== 自带驾照
+
+BYOL 是基于期限（1、2 或 3 年）和容量的，以 1 TiB 为增量。您向NetApp付费以使用该服务一段时间（比如 1 年）以及最大容量（比如 10 TiB）。
+
+您将收到一个序列号，请在NetApp控制台中输入该序列号以启用该服务。当达到任一限制时，您都需要更新许可证。备份 BYOL 许可证适用于与您的NetApp控制台组织或帐户关联的所有源系统。
+
+link:br-start-licensing.html["了解如何管理您的 BYOL 许可证"] 。
+
+
+
+=== 按需付费订阅
+
+NetApp Backup and Recovery 以按需付费模式提供基于消费的许可。通过云提供商的市场订阅后，您需要按 GiB 为备份数据付费 - 无需预付款。您的云提供商将通过每月账单向您收费。
+
+link:br-start-licensing.html["了解如何设置即用即付订阅"] 。
+
+请注意，当您首次注册 PAYGO 订阅时，可以享受 30 天的免费试用。
+
+
+
+=== 年度合同
+
+ifdef::aws[]
+
+使用 AWS 时，有两种年度合同可供选择，期限分别为 1 年、2 年或 3 年：
+
+* “云备份”计划使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
+* “CVO Professional”计划使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括根据此许可证收费的Cloud Volumes ONTAP卷的无限制备份（备份容量不计入许可证）。
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+使用 Azure 时，有两种年度合同可供选择，分别为 1 年、2 年或 3 年：
+
+* “云备份”计划使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
+* “CVO Professional”计划使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括根据此许可证收费的Cloud Volumes ONTAP卷的无限制备份（备份容量不计入许可证）。
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+当您使用 GCP 时，您可以向NetApp请求私人优惠，然后在NetApp Backup and Recovery 激活期间从 Google Cloud Marketplace 订阅时选择该计划。
+
+endif::gcp[]
+
+link:br-start-licensing.html["了解如何制定年度合同"] 。
+
+
+
+== NetApp备份和恢复的工作原理
+
+当您在Cloud Volumes ONTAP或本地ONTAP系统上启用NetApp Backup and Recovery 时，该服务会对您的数据执行完整备份。初始备份之后，所有附加备份都是增量的，这意味着只备份更改的块和新块。这使得网络流量保持最低限度。对象存储备份建立在 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["NetApp SnapMirror云技术"^]。
+
+
+CAUTION: 直接从您的云提供商环境采取的任何管理或更改云备份文件的操作都可能损坏文件并导致不受支持的配置。
+
+下图显示了各个组件之间的关系：
+
+image:diagram-backup-recovery-general.png["该图显示了NetApp Backup and Recovery 如何与源系统上的卷以及复制卷和备份文件所在的二级存储系统和目标对象存储进行通信。"]
+
+该图显示卷被复制到Cloud Volumes ONTAP系统，但卷也可以复制到本地ONTAP系统。
+
+
+
+=== 备份所在位置
+
+根据备份类型，备份位于不同的位置：
+
+* _快照副本_驻留在源系统中的源卷上。
+* _复制卷_驻留在二级存储系统上 - Cloud Volumes ONTAP或本地ONTAP系统。
+* _备份副本_存储在控制台在您的云帐户中创建的对象存储中。每个集群/系统有一个对象存储，控制台将对象存储命名为：“netapp-backup-clusteruuid”。请确保不要删除此对象存储。
+
+
+ifdef::aws[]
+
++ ** 在 AWS 中，控制台启用 https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 阻止公共访问功能"^]在 S3 存储桶上。
+
+endif::aws[]
+
+ifdef::azure[]
+
++ ** 在 Azure 中，控制台使用带有 Blob 容器存储帐户的新资源组或现有资源组。控制台 https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["阻止公众访问您的 Blob 数据"]默认情况下。
+
+endif::azure[]
+
+ifdef::gcp[]
+
++ ** 在 GCP 中，控制台使用带有存储帐户的新项目或现有项目作为 Google Cloud Storage 存储桶。
+
+endif::gcp[]
+
++ ** 在StorageGRID中，控制台使用现有的租户帐户作为 S3 存储桶。
+
++ ** 在ONTAP S3 中，控制台使用 S3 存储桶的现有用户帐户。
+
+如果您将来想要更改集群的目标对象存储，则需要link:prev-ontap-backup-manage.html["取消注册系统的NetApp Backup and Recovery"]，然后使用新的云提供商信息启用NetApp Backup and Recovery。
+
+
+
+=== 可自定义的备份计划和保留设置
+
+当您为系统启用NetApp备份和恢复时，您最初选择的所有卷都将使用您选择的策略进行备份。您可以为 Snapshot 副本、复制卷和备份文件选择单独的策略。如果要为具有不同恢复点目标 (RPO) 的某些卷分配不同的备份策略，则可以为该集群创建其他策略，并在激活NetApp Backup and Recovery 后将这些策略分配给其他卷。
+
+您可以选择所有卷的每小时、每天、每周、每月和每年备份的组合。对于对象备份，您还可以选择系统定义的策略之一，提供 3 个月、1 年和 7 年的备份和保留。您使用ONTAP System Manager 或ONTAP CLI 在集群上创建的备份保护策略也将作为选择出现。这包括使用自定义SnapMirror标签创建的策略。
+
+
+NOTE: 应用于卷的快照策略必须具有您在复制策略和备份到对象策略中使用的标签之一。如果未找到匹配的标签，则不会创建备份文件。例如，如果您要创建“每周”复制的卷和备份文件，则必须使用创建“每周” Snapshot 副本的 Snapshot 策略。
+
+一旦达到某个类别或间隔的最大备份数量，较旧的备份就会被删除，以便您始终拥有最新的备份（因此过时的备份不会继续占用空间）。
+
+
+TIP: 数据保护卷备份的保留期与源SnapMirror关系中定义的保留期相同。如果您愿意，可以使用 API 来更改此设置。
+
+
+
+=== 备份文件保护设置
+
+如果您的集群使用ONTAP 9.11.1 或更高版本，您可以保护对象存储中的备份免遭删除和勒索软件攻击。每个备份策略都提供了一个“DataLock 和勒索软件保护”部分，可以在特定时间段（即“保留期”）内应用于您的备份文件。
+
+* _DataLock_ 保护您的备份文件不被修改或删除。
+* _勒索软件保护_会在创建备份文件时以及恢复备份文件中的数据时扫描您的备份文件以查找勒索软件攻击的证据。
+
+
+默认情况下启用计划的勒索软件防护扫描。扫描频率的默认设置为 7 天。扫描仅发生在最新的 Snapshot 副本上。可以禁用计划扫描以降低成本。您可以使用“高级设置”页面上的选项在最新的 Snapshot 副本上启用或禁用计划的勒索软件扫描。如果启用它，则默认每周执行一次扫描。您可以将该计划更改为几天或几周，或者禁用它，以节省成本。
+
+备份保留期与备份计划保留期相同，再加上最多 31 天的缓冲期。例如，每周备份保留 5 份副本，每个备份文件将锁定 5 周。每月备份保留 6 份副本，每个备份文件将锁定 6 个月。
+
+当您的备份目标是 Amazon S3、Azure Blob 或NetApp StorageGRID时，当前可获得支持。未来版本中将添加其他存储提供商目的地。
+
+欲了解更多详细信息，请参阅以下信息：
+
+* link:prev-ontap-policy-object-options.html["DataLock 和勒索软件保护的工作原理"] 。
+* link:prev-ontap-policy-object-advanced-settings.html["如何在“高级设置”页面中更新勒索软件防护选项"] 。
+
+
+
+TIP: 如果您将备份分层到档案存储，则无法启用 DataLock。
+
+
+
+=== 旧备份文件的存档存储
+
+使用某些云存储时，您可以在一定天数后将较旧的备份文件移动到较便宜的存储类/访问层。您还可以选择立即将备份文件发送到档案存储，而无需写入标准云存储。请注意，如果您启用了 DataLock，则无法使用档案存储。
+
+ifdef::aws[]
+
+* 在 AWS 中，备份从“标准”存储类开始，并在 30 天后转换到“标准-不频繁访问”存储类。
++
+如果您的集群使用的是ONTAP 9.10.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp备份和恢复 UI 中的“S3 Glacier”或“S3 Glacier Deep Archive”存储，以进一步优化成本。link:prev-reference-aws-archive-storage-tiers.html["了解有关 AWS 档案存储的更多信息"] 。
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* 在 Azure 中，备份与 _Cool_ 访问层相关联。
++
+如果您的集群使用的是ONTAP 9.10.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp备份和恢复 UI 中的“Azure Archive”存储，以进一步优化成本。link:prev-reference-azure-archive-storage-tiers.html["了解有关 Azure 档案存储的更多信息"] 。
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* 在 GCP 中，备份与 _Standard_ 存储类相关联。
++
+如果您的集群使用的是ONTAP 9.12.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and Recovery UI 中的“_Archive_”存储中，以进一步优化成本。link:prev-reference-gcp-archive-storage-tiers.html["详细了解 Google 归档存储"] 。
+
+
+
+endif::gcp[]
+
+* 在StorageGRID中，备份与 _Standard_ 存储类相关联。
++
+如果您的本地集群使用的是ONTAP 9.12.1 或更高版本，并且您的StorageGRID系统使用的是 11.4 或更高版本，则可以在一定天数后将较旧的备份文件存档到公共云存档存储。当前支持 AWS S3 Glacier/S3 Glacier Deep Archive 或 Azure Archive 存储层。link:prev-ontap-backup-onprem-storagegrid.html["了解有关从StorageGRID归档备份文件的更多信息"] 。
+
+
+
+有关存档旧备份文件的详细信息，请参阅 link:prev-ontap-policy-object-options.html]。
+
+
+
+== FabricPool分层策略注意事项
+
+当您要备份的卷位于FabricPool聚合上，并且分配了分层策略时，您需要注意以下几点 `none`：
+
+* FabricPool分层卷的第一次备份需要读取所有本地和所有分层数据（从对象存储）。备份操作不会“重新加热”对象存储中分层的冷数据。
++
+此操作可能会导致从云提供商读取数据的成本一次性增加。
+
++
+** 后续备份是增量的，不会产生这种影响。
+** 如果在最初创建卷时将分层策略分配给卷，则您将不会看到此问题。
+
+
+* 在分配之前考虑备份的影响 `all`对卷进行分层策略。由于数据是立即分层的，因此NetApp Backup and Recovery 将从云层而不是本地层读取数据。由于并发备份操作共享与云对象存储的网络链接，因此如果网络资源饱和，可能会出现性能下降。在这种情况下，您可能需要主动配置多个网络接口 (LIF) 来减少这种类型的网络饱和。
+

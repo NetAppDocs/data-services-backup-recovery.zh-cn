@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: br-use-dashboard.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
+summary: 监控工作负载的健康状况可确保您了解工作负载保护的问题并可以采取措施解决这些问题。查看备份和恢复的状态并对NetApp备份和恢复仪表板上出现的任何警报做出响应。您可以查看保护摘要、恢复摘要、系统摘要等。 
+---
+= 在NetApp备份和恢复仪表板上查看保护健康状况
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+监控工作负载的健康状况可确保您了解工作负载保护的问题并采取措施解决这些问题。在NetApp备份和恢复仪表板上查看备份和恢复的状态。您可以查看系统摘要、保护摘要、作业摘要、恢复摘要等。
+
+*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+.步骤
+. 从NetApp备份和恢复菜单中，选择 *仪表板*。
++
+** 发现的主机或虚拟机的数量
+** 发现的 Kubernetes 集群数量
+** 对象存储上的备份目标数量
+** vCenter 数量
+** ONTAP中的存储集群数量
+
+
+
+
+
+
+== 查看保护摘要
+
+查看保护摘要中的以下信息：
+
+* 受保护和不受保护的数据库、虚拟机和数据存储区的总数。
++
+
+TIP: 受保护的数据库是已分配备份策略的数据库。不受保护的数据库是未分配备份策略的数据库。
+
+* 成功、出现警告或失败的备份次数。
+* 备份服务发现的总容量以及受保护的容量和不受保护的容量。将鼠标悬停在“*i*”图标上即可查看详细信息。
+
+
+
+
+== 查看职位摘要
+
+在作业摘要中查看已完成、正在运行或失败的作业总数。
+
+.步骤
+. 对于每个作业分布，更改过滤器以根据天数显示失败、正在运行和完成的摘要，例如过去 30 天、过去 7 天、过去 24 小时或过去 1 年。
+. 通过选择“查看作业监控”来查看失败、正在运行和已完成作业的详细信息。
+
+
+
+
+== 查看还原摘要
+
+查看还原摘要中的以下信息：
+
+* 执行的恢复作业总数
+* 已恢复的总容量
+* 在本地、辅助和对象存储上执行的恢复作业的数量。将鼠标悬停在图表上即可查看详细信息。
+

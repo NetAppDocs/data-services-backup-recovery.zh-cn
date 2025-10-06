@@ -1,0 +1,50 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-kubernetes-clusters.html 
+keywords: discover, backup and recovery, snapcenter, kubernetes, k8s, clusters, applications, inventory 
+summary: NetApp Backup and Recovery 使您能够发现和管理 Kubernetes 集群，以便保护集群托管的资源。 
+---
+= 管理 Kubernetes 集群
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery 使您能够发现和管理 Kubernetes 集群，以便保护集群托管的资源。
+
+.所需的NetApp控制台角色
+组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp备份和恢复访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+
+NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现 Kubernetes 工作负载"] 。
+
+
+
+== 编辑 Kubernetes 集群信息
+
+如果需要更改集群名称，您可以编辑集群。
+
+.步骤
+. 在NetApp Backup and Recovery 中，选择 *Inventory* > *Clusters*。
+. 在集群列表中，选择要编辑的集群并选择相关的操作菜单。
+. 选择*编辑集群*。
+. 对集群名称进行任何必要的更改。集群名称需要与您在发现过程中使用 Helm 命令的名称相匹配。
+. 选择*完成*。
+
+
+
+
+== 删除 Kubernetes 集群
+
+如果您不再需要保护 Kubernetes 集群托管的资源，则可以将其从NetApp Backup and Recovery 中删除。删除集群并不会删除集群或其资源；它只会从NetApp控制台清单中删除集群。在删除集群之前，您需要禁用保护并从NetApp Backup and Recovery 中删除相关的应用程序。
+
+.步骤
+. 在NetApp Backup and Recovery 中，选择 *Inventory* > *Clusters*。
+. 在集群列表中，选择要编辑的集群并选择相关的操作菜单。
+. 选择*删除集群*。
+. 查看确认对话框中的信息，然后选择*删除*。
+

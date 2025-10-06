@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: br-use-kvm-backup.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
+summary: 使用NetApp备份和恢复保护您的 KVM 工作负载。 
+---
+= 使用NetApp备份和恢复备份 KVM 工作负载
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+将 KVM 保护组从本地ONTAP系统备份到 Amazon Web Services、 Azure NetApp Files或StorageGRID，以确保您的数据受到保护。备份保护组时， NetApp控制台会备份该保护组中包含的虚拟机和存储池。备份会自动生成并存储在您的公共或私有云帐户的对象存储中。
+
+
+NOTE: 要按计划备份保护组，请创建管理备份和还原操作的策略。看link:br-use-policies-create.html["创建策略"]以获取说明。
+
+* 创建保护组来管理一组资源的备份和还原操作。看link:br-use-kvm-protection-groups.html["使用NetApp备份和恢复为 KVM 工作负载创建和管理保护组"]了解更多信息。
+
+
+
+
+== 立即使用按需备份来备份保护组
+
+您可以立即运行按需备份。如果您要对系统进行更改并希望确保在开始之前有备份，这将很有帮助。
+
+*必需的控制台角色* 组织管理员、文件夹或项目管理员、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+.步骤
+. 从NetApp控制台菜单中，选择“保护”>“备份和恢复”。
+. 在 KVM 图块中，选择 *发现和管理*。
+. 选择*库存*。
+. 选择一个工作负载来查看保护详细信息。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
+. 选择“*保护组*”、“*数据存储*”或“*虚拟机*”选项卡。
+. 选择要备份的保护组。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *立即备份*。
++
+
+NOTE: 应用于备份的策略与分配给保护组的策略相同。
+
+. 选择计划层级。
+. 选择*备份*。
+

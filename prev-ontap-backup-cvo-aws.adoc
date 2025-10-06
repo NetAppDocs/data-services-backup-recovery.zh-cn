@@ -1,0 +1,452 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-backup-cvo-aws.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+---
+= 使用NetApp备份和恢复将Cloud Volumes ONTAP数据备份到 Amazon S3
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+完成NetApp Backup and Recovery 中的几个步骤即可开始将卷数据从Cloud Volumes ONTAP系统备份到 Amazon S3。
+
+[]
+====
+*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+
+====
+
+
+== 验证对您的配置的支持
+
+在开始将卷备份到 S3 之前，请阅读以下要求以确保您具有受支持的配置。
+
+下图显示了每个组件以及您需要在它们之间准备的连接。
+
+或者，您也可以使用公共或私有连接连接到用于复制卷的辅助ONTAP系统。
+
+image:diagram_cloud_backup_cvo_aws.png["该图显示了NetApp Backup and Recovery 如何与源系统上的卷以及备份文件所在的目标存储进行通信。"]
+
+VPC 网关端点必须已经存在于您的 VPC 中。 https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html["了解有关网关端点的更多信息"^] 。
+
+支持的ONTAP版本:: 最低版本为ONTAP 9.8；建议使用ONTAP 9.8P13 及更高版本。
+使用客户管理的密钥进行数据加密所需的信息:: 您可以在激活向导中选择自己的客户管理密钥进行数据加密，而不是使用默认的 Amazon S3 加密密钥。在这种情况下，您需要设置加密管理密钥。 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["了解如何使用您自己的密钥"^] 。
+
+
+
+
+== 验证许可证要求
+
+对于NetApp Backup and Recovery PAYGO 许可，AWS Marketplace 中提供控制台订阅，可实现Cloud Volumes ONTAP和NetApp Backup and Recovery 的部署。你需要 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["订阅此NetApp控制台"^]在启用NetApp备份和恢复之前。  NetApp Backup and Recovery 的计费通过此订阅完成。
+
+对于允许您备份Cloud Volumes ONTAP数据和本地ONTAP数据的年度合同，您需要从 https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["AWS Marketplace 页面"^]进而 https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["将订阅与您的 AWS 凭证关联"^]。
+
+对于允许您捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery 的年度合同，您必须在创建Cloud Volumes ONTAP系统时设置年度合同。此选项不允许您备份本地数据。
+
+对于NetApp备份和恢复 BYOL 许可，您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。link:br-start-licensing.html["了解如何管理您的 BYOL 许可证"] 。当控制台代理和Cloud Volumes ONTAP系统部署在暗站中时，您必须使用 BYOL 许可证。
+
+并且您需要有一个 AWS 帐户，用于存储备份所在的存储空间。
+
+
+
+== 准备控制台代理
+
+控制台代理必须安装在具有完全或有限互联网访问权限（“标准”或“受限”模式）的 AWS 区域。 https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["有关详细信息，请参阅NetApp控制台部署模式"^] 。
+
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["了解控制台代理"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html["在 AWS 中以标准模式（完全互联网访问）部署控制台代理"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-restricted-mode.html["以受限模式安装控制台代理（限制出站访问）"^]
+
+
+
+
+=== 验证或添加控制台代理的权限
+
+为控制台提供权限的 IAM 角色必须包含最新的 S3 权限 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["控制台策略"^]。如果策略不包含所有这些权限，请参阅 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS 文档：编辑 IAM 策略"^]。
+
+以下是该政策的具体权限：
+
+[%collapsible]
+====
+[source, json]
+----
+{
+            "Sid": "backupPolicy",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteBucket",
+                "s3:GetLifecycleConfiguration",
+                "s3:PutLifecycleConfiguration",
+                "s3:PutBucketTagging",
+                "s3:ListBucketVersions",
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:PutObject",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketTagging",
+                "s3:GetBucketLocation",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetBucketAcl",
+                "s3:GetBucketPolicy",
+                "s3:PutBucketPolicy",
+                "s3:PutBucketOwnershipControls"
+                "s3:PutBucketPublicAccessBlock",
+                "s3:PutEncryptionConfiguration",
+                "s3:GetObjectVersionTagging",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectVersionAcl",
+                "s3:PutObjectTagging",
+                "s3:DeleteObjectTagging",
+                "s3:GetObjectRetention",
+                "s3:DeleteObjectVersionTagging",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:DeleteObjectVersion",
+                "s3:GetObjectTagging",
+                "s3:PutBucketVersioning",
+                "s3:PutObjectVersionTagging",
+                "s3:GetBucketVersioning",
+                "s3:BypassGovernanceRetention",
+                "s3:PutObjectRetention",
+                "s3:GetObjectVersion",
+                "athena:StartQueryExecution",
+                "athena:GetQueryResults",
+                "athena:GetQueryExecution",
+                "glue:GetDatabase",
+                "glue:GetTable",
+                "glue:CreateTable",
+                "glue:CreateDatabase",
+                "glue:GetPartitions",
+                "glue:BatchCreatePartition",
+                "glue:BatchDeletePartition"
+            ],
+            "Resource": [
+                "arn:aws:s3:::netapp-backup-*"
+            ]
+        },
+----
+====
+
+NOTE: 在 AWS 中国区域创建备份时，您需要将 IAM 策略中所有_Resource_部分下的 AWS 资源名称“arn”从“aws”更改为“aws-cn”；例如 `arn:aws-cn:s3:::netapp-backup-*`。
+
+所需的 AWS Cloud Volumes ONTAP权限:: 当您的Cloud Volumes ONTAP系统运行ONTAP 9.12.1 或更高版本的软件时，为该系统提供权限的 IAM 角色必须包含一组新的 S3 权限，专门用于NetApp备份和恢复，从最新的 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-set-up-iam-roles.html["Cloud Volumes ONTAP策略"^]。
++
+--
+如果您使用控制台版本 3.9.23 或更高版本创建了Cloud Volumes ONTAP系统，则这些权限应该已经是 IAM 角色的一部分。否则您将需要添加缺少的权限。
+
+--
+支持的 AWS 区域:: 所有 AWS 区域（包括 AWS GovCloud 区域）均支持NetApp Backup and Recovery。
+在不同的 AWS 账户中创建备份所需的设置:: 默认情况下，使用与Cloud Volumes ONTAP系统相同的帐户创建备份。如果您想要使用不同的 AWS 账户进行备份，则必须：
++
+--
+* 验证权限“s3：PutBucketPolicy”和“s3：PutBucketOwnershipControls”是否属于为控制台代理提供权限的 IAM 角色的一部分。
+* 在控制台中添加目标 AWS 账户凭证。 https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#add-additional-credentials-to-a-connector["了解如何操作"^] 。
+* 在第二个帐户的用户凭证中添加以下权限：
++
+....
+"athena:StartQueryExecution",
+"athena:GetQueryResults",
+"athena:GetQueryExecution",
+"glue:GetDatabase",
+"glue:GetTable",
+"glue:CreateTable",
+"glue:CreateDatabase",
+"glue:GetPartitions",
+"glue:BatchCreatePartition",
+"glue:BatchDeletePartition"
+....
+
+
+--
+创建您自己的存储桶:: 默认情况下，该服务会为您创建存储桶。如果您想使用自己的存储桶，您可以在启动备份激活向导之前创建它们，然后在向导中选择这些存储桶。
++
+--
+link:prev-ontap-protect-journey.html["了解有关创建您自己的存储桶的更多信息"^] 。
+
+--
+
+
+
+
+== 验证ONTAP复制卷的网络要求
+
+如果您计划使用NetApp Backup and Recovery 在辅助ONTAP系统上创建复制卷，请确保源系统和目标系统满足以下网络要求。
+
+
+
+==== 本地ONTAP网络要求
+
+* 如果集群位于您的场所，您应该从公司网络连接到云提供商中的虚拟网络。这通常是 VPN 连接。
+* ONTAP集群必须满足额外的子网、端口、防火墙和集群要求。
++
+由于您可以复制到Cloud Volumes ONTAP或本地系统，因此请查看本地ONTAP系统的对等要求。 https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["查看ONTAP文档中的集群对等前提条件"^] 。
+
+
+
+
+
+==== Cloud Volumes ONTAP网络要求
+
+* 实例的安全组必须包含所需的入站和出站规则：具体来说，ICMP 和端口 11104 和 11105 的规则。这些规则包含在预定义的安全组中。
+
+
+* 要在不同子网中的两个Cloud Volumes ONTAP系统之间复制数据，子网必须一起路由（这是默认设置）。
+
+
+
+
+== 在Cloud Volumes ONTAP上启用NetApp备份和恢复
+
+启用NetApp备份和恢复非常简单。根据您拥有的是现有Cloud Volumes ONTAP系统还是新系统，步骤略有不同。
+
+*在新系统上启用NetApp备份和恢复*
+
+NetApp Backup and Recovery 在系统向导中默认启用。确保该选项保持启用状态。
+
+看 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-aws.html["在 AWS 中启动Cloud Volumes ONTAP"^]了解创建Cloud Volumes ONTAP系统的要求和详细信息。
+
+.步骤
+. 从控制台*系统*页面，选择*添加系统*，选择云提供商，然后选择*添加新*。选择“创建Cloud Volumes ONTAP”。
+. 选择*Amazon Web Services*作为云提供商，然后选择单节点或 HA 系统。
+. 填写详细信息和凭证页面。
+. 在服务页面上，保持服务启用并选择*继续*。
+. 完成向导中的页面以部署系统。
+
+
+.结果
+系统上已启用NetApp Backup and Recovery。在这些Cloud Volumes ONTAP系统上创建卷后，启动NetApp Backup and Recovery 并link:prev-ontap-backup-manage.html["在您想要保护的每个卷上激活备份"]。
+
+*在现有系统上启用NetApp备份和恢复*
+
+随时直接从控制台在现有系统上启用NetApp备份和恢复。
+
+.步骤
+. 从控制台*系统*页面中，选择集群并选择右侧面板中备份和恢复旁边的*启用*。
++
+如果备份的 Amazon S3 目标在 *系统* 页面上以集群形式存在，则可以将该集群拖到 Amazon S3 系统上以启动设置向导。
+
+
+
+
+
+== 激活ONTAP卷上的备份
+
+随时直接从您的本地系统激活备份。
+
+向导将引导您完成以下主要步骤：
+
+* <<选择要备份的卷>>
+* <<定义备份策略>>
+* <<检查您的选择>>
+
+
+您还可以<<显示 API 命令>>在审查步骤中，您可以复制代码来自动为未来的系统激活备份。
+
+
+
+=== 启动向导
+
+.步骤
+. 使用以下方式之一访问激活备份和恢复向导：
++
+** 从控制台*系统*页面中，选择系统，然后选择右侧面板中备份和恢复旁边的*启用>备份卷*。
++
+如果备份的 AWS 目标作为系统存在于控制台 *系统* 页面上，则可以将ONTAP集群拖到 AWS 对象存储上。
+
+** 在备份和恢复栏中选择*卷*。从卷选项卡中，选择*操作*image:icon-action.png["操作图标"]图标选项并选择单个卷（尚未启用复制或备份到对象存储）的*激活备份*。
+
+
++
+向导的介绍页面显示保护选项，包括本地快照、复制和备份。如果您在此步骤中选择了第二个选项，则会出现“定义备份策略”页面，其中选择一个卷。
+
+. 继续以下选项：
++
+** 如果您已经有控制台代理，那么一切就绪了。只需选择*下一步*。
+** 如果您还没有控制台代理，则会出现“添加控制台代理”选项。请参阅<<准备控制台代理>> 。
+
+
+
+
+
+
+=== 选择要备份的卷
+
+选择您想要保护的卷。受保护的卷是具有以下一项或多项的卷：快照策略、复制策略、备份到对象策略。
+
+您可以选择保护FlexVol或FlexGroup卷；但是，在激活系统备份时不能选择这些卷的混合。了解如何link:prev-ontap-backup-manage.html["激活系统中附加卷的备份"]（FlexVol或FlexGroup）在为初始卷配置备份后。
+
+[NOTE]
+====
+* 您一次只能在单个FlexGroup卷上激活备份。
+* 您选择的卷必须具有相同的SnapLock设置。所有卷都必须启用SnapLock Enterprise或禁用SnapLock 。
+
+
+====
+.步骤
+如果您选择的卷已经应用了快照或复制策略，那么您稍后选择的策略将覆盖这些现有策略。
+
+. 在“选择卷”页面中，选择要保护的一个或多个卷。
++
+** 或者，过滤行以仅显示具有特定卷类型、样式等的卷，以便更轻松地进行选择。
+** 选择第一个卷后，您可以选择所有FlexVol卷（FlexGroup卷一次只能选择一个）。要备份所有现有的FlexVol卷，请先选中一个卷，然后选中标题行中的框。
+** 要备份单个卷，请选中每个卷对应的复选框。
+
+
+. 选择“下一步”。
+
+
+
+
+=== 定义备份策略
+
+定义备份策略涉及设置以下选项：
+
+* 您是否需要一个或所有备份选项：本地快照、复制和备份到对象存储
+* 架构
+* 本地快照策略
+* 复制目标和策略
++
+
+NOTE: 如果您选择的卷具有与您在此步骤中选择的策略不同的快照和复制策略，则现有策略将被覆盖。
+
+* 备份到对象存储信息（提供商、加密、网络、备份策略和导出选项）。
+
+
+.步骤
+. 在“定义备份策略”页面中，选择以下一项或全部。默认情况下，所有三个都被选中：
++
+** *本地快照*：如果您正在执行复制或备份到对象存储，则必须创建本地快照。
+** *复制*：在另一个ONTAP存储系统上创建复制卷。
+** *备份*：将卷备份到对象存储。
+
+
+. *架构*：如果您选择复制和备份，请选择以下信息流之一：
++
+** *级联*：信息从主存储系统流向辅助存储系统，再从辅助存储系统流向对象存储。
+** *扇出*：信息从主存储系统流向辅助存储系统，再从主存储系统流向对象存储。
++
+有关这些架构的详细信息，请参阅link:prev-ontap-protect-journey.html["规划您的保护之旅"]。
+
+
+
+. *本地快照*：选择现有的快照策略或创建新的快照策略。
++
+
+TIP: 要在激活快照之前创建自定义策略，请参阅link:br-use-policies-create.html["创建策略"]。
+
++
+要创建策略，请选择“创建新策略”并执行以下操作：
+
++
+** 输入策略的名称。
+** 选择最多五个时间表，通常频率不同。
+** 选择“*创建*”。
+
+
+. *复制*：设置以下选项：
++
+** *复制目标*：选择目标系统和 SVM。或者，选择将添加到复制卷名称的目标聚合或聚合以及前缀或后缀。
+** *复制策略*：选择现有的复制策略或创建一个。
++
+
+TIP: 要创建自定义策略，请参阅link:br-use-policies-create.html["创建策略"]。
+
++
+要创建策略，请选择“创建新策略”并执行以下操作：
+
++
+*** 输入策略的名称。
+*** 选择最多五个时间表，通常频率不同。
+*** 选择“*创建*”。
+
+
+
+
+. *备份到对象*：如果您选择了*备份*，请设置以下选项：
++
+** *提供商*：选择*Amazon Web Services*。
+** *提供商设置*：输入提供商详细信息和存储备份的区域。
++
+输入用于存储备份的 AWS 账户。这可以是与Cloud Volumes ONTAP系统所在的帐户不同的帐户。
+
++
+如果您想要使用不同的 AWS 账户进行备份，则必须在控制台中添加目标 AWS 账户凭证，并将权限“s3：PutBucketPolicy”和“s3：PutBucketOwnershipControls”添加到为控制台提供权限的 IAM 角色。
+
++
+选择存储备份的区域。这可能与Cloud Volumes ONTAP系统所在的区域不同。
+
++
+创建新存储桶或选择现有存储桶。
+
+** *加密密钥*：如果您创建了新的存储桶，请输入提供商提供给您的加密密钥信息。选择是否使用默认 AWS 加密密钥，或者从您的 AWS 账户中选择您自己的客户管理密钥来管理数据加密。(https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["了解如何使用您自己的加密密钥"^] ）。
++
+如果您选择使用自己的客户管理密钥，请输入密钥保管库和密钥信息。
+
+
+
++
+
+NOTE: 如果您选择了现有的存储桶，则加密信息已经可用，因此您现在无需输入。
+
++
+** *备份策略*：选择现有的备份到对象存储策略或创建一个。
++
+
+TIP: 要在激活备份之前创建自定义策略，请参阅link:br-use-policies-create.html["创建策略"]。
+
++
+要创建策略，请选择“创建新策略”并执行以下操作：
+
++
+*** 输入策略的名称。
+*** 选择最多五个时间表，通常频率不同。
+*** 对于备份到对象策略，设置 DataLock 和勒索软件保护设置。有关 DataLock 和勒索软件保护的详细信息，请参阅link:prev-ontap-policy-object-options.html["备份到对象策略设置"]。
+*** 选择“*创建*”。
+
+
+** *将现有的 Snapshot 副本导出到对象存储作为备份副本*：如果此系统中卷的任何本地 Snapshot 副本与您刚刚为此系统选择的备份计划标签（例如，每日、每周等）相匹配，则会显示此附加提示。选中此框可将所有历史快照复制到对象存储作为备份文件，以确保对您的卷进行最全面的保护。
+
+
+. 选择“下一步”。
+
+
+
+
+=== 检查您的选择
+
+这是审查您的选择并在必要时进行调整的机会。
+
+.步骤
+. 在“审核”页面中，审核您的选择。
+. （可选）选中复选框*自动将快照策略标签与复制和备份策略标签同步*。这将创建具有与复制和备份策略中的标签匹配的标签的快照。
+. 选择*激活备份*。
+
+
+.结果
+NetApp Backup and Recovery 开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括主存储系统数据的完整副本。后续传输包含 Snapshot 副本中包含的主存储系统数据的差异副本。
+
+在目标集群中创建一个复制卷，该卷将与主存储卷同步。
+
+在您输入的 S3 访问密钥和密钥指示的服务帐户中创建一个 S3 存储桶，并将备份文件存储在那里。
+
+显示卷备份仪表板，以便您可以监控备份的状态。
+
+您还可以使用link:br-use-monitor-tasks.html["作业监控页面"]。
+
+
+
+=== 显示 API 命令
+
+您可能想要显示并选择性地复制激活备份和恢复向导中使用的 API 命令。您可能希望这样做以便在未来的系统中自动激活备份。
+
+.步骤
+. 从激活备份和恢复向导中，选择*查看 API 请求*。
+. 要将命令复制到剪贴板，请选择*复制*图标。
+

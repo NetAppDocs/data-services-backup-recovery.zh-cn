@@ -1,0 +1,27 @@
+= SMB快照浏览
+:allow-uri-read: 
+
+
+
+
+=== SMB快照浏览
+
+此NetApp备份和恢复更新解决了阻止客户在 SMB 环境中浏览本地快照的问题。
+
+
+
+=== AWS GovCloud 环境更新
+
+此NetApp备份和恢复更新修复了由于 TLS 证书错误导致 UI 无法连接到 AWS GovCloud 环境的问题。通过使用控制台代理主机名而不是 IP 地址解决了该问题。
+
+
+
+=== 备份策略保留限制
+
+以前， NetApp Backup and Recovery UI 将备份限制为 999 份，而 CLI 允许更多。现在，您最多可以将 4,000 个卷附加到备份策略，并包含未附加到备份策略的 1,018 个卷。此更新包括防止超出这些限制的额外验证。
+
+
+
+=== SnapMirror云重新同步
+
+此更新可确保在删除SnapMirror关系后，无法从NetApp Backup and Recovery 启动不受支持的ONTAP版本的SnapMirror Cloud 重新同步。

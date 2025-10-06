@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: 您可以将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure、Google Cloud Platform 和StorageGRID，确保您的数据受到保护。备份会自动生成并存储在您的公共或私有云帐户的对象存储中。您可以实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。 
+---
+= 使用NetApp Backup and Recovery 管理资源概述
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+管理NetApp Backup and Recovery 中的资源对于确保您的数据受到保护至关重要。您可以管理备份、数据库、实例、应用程序主机和工作环境等资源。您可以查看、编辑和删除资源的保护设置。
+
+您可以完成与管理资源相关的以下任务：
+
+* link:br-use-manage-inventory.html["管理库存"] 。
+* link:br-use-manage-snapshots.html["管理快照"] 。
+* link:br-use-manage-kubernetes-clusters.html["管理 Kubernetes 集群"] 。
+* link:br-use-manage-kubernetes-applications.html["管理 Kubernetes 应用程序"] 。
+

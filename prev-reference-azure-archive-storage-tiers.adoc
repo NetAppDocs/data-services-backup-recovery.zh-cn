@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: prev-reference-azure-archive-storage-tiers.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp Backup and Recovery 支持一个 Azure 存档访问层和大多数区域。 
+---
+= NetApp备份和恢复支持的 Azure 存档访问层
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery 支持一个 Azure 存档访问层和大多数区域。
+
+[]
+====
+*注意* 要切换到NetApp Backup and Recovery UI 版本，请参阅link:br-start-switch-ui.html["切换到以前的NetApp备份和恢复 UI"]。
+
+====
+
+
+== NetApp备份和恢复支持的 Azure Blob 访问层
+
+当最初创建备份文件时，它们存储在_Cool_访问层中。此层针对存储不经常访问的数据进行了优化；但在需要时可以立即访问。
+
+如果您的源集群运行的是ONTAP 9.10.1 或更高版本，您可以选择在一定天数（通常超过 30 天）后将备份从“Cool_”存储分层到“Azure Archive_”存储，以进一步优化成本。此层中的数据在需要时无法立即访问，并且需要更高的检索成本，因此您需要考虑可能需要多久从这些存档的备份文件中恢复数据。请参阅此页面上有关从档案存储恢复数据的部分。
+
+请注意，当您使用此类生命周期规则配置NetApp Backup and Recovery 时，在 Azure 帐户中设置容器时不得配置任何生命周期规则。
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["了解 Azure Blob 访问层"^] 。
+
+
+
+== 从档案存储中恢复数据
+
+虽然将较旧的备份文件存储在档案存储中比冷存储便宜得多，但从 Azure 档案中的备份文件访问数据进行还原操作将花费更长的时间并且花费更多。
+
+从 Azure 存档恢复数据需要多少费用？:: 从 Azure 存档检索数据时，可以选择两个还原优先级：
++
+--
+* *高*：检索速度最快，成本较高
+* *标准*：检索速度较慢，成本较低
+
+
+每种方法都有不同的每 GB 检索费用和每请求费用。有关 Azure 区域 Azure 存档定价的详细信息，请访问 https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Azure 定价页面"^]。
+
+--
+
+
+
+NOTE: 将数据从 Azure 还原到StorageGRID系统时不支持高优先级。
+
+恢复 Azure 存档中存档的数据需要多长时间？:: 恢复时间由两部分组成：
++
+--
+* *检索时间*：从 Azure 存档中检索存档的备份文件并将其放置在冷存储中的时间。这有时被称为“补水”时间。检索时间根据您选择的恢复优先级而不同：
++
+** *高*：< 1 小时
+** *标准*：< 15 小时
+
+
+* *恢复时间*：从冷存储中的备份文件恢复数据的时间。这次与不使用存档层时直接从冷存储进行的典型恢复操作没有什么不同。
+
+
+有关 Azure 存档检索选项的更多信息，请参阅 https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq["此 Azure 常见问题解答"^]。
+
+--
+

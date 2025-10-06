@@ -1,0 +1,468 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-backup-cvo-azure.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+---
+= 使用NetApp备份和恢复将Cloud Volumes ONTAP数据备份到 Azure Blob 存储
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+完成NetApp Backup and Recovery 中的几个步骤，开始将卷数据从Cloud Volumes ONTAP系统备份到 Azure Blob 存储。
+
+[]
+====
+*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+
+====
+
+
+== 验证对您的配置的支持
+
+在开始将卷备份到 Azure Blob 存储之前，请阅读以下要求以确保具有受支持的配置。
+
+下图显示了每个组件以及您需要在它们之间准备的连接。
+
+或者，您也可以使用公共或私有连接连接到用于复制卷的辅助ONTAP系统。
+
+image:diagram_cloud_backup_cvo_azure.png["该图显示了NetApp Backup and Recovery 如何与源系统上的卷以及备份文件所在的目标存储进行通信。"]
+
+支持的ONTAP版本:: 最低版本为ONTAP 9.8；建议使用ONTAP 9.8P13 及更高版本。
+支持的 Azure 区域:: 所有 Azure 区域（包括 Azure 政府区域）都支持NetApp备份和恢复。
++
+--
+默认情况下， NetApp Backup and Recovery 为 Blob 容器提供本地冗余 (LRS) 以优化成本。如果您想确保数据在不同区域之间复制，则可以在激活NetApp Backup and Recovery 后将此设置更改为区域冗余 (ZRS)。请参阅 Microsoft 说明 https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["更改存储帐户的复制方式"^]。
+
+--
+在不同的 Azure 订阅中创建备份所需的设置:: 默认情况下，使用与Cloud Volumes ONTAP系统相同的订阅来创建备份。
+
+
+
+
+== 验证许可证要求
+
+对于NetApp Backup and Recovery PAYGO 许可，在启用NetApp Backup and Recovery 之前，需要通过 Azure Marketplace 进行订阅。  NetApp Backup and Recovery 的计费通过此订阅完成。 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["您可以从系统向导的“详细信息和凭证”页面进行订阅"^] 。
+
+对于NetApp备份和恢复 BYOL 许可，您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。link:br-start-licensing.html["了解如何管理您的 BYOL 许可证"] 。当控制台代理和Cloud Volumes ONTAP系统部署在暗站（“私有模式”）时，您必须使用 BYOL 许可证。
+
+并且您需要订阅 Microsoft Azure 以获取备份所在的存储空间。
+
+
+
+== 准备控制台代理
+
+控制台代理可以安装在具有完全或有限互联网访问权限（“标准”或“受限”模式）的 Azure 区域中。 https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["有关详细信息，请参阅NetApp控制台部署模式"^] 。
+
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["了解控制台代理"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["在 Azure 中以标准模式（完全互联网访问）部署控制台代理"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-restricted-mode.html["以受限模式安装控制台代理（限制出站访问）"^]
+
+
+
+
+=== 验证或添加控制台代理的权限
+
+要使用NetApp备份和恢复搜索和还原功能，您需要在控制台代理的角色中拥有特定权限，以便它可以访问 Azure Synapse 工作区和数据湖存储帐户。请参阅下面的权限，如果需要修改策略，请按照以下步骤操作。
+
+.开始之前
+* 您必须向您的订阅注册 Azure Synapse Analytics 资源提供程序（称为“Microsoft.Synapse”）。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["了解如何为您的订阅注册此资源提供程序"^] 。您必须是订阅*所有者*或*贡献者*才能注册资源提供者。
+* 必须打开端口 1433 才能实现控制台代理和 Azure Synapse SQL 服务之间的通信。
+
+
+.步骤
+. 确定分配给控制台代理虚拟机的角色：
++
+.. 在 Azure 门户中，打开虚拟机服务。
+.. 选择控制台代理虚拟机。
+.. 在“设置”下，选择“*身份*”。
+.. 选择“Azure 角色分配”。
+.. 记下分配给控制台代理虚拟机的自定义角色。
+
+
+. 更新自定义角色：
++
+.. 在 Azure 门户中，打开你的 Azure 订阅。
+.. 选择“访问控制 (IAM)”>“角色”。
+.. 选择自定义角色的省略号（*...*），然后选择*编辑*。
+.. 选择 *JSON* 并添加以下权限：
++
+[%collapsible]
+====
+[source, json]
+----
+"Microsoft.Storage/storageAccounts/listkeys/action",
+"Microsoft.Storage/storageAccounts/read",
+"Microsoft.Storage/storageAccounts/write",
+"Microsoft.Storage/storageAccounts/blobServices/containers/read",
+"Microsoft.Storage/storageAccounts/listAccountSas/action",
+"Microsoft.KeyVault/vaults/read",
+"Microsoft.KeyVault/vaults/accessPolicies/write",
+"Microsoft.Network/networkInterfaces/read",
+"Microsoft.Resources/subscriptions/locations/read",
+"Microsoft.Network/virtualNetworks/read",
+"Microsoft.Network/virtualNetworks/subnets/read",
+"Microsoft.Resources/subscriptions/resourceGroups/read",
+"Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+"Microsoft.Resources/subscriptions/resourceGroups/write",
+"Microsoft.Authorization/locks/*",
+"Microsoft.Network/privateEndpoints/write",
+"Microsoft.Network/privateEndpoints/read",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
+"Microsoft.Network/virtualNetworks/join/action",
+"Microsoft.Network/privateDnsZones/A/write",
+"Microsoft.Network/privateDnsZones/read",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
+"Microsoft.Network/networkInterfaces/delete",
+"Microsoft.Network/networkSecurityGroups/delete",
+"Microsoft.Resources/deployments/delete",
+"Microsoft.ManagedIdentity/userAssignedIdentities/assign/action",
+"Microsoft.Synapse/workspaces/write",
+"Microsoft.Synapse/workspaces/read",
+"Microsoft.Synapse/workspaces/delete",
+"Microsoft.Synapse/register/action",
+"Microsoft.Synapse/checkNameAvailability/action",
+"Microsoft.Synapse/workspaces/operationStatuses/read",
+"Microsoft.Synapse/workspaces/firewallRules/read",
+"Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
+"Microsoft.Synapse/workspaces/operationResults/read",
+"Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
+----
+====
++
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["查看策略的完整 JSON 格式"^]
+
+.. 选择*审核 + 更新*，然后选择*更新*。
+
+
+
+
+
+
+=== 使用客户管理的密钥进行数据加密所需的信息
+
+您可以在激活向导中使用自己的客户管理密钥进行数据加密，而不是使用默认的 Microsoft 管理加密密钥。在这种情况下，您将需要有 Azure 订阅、Key Vault 名称和密钥。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["了解如何使用您自己的密钥"^] 。
+
+NetApp Backup and Recovery 支持 Azure 访问策略、Azure 基于角色的访问控制 (Azure RBAC) 权限模型和托管硬件安全模型 (HSM)（请参阅 https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview["什么是 Azure Key Vault 托管 HSM？"]）。
+
+
+
+=== 创建 Azure Blob 存储帐户
+
+默认情况下，该服务会为您创建存储帐户。如果您想使用自己的存储帐户，您可以在启动备份激活向导之前创建它们，然后在向导中选择这些存储帐户。
+
+link:prev-ontap-protect-journey.html["了解有关创建自己的存储帐户的更多信息"] 。
+
+
+
+== 验证ONTAP复制卷的网络要求
+
+如果您计划使用NetApp Backup and Recovery 在辅助ONTAP系统上创建复制卷，请确保源系统和目标系统满足以下网络要求。
+
+
+
+==== 本地ONTAP网络要求
+
+* 如果集群位于您的场所，您应该从公司网络连接到云提供商中的虚拟网络。这通常是 VPN 连接。
+* ONTAP集群必须满足额外的子网、端口、防火墙和集群要求。
++
+由于您可以复制到Cloud Volumes ONTAP或本地系统，因此请查看本地ONTAP系统的对等要求。 https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["查看ONTAP文档中的集群对等前提条件"^] 。
+
+
+
+
+
+==== Cloud Volumes ONTAP网络要求
+
+* 实例的安全组必须包含所需的入站和出站规则：具体来说，ICMP 和端口 11104 和 11105 的规则。这些规则包含在预定义的安全组中。
+
+
+* 要在不同子网中的两个Cloud Volumes ONTAP系统之间复制数据，子网必须一起路由（这是默认设置）。
+
+
+
+
+== 在Cloud Volumes ONTAP上启用NetApp备份和恢复
+
+启用NetApp备份和恢复非常简单。根据您拥有的是现有Cloud Volumes ONTAP系统还是新系统，步骤略有不同。
+
+*在新系统上启用NetApp备份和恢复*
+
+NetApp Backup and Recovery 在系统向导中默认启用。确保该选项保持启用状态。
+
+看 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["在 Azure 中启动Cloud Volumes ONTAP"^]了解创建Cloud Volumes ONTAP系统的要求和详细信息。
+
+
+NOTE: 如果您想选择资源组的名称，请在部署Cloud Volumes ONTAP时*禁用* NetApp Backup and Recovery。
+
+.步骤
+. 从控制台*系统*页面，选择*添加系统*，选择云提供商，然后选择*添加新*。选择“创建Cloud Volumes ONTAP”。
+. 选择 *Microsoft Azure* 作为云提供商，然后选择单节点或 HA 系统。
+. 在“定义 Azure 凭据”页面中，输入凭据名称、客户端 ID、客户端密钥和目录 ID，然后选择“继续”。
+. 填写“详细信息和凭据”页面并确保已订阅 Azure 市场，然后选择“继续”。
+. 在服务页面上，保持服务启用并选择*继续*。
+. 完成向导中的页面以部署系统。
+
+
+.结果
+系统上已启用NetApp Backup and Recovery。在这些Cloud Volumes ONTAP系统上创建卷后，启动NetApp Backup and Recovery 并link:prev-ontap-backup-manage.html["在您想要保护的每个卷上激活备份"]。
+
+*在现有系统上启用NetApp备份和恢复*
+
+随时直接从系统启用NetApp备份和恢复。
+
+.步骤
+. 从控制台*系统*页面中，选择系统并选择右侧面板中备份和恢复旁边的*启用*。
++
+如果备份的 Azure Blob 目标作为系统存在于控制台*系统*页面上，则可以将集群拖到 Azure Blob 系统上以启动设置向导。
+
+. 完成向导中的页面以部署NetApp Backup and Recovery。
+. 当您想要启动备份时，请继续<<激活ONTAP卷上的备份>>。
+
+
+
+
+== 激活ONTAP卷上的备份
+
+随时直接从您的本地系统激活备份。
+
+向导将引导您完成以下主要步骤：
+
+* <<选择要备份的卷>>
+* <<定义备份策略>>
+* <<检查您的选择>>
+
+
+您还可以<<显示 API 命令>>在审查步骤中，您可以复制代码来自动为未来的系统激活备份。
+
+
+
+=== 启动向导
+
+.步骤
+. 使用以下方式之一访问激活备份和恢复向导：
++
+** 从控制台*系统*页面中，选择系统，然后选择右侧面板中备份和恢复旁边的*启用>备份卷*。
++
+如果备份的 Azure 目标作为系统存在于 *系统* 页面上，则可以将ONTAP集群拖到 Azure Blob 对象存储上。
+
+** 在备份和恢复栏中选择*卷*。从卷选项卡中，选择*操作*image:icon-action.png["操作图标"]图标并选择单个卷（尚未启用复制或备份到对象存储）的*激活备份*。
+
+
++
+向导的介绍页面显示保护选项，包括本地快照、复制和备份。如果您在此步骤中选择了第二个选项，则会出现“定义备份策略”页面，其中选择一个卷。
+
+. 继续以下选项：
++
+** 如果您已经有控制台代理，那么一切就绪了。只需选择*下一步*。
+** 如果您还没有控制台代理，则会出现“添加控制台代理”选项。请参阅<<准备控制台代理>> 。
+
+
+
+
+
+
+=== 选择要备份的卷
+
+选择您想要保护的卷。受保护的卷是具有以下一项或多项的卷：快照策略、复制策略、备份到对象策略。
+
+您可以选择保护FlexVol或FlexGroup卷；但是，在激活系统备份时不能选择这些卷的混合。了解如何link:prev-ontap-backup-manage.html["激活系统中附加卷的备份"]（FlexVol或FlexGroup）在为初始卷配置备份后。
+
+[NOTE]
+====
+* 您一次只能在单个FlexGroup卷上激活备份。
+* 您选择的卷必须具有相同的SnapLock设置。所有卷都必须启用SnapLock Enterprise或禁用SnapLock 。
+
+
+====
+.步骤
+如果您选择的卷已经应用了快照或复制策略，那么您稍后选择的策略将覆盖这些现有策略。
+
+. 在“选择卷”页面中，选择要保护的一个或多个卷。
++
+** 或者，过滤行以仅显示具有特定卷类型、样式等的卷，以便更轻松地进行选择。
+** 选择第一个卷后，您可以选择所有FlexVol卷。 （一次只能选择一个FlexGroup卷。）要备份所有现有的FlexVol卷，请先选中一个卷，然后选中标题行中的框。
+** 要备份单个卷，请选中每个卷对应的复选框。
+
+
+. 选择“下一步”。
+
+
+
+
+=== 定义备份策略
+
+定义备份策略涉及设置以下选项：
+
+* 您是否需要一个或所有备份选项：本地快照、复制和备份到对象存储
+* 架构
+* 本地快照策略
+* 复制目标和策略
++
+
+NOTE: 如果您选择的卷具有与您在此步骤中选择的策略不同的快照和复制策略，则现有策略将被覆盖。
+
+* 备份到对象存储信息（提供商、加密、网络、备份策略和导出选项）。
+
+
+.步骤
+. 在“定义备份策略”页面中，选择以下一项或全部。默认情况下，所有三个都被选中：
++
+** *本地快照*：如果您正在执行复制或备份到对象存储，则必须创建本地快照。
+** *复制*：在另一个ONTAP存储系统上创建复制卷。
+** *备份*：将卷备份到对象存储。
+
+
+. *架构*：如果您选择复制和备份，请选择以下信息流之一：
++
+** *级联*：信息从主存储系统流向辅助存储系统，再从辅助存储系统流向对象存储。
+** *扇出*：信息从主存储系统流向辅助存储系统，再从主存储系统流向对象存储。
++
+有关这些架构的详细信息，请参阅link:prev-ontap-protect-journey.html["规划您的保护之旅"]。
+
+
+
+. *本地快照*：选择现有的快照策略或创建一个。
++
+
+TIP: 要在激活快照之前创建自定义策略，请参阅link:br-use-policies-create.html["创建策略"]。
+
++
+要创建策略，请选择“创建新策略”并执行以下操作：
+
++
+** 输入策略的名称。
+** 选择最多五个时间表，通常频率不同。
+** 选择“*创建*”。
+
+
+. *复制*：设置以下选项：
++
+** *复制目标*：选择目标系统和 SVM。或者，选择将添加到复制卷名称的目标聚合或聚合以及前缀或后缀。
+** *复制策略*：选择现有的复制策略或创建一个。
++
+
+TIP: 要在激活复制之前创建自定义策略，请参阅link:br-use-policies-create.html["创建策略"]。
+
++
+要创建策略，请选择“创建新策略”并执行以下操作：
+
++
+*** 输入策略的名称。
+*** 选择最多五个时间表，通常频率不同。
+*** 选择“*创建*”。
+
+
+
+
+. *备份到对象*：如果您选择了*备份*，请设置以下选项：
++
+** *提供商*：选择*Microsoft Azure*。
+** *提供商设置*：输入提供商详细信息。
++
+输入存储备份的区域。这可能与Cloud Volumes ONTAP系统所在的区域不同。
+
++
+创建一个新的存储帐户或选择一个现有的存储帐户。
+
++
+输入用于存储备份的 Azure 订阅。这可能是与Cloud Volumes ONTAP系统所在的订阅不同的订阅。
+
++
+创建自己的管理 Blob 容器的资源组，或者选择资源组类型和组。
+
++
+
+TIP: 如果您想保护备份文件不被修改或删除，请确保创建存储帐户时启用了 30 天保留期的不可变存储。
+
++
+
+TIP: 如果要将较旧的备份文件分层到 Azure 存档存储以进一步优化成本，请确保存储帐户具有适当的生命周期规则。
+
+** *加密密钥*：如果您创建了新的 Azure 存储帐户，请输入提供商提供给您的加密密钥信息。选择是否使用默认 Azure 加密密钥，或者从 Azure 帐户中选择您自己的客户管理密钥来管理数据加密。
++
+如果您选择使用自己的客户管理密钥，请输入密钥保管库和密钥信息。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["了解如何使用自己的密钥"^] 。
+
+
+
++
+
+NOTE: 如果您选择了现有的 Microsoft 存储帐户，则加密信息已经可用，因此您现在无需输入。
+
++
+** *网络*：选择 IP 空间，以及是否使用私有端点。默认情况下，私有端点是禁用的。
++
+... 您要备份的卷所在的ONTAP集群中的 IP 空间。此 IP 空间的集群间 LIF 必须具有出站互联网访问权限。
+... 或者，选择是否使用之前配置的 Azure 专用终结点。 https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview["了解如何使用 Azure 专用终结点"^] 。
+
+
+** *备份策略*：选择现有的备份到对象存储策略。
++
+
+TIP: 要在激活备份之前创建自定义策略，请参阅link:br-use-policies-create.html["创建策略"]。
+
++
+要创建策略，请选择“创建新策略”并执行以下操作：
+
++
+*** 输入策略的名称。
+*** 对于备份到对象策略，设置 DataLock 和勒索软件保护设置。有关 DataLock 和勒索软件保护的详细信息，请参阅link:prev-ontap-policy-object-options.html["备份到对象策略设置"]。
+*** 选择最多五个时间表，通常频率不同。
+*** 选择“*创建*”。
+
+
+** *将现有的 Snapshot 副本导出到对象存储作为备份副本*：如果此系统中有任何卷的本地快照副本与您刚刚为此系统选择的备份计划标签（例如，每日、每周等）相匹配，则会显示此附加提示。选中此框可将所有历史快照复制到对象存储作为备份文件，以确保对您的卷进行最全面的保护。
+
+
+. 选择“下一步”。
+
+
+
+
+=== 检查您的选择
+
+这是审查您的选择并在必要时进行调整的机会。
+
+.步骤
+. 在“审核”页面中，审核您的选择。
+. （可选）选中复选框*自动将快照策略标签与复制和备份策略标签同步*。这将创建具有与复制和备份策略中的标签匹配的标签的快照。
+. 选择*激活备份*。
+
+
+.结果
+NetApp Backup and Recovery 开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括主存储系统数据的完整副本。后续传输包含 Snapshot 副本中包含的主存储数据的差异副本。
+
+在目标集群中创建一个复制卷，该复制卷将与主卷同步。
+
+在您输入的资源组中创建一个 Blob 存储容器，并将备份文件存储在那里。
+
+默认情况下， NetApp Backup and Recovery 为 Blob 容器提供本地冗余 (LRS) 以优化成本。如果您想确保数据在不同区域之间复制，则可以将此设置更改为区域冗余（ZRS）。请参阅 Microsoft 说明 https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["更改存储帐户的复制方式"^]。
+
+显示卷备份仪表板，以便您可以监控备份的状态。
+
+您还可以使用link:br-use-monitor-tasks.html["作业监控页面"]。
+
+
+
+=== 显示 API 命令
+
+您可能想要显示并选择性地复制激活备份和恢复向导中使用的 API 命令。您可能希望这样做以便在未来的系统中自动激活备份。
+
+.步骤
+. 从激活备份和恢复向导中，选择*查看 API 请求*。
+. 要将命令复制到剪贴板，请选择*复制*图标。
+
+
+
+
+== 下一步是什么？
+
+* 您可以link:prev-ontap-backup-manage.html["管理您的备份文件和备份策略"] 。这包括启动和停止备份、删除备份、添加和更改备份计划等。
+* 您可以link:prev-ontap-policy-object-advanced-settings.html["管理集群级备份设置"] 。这包括更改ONTAP用于访问云存储的存储密钥、更改可用于将备份上传到对象存储的网络带宽、更改未来卷的自动备份设置等等。
+* 您还可以link:prev-ontap-restore.html["从备份文件恢复卷、文件夹或单个文件"]到 AWS 中的Cloud Volumes ONTAP系统，或到本地ONTAP系统。
+

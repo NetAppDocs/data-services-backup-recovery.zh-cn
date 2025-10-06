@@ -1,0 +1,186 @@
+---
+sidebar: sidebar 
+permalink: api-backup-restore.html 
+keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis 
+summary: 可通过 Web UI 使用的NetApp备份和恢复功能也可通过 RESTful API 使用。 
+---
+= NetApp备份和恢复 API
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+可通过 Web UI 使用的NetApp备份和恢复功能也可通过 RESTful API 使用。
+
+NetApp Backup and Recovery 中定义了十类端点：
+
+* 备份 - 管理云和本地资源的备份操作，并检索备份数据的详细信息
+* 目录 - 根据查询管理文件的索引目录搜索（搜索和恢复）
+* 云 - 从NetApp控制台检索有关各种云提供商资源的信息
+* job - 管理NetApp控制台数据库上的作业详细信息条目
+* 许可证 - 从NetApp控制台检索系统的许可证有效性
+* 勒索软件扫描 - 对特定备份文件启动勒索软件扫描
+* 恢复 - 使您能够执行卷、文件和文件夹级别的恢复操作
+* sfr - 从备份文件中检索文件以进行单文件级恢复操作（浏览和恢复）
+* storagegrid - 检索有关StorageGRID服务器的详细信息，并使您能够发现StorageGRID服务器
+
+
+
+
+== 入门
+
+要开始使用NetApp备份和恢复 API，您需要获取用户令牌、 NetApp控制台帐户 ID 和控制台代理 ID。
+
+进行 API 调用时，您将在授权标头中添加用户令牌，并在 x-agent-id 标头中添加控制台代理 ID。您应该在 API 中使用NetApp控制台帐户 ID。
+
+.步骤
+. 从NetApp NetApp Console 网站获取用户令牌。
++
+确保从以下链接生成刷新令牌： https://services.cloud.netapp.com/refresh-token/.刷新令牌是一个字母数字字符串，您将使用它来生成用户令牌。
+
++
+[source, http]
+----
+curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/token?=' \
+--header 'Content-Type: application/json' \
+-d '{
+    "grant_type": "refresh_token",
+    "refresh_token": "JxaVHn9cGkX92aPVCkhat3zxxxxxwsC9qMl_pLHkZtsVA",
+    "client_id": "Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC"
+}'
+----
++
+
+NOTE: NetApp控制台网站上的用户令牌有一个到期日期。 API 响应包含一个“expires_in”字段，用于说明令牌何时过期。要刷新令牌，您需要再次调用此 API。
+
+. 获取您的NetApp控制台帐户 ID。
++
+[source, http]
+----
+GET 'https://api.bluexp.netapp.com/tenancy/account' -H 'authority: api.bluexp.netapp.com'
+Header:
+-H 'accept: application/json'
+-H 'accept-language: en-GB,en;q=0.9'
+-H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR………
+----
++
+此 API 将返回如下响应。您可以通过解析 *[0].[ accountPublicId]* 的输出来检索帐户 ID。
+
++
+ [{"accountPublicId":"account-i6vJXvZW","accountName":"rashidn","isSaas":true,"isGov":false,"isPrivatePreviewEnabled":false,"is3rdPartyServicesEnabled":false,"accountSerial":"96064469711530003565","userRole":"Role-1"}………
+. 获取包含控制台代理 ID 的 x-agent-id。
++
+[source, http]
+----
+GET curl 'https://api.services.cloud.netapp.com/occm/list-occms/account-OOnAR4ZS?excludeStandalone=true&source=saas' \
+Header:
+  -H 'authority: api.services.cloud.netapp.com' \
+  -H 'accept: application/json' \
+  -H 'accept-language: en-GB,en;q=0.9' \
+  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5…………
+----
++
+此 API 将返回如下响应。您可以通过解析 *occm.[0].[agent].[agentId]* 的输出来检索代理 ID。
+
++
+ {"occms":[{"account":"account-OOnAR4ZS","accountName":"cbs","occm":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","status":"ready","occmName":"cbsgcpdevcntsg-asia","primaryCallbackUri":"http://34.93.197.21","manualOverrideUris":[],"automaticCallbackUris":["http://34.93.197.21","http://34.93.197.21/occmui","https://34.93.197.21","https://34.93.197.21/occmui","http://10.138.0.16","http://10.138.0.16/occmui","https://10.138.0.16","https://10.138.0.16/occmui","http://localhost","http://localhost/occmui","http://localhost:1337","http://localhost:1337/occmui","https://localhost","https://localhost/occmui","https://localhost:1337","https://localhost:1337/occmui"],"createDate":"1652120369286","agent":{"useDockerInfra":true,"network":"default","name":"cbsgcpdevcntsg-asia","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Zclients","provider":"gcp","systemId":"a3aa3578-bfee-4d16-9e10-
+
+
+
+
+== 使用 API 的示例
+
+以下示例显示了在 Azure 云中的 East-US-2 区域中，在具有新策略的系统上激活NetApp Backup and Recovery 的 API 调用，该策略设置了每日、每小时和每周标签，并将存档天数设置为 180 天。请注意，这仅启用系统上的备份，但不会备份任何卷。
+
+.API 请求
+您会看到我们使用NetApp控制台帐户 ID `account-DpTFcxN3` 、控制台代理 ID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`和用户令牌 `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g`在此命令中。
+
+[source, http]
+----
+curl --location --request POST 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v3/backup/working-environment/VsaWorkingEnvironment-99hPYEgk' \
+--header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g' \
+--data-raw '{
+    "provider":"AZURE",
+    "backup-policy": {
+      "archive-after-days": 180,
+      "rule": [
+        {
+          "label": "hourly",
+          "retention": "2"
+        },
+        {
+          "label": "daily",
+          "retention": "30"
+        },
+        {
+          "label": "weekly",
+          "retention": "52"
+        }
+      ]
+    },
+    "ip-space": "Default",
+    "region": "eastus2",
+    "azure": {
+      "resource-group": "rn-test-backup-rg",
+      "subscription": "3beb4dd0-25d4-464f-9bb0-303d7cf5c0c2"
+    }
+  }'
+----
+.响应是一个您可以监控的作业 ID。
+[source, text]
+----
+{
+ "job-id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a"
+}
+----
+.监控响应。
+[source, http]
+----
+curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v1/job/1b34b6f6-8f43-40fb-9a52-485b0dfe893a' \
+--header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…hE9ss2NubK6wZRHUdSaORI7JvcOorUhJ8srqdiUiW6MvuGIFAQIh668of2M3dLbhVDBe8BBMtsa939UGnJx7Qz6Eg'
+----
+.回复。
+[source, text]
+----
+{
+    "job": [
+        {
+            "id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a",
+            "type": "backup-working-environment",
+            "status": "PENDING",
+            "error": "",
+            "time": 1651852160000
+        }
+    ]
+}
+----
+.监视直到“状态”为“完成”。
+[source, text]
+----
+{
+    "job": [
+        {
+            "id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a",
+            "type": "backup-working-environment",
+            "status": "COMPLETED",
+            "error": "",
+            "time": 1651852160000
+        }
+    ]
+}
+----
+
+
+== API 参考
+
+每个NetApp备份和恢复 API 的文档均可从以下位置获取 https://docs.netapp.com/us-en/console-automation/cbs/overview.html["NetApp控制台自动化"^]。

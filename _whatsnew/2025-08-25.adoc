@@ -1,0 +1,26 @@
+= 支持在预览版中保护 VMware 工作负载
+:allow-uri-read: 
+
+
+
+
+=== 支持在预览版中保护 VMware 工作负载
+
+此版本增加了对保护 VMware 工作负载的预览支持。将 VMware VM 和数据存储区从本地ONTAP系统备份到 Amazon Web Services 和StorageGRID。
+
+
+NOTE: 有关保护 VMware 工作负载的文档以技术预览的形式提供。对于此预览版产品， NetApp保留在正式发布之前修改产品详细信息、内容和时间表的权利。
+
+link:br-use-vmware-protect-overview.html["了解有关使用NetApp备份和恢复保护 VMware 工作负载的更多信息"] 。
+
+
+
+=== AWS、Azure 和 GCP 的高性能索引现已正式发布
+
+2025 年 2 月，我们宣布推出针对 AWS、Azure 和 GCP 的高性能索引 (Indexed Catalog v2) 预览版。此功能现已普遍可用（GA）。2025 年 6 月，我们默认向所有新客户提供该服务。通过此版本，所有客户都可以获得支持。高性能索引提高了受对象存储保护的工作负载的备份和恢复操作的性能。
+
+默认启用：
+
+* 如果您是新客户，则默认启用高性能索引。
+* 如果您是现有客户，您可以转到 UI 的“恢复”部分来启用重新索引。
+

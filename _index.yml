@@ -1,0 +1,114 @@
+---
+indexpage:
+  title: NetApp备份和恢复文档
+  summary: NetApp备份和恢复是一种数据服务，可为您的所有ONTAP工作负载（包括卷、数据库、虚拟机和 Kubernetes 工作负载）提供高效、安全且经济高效的数据保护。
+  keywords: netapp console, netapp backup recovery, ontap, on-premises, data protection,
+    sql, workloads, backup,
+  lead: NetApp备份和恢复是一种数据服务，可为您的所有ONTAP工作负载（包括卷、数据库、虚拟机和 Kubernetes 工作负载）提供高效、安全且经济高效的数据保护。
+  tiles:
+  - title: 开始使用
+    links:
+    - title: 了解NetApp备份和恢复
+      url: concept-backup-to-cloud.html
+    - title: 什么是新的
+      url: whats-new.html
+    - title: 前提条件
+      url: concept-start-prereq.html
+    - title: 在使用NetApp Backup and Recovery 之前设置备份目标
+      url: br-start-setup.html
+    - title: 配置NetApp备份和恢复设置
+      url: br-start-configure.html
+  - title: 保护ONTAP卷工作负载
+    links:
+    - title: 保护ONTAP卷工作负载概述
+      url: prev-ontap-protect-overview.html
+    - title: 规划ONTAP卷工作负载的保护之旅
+      url: prev-ontap-protect-journey.html
+    - title: 管理ONTAP卷工作负载的策略
+      url: prev-ontap-policy-manage.html
+    - title: ONTAP卷的备份到对象策略选项
+      url: prev-ontap-policy-object-options.html
+    - title: 恢复ONTAP卷工作负载
+      url: prev-ontap-restore.html
+  - title: 保护 Microsoft SQL Server 工作负载
+    links:
+    - title: 保护 Microsoft SQL Server 工作负载概述
+      url: br-use-mssql-protect-overview.html
+    - title: 发现 Microsoft SQL Server 工作负载并选择性地导入SnapCenter资源
+      url: br-start-discover.html
+    - title: 备份 Microsoft SQL Server 工作负载
+      url: br-use-mssql-backup.html
+    - title: 恢复 Microsoft SQL Server 工作负载
+      url: br-use-mssql-restore.html
+    - title: 克隆 Microsoft SQL Server 工作负载
+      url: br-use-mssql-clone.html
+  - title: 保护 VMware 工作负载（私人预览版）
+    links:
+    - title: 保护 VMware 工作负载概述
+      url: br-use-vmware-protect-overview.html
+    - title: 发现 VMware 工作负载
+      url: br-use-vmware-discovery.html
+    - title: 为 VMware 工作负载创建和管理保护组
+      url: br-use-vmware-protection-groups.html
+    - title: 备份 VMware 工作负载
+      url: br-use-vmware-backup.html
+    - title: 恢复 VMware 工作负载
+      url: br-use-vmware-restore.html
+  - title: 保护 KVM 工作负载（私人预览版）
+    links:
+    - title: 保护 KVM 工作负载概述
+      url: "/br-use-kvm-protect-overview.html"
+    - title: 发现 KVM 工作负载
+      url: "/br-start-discover-kvm.html"
+    - title: 为 KVM 工作负载创建和管理保护组
+      url: "/br-use-kvm-protection-groups.html"
+    - title: 备份 KVM 工作负载
+      url: "/br-use-kvm-backup.html"
+    - title: 恢复 KVM 工作负载
+      url: "/br-use-kvm-restore.html"
+  - title: 保护 Hyper-V 工作负载（私人预览版）
+    links:
+    - title: 保护 Hyper-V 工作负载概述
+      url: "/br-use-hyperv-protect-overview.html"
+    - title: 发现 Hyper-V 工作负载
+      url: "/br-start-discover-hyperv.html"
+    - title: 为 Hyper-V 工作负载创建和管理保护组
+      url: "/br-use-hyperv-protection-groups.html"
+    - title: 备份 Hyper-V 工作负载
+      url: "/br-use-hyperv-backup.html"
+    - title: 恢复 Hyper-V 工作负载
+      url: "/br-use-hyperv-restore.html"
+  - title: 保护 Oracle 工作负载（私人预览版）
+    links:
+    - title: 保护 Oracle 工作负载概述
+      url: "/br-use-oracle-protect-overview.html"
+    - title: 发现 Oracle 工作负载
+      url: "/br-start-discover-oracle.html"
+    - title: 为 Oracle 工作负载创建和管理保护组
+      url: "/br-use-oracle-protection-groups.html"
+    - title: 备份 Oracle 工作负载
+      url: "/br-use-oracle-backup.html"
+    - title: 恢复 Oracle 工作负载
+      url: "/br-use-oracle-restore.html"
+  - title: 保护 Kubernetes 工作负载（预览版）
+    links:
+    - title: 保护 Kubernetes 工作负载概述
+      url: br-use-kubernetes-protect-overview.html
+    - title: 发现 Kubernetes 工作负载
+      url: br-start-discover-kubernetes.html
+    - title: 添加和保护 Kubernetes 应用程序
+      url: br-use-protect-kubernetes-applications.html
+    - title: 管理 Kubernetes 集群
+      url: br-use-manage-kubernetes-clusters.html
+    - title: 管理 Kubernetes 应用程序
+      url: br-use-manage-kubernetes-applications.html
+    - title: 恢复 Kubernetes 应用程序
+      url: br-use-restore-kubernetes-applications.html
+  - title: 博客和社区
+    links:
+    - title: NetApp控制台
+      url: https://www.netapp.com/console
+    - title: NetApp数据服务
+      url: https://www.netapp.com/data-services/
+    - title: NetApp 社区
+      url: https://community.netapp.com/

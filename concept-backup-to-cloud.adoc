@@ -1,0 +1,318 @@
+---
+sidebar: sidebar 
+permalink: concept-backup-to-cloud.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: NetApp备份和恢复是一种数据服务，可为您的所有ONTAP工作负载（包括卷、数据库、虚拟机和 Kubernetes 工作负载）提供高效、安全且经济高效的数据保护。 
+---
+= 了解NetApp备份和恢复
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp备份和恢复是一种数据服务，可为您的所有ONTAP工作负载（包括卷、数据库、虚拟机和 Kubernetes 工作负载）提供高效、安全且经济高效的数据保护。
+
+所有ONTAP系统都已内置对备份和恢复的支持，因此无需额外的硬件、软件许可证或媒体网关。这使得备份操作变得简单且经济高效。  NetApp控制台简化了任何备份策略的实施，包括全方位的 3-2-1 备份变体，而无需多个资源管理器或专业人员。
+
+
+NOTE: 有关保护 VMware、KVM、Hyper-V 和 Kubernetes 工作负载的文档以技术预览的形式提供。对于此预览版产品， NetApp保留在正式发布之前修改产品详细信息、内容和时间表的权利。
+
+
+
+== NetApp备份和恢复功能
+
+使用NetApp Backup and Recovery 实现以下目标：
+
+* * ONTAP卷工作负载*：
++
+** 创建本地快照，复制到二级存储，并将ONTAP卷从本地ONTAP或Cloud Volumes ONTAP系统备份到公共或私有云帐户中的对象存储。
+** 创建块级、增量永久备份，并将其存储在另一个ONTAP集群和云中的对象存储中。
+** 将NetApp Backup and Recovery 与SnapCenter一起使用。
+** 请参阅link:prev-ontap-protect-overview.html["保护ONTAP卷"] 。
+
+
+* *Microsoft SQL Server 工作负载*：
++
+** 从本地ONTAP、 Cloud Volumes ONTAP或Amazon FSx for NetApp ONTAP备份 Microsoft SQL Server 实例和数据库。
+** 还原 Microsoft SQL Server 数据库。
+** 克隆 Microsoft SQL Server 数据库。
+** 不使用SnapCenter即可使用NetApp Backup and Recovery。
+** 请参阅link:br-use-mssql-protect-overview.html["保护 Microsoft SQL Server 工作负载"] 。
+
+
+* VMware 工作负载（使用新 UI 预览，无需SnapCenter Plug-in for VMware vSphere）*：
++
+** 使用NetApp备份和恢复保护您的 VMware VM 和数据存储。
+** 将 VMware 工作负载备份到 Amazon Web Services S3 或StorageGRID （预览版）。
+** 将 VMware 数据从云端恢复到本地 vCenter。
+** 使用NetApp Backup and Recovery，无需SnapCenter Plug-in for VMware vSphere。
+** 请参阅link:br-use-vmware-protect-overview.html["保护 VMware 工作负载"] 。
+
+
+* VMware 工作负载（使用SnapCenter Plug-in for VMware vSphere）
++
+** 将虚拟机和数据存储备份到 Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform 和StorageGRID ，并将虚拟机还原回SnapCenter Plug-in for VMware vSphere。
+** 使用NetApp备份和恢复将虚拟机数据从云恢复到本地 vCenter。您可以将虚拟机恢复到与备份完全相同的位置或其他位置。
+** 将NetApp Backup and Recovery 与适用于SnapCenter Plug-in for VMware vSphere一起使用。
+** 请参阅link:prev-vmware-protect-overview.html["保护 VMware 工作负载"] 。
+
+
+* KVM 工作负载（预览版）
++
+** 备份和还原虚拟机
+** 备份 KVM 存储池
+** 使用保护组管理备份任务
+** 请参阅link:br-use-kvm-protect-overview.html["保护KVM工作负载"] 。
+
+
+* Hyper-V 工作负载（预览版）
++
+** 备份和还原虚拟机
+** 使用保护组管理备份任务
+** 请参阅link:br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载"] 。
+
+
+* Oracle 工作负载（预览版）
++
+** 备份和恢复数据库和日志
+** 使用保护组管理备份任务
+** 创建策略来管理数据库和日志备份
+** 使用 3-2-1 备份架构保护数据库
+** 配置备份保留
+** 挂载和卸载 ARCHIVELOG 备份
+** 请参阅link:br-use-oracle-protect-overview.html["保护 Oracle 工作负载"] 。
+
+
+* Kubernetes 工作负载（预览版）
++
+** 在一个地方管理和保护您的 Kubernetes 应用程序和资源。
+** 使用保护策略来构建增量备份。
+** 将应用程序和资源恢复到相同或不同的集群和命名空间。
+** 不使用SnapCenter即可使用NetApp Backup and Recovery。
+** 请参阅link:br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载"] 。
+
+
+
+
+
+
+== 使用NetApp备份和恢复的优势
+
+NetApp Backup and Recovery 具有以下优势：
+
+* **高效**： NetApp Backup and Recovery 执行块级、永久增量复制，从而显著减少复制和存储的数据量。这有助于最大限度地减少网络流量和存储成本。
+* **安全**： NetApp Backup and Recovery 对传输中和静止的数据进行加密，并使用安全通信协议来保护您的数据。
+* **经济高效**： NetApp Backup and Recovery 使用您的云帐户中可用的成本最低的存储层，有助于降低成本。
+* **自动化**： NetApp Backup and Recovery 根据预定义的计划自动生成备份，这有助于确保您的数据受到保护。
+* **灵活**： NetApp Backup and Recovery 使您能够将数据恢复到相同或不同的系统，从而为数据恢复提供了灵活性。
+
+
+
+
+== 成本
+
+NetApp不会向您收取试用版的使用费用。但是，您需要承担与您使用的云资源相关的费用，例如存储和数据传输费用。
+
+使用NetApp Backup and Recovery 与ONTAP系统的备份到对象功能会产生两种类型的成本：
+
+* 资源费用
+* 服务费
+
+
+除了存储快照副本和复制卷所需的磁盘空间外，创建快照副本或复制卷是免费的。
+
+*资源费用*
+
+资源费用是向云提供商支付的，用于对象存储容量以及将备份文件写入和读取到云中。
+
+* 对于备份到对象存储，您需要向云提供商支付对象存储费用。
++
+由于NetApp Backup and Recovery 保留了源卷的存储效率，因此您需要向云提供商对象存储支付ONTAP效率之后的数据费用（针对应用重复数据删除和压缩后的较少量的数据）。
+
+* 对于使用“搜索和还原”还原数据，您的云提供商会提供某些资源，并且您的搜索请求扫描的数据量会产生每 TiB 成本。  （浏览和恢复不需要这些资源。）
++
+ifdef::aws[]
+
++
+** 在 AWS 中， https://aws.amazon.com/athena/faqs/["亚马逊雅典娜"^]和 https://aws.amazon.com/glue/faqs/["AWS Glue"^]资源部署在新的 S3 存储桶中。
++
+endif::aws[]
+
+
+
++
+ifdef::azure[]
+
++
+** 在 Azure 中， https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapse 工作区"^]和 https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure 数据湖存储"^]在您的存储帐户中配置以存储和分析您的数据。
++
+endif::azure[]
+
+
+
+
+
+ifdef::gcp[]
+
+* 在 Google 中，部署了一个新的 bucket，并且 https://cloud.google.com/bigquery["Google Cloud BigQuery 服务"^]在帐户/项目级别进行配置。endif::gcp[]
++
+** 如果您计划从已移动到档案对象存储的备份文件中恢复卷数据，则云提供商会收取额外的每 GiB 检索费和每请求费。
+** 如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 DataLock 和勒索软件保护），那么您还将产生来自云提供商的额外出口成本。
+
+
+
+
+*服务费*
+
+服务费用支付给NetApp ，涵盖创建对象存储备份的成本以及从这些备份中恢复卷或文件的成本。您只需为对象存储中保护的数据付费，该费用根据备份到对象存储的ONTAP卷的源逻辑使用容量（ ONTAP效率之前）计算。此容量也称为前端兆字节 (FETB)。
+
+
+NOTE: 对于 Microsoft SQL Server，当您启动将快照复制到辅助ONTAP目标或对象存储时，会产生费用。
+
+有三种方式可以支付备份服务费用：
+
+* 第一个选项是从您的云提供商处订阅，这样您就可以按月付费。
+* 第二种选择是签订年度合同。
+* 第三种选择是直接从NetApp购买许可证。阅读<<许可,许可>>部分了解详情。
+
+
+
+
+== 许可
+
+NetApp Backup and Recovery 可免费试用。您可以在有限的时间内无需许可证密钥使用该服务。
+
+NetApp Backup and Recovery 适用于以下消费模式：
+
+* *自带许可证 (BYOL)*：从NetApp购买的许可证，可与任何云提供商一起使用。
+* *即用即付 (PAYGO)*：从云提供商的市场按小时订阅。
+* *年度*：来自云提供商市场的年度合同。
+
+
+仅当从对象存储进行备份和恢复时才需要备份许可证。创建 Snapshot 副本和复制卷不需要许可证。
+
+*自带驾照*
+
+BYOL 是基于期限的（1、2 或 3 年），并且以 1 TiB 为增量基于容量。您向NetApp付费以使用该服务一段时间（比如 1 年）以及最大容量（比如 10 TiB）。
+
+您将收到一个序列号，请在NetApp控制台中输入该序列号以启用该服务。当达到任一限制时，您都需要更新许可证。备份 BYOL 许可证适用于与您的NetApp控制台组织或帐户关联的所有源系统。
+
+link:br-start-licensing.html["了解如何设置许可证"] 。
+
+*按需付费订阅*
+
+NetApp Backup and Recovery 以按需付费模式提供基于消费的许可。通过云提供商的市场订阅后，您需要按 GiB 为备份数据付费 - 无需预付款。您的云提供商将通过每月账单向您收费。
+
+请注意，当您首次注册 PAYGO 订阅时，可以享受 30 天的免费试用。
+
+*年度合同*
+
+ifdef::aws[]
+
+使用 AWS 时，有两种年度合同可供选择，分别为 1 年、2 年或 3 年：
+
+* “云备份”计划使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
+* “CVO Professional”计划使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括根据此许可证收费的Cloud Volumes ONTAP卷的无限制备份（备份容量不计入许可证）。endif::aws[]
+
+
+ifdef::azure[]
+
+使用 Azure 时，有两种年度合同可供选择，分别为 1 年、2 年或 3 年：
+
+* “云备份”计划使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
+* “CVO Professional”计划使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括根据此许可证收费的Cloud Volumes ONTAP卷的无限制备份（备份容量不计入许可证）。endif::azure[]
+
+
+ifdef::gcp[]
+
+使用 GCP 时，您可以向NetApp请求私人优惠，然后在NetApp Backup and Recovery 激活期间从 Google Cloud Marketplace 订阅时选择该计划。endif::gcp[]
+
+
+
+== 支持的数据源、系统和备份目标
+
+.支持的工作负载数据源
+NetApp Backup and Recovery 可保护以下工作负载：
+
+* ONTAP卷
+* 用于物理、VMware 虚拟机文件系统 (VMFS) 和 VMware 虚拟机磁盘 (VMDK) NFS 的 Microsoft SQL Server 实例和数据库
+* VMware 虚拟机和数据存储区
+* KVM 工作负载（预览）
+* Hyper-V 工作负载（预览版）
+* Kubernetes 工作负载（预览版）
+
+
+.支持的系统
+* 本地ONTAP SAN（iSCSI 协议）和 NAS（使用 NFS 和 CIFS 协议），采用ONTAP 9.8 及更高版本
+* 适用于 AWS 的Cloud Volumes ONTAP 9.8 或更高版本（使用 SAN 和 NAS）
+
+
+* 适用于 Microsoft Azure 的Cloud Volumes ONTAP 9.8 或更高版本（使用 SAN 和 NAS）
+* Amazon FSx for NetApp ONTAP
+
+
+.支持备份目标
+* 亚马逊网络服务（AWS）S3
+* Microsoft Azure Blob（预览版不适用于 VMware 工作负载）
+* StorageGRID
+* ONTAP S3（预览版不适用于 VMware 工作负载）
+
+
+
+
+== NetApp备份和恢复的工作原理
+
+当您启用NetApp备份和恢复时，该服务会对您的数据执行完整备份。初始备份之后，所有附加备份都是增量备份。这使得网络流量保持最低限度。
+
+下图显示了组件之间的关系。
+
+image:diagram-br-321-aff-a.png["展示NetApp Backup and Recovery 如何使用 3-2-1 保护策略的图表"]
+
+
+NOTE: 还支持从主存储到对象存储，而不仅仅是从二级存储到对象存储。
+
+
+
+=== 备份在对象存储位置的位置
+
+备份副本存储在NetApp控制台在您的云帐户中创建的对象存储中。每个集群或系统都有一个对象存储，控制台按如下方式命名对象存储： `netapp-backup-clusteruuid` 。请确保不要删除此对象存储。
+
+ifdef::aws[]
+
+* 在 AWS 中， NetApp控制台支持 https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 阻止公共访问功能"^]在 S3 存储桶上。endif::aws[]
+
+
+ifdef::azure[]
+
+* 在 Azure 中， NetApp控制台使用新的或现有的资源组以及 Blob 容器的存储帐户。控制台 https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["阻止公众访问您的 Blob 数据"]默认情况下。endif::azure[]
+
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+* 在StorageGRID中，控制台使用现有的存储帐户作为对象存储桶。
+* 在ONTAP S3 中，控制台使用 S3 存储桶的现有用户帐户。
+
+
+
+
+=== 备份副本与您的NetApp控制台组织相关联
+
+备份副本与控制台代理所在的NetApp控制台组织相关联。 https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["了解NetApp控制台身份和访问"^] 。
+
+如果同一个NetApp控制台组织中有多个控制台代理，则每个控制台代理都会显示相同的备份列表。
+
+
+
+== 可能对您使用NetApp备份和恢复有帮助的术语
+
+了解一些与保护相关的术语可能会对您有所帮助。
+
+* *保护*： NetApp备份和恢复中的保护意味着确保使用保护策略定期将快照和不可变备份发送到不同的安全域。
+* *工作负载*： NetApp Backup and Recovery 中的工作负载可以包括ONTAP卷、Microsoft SQL Server 实例和数据库；VMware VM 和数据存储区；或 Kubernetes 集群和应用程序。
+

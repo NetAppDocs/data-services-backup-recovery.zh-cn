@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-hyperv.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, workloads, protect 
+summary: NetApp Backup and Recovery 需要首先发现工作负载，以便您保护它们。 
+---
+= 在NetApp备份和恢复中发现 Hyper-V 工作负载
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery 需要首先发现 Hyper-V 虚拟机，以便您可以保护它们。
+
+*所需的控制台角色* 备份和恢复超级管理员。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+
+
+
+== 添加 Hyper-V 主机并发现资源
+
+添加 Hyper-V 主机信息并让NetApp Backup and Recovery 发现虚拟机。在每个控制台代理中，选择您想要发现资源的系统。
+
+
+NOTE: 当您添加 Hyper-V 主机并发现资源时， NetApp Backup and Recovery 会在 Hyper-V 主机上安装NetApp Hyper-V 插件和NetApp SnapCenter Windows FileSystem 插件，以帮助管理和保护虚拟机。
+
+.步骤
+. 从NetApp控制台菜单中，选择 *保护* > *备份和恢复*。
++
+如果这是您第一次登录NetApp Backup and Recovery，并且控制台中已经有系统，但尚未发现任何资源，则会出现“欢迎使用新的NetApp Backup and Recovery”登录页面并显示“发现资源”选项。
+
+. 选择*发现资源*。
+. 输入以下信息：
++
+.. *工作负载类型*：选择*Hyper-V*。
+.. 如果您尚未存储此 Hyper-V 主机的凭据，请选择“添加凭据”。
++
+... 选择与该主机一起使用的控制台代理。
+... 输入此凭证的名称。
+... 输入该帐户的用户名和密码。
+... 选择*完成*。
+
+
+.. *主机注册*：添加新的 Hyper-V 主机。输入主机的 FQDN 或 IP 地址、凭据、控制台代理和端口号。
+
+
+. 选择*发现*。
++
+
+TIP: 此过程可能需要几分钟。
+
+
+
+.结果
+NetApp Backup and Recovery 发现资源后，Hyper-V 工作负载将显示在 Inventory 页面上的工作负载列表中。
+
+
+
+== 继续访问NetApp备份和恢复仪表板
+
+. 要显示NetApp备份和恢复仪表板，请从NetApp控制台菜单中选择 *仪表板*。
+. 审查数据保护的健康状况。处于危险中或受保护的工作负载的数量会根据新发现、受保护和备份的工作负载而增加。
+

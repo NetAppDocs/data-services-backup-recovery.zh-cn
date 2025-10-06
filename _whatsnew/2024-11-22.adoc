@@ -1,0 +1,25 @@
+= SnapLock Compliance和SnapLock Enterprise保护模式
+:allow-uri-read: 
+
+
+
+
+=== SnapLock Compliance和SnapLock Enterprise保护模式
+
+NetApp Backup and Recovery 现在可以备份使用SnapLock Compliance或SnapLock Enterprise保护模式配置的FlexVol和FlexGroup本地卷。您的集群必须运行ONTAP 9.14 或更高版本才能获得此支持。自ONTAP版本 9.11.1 起，支持使用SnapLock Enterprise模式备份FlexVol卷。早期的ONTAP版本不支持备份SnapLock保护卷。
+
+请参阅受支持卷的完整列表 https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["了解NetApp备份和恢复"]。
+
+
+
+=== 在卷页面上为搜索和恢复过程建立索引
+
+在使用搜索和还原之前，您需要在要从中还原卷数据的每个源系统上启用“索引”。这使得索引目录能够跟踪每个卷的备份文件。卷页面现在显示索引状态：
+
+* 已编入索引：卷已编入索引。
+* 进行中
+* 未编入索引
+* 索引已暂停
+* 错误
+* 未启用
+

@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-prereqs.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+---
+= NetApp备份和恢复中虚拟机工作负载的先决条件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在开始使用NetApp Backup and Recovery 保护虚拟机工作负载之前，请确保满足以下先决条件：
+
+* SnapCenter Plug-in for VMware vSphere
++
+** 您应该使用适用SnapCenter Plug-in for VMware vSphere从本地辅助存储备份数据存储区。
+
+
+* ONTAP 9.8 或更高版本
+* NetApp控制台
+* 支持 NFS 和 VMFS 数据存储。不支持vVols 。
+* 为了支持 VMFS，SnapCenter Plug-in for VMware vSphere应在 4.9 或更高版本上运行。如果SnapCenter Plug-in for VMware vSphere从早期版本升级到 4.9 版本，请确保备份 VMFS 数据存储。
+* 应在SnapCenter Plug-in for VMware vSphere中至少进行一次备份。
+* SnapCenter Plug-in for VMware vSphere中至少有一个每日、每周或每月策略，没有标签或与控制台中的虚拟机策略具有相同的标签。
+* 对于预先确定的策略，适用于SnapCenter Plug-in for VMware vSphere中的数据存储和云中的数据存储的计划层应该相同。
+* 确保数据存储库中没有FlexGroup卷，因为不支持备份和还原FlexGroup卷。
+* 在所需资源组上禁用“*_recent*”。如果您为资源组启用了“*_recent*”，则这些资源组的备份不能用于云数据保护，随后也不能用于恢复操作。
+* 确保将要还原虚拟机的目标数据存储具有足够的空间来容纳所有虚拟机文件（如 VMDK、VMX、VMSD 等）的副本。
+* 确保目标数据存储区中没有因之前的还原操作失败而导致的格式为 restore_xxx_xxxxxx_filename 的陈旧虚拟机文件。您应该在触发恢复操作之前删除陈旧的文件。
+* 要部署配置了代理的连接器，请确保所有传出的连接器调用都通过代理服务器路由。
+* 如果备份数据存储区的卷已受到“卷”选项卡（NetApp备份和恢复 -> 卷）的保护，则同一数据存储区无法再次受到“虚拟机”选项卡（NetApp备份和恢复 -> 虚拟机）的保护。
+
+
+下图显示了每个组件以及您需要在它们之间准备的连接：
+
+image:cloud_backup_vm.png["架构图"]

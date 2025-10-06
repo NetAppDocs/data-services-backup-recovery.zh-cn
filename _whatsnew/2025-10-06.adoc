@@ -1,0 +1,90 @@
+= NetApp备份和恢复现已更名为NetApp备份和恢复
+:allow-uri-read: 
+
+
+
+
+=== NetApp备份和恢复现已更名为NetApp备份和恢复
+
+NetApp Backup and Recovery 已重命名为NetApp Backup and Recovery。
+
+
+
+=== BlueXP现在是NetApp控制台
+
+NetApp控制台建立在增强和重组的BlueXP基础之上，可在企业级内部和云环境中集中管理NetApp存储和NetApp数据服务，提供实时洞察、更快的工作流程和简化的管理，并且高度安全且合规。
+
+有关更改的详细信息，请参阅link:https://docs.netapp.com/us-en/console-relnotes/index.html["NetApp控制台发行说明。"]
+
+
+
+=== Hyper-V 工作负载支持作为私人预览版
+
+此版本的NetApp Backup and Recovery 引入了对发现和管理 Hyper-V 工作负载的支持：
+
+* 在独立实例以及故障转移群集实例 (FCI) 上备份和恢复虚拟机
+* 保护存储在 SMB3 共享上的虚拟机
+* 虚拟机级别的批量保护
+* 虚拟机和崩溃一致性备份
+* 从主存储、辅助存储和对象存储恢复虚拟机
+* 搜索和恢复虚拟机备份
+
+
+有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载概述"]。
+
+
+
+=== KVM 工作负载支持作为私人预览
+
+此版本的NetApp Backup and Recovery 引入了对发现和管理 KVM 工作负载的支持：
+
+* 备份和恢复存储在 NFS 共享上的 qcow2 VM 映像
+* 备份存储池
+* 使用保护组进行批量虚拟机和存储池保护
+* VM 一致和崩溃一致的 VM 备份
+* 搜索和恢复虚拟机备份
+* 备份和恢复基于 KVM 的虚拟机和虚拟机数据的指导流程
+
+
+有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
+
+
+
+=== Kubernetes 预览改进
+
+Kubernetes 工作负载的预览版引入了以下增强功能：
+
+* 3-2-1 扇出备份架构支持
+* 支持ONTAP S3 作为备份目标
+* 新的 Kubernetes 仪表板，更易于管理
+* 增强的基于角色的访问控制 (RBAC) 配置包括对以下角色的支持：
++
+** 备份和恢复超级管理员
+** 备份和恢复备份管理员
+** 备份和恢复恢复管理员
+** 备份和恢复查看器
+
+
+* 支持 SUSE Rancher Kubernetes 发行版
+* 多存储桶支持：现在，您可以跨不同的云提供商，通过每个系统多个存储桶来保护系统内的卷
+
+
+有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"] 。
+
+
+
+=== Oracle 数据库工作负载支持作为私人预览
+
+此版本的NetApp Backup and Recovery 引入了对发现和管理 Oracle 数据库工作负载的支持：
+
+* 发现独立的 Oracle 数据库
+* 仅针对数据或数据和日志备份创建保护策略
+* 使用 3-2-1 备份方案保护 Oracle 数据库
+* 配置备份保留
+* 挂载和卸载 ARCHIVELOG 备份
+* 虚拟化数据库
+* 搜索和恢复数据库备份
+* Oracle 仪表板支持
+
+
+有关保护 Oracle 数据库工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 工作负载概述"]。

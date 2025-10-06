@@ -1,0 +1,280 @@
+---
+sidebar: sidebar 
+permalink: concept-start-prereq.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery 
+summary: 通过验证操作环境、控制台代理和控制台帐户的准备情况来开始使用NetApp Backup and Recovery。要使用NetApp Backup and Recovery，您需要满足这些先决条件。 
+---
+= NetApp备份和恢复前提条件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+通过验证操作环境、 NetApp控制台代理和NetApp控制台帐户的准备情况，开始使用NetApp Backup and Recovery。要使用NetApp Backup and Recovery，您需要满足这些先决条件。
+
+
+
+== ONTAP 9.8 及更高版本的先决条件
+
+必须在本地ONTAP实例上启用ONTAP One 许可证。
+
+
+
+== 备份到对象存储的先决条件
+
+要使用对象存储作为备份目标，您需要一个具有 AWS S3、Microsoft Azure Blob、 StorageGRID或ONTAP 的帐户并配置适当的访问权限。
+
+* link:prev-ontap-protect-overview.html["保护您的ONTAP卷数据"]
+
+
+
+
+== 保护 Microsoft SQL Server 工作负载的要求
+
+要将NetApp Backup and Recovery 用于 Microsoft SQL Server 工作负载，您需要满足以下主机系统、空间和大小调整前提条件。
+
+[cols="33,66a"]
+|===
+| 物品 | 要求 
+
+
+| 操作系统  a| 
+Microsoft Windows 有关受支持版本的最新信息，请参阅 https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp 互操作性表工具"^]。
+
+
+
+| Microsoft SQL Server 版本  a| 
+VMware 虚拟机文件系统 (VMFS) 和 VMware 虚拟机磁盘 (VMDK) NFS 支持 2012 及更高版本。
+
+
+
+| SnapCenter服务器版本  a| 
+如果要将现有数据从SnapCenter导入NetApp Backup and Recovery，则需要SnapCenter Server 5.0 或更高版本。
+
+
+NOTE: 如果您已经拥有SnapCenter，请先检查以确保在从SnapCenter导入之前已满足先决条件。看link:concept-start-prereq-snapcenter-import.html["从SnapCenter导入资源的先决条件"] 。
+
+
+
+| SQL Server 主机上插件的最小 RAM  a| 
+1 GB
+
+
+
+| SQL Server 主机上插件的最小安装和日志空间  a| 
+5 GB
+
+分配足够的磁盘空间并监控日志文件夹的存储消耗。所需的日志空间取决于执行的备份次数和数据保护操作的频率。如果没有足够的空间，则不会为操作创建日志。
+
+
+
+| 所需的软件包  a| 
+* ASP.NET Core Runtime 8.0.12 托管包（以及所有后续 8.0.x 补丁）
+* PowerShell 7.4.2
+
+
+有关受支持版本的最新信息，请参阅 https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp 互操作性表工具"^]。
+
+|===
+
+
+== 保护 VMware 工作负载的要求
+
+您需要特定的要求来发现和保护您的 VMware 工作负载。
+
+软件支持
+
+* 支持 NFS 和 VMFS 数据存储。不支持vVols 。
+* 支持的 NFS 版本：NFS 3 和 NFS 4.1
+* 支持的 VMware ESXi Server 版本：7.0U1 及以上
+* 支持的 VMware vCenter vSphere 版本：7.0U1 及以上
+* IP 地址：IPv4 和 IPv6
+* VMware TLS：1.2、1.3
+
+
+*保护 VMware 工作负载的连接和端口要求*
+
+[cols="33,66a"]
+|===
+| 端口类型 | 预配置端口 
+
+
+| VMware ESXi 服务器端口  a| 
+443（HTTPS），双向。来宾文件恢复功能使用此端口。
+
+
+
+| VMware vSphere vCenter Server 端口  a| 
+如果您正在保护 vVol VM，则必须使用端口 443。
+
+
+
+| 存储集群或存储虚拟机端口  a| 
+443（HTTPS），双向。80（HTTP），双向。此端口用于虚拟设备与存储虚拟机或包含存储虚拟机的集群之间的通信。
+
+|===
+*保护 VMware 工作负载的基于角色的访问控制 (RBAC) 要求*
+
+vCenter 管理员帐户必须具有所需的 vCenter 权限。
+
+有关所需 vCenter 权限的列表，请参阅 https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_deployment_planning_and_requirements.html#rbac-privileges-required["SnapCenter Plug-in for VMware vSphere vCenter 权限"^]。
+
+
+
+== 保护 KVM 工作负载的要求
+
+您需要特定的要求来发现和保护 KVM 虚拟机。
+
+* 运行内核版本 5.14.0-503.22.1.el9_5.x86_64（长期）或更高版本的现代 Linux 发行版
+* 确保允许从控制台代理到 KVM 主机的端口 22 的入站流量
+* QEMU Guest Agent 版本 9.0.0 或更高版本
+* libvirt 版本 10.5.0 或更高版本
+
+
+
+
+== 保护 Oracle 工作负载的要求
+
+确保您的环境满足发现和保护 Oracle 资源的特定要求。
+
+* Oracle 数据库：
++
+** Oracle 19C 和 21C 在独立部署中受支持。
+** Oracle 数据库必须部署在主或辅助NetApp ONTAP存储中。
+
+
+* 对象存储支持：
++
+** Azure 对象存储
+** 亚马逊 AWS
+** NetAppStorageGRID
+** ONTAP S3
+
+
+
+
+
+
+== 保护 Kubernetes 应用程序的要求
+
+您需要特定的要求来发现 Kubernetes 资源并保护您的 Kubernetes 应用程序。
+
+有关NetApp控制台要求，请参阅<<在NetApp控制台中>>。
+
+* 主ONTAP系统（ONTAP 9.16.1 或更高版本）
+* Kubernetes 集群 - 支持的 Kubernetes 发行版和版本包括：
++
+** Anthos On-Prem (VMware) 和 Anthos on Bare Metal 1.16
+** Kubernetes 1.27 - 1.33
+** OpenShift 4.10 - 4.18
+** Rancher Kubernetes Engine 2（RKE2）v1.26.7+rke2r1、v1.28.5+rke2r1
+** Suse Rancher
+
+
+* NetApp Trident 24.10 或更高版本
+* NetApp Trident Protect 25.07 或更高版本（在 Kubernetes 工作负载发现期间安装）
+* NetApp Trident Protect Connector 25.07 或更高版本（在 Kubernetes 工作负载发现期间安装）
++
+** 确保 Kubernetes 集群、 Trident保护连接器和Trident保护代理之间的出站方向的 TCP 端口 443 未经过滤。
+
+
+
+
+
+
+== 保护 Hyper-V 工作负载的要求
+
+确保您的 Hyper-V 实例满足发现和保护虚拟机的特定要求。
+
+* Hyper-V 主机的软件要求：
++
+** Microsoft Hyper-V 2019、2022 和 2025 版本
+** ASP.NET Core Runtime 8.0.12 托管包（以及所有后续 8.0.x 补丁）
+** PowerShell 7.4.2
+
+
+* Hyper-V 主机的硬件要求：
++
+** 支持独立主机和 FCI 集群主机
+** Hyper-V 主机上的NetApp Hyper-V 插件至少需要 1GB RAM
+** Hyper-V 主机上插件的最低安装和日志空间为 5GB
++
+
+NOTE: 确保在 Hyper-V 主机上为日志文件夹分配足够的磁盘空间并定期监控其使用情况。所需空间取决于备份和数据保护操作发生的频率。如果空间不足，则不会生成日志。
+
+
+
+* NetApp ONTAP配置要求：
++
+** 主ONTAP系统（ONTAP 9.15.1 或更高版本）
+** 对于使用 CIFS 共享存储虚拟机数据的 Hyper-V 部署，请确保在ONTAP系统上启用了连续可用性共享属性。请参阅 https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["ONTAP 文档"^]以获取说明。
+
+
+
+
+
+
+== 在NetApp控制台中
+
+确保NetApp Console 满足以下要求。
+
+* 控制台用户应具有对 Microsoft SQL Server 和 Kubernetes 工作负载执行操作所需的角色和权限。要发现资源，您必须具有NetApp Backup and Recovery 超级管理员角色。看link:reference-roles.html["NetApp Backup and Recovery 基于角色的功能访问"]有关在NetApp Backup and Recovery 中执行操作所需的角色和权限的详细信息。
+* 具有至少一个活动控制台代理的控制台组织，该代理连接到本地ONTAP集群或Cloud Volumes ONTAP。
+* 至少一个具有NetApp本地ONTAP或Cloud Volumes ONTAP集群的控制台系统。
+* 控制台代理
++
+参考 https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["了解如何配置控制台代理"]和 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["标准NetApp控制台要求"^]。
+
++
+** 预览版需要 Ubuntu 22.04 LTS 操作系统作为控制台代理。
+
+
+
+
+
+
+=== 设置NetApp控制台
+
+下一步是设置控制台和NetApp备份和恢复。
+
+审查 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["标准NetApp控制台要求"^]。
+
+
+
+=== 创建控制台代理
+
+您应该联系您的NetApp产品团队来试用这项服务。然后，当您使用控制台代理时，它将包含适合该服务的功能。
+
+要在使用服务之前在NetApp控制台中创建控制台代理，请参阅描述 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["如何创建控制台代理"^]。
+
+.控制台代理的安装位置
+要完成还原操作，可以在以下位置安装控制台代理：
+
+ifdef::aws[]
+
+* 对于 Amazon S3，控制台代理可以部署在您的场所。
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* 对于 Azure Blob，可以在您的场所部署控制台代理。
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+* 对于StorageGRID，控制台代理必须部署在您的场所；无论是否有互联网访问。
+* 对于ONTAP S3，控制台代理可以部署在您的场所（有或没有互联网访问）或云提供商环境中
+
+
+
+NOTE: “本地ONTAP系统”包括FAS和AFF系统。

@@ -1,0 +1,203 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-policy-manage.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+---
+= 使用NetApp备份和恢复管理ONTAP卷的备份策略
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用NetApp Backup and Recovery，使用NetApp提供的默认备份策略来创建备份，或创建自定义策略。策略控制备份频率、备份时间以及保留的备份文件数量。
+
+[]
+====
+*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+
+====
+当您使用激活向导为您的卷启用备份和恢复服务时，您可以从默认策略和系统中已经存在的任何其他策略（Cloud Volumes ONTAP或本地ONTAP系统）中进行选择。如果您想使用与现有策略不同的策略，您可以在使用激活向导之前或使用激活向导时创建该策略。
+
+要了解提供的默认备份策略，请参阅link:prev-ontap-protect-journey.html["规划您的保护之旅"]。
+
+NetApp Backup and Recovery 提供三种类型的ONTAP数据备份：快照、复制和对象存储备份。根据您使用的架构和备份类型，它们的策略位于不同的位置：
+
+[cols="25,25,25,25"]
+|===
+| 架构 | 快照策略存储位置 | 复制策略存储位置 | 备份到对象策略存储位置 
+
+
+| *扇出* | 主云 | 二级 | 主云 
+
+
+| *级联* | 主云 | 二级 | 二级 
+|===
+根据您的环境、偏好和保护类型，使用以下工具创建备份策略：
+
+* NetApp控制台用户界面
+* 系统管理器用户界面
+* ONTAP 命令行界面
+
+
+
+TIP: 使用系统管理器时，选择*异步*作为复制策略的策略类型，并选择*异步*和*备份到云*作为备份到对象策略。
+
+
+
+== 查看系统的策略
+
+. 在控制台 UI 中，选择 *卷* > *备份设置*。
+. 从备份设置页面，选择系统，选择*操作*image:icon-action.png["操作图标"]图标，然后选择*策略管理*。
++
+出现“策略管理”页面。默认显示快照策略。
+
+. 要查看系统中存在的其他策略，请选择“复制策略”或“备份策略”。如果现有策略可用于您的备份计划，则一切就绪。如果您需要具有不同特征的策略，您可以从此页面创建新策略。
+
+
+
+
+== 创建策略
+
+您可以创建策略来管理快照副本、复制和备份到对象存储：
+
+* <<启动快照之前创建快照策略>>
+* <<在启动复制之前创建复制策略>>
+* <<在启动备份之前创建备份到对象存储策略>>
+
+
+
+
+=== 启动快照之前创建快照策略
+
+3-2-1 策略的一部分涉及在*主*存储系统上创建卷的快照副本。
+
+策略创建过程的一部分涉及识别表示计划和保留的快照和SnapMirror标签。您可以使用预定义标签或创建自己的标签。
+
+.步骤
+. 在控制台 UI 中，选择 *卷* > *备份设置*。
+. 从备份设置页面，选择系统，选择*操作*image:icon-action.png["操作图标"]图标，然后选择*策略管理*。
++
+出现“策略管理”页面。
+
+. 在策略页面中，选择*创建策略* > *创建快照策略*。
+. 指定策略名称。
+. 选择一个或多个快照计划。您最多可以有 5 个标签。或者，创建一个时间表。
+. 如果您选择创建时间表：
++
+.. 选择每小时、每天、每周、每月或每年的频率。
+.. 指定表示计划和保留的快照标签。
+.. 输入拍摄快照的时间和频率。
+.. 保留：输入要保留的快照数量。
+
+
+. 选择“*创建*”。
+
+
+*使用级联架构的快照策略示例*
+
+此示例创建具有两个集群的快照策略：
+
+. 集群 1：
++
+.. 在策略页面上选择集群 1。
+.. 忽略复制和备份到对象策略部分。
+.. 创建快照策略。
+
+
+. 集群 2：
++
+.. 在策略页面上选择集群 2。
+.. 忽略快照策略部分。
+.. 配置复制和备份到对象策略。
+
+
+
+
+
+
+=== 在启动复制之前创建复制策略
+
+您的 3-2-1 策略可能包括在不同的存储系统上复制卷。复制策略位于*辅助*存储系统上。
+
+.步骤
+. 在“策略”页面中，选择“创建策略”>“创建复制策略”。
+. 在“策略详细信息”部分中，指定策略名称。
+. 指定SnapMirror标签（最多 5 个）以表示每个标签的保留。
+. 指定传输时间表。
+. 选择“*创建*”。
+
+
+
+
+=== 在启动备份之前创建备份到对象存储策略
+
+您的 3-2-1 策略可能包括将卷备份到对象存储。
+
+根据备份架构，此存储策略位于不同的存储系统位置：
+
+* 扇出：主存储系统
+* 级联：二级存储系统
+
+
+.步骤
+. 在策略管理页面中，选择*创建策略* > *创建备份策略*。
+. 在“策略详细信息”部分中，指定策略名称。
+. 指定SnapMirror标签（最多 5 个）以表示每个标签的保留。
+. 指定设置，包括传输计划和何时存档备份。
+. （可选）要在一定天数后将较旧的备份文件移动到较便宜的存储类或访问层，请选择*存档*选项并指示存档数据之前应经过的天数。输入 *0* 作为“存档天数”以将备份文件直接发送到存档存储。
++
+link:prev-ontap-policy-object-options.html["了解有关档案存储设置的更多信息"] 。
+
+. （可选）为保护您的备份不被修改或删除，请选择*DataLock 和勒索软件保护*选项。
++
+如果您的集群使用的是ONTAP 9.11.1 或更高版本，您可以选择通过配置“DataLock”和“勒索软件保护”来保护您的备份免遭删除。
+
++
+link:prev-ontap-policy-object-options.html["了解有关可用 DataLock 设置的更多信息"] 。
+
+. 选择“*创建*”。
+
+
+
+
+== 编辑策略
+
+您可以编辑自定义快照、复制或备份策略。
+
+更改备份策略会影响所有使用该策略的卷。
+
+.步骤
+. 在策略管理页面中，选择策略，选择*操作*image:icon-action.png["操作图标"]图标，然后选择*编辑策略*。
++
+
+NOTE: 复制和备份策略的过程相同。
+
+. 在“编辑策略”页面中进行更改。
+. 选择*保存*。
+
+
+
+
+== 删除策略
+
+您可以删除与任何卷均不关联的策略。
+
+如果某个策略与某个卷关联，并且您想要删除该策略，则必须先从该卷中删除该策略。
+
+.步骤
+. 在策略管理页面中，选择策略，选择*操作*image:icon-action.png["操作图标"]图标，然后选择*删除快照策略*。
+. 选择*删除*。
+
+
+
+
+== 查找更多信息
+
+有关使用 System Manager 或ONTAP CLI 创建策略的说明，请参阅以下内容：
+
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["使用 System Manager 创建 Snapshot 策略"^] https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["使用ONTAP CLI 创建 Snapshot 策略"^] https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["使用 System Manager 创建复制策略"^] https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["使用ONTAP CLI 创建复制策略"^] https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["使用 System Manager 创建对象存储策略的备份"^] https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["使用ONTAP CLI 创建对象存储策略备份"^]
