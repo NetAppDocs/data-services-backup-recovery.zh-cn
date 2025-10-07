@@ -187,12 +187,12 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 
 StorageGRID必须满足以下要求。查看 https://docs.netapp.com/us-en/storagegrid-117/["StorageGRID文档"^]了解更多信息。
 
-有关StorageGRID的 DataLock 和勒索软件保护要求的详细信息，请参阅link:prev-ontap-policy-object-options.html["备份到对象策略选项"]。
+有关StorageGRID的 DataLock 和勒索软件恢复要求的详细信息，请参阅link:prev-ontap-policy-object-options.html["备份到对象策略选项"]。
 
 支持的StorageGRID版本:: 支持StorageGRID 10.3 及更高版本。
 +
 --
-要对备份使用 DataLock 和勒索软件保护，您的StorageGRID系统必须运行 11.6.0.3 或更高版本。
+要使用 DataLock 和 Ransomware Resilience 进行备份，您的StorageGRID系统必须运行 11.6.0.3 或更高版本。
 
 要将旧备份分层到云档案存储，您的StorageGRID系统必须运行 11.3 或更高版本。此外，您的StorageGRID系统必须在控制台*系统*页面上被发现。
 
@@ -432,9 +432,9 @@ TIP: 要创建自定义策略，请参阅link:br-use-policies-create.html["创�
 +
 *** 输入策略的名称。
 *** 选择最多五个时间表，通常频率不同。
-*** 对于备份到对象策略，设置 DataLock 和勒索软件保护设置。有关 DataLock 和勒索软件保护的详细信息，请参阅link:prev-ontap-policy-object-options.html["备份到对象策略设置"]。
+*** 对于备份到对象策略，设置 DataLock 和 Ransomware Resilience 设置。有关 DataLock 和勒索软件恢复的详细信息，请参阅link:prev-ontap-policy-object-options.html["备份到对象策略设置"]。
 +
-如果您的集群使用的是ONTAP 9.11.1 或更高版本，您可以选择通过配置“DataLock 和勒索软件保护”来保护您的备份免遭删除和勒索软件攻击。  _DataLock_ 保护您的备份文件不被修改或删除，而 _Ransomware Protection_ 会扫描您的备份文件以查找备份文件中勒索软件攻击的证据。
+如果您的集群使用的是ONTAP 9.11.1 或更高版本，您可以选择通过配置“DataLock”和“Ransomware Resilience”来保护您的备份免遭删除和勒索软件攻击。  _DataLock_ 保护您的备份文件不被修改或删除，而 _Ransomware Resilience_ 会扫描您的备份文件以查找备份文件中勒索软件攻击的证据。
 
 *** 选择“*创建*”。
 

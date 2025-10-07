@@ -59,7 +59,7 @@ NetApp Backup and Recovery 使您能够为每个系统（集群）创建具有�
 
 NetApp Backup and Recovery 为您的卷备份提供 DataLock 和勒索软件保护支持。这些功能使您能够锁定备份文件并对其进行扫描以检测备份文件上可能存在的勒索软件。这是一个可选设置，当您希望为集群的卷备份提供额外保护时，可以在备份策略中定义它。
 
-这两个功能都可以保护您的备份文件，以便在您的备份遭受勒索软件攻击时，您始终拥有一个有效的备份文件来恢复数据。满足某些监管要求也很有帮助，在这些要求中，备份需要被锁定并保留一段时间。启用 DataLock 和勒索软件保护选项后，作为NetApp Backup 和 Recovery 激活的一部分配置的云存储桶将启用对象锁定和对象版本控制。
+这两个功能都可以保护您的备份文件，以便在您的备份遭受勒索软件攻击时，您始终拥有一个有效的备份文件来恢复数据。满足某些监管要求也很有帮助，在这些要求中，备份需要被锁定并保留一段时间。启用 DataLock 和勒索软件恢复选项后，作为NetApp Backup 和 Recovery 激活的一部分配置的云存储桶将启用对象锁定和对象版本控制。
 
 https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["请参阅 DataLock 和勒索软件保护博客以了解更多详细信息"^] 。
 
@@ -124,7 +124,7 @@ DataLock 保留设置将覆盖备份策略中的策略保留设置。这可能�
 
 您可以在创建策略时启用 DataLock 和勒索软件保护。创建策略后，您无法启用、修改或禁用此功能。
 
-. 创建策略时，展开“DataLock 和勒索软件保护”部分。
+. 创建策略时，展开“DataLock 和勒索软件弹性”部分。
 . 选择下列选项之一：
 +
 ** *无*：DataLock 保护和勒索软件恢复功能已禁用。
@@ -165,7 +165,7 @@ DataLock 保留设置将覆盖备份策略中的策略保留设置。这可能�
 
 === 支持的系统和对象存储提供商
 
-在以下公共和私有云提供商中使用对象存储时，您可以从以下系统在ONTAP卷上启用 DataLock 和勒索软件保护。未来版本中将添加更多云提供商。
+在以下公共和私有云提供商中使用对象存储时，您可以从以下系统在ONTAP卷上启用 DataLock 和勒索软件保护。
 
 [cols="55,45"]
 |===
@@ -175,10 +175,13 @@ DataLock 保留设置将覆盖备份策略中的策略保留设置。这可能�
 | AWS 中的Cloud Volumes ONTAP | 亚马逊 S3 endif::aws[] ifdef::azure[] 
 
 
-| Azure 中的Cloud Volumes ONTAP | Azure Blob endif::azure[] ifdef::gcp[] endif::gcp[] 
+| Azure 中的Cloud Volumes ONTAP | Azure Blob endif::azure[] ifdef::gcp[] 
 
 
-| 本地ONTAP系统 | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Azure Blob endif::azure[] ifdef::gcp[] endif::gcp[] NetApp StorageGRID 
+| Google Cloud 中的Cloud Volumes ONTAP | 谷歌云 endif::gcp[] 
+
+
+| 本地ONTAP系统 | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Azure Blob endif::azure[] ifdef::gcp[] Google Cloud endif::gcp[] NetApp StorageGRID 
 |===
 
 
@@ -244,6 +247,18 @@ ifdef::azure[]
 
 
 endif::azure[]
+
+ifdef::gcp[]
+
+* 对于 Google Cloud：
++
+** 您的集群必须运行ONTAP 9.17.1 或更高版本
+** 控制台代理可以部署在云端或您的本地
+
+
+
+
+endif::gcp[]
 
 * 对于StorageGRID：
 +

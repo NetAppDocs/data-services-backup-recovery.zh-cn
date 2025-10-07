@@ -116,7 +116,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["高级设置页面中年度
 
 默认情况下启用勒索软件防护扫描。扫描频率的默认设置为 7 天。扫描仅发生在最新的快照副本上。您可以使用“高级设置”页面上的选项在最新快照副本上启用或禁用勒索软件扫描。如果启用它，则默认每 7 天执行一次扫描。
 
-有关 DataLock 和勒索软件保护选项的详细信息，请参阅link:prev-ontap-policy-object-options.html["DataLock 和勒索软件保护选项"]。
+有关 DataLock 和勒索软件恢复选项的详细信息，请参阅link:prev-ontap-policy-object-options.html["DataLock 和勒索软件恢复选项"]。
 
 您可以将该计划更改为几天或几周，或者禁用它，以节省成本。
 

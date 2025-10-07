@@ -474,7 +474,7 @@ TIP: 要在激活备份之前创建自定义策略，请参阅link:br-use-polici
 +
 *** 输入策略的名称。
 *** 选择最多五个时间表，通常频率不同。
-*** 对于备份到对象策略，设置 DataLock 和勒索软件保护设置。有关 DataLock 和勒索软件保护的详细信息，请参阅link:prev-ontap-policy-object-options.html["备份到对象策略设置"]。
+*** 对于备份到对象策略，设置 DataLock 和 Ransomware Resilience 设置。有关 DataLock 和勒索软件恢复的详细信息，请参阅link:prev-ontap-policy-object-options.html["备份到对象策略设置"]。
 *** 选择“*创建*”。
 
 
