@@ -1,18 +1,18 @@
-= NetApp备份和恢复现已更名为NetApp备份和恢复
+= BlueXP backup and recovery现已更名NetApp备份和恢复
 :allow-uri-read: 
 
 
 
 
-=== NetApp备份和恢复现已更名为NetApp备份和恢复
+=== BlueXP backup and recovery现已更名NetApp备份和恢复
 
-NetApp Backup and Recovery 已重命名为NetApp Backup and Recovery。
+BlueXP backup and recovery已重命名为NetApp备份和恢复。
 
 
 
 === BlueXP现在是NetApp控制台
 
-NetApp控制台建立在增强和重组的BlueXP基础之上，可在企业级内部和云环境中集中管理NetApp存储和NetApp数据服务，提供实时洞察、更快的工作流程和简化的管理，并且高度安全且合规。
+NetApp控制台建立在增强和重组的BlueXP基础之上，可在企业级内部和云环境中集中管理NetApp存储和NetApp数据服务，提供实时洞察、更快的工作流程以及高度安全且合规的简化管理。
 
 有关更改的详细信息，请参阅link:https://docs.netapp.com/us-en/console-relnotes/index.html["NetApp控制台发行说明。"]
 
