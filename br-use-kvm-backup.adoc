@@ -28,7 +28,7 @@ NOTE: 要按计划备份保护组，请创建管理备份和还原操作的策�
 
 您可以立即运行按需备份。如果您要对系统进行更改并希望确保在开始之前有备份，这将很有帮助。
 
-*必需的控制台角色* 组织管理员、文件夹或项目管理员、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+*所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
 
 .步骤
 . 从NetApp控制台菜单中，选择“保护”>“备份和恢复”。

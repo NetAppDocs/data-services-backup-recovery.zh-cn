@@ -194,7 +194,13 @@ vCenter 管理员帐户必须具有所需的 vCenter 权限。
 +
 ** Microsoft Hyper-V 2019、2022 和 2025 版本
 ** ASP.NET Core Runtime 8.0.12 托管包（以及所有后续 8.0.x 补丁）
-** PowerShell 7.4.2
+** PowerShell 7.4.2 或更高版本
+** 确保 Windows 防火墙设置中允许以下端口进行双向 HTTPS 通信：
++
+*** 8144（适用于 Hyper-V 的NetApp插件）
+*** 8145（适用于 Windows 的NetApp插件）
+
+
 
 
 * Hyper-V 主机的硬件要求：
@@ -210,7 +216,7 @@ NOTE: 确保在 Hyper-V 主机上为日志文件夹分配足够的磁盘空间�
 
 * NetApp ONTAP配置要求：
 +
-** 主ONTAP系统（ONTAP 9.15.1 或更高版本）
+** 主ONTAP系统（ONTAP 9.14.1 或更高版本）
 ** 对于使用 CIFS 共享存储虚拟机数据的 Hyper-V 部署，请确保在ONTAP系统上启用了连续可用性共享属性。请参阅 https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["ONTAP 文档"^]以获取说明。
 
 

@@ -281,7 +281,7 @@ NOTE: 此功能不适用于 VMware Preview 工作负载。
 如果您从SnapCenter导入资源，您可能会遇到SnapCenter中使用的策略与NetApp Backup and Recovery 中使用的策略之间的一些差异。看link:reference-policy-differences-snapcenter.html["SnapCenter与NetApp Backup and Recovery 之间的策略差异"] 。
 
 .所需的NetApp控制台角色
-组织管理员或文件夹或项目管理员。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+备份和恢复超级管理员。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
 
 .步骤
 . 在NetApp控制台中，转到 *保护* > *备份和恢复*。

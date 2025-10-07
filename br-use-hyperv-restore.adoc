@@ -51,7 +51,7 @@ TIP: 您将需要向云提供商支付额外的出口费用才能访问备份文
 
 使用恢复选项恢复 Hyper-V 工作负载。您可以按名称或使用过滤器来搜索快照。
 
-*所需的控制台角色* 组织管理员、文件夹或项目管理员、备份和恢复超级管理员、备份和恢复恢复管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+*所需的控制台角色* 备份和恢复超级管理员或备份和恢复恢复管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
 
 .步骤
 . 从NetApp备份和恢复菜单中，选择 *恢复*。

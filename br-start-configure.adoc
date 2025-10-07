@@ -14,7 +14,7 @@ summary: 完成几个步骤来配置NetApp备份和恢复。
 
 
 [role="lead"]
-设置NetApp控制台后，配置备份和恢复设置，包括添加主机资源的凭据、导入SnapCenter资源、配置日志目录以及配置 VMware vCenter 设置。您应该在主动开始备份和恢复数据之前执行此操作。
+设置NetApp控制台后，配置备份和恢复设置。添加主机资源的凭据、导入SnapCenter资源、配置日志目录以及设置 VMware vCenter 设置。在备份或恢复数据之前完成这些步骤。
 
 * <<为主机资源添加凭据>>对于从SnapCenter导入的 Windows 和 SQL Server 主机并添加凭据。  （仅限 Microsoft SQL Server 工作负载）
 * <<维护 VMware vCenter 设置>> 。
@@ -28,9 +28,9 @@ summary: 完成几个步骤来配置NetApp备份和恢复。
 
 == 为主机资源添加凭据
 
-添加要从SnapCenter导入的主机资源的凭据。主机凭证用于发现新的工作负载并应用备份策略。
+添加要从SnapCenter导入的主机资源的凭据。  NetApp Backup and Recovery 使用这些凭证来发现工作负载并应用备份策略。
 
-如果您还没有凭证，您可以创建它们。这些凭据必须具有访问和管理主机工作负载所需的权限。
+如果您没有凭据，请创建具有访问和管理主机工作负载的权限的凭据。
 
 您需要配置以下类型的凭据：
 
@@ -89,7 +89,7 @@ TIP: 您需要输入 Windows 和 Microsoft SQL Server 的凭据，因此您需�
 
 == 维护 VMware vCenter 设置
 
-提供 VMware vCenter 凭据以发现要备份的 VMware vCenter Server 工作负载。如果您没有现有凭据，则可以创建具有访问和管理 VMware vCenter Server 工作负载所需权限的凭据。
+提供 VMware vCenter 凭据来发现要备份的工作负载。如果您没有凭据，请创建具有访问和管理 VMware vCenter Server 工作负载的权限的凭据。
 
 .步骤
 . 从NetApp备份和恢复菜单中，选择 *设置*。
@@ -110,7 +110,7 @@ TIP: 您需要输入 Windows 和 Microsoft SQL Server 的凭据，因此您需�
 
 == 导入和管理SnapCenter主机资源
 
-如果您之前使用SnapCenter备份资源，则可以在NetApp Backup and Recovery 中导入和管理这些资源。使用此选项，您可以导入SnapCenter服务器信息来注册多个 Snapcenter 服务器并发现数据库工作负载。
+如果您之前使用SnapCenter备份资源，则可以在NetApp Backup and Recovery 中导入和管理这些资源。此选项使您能够导入SnapCenter服务器信息以注册多个 Snapcenter 服务器并发现数据库工作负载。
 
 这是一个由两部分组成的过程：
 
