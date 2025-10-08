@@ -253,7 +253,7 @@ NOTE: 确保在 Hyper-V 主机上为日志文件夹分配足够的磁盘空间�
 
 === 创建控制台代理
 
-您应该联系您的NetApp产品团队来试用这项服务。然后，当您使用控制台代理时，它将包含适合该服务的功能。
+您应该联系您的NetApp产品团队来尝试备份和恢复。然后，当您使用控制台代理时，它将包含适合该服务的功能。
 
 要在使用服务之前在NetApp控制台中创建控制台代理，请参阅描述 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["如何创建控制台代理"^]。
 

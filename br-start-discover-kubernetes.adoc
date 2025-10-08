@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery 需要首先发现工作负载，以便您�
 
 
 [role="lead"]
-NetApp Backup and Recovery 需要首先发现 Kubernetes 工作负载，以便您使用该服务。
+NetApp Backup and Recovery需要在保护 Kubernetes 工作负载之前发现它们。
 
 *所需的NetApp控制台角色* 备份和恢复超级管理员。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
 
@@ -22,7 +22,7 @@ NetApp Backup and Recovery 需要首先发现 Kubernetes 工作负载，以便�
 
 == 发现 Kubernetes 工作负载
 
-在备份和恢复清单中，您可以发现环境中正在运行的 Kubernetes 工作负载。发现工作负载会将 Kubernetes 集群添加到NetApp备份和恢复中，从而使您能够将应用程序添加到集群并保护集群托管的资源。
+在备份和恢复清单中，发现您环境中的 Kubernetes 工作负载。添加工作负载会将 Kubernetes 集群添加到NetApp Backup and Recovery。然后，您可以添加应用程序并保护集群资源。
 
 .步骤
 . 执行以下操作之一：
@@ -55,7 +55,7 @@ NetApp Backup and Recovery 需要首先发现 Kubernetes 工作负载，以便�
 
 == 继续访问NetApp备份和恢复仪表板
 
-要显示NetApp备份和恢复仪表板，请按照以下步骤操作。
+按照以下步骤查看NetApp Backup and Recovery仪表板。
 
 . 从顶部菜单中选择*仪表板*。
 . 审查数据保护的健康状况。处于危险中或受保护的工作负载的数量会根据新发现、受保护和备份的工作负载而增加。

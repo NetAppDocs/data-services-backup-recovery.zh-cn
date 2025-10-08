@@ -20,14 +20,14 @@ summary: '完成几个步骤即可在NetApp Backup and Recovery 中发现异地�
 
 == 发现备份目标
 
-在使用NetApp Backup and Recovery 之前，您应该配置 Amazon Web Services (AWS) S3、Microsoft Azure Blob Storage、Google Cloud Storage 或StorageGRID的备份目标。
+在使用NetApp Backup and Recovery之前，请配置您的备份目标（Amazon Web Services (AWS) S3、Microsoft Azure Blob Storage、Google Cloud Storage 或StorageGRID ）。
 
 您可以自动发现这些目标或手动添加它们。
 
-提供访问存储帐户系统所需的凭据。这些凭据用于发现您想要备份的工作负载。
+提供访问存储帐户的凭据。  NetApp Backup and Recovery使用这些凭据来发现您想要备份的工作负载。
 
 .开始之前
-要添加异地备份目标，必须发现至少一个工作负载。
+您需要先发现至少一个工作负载，然后才能添加异地备份目标。
 
 .步骤
 . 从NetApp备份和恢复菜单中，选择 *Inventory*。

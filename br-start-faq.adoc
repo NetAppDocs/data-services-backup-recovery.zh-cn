@@ -27,7 +27,7 @@ summary: 如果您只是想快速找到问题的答案，此常见问题解答�
 
 *如何启用NetApp备份和恢复？* NetApp Backup and Recovery 不需要任何支持。备份和恢复选项在控制台左侧导航中自动启用。
 
-要开始使用，您需要注册或联系您的NetApp销售代表来试用此服务。然后，当您使用控制台代理时，它将包含适合该服务的功能。
+要开始使用，您需要注册或联系您的NetApp销售代表来试用备份和恢复。然后，当您使用控制台代理时，它将包含适合该服务的功能。
 
 要开始使用NetApp Backup and Recovery，请从其初始登录页面选择“开始发现工作负载”。
 
@@ -53,7 +53,7 @@ summary: 如果您只是想快速找到问题的答案，此常见问题解答�
 
 * NetApp Backup and Recovery 是否知道NetApp ONTAP中所做的保护设置？*是的， NetApp Backup and Recovery 发现了在ONTAP中设置的快照计划。
 
-*如果您使用NetApp Backup and Recovery 设置策略，那么将来是否只需在此服务中进行更改？*我们建议您从NetApp Backup and Recovery 进行策略更改。
+*如果您使用NetApp Backup and Recovery设置策略，那么将来是否只需在备份和恢复中进行更改？*我们建议您从NetApp Backup and Recovery 进行策略更改。
 
 
 
