@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-migrate-resync.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, migrate volumes, SnapMirror to Cloud Resync, ONTAP, NetApp, NetApp ONTAP, NetApp Cloud Volumes ONTAP, NetApp Cloud Volumes Service, FlexVols, FlexGroups 
-summary: NetApp备份和恢复中的SnapMirror到云重新同步功能简化了NetApp环境中卷迁移期间的数据保护和连续性。 
+summary: NetApp Backup and Recovery中的SnapMirror到云重新同步功能简化了NetApp环境中卷迁移期间的数据保护和连续性。 
 ---
-= 在NetApp备份和恢复中使用SnapMirror将卷迁移到 Cloud Resync
+= 在NetApp Backup and Recovery中使用SnapMirror将卷迁移到 Cloud Resync
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,26 +14,26 @@ summary: NetApp备份和恢复中的SnapMirror到云重新同步功能简化了N
 
 
 [role="lead"]
-NetApp备份和恢复中的SnapMirror到云重新同步功能简化了NetApp环境中卷迁移期间的数据保护和连续性。当使用SnapMirror逻辑复制 (LRSE) 将卷从一个本地NetApp部署迁移到另一个本地 NetApp 部署或迁移到基于云的解决方案（例如Cloud Volumes ONTAP或Cloud Volumes Service）时， SnapMirror到 Cloud Resync 可确保现有的云备份保持完整且可运行。
+NetApp Backup and Recovery中的SnapMirror到云重新同步功能简化了NetApp环境中卷迁移期间的数据保护和连续性。当使用SnapMirror逻辑复制 (LRSE) 将卷从一个本地NetApp部署迁移到另一个本地 NetApp 部署或迁移到基于云的解决方案（例如Cloud Volumes ONTAP或Cloud Volumes Service）时， SnapMirror到 Cloud Resync 可确保现有的云备份保持完整且可运行。
 
 此功能无需耗时且耗费资源的重新基线操作，使备份操作能够在迁移后继续进行。此功能在工作负载迁移场景中很有价值，支持 FlexVols 和 FlexGroups，并且从ONTAP版本 9.16.1 开始可用。
 
 
-NOTE: 此功能从 2025 年 5 月发布的NetApp Backup and Recovery 版本 4.0.3 开始提供。
+NOTE: 此功能从 2025 年 5 月发布的NetApp Backup and Recovery版本 4.0.3 开始提供。
 
 通过保持跨环境的备份连续性， SnapMirror to Cloud Resync 提高了运营效率并降低了混合和多云数据管理的复杂性。
 
 []
 ====
-*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
 ====
 .开始之前
 确保满足以下先决条件：
 
 * 目标ONTAP集群必须运行ONTAP版本 9.16.1 或更高版本。
-* 必须使用NetApp Backup and Recovery 保护旧的源ONTAP集群。
-* SnapMirror到云重新同步功能从 2025 年 5 月发布的NetApp Backup and Recovery 版本 4.0.3 开始提供。
+* 必须使用NetApp Backup and Recovery保护旧的源ONTAP集群。
+* SnapMirror到云重新同步功能从 2025 年 5 月发布的NetApp Backup and Recovery版本 4.0.3 开始提供。
 * 对象存储中的最新备份必须是跨旧源、新源和对象存储的公共快照。公共快照不能早于备份到对象存储的最新快照。
 * 在开始重新同步操作之前，必须在新ONTAP集群上创建在旧ONTAP上使用的快照和SnapMirror策略。如果要在重新同步过程中使用任何策略，则还必须创建该策略。重新同步操作不会创建策略。
 * 确保应用于迁移卷SnapMirror关系的SnapMirror策略包含云关系使用的相同标签。为避免出现问题，请使用管理卷和所有快照的精确镜像的策略。
@@ -73,13 +73,13 @@ NOTE: 目前不支持使用 SVM-Migrate、SVM-DR 或 Head Swap 方法迁移后�
 
 此过程避免重新发送已备份的数据，节省带宽，并确保您的备份链在迁移后继续顺利进行。
 
-image:diagram-snapmirror-cloud-resync-migration.png["NetApp备份和恢复SnapMirror到云重新同步"]
+image:diagram-snapmirror-cloud-resync-migration.png["NetApp Backup and RecoverySnapMirror到云重新同步"]
 
 
 
 == 程序说明
 
-* 不使用NetApp Backup and Recovery 执行迁移和技术更新。它们应该由专业服务团队或合格的存储管理员来执行。
+* 不使用NetApp Backup and Recovery执行迁移和技术更新。它们应该由专业服务团队或合格的存储管理员来执行。
 * NetApp迁移团队负责在源 ONTAP 集群和目标ONTAP集群之间创建SnapMirror关系，以促进卷迁移。
 * 确保技术更新期间的迁移基于基于SnapMirror的迁移。
 
@@ -103,7 +103,7 @@ image:diagram-snapmirror-cloud-resync-migration-steps.png["使用SnapMirror到 C
 
 在开始迁移之前， NetApp技术更新团队会确保满足以下先决条件，以避免数据丢失并确保迁移过程顺利进行。
 
-. 确保所有要迁移的卷都使用NetApp Backup and Recovery 进行保护。
+. 确保所有要迁移的卷都使用NetApp Backup and Recovery进行保护。
 . 记录卷实例 UUID。在开始迁移之前，记下所有卷的实例 UUID。这些标识符对于稍后的映射和重新同步操作至关重要。
 . 在删除任何SnapMirror关系之前，对每个卷进行最终快照以保留最新状态。
 . 记录SnapMirror策略。记录当前附加到每个卷关系的SnapMirror策略。稍后在SnapMirror到 Cloud Resync 过程中将需要此功能。
@@ -133,8 +133,8 @@ NOTE: 应该使用卷实例 UUID，而不是卷 ID。卷实例 UUID 是一个唯
 迁移后， NetApp Tech Refresh 团队执行SnapMirror到 Cloud Resync 操作，以从新迁移的卷恢复云备份。
 
 . 在控制台*系统*页面中将新的ONTAP集群添加为系统。
-. 查看NetApp备份和恢复卷页面以确保旧源系统详细信息可用。
-. 从NetApp备份和恢复卷页面中，选择*备份设置*。
+. 查看NetApp Backup and Recovery卷页面以确保旧源系统详细信息可用。
+. 从NetApp Backup and Recovery卷页面中，选择*备份设置*。
 +
 ** 在备份设置页面中，选择*查看全部*。
 ** 从新源右侧的操作...菜单中，选择*重新同步备份*。
@@ -153,7 +153,7 @@ NOTE: 应该使用卷实例 UUID，而不是卷 ID。卷实例 UUID 是一个唯
 ** 要应用于新关系的SnapMirror策略。
 
 
-. 选择“上传卷映射详细信息”下的“上传”，将完成的 CSV 表上传到NetApp备份和恢复 UI。
+. 选择“上传卷映射详细信息”下的“上传”，将完成的 CSV 表上传到NetApp Backup and RecoveryUI。
 +
 
 NOTE: 应该使用卷实例 UUID，而不是卷 ID。卷实例 UUID 是一个唯一标识符，在迁移过程中保持一致，而卷 ID 可能会在迁移后发生变化。
@@ -161,7 +161,7 @@ NOTE: 应该使用卷实例 UUID，而不是卷 ID。卷实例 UUID 是一个唯
 . 输入重新同步操作所需的提供商和网络配置信息。
 . 选择*提交*开始验证过程。
 +
-NetApp Backup and Recovery 验证选择重新同步的每个卷是否都是最新快照，并且至少有一个通用快照。这可确保卷已准备好进行SnapMirror到 Cloud Resync 操作。
+NetApp Backup and Recovery验证选择重新同步的每个卷是否都是最新快照，并且至少有一个通用快照。这可确保卷已准备好进行SnapMirror到 Cloud Resync 操作。
 
 . 查看验证结果，包括新的源卷名称和每个卷的重新同步状态。
 . 检查容量是否合格。系统检查卷是否符合重新同步的条件。如果卷不符合条件，则意味着它不是最新的快照或未找到通用快照。

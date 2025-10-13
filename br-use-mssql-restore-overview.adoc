@@ -4,7 +4,7 @@ permalink: br-use-mssql-restore-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: 您可以从创建备份的位置恢复数据备份，其中包括快照、复制和对象存储中的备份。检查要还原的还原位置、还原点和资源类型。 
 ---
-= 使用NetApp备份和恢复还原 Microsoft SQL 工作负载概述
+= 使用NetApp Backup and RecoveryMicrosoft SQL 工作负载概述
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以从创建备份的位置恢复数据备份，其中包括快�
 
 
 [role="lead"]
-您可以从NetApp Backup and Recovery 中移动备份的位置还原 Microsoft SQL Server 数据：快照、复制或对象存储中的备份。您可以将工作负载恢复到原始系统、使用相同云帐户的其他系统或本地ONTAP系统。检查要还原的还原位置、还原点和资源类型。
+您可以从NetApp Backup and Recovery中移动备份的位置还原 Microsoft SQL Server 数据备份：快照、复制或对象存储中的备份。您可以将工作负载恢复到原始系统、使用相同云帐户的其他系统或本地ONTAP系统。检查要还原的还原位置、还原点和资源类型。
 
 .从这些位置恢复
 您可以从不同的起始位置恢复工作负载：

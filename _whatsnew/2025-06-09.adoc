@@ -15,17 +15,17 @@
 
 索引目录可以跟踪每个卷和备份文件，使您的搜索快速而高效。
 
-有关更多信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["启用搜索和还原索引"] 。
+更多信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["启用搜索和还原索引"]。
 
 
 
 === Azure 专用链接终结点和服务终结点
 
-通常， NetApp Backup and Recovery 会与云提供商建立一个私有端点来处理保护任务。此版本引入了一个可选设置，可让您启用或禁用NetApp Backup and Recovery 自动创建私有端点。如果您想要更好地控制私有端点创建过程，这可能对您有用。
+通常， NetApp Backup and Recovery会与云提供商建立一个私有端点来处理保护任务。此版本引入了一个可选设置，可让您启用或禁用NetApp Backup and Recovery自动创建私有端点。如果您想要更好地控制私有端点创建过程，这可能对您有用。
 
 您可以在启用保护或开始恢复过程时启用或禁用此选项。
 
-如果禁用此设置，则必须手动创建私有端点以使NetApp Backup and Recovery 正常运行。如果没有适当的连接，您可能无法成功执行备份和恢复任务。
+如果禁用此设置，则必须手动创建私有端点以使NetApp Backup and Recovery正常运行。如果没有适当的连接，您可能无法成功执行备份和恢复任务。
 
 
 
@@ -37,6 +37,6 @@
 
 === 为StorageGRID带来您自己的存储桶
 
-当您在对象存储中为工作环境创建备份文件时，默认情况下， NetApp Backup and Recovery 会为您配置的对象存储帐户中的备份文件创建容器（存储桶或存储帐户）。以前，您可以覆盖此功能并为 Amazon S3、Azure Blob Storage 和 Google Cloud Storage 指定您自己的容器。通过此版本，您现在可以携带自己的StorageGRID对象存储容器。
+当您在对象存储中为工作环境创建备份文件时，默认情况下， NetApp Backup and Recovery会为您配置的对象存储帐户中的备份文件创建容器（存储桶或存储帐户）。以前，您可以覆盖此功能并为 Amazon S3、Azure Blob Storage 和 Google Cloud Storage 指定您自己的容器。通过此版本，您现在可以携带自己的StorageGRID对象存储容器。
 
 看 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html["创建您自己的对象存储容器"]。

@@ -4,7 +4,7 @@ permalink: reference-restart-backup.html
 keywords: backup restart, restart backup 
 summary: 在某些情况下，您可能需要重新启动NetApp Backup and Recovery。 
 ---
-= 重新启动NetApp备份和恢复
+= 重新启动NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,7 +16,7 @@ summary: 在某些情况下，您可能需要重新启动NetApp Backup and Recov
 [role="lead"]
 在某些情况下，您可能需要重新启动NetApp Backup and Recovery。
 
-NetApp备份和恢复功能内置于控制台代理中。
+NetApp Backup and Recovery功能内置于控制台代理中。
 
 .步骤
 . 连接到控制台代理正在运行的 Linux 系统。

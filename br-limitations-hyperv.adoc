@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-limitations-hyperv.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Hyper-V, SAP HANA database, virtual machine, vm 
-summary: NetApp Backup and Recovery 需要首先发现数据，以便您使用该服务。在发现过程中， NetApp Backup and Recovery 会分析组织内系统中的所有卷和文件。 
+summary: NetApp Backup and Recovery需要首先发现数据，以便您使用该服务。在发现过程中， NetApp Backup and Recovery会分析组织内系统中的所有卷和文件。 
 ---
-= NetApp Backup and Recovery 针对 Hyper-V 工作负载的已知限制
+= NetApp Backup and Recovery针对 Hyper-V 工作负载的已知限制
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -20,13 +20,13 @@ summary: NetApp Backup and Recovery 需要首先发现数据，以便您使用�
 
 == 不支持的操作
 
-NetApp Backup and Recovery 中的 Hyper-V 工作负载的私人预览版不支持以下操作：
+NetApp Backup and Recovery中的 Hyper-V 工作负载的私人预览版不支持以下操作：
 
 * 创建资源组
 * 跨磁盘（跨多个 CIFS 共享）
 * 通过 SAN 保护虚拟机
 * 编辑保护组
-* 保护使用 System Center Virtual Machine Manager (SCVMM) 集群的 Hyper-V 主机
+* 保护使用系统中心虚拟机管理器 (SCVMM) 集群的 Hyper-V 主机
 
 
 

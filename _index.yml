@@ -1,22 +1,24 @@
 ---
 indexpage:
-  title: NetApp备份和恢复文档
-  summary: NetApp备份和恢复是一种数据服务，可为您的所有ONTAP工作负载（包括卷、数据库、虚拟机和 Kubernetes 工作负载）提供高效、安全且经济高效的数据保护。
+  title: NetApp Backup and Recovery文档
+  summary: NetApp Backup and Recovery是一种数据服务，可为您的所有ONTAP工作负载（包括卷、数据库、虚拟机和 Kubernetes
+    工作负载）提供高效、安全且经济高效的数据保护。
   keywords: netapp console, netapp backup recovery, ontap, on-premises, data protection,
     sql, workloads, backup,
-  lead: NetApp备份和恢复是一种数据服务，可为您的所有ONTAP工作负载（包括卷、数据库、虚拟机和 Kubernetes 工作负载）提供高效、安全且经济高效的数据保护。
+  lead: NetApp Backup and Recovery是一种数据服务，可为您的所有ONTAP工作负载（包括卷、数据库、虚拟机和 Kubernetes
+    工作负载）提供高效、安全且经济高效的数据保护。
   tiles:
   - title: 开始使用
     links:
-    - title: 了解NetApp备份和恢复
+    - title: 了解NetApp Backup and Recovery
       url: concept-backup-to-cloud.html
     - title: 什么是新的
       url: whats-new.html
     - title: 前提条件
       url: concept-start-prereq.html
-    - title: 在使用NetApp Backup and Recovery 之前设置备份目标
+    - title: 在使用NetApp Backup and Recovery之前设置备份目标
       url: br-start-setup.html
-    - title: 配置NetApp备份和恢复设置
+    - title: 配置NetApp Backup and Recovery设置
       url: br-start-configure.html
   - title: 保护ONTAP卷工作负载
     links:
@@ -106,9 +108,9 @@ indexpage:
       url: br-use-restore-kubernetes-applications.html
   - title: 博客和社区
     links:
-    - title: NetApp控制台
+    - title: NetApp Console
       url: https://www.netapp.com/console
-    - title: NetApp数据服务
+    - title: NetApp Data Services
       url: https://www.netapp.com/data-services/
     - title: NetApp 社区
       url: https://community.netapp.com/

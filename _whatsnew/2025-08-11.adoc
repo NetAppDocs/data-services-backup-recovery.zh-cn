@@ -6,11 +6,11 @@
 
 === 通用可用性 (GA) 中支持 Microsoft SQL Server 工作负载
 
-Microsoft SQL Server 工作负载支持现已在NetApp Backup and Recovery 中正式推出 (GA)。在ONTAP、 Cloud Volumes ONTAP和Amazon FSx for NetApp ONTAP存储上使用 MSSQL 环境的组织现在可以利用这项新的备份和恢复服务来保护他们的数据。
+Microsoft SQL Server 工作负载支持现已在NetApp Backup and Recovery中正式推出 (GA)。在ONTAP、 Cloud Volumes ONTAP和Amazon FSx for NetApp ONTAP存储上使用 MSSQL 环境的组织现在可以利用这项新的备份和恢复服务来保护他们的数据。
 
 与之前的预览版本相比，此版本对 Microsoft SQL Server 工作负载支持进行了以下增强：
 
-* * SnapMirror主动同步*：此版本现在支持SnapMirror主动同步（也称为SnapMirror业务连续性 [SM-BC]），即使整个站点发生故障，它也能使业务服务继续运行，支持应用程序使用辅助副本透明地进行故障转移。NetApp Backup and Recovery 现在支持在SnapMirror主动同步和 Metrocluster 配置中保护 Microsoft SQL Server 数据库。该信息显示在“保护详细信息”页面的“存储和关系状态”部分中。关系信息显示在策略页面更新后的*辅助设置*部分。
+* * SnapMirror主动同步*：此版本现在支持SnapMirror主动同步（也称为SnapMirror业务连续性 [SM-BC]），即使整个站点发生故障，它也能使业务服务继续运行，支持应用程序使用辅助副本透明地进行故障转移。NetApp Backup and Recovery现在支持在SnapMirror主动同步和 Metrocluster 配置中保护 Microsoft SQL Server 数据库。该信息显示在“保护详细信息”页面的“存储和关系状态”部分中。关系信息显示在策略页面更新后的*辅助设置*部分。
 +
 参考 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policies-create.html["使用策略保护您的工作负载"]。
 
@@ -18,13 +18,13 @@ Microsoft SQL Server 工作负载支持现已在NetApp Backup and Recovery 中�
 image:../media/screen-br-sql-protection-details.png["Microsoft SQL Server 工作负载的保护详细信息页面"]
 
 * *多存储桶支持*：您现在可以保护工作环境中的卷，每个工作环境最多可跨不同的云提供商使用 6 个存储桶。
-* SQL Server 工作负载的*许可和免费试用更新*：您现在可以使用现有的NetApp Backup and Recovery 许可模型来保护 SQL Server 工作负载。SQL Server 工作负载没有单独的许可要求。
+* SQL Server 工作负载的*许可和免费试用更新*：您现在可以使用现有的NetApp Backup and Recovery许可模型来保护 SQL Server 工作负载。SQL Server 工作负载没有单独的许可要求。
 +
 有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html["设置NetApp Backup and Recovery 的许可"]。
 
 * *自定义快照名称*：您现在可以在管理 Microsoft SQL Server 工作负载备份的策略中使用自己的快照名称。在策略页面的*高级设置*部分输入此信息。
 +
-image:../media/screen-br-sql-policy-create-advanced-snapmirror.png["NetApp备份和恢复策略的SnapMirror和快照格式设置屏幕截图"]
+image:../media/screen-br-sql-policy-create-advanced-snapmirror.png["NetApp Backup and Recovery策略的SnapMirror和快照格式设置屏幕截图"]
 
 +
 参考 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policies-create.html["使用策略保护您的工作负载"]。
@@ -32,13 +32,13 @@ image:../media/screen-br-sql-policy-create-advanced-snapmirror.png["NetApp备份
 * *辅助卷前缀和后缀*：您可以在策略页面的*高级设置*部分输入自定义前缀和后缀。
 * *身份和访问*：您现在可以控制用户对功能的访问。
 +
-参考 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-login.html["登录NetApp备份和恢复"]和 https://docs.netapp.com/us-en/data-services-backup-recovery/reference-roles.html["NetApp备份和恢复功能访问"]。
+参考 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-login.html["登录NetApp Backup and Recovery"]和 https://docs.netapp.com/us-en/data-services-backup-recovery/reference-roles.html["NetApp Backup and Recovery功能访问"]。
 
 * *从对象存储恢复到备用主机*：即使主存储已关闭，您现在可以从对象存储恢复到备用主机。
 * *日志备份数据*：数据库保护详细信息页面现在显示日志备份。您可以看到备份类型列，显示备份是完整备份还是日志备份。
 * *增强型仪表板*：仪表板现在显示存储和克隆节省。
 +
-image:../media/screen-br-dashboard3.png["NetApp备份和恢复仪表板"]
+image:../media/screen-br-dashboard3.png["NetApp Backup and Recovery仪表板"]
 
 
 
@@ -46,12 +46,12 @@ image:../media/screen-br-dashboard3.png["NetApp备份和恢复仪表板"]
 
 === ONTAP卷工作负载增强功能
 
-* * ONTAP卷的多文件夹恢复*：到目前为止，您可以通过浏览和恢复功能一次恢复一个文件夹或多个文件。NetApp Backup and Recovery 现在提供使用浏览和恢复功能一次选择多个文件夹的功能。
-* *查看和管理已删除卷的备份*： NetApp备份和恢复仪表板现在提供显示和管理从ONTAP中删除的卷的选项。通过此功能，您可以查看和删除ONTAP中不再存在的卷的备份。
-* *强制删除备份*：在某些极端情况下，您可能希望NetApp Backup and Recovery 不再访问备份。例如，如果服务不再有权访问备份存储桶或备份受到 DataLock 保护但您不再需要它们，则可能会发生这种情况。以前，您无法自行删除这些内容，而需要致电NetApp支持。在此版本中，您可以使用选项强制删除备份（在卷和工作环境级别）。
+* * ONTAP卷的多文件夹恢复*：到目前为止，您可以通过浏览和恢复功能一次恢复一个文件夹或多个文件。NetApp Backup and Recovery现在提供使用浏览和恢复功能一次选择多个文件夹的功能。
+* *查看和管理已删除卷的备份*： NetApp Backup and Recovery仪表板现在提供显示和管理从ONTAP中删除的卷的选项。通过此功能，您可以查看和删除ONTAP中不再存在的卷的备份。
+* *强制删除备份*：在某些极端情况下，您可能希望NetApp Backup and Recovery不再访问备份。例如，如果服务不再有权访问备份存储桶或备份受到 DataLock 保护但您不再需要它们，则可能会发生这种情况。以前，您无法自行删除这些内容，而需要致电NetApp支持。在此版本中，您可以使用选项强制删除备份（在卷和工作环境级别）。
 
 
 
-CAUTION: 请谨慎使用此选项，并且仅在极端清理需要时使用。即使这些备份未被从对象存储中删除， NetApp Backup and Recovery 也将无法再访问它们。您需要前往云提供商并手动删除备份。
+CAUTION: 请谨慎使用此选项，并且仅在极端清理需要时使用。即使这些备份未被从对象存储中删除， NetApp Backup and Recovery也将无法再访问它们。您需要前往云提供商并手动删除备份。
 
 参考 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["保护ONTAP工作负载"]。

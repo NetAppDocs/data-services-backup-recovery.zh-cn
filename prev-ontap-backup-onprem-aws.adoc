@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-aws.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载。 
 ---
-= 使用NetApp备份和恢复将本地ONTAP数据备份到 Amazon S3
+= 使用NetApp Backup and Recovery将本地ONTAP数据备份到 Amazon S3
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 
 
 [role="lead"]
-完成NetApp备份和恢复中的几个步骤，开始将卷数据从本地ONTAP系统备份到二级存储系统和 Amazon S3 云存储。
+完成NetApp Backup and Recovery中的几个步骤，开始将卷数据从本地ONTAP系统备份到二级存储系统和 Amazon S3 云存储。
 
 
 NOTE: “本地ONTAP系统”包括FAS、 AFF和ONTAP Select系统。
 
 []
 ====
-*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
 ====
 
@@ -38,17 +38,17 @@ NOTE: “本地ONTAP系统”包括FAS、 AFF和ONTAP Select系统。
 
 下图显示了*公共连接*方法以及您需要在组件之间准备的连接。您可以使用在您的场所安装的控制台代理，或者在 AWS VPC 中部署的控制台代理。
 
-image:diagram_cloud_backup_onprem_aws_public.png["该图显示了NetApp Backup and Recovery 如何通过公共连接与集群上的卷以及备份文件所在的 AWS S3 存储进行通信。"]
+image:diagram_cloud_backup_onprem_aws_public.png["该图显示了NetApp Backup and Recovery如何通过公共连接与集群上的卷以及备份文件所在的 AWS S3 存储进行通信。"]
 
 下图显示了*私有连接*方法以及您需要在组件之间准备的连接。您可以使用在您的场所安装的控制台代理，或者在 AWS VPC 中部署的控制台代理。
 
-image:diagram_cloud_backup_onprem_aws_private.png["该图表显示了NetApp Backup and Recovery 如何通过私有连接与集群上的卷以及备份文件所在的 AWS S3 存储进行通信。"]
+image:diagram_cloud_backup_onprem_aws_private.png["该图表显示了NetApp Backup and Recovery如何通过私有连接与集群上的卷以及备份文件所在的 AWS S3 存储进行通信。"]
 
 
 
 == 准备控制台代理
 
-控制台代理是NetApp控制台功能的主要软件。需要控制台代理来备份和恢复您的ONTAP数据。
+控制台代理是NetApp Console功能的主要软件。需要控制台代理来备份和恢复您的ONTAP数据。
 
 
 
@@ -63,7 +63,7 @@ image:diagram_cloud_backup_onprem_aws_private.png["该图表显示了NetApp Back
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-on-prem.html["在您的场所安装控制台代理"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-install-restricted-mode.html["在 AWS GovCloud 区域安装控制台代理"^]
 +
-当控制台代理部署在云中时（而不是安装在您的场所中时）， NetApp备份和恢复在 GovCloud 区域受支持。此外，您必须从 AWS Marketplace 部署控制台代理。您无法从NetApp Console SaaS 网站在政府区域部署控制台代理。
+当控制台代理部署在云中时（而不是安装在您的场所中时）， NetApp Backup and Recovery在 GovCloud 区域受支持。此外，您必须从 AWS Marketplace 部署控制台代理。您无法从NetApp Console SaaS 网站在政府区域部署控制台代理。
 
 
 
@@ -75,24 +75,24 @@ image:diagram_cloud_backup_onprem_aws_private.png["该图表显示了NetApp Back
 
 * 确保安装控制台代理的网络启用以下连接：
 +
-** 通过端口 443 建立到NetApp Backup and Recovery 以及 S3 对象存储的 HTTPS 连接(https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["查看端点列表"^]）
+** 通过端口 443 建立到NetApp Backup and Recovery以及 S3 对象存储的 HTTPS 连接(https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["查看端点列表"^]）
 ** 通过端口 443 建立到ONTAP集群管理 LIF 的 HTTPS 连接
 ** AWS 和 AWS GovCloud 部署需要额外的入站和出站安全组规则。看 https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["AWS 中的控制台代理规则"^]了解详情。
 
 
-* 如果您有从ONTAP集群到 VPC 的 Direct Connect 或 VPN 连接，并且您希望控制台代理和 S3 之间的通信保持在 AWS 内部网络（*私有*连接）中，则需要启用到 S3 的 VPC 端点接口。<<使用 VPC 终端节点接口配置系统以进行私有连接>> 。
+* 如果您有从ONTAP集群到 VPC 的 Direct Connect 或 VPN 连接，并且您希望控制台代理和 S3 之间的通信保持在 AWS 内部网络（*私有*连接）中，则需要启用到 S3 的 VPC 端点接口。<<使用 VPC 终端节点接口配置系统以进行私有连接>>。
 
 
 
 
 == 验证许可证要求
 
-您需要验证 AWS 和NetApp控制台的许可证要求：
+您需要验证 AWS 和NetApp Console的许可证要求：
 
-* 在为集群激活NetApp Backup and Recovery 之前，您需要订阅 AWS 提供的即用即付 (PAYGO) NetApp Console Marketplace，或者从NetApp购买并激活NetApp Backup and Recovery BYOL 许可证。这些许可证适用于您的帐户，可以在多个系统中使用。
+* 在为集群激活NetApp Backup and Recovery之前，您需要订阅 AWS 提供的即用即付 (PAYGO) NetApp Console Marketplace，或者从NetApp购买并激活NetApp Backup and Recovery BYOL 许可证。这些许可证适用于您的帐户，可以在多个系统中使用。
 +
-** 对于NetApp Backup and Recovery PAYGO 许可，您需要订阅 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS Marketplace 提供的NetApp控制台"^]。  NetApp Backup and Recovery 的计费通过此订阅完成。
-** 对于NetApp备份和恢复 BYOL 许可，您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。
+** 对于NetApp Backup and Recovery PAYGO 许可，您需要订阅 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS Marketplace 提供的NetApp Console"^]。  NetApp Backup and Recovery的计费通过此订阅完成。
+** 对于NetApp Backup and RecoveryBYOL 许可，您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。
 
 
 * 您需要订阅用于存储备份的对象存储空间的 AWS。
@@ -110,7 +110,7 @@ image:diagram_cloud_backup_onprem_aws_private.png["该图表显示了NetApp Back
 
 准备ONTAP集群涉及以下步骤：
 
-* 在NetApp控制台中发现您的ONTAP系统
+* 在NetApp Console中发现您的ONTAP系统
 * 验证ONTAP系统要求
 * 验证ONTAP网络要求以将数据备份到对象存储
 * 验证ONTAP复制卷的网络要求
@@ -118,11 +118,11 @@ image:diagram_cloud_backup_onprem_aws_private.png["该图表显示了NetApp Back
 
 
 
-=== 在NetApp控制台中发现您的ONTAP系统
+=== 在NetApp Console中发现您的ONTAP系统
 
-您的源本地ONTAP系统和任何辅助本地ONTAP或Cloud Volumes ONTAP系统都必须在NetApp控制台 *系统* 页面上可用。
+您的源本地ONTAP系统和任何辅助本地ONTAP或Cloud Volumes ONTAP系统都必须在NetApp Console*系统* 页面上可用。
 
-您需要知道集群管理 IP 地址和管理员用户帐户的密码才能添加集群。https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["了解如何发现集群"^] 。
+您需要知道集群管理 IP 地址和管理员用户帐户的密码才能添加集群。https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["了解如何发现集群"^]。
 
 
 
@@ -133,7 +133,7 @@ image:diagram_cloud_backup_onprem_aws_private.png["该图表显示了NetApp Back
 * 最低版本为ONTAP 9.8；建议使用ONTAP 9.8P13 及更高版本。
 * SnapMirror许可证（包含在高级捆绑包或数据保护捆绑包中）。
 +
-*注意：*使用NetApp备份和恢复时不需要“混合云捆绑包”。
+*注意：*使用NetApp Backup and Recovery时不需要“混合云捆绑包”。
 
 +
 了解如何 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理您的集群许可证"^]。
@@ -141,7 +141,7 @@ image:diagram_cloud_backup_onprem_aws_private.png["该图表显示了NetApp Back
 * 时间和时区设置正确。了解如何 https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["配置集群时间"^]。
 * 如果要复制数据，则应在复制数据之前验证源系统和目标系统是否运行兼容的ONTAP版本。
 +
-https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["查看与SnapMirror关系兼容的ONTAP版本"^] 。
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["查看与SnapMirror关系兼容的ONTAP版本"^]。
 
 
 
@@ -164,7 +164,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 * 集群间 LIF 必须与ONTAP用于连接对象存储的 _IPspace_ 相关联。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["了解有关 IP 空间的更多信息"^] 。
 +
-设置NetApp Backup and Recovery 时，系统会提示您输入要使用的 IP 空间。您应该选择与这些 LIF 关联的 IP 空间。这可能是“默认” IP 空间或您创建的自定义 IP 空间。
+当您设置NetApp Backup and Recovery时，系统会提示您输入要使用的 IP 空间。您应该选择与这些 LIF 关联的 IP 空间。这可能是“默认” IP 空间或您创建的自定义 IP 空间。
 
 +
 如果您使用的 IP 空间与“默认”不同，那么您可能需要创建静态路由来访问对象存储。
@@ -173,15 +173,15 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 IP 空间内的所有集群间 LIF 都必须具有对象存储的访问权限。如果您无法为当前 IP 空间配置此功能，则需要创建一个专用 IP 空间，其中所有集群间 LIF 都可以访问对象存储。
 
 * 必须为卷所在的存储虚拟机配置 DNS 服务器。了解如何 https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["为 SVM 配置 DNS 服务"^]。
-* 如有必要，请更新防火墙规则，以允许NetApp Backup and Recovery 通过端口 443 从ONTAP连接到对象存储，并通过端口 53（TCP/UDP）从存储虚拟机到 DNS 服务器的名称解析流量。
-* 如果您在 AWS 中使用私有 VPC 接口端点进行 S3 连接，那么为了使用 HTTPS/443，您需要将 S3 端点证书加载到ONTAP集群中。<<使用 VPC 终端节点接口配置系统以进行私有连接>> 。  *[确保您的ONTAP集群有权访问 S3 存储桶。
+* 如有必要，请更新防火墙规则，以允许NetApp Backup and Recovery通过端口 443 从ONTAP连接到对象存储，并通过端口 53（TCP/UDP）从存储虚拟机到 DNS 服务器的名称解析流量。
+* 如果您在 AWS 中使用私有 VPC 接口端点进行 S3 连接，那么为了使用 HTTPS/443，您需要将 S3 端点证书加载到ONTAP集群中。<<使用 VPC 终端节点接口配置系统以进行私有连接>>。  *[确保您的ONTAP集群有权访问 S3 存储桶。
 
 
 
 
 === 验证ONTAP复制卷的网络要求
 
-如果您计划使用NetApp Backup and Recovery 在辅助ONTAP系统上创建复制卷，请确保源系统和目标系统满足以下网络要求。
+如果您计划使用NetApp Backup and Recovery在辅助ONTAP系统上创建复制卷，请确保源系统和目标系统满足以下网络要求。
 
 
 
@@ -224,7 +224,7 @@ IP 空间内的所有集群间 LIF 都必须具有对象存储的访问权限。
 
 
 .步骤
-. 确保控制台代理具有所需的权限。有关详细信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["NetApp控制台策略权限"^]。
+. 确保控制台代理具有所需的权限。有关详细信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["NetApp Console策略权限"^]。
 +
 
 NOTE: 在 AWS 中国区域创建备份时，您需要将 IAM 策略中所有_Resource_部分下的 AWS 资源名称“arn”从“aws”更改为“aws-cn”；例如 `arn:aws-cn:s3:::netapp-backup-*`。
@@ -292,7 +292,7 @@ NOTE: 在 AWS 中国区域创建备份时，您需要将 IAM 策略中所有_Res
 
 默认情况下，该服务会为您创建存储桶。或者，如果您想使用自己的存储桶，您可以在启动备份激活向导之前创建它们，然后在向导中选择这些存储桶。
 
-link:prev-ontap-protect-journey.html["了解有关创建您自己的存储桶的更多信息"^] 。
+link:prev-ontap-protect-journey.html["了解有关创建您自己的存储桶的更多信息"^]。
 
 如果您创建自己的存储桶，则应使用存储桶名称“netapp-backup”。如果您需要使用自定义名称，请编辑 `ontapcloud-instance-policy-netapp-backup`IAMRole 用于现有的 CVO，并将以下列表添加到 S3 权限。您需要包括 `"Resource": "arn:aws:s3:::*"`并分配与存储桶关联的所有必要权限。
 
@@ -307,11 +307,11 @@ link:prev-ontap-protect-journey.html["了解有关创建您自己的存储桶的
 
 如果您想使用默认的 Amazon S3 加密密钥来加密您的本地集群和 S3 存储桶之间传递的数据，那么您已经完成了所有设置，因为默认安装使用这种类型的加密。
 
-如果您想使用自己的客户管理密钥进行数据加密而不是使用默认密钥，那么您需要在启动NetApp备份和恢复向导之前设置加密管理密钥。
+如果您想使用自己的客户管理密钥进行数据加密而不是使用默认密钥，那么您需要在启动NetApp Backup and Recovery向导之前设置加密管理密钥。
 
-https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["请参阅如何在Cloud Volumes ONTAP中使用您自己的 Amazon 加密密钥"^] 。
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["请参阅如何在Cloud Volumes ONTAP中使用您自己的 Amazon 加密密钥"^]。
 
-https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["请参阅如何在NetApp Backup and Recovery 中使用您自己的 Amazon 加密密钥"^] 。
+https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["请参阅如何在NetApp Backup and Recovery中使用您自己的 Amazon 加密密钥"^]。
 
 
 
@@ -325,7 +325,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-blu
 . 使用 Amazon VPC 控制台或命令行创建接口终端节点配置。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["请参阅有关使用 AWS PrivateLink for Amazon S3 的详细信息"^] 。
 . 修改与控制台代理关联的安全组配置。您必须将策略更改为“自定义”（从“完全访问”），并且您必须<<设置 S3 权限,从备份策略添加 S3 权限>>如前所示。
 +
-如果您使用端口 80（HTTP）与私有端点进行通信，则一切就绪。您现在可以在集群上启用NetApp备份和恢复。
+如果您使用端口 80（HTTP）与私有端点进行通信，则一切就绪。您现在可以在集群上启用NetApp Backup and Recovery。
 
 +
 如果您使用端口 443（HTTPS）与私有端点通信，则必须从 VPC S3 端点复制证书并将其添加到您的ONTAP集群，如接下来的 4 个步骤所示。
@@ -395,7 +395,7 @@ Please enter Certificate: Press <Enter> when done
 . 继续以下选项：
 +
 ** 如果您已经有控制台代理，那么一切就绪了。只需选择*下一步*。
-** 如果您还没有控制台代理，则会出现“添加控制台代理”选项。请参阅<<准备控制台代理>> 。
+** 如果您还没有控制台代理，则会出现“添加控制台代理”选项。参考<<准备控制台代理>>。
 
 
 
@@ -552,7 +552,7 @@ TIP: 要在激活备份之前创建自定义策略，请参阅link:br-use-polici
 
 
 .结果
-NetApp Backup and Recovery 开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括主存储系统数据的完整副本。后续传输包含 Snapshot 副本中所含主数据的差异副本。
+NetApp Backup and Recovery开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括主存储系统数据的完整副本。后续传输包含 Snapshot 副本中所含主数据的差异副本。
 
 在目标集群中创建一个复制卷，该卷将与主存储卷同步。
 

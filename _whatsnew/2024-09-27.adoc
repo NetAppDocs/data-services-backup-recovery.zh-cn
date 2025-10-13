@@ -6,11 +6,11 @@
 
 === RHEL 8 或 9 上的 Podman 支持浏览和恢复
 
-NetApp Backup and Recovery 现在支持使用 Podman 引擎在 Red Hat Enterprise Linux (RHEL) 版本 8 和 9 上进行文件和文件夹恢复。这适用于NetApp备份和恢复浏览和还原方法。
+NetApp Backup and Recovery现在支持使用 Podman 引擎在 Red Hat Enterprise Linux (RHEL) 版本 8 和 9 上进行文件和文件夹恢复。这适用于NetApp Backup and Recovery浏览和还原方法。
 
-控制台代理版本 3.9.40 支持 Red Hat Enterprise Linux 版本 8 和 9 的某些版本，用于在 RHEL 8 或 9 主机上手动安装控制台代理软件，无论位置如何，以及在 https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["主机要求"^]。这些较新的 RHEL 版本需要 Podman 引擎而不是 Docker 引擎。以前， NetApp Backup and Recovery 在使用 Podman 引擎时有两个限制。这些限制已被取消。
+控制台代理版本 3.9.40 支持 Red Hat Enterprise Linux 版本 8 和 9 的某些版本，用于在 RHEL 8 或 9 主机上手动安装控制台代理软件，无论位置如何，以及在 https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["主机要求"^]。这些较新的 RHEL 版本需要 Podman 引擎而不是 Docker 引擎。以前， NetApp Backup and Recovery在使用 Podman 引擎时有两个限制。这些限制已被取消。
 
-https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["了解有关从备份文件恢复ONTAP数据的更多信息"] 。
+https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["了解有关从备份文件恢复ONTAP数据的更多信息"]。
 
 
 
@@ -18,4 +18,4 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.h
 
 此版本包含改进的目录索引，可以更快地完成基线索引。更快的索引使您能够更快地使用搜索和恢复功能。
 
-https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["了解有关从备份文件恢复ONTAP数据的更多信息"] 。
+https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["了解有关从备份文件恢复ONTAP数据的更多信息"]。

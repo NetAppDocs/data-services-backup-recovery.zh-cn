@@ -14,13 +14,13 @@ summary: 您可以保护从本地ONTAP系统到 Amazon Web Services、Microsoft 
 
 
 [role="lead"]
-通过在NetApp Backup and Recovery 中管理 Kubernetes 工作负载，您可以在一个地方发现、管理和保护您的 Kubernetes 集群和应用程序。您可以管理托管在 Kubernetes 集群上的资源和应用程序。您还可以创建保护策略并将其与 Kubernetes 工作负载关联，所有这些都使用单一界面完成。
+通过在NetApp Backup and Recovery中管理 Kubernetes 工作负载，您可以在一个地方发现、管理和保护您的 Kubernetes 集群和应用程序。您可以管理托管在 Kubernetes 集群上的资源和应用程序。您还可以创建保护策略并将其与 Kubernetes 工作负载关联，所有这些都使用单一界面完成。
 
 下图展示了 Kubernetes 工作负载的备份和恢复的组件和基本架构，以及如何将数据的不同副本存储在不同位置：
 
 image:../media/backup-recovery-architecture-diagram.png["Kubernetes 工作负载备份与恢复架构图"]
 
-NetApp Backup and Recovery 为管理 Kubernetes 工作负载提供了以下优势：
+NetApp Backup and Recovery为管理 Kubernetes 工作负载提供了以下优势：
 
 * 单一控制平面，用于保护跨多个 Kubernetes 集群运行的应用程序。这些应用程序可以包括在 Kubernetes 集群上运行的容器或虚拟机。
 * 与NetApp SnapMirror本机集成，为所有备份和恢复工作流程提供存储卸载功能。
@@ -32,9 +32,9 @@ NOTE: 本文档作为技术预览提供。在预览期间，不建议将 Kuberne
 
 您可以完成与管理 Kubernetes 工作负载相关的以下任务：
 
-* link:br-start-discover-kubernetes.html["发现 Kubernetes 工作负载"] 。
-* link:br-use-manage-kubernetes-clusters.html["管理 Kubernetes 集群"] 。
-* link:br-use-protect-kubernetes-applications.html["添加和保护 Kubernetes 应用程序"] 。
-* link:br-use-manage-kubernetes-applications.html["管理 Kubernetes 应用程序"] 。
-* link:br-use-restore-kubernetes-applications.html["恢复 Kubernetes 应用程序"] 。
+* link:br-start-discover-kubernetes.html["发现 Kubernetes 工作负载"]。
+* link:br-use-manage-kubernetes-clusters.html["管理 Kubernetes 集群"]。
+* link:br-use-protect-kubernetes-applications.html["添加和保护 Kubernetes 应用程序"]。
+* link:br-use-manage-kubernetes-applications.html["管理 Kubernetes 应用程序"]。
+* link:br-use-restore-kubernetes-applications.html["恢复 Kubernetes 应用程序"]。
 

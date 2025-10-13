@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-ontaps3.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载。 
 ---
-= 使用NetApp备份和恢复将本地ONTAP数据备份到ONTAP S3
+= 使用NetApp Backup and Recovery将本地ONTAP数据备份到ONTAP S3
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 
 
 [role="lead"]
-完成NetApp备份和恢复中的几个步骤即可开始从主本地ONTAP系统备份卷数据。您可以将备份发送到辅助ONTAP存储系统（复制卷）或配置为 S3 服务器的ONTAP系统上的存储桶（备份文件），或同时发送到两者。
+完成NetApp Backup and Recovery中的几个步骤即可开始从主本地ONTAP系统备份卷数据。您可以将备份发送到辅助ONTAP存储系统（复制卷）或配置为 S3 服务器的ONTAP系统上的存储桶（备份文件），或同时发送到两者。
 
 主本地ONTAP系统可以是FAS、 AFF或ONTAP Select系统。辅助ONTAP系统可以是本地ONTAP或Cloud Volumes ONTAP系统。对象存储可以位于本地ONTAP系统或已启用简单存储服务 (S3) 对象存储服务器的Cloud Volumes ONTAP系统上。
 
 []
 ====
-*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
 ====
 
@@ -31,13 +31,13 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 
 下图显示了将主本地ONTAP系统备份到为 S3 配置的本地ONTAP系统时的每​​个组件以及您需要在它们之间准备的连接。它还显示了与同一本地位置的辅助ONTAP系统的连接以复制卷。
 
-image:diagram_cloud_backup_onprem_ontap_s3.png["该图显示了NetApp Backup and Recovery 如何与源系统上的卷以及备份文件所在的目标存储进行通信。"]
+image:diagram_cloud_backup_onprem_ontap_s3.png["该图显示了NetApp Backup and Recovery如何与源系统上的卷以及备份文件所在的目标存储进行通信。"]
 
 当控制台代理和主本地ONTAP系统安装在没有互联网访问的本地位置（“私有”模式部署）时， ONTAP S3 系统必须位于同一个本地数据中心。
 
 下图显示了将主本地ONTAP系统备份到为 S3 配置的Cloud Volumes ONTAP系统时的每​​个组件以及您需要在它们之间准备的连接。它还显示了与同一云提供商环境中的辅助Cloud Volumes ONTAP系统的连接，以复制卷。
 
-image:diagram_cloud_backup_onprem_ontap_s3_cloud.png["该图显示了NetApp Backup and Recovery 如何与源系统上的卷以及备份文件所在的目标存储进行通信。"]
+image:diagram_cloud_backup_onprem_ontap_s3_cloud.png["该图显示了NetApp Backup and Recovery如何与源系统上的卷以及备份文件所在的目标存储进行通信。"]
 
 在这种情况下，控制台代理应部署在部署Cloud Volumes ONTAP系统的同一云提供商环境中。
 
@@ -75,17 +75,17 @@ image:diagram_cloud_backup_onprem_ontap_s3_cloud.png["该图显示了NetApp Back
 
 ==== 私人模式（暗站）注意事项
 
-NetApp备份和恢复功能内置于控制台代理中。当以私人模式安装时，您需要定期更新控制台代理软件才能访问新功能。检查link:whats-new.html["NetApp备份和恢复新功能"]查看每个NetApp Backup and Recovery 版本中的新功能。当您想要使用新功能时，请按照以下步骤操作 https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["升级控制台代理软件"^]。
+NetApp Backup and Recovery功能内置于控制台代理中。当以私人模式安装时，您需要定期更新控制台代理软件才能访问新功能。检查link:whats-new.html["NetApp Backup and Recovery新功能"]查看每个NetApp Backup and Recovery版本中的新功能。当您想要使用新功能时，请按照以下步骤操作 https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["升级控制台代理软件"^]。
 
-当您在标准 SaaS 环境中使用NetApp Backup and Recovery 时， NetApp Backup and Recovery 配置数据将备份到云端。当您在没有互联网访问的站点中使用NetApp Backup and Recovery 时， NetApp Backup and Recovery 配置数据将备份到存储备份的ONTAP S3 存储桶中。
+当您在标准 SaaS 环境中使用NetApp Backup and Recovery时， NetApp Backup and Recovery配置数据将备份到云端。当您在没有互联网访问的站点中使用NetApp Backup and Recovery时， NetApp Backup and Recovery配置数据将备份到存储备份的ONTAP S3 存储桶中。
 
 
 
 == 验证许可证要求
 
-在为集群激活NetApp Backup and Recovery 之前，您需要从NetApp购买并激活NetApp Backup and Recovery BYOL 许可证。该许可证用于备份和恢复对象存储 - 无需许可证即可创建 Snapshot 副本或复制卷。此许可证适用于该帐户，可跨多个系统使用。
+在为集群激活NetApp Backup and Recovery之前，您需要从NetApp购买并激活NetApp Backup and Recovery BYOL 许可证。该许可证用于备份和恢复对象存储 - 无需许可证即可创建 Snapshot 副本或复制卷。此许可证适用于该帐户，可跨多个系统使用。
 
-您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。link:br-start-licensing.html["了解如何管理您的 BYOL 许可证"] 。
+您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。link:br-start-licensing.html["了解如何管理您的 BYOL 许可证"]。
 
 
 TIP: 将文件备份到ONTAP S3 时不支持 PAYGO 许可。
@@ -98,7 +98,7 @@ TIP: 将文件备份到ONTAP S3 时不支持 PAYGO 许可。
 
 准备ONTAP集群涉及以下步骤：
 
-* 在NetApp控制台中发现您的ONTAP系统
+* 在NetApp Console中发现您的ONTAP系统
 * 验证ONTAP系统要求
 * 验证ONTAP网络要求以将数据备份到对象存储
 * 验证ONTAP复制卷的网络要求
@@ -106,11 +106,11 @@ TIP: 将文件备份到ONTAP S3 时不支持 PAYGO 许可。
 
 
 
-=== 在NetApp控制台中发现您的ONTAP系统
+=== 在NetApp Console中发现您的ONTAP系统
 
-您的源本地ONTAP系统和任何辅助本地ONTAP或Cloud Volumes ONTAP系统都必须在NetApp控制台 *系统* 页面上可用。
+您的源本地ONTAP系统和任何辅助本地ONTAP或Cloud Volumes ONTAP系统都必须在NetApp Console*系统* 页面上可用。
 
-您需要知道集群管理 IP 地址和管理员用户帐户的密码才能添加集群。https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["了解如何发现集群"^] 。
+您需要知道集群管理 IP 地址和管理员用户帐户的密码才能添加集群。https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["了解如何发现集群"^]。
 
 
 
@@ -121,7 +121,7 @@ TIP: 将文件备份到ONTAP S3 时不支持 PAYGO 许可。
 * 最低版本为ONTAP 9.8；建议使用ONTAP 9.8P13 及更高版本。
 * SnapMirror许可证（包含在高级捆绑包或数据保护捆绑包中）。
 +
-*注意：*使用NetApp备份和恢复时不需要“混合云捆绑包”。
+*注意：*使用NetApp Backup and Recovery时不需要“混合云捆绑包”。
 
 +
 了解如何 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理您的集群许可证"^]。
@@ -129,7 +129,7 @@ TIP: 将文件备份到ONTAP S3 时不支持 PAYGO 许可。
 * 时间和时区设置正确。了解如何 https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["配置集群时间"^]。
 * 如果要复制数据，则应在复制数据之前验证源系统和目标系统是否运行兼容的ONTAP版本。
 +
-https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["查看与SnapMirror关系兼容的ONTAP版本"^] 。
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["查看与SnapMirror关系兼容的ONTAP版本"^]。
 
 
 
@@ -144,7 +144,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 * 当您使用扇出备份架构时，必须在主存储系统上配置设置。
 * 当您使用级联备份架构时，必须在_辅助_存储系统上配置设置。
 +
-link:prev-ontap-protect-journey.html["了解有关备份架构类型的更多信息"] 。
+link:prev-ontap-protect-journey.html["了解有关备份架构类型的更多信息"]。
 
 
 
@@ -158,19 +158,19 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 * ONTAP需要从控制台代理到集群管理 LIF 的入站连接。
 * 每个托管要备份的卷的ONTAP节点上都需要一个集群间 LIF。  LIF 必须与ONTAP用于连接对象存储的 _IPspace_ 相关联。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["了解有关 IP 空间的更多信息"^] 。
 +
-设置NetApp Backup and Recovery 时，系统会提示您输入要使用的 IP 空间。您应该选择与每个 LIF 关联的 IP 空间。这可能是“默认” IP 空间或您创建的自定义 IP 空间。
+当您设置NetApp Backup and Recovery时，系统会提示您输入要使用的 IP 空间。您应该选择与每个 LIF 关联的 IP 空间。这可能是“默认” IP 空间或您创建的自定义 IP 空间。
 
 * 节点的集群间 LIF 能够访问对象存储（当控制台代理安装在“暗”站点中时不需要）。
 * 已为卷所在的存储虚拟机配置 DNS 服务器。了解如何 https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["为 SVM 配置 DNS 服务"^]。
 * 如果您使用的 IP 空间与默认 IP 空间不同，则可能需要创建静态路由才能访问对象存储。
-* 如有必要，请更新防火墙规则，以允许NetApp备份和恢复服务通过您指定的端口（通常为端口 443）从ONTAP连接到对象存储，并通过端口 53（TCP/UDP）从存储虚拟机到 DNS 服务器的名称解析流量。
+* 如有必要，请更新防火墙规则，以允许NetApp Backup and Recovery服务通过您指定的端口（通常为端口 443）从ONTAP连接到对象存储，并通过端口 53（TCP/UDP）从存储虚拟机到 DNS 服务器的名称解析流量。
 
 
 
 
 === 验证ONTAP复制卷的网络要求
 
-如果您计划使用NetApp Backup and Recovery 在辅助ONTAP系统上创建复制卷，请确保源系统和目标系统满足以下网络要求。
+如果您计划使用NetApp Backup and Recovery在辅助ONTAP系统上创建复制卷，请确保源系统和目标系统满足以下网络要求。
 
 
 
@@ -200,11 +200,11 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 
 此ONTAP系统必须满足以下要求。
 
-支持的ONTAP版本:: 本地ONTAP系统需要ONTAP 9.8 及更高版本。  Cloud Volumes ONTAP系统需要ONTAP 9.9.1 及更高版本。
+支持的 ONTAP 版本:: 本地ONTAP系统需要ONTAP 9.8 及更高版本。  Cloud Volumes ONTAP系统需要ONTAP 9.9.1 及更高版本。
 S3 凭证:: 您必须创建 S3 用户来控制对ONTAP S3 存储的访问。 https://docs.netapp.com/us-en/ontap/s3-config/create-s3-user-task.html["有关详细信息，请参阅ONTAP S3 文档"^] 。
 +
 --
-当您设置备份到ONTAP S3 时，备份向导会提示您输入用户帐户的 S3 访问密钥和密钥。该用户帐户使NetApp Backup and Recovery 能够验证和访问用于存储备份的ONTAP S3 存储桶。需要密钥，以便ONTAP S3 知道谁在发出请求。
+当您设置备份到ONTAP S3 时，备份向导会提示您输入用户帐户的 S3 访问密钥和密钥。该用户帐户使NetApp Backup and Recovery能够验证和访问用于存储备份的ONTAP S3 存储桶。需要密钥，以便ONTAP S3 知道谁在发出请求。
 
 这些访问密钥必须与具有以下权限的用户相关联：
 
@@ -252,7 +252,7 @@ S3 凭证:: 您必须创建 S3 用户来控制对ONTAP S3 存储的访问。 htt
 . 继续以下选项：
 +
 ** 如果您已经有控制台代理，那么一切就绪了。只需选择*下一步*。
-** 如果您没有控制台代理，则会出现“添加控制台代理”选项。请参阅<<准备控制台代理>> 。
+** 如果您没有控制台代理，则会出现“添加控制台代理”选项。参考<<准备控制台代理>>。
 
 
 
@@ -358,7 +358,7 @@ TIP: 要使用备份和恢复创建自定义策略，请参阅link:br-use-polici
 ** *网络*：选择要备份的卷所在的源ONTAP集群中的 IP 空间。此 IP 空间的集群间 LIF 必须具有出站互联网访问权限（当控制台代理安装在“暗站”中时不需要）。
 +
 
-TIP: 选择正确的 IP 空间可确保NetApp Backup and Recovery 可以建立从ONTAP到ONTAP S3 对象存储的连接。
+TIP: 选择正确的 IP 空间可确保NetApp Backup and Recovery可以建立从ONTAP到ONTAP S3 对象存储的连接。
 
 ** *备份策略*：选择现有的备份策略或创建新的备份策略。
 +
@@ -401,7 +401,7 @@ TIP: 要使用备份和恢复创建自定义策略，请参阅link:br-use-polici
 
 
 .结果
-NetApp Backup and Recovery 开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括源数据的完整副本。后续传输包含快照副本中包含的主存储数据的差异副本。
+NetApp Backup and Recovery开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括源数据的完整副本。后续传输包含快照副本中包含的主存储数据的差异副本。
 
 在目标集群中创建一个复制卷，该卷将与主存储卷同步。
 

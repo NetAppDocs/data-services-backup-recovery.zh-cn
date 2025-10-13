@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-policies-create.html 
 keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: 在NetApp备份和恢复中，创建您自己的策略来控制备份频率、备份时间以及保留的备份文件数量。 
+summary: 在NetApp Backup and Recovery中，创建您自己的策略来控制备份频率、备份时间以及保留的备份文件数量。 
 ---
-= 创建和管理策略来管理NetApp Backup and Recovery 中的备份
+= 创建和管理策略来管理NetApp Backup and Recovery中的备份
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,12 +12,12 @@ summary: 在NetApp备份和恢复中，创建您自己的策略来控制备份�
 
 
 [role="lead"]
-在NetApp备份和恢复中，创建您自己的策略来控制备份频率、备份时间以及保留的备份文件数量。
+在NetApp Backup and Recovery中，创建您自己的策略来控制备份频率、备份时间以及保留的备份文件数量。
 
 
 NOTE: 其中一些选项和配置部分并不适用于所有工作负载。
 
-如果从SnapCenter导入资源，您可能会发现SnapCenter中使用的策略与NetApp Backup and Recovery 中使用的策略存在一些差异。看link:reference-policy-differences-snapcenter.html["SnapCenter与NetApp Backup and Recovery 之间的策略差异"] 。
+如果从SnapCenter导入资源，您可能会发现SnapCenter中使用的策略与NetApp Backup and Recovery中使用的策略存在一些差异。看link:reference-policy-differences-snapcenter.html["SnapCenter与NetApp Backup and Recovery之间的策略差异"]。
 
 您可以实现以下与政策相关的目标：
 
@@ -33,7 +33,7 @@ NOTE: 其中一些选项和配置部分并不适用于所有工作负载。
 
 == 查看政策
 
-. 从NetApp备份和恢复菜单中，选择 *策略*。
+. 从NetApp Backup and Recovery菜单中，选择 *策略*。
 . 查看这些政策详情。
 +
 ** *工作负载*：示例包括 Microsoft SQL Server、Volumes、VMware、KVM、Hyper-V 或 Kubernetes。
@@ -51,7 +51,7 @@ NOTE: 其中一些选项和配置部分并不适用于所有工作负载。
 
 您可以创建策略来管理本地快照、复制到二级存储以及备份到对象存储。  3-2-1 策略的一部分涉及在*主*存储系统上创建实例、数据库、应用程序或虚拟机的快照副本。
 
-*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 .开始之前
 如果您计划复制到二级存储并希望在本地快照或远程ONTAP二级存储上使用快照锁定，则首先需要在集群级别初始化ONTAP合规时钟。这是在策略中启用快照锁定的要求。
@@ -61,7 +61,7 @@ NOTE: 其中一些选项和配置部分并不适用于所有工作负载。
 有关快照锁定的一般信息，请参阅 https://docs.netapp.com/us-en/ontap/snaplock/snapshot-lock-concept.html["ONTAP中的快照锁定"^]。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *策略*。
+. 从NetApp Backup and Recovery菜单中，选择 *策略*。
 . 在“策略”页面中，选择“创建新策略”。
 . 在“策略”页面中，提供以下信息。
 +
@@ -129,7 +129,7 @@ NOTE: 您可以为磁盘到磁盘扇出选项配置多个辅助设置。
 * 选择“*添加计划*”选项来选择快照计划或计划。您最多可以有 5 个时间表。
 * *快照频率*：选择每小时、每天、每周、每月或每年的频率。  Kubernetes 工作负载没有年度频率。
 * *快照保留*：输入要保留的快照数量。
-* *启用日志备份*：（仅适用于 Microsoft SQL Server 工作负载和 Oracle 数据库工作负载。）启用此选项可备份日志并设置日志备份的频率和保留。为此，您必须已经配置了日志备份。看link:br-start-configure.html["配置日志目录"] 。
+* *启用日志备份*：（仅适用于 Microsoft SQL Server 工作负载和 Oracle 数据库工作负载。）启用此选项可备份日志并设置日志备份的频率和保留。为此，您必须已经配置了日志备份。看link:br-start-configure.html["配置日志目录"]。
 +
 ** *备份后修剪存档日志*：（仅限 Oracle 数据库工作负载）如果启用了日志备份，您可以选择启用此功能来限制备份和恢复保留 Oracle 存档日志的时间。您可以选择保留期限以及备份和恢复应删除存档日志的位置。
 
@@ -225,7 +225,7 @@ NOTE: 出现的字段根据所选的提供商和架构而有所不同。
 您也可以选择在策略中配置高级设置。这些设置适用于所有备份架构，包括本地快照、复制到二级存储以及备份到对象存储。这些设置不适用于 Kubernetes 工作负载。可用的高级设置将根据您在页面顶部选择的工作负载而有所不同，因此此处描述的高级设置可能不适用于所有工作负载。为 Kubernetes 工作负载配置策略时，高级设置不可用。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *策略*。
+. 从NetApp Backup and Recovery菜单中，选择 *策略*。
 . 在“策略”页面中，选择“创建新策略”。
 . 在“*策略 > 高级*”设置部分中，选择“*选择高级操作*”菜单，从高级设置列表中进行选择。
 . 启用您想要查看或更改的任何设置，然后选择*接受*。
@@ -278,13 +278,13 @@ NOTE: 此功能不适用于 VMware Preview 工作负载。
 
 如果您正在编辑备份到对象存储的策略，则可以启用存档。
 
-如果您从SnapCenter导入资源，您可能会遇到SnapCenter中使用的策略与NetApp Backup and Recovery 中使用的策略之间的一些差异。看link:reference-policy-differences-snapcenter.html["SnapCenter与NetApp Backup and Recovery 之间的策略差异"] 。
+如果您从SnapCenter导入资源，您可能会发现SnapCenter中使用的策略与NetApp Backup and Recovery中使用的策略存在一些差异。看link:reference-policy-differences-snapcenter.html["SnapCenter与NetApp Backup and Recovery之间的策略差异"]。
 
-.所需的NetApp控制台角色
-备份和恢复超级管理员。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+.所需的NetApp Console角色
+备份和恢复超级管理员。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 .步骤
-. 在NetApp控制台中，转到 *保护* > *备份和恢复*。
+. 在NetApp Console中，转到 *保护* > *备份和恢复*。
 . 选择*政策*选项。
 . 选择要编辑的策略。
 . 选择*操作*image:icon-action.png["操作图标"]图标，然后选择*编辑*。

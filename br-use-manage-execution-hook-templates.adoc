@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-manage-execution-hook-templates.html 
 keywords: hooks, execution hooks, exec hooks, hook, execution, script, postscript, prescript, post, pre, run, backup, snapshot, freeze 
-summary: NetApp Backup and Recovery 使您能够管理执行挂钩，以便在应用程序保护操作之前或之后采取行动。 
+summary: NetApp Backup and Recovery使您能够管理执行挂钩，以便在应用程序保护操作之前或之后采取行动。 
 ---
-= 管理适用于 Kubernetes 工作负载的NetApp备份和恢复执行挂钩模板
+= 管理适用于 Kubernetes 工作负载的NetApp Backup and Recovery执行挂钩模板
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -25,14 +25,14 @@ summary: NetApp Backup and Recovery 使您能够管理执行挂钩，以便在�
 
 
 ====
-.所需的NetApp控制台角色
-组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp备份和恢复访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+.所需的NetApp Console角色
+组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 
 
 == 执行钩子的类型
 
-NetApp Backup and Recovery 根据运行时间支持以下类型的执行挂钩：
+NetApp Backup and Recovery根据运行时间支持以下类型的执行挂钩：
 
 * 预快照
 * 快照后
@@ -87,9 +87,9 @@ NOTE: 由于执行钩子通常会减少或完全禁用其所针对的应用程�
 
 == 执行钩子过滤器
 
-当您为应用程序添加或编辑执行挂钩时，您可以向执行挂钩添加过滤器来管理该挂钩将匹配哪些容器。过滤器对于在所有容器上使用相同容器镜像但可能将每个镜像用于不同目的的应用程序（例如 Elasticsearch）很有用。过滤器允许您创建执行挂钩在某些但不一定是所有相同容器上运行的场景。如果为单个执行挂钩创建多个过滤器，它们将通过逻辑 AND 运算符组合在一起。每个执行挂钩最多可以有 10 个活动过滤器。
+当您为应用程序添加或编辑执行挂钩时，您可以向执行挂钩添加过滤器来管理该挂钩将匹配哪些容器。过滤器对于在所有容器上使用相同容器镜像但可能将每个镜像用于不同目的的应用程序（例如 Elasticsearch）很有用。过滤器允许您创建执行挂钩在某些（但不一定是所有）相同的容器上运行的场景。如果为单个执行挂钩创建多个过滤器，它们将通过逻辑 AND 运算符组合在一起。每个执行挂钩最多可以有 10 个活动过滤器。
 
-添加到执行挂钩的每个过滤器都使用正则表达式来匹配集群中的容器。当钩子与容器匹配时，钩子将在该容器上运行其关联的脚本。过滤器的正则表达式使用正则表达式 2 (RE2) 语法，该语法不支持创建从匹配列表中排除容器的过滤器。有关NetApp Backup and Recovery 在执行钩子过滤器中支持的正则表达式的语法的信息，请参见 https://github.com/google/re2/wiki/Syntax["正则表达式 2 (RE2) 语法支持"^]。
+添加到执行挂钩的每个过滤器都使用正则表达式来匹配集群中的容器。当钩子与容器匹配时，钩子将在该容器上运行其关联的脚本。过滤器的正则表达式使用正则表达式 2 (RE2) 语法，该语法不支持创建从匹配列表中排除容器的过滤器。有关NetApp Backup and Recovery在执行钩子过滤器中支持的正则表达式的语法的信息，请参见 https://github.com/google/re2/wiki/Syntax["正则表达式 2 (RE2) 语法支持"^]。
 
 
 NOTE: 如果将命名空间过滤器添加到在恢复或克隆操作后运行的执行挂钩，并且恢复或克隆源和目标位于不同的命名空间中，则命名空间过滤器仅适用于目标命名空间。

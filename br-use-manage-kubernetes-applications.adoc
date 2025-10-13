@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-kubernetes-applications.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: NetApp Backup and Recovery 使您能够取消保护并删除 Kubernetes 应用程序及相关资源。 
+summary: NetApp Backup and Recovery使您能够取消保护并删除 Kubernetes 应用程序及相关资源。 
 ---
 = 管理 Kubernetes 应用程序
 :hardbreaks:
@@ -14,19 +14,19 @@ summary: NetApp Backup and Recovery 使您能够取消保护并删除 Kubernetes
 
 
 [role="lead"]
-NetApp Backup and Recovery 使您能够取消保护并删除 Kubernetes 应用程序及相关资源。
+NetApp Backup and Recovery使您能够取消保护并删除 Kubernetes 应用程序及相关资源。
 
-.所需的NetApp控制台角色
-组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp备份和恢复访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+.所需的NetApp Console角色
+组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 
 
 == 取消保护 Kubernetes 应用程序
 
-如果您不再需要保护某个应用程序，可以取消保护。当您取消保护应用程序时， NetApp Backup and Recovery 会停止保护该应用程序，但保留所有相关的备份和快照。
+如果您不再需要保护某个应用程序，可以取消保护。当您取消保护应用程序时， NetApp Backup and Recovery会停止保护该应用程序，但保留所有相关的备份和快照。
 
 .步骤
-. 在NetApp Backup and Recovery 中，选择 *Inventory*。
+. 在NetApp Backup and Recovery中，选择 *Inventory*。
 . 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
 . 选择“*应用程序*”选项卡。
 . 在应用程序列表中，选择要取消保护的应用程序并选择相关的操作菜单。
@@ -38,10 +38,10 @@ NetApp Backup and Recovery 使您能够取消保护并删除 Kubernetes 应用�
 
 == 删除 Kubernetes 应用程序
 
-如果您不再需要某个应用程序，可以将其删除。当您删除应用程序时， NetApp Backup and Recovery 将停止保护该应用程序并删除所有相关的备份和快照。
+如果您不再需要某个应用程序，可以将其删除。当您删除应用程序时， NetApp Backup and Recovery将停止保护该应用程序并删除所有相关的备份和快照。
 
 .步骤
-. 在NetApp Backup and Recovery 中，选择 *Inventory*。
+. 在NetApp Backup and Recovery中，选择 *Inventory*。
 . 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
 . 选择“*应用程序*”选项卡。
 . 在应用程序列表中，选择要删除的应用程序并选择相关的操作菜单。

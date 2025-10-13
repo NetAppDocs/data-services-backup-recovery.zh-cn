@@ -4,7 +4,7 @@ permalink: br-use-mssql-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: 您可以将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure 和StorageGRID，确保您的数据受到保护。备份会自动生成并存储在您的公共或私有云帐户的对象存储中。您可以实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。 
 ---
-= 使用NetApp备份和恢复保护 Microsoft SQL 工作负载概述
+= 使用NetApp Backup and Recovery保护 Microsoft SQL 工作负载概述
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以将 Microsoft SQL Server 应用程序数据从本地ONTAP系�
 
 
 [role="lead"]
-使用NetApp备份和恢复保护您的 Microsoft SQL Server 应用程序数据，从本地ONTAP系统到 Amazon Web Services、Microsoft Azure 或StorageGRID 。根据您创建的策略，备份会自动生成并存储在您的公共或私有云帐户的对象存储中。您可以实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。
+使用NetApp Backup and Recovery保护您的 Microsoft SQL Server 应用程序数据，从本地ONTAP系统到 Amazon Web Services、Microsoft Azure 或StorageGRID 。根据您创建的策略，备份会自动生成并存储在您的公共或私有云帐户的对象存储中。您可以实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。
 
 3-2-1 方法的优点包括：
 
@@ -23,7 +23,7 @@ summary: 您可以将 Microsoft SQL Server 应用程序数据从本地ONTAP系�
 * 现场副本有助于快速恢复，而异地副本则可在现场副本受损时使用。
 
 
-NetApp Backup and Recovery 利用NetApp SnapMirror数据复制技术，通过创建快照副本并将其传输到备份位置来确保所有备份完全同步。
+NetApp Backup and Recovery利用NetApp SnapMirror数据复制技术，通过创建快照副本并将其传输到备份位置来确保所有备份完全同步。
 
 您可以实现以下保护目标：
 
@@ -42,7 +42,7 @@ NetApp Backup and Recovery 利用NetApp SnapMirror数据复制技术，通过创
 要备份工作负载，通常需要创建管理备份和恢复操作的策略。看link:br-use-policies-create.html["创建策略"]了解更多信息。
 
 .支持的备份目标
-NetApp Backup and Recovery 使您能够将 Microsoft SQL Server 实例和数据库从以下源系统备份到公共和私有云提供商中的以下辅助系统和对象存储。快照副本驻留在源系统上。
+NetApp Backup and Recovery使您能够将 Microsoft SQL Server 实例和数据库从以下源系统备份到公共和私有云提供商中的以下辅助系统和对象存储。快照副本驻留在源系统上。
 
 [cols="33,33,33"]
 |===

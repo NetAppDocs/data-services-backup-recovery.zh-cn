@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-start-setup.html 
 keywords: backup, back up, restore, recovery, aws, azure 
-summary: 在使用NetApp Backup and Recovery 之前，请执行几个步骤来设置备份目标。 
+summary: 在使用NetApp Backup and Recovery之前，请执行几个步骤来设置备份目标。 
 ---
-= 在使用NetApp Backup and Recovery 之前设置备份目标
+= 在使用NetApp Backup and Recovery之前设置备份目标
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: 在使用NetApp Backup and Recovery 之前，请执行几个步骤来�
 
 
 [role="lead"]
-在使用NetApp Backup and Recovery 之前，请执行几个步骤来设置备份目标。
+在使用NetApp Backup and Recovery之前，请执行几个步骤来设置备份目标。
 
 在开始之前，请查看link:concept-start-prereq.html["前提条件"]以确保您的环境已准备就绪。
 
@@ -35,7 +35,7 @@ summary: 在使用NetApp Backup and Recovery 之前，请执行几个步骤来�
 
 +
 ** 在 AWS 中设置一个帐户。
-** 在 AWS 中配置 S3 权限，列于下一节。
+** 在 AWS 中配置 S3 权限，列于下一部分。
 ** 有关在控制台中管理 AWS 存储的详细信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/task-viewing-amazon-s3.html["管理您的 Amazon S3 存储桶"^]。
 
 
@@ -51,7 +51,7 @@ summary: 在使用NetApp Backup and Recovery 之前，请执行几个步骤来�
 
 
 
-在备份目标本身中配置选项后，您稍后会将其配置为NetApp Backup and Recovery 中的备份目标。有关如何在NetApp Backup and Recovery 中配置备份目标的详细信息，请参阅link:br-start-discover-backup-targets.html["发现备份目标"]。
+在备份目标本身中配置选项后，您稍后会将其配置为NetApp Backup and Recovery中的备份目标。有关如何在NetApp Backup and Recovery中配置备份目标的详细信息，请参阅link:br-start-discover-backup-targets.html["发现备份目标"]。
 
 
 
@@ -64,7 +64,7 @@ summary: 在使用NetApp Backup and Recovery 之前，请执行几个步骤来�
 
 
 .步骤
-. 确保控制台代理具有所需的权限。有关详细信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["NetApp控制台策略权限"]。
+. 确保控制台代理具有所需的权限。有关详细信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["NetApp Console策略权限"]。
 +
 
 NOTE: 在 AWS 中国区域创建备份时，您需要将 IAM 策略中所有_Resource_部分下的 AWS 资源名称“arn”从“aws”更改为“aws-cn”；例如 `arn:aws-cn:s3:::netapp-backup-*`。

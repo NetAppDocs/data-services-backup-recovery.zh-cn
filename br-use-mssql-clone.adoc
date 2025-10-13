@@ -4,7 +4,7 @@ permalink: br-use-mssql-clone.html
 keywords: backing up, restoring, back up, backup, clone, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: 克隆 Microsoft SQL Server 应用程序数据以用于开发、测试或保护目的。您可以从 Microsoft SQL Server 工作负载的即时快照或现有快照创建克隆。 
 ---
-= 使用NetApp备份和恢复克隆 Microsoft SQL Server 工作负载
+= 使用NetApp Backup and Recovery克隆 Microsoft SQL Server 工作负载
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 克隆 Microsoft SQL Server 应用程序数据以用于开发、测试�
 
 
 [role="lead"]
-使用NetApp备份和恢复将 Microsoft SQL Server 应用程序数据克隆到相同或不同的 VM，以用于开发、测试或保护目的。您可以从 Microsoft SQL Server 工作负载的即时快照或现有快照创建克隆。
+使用NetApp Backup and Recovery将 Microsoft SQL Server 应用程序数据克隆到相同或不同的 VM，以用于开发、测试或保护目的。您可以从 Microsoft SQL Server 工作负载的即时快照或现有快照创建克隆。
 
 从以下克隆类型中进行选择：
 
@@ -30,7 +30,7 @@ summary: 克隆 Microsoft SQL Server 应用程序数据以用于开发、测试�
 * 删除克隆
 
 
-*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 
 
@@ -41,7 +41,7 @@ summary: 克隆 Microsoft SQL Server 应用程序数据以用于开发、测试�
 您可以从现有快照或即时快照创建克隆。即时快照是根据备份创建的源数据的时间点副本。如果数据丢失或损坏，您可以使用克隆来恢复您的工作负载。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *克隆*。
+. 从NetApp Backup and Recovery菜单中，选择 *克隆*。
 . 选择*创建新克隆*。
 . 选择克隆类型：
 +
@@ -112,7 +112,7 @@ summary: 克隆 Microsoft SQL Server 应用程序数据以用于开发、测试�
 您可以选择更改数据库名称、使用最新的即时快照或从现有生产快照刷新。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *克隆*。
+. 从NetApp Backup and Recovery菜单中，选择 *克隆*。
 . 选择要刷新的克隆。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *刷新克隆*。
 . 完成“高级设置”部分：
@@ -140,7 +140,7 @@ summary: 克隆 Microsoft SQL Server 应用程序数据以用于开发、测试�
 如果您不想使用源工作负载中的最新数据更新克隆，则可能需要跳过克隆刷新。跳过克隆刷新允许您保持克隆原样而不进行更新。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *克隆*。
+. 从NetApp Backup and Recovery菜单中，选择 *克隆*。
 . 选择您想要跳过刷新的克隆。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *跳过刷新*。
 . 在“跳过刷新确认”对话框中，执行以下操作：
@@ -157,12 +157,12 @@ summary: 克隆 Microsoft SQL Server 应用程序数据以用于开发、测试�
 
 您可以拆分 Microsoft SQL Server 工作负载的克隆。拆分克隆将从克隆中创建一个新的备份。新的备份可用于恢复工作负载。
 
-您可以选择将克隆拆分为独立克隆或长期克隆。向导会显示 SVM 的聚合列表、其大小以及克隆卷所在的位置。 NetApp Backup and Recovery 还会指示是否有足够的空间来拆分克隆。克隆分裂后，克隆成为一个独立的数据库进行保护。
+您可以选择将克隆拆分为独立克隆或长期克隆。向导会显示 SVM 的聚合列表、其大小以及克隆卷所在的位置。 NetApp Backup and Recovery还会指示是否有足够的空间来拆分克隆。克隆分裂后，克隆成为一个独立的数据库进行保护。
 
 克隆作业不会被删除，并且可以再次用于其他克隆。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *克隆*。
+. 从NetApp Backup and Recovery菜单中，选择 *克隆*。
 . 选择一个克隆。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *分裂克隆*。
 . 查看拆分克隆详细信息并选择*拆分*。
@@ -178,7 +178,7 @@ summary: 克隆 Microsoft SQL Server 应用程序数据以用于开发、测试�
 如果克隆受到策略保护，则会删除克隆，包括作业。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *克隆*。
+. 从NetApp Backup and Recovery菜单中，选择 *克隆*。
 . 选择一个克隆。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *删除克隆*。
 . 在克隆删除确认对话框中，查看删除详细信息。

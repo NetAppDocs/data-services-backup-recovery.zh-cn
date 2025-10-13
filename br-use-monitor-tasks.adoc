@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-monitor-tasks.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
-summary: 使用NetApp备份和恢复，监控您启动的本地快照、复制和备份到对象存储作业的状态，以及您启动的还原作业。 
+summary: 使用NetApp Backup and Recovery，监控您启动的本地快照、复制和备份到对象存储作业的状态，以及您启动的还原作业。 
 ---
-= 监控NetApp备份和恢复中的作业
+= 监控NetApp Backup and Recovery中的作业
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,11 +14,11 @@ summary: 使用NetApp备份和恢复，监控您启动的本地快照、复制�
 
 
 [role="lead"]
-使用NetApp备份和恢复，监控您启动的本地快照、复制和备份到对象存储作业的状态，以及您启动的还原作业。您可以查看已完成、正在进行或失败的作业，以便诊断和解决问题。使用NetApp控制台通知中心，您可以启用通过电子邮件发送通知，这样即使您未登录系统也可以了解重要的系统活动。使用控制台时间线，您可以查看通过 UI 或 API 发起的所有操作的详细信息。
+使用NetApp Backup and Recovery，监控您启动的本地快照、复制和备份到对象存储作业的状态，以及您启动的还原作业。您可以查看已完成、正在进行或失败的作业，以便诊断和解决问题。使用NetApp Console通知中心，您可以启用通过电子邮件发送通知，这样即使您未登录系统也可以了解重要的系统活动。使用控制台时间线，您可以查看通过 UI 或 API 发起的所有操作的详细信息。
 
-NetApp Backup and Recovery 会将作业信息保留 15 天，之后会被清除，并且不再显示在作业监视器中。
+NetApp Backup and Recovery会将作业信息保留 15 天，之后会被清除，并且不再显示在作业监视器中。
 
-*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 
 
@@ -35,13 +35,13 @@ NetApp Backup and Recovery 会将作业信息保留 15 天，之后会被清除�
 * 失败
 
 
-您从NetApp备份和恢复 UI 和 API 启动的快照、复制、对象存储备份和还原操作均可在“作业监控”选项卡中找到。
+您从NetApp Backup and RecoveryUI 和 API 启动的快照、复制、对象存储备份和还原操作均可在“作业监控”选项卡中找到。
 
 
-NOTE: 如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没有看到正在进行的计划备份操作，则需要重新启动NetApp备份和恢复。link:reference-restart-backup.html["了解如何重新启动NetApp Backup and Recovery"] 。
+NOTE: 如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没有看到正在进行的计划备份操作，则需要重新启动NetApp Backup and Recovery。link:reference-restart-backup.html["了解如何重新启动NetApp Backup and Recovery"]。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *监控*。
+. 从NetApp Backup and Recovery菜单中，选择 *监控*。
 . 要显示其他列（系统、SVM、用户名、工作负载、策略名称、快照标签），请选择加号。
 
 
@@ -54,7 +54,7 @@ NOTE: 如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没�
 默认情况下，“作业监控”页面显示过去 24 小时的保护和恢复作业。您可以使用时间范围过滤器更改时间范围。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *监控*。
+. 从NetApp Backup and Recovery菜单中，选择 *监控*。
 . 要对结果进行不同的排序，请选择每个列标题以按状态、开始时间、资源名称等进行排序。
 . 如果您正在寻找特定的工作，请选择“高级搜索和过滤”区域以打开“搜索”面板。
 +
@@ -92,7 +92,7 @@ NOTE: 如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没�
 恢复作业显示详细信息，例如备份目标提供商（Amazon Web Services、Microsoft Azure、Google Cloud、本地）、S3 存储桶名称、SVM 名称、源卷名称、目标卷、快照标签、恢复的对象数、文件名、文件大小、上次修改日期和完整文件路径。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *监控*。
+. 从NetApp Backup and Recovery菜单中，选择 *监控*。
 . 选择作业的名称。
 . 选择“操作”菜单image:icon-action.png["操作图标"]并选择“查看详细信息”。
 . 展开每个部分以查看详细信息。
@@ -102,12 +102,12 @@ NOTE: 如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没�
 
 === 下载作业监控结果报告
 
-您可以在完善主作业监控页面的内容后将其下载为报告。 NetApp Backup and Recovery 会生成并下载一个 .CSV 文件，您可以根据需要查看该文件并发送给其他组。.CSV 文件包含最多 10,000 行数据。
+您可以在完善主作业监控页面的内容后将其下载为报告。 NetApp Backup and Recovery会生成并下载一个 .CSV 文件，您可以根据需要查看该文件并发送给其他组。.CSV 文件包含最多 10,000 行数据。
 
 从作业监控详细信息中，您可以下载包含单个作业详细信息的 JSON 文件。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *监控*。
+. 从NetApp Backup and Recovery菜单中，选择 *监控*。
 . 要下载所有作业的 CSV 文件，请选择“下载”按钮并在下载目录中找到该文件。
 . 要下载单个作业的 JSON 文件，请选择“操作”菜单image:icon-action.png["操作图标"]对于该作业，选择*下载 JSON 文件*，然后在下载目录中找到该文件。
 
@@ -120,19 +120,19 @@ NOTE: 如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没�
 
 备份生命周期作业跟踪所有已删除或待删除队列中的 Snapshot 副本。从ONTAP 9.13 开始，您可以在“作业监控”页面上查看所有称为“保留”的作业类型。
 
-“保留”作业类型捕获在受NetApp备份和恢复保护的卷上启动的所有快照删除作业。
+“保留”作业类型捕获在受NetApp Backup and Recovery保护的卷上启动的所有快照删除作业。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *监控*。
+. 从NetApp Backup and Recovery菜单中，选择 *监控*。
 . 选择“高级搜索和过滤”区域以打开搜索面板。
 . 选择“保留”作为工作类型。
 
 
 
 
-== 在NetApp控制台通知中心查看备份和恢复警报
+== 在NetApp Console通知中心查看备份和恢复警报
 
-NetApp控制台通知中心跟踪您启动的备份和恢复作业的进度，以便您可以验证操作是否成功。
+NetApp Console通知中心跟踪您启动的备份和恢复作业的进度，以便您可以验证操作是否成功。
 
 除了查看通知中心的警报之外，您还可以配置控制台通过电子邮件发送某些类型的通知作为警报，这样即使您未登录系统也可以了解重要的系统活动。 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["了解有关通知中心以及如何发送备份和恢复作业警报电子邮件的更多信息"^] 。
 
@@ -149,37 +149,37 @@ NetApp控制台通知中心跟踪您启动的备份和恢复作业的进度，�
 | 激活 | 系统备份和恢复编辑失败 | 错误 | 是 
 
 
-| 本地快照 | NetApp备份和恢复临时快照创建作业失败 | 错误 | 是 
+| 本地快照 | NetApp Backup and Recovery临时快照创建作业失败 | 错误 | 是 
 
 
-| 复制 | NetApp Backup and Recovery 临时复制作业失败 | 错误 | 是 
+| 复制 | NetApp Backup and Recovery临时复制作业失败 | 错误 | 是 
 
 
-| 复制 | NetApp备份和恢复复制暂停作业失败 | 错误 | 否 
+| 复制 | NetApp Backup and Recovery复制暂停作业失败 | 错误 | 否 
 
 
-| 复制 | NetApp备份和恢复复制中断作业失败 | 错误 | 否 
+| 复制 | NetApp Backup and Recovery复制中断作业失败 | 错误 | 否 
 
 
-| 复制 | NetApp备份和恢复复制重新同步作业失败 | 错误 | 否 
+| 复制 | NetApp Backup and Recovery复制重新同步作业失败 | 错误 | 否 
 
 
-| 复制 | NetApp备份和恢复复制停止作业失败 | 错误 | 否 
+| 复制 | NetApp Backup and Recovery复制停止作业失败 | 错误 | 否 
 
 
-| 复制 | NetApp备份和恢复复制反向重新同步作业失败 | 错误 | 是 
+| 复制 | NetApp Backup and Recovery复制反向重新同步作业失败 | 错误 | 是 
 
 
-| 复制 | NetApp备份和恢复复制删除作业失败 | 错误 | 是 
+| 复制 | NetApp Backup and Recovery复制删除作业失败 | 错误 | 是 
 |===
 
 NOTE: 从ONTAP 9.13.0 开始，所有警报都会出现在Cloud Volumes ONTAP和本地ONTAP系统中。对于具有Cloud Volumes ONTAP 9.13.0 和本地ONTAP 的系统，仅出现与“恢复作业已完成，但有警告”相关的警报。
 
-默认情况下， NetApp控制台组织和帐户管理员会收到所有“严重”和“建议”警报的电子邮件。默认情况下，所有其他用户和收件人均设置为不接收任何通知电子邮件。电子邮件可以发送给属于您的NetApp云帐户的任何控制台用户，或任何其他需要了解备份和恢复活动的收件人。
+默认情况下， NetApp Console组织和帐户管理员会收到所有“严重”和“建议”警报的电子邮件。默认情况下，所有其他用户和收件人均设置为不接收任何通知电子邮件。电子邮件可以发送给属于您的NetApp云帐户的任何控制台用户，或任何其他需要了解备份和恢复活动的收件人。
 
-要接收NetApp备份和恢复电子邮件警报，您需要在通知设置页面中选择通知严重性类型“严重”、“警告”和“错误”。
+要接收NetApp Backup and Recovery电子邮件警报，您需要在通知设置页面中选择通知严重性类型“严重”、“警告”和“错误”。
 
-https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["了解如何发送备份和恢复作业的警报电子邮件"^] 。
+https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["了解如何发送备份和恢复作业的警报电子邮件"^]。
 
 .步骤
 . 从控制台菜单中，选择（image:icon_bell.png["通知铃"] ）。
@@ -192,4 +192,4 @@ https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.htm
 
 您可以在控制台时间线中查看备份和恢复操作的详细信息以供进一步调查。控制台时间线提供每个事件的详细信息，无论是用户发起的还是系统发起的，并显示在 UI 中或通过 API 发起的操作。
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["了解时间线和通知中心之间的区别"^] 。
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["了解时间轴和通知中心之间的区别"^]。

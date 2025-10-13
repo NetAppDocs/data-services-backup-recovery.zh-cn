@@ -25,7 +25,7 @@
 
 === 支持第三方 Wasabi 对象存储（预览版）
 
-NetApp Backup and Recovery 现在将其支持扩展到第三方对象存储，主要关注 Wasabi。此新预览功能使您可以利用任何与 S3 兼容的对象存储来满足您的备份和恢复需求。
+NetApp Backup and Recovery现在将其支持扩展到第三方对象存储，主要关注 Wasabi。此新的预览功能使您可以利用任何与 S3 兼容的对象存储来满足您的备份和恢复需求。
 
 
 
@@ -54,7 +54,7 @@ vi default.json
 
 
 .结果
-容器再次打开后，打开NetApp备份和恢复 UI。当您启动备份或编辑备份策略时，您将看到新的提供商“S3 Compatible”与 AWS、Microsoft Azure、Google Cloud、 StorageGRID和ONTAP S3 等其他备份提供商一起列出。
+容器再次打开后，打开NetApp Backup and RecoveryUI。当您启动备份或编辑备份策略时，您将看到新的提供商“S3 Compatible”与 AWS、Microsoft Azure、Google Cloud、 StorageGRID和ONTAP S3 等其他备份提供商一起列出。
 
 
 

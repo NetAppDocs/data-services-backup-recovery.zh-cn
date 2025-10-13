@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database, dark site, private mode, restore database, backup and recovery, Console agent 
-summary: 在没有互联网访问的站点（称为“私有模式”）中使用NetApp Backup and Recovery 时， NetApp Backup and Recovery 配置数据将备份到存储备份的StorageGRID或ONTAP S3 存储桶中。如果您将来遇到控制台代理主机系统问题，您可以部署新的控制台代理并恢复关键的NetApp备份和恢复数据。 
+summary: 在没有互联网访问的站点（称为“私有模式”）中使用NetApp Backup and Recovery时， NetApp Backup and Recovery配置数据将备份到存储备份的StorageGRID或ONTAP S3 存储桶中。如果您将来遇到控制台代理主机系统问题，您可以部署新的控制台代理并恢复关键的NetApp Backup and Recovery数据。 
 ---
-= 在暗站中恢复NetApp备份和恢复配置数据
+= 在暗站中恢复NetApp Backup and Recovery配置数据
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,36 +14,36 @@ summary: 在没有互联网访问的站点（称为“私有模式”）中使�
 
 
 [role="lead"]
-在没有互联网访问的站点（称为_私有模式_）中使用NetApp Backup and Recovery 时， NetApp Backup and Recovery 配置数据将备份到存储备份的StorageGRID或ONTAP S3 存储桶中。如果控制台代理主机系统出现问题，您可以部署新的控制台代理并恢复关键的NetApp备份和恢复数据。
+在没有互联网访问的站点（称为_私有模式_）中使用NetApp Backup and Recovery时， NetApp Backup and Recovery配置数据将备份到存储备份的StorageGRID或ONTAP S3 存储桶中。如果控制台代理主机系统出现问题，您可以部署新的控制台代理并恢复关键的NetApp Backup and Recovery数据。
 
 
 NOTE: 此过程仅适用于ONTAP卷数据。
 
-当您在 SaaS 环境中使用NetApp Backup and Recovery 时，其中控制台代理部署在云提供商处，或者在您自己的具有互联网访问权限的主机系统上，所有重要的NetApp Backup and Recovery 配置数据都会在云中备份和保护。如果您遇到控制台代理问题，只需创建一个新的控制台代理并添加您的系统，备份详细信息就会自动恢复。
+当您在 SaaS 环境中使用NetApp Backup and Recovery时，其中控制台代理部署在云提供商处，或者在您自己的具有互联网访问权限的主机系统上，所有重要的NetApp Backup and Recovery配置数据都会在云中备份和保护。如果您遇到控制台代理问题，只需创建一个新的控制台代理并添加您的系统，备份详细信息就会自动恢复。
 
 备份的数据有两种类型：
 
-* NetApp备份和恢复数据库 - 包含所有卷、备份文件、备份策略和配置信息的列表。
+* NetApp Backup and Recovery数据库 - 包含所有卷、备份文件、备份策略和配置信息的列表。
 * 索引目录文件 - 包含用于搜索和恢复功能的详细索引，使您在查找要恢复的卷数据时搜索非常快速和有效。
 
 
-这些数据每天午夜备份一次，每个文件最多保留 7 份副本。如果控制台代理正在管理多个本地ONTAP系统，则NetApp备份和恢复文件将位于首先激活的系统的存储桶中。
+这些数据每天午夜备份一次，每个文件最多保留 7 份副本。如果控制台代理正在管理多个本地ONTAP系统，则NetApp Backup and Recovery文件将位于首先激活的系统的存储桶中。
 
 
-TIP: NetApp备份和恢复数据库或索引目录文件中从未包含任何卷数据。
+TIP: NetApp Backup and Recovery数据库或索引目录文件中从未包含任何卷数据。
 
 
 
-== 将NetApp备份和恢复数据还原到新的控制台代理
+== 将NetApp Backup and Recovery数据还原到新的控制台代理
 
-如果您的内部控制台代理发生灾难性故障，您将需要安装新的控制台代理，然后将NetApp备份和恢复数据还原到新的控制台代理。
+如果您的内部控制台代理发生灾难性故障，您将需要安装新的控制台代理，然后将NetApp Backup and Recovery数据还原到新的控制台代理。
 
-您需要执行以下任务才能使NetApp备份和恢复系统恢复工作状态：
+您需要执行以下任务才能使NetApp Backup and Recovery系统恢复工作状态：
 
 * 安装新的控制台代理
-* 还原NetApp备份和恢复数据库
+* 还原NetApp Backup and Recovery数据库
 * 恢复索引目录文件
-* 将所有本地ONTAP系统和StorageGRID系统重新发现到NetApp控制台 UI
+* 将所有本地ONTAP系统和StorageGRID系统重新发现到NetApp ConsoleUI
 
 
 一旦您确认系统恢复正常工作，我们建议您创建新的备份文件。
@@ -51,7 +51,7 @@ TIP: NetApp备份和恢复数据库或索引目录文件中从未包含任何卷
 .你需要什么
 您需要从存储备份文件的StorageGRID或ONTAP S3 存储桶访问最新的数据库和索引备份：
 
-* NetApp备份和恢复 MySQL 数据库文件
+* NetApp Backup and RecoveryMySQL 数据库文件
 +
 该文件位于存储桶中的以下位置 `netapp-backup-<GUID>/mysql_backup/`，它被命名为 `CBS_DB_Backup_<day>_<month>_<year>.sql`。
 
@@ -65,7 +65,7 @@ TIP: NetApp备份和恢复数据库或索引目录文件中从未包含任何卷
 
 === 在新的本地 Linux 主机上安装新的控制台代理
 
-安装新的控制台代理时，请确保下载与原始控制台代理上安装的相同版本的软件。 NetApp备份和恢复数据库结构的定期更改可能会导致较新的软件版本与原始数据库备份不兼容。你可以 https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["恢复备份数据库后，将控制台代理软件升级到最新版本"^]。
+安装新的控制台代理时，请确保下载与原始控制台代理上安装的相同版本的软件。 NetApp Backup and Recovery数据库结构的定期更改可能会导致较新的软件版本与原始数据库备份不兼容。你可以 https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["恢复备份数据库后，将控制台代理软件升级到最新版本"^]。
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["在新的本地 Linux 主机上安装控制台代理"^]
 . 使用您刚刚创建的管理员用户凭据登录控制台。
@@ -73,7 +73,7 @@ TIP: NetApp备份和恢复数据库或索引目录文件中从未包含任何卷
 
 
 
-=== 还原NetApp备份和恢复数据库
+=== 还原NetApp Backup and Recovery数据库
 
 . 将 MySQL 备份从备份位置复制到新的控制台代理主机。下面我们将使用示例文件名“CBS_DB_Backup_23_05_2023.sql”。
 . 根据您使用的是 Docker 还是 Podman 容器，使用以下命令之一将备份复制到 MySQL docker 容器中：
@@ -100,7 +100,7 @@ podman exec -it ds_mysql_1 sh
 ----
 . 在容器shell中，部署“env”。
 . 您将需要 MySQL DB 密码，因此请复制键“MYSQL_ROOT_PASSWORD”的值。
-. 使用以下命令还原NetApp备份和恢复 MySQL DB：
+. 使用以下命令还原NetApp Backup and RecoveryMySQL DB：
 +
 [source, cli]
 ----
@@ -145,14 +145,14 @@ unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 === 发现您的ONTAP集群和StorageGRID系统
 
 . https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["探索所有本地ONTAP系统"^]在您之前的环境中可用。这包括您用作 S3 服务器的ONTAP系统。
-. https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover-storagegrid.html["发现您的StorageGRID系统"^] 。
+. https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover-storagegrid.html["发现您的StorageGRID系统"^]。
 
 
 
 
 === 设置StorageGRID环境详细信息
 
-添加与您的ONTAP系统关联的StorageGRID系统的详细信息，因为它们是在原始控制台代理设置上使用 https://docs.netapp.com/us-en/console-automation/index.html["NetApp控制台 API"^]。
+添加与您的ONTAP系统关联的StorageGRID系统的详细信息，因为它们是在原始控制台代理设置上使用 https://docs.netapp.com/us-en/console-automation/index.html["NetApp ConsoleAPI"^]。
 
 以下信息适用于从NetApp Console 3.9.xx 开始的私有模式安装。对于旧版本，请使用以下步骤： https://community.netapp.com/t5/Tech-ONTAP-Blogs/DarkSite-Cloud-Backup-MySQL-and-Indexed-Catalog-Backup-and-Restore/ba-p/440800["DarkSite 云备份：MySQL 和索引目录备份和恢复"^] 。
 
@@ -185,7 +185,7 @@ curl -X GET http://10.193.192.202/tenancy/external/resource?account=account-DARK
 +
 此 API 将返回如下响应。“resourceIdentifier”下的值表示_WorkingEnvironment Id_，“agentId”下的值表示_x-agent-id_。
 
-. 使用与系统关联的StorageGRID系统的详细信息更新NetApp备份和恢复数据库。确保输入StorageGRID的完全限定域名以及访问密钥和存储密钥，如下所示：
+. 使用与系统关联的StorageGRID系统的详细信息更新NetApp Backup and Recovery数据库。确保输入StorageGRID的完全限定域名以及访问密钥和存储密钥，如下所示：
 +
 [source, http]
 ----
@@ -199,7 +199,7 @@ curl -X POST 'http://10.193.192.202/account/account-DARKSITE1/providers/cloudman
 
 
 
-=== 验证NetApp备份和恢复设置
+=== 验证NetApp Backup and Recovery设置
 
 . 选择每个ONTAP系统，然后单击右侧面板中备份和恢复服务旁边的“查看备份”。
 +

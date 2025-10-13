@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-start-prereq-snapcenter-import.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery, snapcenter, import, migration, migrate 
-summary: 通过验证操作环境、控制台代理和控制台帐户的准备情况来开始使用NetApp Backup and Recovery。要使用NetApp Backup and Recovery，您需要满足这些先决条件。 
+summary: 通过验证操作环境、控制台代理和控制台帐户的准备情况来开始使用NetApp Backup and Recovery 。要使用NetApp Backup and Recovery，您需要满足这些先决条件。 
 ---
 = 从插件服务导入NetApp Backup and Recovery 的先决条件
 :hardbreaks:
@@ -18,7 +18,7 @@ summary: 通过验证操作环境、控制台代理和控制台帐户的准备�
 
 
 
-== 首先在NetApp控制台中创建系统
+== 首先在NetApp Console中创建系统
 
 如果要从SnapCenter导入资源，则应先将所有本地SnapCenter群集存储添加到控制台 *系统* 页面，然后再从SnapCenter导入。这确保主机资源能够被正确发现和导入。
 
@@ -28,7 +28,7 @@ summary: 通过验证操作环境、控制台代理和控制台帐户的准备�
 
 要从适用于 Microsoft SQL Server 的SnapCenter插件导入资源，请确保满足安装适用于 Microsoft SQL Server 的SnapCenter插件的主机要求。
 
-专门检查SnapCenter要求link:concept-start-prereq.html["NetApp备份和恢复前提条件"]。
+专门检查SnapCenter要求link:concept-start-prereq.html["NetApp Backup and Recovery前提条件"]。
 
 
 

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-policy-differences-snapcenter.html 
 keywords: backup policy, backup policies, snapcenter, migration 
-summary: NetApp Backup and Recovery 中使用的策略与SnapCenter中使用的策略之间存在一些差异。 
+summary: NetApp Backup and Recovery中使用的策略与SnapCenter中使用的策略之间存在一些差异。 
 ---
-= SnapCenter中的策略与NetApp Backup and Recovery 中的策略比较
+= SnapCenter中的策略与NetApp Backup and Recovery中的策略比较
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: NetApp Backup and Recovery 中使用的策略与SnapCenter中使用的�
 
 
 [role="lead"]
-SnapCenter中使用的策略与NetApp Backup and Recovery 中使用的策略之间存在一些差异，这可能会影响您从SnapCenter导入资源和策略后看到的内容。
+SnapCenter中使用的策略与NetApp Backup and Recovery中使用的策略之间存在一些差异，这可能会影响您从SnapCenter导入资源和策略后看到的内容。
 
 
 
@@ -26,7 +26,7 @@ SnapCenter使用以下计划层：
 * *每月*：一月至十二月，可选择在每月的特定日期执行，例如每月 7 号，甚至每月的多天。
 
 
-NetApp Backup and Recovery 使用以下计划层，它们略有不同：
+NetApp Backup and Recovery使用以下计划层，它们略有不同：
 
 * *每小时*：仅以 15 分钟为间隔执行快照，例如 1 小时或 15 分钟间隔小于 60。
 * *每日*：一天中的小时数（0-23），开始时间例如为上午 10:00，并可选择每隔几小时执行一次。
@@ -39,23 +39,23 @@ NetApp Backup and Recovery 使用以下计划层，它们略有不同：
 
 == SnapCenter中具有相同计划层的多个策略
 
-您可以将具有相同计划层的多个策略分配给SnapCenter中的资源。但是， NetApp Backup and Recovery 不支持在使​​用相同计划层的资源上应用多个策略。
+您可以将具有相同计划层的多个策略分配给SnapCenter中的资源。但是， NetApp Backup and Recovery不支持在使​​用相同计划层的资源上应用多个策略。
 
-*示例*：如果您在SnapCenter中使用三个策略（用于数据、日志和快照日志），则从SnapCenter迁移后， NetApp Backup and Recovery 将使用单个策略而不是全部三个策略。
+*示例*：如果您在SnapCenter中使用三个策略（用于数据、日志和快照日志），则从SnapCenter迁移后， NetApp Backup and Recovery将使用单个策略而不是全部三个策略。
 
 
 
 == 导入的SnapCenter每日计划
 
-NetApp Backup and Recovery 按如下方式调整SnapCenter计划：
+NetApp Backup and Recovery按如下方式调整SnapCenter计划：
 
-* 如果SnapCenter计划设置为小于或等于 7 天，则NetApp Backup and Recovery 会将计划设置为每周。本周内将会跳过一些快照。
+* 如果SnapCenter计划设置为小于或等于 7 天，NetApp Backup and Recovery会将计划设置为每周。本周内将会跳过一些快照。
 +
-*示例*：如果您有一个SnapCenter每日策略，从星期一开始每 3 天重复一次，则NetApp Backup and Recovery 会将计划设置为每周一、周四和周日。由于并非每 3 天一次，因此有些日子会被跳过。
+*示例*：如果您有一个SnapCenter每日策略，从星期一开始每 3 天重复一次，NetApp Backup and Recovery会将计划设置为每周一、周四和周日。由于并非每 3 天一次，因此有些日子会被跳过。
 
-* 如果SnapCenter计划设置为超过 7 天， NetApp Backup and Recovery 会将计划设置为每月。该月将跳过一些快照。
+* 如果SnapCenter计划设置为超过 7 天， NetApp Backup and Recovery会将计划设置为每月。该月将跳过一些快照。
 +
-*示例*：如果您有一个SnapCenter每日策略，从每月 2 号开始每 10 天重复一次，则NetApp Backup and Recovery（迁移后）会将计划设置为每月 2 日、12 日和 22 日。下个月将会跳过某些日子。
+*示例*：如果您有一个SnapCenter每日策略，其重复间隔为从每月 2 号开始每 10 天一次，则NetApp Backup and Recovery （迁移后）会将计划设置为每月 2 日、12 日和 22 日执行。下个月有些日子将会被跳过。
 
 
 
@@ -63,37 +63,37 @@ NetApp Backup and Recovery 按如下方式调整SnapCenter计划：
 
 == 导入的SnapCenter每小时计划
 
-重复间隔大于一小时的SnapCenter每小时策略将转换为NetApp Backup and Recovery 中的每日策略。
+重复间隔大于一小时的SnapCenter每小时策略将转换为NetApp Backup and Recovery中的每日策略。
 
 任何重复间隔不是 24 倍（例如 5、7 等）的每小时策略都会跳过一天中的某些快照。
 
-*示例*：如果您有一个SnapCenter每小时策略，从凌晨 1:00 开始每 5 小时重复一次，则NetApp Backup and Recovery（迁移后）将把计划设置为每天，间隔 5 小时，时间为凌晨 1:00、上午 6:00、上午 11:00、下午 4:00 和晚上 9:00。有些时间会被跳过，晚上 9:00 之后应该是凌晨 2:00，每 5 小时重复一次，但始终是凌晨 1:00。
+*示例*：如果您有一个SnapCenter每小时策略，从凌晨 1:00 开始每 5 小时重复一次，NetApp Backup and Recovery （迁移后）将把计划设置为每天，间隔 5 小时，时间为凌晨 1:00、上午 6:00、上午 11:00、下午 4:00 和晚上 9:00。有些时间会被跳过，晚上 9:00 之后应该是凌晨 2:00，每 5 小时重复一次，但始终是凌晨 1:00。
 
 
 
 == SnapCenter策略的日志保留
 
-如果SnapCenter中的资源具有多个策略，则NetApp Backup and Recovery 将使用以下优先级顺序来分配日志保留值：
+如果SnapCenter中的资源具有多个策略，NetApp Backup and Recovery将使用以下优先级顺序来分配日志保留值：
 
-* 对于SnapCenter中的“使用日志备份策略的完整备份”加上“仅日志”策略， NetApp Backup and Recovery 使用仅日志策略保留值。
-* 对于SnapCenter中的“仅带日志的完整备份”和“完整和日志”策略， NetApp Backup and Recovery 使用仅日志保留值。
-* 对于SnapCenter中的“完整备份和日志”加上“完整备份”， NetApp Backup and Recovery 使用“完整备份和日志”保留值。
-* 如果您在SnapCenter中只有完整备份，则NetApp Backup and Recovery 不会启用日志备份。
+* 对于SnapCenter中的“使用日志备份策略的完整备份”加上“仅日志”策略， NetApp Backup and Recovery使用仅日志策略保留值。
+* 对于SnapCenter中的“仅带日志的完整备份”和“完整和日志”策略， NetApp Backup and Recovery使用仅日志保留值。
+* 对于SnapCenter中的“完整备份和日志”加上“完整备份”， NetApp Backup and Recovery使用“完整备份和日志”保留值。
+* 如果您在SnapCenter中只有完整备份，NetApp Backup and Recovery不会启用日志备份。
 
 
 
 
 == 日志备份保留
 
-使用SnapCenter，您可以在附加到资源的多个策略中设置多个保留值。但是， NetApp Backup and Recovery 仅支持与资源相关的所有策略使用单个保留值。
+使用SnapCenter，您可以在附加到资源的多个策略中设置多个保留值。但是， NetApp Backup and Recovery仅支持与资源相关的所有策略使用单个保留值。
 
 
 
 == SnapCenter策略的保留计数
 
-如果您在SnapCenter中启用了二级保护的资源具有多个源卷、多个目标卷和多个SnapMirror关系，NetApp Backup and Recovery 仅使用第一个策略的保留计数。
+如果您在SnapCenter中启用了二级保护的资源具有多个源卷、多个目标卷和多个SnapMirror关系，NetApp Backup and Recovery仅使用第一个策略的保留计数。
 
-*示例*：如果您有一个保留计数为 5 的SnapCenter策略和另一个保留计数为 10 的策略，NetApp Backup and Recovery 将使用保留计数 5。
+*示例*：如果您有一个保留计数为 5 的SnapCenter策略和另一个保留计数为 10 的策略，NetApp Backup and Recovery将使用保留计数 5。
 
 
 
@@ -101,4 +101,4 @@ NetApp Backup and Recovery 按如下方式调整SnapCenter计划：
 
 即使层级发生变化， SnapCenter中每个策略的SnapMirror标签在迁移后仍保持不变。
 
-*示例*： SnapCenter的每小时策略可能会在NetApp Backup and Recovery 中更改为每日。但是，迁移后SnapMirror标签保持不变。
+*示例*： SnapCenter的每小时策略可能会在NetApp Backup and Recovery中更改为每日。但是，迁移后SnapMirror标签保持不变。

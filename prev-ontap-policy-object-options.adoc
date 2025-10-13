@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-object-options.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载。 
 ---
-= NetApp备份和恢复中的备份到对象策略选项
+= NetApp Backup and Recovery中的备份到对象策略选项
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,23 +14,23 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 
 
 [role="lead"]
-NetApp Backup and Recovery 使您能够为本地ONTAP和Cloud Volumes ONTAP系统创建具有各种设置的备份策略。
+NetApp Backup and Recovery使您能够为本地ONTAP和Cloud Volumes ONTAP系统创建具有各种设置的备份策略。
 
 
 NOTE: 这些策略设置仅与备份到对象存储相关。这些设置都不会影响您的快照或复制策略。
 
 []
 ====
-*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
 ====
 
 
 == 备份计划选项
 
-NetApp Backup and Recovery 使您能够为每个系统（集群）创建具有唯一计划的多个备份策略。您可以为具有不同恢复点目标 (RPO) 的卷分配不同的备份策略。
+NetApp Backup and Recovery使您能够为每个系统（集群）创建具有唯一计划的多个备份策略。您可以为具有不同恢复点目标 (RPO) 的卷分配不同的备份策略。
 
-每个备份策略都提供了一个“标签和保留”部分，您可以将其应用于备份文件。请注意，应用于卷的 Snapshot 策略必须是NetApp Backup and Recovery 识别的策略之一，否则将不会创建备份文件。
+每个备份策略都提供了一个“标签和保留”部分，您可以将其应用于备份文件。请注意，应用于卷的 Snapshot 策略必须是NetApp Backup and Recovery识别的策略之一，否则将不会创建备份文件。
 
 该计划分为两部分：标签和保留值：
 
@@ -57,17 +57,17 @@ NetApp Backup and Recovery 使您能够为每个系统（集群）创建具有�
 
 == DataLock 和勒索软件保护选项
 
-NetApp Backup and Recovery 为您的卷备份提供 DataLock 和勒索软件保护支持。这些功能使您能够锁定备份文件并对其进行扫描以检测备份文件上可能存在的勒索软件。这是一个可选设置，当您希望为集群的卷备份提供额外保护时，可以在备份策略中定义它。
+NetApp Backup and Recovery为您的卷备份提供 DataLock 和勒索软件保护支持。这些功能使您能够锁定备份文件并对其进行扫描以检测备份文件上可能存在的勒索软件。这是一个可选设置，当您想为集群的卷备份提供额外保护时，可以在备份策略中定义它。
 
-这两个功能都可以保护您的备份文件，以便在您的备份遭受勒索软件攻击时，您始终拥有一个有效的备份文件来恢复数据。满足某些监管要求也很有帮助，在这些要求中，备份需要被锁定并保留一段时间。启用 DataLock 和勒索软件恢复选项后，作为NetApp Backup 和 Recovery 激活的一部分配置的云存储桶将启用对象锁定和对象版本控制。
+这两个功能都可以保护您的备份文件，以便在您的备份遭受勒索软件攻击时，您始终拥有一个有效的备份文件来恢复数据。满足某些监管要求也很有帮助，在这些要求中，备份需要被锁定并保留一段时间。启用 DataLock 和勒索软件恢复选项后，作为NetApp Backup and Recovery激活的一部分配置的云存储桶将启用对象锁定和对象版本控制。
 
-https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["请参阅 DataLock 和勒索软件保护博客以了解更多详细信息"^] 。
+https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["请参阅 DataLock 和勒索软件保护博客以了解更多详细信息"^]。
 
 此功能不为您的源卷提供保护；仅为这些源卷的备份提供保护。使用一些 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP提供的反勒索软件保护"^]保护您的源卷。
 
 [CAUTION]
 ====
-* 如果您计划使用 DataLock 和勒索软件保护，则可以在创建第一个备份策略并为该集群激活NetApp Backup and Recovery 时启用它。您可以稍后使用NetApp Backup and Recovery 高级设置启用或禁用勒索软件扫描。
+* 如果您计划使用 DataLock 和勒索软件保护，则可以在创建第一个备份策略并为该集群激活NetApp Backup and Recovery时启用它。您可以稍后使用NetApp Backup and Recovery高级设置启用或禁用勒索软件扫描。
 * 当控制台在恢复卷数据时扫描备份文件中的勒索软件时，您将产生来自云提供商的额外出口成本以访问备份文件的内容。
 
 
@@ -134,7 +134,7 @@ DataLock 保留设置将覆盖备份策略中的策略保留设置。这可能�
 
 
 
-请参阅link:prev-ontap-policy-object-advanced-settings.html["如何在“高级设置”页面中更新勒索软件防护选项"] 。
+参考link:prev-ontap-policy-object-advanced-settings.html["如何在“高级设置”页面中更新勒索软件防护选项"]。
 
 
 
@@ -144,7 +144,7 @@ DataLock 保留设置将覆盖备份策略中的策略保留设置。这可能�
 
 扫描发生在以下情况下：
 
-* 云备份对象传输到云对象存储后，很快就会启动对云备份对象的扫描。当备份文件首次写入云存储时，不会执行扫描，而是在写入下一个备份文件时执行。
+* 云备份对象传输到云对象存储后，很快就会启动对云备份对象的扫描。当备份文件首次写入云存储时，不会执行扫描，而是在写入下一个备份文件时执行扫描。
 * 当选择备份进行恢复过程时，可以启动勒索软件扫描。
 * 可以随时按需进行扫描。
 
@@ -228,7 +228,7 @@ ifdef::aws[]
 
 ====
 +
-https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["查看策略的完整 JSON 格式，您可以在其中复制并粘贴所需的权限"^] 。
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["查看策略的完整 JSON 格式，您可以在其中复制并粘贴所需的权限"^]。
 
 
 
@@ -307,7 +307,7 @@ endif::gcp[]
 === 限制
 
 * 如果您在备份策略中配置了档案存储，则 DataLock 和勒索软件保护功能不可用。
-* 激活NetApp Backup and Recovery 时选择的 DataLock 选项必须用于该集群的所有备份策略。
+* 激活NetApp Backup and Recovery时选择的 DataLock 选项必须用于该集群的所有备份策略。
 * 您不能在单个集群上使用多种 DataLock 模式。
 * 如果启用 DataLock，所有卷备份都将被锁定。您不能为单个集群混合锁定和非锁定卷备份。
 * DataLock 和勒索软件保护适用于使用启用了 DataLock 和勒索软件保护的备份策略的新卷备份。您可以稍后使用高级设置选项启用或禁用这些功能。
@@ -339,7 +339,7 @@ NOTE: Microsoft Azure 使用锁定和解锁模式。
 
 有关降低 DataLock 成本的更多提示，请参阅https://community.netapp.com/t5/Tech-ONTAP-Blogs/Understanding-NetApp-Backup-and-Recovery-DataLock-and-Ransomware-Feature-TCO/ba-p/453475[]
 
-此外，您还可以访问以下网站获取与 DataLock 相关成本的估算： https://bluexp.netapp.com/cloud-backup-service-tco-calculator["NetApp备份和恢复总拥有成本 (TCO) 计算器"] 。
+此外，您还可以访问以下网站获取与 DataLock 相关的成本估算： https://bluexp.netapp.com/cloud-backup-service-tco-calculator["NetApp Backup and Recovery总拥有成本 (TCO) 计算器"] 。
 
 
 
@@ -363,10 +363,10 @@ ifdef::aws[]
 
 * 在 AWS 中，备份从“标准”存储类开始，并在 30 天后转换到“标准-不频繁访问”存储类。
 +
-如果您的集群使用的是ONTAP 9.10.1 或更高版本，您可以将较旧的备份分层到 _S3 Glacier_ 或 _S3 Glacier Deep Archive_ 存储。link:prev-reference-aws-archive-storage-tiers.html["了解有关 AWS 档案存储的更多信息"] 。
+如果您的集群使用的是ONTAP 9.10.1 或更高版本，您可以将较旧的备份分层到 _S3 Glacier_ 或 _S3 Glacier Deep Archive_ 存储。link:prev-reference-aws-archive-storage-tiers.html["了解有关 AWS 档案存储的更多信息"]。
 
 +
-** 如果您在激活NetApp Backup and Recovery 时在第一个备份策略中未选择任何存档层，那么 _S3 Glacier_ 将是您未来策略的唯一存档选项。
+** 如果您在激活NetApp Backup and Recovery时在第一个备份策略中未选择任何存档层，那么 _S3 Glacier_ 将是您未来策略的唯一存档选项。
 ** 如果您在第一个备份策略中选择了“S3 Glacier”，那么您可以将该集群的未来备份策略更改为“S3 Glacier Deep Archive”层。
 ** 如果您在第一个备份策略中选择“S3 Glacier Deep Archive”，则该层将是该集群未来备份策略唯一可用的存档层。
 
@@ -379,7 +379,7 @@ ifdef::azure[]
 
 * 在 Azure 中，备份与 _Cool_ 访问层相关联。
 +
-如果您的集群使用的是ONTAP 9.10.1 或更高版本，则可以将旧备份分层到_Azure Archive_存储。link:prev-reference-azure-archive-storage-tiers.html["了解有关 Azure 档案存储的更多信息"] 。
+如果您的集群使用的是ONTAP 9.10.1 或更高版本，则可以将旧备份分层到_Azure Archive_存储。link:prev-reference-azure-archive-storage-tiers.html["了解有关 Azure 档案存储的更多信息"]。
 
 
 
@@ -389,7 +389,7 @@ ifdef::gcp[]
 
 * 在 GCP 中，备份与 _Standard_ 存储类相关联。
 +
-如果您的本地集群使用的是ONTAP 9.12.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and Recovery UI 中的“_Archive_”存储中，以进一步优化成本。link:prev-reference-gcp-archive-storage-tiers.html["详细了解 Google 归档存储"] 。
+如果您的本地集群使用的是ONTAP 9.12.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and Recovery UI 中的“_Archive_”存储中，以进一步优化成本。link:prev-reference-gcp-archive-storage-tiers.html["详细了解 Google 归档存储"]。
 
 
 
@@ -403,12 +403,12 @@ endif::gcp[]
 
 ifdef::aws[]
 
-+ ** 对于 AWS，您可以将备份分层到 AWS _S3 Glacier_ 或 _S3 Glacier Deep Archive_ 存储。link:prev-reference-aws-archive-storage-tiers.html["了解有关 AWS 档案存储的更多信息"^] 。
++ ** 对于 AWS，您可以将备份分层到 AWS _S3 Glacier_ 或 _S3 Glacier Deep Archive_ 存储。link:prev-reference-aws-archive-storage-tiers.html["了解有关 AWS 档案存储的更多信息"^]。
 
 endif::aws[]
 
 ifdef::azure[]
 
-+ ** 对于 Azure，您可以将旧备份分层到_Azure Archive_存储。link:prev-reference-azure-archive-storage-tiers.html["了解有关 Azure 档案存储的更多信息"^] 。
++ ** 对于 Azure，您可以将旧备份分层到_Azure Archive_存储。link:prev-reference-azure-archive-storage-tiers.html["了解有关 Azure 档案存储的更多信息"^]。
 
 endif::azure[]

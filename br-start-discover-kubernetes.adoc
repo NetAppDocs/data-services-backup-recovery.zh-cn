@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-start-discover-kubernetes.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Kubernetes 
-summary: NetApp Backup and Recovery 需要首先发现工作负载，以便您使用该服务。 
+summary: NetApp Backup and Recovery需要首先发现工作负载，以便您使用该服务。 
 ---
-= 探索NetApp备份和恢复中的 Kubernetes 工作负载
+= 探索NetApp Backup and Recovery中的 Kubernetes 工作负载
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,7 +16,7 @@ summary: NetApp Backup and Recovery 需要首先发现工作负载，以便您�
 [role="lead"]
 NetApp Backup and Recovery需要在保护 Kubernetes 工作负载之前发现它们。
 
-*所需的NetApp控制台角色* 备份和恢复超级管理员。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+*所需的NetApp Console角色* 备份和恢复超级管理员。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 
 
@@ -27,8 +27,8 @@ NetApp Backup and Recovery需要在保护 Kubernetes 工作负载之前发现它
 .步骤
 . 执行以下操作之一：
 +
-** 如果您是第一次发现 Kubernetes 工作负载，请在NetApp Backup and Recovery 中选择 Kubernetes 工作负载类型下的 *Discover and Manage*。
-** 如果您已经发现 Kubernetes 工作负载，请在NetApp Backup and Recovery 中选择 *Inventory* > *Workloads*，然后选择 *Discover resources*。
+** 如果您是第一次发现 Kubernetes 工作负载，请在NetApp Backup and Recovery中选择 Kubernetes 工作负载类型下的 *Discover and Manage*。
+** 如果您已经发现 Kubernetes 工作负载，请在NetApp Backup and Recovery中选择 *Inventory* > *Workloads*，然后选择 *Discover resources*。
 
 
 . 选择 *Kubernetes* 工作负载类型。
@@ -40,7 +40,7 @@ NetApp Backup and Recovery需要在保护 Kubernetes 工作负载之前发现它
 ** 添加 Helm 存储库
 ** 安装Trident Protect 和Trident Protect 连接器
 +
-这些步骤确保NetApp Backup and Recovery 可以与集群交互。
+这些步骤确保NetApp Backup and Recovery可以与集群交互。
 
 
 
@@ -53,13 +53,13 @@ NetApp Backup and Recovery需要在保护 Kubernetes 工作负载之前发现它
 
 
 
-== 继续访问NetApp备份和恢复仪表板
+== 继续访问NetApp Backup and Recovery仪表板
 
 按照以下步骤查看NetApp Backup and Recovery仪表板。
 
 . 从顶部菜单中选择*仪表板*。
 . 审查数据保护的健康状况。处于危险中或受保护的工作负载的数量会根据新发现、受保护和备份的工作负载而增加。
 +
-link:br-use-dashboard.html["了解仪表板显示的内容"] 。
+link:br-use-dashboard.html["了解仪表板显示的内容"]。
 
 

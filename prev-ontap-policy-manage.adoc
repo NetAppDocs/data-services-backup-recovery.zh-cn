@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-manage.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载。 
 ---
-= 使用NetApp备份和恢复管理ONTAP卷的备份策略
+= 使用NetApp Backup and Recovery管理ONTAP卷的备份策略
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,14 +18,14 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 
 []
 ====
-*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
 ====
 当您使用激活向导为您的卷启用备份和恢复服务时，您可以从默认策略和系统中已经存在的任何其他策略（Cloud Volumes ONTAP或本地ONTAP系统）中进行选择。如果您想使用与现有策略不同的策略，您可以在使用激活向导之前或使用激活向导时创建该策略。
 
 要了解提供的默认备份策略，请参阅link:prev-ontap-protect-journey.html["规划您的保护之旅"]。
 
-NetApp Backup and Recovery 提供三种类型的ONTAP数据备份：快照、复制和对象存储备份。根据您使用的架构和备份类型，它们的策略位于不同的位置：
+NetApp Backup and Recovery提供三种类型的ONTAP数据备份：快照、复制和对象存储备份。根据您使用的架构和备份类型，它们的策略位于不同的位置：
 
 [cols="25,25,25,25"]
 |===
@@ -39,7 +39,7 @@ NetApp Backup and Recovery 提供三种类型的ONTAP数据备份：快照、复
 |===
 根据您的环境、偏好和保护类型，使用以下工具创建备份策略：
 
-* NetApp控制台用户界面
+* NetApp Console界面
 * 系统管理器用户界面
 * ONTAP 命令行界面
 
@@ -86,7 +86,7 @@ TIP: 使用系统管理器时，选择*异步*作为复制策略的策略类型�
 
 . 在策略页面中，选择*创建策略* > *创建快照策略*。
 . 指定策略名称。
-. 选择一个或多个快照计划。您最多可以有 5 个标签。或者，创建一个时间表。
+. 选择一个或多个快照计划。您最多可以拥有 5 个标签。或者，创建一个时间表。
 . 如果您选择创建时间表：
 +
 .. 选择每小时、每天、每周、每月或每年的频率。
@@ -122,7 +122,7 @@ TIP: 使用系统管理器时，选择*异步*作为复制策略的策略类型�
 
 === 在启动复制之前创建复制策略
 
-您的 3-2-1 策略可能包括在不同的存储系统上复制卷。复制策略位于*辅助*存储系统上。
+您的 3-2-1 策略可能包括在不同的存储系统上复制卷。复制策略驻留在*辅助*存储系统上。
 
 .步骤
 . 在“策略”页面中，选择“创建策略”>“创建复制策略”。
@@ -151,14 +151,14 @@ TIP: 使用系统管理器时，选择*异步*作为复制策略的策略类型�
 . 指定设置，包括传输计划和何时存档备份。
 . （可选）要在一定天数后将较旧的备份文件移动到较便宜的存储类或访问层，请选择*存档*选项并指示存档数据之前应经过的天数。输入 *0* 作为“存档天数”以将备份文件直接发送到存档存储。
 +
-link:prev-ontap-policy-object-options.html["了解有关档案存储设置的更多信息"] 。
+link:prev-ontap-policy-object-options.html["了解有关档案存储设置的更多信息"]。
 
 . （可选）为保护您的备份不被修改或删除，请选择*DataLock 和勒索软件保护*选项。
 +
 如果您的集群使用的是ONTAP 9.11.1 或更高版本，您可以选择通过配置“DataLock”和“勒索软件保护”来保护您的备份免遭删除。
 
 +
-link:prev-ontap-policy-object-options.html["了解有关可用 DataLock 设置的更多信息"] 。
+link:prev-ontap-policy-object-options.html["了解有关可用 DataLock 设置的更多信息"]。
 
 . 选择“*创建*”。
 

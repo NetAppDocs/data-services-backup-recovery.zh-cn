@@ -4,7 +4,7 @@ permalink: br-use-mssql-restore.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: 从快照副本、复制到辅助存储的工作负载备份或存储在对象存储中的备份恢复数据库工作负载。 
 ---
-= 使用NetApp备份和恢复恢复 Microsoft SQL Server 工作负载
+= 使用NetApp Backup and Recovery恢复 Microsoft SQL Server 工作负载
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 从快照副本、复制到辅助存储的工作负载备份或存储�
 
 
 [role="lead"]
-使用NetApp备份和恢复从快照副本、复制到二级存储的工作负载备份或存储在对象存储中的备份恢复 Microsoft SQL Server 工作负载。您可以将工作负载恢复到原始系统、使用相同云帐户的其他系统或本地ONTAP系统。
+使用NetApp Backup and Recovery从快照副本、复制到二级存储的工作负载备份或存储在对象存储中的备份恢复 Microsoft SQL Server 工作负载。您可以将工作负载恢复到原始系统、使用相同云帐户的其他系统或本地ONTAP系统。
 
 .从这些位置恢复
 您可以从不同的起始位置恢复工作负载：
@@ -33,7 +33,7 @@ summary: 从快照副本、复制到辅助存储的工作负载备份或存储�
 
 
 .从对象存储中恢复的注意事项
-如果您在对象存储中选择了一个备份文件，并且该备份的勒索软件恢复功能处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复功能），那么系统会提示您在恢复数据之前对备份文件运行额外的完整性检查。我们建议您执行扫描。
+如果您选择对象存储中的备份文件，并且该备份的勒索软件恢复功能处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复功能），则系统会提示您在恢复数据之前对备份文件运行额外的完整性检查。我们建议您执行扫描。
 
 
 TIP: 您将需要向云提供商支付额外的出口费用才能访问备份文件的内容。
@@ -44,7 +44,7 @@ TIP: 您将需要向云提供商支付额外的出口费用才能访问备份文
 
 恢复工作负载时，会发生以下情况：
 
-* 当您从备份文件恢复工作负载时， NetApp Backup and Recovery 会使用备份中的数据创建一个_新_资源。
+* 当您从备份文件恢复工作负载时， NetApp Backup and Recovery会使用备份中的数据创建一个_新_资源。
 * 从复制的工作负载恢复时，您可以将工作负载恢复到原始系统或本地ONTAP系统。
 +
 image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的图表"]
@@ -62,7 +62,7 @@ image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的�
 * *从库存页面*：当您需要从上周或上个月恢复特定资源时使用此选项 - 并且您知道该资源的名称和位置，以及它最后处于良好状态的日期。您浏览资源列表以找到要恢复的资源。
 
 
-*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 
 
@@ -71,7 +71,7 @@ image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的�
 使用恢复选项恢复数据库工作负载。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *恢复*。
+. 从NetApp Backup and Recovery菜单中，选择 *恢复*。
 . 选择要还原的数据库。使用过滤器进行搜索。
 . 选择恢复选项：
 +
@@ -123,7 +123,7 @@ image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的�
 
 === 恢复到特定时间点
 
-NetApp Backup and Recovery 使用日志和最新的快照来创建数据的时间点恢复。
+NetApp Backup and Recovery使用日志和最新的快照来创建数据的时间点恢复。
 
 . 继续从“恢复选项”页面，选择“*恢复到特定时间点*”。
 . 选择“下一步”。
@@ -166,7 +166,7 @@ NetApp Backup and Recovery 使用日志和最新的快照来创建数据的时�
 
 . 继续从恢复选项页面，选择*恢复到最新备份*。
 +
-NetApp Backup and Recovery 向您显示可用于恢复操作的快照。
+NetApp Backup and Recovery向您显示可用于恢复操作的快照。
 
 . 在恢复到最新状态页面中，选择本地、二级存储或对象存储的快照位置。
 . 选择“下一步”。
@@ -202,7 +202,7 @@ NetApp Backup and Recovery 向您显示可用于恢复操作的快照。
 从库存页面恢复数据库工作负载。使用 Inventory 选项，您只能恢复数据库，而不能恢复实例。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择要恢复的资源所在的主机。
 . 选择*操作*image:icon-action.png["操作图标"]图标，然后选择*查看详细信息*。
 . 在 Microsoft SQL Server 页面上，选择“*数据库*”选项卡。

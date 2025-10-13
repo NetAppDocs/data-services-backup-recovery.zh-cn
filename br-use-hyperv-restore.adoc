@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-hyperv-restore.html 
 keywords: restore, vm, kvm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp备份和恢复保护您的 Hyper-V 工作负载。 
+summary: 使用NetApp Backup and Recovery保护您的 Hyper-V 工作负载。 
 ---
-= 使用NetApp备份和恢复恢复 Hyper-V 工作负载
+= 使用NetApp Backup and Recovery恢复 Hyper-V 工作负载
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 使用NetApp备份和恢复保护您的 Hyper-V 工作负载。
 
 
 [role="lead"]
-使用NetApp备份和恢复从快照副本、复制到二级存储的工作负载备份或存储在对象存储中的备份恢复 Hyper-V 工作负载。
+使用NetApp Backup and Recovery从快照副本、复制到二级存储的工作负载备份或存储在对象存储中的备份恢复 Hyper-V 工作负载。
 
 .从这些位置恢复
 您可以从不同的起始位置恢复工作负载：
@@ -39,7 +39,7 @@ TIP: 您将需要向云提供商支付额外的出口费用才能访问备份文
 
 恢复工作负载时，会发生以下情况：
 
-* 当您从本地备份文件恢复工作负载时， NetApp Backup and Recovery 会使用备份中的数据创建一个_新_资源。
+* 当您从本地备份文件恢复工作负载时， NetApp Backup and Recovery会使用备份中的数据创建一个_新_资源。
 * 从复制的工作负载恢复时，您可以将工作负载恢复到原始系统或本地ONTAP系统。
 
 
@@ -51,10 +51,10 @@ TIP: 您将需要向云提供商支付额外的出口费用才能访问备份文
 
 使用恢复选项恢复 Hyper-V 工作负载。您可以按名称或使用过滤器来搜索快照。
 
-*所需的控制台角色* 备份和恢复超级管理员或备份和恢复恢复管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+*所需的控制台角色* 备份和恢复超级管理员或备份和恢复恢复管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *恢复*。
+. 从NetApp Backup and Recovery菜单中，选择 *恢复*。
 . 从名称搜索字段右侧的下拉列表中，选择 *Hyper-V*。
 . 输入要还原的资源的名称，或者筛选要还原的资源所在的 VM 名称、VM 主机或存储池。
 +

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-gcp.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载。 
 ---
-= 使用NetApp备份和恢复将本地ONTAP数据备份到 Google Cloud Storage
+= 使用NetApp Backup and Recovery将本地ONTAP数据备份到 Google Cloud Storage
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 
 
 [role="lead"]
-完成NetApp备份和恢复中的几个步骤，开始将卷数据从本地主ONTAP系统备份到二级存储系统和 Google Cloud Storage。
+完成NetApp Backup and Recovery中的几个步骤，开始将卷数据从本地主ONTAP系统备份到二级存储系统和 Google Cloud Storage。
 
 
 NOTE: “本地ONTAP系统”包括FAS、 AFF和ONTAP Select系统。
 
 []
 ====
-*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
 ====
 
@@ -38,11 +38,11 @@ NOTE: “本地ONTAP系统”包括FAS、 AFF和ONTAP Select系统。
 
 下图显示了*公共连接*方法以及您需要在组件之间准备的连接。控制台代理必须部署在 Google Cloud Platform VPC 中。
 
-image:diagram_cloud_backup_onprem_gcp_public.png["该图表显示了NetApp Backup and Recovery 如何通过公共连接与集群上的卷以及备份文件所在的 Google Cloud 存储进行通信。"]
+image:diagram_cloud_backup_onprem_gcp_public.png["该图表显示了NetApp Backup and Recovery如何通过公共连接与集群上的卷以及备份文件所在的 Google Cloud 存储进行通信。"]
 
 下图显示了*私有连接*方法以及您需要在组件之间准备的连接。控制台代理必须部署在 Google Cloud Platform VPC 中。
 
-image:diagram_cloud_backup_onprem_gcp_private.png["该图表展示了NetApp Backup and Recovery 如何通过私有连接与集群上的卷以及备份文件所在的 Google Cloud 存储进行通信。"]
+image:diagram_cloud_backup_onprem_gcp_private.png["该图表展示了NetApp Backup and Recovery如何通过私有连接与集群上的卷以及备份文件所在的 Google Cloud 存储进行通信。"]
 
 
 
@@ -71,7 +71,7 @@ image:diagram_cloud_backup_onprem_gcp_private.png["该图表展示了NetApp Back
 .步骤
 . 确保安装控制台代理的网络启用以下连接：
 +
-** 通过端口 443 建立到NetApp Backup and Recovery 以及您的 Google Cloud 存储的 HTTPS 连接(https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["查看端点列表"^]）
+** 通过端口 443 建立到NetApp Backup and Recovery以及您的 Google Cloud 存储的 HTTPS 连接(https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["查看端点列表"^]）
 ** 通过端口 443 建立到ONTAP集群管理 LIF 的 HTTPS 连接
 
 
@@ -85,7 +85,7 @@ image:diagram_cloud_backup_onprem_gcp_private.png["该图表展示了NetApp Back
 
 === 验证或添加控制台代理的权限
 
-要使用NetApp备份和恢复的“搜索和恢复”功能，您需要在控制台代理的角色中拥有特定权限，以便它可以访问 Google Cloud BigQuery 服务。查看以下权限，如果需要修改策略，请按照以下步骤操作。
+要使用NetApp Backup and Recovery的“搜索和恢复”功能，您需要在控制台代理的角色中拥有特定权限，以便它可以访问 Google Cloud BigQuery 服务。查看以下权限，如果需要修改策略，请按照以下步骤操作。
 
 .步骤
 . 在 https://console.cloud.google.com["Google 云端控制台"^]，转到*角色*页面。
@@ -114,10 +114,10 @@ bigquery.tables.create
 
 == 验证许可证要求
 
-* 在为集群激活NetApp Backup and Recovery 之前，您需要订阅 Google 提供的即用即付 (PAYGO) 控制台市场，或者从NetApp购买并激活NetApp Backup and Recovery BYOL 许可证。这些许可证适用于您的帐户，可以在多个系统中使用。
+* 在为集群激活NetApp Backup and Recovery之前，您需要订阅 Google 提供的即用即付 (PAYGO) 控制台市场，或者从NetApp购买并激活NetApp Backup and Recovery BYOL 许可证。这些许可证适用于您的帐户，可以在多个系统中使用。
 +
-** 对于NetApp Backup and Recovery PAYGO 许可，您需要订阅 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google Marketplace 提供的NetApp Console"^]。  NetApp Backup and Recovery 的计费通过此订阅完成。
-** 对于NetApp备份和恢复 BYOL 许可，您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。link:br-start-licensing.html["了解如何管理您的 BYOL 许可证"] 。
+** 对于NetApp Backup and Recovery PAYGO 许可，您需要订阅 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google Marketplace 提供的NetApp Console"^]。  NetApp Backup and Recovery的计费通过此订阅完成。
+** 对于NetApp Backup and RecoveryBYOL 许可，您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。link:br-start-licensing.html["了解如何管理您的 BYOL 许可证"]。
 
 
 * 您需要向 Google 订阅用于存储备份的对象存储空间。
@@ -135,7 +135,7 @@ bigquery.tables.create
 
 准备ONTAP集群涉及以下步骤：
 
-* 在NetApp控制台中发现您的ONTAP系统
+* 在NetApp Console中发现您的ONTAP系统
 * 验证ONTAP系统要求
 * 验证ONTAP网络要求以将数据备份到对象存储
 * 验证ONTAP复制卷的网络要求
@@ -143,11 +143,11 @@ bigquery.tables.create
 
 
 
-=== 在NetApp控制台中发现您的ONTAP系统
+=== 在NetApp Console中发现您的ONTAP系统
 
-您的源本地ONTAP系统和任何辅助本地ONTAP或Cloud Volumes ONTAP系统都必须在NetApp控制台 *系统* 页面上可用。
+您的源本地ONTAP系统和任何辅助本地ONTAP或Cloud Volumes ONTAP系统都必须在NetApp Console*系统* 页面上可用。
 
-您需要知道集群管理 IP 地址和管理员用户帐户的密码才能添加集群。https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["了解如何发现集群"^] 。
+您需要知道集群管理 IP 地址和管理员用户帐户的密码才能添加集群。https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["了解如何发现集群"^]。
 
 
 
@@ -158,7 +158,7 @@ bigquery.tables.create
 * 最低版本为ONTAP 9.8；建议使用ONTAP 9.8P13 及更高版本。
 * SnapMirror许可证（包含在高级捆绑包或数据保护捆绑包中）。
 +
-*注意：*使用NetApp备份和恢复时不需要“混合云捆绑包”。
+*注意：*使用NetApp Backup and Recovery时不需要“混合云捆绑包”。
 
 +
 了解如何 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理您的集群许可证"^]。
@@ -166,7 +166,7 @@ bigquery.tables.create
 * 时间和时区设置正确。了解如何 https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["配置集群时间"^]。
 * 如果要复制数据，则应在复制数据之前验证源系统和目标系统是否运行兼容的ONTAP版本。
 +
-https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["查看与SnapMirror关系兼容的ONTAP版本"^] 。
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["查看与SnapMirror关系兼容的ONTAP版本"^]。
 
 
 
@@ -189,7 +189,7 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 * ONTAP需要从控制台代理到集群管理 LIF 的入站连接。控制台代理可以驻留在 Google Cloud Platform VPC 中。
 * 每个托管要备份的卷的ONTAP节点上都需要一个集群间 LIF。  LIF 必须与ONTAP用于连接对象存储的 _IPspace_ 相关联。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["了解有关 IP 空间的更多信息"^] 。
 +
-设置NetApp Backup and Recovery 时，系统会提示您输入要使用的 IP 空间。您应该选择与每个 LIF 关联的 IP 空间。这可能是“默认” IP 空间或您创建的自定义 IP 空间。
+当您设置NetApp Backup and Recovery时，系统会提示您输入要使用的 IP 空间。您应该选择与每个 LIF 关联的 IP 空间。这可能是“默认” IP 空间或您创建的自定义 IP 空间。
 
 * 节点的集群间 LIF 能够访问对象存储。
 * 已为卷所在的存储虚拟机配置 DNS 服务器。了解如何 https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["为 SVM 配置 DNS 服务"^]。
@@ -197,14 +197,14 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 如果您使用的是 Private Google Access 或 Private Service Connect，请确保您的 DNS 服务器已配置为指向 `storage.googleapis.com`到正确的内部（私有）IP 地址。
 
 * 请注意，如果您使用的 IP 空间与默认 IP 空间不同，则可能需要创建静态路由才能访问对象存储。
-* 如有必要，请更新防火墙规则，以允许NetApp Backup and Recovery 通过端口 443 从ONTAP连接到对象存储，并通过端口 53（TCP/UDP）从存储虚拟机到 DNS 服务器的名称解析流量。
+* 如有必要，请更新防火墙规则，以允许NetApp Backup and Recovery通过端口 443 从ONTAP连接到对象存储，并通过端口 53（TCP/UDP）从存储虚拟机到 DNS 服务器的名称解析流量。
 
 
 
 
 === 验证ONTAP复制卷的网络要求
 
-如果您计划使用NetApp Backup and Recovery 在辅助ONTAP系统上创建复制卷，请确保源系统和目标系统满足以下网络要求。
+如果您计划使用NetApp Backup and Recovery在辅助ONTAP系统上创建复制卷，请确保源系统和目标系统满足以下网络要求。
 
 
 
@@ -239,7 +239,7 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 
 === 设置权限
 
-您需要使用自定义角色为具有特定权限的服务帐户提供存储访问密钥。服务帐户使NetApp Backup and Recovery 能够验证和访问用于存储备份的 Cloud Storage 存储桶。需要密钥，以便 Google Cloud Storage 知道谁在发出请求。
+您需要使用自定义角色为具有特定权限的服务帐户提供存储访问密钥。服务帐户使NetApp Backup and Recovery能够验证和访问用于存储备份的 Cloud Storage 存储桶。需要密钥，以便 Google Cloud Storage 知道谁在发出请求。
 
 .步骤
 . 在 https://console.cloud.google.com["Google 云端控制台"^]，转到*角色*页面。
@@ -274,7 +274,7 @@ storage.objects.update
 .. 选择一个项目，然后选择*互操作性*。如果您还没有这样做，请选择*启用互操作性访问*。
 .. 在*服务帐户的访问密钥*下，选择*为服务帐户创建密钥*，选择刚刚创建的服务帐户，然后单击*创建密钥*。
 +
-稍后配置备份服务时，您需要在NetApp Backup and Recovery 中输入密钥。
+稍后配置备份服务时，您需要在NetApp Backup and Recovery中输入密钥。
 
 
 
@@ -286,7 +286,7 @@ storage.objects.update
 
 默认情况下，该服务会为您创建存储桶。或者，如果您想使用自己的存储桶，您可以在启动备份激活向导之前创建它们，然后在向导中选择这些存储桶。
 
-link:prev-ontap-protect-journey.html["了解有关创建您自己的存储桶的更多信息"^] 。
+link:prev-ontap-protect-journey.html["了解有关创建您自己的存储桶的更多信息"^]。
 
 
 
@@ -319,7 +319,7 @@ cloudkms.keyRings.setIamPolicy
 * 支持新创建或导入的 Cloud KMS 密钥。
 * 仅支持区域密钥，不支持全局密钥。
 * 目前仅支持“对称加密/解密”目的。
-* NetApp Backup and Recovery 为与存储帐户关联的服务代理分配了“CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)”IAM 角色。
+* NetApp Backup and Recovery为与存储帐户关联的服务代理分配了“CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)”IAM 角色。
 
 
 
@@ -357,7 +357,7 @@ cloudkms.keyRings.setIamPolicy
 . 继续以下选项：
 +
 ** 如果您已经有控制台代理，那么一切就绪了。只需选择*下一步*。
-** 如果您还没有控制台代理，则会出现“添加控制台代理”选项。请参阅<<准备控制台代理>> 。
+** 如果您还没有控制台代理，则会出现“添加控制台代理”选项。参考<<准备控制台代理>>。
 
 
 
@@ -516,7 +516,7 @@ TIP: 要创建自定义策略，请参阅link:br-use-policies-create.html["创�
 
 
 .结果
-NetApp Backup and Recovery 开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括主存储系统数据的完整副本。后续传输包含 Snapshot 副本中包含的主存储系统数据的差异副本。
+NetApp Backup and Recovery开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括主存储系统数据的完整副本。后续传输包含 Snapshot 副本中包含的主存储系统数据的差异副本。
 
 在目标集群中创建一个复制卷，该卷将与源卷同步。
 

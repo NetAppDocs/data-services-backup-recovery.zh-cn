@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-start-prereq.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery 
-summary: 通过验证操作环境、控制台代理和控制台帐户的准备情况来开始使用NetApp Backup and Recovery。要使用NetApp Backup and Recovery，您需要满足这些先决条件。 
+summary: 通过验证操作环境、控制台代理和控制台帐户的准备情况来开始使用NetApp Backup and Recovery 。要使用NetApp Backup and Recovery，您需要满足这些先决条件。 
 ---
-= NetApp备份和恢复前提条件
+= NetApp Backup and Recovery前提条件
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 通过验证操作环境、控制台代理和控制台帐户的准备�
 
 
 [role="lead"]
-通过验证操作环境、 NetApp控制台代理和NetApp控制台帐户的准备情况，开始使用NetApp Backup and Recovery。要使用NetApp Backup and Recovery，您需要满足这些先决条件。
+通过验证操作环境、 NetApp Console代理和NetApp Console帐户的准备情况，开始使用NetApp Backup and Recovery 。要使用NetApp Backup and Recovery，您需要满足这些先决条件。
 
 
 
@@ -35,7 +35,7 @@ summary: 通过验证操作环境、控制台代理和控制台帐户的准备�
 
 == 保护 Microsoft SQL Server 工作负载的要求
 
-要将NetApp Backup and Recovery 用于 Microsoft SQL Server 工作负载，您需要满足以下主机系统、空间和大小调整前提条件。
+要将NetApp Backup and Recovery用于 Microsoft SQL Server 工作负载，您需要满足以下主机系统、空间和大小调整前提条件。
 
 [cols="33,66a"]
 |===
@@ -53,10 +53,10 @@ VMware 虚拟机文件系统 (VMFS) 和 VMware 虚拟机磁盘 (VMDK) NFS 支持
 
 
 | SnapCenter服务器版本  a| 
-如果要将现有数据从SnapCenter导入NetApp Backup and Recovery，则需要SnapCenter Server 5.0 或更高版本。
+如果要将现有数据从SnapCenter导入NetApp Backup and Recovery ，则需要SnapCenter Server 5.0 或更高版本。
 
 
-NOTE: 如果您已经拥有SnapCenter，请先检查以确保在从SnapCenter导入之前已满足先决条件。看link:concept-start-prereq-snapcenter-import.html["从SnapCenter导入资源的先决条件"] 。
+NOTE: 如果您已经拥有SnapCenter，请先检查以确保在从SnapCenter导入之前已满足先决条件。看link:concept-start-prereq-snapcenter-import.html["从SnapCenter导入资源的先决条件"]。
 
 
 
@@ -163,7 +163,7 @@ vCenter 管理员帐户必须具有所需的 vCenter 权限。
 
 您需要特定的要求来发现 Kubernetes 资源并保护您的 Kubernetes 应用程序。
 
-有关NetApp控制台要求，请参阅<<在NetApp控制台中>>。
+有关NetApp Console要求，请参阅<<在NetApp Console中>>。
 
 * 主ONTAP系统（ONTAP 9.16.1 或更高版本）
 * Kubernetes 集群 - 支持的 Kubernetes 发行版和版本包括：
@@ -224,16 +224,16 @@ NOTE: 确保在 Hyper-V 主机上为日志文件夹分配足够的磁盘空间�
 
 
 
-== 在NetApp控制台中
+== 在NetApp Console中
 
-确保NetApp Console 满足以下要求。
+确保NetApp Console满足以下要求。
 
-* 控制台用户应具有对 Microsoft SQL Server 和 Kubernetes 工作负载执行操作所需的角色和权限。要发现资源，您必须具有NetApp Backup and Recovery 超级管理员角色。看link:reference-roles.html["NetApp Backup and Recovery 基于角色的功能访问"]有关在NetApp Backup and Recovery 中执行操作所需的角色和权限的详细信息。
+* 控制台用户应具有对 Microsoft SQL Server 和 Kubernetes 工作负载执行操作所需的角色和权限。要发现资源，您必须具有NetApp Backup and Recovery超级管理员角色。看link:reference-roles.html["NetApp Backup and Recovery基于角色的功能访问"]有关在NetApp Backup and Recovery中执行操作所需的角色和权限的详细信息。
 * 具有至少一个活动控制台代理的控制台组织，该代理连接到本地ONTAP集群或Cloud Volumes ONTAP。
 * 至少一个具有NetApp本地ONTAP或Cloud Volumes ONTAP集群的控制台系统。
 * 控制台代理
 +
-参考 https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["了解如何配置控制台代理"]和 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["标准NetApp控制台要求"^]。
+参考 https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["了解如何配置控制台代理"]和 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["标准NetApp Console要求"^]。
 
 +
 ** 预览版需要 Ubuntu 22.04 LTS 操作系统作为控制台代理。
@@ -243,11 +243,11 @@ NOTE: 确保在 Hyper-V 主机上为日志文件夹分配足够的磁盘空间�
 
 
 
-=== 设置NetApp控制台
+=== 设置NetApp Console
 
-下一步是设置控制台和NetApp备份和恢复。
+下一步是设置控制台和NetApp Backup and Recovery。
 
-审查 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["标准NetApp控制台要求"^]。
+审查 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["标准NetApp Console要求"^]。
 
 
 
@@ -255,7 +255,7 @@ NOTE: 确保在 Hyper-V 主机上为日志文件夹分配足够的磁盘空间�
 
 您应该联系您的NetApp产品团队来尝试备份和恢复。然后，当您使用控制台代理时，它将包含适合该服务的功能。
 
-要在使用服务之前在NetApp控制台中创建控制台代理，请参阅描述 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["如何创建控制台代理"^]。
+要在使用服务之前在NetApp Console中创建控制台代理，请参阅描述 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["如何创建控制台代理"^]。
 
 .控制台代理的安装位置
 要完成还原操作，可以在以下位置安装控制台代理：

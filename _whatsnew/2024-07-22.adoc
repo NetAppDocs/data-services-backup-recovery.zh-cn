@@ -30,7 +30,7 @@ ifdef::aws[]
 
 endif::aws[]
 
-参考 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["NetApp备份和恢复 2024 年 7 月发布博客"]。
+参考 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["NetApp Backup and Recovery2024 年 7 月发布博客"]。
 
 
 
@@ -42,4 +42,4 @@ endif::aws[]
 
 有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["使用“浏览和恢复”功能恢复文件夹和文件"]。
 
-有关手动启用的详细信息，请参阅 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["NetApp备份和恢复 2024 年 7 月发布博客"]。
+有关手动启用的详细信息，请参阅 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["NetApp Backup and Recovery2024 年 7 月发布博客"]。

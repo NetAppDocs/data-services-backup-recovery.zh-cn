@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-dashboard.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
-summary: 监控工作负载的健康状况可确保您了解工作负载保护的问题并可以采取措施解决这些问题。查看备份和恢复的状态并对NetApp备份和恢复仪表板上出现的任何警报做出响应。您可以查看保护摘要、恢复摘要、系统摘要等。 
+summary: 监控工作负载的健康状况可确保您了解工作负载保护的问题并可以采取措施解决这些问题。查看备份和恢复的状态并对NetApp Backup and Recovery仪表板上出现的任何警报做出响应。您可以查看保护摘要、恢复摘要、系统摘要等。 
 ---
-= 在NetApp备份和恢复仪表板上查看保护健康状况
+= 在NetApp Backup and Recovery仪表板上查看保护健康状况
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,12 +14,12 @@ summary: 监控工作负载的健康状况可确保您了解工作负载保护�
 
 
 [role="lead"]
-监控工作负载的健康状况可确保您了解工作负载保护的问题并采取措施解决这些问题。在NetApp备份和恢复仪表板上查看备份和恢复的状态。您可以查看系统摘要、保护摘要、作业摘要、恢复摘要等。
+监控工作负载的健康状况可确保您了解工作负载保护的问题并可以采取措施解决这些问题。在NetApp Backup and Recovery仪表板上查看备份和恢复的状态。您可以查看系统摘要、保护摘要、作业摘要、恢复摘要等。
 
-*所需的NetApp控制台角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *仪表板*。
+. 从NetApp Backup and Recovery菜单中，选择 *仪表板*。
 +
 ** 发现的主机或虚拟机的数量
 ** 发现的 Kubernetes 集群数量

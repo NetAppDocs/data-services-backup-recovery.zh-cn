@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-vmware-protect-overview.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载。 
 ---
-= 使用NetApp备份和恢复保护 VMware 工作负载概述
+= 使用NetApp Backup and Recovery保护 VMware 工作负载概述
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,12 +14,12 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 
 
 [role="lead"]
-使用NetApp备份和恢复保护您的 VMware VM 和数据存储。 NetApp Backup and Recovery 提供快速、节省空间、崩溃一致和 VM 一致的备份和恢复操作。您可以将 VMware 工作负载备份到 Amazon Web Services S3 或StorageGRID ，并将 VMware 工作负载恢复到本地 VMware 主机。
+使用NetApp Backup and Recovery保护您的 VMware VM 和数据存储。 NetApp Backup and Recovery提供快速、节省空间、崩溃一致和 VM 一致的备份和恢复操作。您可以将 VMware 工作负载备份到 Amazon Web Services S3 或StorageGRID ，并将 VMware 工作负载恢复到本地 VMware 主机。
 
 
-NOTE: 此版本的NetApp Backup and Recovery 仅支持 VMware vCenter，并且无法发现vVols或vVols上的 VM。
+NOTE: 此版本的NetApp Backup and Recovery仅支持 VMware vCenter，并且无法发现vVols或vVols上的 VM。
 
-使用NetApp Backup and Recovery 实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。3-2-1 方法的优点包括：
+使用NetApp Backup and Recovery实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。3-2-1 方法的优点包括：
 
 * 多个数据副本可提供多层保护，抵御内部（内部）和外部网络安全威胁。
 * 多种媒体类型可确保在一种媒体类型发生物理或逻辑故障时能够进行故障转移。
@@ -28,10 +28,10 @@ NOTE: 此版本的NetApp Backup and Recovery 仅支持 VMware vCenter，并且�
 
 []
 ====
-*注意* 要切换到NetApp Backup and Recovery UI 版本，请参阅link:br-start-switch-ui.html["切换到以前的NetApp备份和恢复 UI"]。
+*注意* 要切换到NetApp Backup and Recovery UI 版本，请参阅link:br-start-switch-ui.html["切换到以前的NetApp Backup and RecoveryUI"]。
 
 ====
-您可以使用NetApp Backup and Recovery 执行与 VMware 工作负载相关的以下任务：
+您可以使用NetApp Backup and Recovery执行与 VMware 工作负载相关的以下任务：
 
 * link:br-use-vmware-discovery.html["发现 VMware 工作负载"]
 * link:br-use-vmware-protection-groups.html["为 VMware 工作负载创建和管理保护组"]

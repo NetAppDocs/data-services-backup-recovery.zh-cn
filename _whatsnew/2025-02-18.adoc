@@ -6,7 +6,7 @@
 
 === 高性能索引
 
-NetApp Backup and Recovery 引入了更新的索引功能，使源系统上的数据索引更加高效。新的索引功能包括 UI 的更新、数据恢复搜索和恢复方法性能的改进、全局搜索功能的升级以及更好的可扩展性。
+NetApp Backup and Recovery引入了更新的索引功能，使源系统上的数据索引更加高效。新的索引功能包括 UI 的更新、数据恢复搜索和恢复方法性能的改进、全局搜索功能的升级以及更好的可扩展性。
 
 以下是改进的具体内容：
 
@@ -26,7 +26,7 @@ NetApp Backup and Recovery 引入了更新的索引功能，使源系统上的�
 
 执行搜索和还原时，通过选择“启用索引”选项在源工作环境上启用索引。
 
-有关详细信息，请参阅文档 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["如何使用“搜索和还原”还原ONTAP数据"]。
+更多信息请参阅文档 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["如何使用“搜索和还原”还原ONTAP数据"]。
 
 .支持规模
 新的索引功能支持以下内容：

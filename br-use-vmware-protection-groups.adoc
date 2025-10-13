@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-vmware-protection-groups.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vm, virtual machines, workloads, volumes, snapshots 
-summary: 在NetApp备份和恢复中为 VMware 工作负载创建和管理保护组。 
+summary: 在NetApp Backup and Recovery中创建和管理 VMware 工作负载的保护组。 
 ---
-= 使用NetApp备份和恢复为 VMware 工作负载创建和管理保护组
+= 使用NetApp Backup and Recovery为 VMware 工作负载创建和管理保护组
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -20,7 +20,7 @@ summary: 在NetApp备份和恢复中为 VMware 工作负载创建和管理保护
 
 * 创建保护组。
 * 查看保护详情。
-* 立即备份保护组。看link:br-use-vmware-backup.html["立即备份 VMware 工作负载"] 。
+* 立即备份保护组。看link:br-use-vmware-backup.html["立即备份 VMware 工作负载"]。
 * 暂停和恢复保护组的备份计划。
 * 删除保护组。
 
@@ -31,10 +31,10 @@ summary: 在NetApp备份和恢复中为 VMware 工作负载创建和管理保护
 
 将您想要保护的工作负载分组到一个保护组中。您可以为想要一起备份和还原的一组工作负载创建一个保护组。
 
-*所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp控制台访问角色"^] 。
+*所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择一个工作负载来查看保护详细信息。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
 . 选择*保护组*选项卡。
@@ -60,7 +60,7 @@ summary: 在NetApp备份和恢复中为 VMware 工作负载创建和管理保护
 当您暂停保护组时，保护状态将更改为“维护中”。您可以随时恢复备份计划。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择一个工作负载来查看保护详细信息。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
 . 选择*保护组*选项卡。
@@ -77,7 +77,7 @@ summary: 在NetApp备份和恢复中为 VMware 工作负载创建和管理保护
 当您暂停保护组时，保护状态将从“维护中”更改为当您恢复保护组时“受保护”。您可以随时恢复备份计划。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择一个工作负载来查看保护详细信息。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
 . 选择*保护组*选项卡。
@@ -95,7 +95,7 @@ summary: 在NetApp备份和恢复中为 VMware 工作负载创建和管理保护
 删除保护组会删除该保护组以及所有相关的备份计划。如果不再需要某个保护组，您可能需要将其删除。
 
 .步骤
-. 从NetApp备份和恢复菜单中，选择 *Inventory*。
+. 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择一个工作负载来查看保护详细信息。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
 . 选择*保护组*选项卡。

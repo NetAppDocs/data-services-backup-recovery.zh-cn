@@ -23,7 +23,7 @@ settings:
   langs: zh-cn,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-tw
 sidebar:
   entries:
-  - title: NetApp备份和恢复文档
+  - title: NetApp Backup and Recovery文档
     url: "/index.html"
   - title: 发行说明
     entries:
@@ -43,25 +43,25 @@ sidebar:
       url: "/br-limitations-oracle.html"
   - title: 开始使用
     entries:
-    - title: 了解NetApp备份和恢复
+    - title: 了解NetApp Backup and Recovery
       url: "/concept-backup-to-cloud.html"
-    - title: NetApp备份和恢复的先决条件
+    - title: NetApp Backup and Recovery的先决条件
       url: "/concept-start-prereq.html"
     - title: 设置NetApp Backup and Recovery 的许可
       url: "/br-start-licensing.html"
     - title: 为ONTAP和StorageGRID设置安全证书
       url: "/task-setup-ca-certificates.html"
-    - title: 在使用NetApp Backup and Recovery 之前设置备份目标
+    - title: 在使用NetApp Backup and Recovery之前设置备份目标
       url: "/br-start-setup.html"
-    - title: 登录NetApp备份和恢复
+    - title: 登录NetApp Backup and Recovery
       url: "/br-start-login.html"
     - title: 发现备份目标
       url: "/br-start-discover-backup-targets.html"
-    - title: 切换到不同的NetApp备份和恢复工作负载
+    - title: 切换到不同的NetApp Backup and Recovery工作负载
       url: "/br-start-switch-ui.html"
-    - title: 配置NetApp备份和恢复常规设置
+    - title: 配置NetApp Backup and Recovery常规设置
       url: "/br-start-configure.html"
-  - title: 使用NetApp备份和恢复
+  - title: 使用NetApp Backup and Recovery
     entries:
     - title: 在仪表板中查看保护健康状况
       url: "/br-use-dashboard.html"
@@ -213,17 +213,17 @@ sidebar:
         url: "/br-use-manage-execution-hook-templates.html"
     - title: 监控作业
       url: "/br-use-monitor-tasks.html"
-    - title: 重新启动NetApp备份和恢复
+    - title: 重新启动NetApp Backup and Recovery
       url: "/reference-restart-backup.html"
   - title: 使用 REST API 实现自动化
     url: "/br-api-backup-restore.html"
   - title: 参考
     entries:
-    - title: SnapCenter中的策略与NetApp备份和恢复中的策略比较
+    - title: SnapCenter中的策略与NetApp Backup and Recovery的策略比较
       url: "/reference-policy-differences-snapcenter.html"
-    - title: NetApp备份和恢复角色和权限
+    - title: NetApp Backup and Recovery角色和权限
       url: "/reference-roles.html"
-    - title: 在暗站中恢复NetApp备份和恢复数据
+    - title: 在暗站中恢复NetApp Backup and Recovery数据
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: 支持的 AWS 存档存储层
       url: "/prev-reference-aws-archive-storage-tiers.html"

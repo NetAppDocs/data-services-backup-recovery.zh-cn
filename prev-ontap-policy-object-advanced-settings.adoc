@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-object-advanced-settings.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载。 
 ---
-= 在NetApp备份和恢复高级设置中管理备份到对象存储选项
+= 在NetApp Backup and Recovery高级设置中管理备份到对象存储选项
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 
 
 [role="lead"]
-您可以使用“高级设置”页面更改在为每个ONTAP系统激活NetApp Backup and Recovery 时设置的集群级别、备份到对象存储设置。您还可以修改一些作为“默认”备份设置的设置。这包括更改备份到对象存储的传输速率、是否将历史 Snapshot 副本导出为备份文件以及启用或禁用系统的勒索软件扫描。
+您可以使用“高级设置”页面更改在为每个ONTAP系统激活NetApp Backup and Recovery时设置的集群级别、备份到对象存储设置。您还可以修改一些作为“默认”备份设置的设置。这包括更改备份到对象存储的传输速率、是否将历史 Snapshot 副本导出为备份文件以及启用或禁用系统的勒索软件扫描。
 
 
 NOTE: 这些设置仅适用于备份到对象存储。这些设置都不会影响您的快照或复制设置。
 
 []
 ====
-*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
 ====
 您可以在高级设置页面中更改以下选项：
@@ -60,7 +60,7 @@ _高级设置_页面显示该系统的当前设置。
 
 == 更改可用于将备份上传到对象存储的网络带宽
 
-当您为系统激活NetApp Backup and Recovery 时，默认情况下， ONTAP可以使用无限量的带宽将备份数据从系统中的卷传输到对象存储。如果您注意到备份流量影响了正常的用户工作负载，您可以使用“高级设置”页面中的最大传输速率选项来限制传输过程中使用的网络带宽量。
+当您为系统激活NetApp Backup and Recovery时，默认情况下， ONTAP可以使用无限量的带宽将备份数据从系统中的卷传输到对象存储。如果您注意到备份流量影响了正常的用户工作负载，您可以使用“高级设置”页面中的最大传输速率选项来限制传输过程中使用的网络带宽量。
 
 .步骤
 . 从*Volumes*选项卡中，选择*Backup Settings*。

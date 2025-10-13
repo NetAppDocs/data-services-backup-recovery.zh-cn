@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-start-preview-setup.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: 通过参与NetApp备份和恢复预览，您将在完善和增强NetApp备份和恢复方面发挥关键作用。对于NetApp Backup and Recovery 的预览版，我们将协助进行设置。过程如下。 
+summary: 通过参与NetApp Backup and Recovery预览，您将在完善和增强NetApp Backup and Recovery发挥关键作用。对于NetApp Backup and Recovery的预览版，我们将协助进行设置。过程如下。 
 ---
-= 设置NetApp备份和恢复预览版
+= 设置NetApp Backup and Recovery预览版
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,11 +14,11 @@ summary: 通过参与NetApp备份和恢复预览，您将在完善和增强NetAp
 
 
 [role="lead"]
-通过参与NetApp Backup and Recovery 预览版之一，您可以在完善和增强NetApp Backup and Recovery 方面发挥关键作用。对于NetApp Backup and Recovery 的预览版，我们将协助进行设置。过程如下。
+通过参与NetApp Backup and Recovery预览版之一，您将在完善和增强NetApp Backup and Recovery发挥关键作用。对于NetApp Backup and Recovery的预览版，我们将协助进行设置。过程如下。
 
-. *注册*：如果您还没有NetApp Console 帐户，请注册一个。方法如下：
+. *注册*：如果您还没有NetApp Console帐户，请注册一个。方法如下：
 +
-.. 访问 https://bluexp.netapp.com/["NetApp控制台门户"]。
+.. 访问 https://bluexp.netapp.com/["NetApp Console门户"]。
 .. 选择*开始*。
 +
 image:screen-preview-login.png["登录门户屏幕"]
@@ -48,7 +48,7 @@ image:screen-preview-signup-profile.png["注册控制台屏幕"]
 . *保持定期联系*。在整个预览会议期间，与NetApp产品团队一起定期进行检查。这些会议可帮助您了解服务并提供反馈：
 +
 ** *了解最新消息*：您将了解与预览相关的最新进展。
-** *提出问题*并从NetApp控制台团队获得即时答案。
+** *提出问题*并从NetApp Console团队获得即时答案。
 ** 向NetApp产品团队提供*反馈*以改进服务。
 ** *分享最佳实践*和有效使用该服务的技巧。
 ** *促进合作*：与其他用户合作，分享经验，相互学习。

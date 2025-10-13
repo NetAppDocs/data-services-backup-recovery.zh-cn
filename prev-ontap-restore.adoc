@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp备份和恢复，可以从备份文件还原整个ONTAP卷，或者如果只需要还原几个文件，则可以还原文件夹或单个文件。 
+summary: 使用NetApp Backup and Recovery，可以从备份文件还原整个ONTAP卷，或者如果只需要还原几个文件，则可以还原文件夹或单个文件。 
 ---
-= 使用NetApp Backup and Recovery 从备份文件恢复ONTAP数据
+= 使用NetApp Backup and Recovery从备份文件恢复ONTAP数据
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,11 +14,11 @@ summary: 使用NetApp备份和恢复，可以从备份文件还原整个ONTAP卷
 
 
 [role="lead"]
-您可以从创建备份的位置获取ONTAP卷数据的备份：Snapshot 副本、复制的卷以及存储在对象存储中的备份。您可以从这些备份位置中的任何一个恢复特定时间点的数据。使用NetApp备份和恢复，可以从备份文件还原整个ONTAP卷，或者如果只需要还原几个文件，则可以还原文件夹或单个文件。
+您可以从创建备份的位置获取ONTAP卷数据的备份：Snapshot 副本、复制的卷以及存储在对象存储中的备份。您可以从这些备份位置中的任何一个恢复特定时间点的数据。使用NetApp Backup and Recovery，可以从备份文件还原整个ONTAP卷，或者如果只需要还原几个文件，则可以还原文件夹或单个文件。
 
 []
 ====
-*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
 ====
 * 您可以将*卷*（作为新卷）还原到原始系统、使用相同云帐户的其他系统或本地ONTAP系统。
@@ -26,7 +26,7 @@ summary: 使用NetApp备份和恢复，可以从备份文件还原整个ONTAP卷
 * 您可以将*文件*还原到原始系统中的卷、使用相同云帐户的不同系统中的卷或本地ONTAP系统上的卷。
 
 
-需要有效的NetApp备份和恢复许可证才能将数据从备份文件恢复到生产系统。
+需要有效的NetApp Backup and Recovery许可证才能将数据从备份文件恢复到生产系统。
 
 总而言之，这些是可用于将卷数据还原到ONTAP系统的有效流程：
 
@@ -48,7 +48,7 @@ NOTE: 有关还原ONTAP数据的限制，请参阅link:br-reference-limitations.
 您可以使用还原仪表板执行卷、文件夹和文件还原操作。您可以通过单击控制台菜单中的“备份和恢复”，然后单击“恢复”选项卡来访问恢复仪表板。您还可以点击image:icon-options-vertical.gif["更多按钮"]> 从服务面板的备份和恢复服务中*查看恢复仪表板*。
 
 
-NOTE: NetApp Backup and Recovery 必须已为至少一个系统激活，并且必须存在初始备份文件。
+NOTE: NetApp Backup and Recovery必须已为至少一个系统激活，并且必须存在初始备份文件。
 
 恢复仪表板提供了两种从备份文件恢复数据的不同方法：*浏览和恢复*和*搜索和恢复*。
 
@@ -56,7 +56,7 @@ NOTE: NetApp Backup and Recovery 必须已为至少一个系统激活，并且�
 
 == 比较“浏览和还原”与“搜索和还原”
 
-广义上讲，当您需要恢复上周或上个月的特定卷、文件夹或文件时，_浏览和恢复_通常更好——并且您知道文件的名称和位置，以及它最后处于良好状态的日期。当您需要恢复卷、文件夹或文件，但不记得确切的名称、它所在的卷或它最后处于良好状态的日期时，_搜索和恢复_通常会更好。
+广义上讲，当您需要恢复上周或上个月的特定卷、文件夹或文件时，_浏览和恢复_通常更好——并且您知道文件的名称和位置，以及文件最后处于良好状态的日期。当您需要恢复卷、文件夹或文件，但不记得确切的名称、它所在的卷或它最后处于良好状态的日期时，_搜索和恢复_通常会更好。
 
 该表提供了两种方法的功能比较。
 
@@ -116,19 +116,19 @@ NOTE: NetApp Backup and Recovery 必须已为至少一个系统激活，并且�
 
 ifdef::aws[]
 
-link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"] 。
+link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"]。
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"] 。
+link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"]。
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"] 。
+link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"]。
 
 endif::gcp[]
 
@@ -207,7 +207,7 @@ NOTE: 如果您系统上的ONTAP版本低于 9.13.1，并且备份文件已配�
 
 === 使用“浏览和还原”还原卷
 
-当您从备份文件恢复卷时， NetApp Backup and Recovery 会使用备份中的数据创建一个_新_卷。使用对象存储备份时，您可以将数据还原到原始系统中的卷、与源系统位于同一云帐户的其他系统或本地ONTAP系统。
+当您从备份文件恢复卷时， NetApp Backup and Recovery会使用备份中的数据创建一个_新_卷。使用对象存储备份时，您可以将数据还原到原始系统中的卷、与源系统位于同一云帐户的其他系统或本地ONTAP系统。
 
 将云备份还原到使用ONTAP 9.13.0 或更高版本的Cloud Volumes ONTAP系统或运行ONTAP 9.14.1 的本地ONTAP系统时，您可以选择执行_快速还原_操作。快速恢复非常适合需要尽快提供对卷的访问的灾难恢复情况。快速还原将备份文件中的元数据还原到卷，而不是还原整个备份文件。不建议对性能或延迟敏感的应用程序使用快速恢复，并且不支持归档存储中的备份。
 
@@ -230,7 +230,7 @@ image:diagram_browse_restore_volume.png["该图显示了使用浏览和还原执
 
 . 选择“下一步”。
 +
-请注意，如果您选择对象存储中的备份文件，并且该备份的勒索软件恢复功能处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复功能），则系统会提示您在恢复数据之前对备份文件运行额外的勒索软件扫描。我们建议您扫描备份文件以查找勒索软件。（您将需要向云提供商支付额外的出口成本才能访问备份文件的内容。）
+请注意，如果您选择对象存储中的备份文件，并且该备份的勒索软件恢复功能处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复功能），则系统会提示您在恢复数据之前对备份文件运行额外的勒索软件扫描。我们建议您扫描备份文件以查找勒索软件。  （您将需要向云提供商支付额外的出口成本才能访问备份文件的内容。）
 
 . 在“选择目标”页面中，选择要恢复卷的*系统*。
 . 从对象存储还原备份文件时，如果您选择本地ONTAP系统并且尚未配置与对象存储的集群连接，系统将提示您输入其他信息：
@@ -276,19 +276,19 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"] 。
+link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"]。
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"] 。
+link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"]。
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"] 。Google Archive 存储层中的备份文件几乎可以立即恢复，并且不需要恢复优先级。
+link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"]。Google Archive 存储层中的备份文件几乎可以立即恢复，并且不需要恢复优先级。
 
 endif::gcp[]
 
@@ -302,7 +302,7 @@ endif::gcp[]
 
 
 .结果
-NetApp Backup and Recovery 根据您选择的备份创建一个新卷。
+NetApp Backup and Recovery根据您选择的备份创建一个新卷。
 
 请注意，从驻留在档案存储中的备份文件恢复卷可能需要几分钟或几小时，具体取决于档案层和恢复优先级。您可以选择“作业监控”选项卡来查看恢复进度。
 
@@ -325,7 +325,7 @@ NOTE: 目前，您只能从对象存储中的备份文件恢复文件夹或单�
 * 如果备份文件驻留在档案存储中，则仅当ONTAP版本为 9.13.1 或更高版本时才支持文件夹级还原。如果您使用的是早期版本的ONTAP，则可以从尚未存档的较新备份文件中还原文件夹，也可以从存档的备份中还原整个卷，然后访问所需的文件夹和文件。
 * 使用ONTAP 9.15.1，您可以使用“浏览和恢复”选项恢复FlexGroup文件夹。此功能处于技术预览模式。
 +
-您可以使用 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["NetApp备份和恢复 2024 年 7 月版本博客"^]。
+您可以使用 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["NetApp Backup and Recovery2024 年 7 月版本博客"^]。
 
 
 
@@ -347,7 +347,7 @@ NOTE: 目前，您只能从对象存储中的备份文件恢复文件夹或单�
 
 . 当您想要从卷备份中恢复文件夹或一个或多个文件时，请单击“恢复”选项卡，然后单击“浏览和恢复”下的“恢复文件或文件夹”。
 . 选择文件夹或文件所在的源系统、卷和备份文件。
-. NetApp Backup and Recovery 显示所选备份文件中存在的文件夹和文件。
+. NetApp Backup and Recovery显示所选备份文件中存在的文件夹和文件。
 . 选择要从该备份中恢复的文件夹或文件。
 . 选择要恢复文件夹或文件的目标位置（系统、卷和文件夹），然后单击“*恢复*”。
 . 文件已恢复。
@@ -361,7 +361,7 @@ image:diagram_browse_restore_file.png["该图显示了使用浏览和恢复执�
 
 ==== 还原文件夹和文件
 
-按照以下步骤将文件夹或文件从ONTAP卷备份还原到卷。您应该知道要用于恢复文件夹或文件的卷的名称和备份文件的日期。此功能使用实时浏览，以便您可以查看每个备份文件中的目录和文件列表。
+按照以下步骤将文件夹或文件从ONTAP卷备份还原到卷。您应该知道要用于还原文件夹或文件的卷的名称和备份文件的日期。此功能使用实时浏览，以便您可以查看每个备份文件中的目录和文件列表。
 
 .步骤
 . 从控制台菜单中，选择*保护>备份和恢复*。
@@ -373,10 +373,10 @@ image:diagram_browse_restore_file.png["该图显示了使用浏览和恢复执�
 如果您要从位于档案存储层的备份文件还原文件夹或文件，则可以选择还原优先级。
 
 +
-link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"] 。link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"] 。link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"] 。Google Archive 存储层中的备份文件几乎可以立即恢复，并且不需要恢复优先级。
+link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"]。link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"]。link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"]。Google Archive 存储层中的备份文件几乎可以立即恢复，并且不需要恢复优先级。
 
 +
-如果备份文件的勒索软件恢复功能处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复功能），则会提示您在恢复数据之前对备份文件运行额外的勒索软件扫描。我们建议您扫描备份文件以查找勒索软件。（您将需要向云提供商支付额外的出口成本才能访问备份文件的内容。）
+如果备份文件的勒索软件恢复功能处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复功能），则会提示您在恢复数据之前对备份文件运行额外的勒索软件扫描。我们建议您扫描备份文件以查找勒索软件。  （您将需要向云提供商支付额外的出口成本才能访问备份文件的内容。）
 
 . 在“选择项目”页面中，选择要恢复的文件夹或文件，然后选择“继续”。为了帮助您找到该物品：
 +
@@ -446,7 +446,7 @@ endif::gcp[]
 
 搜索操作会查看ONTAP卷中存在的所有本地快照副本、二级存储系统上的所有复制卷以及对象存储中存在的所有备份文件。由于从本地 Snapshot 副本或复制卷恢复数据比从对象存储中的备份文件恢复数据更快且成本更低，因此您可能希望从这些其他位置恢复数据。
 
-当您从备份文件恢复_完整卷_时， NetApp Backup and Recovery 会使用备份中的数据创建一个_新_卷。您可以将数据作为原始系统中的卷还原到与源系统位于同一云帐户的其他系统或本地ONTAP系统。
+当您从备份文件恢复_完整卷_时， NetApp Backup and Recovery会使用备份中的数据创建一个_新_卷。您可以将数据作为原始系统中的卷还原到与源系统位于同一云帐户的其他系统或本地ONTAP系统。
 
 您可以将文件夹或文件还原到原始卷位置、同一系统中的不同卷、使用同一云帐户的不同系统或本地ONTAP系统上的卷。
 
@@ -456,19 +456,19 @@ endif::gcp[]
 
 ifdef::aws[]
 
-link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"] 。
+link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"]。
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"] 。
+link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"]。
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"] 。
+link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"]。
 
 endif::gcp[]
 
@@ -560,9 +560,9 @@ ifdef::aws[]
 
 * AWS 要求：
 +
-** 必须将特定的 Amazon Athena、AWS Glue 和 AWS S3 权限添加到为控制台提供权限的用户角色。link:prev-ontap-backup-onprem-aws.html["确保所有权限均已正确配置"] 。
+** 必须将特定的 Amazon Athena、AWS Glue 和 AWS S3 权限添加到为控制台提供权限的用户角色。link:prev-ontap-backup-onprem-aws.html["确保所有权限均已正确配置"]。
 +
-请注意，如果您已经使用过去配置的控制台代理来使用NetApp Backup and Recovery，则现在需要将 Athena 和 Glue 权限添加到控制台用户角色。它们是搜索和恢复所必需的。
+请注意，如果您已经使用NetApp Backup and Recovery以及您过去配置的控制台代理，则现在需要将 Athena 和 Glue 权限添加到控制台用户角色。它们是搜索和恢复所必需的。
 
 
 
@@ -575,9 +575,9 @@ ifdef::azure[]
 * Azure 要求：
 +
 ** 您必须向您的订阅注册 Azure Synapse Analytics 资源提供程序（称为“Microsoft.Synapse”）。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["了解如何为您的订阅注册此资源提供程序"^] 。您必须是订阅*所有者*或*贡献者*才能注册资源提供者。
-** 必须将特定的 Azure Synapse Workspace 和 Data Lake Storage 帐户权限添加到为控制台提供权限的用户角色。link:prev-ontap-backup-onprem-azure.html["确保所有权限均已正确配置"] 。
+** 必须将特定的 Azure Synapse Workspace 和 Data Lake Storage 帐户权限添加到为控制台提供权限的用户角色。link:prev-ontap-backup-onprem-azure.html["确保所有权限均已正确配置"]。
 +
-请注意，如果您已经使用过去配置的控制台代理来使用NetApp Backup and Recovery，则现在需要将 Azure Synapse Workspace 和 Data Lake Storage 帐户权限添加到控制台用户角色。它们是搜索和恢复所必需的。
+请注意，如果您已经使用过去配置的控制台代理来使用NetApp Backup and Recovery ，则现在需要将 Azure Synapse Workspace 和 Data Lake Storage 帐户权限添加到控制台用户角色。它们是搜索和恢复所必需的。
 
 ** 控制台代理必须配置为*不带*代理服务器才能与互联网进行 HTTP 通信。如果您已为控制台代理配置了 HTTP 代理服务器，则无法使用搜索和还原功能。
 
@@ -590,9 +590,9 @@ ifdef::gcp[]
 
 * Google Cloud 要求：
 +
-** 必须将特定的 Google BigQuery 权限添加到为NetApp控制台提供权限的用户角色。link:prev-ontap-backup-onprem-gcp.html["确保所有权限均已正确配置"] 。
+** 必须将特定的 Google BigQuery 权限添加到为NetApp Console提供权限的用户角色。link:prev-ontap-backup-onprem-gcp.html["确保所有权限均已正确配置"]。
 +
-如果您已经使用NetApp Backup and Recovery 以及您过去配置的控制台代理，则现在需要将 BigQuery 权限添加到控制台用户角色。它们是搜索和恢复所必需的。
+如果您已经使用NetApp Backup and Recovery以及您过去配置的控制台代理，则现在需要将 BigQuery 权限添加到控制台用户角色。它们是搜索和恢复所必需的。
 
 
 
@@ -637,7 +637,7 @@ endif::gcp[]
 
 image:diagram_search_restore_vol_file.png["该图显示了使用“搜索和还原”执行卷、文件夹或文件还原操作的流程。"]
 
-如您所见，您实际上只需要知道部分名称， NetApp Backup and Recovery 就会搜索与您的搜索相匹配的所有备份文件。
+如您所见，您实际上只需要知道部分名称， NetApp Backup and Recovery就会搜索与您的搜索相匹配的所有备份文件。
 
 
 
@@ -655,8 +655,8 @@ image:diagram_search_restore_vol_file.png["该图显示了使用“搜索和还�
 * 索引目录 v2 处于预览模式。
 * 如果您是现有客户并想要使用 Catalog v2，则需要完全重新索引您的环境。
 * Catalog v2 仅索引具有快照标签的快照。
-* NetApp Backup and Recovery 不会使用“每小时” SnapMirror标签对快照进行索引。如果您想使用“每小时” SnapMirror标签索引快照，则需要在 v2 处于预览模式时手动启用它。
-* NetApp Backup and Recovery 将仅使用 Catalog v2 为受NetApp Backup and Recovery 保护的系统关联的卷和快照编制索引。在控制台平台上发现的其他系统将不会被编入索引。
+* NetApp Backup and Recovery不会使用“每小时” SnapMirror标签对快照进行索引。如果您想使用“每小时” SnapMirror标签索引快照，则需要在 v2 处于预览模式时手动启用它。
+* NetApp Backup and Recovery将仅使用 Catalog v2 为受NetApp Backup and Recovery保护的系统关联的卷和快照编制索引。在控制台平台上发现的其他系统将不会被编入索引。
 * 使用 Catalog v2 进行数据索引发生在本地环境以及 Amazon Web Services、Microsoft Azure 和 Google Cloud Platform (GCP) 环境中。
 
 
@@ -680,7 +680,7 @@ image:diagram_search_restore_vol_file.png["该图显示了使用“搜索和还�
 * 对于存储在StorageGRID或ONTAP S3 中的备份，它会在控制台代理或云提供商环境中提供空间。
 
 
-如果您的系统已启用索引，请转至下一部分来恢复您的数据。
+如果您的系统已启用索引，请转到下一部分来恢复您的数据。
 
 .为系统启用索引的步骤：
 . 执行以下操作之一：
@@ -733,7 +733,7 @@ image:diagram_search_restore_vol_file.png["该图显示了使用“搜索和还�
 ifdef::aws[]
 
 +
-*** 从 Amazon S3 还原时，选择ONTAP集群中目标卷所在的 IP 空间，输入您创建的用户的访问密钥和密钥，以授予ONTAP集群对 S3 存储桶的访问权限，并可选择选择私有 VPC 端点以进行安全数据传输。link:prev-ontap-backup-onprem-aws.html["查看有关这些要求的详细信息"] 。
+*** 从 Amazon S3 还原时，选择ONTAP集群中目标卷所在的 IP 空间，输入您创建的用户的访问密钥和密钥，以授予ONTAP集群对 S3 存储桶的访问权限，并可选择选择私有 VPC 端点以进行安全数据传输。link:prev-ontap-backup-onprem-aws.html["查看有关这些要求的详细信息"]。
 
 
 
@@ -744,21 +744,21 @@ endif::aws[]
 
 ifdef::azure[]
 
-* 从 Azure Blob 还原时，选择目标卷所在的ONTAP集群中的 IP 空间，并通过选择 VNet 和子网来选择用于安全数据传输的私有端点。link:prev-ontap-backup-onprem-azure.html["查看有关这些要求的详细信息"] 。
+* 从 Azure Blob 还原时，选择目标卷所在的ONTAP集群中的 IP 空间，并通过选择 VNet 和子网来选择用于安全数据传输的私有端点。link:prev-ontap-backup-onprem-azure.html["查看有关这些要求的详细信息"]。
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* 从 Google Cloud Storage 恢复时，选择目标卷所在的ONTAP集群中的 IP 空间，以及用于访问对象存储的访问密钥和密钥。link:prev-ontap-backup-onprem-gcp.html["查看有关这些要求的详细信息"] 。
+* 从 Google Cloud Storage 恢复时，选择目标卷所在的ONTAP集群中的 IP 空间，以及用于访问对象存储的访问密钥和密钥。link:prev-ontap-backup-onprem-gcp.html["查看有关这些要求的详细信息"]。
 
 
 endif::gcp[]
 
-* 从StorageGRID还原时，输入StorageGRID服务器的 FQDN 和ONTAP应用于与StorageGRID进行 HTTPS 通信的端口，输入访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。link:prev-ontap-backup-onprem-storagegrid.html["查看有关这些要求的详细信息"] 。
-* 从ONTAP S3 还原时，输入ONTAP S3 服务器的 FQDN 和ONTAP应用于与ONTAP S3 进行 HTTPS 通信的端口，选择访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。link:prev-ontap-backup-onprem-ontaps3.html["查看有关这些要求的详细信息"] 。
+* 从StorageGRID还原时，输入StorageGRID服务器的 FQDN 和ONTAP应用于与StorageGRID进行 HTTPS 通信的端口，输入访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。link:prev-ontap-backup-onprem-storagegrid.html["查看有关这些要求的详细信息"]。
+* 从ONTAP S3 还原时，输入ONTAP S3 服务器的 FQDN 和ONTAP应用于与ONTAP S3 进行 HTTPS 通信的端口，选择访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。link:prev-ontap-backup-onprem-ontaps3.html["查看有关这些要求的详细信息"]。
 
 
 .结果
-卷、文件夹或文件已恢复，您将返回到恢复仪表板，以便您可以查看恢复操作的进度。您还可以选择“作业监控”选项卡来查看恢复进度。看link:br-use-monitor-tasks.html["作业监控页面"] 。
+卷、文件夹或文件已恢复，您将返回到恢复仪表板，以便您可以查看恢复操作的进度。您还可以选择“*作业监控*”选项卡来查看恢复进度。看link:br-use-monitor-tasks.html["作业监控页面"]。

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-vmware-prereqs.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载。 
 ---
-= NetApp备份和恢复中虚拟机工作负载的先决条件
+= NetApp Backup and Recovery中虚拟机工作负载的先决条件
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 
 
 [role="lead"]
-在开始使用NetApp Backup and Recovery 保护虚拟机工作负载之前，请确保满足以下先决条件：
+在开始使用NetApp Backup and Recovery保护虚拟机工作负载之前，请确保满足以下先决条件：
 
 * SnapCenter Plug-in for VMware vSphere
 +
@@ -22,7 +22,7 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 
 
 * ONTAP 9.8 或更高版本
-* NetApp控制台
+* NetApp Console
 * 支持 NFS 和 VMFS 数据存储。不支持vVols 。
 * 为了支持 VMFS，SnapCenter Plug-in for VMware vSphere应在 4.9 或更高版本上运行。如果SnapCenter Plug-in for VMware vSphere从早期版本升级到 4.9 版本，请确保备份 VMFS 数据存储。
 * 应在SnapCenter Plug-in for VMware vSphere中至少进行一次备份。
@@ -33,7 +33,7 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 * 确保将要还原虚拟机的目标数据存储具有足够的空间来容纳所有虚拟机文件（如 VMDK、VMX、VMSD 等）的副本。
 * 确保目标数据存储区中没有因之前的还原操作失败而导致的格式为 restore_xxx_xxxxxx_filename 的陈旧虚拟机文件。您应该在触发恢复操作之前删除陈旧的文件。
 * 要部署配置了代理的连接器，请确保所有传出的连接器调用都通过代理服务器路由。
-* 如果备份数据存储区的卷已受到“卷”选项卡（NetApp备份和恢复 -> 卷）的保护，则同一数据存储区无法再次受到“虚拟机”选项卡（NetApp备份和恢复 -> 虚拟机）的保护。
+* 如果备份数据存储区的卷已受到“卷”选项卡（NetApp Backup and Recovery-> 卷）的保护，则同一数据存储区无法再次受到“虚拟机”选项卡（NetApp Backup and Recovery-> 虚拟机）的保护。
 
 
 下图显示了每个组件以及您需要在它们之间准备的连接：

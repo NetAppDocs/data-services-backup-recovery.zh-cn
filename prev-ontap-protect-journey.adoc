@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-protect-journey.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。 
+summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载。 
 ---
-= 使用NetApp备份和恢复规划您的保护之旅
+= 使用NetApp Backup and Recovery规划您的保护之旅
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,11 +14,11 @@ summary: 使用NetApp NetApp备份和恢复保护您的 VMware 工作负载。
 
 
 [role="lead"]
-NetApp Backup and Recovery 使您能够创建最多三个源卷副本来保护您的数据。在卷上启用备份和恢复时，您可以选择许多选项，因此您应该检查您的选择以做好准备。
+NetApp Backup and Recovery使您能够创建最多三个源卷副本来保护您的数据。在卷上启用备份和恢复时，您可以选择许多选项，因此您应该检查您的选择以做好准备。
 
 []
 ====
-*注意* 要切换到NetApp备份和恢复工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp备份和恢复工作负载"]。
+*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
 ====
 我们将讨论以下选项：
@@ -58,7 +58,7 @@ image:diagram-321-overview.png["该图表显示了备份文件如何作为快照
 总而言之，这些是您可以为ONTAP系统中的卷创建的有效保护流程：
 
 * 源卷 -> 快照副本 -> 复制卷 -> 备份文件
-* 源卷 -> Snapshot 副本 -> 备份文件
+* 源卷 -> 快照副本 -> 备份文件
 * 源卷 -> 快照副本 -> 复制卷
 
 
@@ -69,7 +69,7 @@ NOTE: 复制卷或备份文件的初始创建包括源数据的完整副本 - �
 
 下表显示了三种备份方法的总体比较。虽然对象存储空间通常比本地磁盘存储便宜，但如果您认为您可能会频繁从云中恢复数据，那么云提供商的出口费用可能会减少您的一些节省。您需要确定需要多久从云中的备份文件中恢复数据。
 
-除了此标准之外，如果您使用 DataLock 和勒索软件恢复功能，云存储还可以提供额外的安全选项，并且通过为旧备份文件选择存档存储类可以节省额外的成本。link:prev-ontap-policy-object-options.html["了解有关 DataLock 和勒索软件保护以及档案存储设置的更多信息"] 。
+除了此标准之外，如果您使用 DataLock 和勒索软件恢复功能，云存储还可以提供额外的安全选项，并且通过为旧备份文件选择存档存储类可以节省额外的成本。link:prev-ontap-policy-object-options.html["了解有关 DataLock 和勒索软件保护以及档案存储设置的更多信息"]。
 
 [cols="18,18,22,18,22"]
 |===
@@ -125,9 +125,9 @@ image:diagram-321-cascade-detailed.png["该图表显示了如何使用卷的快�
 
 如果您为复制或备份创建自定义策略，则策略标签（例如“每日”或“每周”）必须与快照策略中存在的标签匹配，否则将不会创建复制的卷和备份文件。
 
-您可以在NetApp备份和恢复 UI 中创建快照、复制和备份到对象存储策略。请参阅link:prev-ontap-backup-manage.html["添加新的备份策略"]了解详情。
+您可以在NetApp Backup and RecoveryUI 中创建快照、复制和备份到对象存储策略。请参阅link:prev-ontap-backup-manage.html["添加新的备份策略"]了解详情。
 
-除了使用NetApp Backup and Recovery 创建自定义策略之外，您还可以使用 System Manager 或ONTAP命令行界面 (CLI)：
+除了使用NetApp Backup and Recovery创建自定义策略之外，您还可以使用 System Manager 或ONTAP命令行界面 (CLI)：
 
 * https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["使用 System Manager 或ONTAP CLI 创建快照策略"^]
 * https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["使用 System Manager 或ONTAP CLI 创建复制策略"^]
@@ -196,7 +196,7 @@ NOTE: 只有保险库策略可用于备份到云关系。
 
 当您在系统的对象存储中创建备份文件时，默认情况下，备份和恢复服务会在您配置的对象存储帐户中为备份文件创建容器（存储桶或存储帐户）。  AWS 或 GCP 存储桶默认名为“netapp-backup-<uuid>”。  Azure Blob 存储帐户名为“netappbackup<uuid>”。
 
-如果您想使用某个前缀或分配特殊属性，您可以在对象提供者帐户中自行创建容器。如果您想创建自己的容器，则必须在启动激活向导之前创建它。 NetApp Backup and Recovery 可以使用任何存储桶并共享存储桶。备份激活向导将自动发现所选帐户和凭据的配置容器，以便您选择要使用的容器。
+如果您想使用某个前缀或分配特殊属性，您可以在对象提供者帐户中自行创建容器。如果您想创建自己的容器，则必须在启动激活向导之前创建它。 NetApp Backup and Recovery可以使用任何存储桶并共享存储桶。备份激活向导将自动发现所选帐户和凭据的配置容器，以便您选择要使用的容器。
 
 您可以从控制台或云提供商创建存储桶。
 
@@ -229,17 +229,17 @@ NOTE: 只有保险库策略可用于备份到云关系。
 
 == 您正在使用哪种控制台代理部署模式
 
-如果您已经使用控制台来管理您的存储，那么控制台代理已经安装。如果您计划将相同的控制台代理与NetApp Backup and Recovery 一起使用，那么一切就绪了。如果您需要使用不同的控制台代理，则需要在开始备份和恢复实施之前安装它。
+如果您已经使用控制台来管理您的存储，那么控制台代理已经安装。如果您计划将相同的控制台代理与NetApp Backup and Recovery一起使用，那么一切就绪了。如果您需要使用不同的控制台代理，则需要在开始备份和恢复实施之前安装它。
 
-NetApp控制台提供多种部署模式，使您能够以满足业务和安全要求的方式使用控制台。  _标准模式_利用控制台 SaaS 层提供全部功能，而_限制模式_和_私人模式_适用于有连接限制的组织。
+NetApp Console提供多种部署模式，使您能够以满足业务和安全要求的方式使用控制台。  _标准模式_利用控制台 SaaS 层提供全部功能，而_限制模式_和_私人模式_适用于有连接限制的组织。
 
-https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["了解有关NetApp控制台部署模式的更多信息"^] 。
+https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["了解有关NetApp Console部署模式的更多信息"^]。
 
 
 
 === 支持具有完整互联网连接的网站
 
-当在具有完全互联网连接（也称为_标准模式_或_SaaS 模式_）的站点中使用NetApp Backup and Recovery 时，您可以在控制台管理的任何本地ONTAP或Cloud Volumes ONTAP系统上创建复制卷，并且可以在任何受支持的云提供商的对象存储上创建备份文件。link:concept-backup-to-cloud.html["查看受支持的备份目标的完整列表"] 。
+当在具有完全互联网连接（也称为_标准模式_或_SaaS 模式_）的站点中使用NetApp Backup and Recovery时，您可以在控制台管理的任何本地ONTAP或Cloud Volumes ONTAP系统上创建复制卷，并且可以在任何受支持的云提供商的对象存储上创建备份文件。link:concept-backup-to-cloud.html["查看受支持的备份目标的完整列表"]。
 
 有关有效控制台代理位置的列表，请参阅您计划创建备份文件的云提供商的以下备份程序之一。存在一些限制，控制台代理必须手动安装在 Linux 机器上或部署在特定的云提供商中。
 
@@ -257,18 +257,18 @@ https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["了解有�
 
 === 支持互联网连接有限的网站
 
-NetApp Backup and Recovery 可用于互联网连接受限的站点（也称为“受限模式”）来备份卷数据。在这种情况下，您需要在目标云区域部署控制台代理。
+NetApp Backup and Recovery可用于互联网连接受限的站点（也称为“受限模式”）来备份卷数据。在这种情况下，您需要在目标云区域部署控制台代理。
 
 ifdef::aws[]
 
-* 您可以将数据从本地ONTAP系统或安装在 AWS 商业区域的Cloud Volumes ONTAP系统备份到 Amazon S3。link:prev-ontap-backup-cvo-aws.html["将Cloud Volumes ONTAP数据备份到 Amazon S3"] 。
+* 您可以将数据从本地ONTAP系统或安装在 AWS 商业区域的Cloud Volumes ONTAP系统备份到 Amazon S3。link:prev-ontap-backup-cvo-aws.html["将Cloud Volumes ONTAP数据备份到 Amazon S3"]。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* 您可以将数据从本地ONTAP系统或安装在 Azure 商业区域中的Cloud Volumes ONTAP系统备份到 Azure Blob。link:prev-ontap-backup-cvo-azure.html["将Cloud Volumes ONTAP数据备份到 Azure Blob"] 。
+* 您可以将数据从本地ONTAP系统或安装在 Azure 商业区域中的Cloud Volumes ONTAP系统备份到 Azure Blob。link:prev-ontap-backup-cvo-azure.html["将Cloud Volumes ONTAP数据备份到 Azure Blob"]。
 
 
 endif::azure[]
@@ -277,12 +277,12 @@ endif::azure[]
 
 === 支持没有互联网连接的网站
 
-NetApp Backup and Recovery 可用于没有互联网连接的站点（也称为_私有模式_或_暗站_）来备份卷数据。在这种情况下，您需要在同一站点的 Linux 主机上部署控制台代理。
+NetApp Backup and Recovery可用于没有互联网连接的站点（也称为_私有模式_或_暗站_）来备份卷数据。在这种情况下，您需要在同一站点的 Linux 主机上部署控制台代理。
 
 
 NOTE: BlueXP私有模式（传统BlueXP接口）通常用于没有互联网连接的本地环境和安全云区域，其中包括 AWS Secret Cloud、AWS Top Secret Cloud 和 Azure IL6。NetApp继续通过传统的BlueXP界面支持这些环境。有关旧版BlueXP界面中的私人模式文档，请参阅 https://docs.netapp.com/us-en/console-setup-admin/media/BlueXP-Private-Mode-legacy-interface.pdf["BlueXP私人模式的 PDF 文档"]。
 
-* 您可以将数据从本地ONTAP系统备份到本地NetApp StorageGRID系统。link:prev-ontap-backup-onprem-storagegrid.html["将本地ONTAP数据备份到StorageGRID"] 。
+* 您可以将数据从本地ONTAP系统备份到本地NetApp StorageGRID系统。link:prev-ontap-backup-onprem-storagegrid.html["将本地ONTAP数据备份到StorageGRID"]。
 * 您可以将数据从本地ONTAP系统备份到本地ONTAP系统或为 S3 对象存储配置的Cloud Volumes ONTAP系统。link:prev-ontap-backup-onprem-ontaps3.html["将本地ONTAP数据备份到ONTAP S3"] .ifdef::aws[]
 
 

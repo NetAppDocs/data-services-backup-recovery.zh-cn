@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-api-backup-restore.html 
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis 
-summary: 可通过 Web UI 使用的NetApp备份和恢复功能也可通过 RESTful API 使用。 
+summary: 可通过 Web UI 使用的NetApp Backup and Recovery功能也可通过 RESTful API 使用。 
 ---
-= 使用NetApp备份和恢复 REST API 实现自动化
+= 使用NetApp Backup and RecoveryREST API 实现自动化
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,7 +16,7 @@ summary: 可通过 Web UI 使用的NetApp备份和恢复功能也可通过 RESTf
 [role="lead"]
 可通过 Web UI 使用的NetApp Backup and Recovery功能也可通过备份和恢复 REST API 使用。
 
-NetApp Backup and Recovery 中定义了十类端点：
+NetApp Backup and Recovery中定义了十类端点：
 
 * `backup`- 管理云和本地资源的备份操作，并检索备份数据的详细信息
 * `catalog`- 根据查询管理文件的索引目录搜索（搜索和恢复）
@@ -34,21 +34,21 @@ NetApp Backup and Recovery 中定义了十类端点：
 
 == API 参考
 
-每个NetApp备份和恢复 API 的文档均可从以下位置获取 https://docs.netapp.com/us-en/console-automation/cbs/overview.html["NetApp控制台自动化，用于NetApp备份和恢复"^]。
+每个NetApp Backup and RecoveryAPI 的文档均可从以下位置获取 https://docs.netapp.com/us-en/console-automation/cbs/overview.html["NetApp Console自动化，用于NetApp Backup and Recovery"^]。
 
 
 
 == 入门
 
-要开始使用NetApp备份和恢复 API，您需要获取用户令牌、 NetApp控制台帐户 ID 和控制台代理 ID。
+要开始使用NetApp Backup and RecoveryAPI，您需要获取用户令牌、 NetApp Console帐户 ID 和控制台代理 ID。
 
-进行 API 调用时，您将在授权标头中添加用户令牌，并在 x-agent-id 标头中添加控制台代理 ID。您应该在 API 中使用NetApp控制台帐户 ID。
+进行 API 调用时，您将在授权标头中添加用户令牌，并在 x-agent-id 标头中添加控制台代理 ID。您应该在 API 中使用NetApp Console帐户 ID。
 
 
 NOTE: 如果您使用服务帐户，则应该使用服务访问令牌而不是用户令牌。“client_id”的值（“Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC”）是固定值，无法更改。在这种情况下，请按照此处的说明进行操作： https://docs.netapp.com/us-en/console-automation/platform/create_service_token.html["创建服务访问令牌"^] 。
 
 .步骤
-. 从NetApp NetApp Console 网站获取用户令牌。
+. 从NetApp NetApp Console网站获取用户令牌。
 +
 确保从以下链接生成刷新令牌： https://services.cloud.netapp.com/refresh-token/.刷新令牌是一个字母数字字符串，您将使用它来生成用户令牌。
 
@@ -65,9 +65,9 @@ curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/tok
 ----
 +
 
-NOTE: NetApp控制台网站上的用户令牌有一个到期日期。 API 响应包含一个“expires_in”字段，用于说明令牌何时过期。要刷新令牌，您需要再次调用此 API。
+NOTE: NetApp Console网站上的用户令牌有一个到期日期。API 响应包含一个“expires_in”字段，用于说明令牌何时过期。要刷新令牌，您需要再次调用此 API。
 
-. 获取您的NetApp控制台帐户 ID。
+. 获取您的NetApp Console帐户 ID。
 +
 [source, console]
 ----
@@ -114,10 +114,10 @@ Header:
 
 == 使用 API 的示例
 
-以下示例显示了在 Azure 云中的 East-US-2 区域中，在具有新策略的系统上激活NetApp Backup and Recovery 的 API 调用，该策略设置了每日、每小时和每周标签，并将存档天数设置为 180 天。请注意，这仅启用系统上的备份，但不会备份任何卷。
+以下示例显示了在 Azure 云中的 East-US-2 区域中，在具有新策略的系统上激活NetApp Backup and Recovery 的API 调用，该策略设置了每日、每小时和每周标签，并将存档天数设置为 180 天。请注意，这仅启用系统上的备份，但不会备份任何卷。
 
 .API 请求
-您会看到我们使用NetApp控制台帐户 ID `account-DpTFcxN3` 、控制台代理 ID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`和用户令牌 `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g`在此命令中。
+您会看到我们使用NetApp Console帐户 ID `account-DpTFcxN3` 、控制台代理 ID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`和用户令牌 `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g`在此命令中。
 
 [source, console]
 ----
