@@ -63,7 +63,7 @@ NetApp Backup and Recovery使您能够管理 Microsoft SQL Server 工作负载�
 您可以管理系统中发现的主机。您可以单独或作为一个组来管理它们。
 
 
-TIP: 您只能管理主机列中显示“未管理”状态的主机。如果状态为“Managed”，则表示该主机已由NetApp Backup and Recovery管理。
+TIP: 您可以在“主机”列中管理状态为“未管理”的主机。  NetApp Backup and Recovery已经管理具有“托管”状态的主机。
 
 在NetApp Backup and Recovery中管理主机后， SnapCenter不再管理这些主机上的资源。
 
@@ -90,7 +90,7 @@ TIP: 您只能管理主机列中显示“未管理”状态的主机。如果状
 
 === 暂停时间表
 
-您可以暂停计划以停止主机的备份和还原操作。如果您需要在主机上执行维护活动，您可能需要这样做。
+暂停计划以在主机维护期间停止备份和恢复操作。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -130,7 +130,7 @@ TIP: 您只能管理主机列中显示“未管理”状态的主机。如果状
 
 == 管理实例信息
 
-您可以管理实例信息以确保资源具有适当的保护凭证，并且可以通过以下方式备份资源：
+您可以通过以下方式管理实例信息，分配适当的凭证来保护资源并备份资源：
 
 * 保护实例
 * 关联凭证
@@ -210,7 +210,7 @@ TIP: 您只能管理主机列中显示“未管理”状态的主机。如果状
 
 === 立即备份
 
-您现在可以备份您的数据，以确保您的数据受到立即保护。
+立即备份您的数据以立即保护它。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -260,7 +260,7 @@ TIP: 您只能管理主机列中显示“未管理”状态的主机。如果状
 
 === 还原数据库
 
-您可以恢复数据库以确保您的数据受到保护。
+恢复数据库以保护您的数据。
 
 *所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -295,7 +295,7 @@ TIP: 您只能管理主机列中显示“未管理”状态的主机。如果状
 
 === 立即备份
 
-您现在可以备份您的 Microsoft SQL Server 实例和数据库，以确保您的数据立即受到保护。
+您现在可以备份您的 Microsoft SQL Server 实例和数据库，以立即保护您的数据。
 
 *所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 

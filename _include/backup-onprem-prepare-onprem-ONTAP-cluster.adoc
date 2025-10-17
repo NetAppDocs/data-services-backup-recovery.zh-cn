@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-您需要准备源本地ONTAP系统以及任何辅助本地ONTAP或Cloud Volumes ONTAP系统。
+准备源本地ONTAP系统和任何辅助本地ONTAP或Cloud Volumes ONTAP系统。
 
 准备ONTAP集群涉及以下步骤：
 
@@ -24,7 +24,7 @@
 
 === 验证ONTAP系统要求
 
-确保满足以下ONTAP要求：
+确保您的ONTAP系统满足以下要求：
 
 * 最低版本为ONTAP 9.8；建议使用ONTAP 9.8P13 及更高版本。
 * SnapMirror许可证（包含在高级捆绑包或数据保护捆绑包中）。
@@ -35,7 +35,7 @@
 了解如何 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理您的集群许可证"^]。
 
 * 时间和时区设置正确。了解如何 https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["配置集群时间"^]。
-* 如果要复制数据，则应在复制数据之前验证源系统和目标系统是否运行兼容的ONTAP版本。
+* 如果您复制数据，请检查源系统和目标系统是否运行兼容的ONTAP版本。
 +
 https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["查看与SnapMirror关系兼容的ONTAP版本"^]。
 

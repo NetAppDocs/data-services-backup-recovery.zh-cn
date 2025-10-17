@@ -19,7 +19,7 @@ summary: 在没有互联网访问的站点（称为“私有模式”）中使�
 
 NOTE: 此过程仅适用于ONTAP卷数据。
 
-当您在 SaaS 环境中使用NetApp Backup and Recovery时，其中控制台代理部署在云提供商处，或者在您自己的具有互联网访问权限的主机系统上，所有重要的NetApp Backup and Recovery配置数据都会在云中备份和保护。如果您遇到控制台代理问题，只需创建一个新的控制台代理并添加您的系统，备份详细信息就会自动恢复。
+当您在 SaaS 环境中使用NetApp Backup and Recovery，并在云提供商或您自己的互联网连接主机上部署控制台代理时，系统会备份并保护云中所有重要的配置数据。如果您遇到控制台代理问题，请创建一个新的控制台代理并添加您的系统。备份详细信息将自动恢复。
 
 备份的数据有两种类型：
 
@@ -27,7 +27,7 @@ NOTE: 此过程仅适用于ONTAP卷数据。
 * 索引目录文件 - 包含用于搜索和恢复功能的详细索引，使您在查找要恢复的卷数据时搜索非常快速和有效。
 
 
-这些数据每天午夜备份一次，每个文件最多保留 7 份副本。如果控制台代理正在管理多个本地ONTAP系统，则NetApp Backup and Recovery文件将位于首先激活的系统的存储桶中。
+这些数据每天午夜备份一次，每个文件最多保留 7 份副本。如果控制台代理正在管理多个本地ONTAP系统，则NetApp Backup and Recovery文件将存储在首先激活的系统的存储桶中。
 
 
 TIP: NetApp Backup and Recovery数据库或索引目录文件中从未包含任何卷数据。
@@ -36,7 +36,7 @@ TIP: NetApp Backup and Recovery数据库或索引目录文件中从未包含任�
 
 == 将NetApp Backup and Recovery数据还原到新的控制台代理
 
-如果您的内部控制台代理发生灾难性故障，您将需要安装新的控制台代理，然后将NetApp Backup and Recovery数据还原到新的控制台代理。
+如果您的内部控制台代理停止工作，您将需要安装新的控制台代理，然后将NetApp Backup and Recovery数据还原到新的控制台代理。
 
 您需要执行以下任务才能使NetApp Backup and Recovery系统恢复工作状态：
 
@@ -46,7 +46,7 @@ TIP: NetApp Backup and Recovery数据库或索引目录文件中从未包含任�
 * 将所有本地ONTAP系统和StorageGRID系统重新发现到NetApp ConsoleUI
 
 
-一旦您确认系统恢复正常工作，我们建议您创建新的备份文件。
+检查系统正常运行后，创建新的备份文件。
 
 .你需要什么
 您需要从存储备份文件的StorageGRID或ONTAP S3 存储桶访问最新的数据库和索引备份：
@@ -65,7 +65,7 @@ TIP: NetApp Backup and Recovery数据库或索引目录文件中从未包含任�
 
 === 在新的本地 Linux 主机上安装新的控制台代理
 
-安装新的控制台代理时，请确保下载与原始控制台代理上安装的相同版本的软件。 NetApp Backup and Recovery数据库结构的定期更改可能会导致较新的软件版本与原始数据库备份不兼容。你可以 https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["恢复备份数据库后，将控制台代理软件升级到最新版本"^]。
+安装新的控制台代理时，请下载与原始代理相同的软件版本。 NetApp Backup and Recovery数据库的更改可能会导致较新的软件版本无法与旧的数据库备份一起使用。你可以 https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["恢复备份数据库后，将控制台代理软件升级到最新版本"^]。
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["在新的本地 Linux 主机上安装控制台代理"^]
 . 使用您刚刚创建的管理员用户凭据登录控制台。
@@ -203,7 +203,7 @@ curl -X POST 'http://10.193.192.202/account/account-DARKSITE1/providers/cloudman
 
 . 选择每个ONTAP系统，然后单击右侧面板中备份和恢复服务旁边的“查看备份”。
 +
-您应该能够看到为您的卷创建的所有备份。
+您应该会看到为您的卷创建的所有备份。
 
 . 在“恢复仪表板”的“搜索和恢复”部分下，单击“*索引设置*”。
 +
