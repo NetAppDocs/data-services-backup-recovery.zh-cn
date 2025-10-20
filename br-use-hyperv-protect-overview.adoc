@@ -22,9 +22,9 @@ image:../media/diagram-backup-recovery-general.png["备份与恢复的总体架�
 
 使用NetApp Backup and Recovery实施 3-2-1 保护策略，其中您在 2 个不同的存储系统上拥有 3 个源数据副本，并在云中拥有 1 个副本。3-2-1 方法的优点包括：
 
-* 多个数据副本可提供多层保护，抵御内部（内部）和外部网络安全威胁。
+* 多个数据副本可防止内部和外部网络安全威胁。
 * 多种媒体类型可确保在一种媒体类型发生物理或逻辑故障时能够进行故障转移。
-* 现场副本有助于快速恢复，而异地副本则可在现场副本受损时使用。
+* 现场副本可帮助您快速恢复数据，并且如果现场副本受到损害，您可以使用异地副本。
 
 
 当您添加 Hyper-V 主机并发现资源时， NetApp Backup and Recovery会在 Hyper-V 主机上安装NetApp Hyper-V 插件和NetApp SnapCenter Windows FileSystem 插件，以帮助管理和保护虚拟机。

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-snapshots.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: 您可以将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure、Google Cloud Platform 和StorageGRID，确保您的数据受到保护。备份会自动生成并存储在您的公共或私有云帐户的对象存储中。您可以实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。 
+summary: 您可以通过从NetApp Backup and Recovery中删除 Microsoft SQL Server 快照来管理它们。 
 ---
 = 使用NetApp Backup and Recovery管理 Microsoft SQL Server 快照
 :hardbreaks:
@@ -33,7 +33,7 @@ summary: 您可以将 Microsoft SQL Server 应用程序数据从本地ONTAP系�
 . 选择要删除的本地快照。
 +
 
-TIP: 该行*位置*列中的本地快照图标必须显示为蓝色。
+TIP: 验证该行*位置*列中的本地快照图标是否显示为蓝色。
 
 . 选择*操作*image:icon-action.png["操作图标"]图标，然后选择*删除本地快照*。
 . 在确认对话框中，选择*删除*。

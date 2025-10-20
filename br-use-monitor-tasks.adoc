@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-monitor-tasks.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
-summary: 使用NetApp Backup and Recovery，监控您启动的本地快照、复制和备份到对象存储作业的状态，以及您启动的还原作业。 
+summary: 使用NetApp Backup and Recovery，监控您启动的本地快照、复制和备份作业。 
 ---
 = 监控NetApp Backup and Recovery中的作业
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: 使用NetApp Backup and Recovery，监控您启动的本地快照、复
 
 
 [role="lead"]
-使用NetApp Backup and Recovery，监控您启动的本地快照、复制和备份到对象存储作业的状态，以及您启动的还原作业。您可以查看已完成、正在进行或失败的作业，以便诊断和解决问题。使用NetApp Console通知中心，您可以启用通过电子邮件发送通知，这样即使您未登录系统也可以了解重要的系统活动。使用控制台时间线，您可以查看通过 UI 或 API 发起的所有操作的详细信息。
+使用NetApp Backup and Recovery，监控您启动的本地快照、复制和备份作业。跟踪您启动的恢复作业。查看已完成、正在进行或失败的作业以帮助诊断问题。在NetApp Console通知中心启用电子邮件通知，以便在未登录时随时了解系统活动。使用控制台时间线查看从 UI 或 API 启动的所有操作的详细信息。
 
-NetApp Backup and Recovery会将作业信息保留 15 天，之后会被清除，并且不再显示在作业监视器中。
+NetApp Backup and Recovery会将作业信息保留 15 天，然后删除作业信息并将其从作业监视器中移除。
 
 *所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -38,7 +38,7 @@ NetApp Backup and Recovery会将作业信息保留 15 天，之后会被清除�
 您从NetApp Backup and RecoveryUI 和 API 启动的快照、复制、对象存储备份和还原操作均可在“作业监控”选项卡中找到。
 
 
-NOTE: 如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没有看到正在进行的计划备份操作，则需要重新启动NetApp Backup and Recovery。link:reference-restart-backup.html["了解如何重新启动NetApp Backup and Recovery"]。
+NOTE: 如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没有看到正在进行的计划备份操作，请重新启动NetApp Backup and Recovery。link:reference-restart-backup.html["了解如何重新启动NetApp Backup and Recovery"]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *监控*。
@@ -102,7 +102,7 @@ NOTE: 如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没�
 
 === 下载作业监控结果报告
 
-您可以在完善主作业监控页面的内容后将其下载为报告。 NetApp Backup and Recovery会生成并下载一个 .CSV 文件，您可以根据需要查看该文件并发送给其他组。.CSV 文件包含最多 10,000 行数据。
+您可以在过滤或排序结果后将主作业监控页面的内容下载为报告。NetApp Backup and Recovery会生成并下载一个 .CSV 文件，您可以根据需要查看该文件并发送给其他组。.CSV 文件包含最多 10,000 行数据。
 
 从作业监控详细信息中，您可以下载包含单个作业详细信息的 JSON 文件。
 
@@ -116,7 +116,7 @@ NOTE: 如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没�
 
 == 审查保留（备份生命周期）作业
 
-监控保留（或备份生命周期）流程有助于您审核完整性、责任感和备份安全性。为了帮助您跟踪备份生命周期，您可能需要确定所有备份副本的到期时间。
+监控保留（备份生命周期）流程以检查备份、确保其安全并支持审计。确定备份副本何时过期以跟踪生命周期。
 
 备份生命周期作业跟踪所有已删除或待删除队列中的 Snapshot 副本。从ONTAP 9.13 开始，您可以在“作业监控”页面上查看所有称为“保留”的作业类型。
 
@@ -134,7 +134,7 @@ NOTE: 如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没�
 
 NetApp Console通知中心跟踪您启动的备份和恢复作业的进度，以便您可以验证操作是否成功。
 
-除了查看通知中心的警报之外，您还可以配置控制台通过电子邮件发送某些类型的通知作为警报，这样即使您未登录系统也可以了解重要的系统活动。 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["了解有关通知中心以及如何发送备份和恢复作业警报电子邮件的更多信息"^] 。
+您可以在通知中心查看警报，并配置控制台以发送重要系统活动的电子邮件警报，即使您未登录。 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["了解有关通知中心以及如何发送备份和恢复作业警报电子邮件的更多信息"^] 。
 
 通知中心显示大量快照、复制、备份到云和恢复事件，但只有某些事件会触发电子邮件警报：
 
@@ -175,7 +175,7 @@ NetApp Console通知中心跟踪您启动的备份和恢复作业的进度，以
 
 NOTE: 从ONTAP 9.13.0 开始，所有警报都会出现在Cloud Volumes ONTAP和本地ONTAP系统中。对于具有Cloud Volumes ONTAP 9.13.0 和本地ONTAP 的系统，仅出现与“恢复作业已完成，但有警告”相关的警报。
 
-默认情况下， NetApp Console组织和帐户管理员会收到所有“严重”和“建议”警报的电子邮件。默认情况下，所有其他用户和收件人均设置为不接收任何通知电子邮件。电子邮件可以发送给属于您的NetApp云帐户的任何控制台用户，或任何其他需要了解备份和恢复活动的收件人。
+默认情况下， NetApp Console组织和帐户管理员会收到所有“严重”和“建议”警报的电子邮件。默认情况下，系统不设置其他用户和收件人接收通知邮件。为NetApp云帐户中的任何控制台用户或需要了解备份和恢复活动的其他收件人配置电子邮件警报。
 
 要接收NetApp Backup and Recovery电子邮件警报，您需要在通知设置页面中选择通知严重性类型“严重”、“警告”和“错误”。
 

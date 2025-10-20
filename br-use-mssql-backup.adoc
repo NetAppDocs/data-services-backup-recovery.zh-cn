@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-mssql-backup.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: 将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure、Google Cloud Platform 和StorageGRID ，以确保您的数据受到保护。备份会自动生成并存储在您的公共或私有云帐户的对象存储中。您可以实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。 
+summary: 将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure 和StorageGRID ，以确保您的数据受到保护。 
 ---
 = 使用NetApp Backup and RecoveryMicrosoft SQL Server 工作负载
 :hardbreaks:
@@ -14,10 +14,10 @@ summary: 将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份�
 
 
 [role="lead"]
-将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure 和StorageGRID ，以确保您的数据受到保护。备份会自动生成并存储在您的公共或私有云帐户的对象存储中。
+将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure 或StorageGRID。系统会自动创建备份并将其存储在您的云帐户的对象存储中以保护数据。
 
-* 要按计划备份工作负载，请创建管理备份和还原操作的策略。看link:br-use-policies-create.html["创建策略"]以获取说明。
-* 在启动备份之前配置已发现主机的日志目录。
+* 要按计划备份工作负载，请创建管理备份和恢复操作的策略。看link:br-use-policies-create.html["创建策略"]以获取说明。
+* 在开始备份之前配置已发现主机的日志目录。
 * 立即备份工作负载（立即创建按需备份）。
 
 
@@ -25,7 +25,7 @@ summary: 将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份�
 
 == 查看工作负载保护状态
 
-在启动备份之前，请查看工作负载的保护状态。
+在开始备份之前，请查看工作负载的保护状态。
 
 *所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -40,7 +40,7 @@ summary: 将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份�
 
 == 配置发现主机的日志目录
 
-在备份工作负载之前，请设置已发现主机的活动日志的路径。这有助于您跟踪操作状态。
+设置已发现主机的活动日志路径，以便在备份工作负载之前跟踪操作状态。
 
 *所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员或备份和恢复恢复管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -50,7 +50,7 @@ summary: 将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份�
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
 . 选择主机。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *配置日志目录*。
-. 提供主机路径或浏览主机上的主机或节点主机列表，以找到您想要存储主机日志的位置。
+. 输入主机路径或浏览主机或节点列表以找到要存储主机日志的位置。
 . 选择您想要存储日志的那些。
 +
 
@@ -63,7 +63,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 == 创建保护组
 
-您可以创建一个保护组来管理一组工作负载的备份和还原操作。保护组是您想要一起保护的工作负载的逻辑分组。
+创建保护组来管理多个工作负载的备份和还原操作。保护组是工作负载的逻辑分组。
 
 *所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -89,7 +89,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 == 立即使用按需备份来备份工作负载
 
-立即创建按需备份。如果您要对系统进行更改并希望确保在开始之前有备份，则可能需要运行按需备份。
+在对系统进行更改之前运行按需备份，以确保您的数据受到保护。
 
 *所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -109,7 +109,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 == 暂停备份计划
 
-暂停计划会暂时阻止备份在预定的时间运行。如果您正在对系统进行维护或者遇到备份问题，您可能需要执行此操作。
+暂停计划以在维护或故障排除期间暂时停止备份。
 
 *所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -126,7 +126,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 == 删除保护组
 
-您可以创建一个保护组来管理一组工作负载的备份和还原操作。保护组是您想要一起保护的工作负载的逻辑分组。
+删除保护组会删除该保护组以及所有相关的备份计划。如果不再需要某个保护组，您可能需要将其删除。
 
 *所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 

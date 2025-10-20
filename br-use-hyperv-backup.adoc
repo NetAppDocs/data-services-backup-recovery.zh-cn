@@ -25,7 +25,7 @@ summary: 使用NetApp备份和恢复保护您的 Hyper-V 工作负载。
 
 == 立即使用按需备份来备份工作负载
 
-您可以立即运行按需备份。如果您要对系统进行更改并希望确保在开始之前进行备份，这将很有帮助。
+使用按需备份，以便在进行系统更改之前保护您的数据。
 
 *所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -38,7 +38,7 @@ summary: 使用NetApp备份和恢复保护您的 Hyper-V 工作负载。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *立即备份*。
 +
 
-NOTE: 应用于备份的策略与分配给保护组或虚拟机的策略相同。
+NOTE: 备份使用分配给保护组或虚拟机的相同策略。
 
 . 选择计划层级。
 . 选择*备份*。

@@ -21,16 +21,14 @@ NOTE: 此版本的NetApp Backup and Recovery仅支持 VMware vCenter，并且无
 
 使用NetApp Backup and Recovery实施 3-2-1 策略，即在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。3-2-1 方法的优点包括：
 
-* 多个数据副本可提供多层保护，抵御内部（内部）和外部网络安全威胁。
-* 多种媒体类型可确保在一种媒体类型发生物理或逻辑故障时能够进行故障转移。
-* 现场副本有助于快速恢复，而异地副本则可在现场副本受损时使用。
+* 多个数据副本可防止内部和外部网络安全威胁。
+* 如果一种媒体发生故障，使用不同类型的媒体可以帮助您恢复。
+* 您可以从现场副本快速恢复，如果现场副本受到损害，则可以使用异地副本。
 
 
-[]
-====
-*注意* 要切换到NetApp Backup and Recovery UI 版本，请参阅link:br-start-switch-ui.html["切换到以前的NetApp Backup and RecoveryUI"]。
 
-====
+NOTE: 要切换到NetApp Backup and Recovery UI 版本或从 NetApp Backup and Recovery UI 版本切换，请参阅link:br-start-switch-ui.html["切换到以前的NetApp Backup and RecoveryUI"]。
+
 您可以使用NetApp Backup and Recovery执行与 VMware 工作负载相关的以下任务：
 
 * link:br-use-vmware-discovery.html["发现 VMware 工作负载"]

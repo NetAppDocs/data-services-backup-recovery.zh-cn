@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-inventory.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: NetApp Backup and Recovery使您能够管理工作负载主机信息、数据库信息和实例信息。您可以查看、编辑和删除库存的保护设置。 
+summary: NetApp Backup and Recovery可帮助您管理 Microsoft SQL Server 主机、数据库和实例。 
 ---
 = 使用NetApp Backup and Recovery管理 Microsoft SQL Server 库存
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery使您能够管理工作负载主机信息、
 
 
 [role="lead"]
-NetApp Backup and Recovery使您能够管理 Microsoft SQL Server 工作负载主机信息、数据库信息和实例信息。您可以查看、编辑和删除库存的保护设置。
+NetApp Backup and Recovery可帮助您管理 Microsoft SQL Server 主机、数据库和实例。您可以查看、更改或删除库存的保护设置。
 
 您可以完成以下与管理库存相关的任务：
 

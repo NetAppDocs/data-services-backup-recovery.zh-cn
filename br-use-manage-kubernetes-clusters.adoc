@@ -40,7 +40,7 @@ NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现
 
 == 删除 Kubernetes 集群
 
-如果您不再需要保护 Kubernetes 集群托管的资源，则可以将其从NetApp Backup and Recovery中删除。删除集群并不会删除集群或其资源；它只会从NetApp Console清单中删除集群。在删除集群之前，您需要禁用保护并从NetApp Backup and Recovery中删除关联的应用程序。
+要停止保护 Kubernetes 集群，请禁用保护并删除相关应用程序，然后从NetApp Backup and Recovery中删除该集群。  NetApp Backup and Recovery不会删除集群或其资源；它只会从NetApp Console清单中删除集群。
 
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory* > *Clusters*。
