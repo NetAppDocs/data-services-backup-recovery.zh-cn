@@ -110,7 +110,7 @@ TIP: 您需要输入 Windows 和 Microsoft SQL Server 的凭据，因此您需�
 
 == 导入和管理SnapCenter主机资源
 
-如果您之前使用SnapCenter备份资源，则可以在NetApp Backup and Recovery中导入和管理这些资源。此选项使您能够导入SnapCenter服务器信息以注册多个 Snapcenter 服务器并发现数据库工作负载。
+如果您之前使用SnapCenter备份资源，则可以在NetApp Backup and Recovery中导入和管理这些资源。此选项使您能够导入SnapCenter服务器信息以注册多个SnapCenter服务器并发现数据库工作负载。
 
 这是一个由两部分组成的过程：
 

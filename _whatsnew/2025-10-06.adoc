@@ -79,7 +79,6 @@ VMware 工作负载预览版引入了以下增强功能：
 
 * 支持从对象存储恢复
 * NetApp Console仪表板现在显示 VMware 工作负载状态信息
-* 演示模式支持：无需添加 VMware vCenter Server 环境即可探索 VMware 工作负载的功能
 * 基于角色的访问控制 (RBAC) 支持
 * 工作事件的电子邮件警报和通知支持
 * 支持备份和恢复到基于 NVMe 的存储

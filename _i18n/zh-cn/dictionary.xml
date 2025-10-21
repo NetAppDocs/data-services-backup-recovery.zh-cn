@@ -287,7 +287,6 @@
   <block id="307d24114a1eea93601b6d95cac55bcb" category="paragraph">VMware 工作负载预览版引入了以下增强功能：</block>
   <block id="52c7fc54a0416d5bc7625cf3e154f5ee" category="list-text">支持从对象存储恢复</block>
   <block id="729609f8890f70080c4290c1a64f6901" category="list-text">NetApp Console仪表板现在显示 VMware 工作负载状态信息</block>
-  <block id="e0aea66343c11d9c167af3537c61eac6" category="list-text">演示模式支持：无需添加 VMware vCenter Server 环境即可探索 VMware 工作负载的功能</block>
   <block id="0b781a1bfcfc82e8ce2c41a12166f555" category="list-text">基于角色的访问控制 (RBAC) 支持</block>
   <block id="48286fbde233324a7f7880389e103924" category="list-text">工作事件的电子邮件警报和通知支持</block>
   <block id="7c0ae68b454f9ff601ed1bdd5dcc3c30" category="list-text">支持备份和恢复到基于 NVMe 的存储</block>
@@ -550,7 +549,6 @@
   <block id="7a7bd0e5e2c8bb51a37a242f6499ad01" category="list-text">*端口*：输入 VMware vCenter Server 的端口号。</block>
   <block id="d448876927f65c1f1ffa9fbacd95a1c7" category="list-text">*协议*：选择*HTTP*或*HTTPS*。</block>
   <block id="c7a0590a9821b8dee0782b0f2f78a6eb" category="section-title">导入和管理SnapCenter主机资源</block>
-  <block id="1e69c53525c65378aa99055dd2ebfdd1" category="paragraph">如果您之前使用SnapCenter备份资源，则可以在NetApp Backup and Recovery中导入和管理这些资源。此选项使您能够导入SnapCenter服务器信息以注册多个 Snapcenter 服务器并发现数据库工作负载。</block>
   <block id="8ee500e67ed174fc635bb51aa15a8144" category="paragraph">这是一个由两部分组成的过程：</block>
   <block id="5b47a2e71047fd0fb279720aee2ba791" category="list-text">导入SnapCenter Server 应用程序和主机资源</block>
   <block id="be17fa66fcbe51ceaa12130a926f665f" category="list-text">管理选定的SnapCenter主机资源</block>
@@ -1444,7 +1442,6 @@
   <block id="ae06e0a9d46406c88e0c6671869c7658" category="list-text">选择“操作”图标<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>&gt; *刷新克隆*。</block>
   <block id="8f52d4571bbd43086873d13933d1ae7c" category="list-text">完成“高级设置”部分：</block>
   <block id="751b2629b2c0cd2ab8329869ea1440ab" category="list-text">*恢复范围*：选择是否恢复所有日志备份或直到特定时间点的日志备份。如果您想将克隆恢复到特定时间点，此选项很有用。</block>
-  <block id="ee4fb905e08184e09eb066a70768d247" category="list-text">*iGroup 设置*：选择克隆的 igroup。 igroup 是用于访问克隆的启动器的逻辑分组。您可以选择现有的 igroup 或创建一个新的 igroup。从主或辅助ONTAP存储系统中选择 igroup。</block>
   <block id="30d826de8ef0821df1383cf392c54866" category="list-text">*标签*：输入一个或多个标签，以帮助您稍后搜索资源组。例如，如果您将“HR”作为标签添加到多个资源组，则以后可以找到与 HR 标签关联的所有资源组。</block>
   <block id="7ae396d8697569c4da682196e15a598f" category="list-text">在刷新确认对话框中，要继续，请选择*刷新*。</block>
   <block id="2e7a2fe6aba8a77893665dc04b468dbf" category="section-title">跳过克隆刷新</block>
@@ -1560,7 +1557,6 @@
   <block id="afd0f0cb3df3da985d47ad6cb48ff1b9" category="paragraph">NetApp Backup and Recovery向您显示可用于恢复操作的快照。</block>
   <block id="626e5bb027c4aa701b03e1a2ad940196" category="list-text">在恢复到最新状态页面中，选择本地、二级存储或对象存储的快照位置。</block>
   <block id="d9d6e07be6295b563fa2df09e2c46f12" category="list-text">*恢复前创建事务日志备份*：在恢复操作之前创建事务日志备份。</block>
-  <block id="e6259c0f26d81b281034782b38f78aba" category="list-text">*如果恢复前的事务日志备份失败，则退出恢复*：如果事务日志备份失败，则停止恢复操作。</block>
   <block id="bd0d10db4b0dd9e27ab86ed5c1179368" category="section-title">从 Inventory 选项恢复工作负载数据</block>
   <block id="9fa956de7108d564b78bfc1c4b99ffb2" category="paragraph">从库存页面恢复数据库工作负载。使用 Inventory 选项，您只能恢复数据库，而不能恢复实例。</block>
   <block id="a5b572eff428c980edb20994fe7c49f1" category="list-text">选择要恢复的资源所在的主机。</block>
@@ -1832,7 +1828,6 @@
   <block id="baeaf9ec5b3f1514a0e74632387b1436" category="list-text">*选择主机*：如果您按工作负载选择，请选择要为其生成报告的主机。</block>
   <block id="d6b2fc5f6100a1d9ca1a63a42e2b74ee" category="list-text">*选择内容*：选择报告是否包含所有备份的摘要或每个备份的详细信息。  （如果您选择“按帐户”）</block>
   <block id="53e06767337b5ec67b8efa63e42148aa" category="list-text">输入报告范围：选择您是否希望报告包含过去一天、过去 7 天、过去 30 天、上个季度或去年的数据。</block>
-  <block id="17efeb67a4236aa362e1097098517211" category="list-text">输入报告发送详情：如果您希望通过电子邮件发送报告，请选中*通过电子邮件发送报告*。输入您想要接收报告的电子邮件地址。</block>
   <block id="fb197ee87a0f850dc3b7bb98fe408518" category="inline-link-macro">配置设置</block>
   <block id="33d5eea2cdcc60026d006f7ddcce9495" category="paragraph">在设置页面配置电子邮件通知。有关配置电子邮件通知的详细信息，请参阅<block ref="d31e50b2f0a34cda84cb4d51887db3bf" category="inline-link-macro-rx"></block>。</block>
   <block id="e1fb45ea82cb12d1d1dbdee887e2850a" category="summary">NetApp Backup and Recovery使您能够恢复已通过保护策略保护的应用程序。</block>
@@ -4777,5 +4772,8 @@
   <block id="e1a8b67cb61fcb0e0a3b88e66f93f4cd" category="paragraph">暂停保护组以暂停其计划的备份。</block>
   <block id="2efbc86f2f62c8819af426f268c543d5" category="paragraph">删除保护组时，也会删除该组以及该组的所有备份计划。如果不再需要某个保护组，请将其删除。</block>
   <block id="d0be562abb07ac98b80cbaa51990f79d" category="paragraph">在某些极端情况下，您可能希望NetApp Backup and Recovery不再访问备份。例如，如果服务不再有权访问备份存储桶或备份受到 DataLock 保护但您不再需要它们，则可能会发生这种情况。以前，您无法自行删除这些内容，而需要致电NetApp支持。在此版本中，您可以使用选项强制删除备份（在卷和系统级别）。</block>
-  <block id="fb744a1324313d70fed478c851dab696" category="paragraph">在某些极端情况下，您可能希望NetApp Backup and Recovery不再访问备份。例如，如果服务中没有下级有权访问备份存储桶，或者备份受到 DataLock 保护但您不再需要它们，则可能会发生这种情况。以前，您无法自行删除这些内容，而需要致电NetApp支持。在此版本中，您可以使用选项强制删除备份（在卷和系统级别）。</block>
+  <block id="79fdb904d05c701adaa1a8d4744b06b9" category="paragraph">如果您之前使用SnapCenter备份资源，则可以在NetApp Backup and Recovery中导入和管理这些资源。此选项使您能够导入SnapCenter服务器信息以注册多个SnapCenter服务器并发现数据库工作负载。</block>
+  <block id="96de4b90f5864c84829fbe7735879827" category="list-text">*iGroup 设置*：选择克隆的 iGroup。iGroup 是用于访问克隆的启动器的逻辑分组。您可以选择现有的 iGroup 或创建一个新的 iGroup。从主或辅助ONTAP存储系统中选择 iGroup。</block>
+  <block id="5261c1383d98ed2b1e8b4a1fd943a918" category="list-text">*如果还原前的事务日志备份失败，则退出还原*：如果事务日志备份失败，则停止还原操作。</block>
+  <block id="8f40cc47127edbc609e36af0ad86f259" category="list-text">输入报告发送详情：如果您希望通过电子邮件发送报告，请选中*通过电子邮件发送报告*。输入您想要接收报告的电子邮件地址。</block>
 </blocks>
