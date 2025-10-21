@@ -19,7 +19,12 @@ summary: 监控工作负载的健康状况可确保您了解工作负载保护�
 *所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 .步骤
-. 从NetApp Backup and Recovery菜单中，选择 *仪表板*。
+. 从NetApp Console菜单中，选择 *保护* > *备份和恢复*。
+. 选择一个工作负载图块（例如，Microsoft SQL Server）。
+. 从备份和恢复菜单中，选择*仪表板*。
++
+您可以查看以下类型的信息：
+
 +
 ** 发现的主机或虚拟机的数量
 ** 发现的 Kubernetes 集群数量

@@ -682,7 +682,6 @@
   <block id="98ab4e23cce41ca38b39c7baf6ef4567" category="admonition">此过程可能需要几分钟。</block>
   <block id="d4908a7dd622060706f5e0df98a716da" category="paragraph">NetApp Backup and Recovery发现资源后，“清单”页面会在工作负载列表中显示 Hyper-V 工作负载。</block>
   <block id="8c75bc4aab98ebfa4607c6737296d0fa" category="section-title">继续访问NetApp Backup and Recovery仪表板</block>
-  <block id="4a94cfaf243c22ac5a3b2acf1849db11" category="list-text">要显示NetApp Backup and Recovery仪表板，请从NetApp Console菜单中选择 *仪表板*。</block>
   <block id="8c0d3ed018f04fbf259db34d9167eae7" category="list-text">审查数据保护的健康状况。处于危险中或受保护的工作负载的数量会根据新发现、受保护和备份的工作负载而增加。</block>
   <block id="dd9e4491810d247bd97912faae187a39" category="summary">NetApp Backup and Recovery需要首先发现工作负载，以便您使用该服务。</block>
   <block id="dfbbf83657db8e9ef8d6ee3a468873c2" category="doc">探索NetApp Backup and Recovery中的 Kubernetes 工作负载</block>
@@ -705,7 +704,6 @@
   <block id="6b3946603d5588826f1cd3f2695b8542" category="paragraph">该集群已添加到清单中。</block>
   <block id="95f06f6ac101b19d86ae2a17fb3eb848" category="list-text">在关联的 Kubernetes 工作负载中选择“查看”以查看该工作负载的应用程序、集群和命名空间列表。</block>
   <block id="b0719c20a836424f725e51c9b181748d" category="paragraph">按照以下步骤查看NetApp Backup and Recovery仪表板。</block>
-  <block id="0023e6c28000b2b0e540612bd4511db3" category="list-text">从顶部菜单中选择*仪表板*。</block>
   <block id="09799d4864834161536cca195023364b" category="inline-link-macro">了解仪表板显示的内容</block>
   <block id="d5292ed1370bb405095587cd10827f95" category="paragraph"><block ref="2a35d34f81dbac907e6068b45b5d538a" category="inline-link-macro-rx"></block>。</block>
   <block id="a8d8543f27c131c1d9b3ca0cf9f1f4ea" category="summary">NetApp Backup and Recovery需要首先发现工作负载，以便您保护它们。</block>
@@ -721,7 +719,6 @@
   <block id="4eefc3e53a1cd35eca7d32b6b2c550f5" category="list-text">选择使用根凭据还是非根凭据。</block>
   <block id="87f459dd6c99dc89040246d5ef818100" category="list-text">*主机注册*：添加新的 KVM 主机。输入主机的 FQDN 或 IP 地址、凭据、控制台代理和端口号。</block>
   <block id="238fb750ebdea9faf36668536aaa8b42" category="paragraph">KVM 工作负载显示在“库存”页面的工作负载列表中。</block>
-  <block id="bcfa92e95d27d2c808d23768de744fd9" category="list-text">要显示NetApp Backup and Recovery仪表板，请从顶部菜单中选择“*仪表板*”。</block>
   <block id="0a6dc8ac33152480a18098d8eb98ccb6" category="doc">发现NetApp Backup and Recovery中的 Oracle 工作负载</block>
   <block id="945f74309f719db5d0fb0d1bb5a31781" category="paragraph">NetApp Backup and Recovery需要首先发现您的 Oracle 数据库，以便您可以保护它们。</block>
   <block id="bf36d800e1bbaf0ef44cd361867e4e09" category="section-title">添加 Oracle 主机并发现资源</block>
@@ -788,7 +785,6 @@
   <block id="80be79a75ac4a79f740ad2838c734534" category="list-text">*使用手动安装*：选中此框可手动安装插件。</block>
   <block id="628bc160a519e5ae69b6c8aa88610900" category="list-text">*添加集群中的所有主机*：选中此框可在发现期间将集群中的所有主机添加到NetApp Backup and Recovery 。</block>
   <block id="b7dfb6860d9af743a7d3f0fe2adfde3d" category="list-text">*跳过可选的预安装检查*：选中此框可跳过可选的预安装检查。例如，如果您知道内存或空间考虑因素将在不久的将来发生变化，并且您想立即安装插件，那么您可能想要这样做。</block>
-  <block id="413f1bdf68093f037d6630a5904e6a17" category="list-text">要显示NetApp Backup and Recovery仪表板，请从备份和恢复菜单中选择 *仪表板*。</block>
   <block id="2a9ab4f690bade887dade42f4a0f412b" category="inline-link">NetApp Console部署模式</block>
   <block id="02a0978d1df3ca052a64d05249709cc3" category="summary">您可以通过从云提供商处购买按使用量付费或年度市场订阅来获得NetApp Backup and Recovery 的许可，或者通过从NetApp购买自带许可证来获得许可。需要有效的许可证才能在系统上激活NetApp Backup and Recovery 、创建生产数据的备份以及将备份数据还原到生产系统。</block>
   <block id="d44c500b8ff5c565a7d3b02d14def6a3" category="paragraph">您可以通过从云提供商处购买按使用量付费 (PAYGO) 或年度市场订阅 * NetApp Intelligent Services* 来获得NetApp Backup and Recovery许可，或者通过从NetApp购买自带许可 (BYOL)。需要有效的许可证才能在系统上激活NetApp Backup and Recovery 、创建生产数据的备份以及将备份数据还原到生产系统。</block>
@@ -936,7 +932,6 @@
   <block id="a160325dcdf365b6a979dfed5c7d50f7" category="doc">在NetApp Backup and Recovery仪表板上查看保护健康状况</block>
   <block id="2da92f995ab136dd344c314ba2b4eed1" category="paragraph">监控工作负载的健康状况可确保您了解工作负载保护的问题并可以采取措施解决这些问题。在NetApp Backup and Recovery仪表板上查看备份和恢复的状态。您可以查看系统摘要、保护摘要、作业摘要、恢复摘要等。</block>
   <block id="f8dd3e1869946d83a9dde01dd1d1532b" category="paragraph">*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。了解详情<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>。<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> 。</block>
-  <block id="cb8f96f7586f61e5cb6878a228c22371" category="list-text">从NetApp Backup and Recovery菜单中，选择 *仪表板*。</block>
   <block id="786dc54a357443785ac613f07c08cc8f" category="list-text">发现的主机或虚拟机的数量</block>
   <block id="6393f4da4761be4d85c7778d5e5ebdea" category="list-text">发现的 Kubernetes 集群数量</block>
   <block id="54b82ae02ee9c233cf025fb2566edaf9" category="list-text">对象存储上的备份目标数量</block>
@@ -4776,4 +4771,7 @@
   <block id="96de4b90f5864c84829fbe7735879827" category="list-text">*iGroup 设置*：选择克隆的 iGroup。iGroup 是用于访问克隆的启动器的逻辑分组。您可以选择现有的 iGroup 或创建一个新的 iGroup。从主或辅助ONTAP存储系统中选择 iGroup。</block>
   <block id="5261c1383d98ed2b1e8b4a1fd943a918" category="list-text">*如果还原前的事务日志备份失败，则退出还原*：如果事务日志备份失败，则停止还原操作。</block>
   <block id="8f40cc47127edbc609e36af0ad86f259" category="list-text">输入报告发送详情：如果您希望通过电子邮件发送报告，请选中*通过电子邮件发送报告*。输入您想要接收报告的电子邮件地址。</block>
+  <block id="e666fdc6314d0f6cb22614788075b3bc" category="list-text">选择一个工作负载图块（例如，Microsoft SQL Server）。</block>
+  <block id="55398f7948e83c03d38dfb4b136d75ee" category="list-text">从备份和恢复菜单中，选择*仪表板*。</block>
+  <block id="4837f0befea6b35d3b9827d282853ed9" category="paragraph">您可以查看以下类型的信息：</block>
 </blocks>
