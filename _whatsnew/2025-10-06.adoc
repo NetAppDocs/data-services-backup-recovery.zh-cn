@@ -105,3 +105,11 @@ VMware 工作负载预览版引入了以下增强功能：
 
 
 有关保护 Oracle 数据库工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 工作负载概述"]。
+
+
+
+=== ONTAP卷工作负载增强功能
+
+此版本的ONTAP卷工作负载引入了以下增强功能：
+
+从ONTAP 9.17.1 及更新版本开始，DataLock 现已受 Google Cloud Platform 支持。这补充了 Amazon AWS、Microsoft Azure 和NetApp StorageGRID现有的 DataLock 支持。

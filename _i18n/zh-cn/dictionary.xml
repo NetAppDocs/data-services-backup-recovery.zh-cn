@@ -4774,4 +4774,6 @@
   <block id="e666fdc6314d0f6cb22614788075b3bc" category="list-text">选择一个工作负载图块（例如，Microsoft SQL Server）。</block>
   <block id="55398f7948e83c03d38dfb4b136d75ee" category="list-text">从备份和恢复菜单中，选择*仪表板*。</block>
   <block id="4837f0befea6b35d3b9827d282853ed9" category="paragraph">您可以查看以下类型的信息：</block>
+  <block id="70cc82710208295496c70c203368aaf9" category="paragraph">此版本的ONTAP卷工作负载引入了以下增强功能：</block>
+  <block id="bb13349ac4c9ef7d368732d3a4fdabed" category="paragraph">从ONTAP 9.17.1 及更新版本开始，DataLock 现已受 Google Cloud Platform 支持。这补充了 Amazon AWS、Microsoft Azure 和NetApp StorageGRID现有的 DataLock 支持。</block>
 </blocks>

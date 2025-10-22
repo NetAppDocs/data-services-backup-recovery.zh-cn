@@ -128,6 +128,14 @@ VMware 工作负载预览版引入了以下增强功能：
 
 
 
+=== ONTAP卷工作负载增强功能
+
+此版本的ONTAP卷工作负载引入了以下增强功能：
+
+从ONTAP 9.17.1 及更新版本开始，DataLock 现已受 Google Cloud Platform 支持。这补充了 Amazon AWS、Microsoft Azure 和NetApp StorageGRID现有的 DataLock 支持。
+
+
+
 == 2025年8月25日
 
 此NetApp Backup and Recovery版本包括以下更新。
