@@ -4776,4 +4776,9 @@
   <block id="4837f0befea6b35d3b9827d282853ed9" category="paragraph">您可以查看以下类型的信息：</block>
   <block id="70cc82710208295496c70c203368aaf9" category="paragraph">此版本的ONTAP卷工作负载引入了以下增强功能：</block>
   <block id="bb13349ac4c9ef7d368732d3a4fdabed" category="paragraph">从ONTAP 9.17.1 及更新版本开始，DataLock 现已受 Google Cloud Platform 支持。这补充了 Amazon AWS、Microsoft Azure 和NetApp StorageGRID现有的 DataLock 支持。</block>
+  <block id="a0fe305acb95f37513221f1fa15cc736" category="paragraph">要启用对非 root 用户管理的 KVM 虚拟机的保护，请按以下步骤操作：</block>
+  <block id="7038d2812762c5a3340bd687f860b041" category="list-text">将卷挂载为 NFS3 类型，以避免使用<block ref="6e854442cd2a940c9e95941dce4ad598" prefix=" " category="inline-code"></block> 用户和组。</block>
+  <block id="36d8cadfad50f92ea039929a8bfc7450" category="list-text">使用以下命令将非root用户添加到<block ref="5b015a9aa658c93e9ef31fbd0e83d2b9" prefix=" " category="inline-code"></block> 在保留现有群体的同时，组建新的群体：</block>
+  <block id="aa1cd3801b770b27b2d088367602a652" category="list-text">使用以下命令将挂载路径的所有权授予……<block ref="5b015a9aa658c93e9ef31fbd0e83d2b9" prefix=" " category="inline-code"></block> 用户和组，并更改挂载路径的权限：</block>
+  <block id="fba88ec9b188c84767bd0e321c7662a9" category="list-text">如果存在 NetApp_SnapCenter_Backups 目录，请将其删除。</block>
 </blocks>
