@@ -19,11 +19,9 @@ summary: 借助NetApp Backup and Recovery，您可以通过更改备份计划、
 
 CAUTION: 请勿直接在存储系统或云提供商环境中管理或更改备份文件。这可能会损坏文件并导致不受支持的配置。
 
-[]
-====
-*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
-====
+NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
+
 
 
 == 查看系统中卷的备份状态

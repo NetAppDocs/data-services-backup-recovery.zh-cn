@@ -19,11 +19,9 @@ summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载
 
 NOTE: 这些设置仅适用于备份到对象存储。这些设置都不会影响您的快照或复制设置。
 
-[]
-====
-*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
-====
+NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
+
 您可以在高级设置页面中更改以下选项：
 
 * 使用最大传输速率选项 ifdef::aws[] 更改分配给将备份上传到对象存储的网络带宽

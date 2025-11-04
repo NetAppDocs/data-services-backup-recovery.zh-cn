@@ -18,7 +18,8 @@ NetApp Backup and Recovery支持两种 S3 存档存储类和大多数区域。
 
 []
 ====
-*注意* 要切换到NetApp Backup and Recovery UI 版本，请参阅link:br-start-switch-ui.html["切换到以前的NetApp Backup and RecoveryUI"]。
+
+NOTE: 要切换到NetApp Backup and Recovery UI 版本或从 NetApp Backup and Recovery UI 版本切换，请参阅link:br-start-switch-ui.html["切换到以前的NetApp Backup and RecoveryUI"]。
 
 ====
 

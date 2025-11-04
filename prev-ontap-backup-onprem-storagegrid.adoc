@@ -19,11 +19,9 @@ summary: 完成NetApp Backup and Recovery中的几个步骤，开始将卷数据
 
 NOTE: “本地ONTAP系统”包括FAS、 AFF和ONTAP Select系统。
 
-[]
-====
-*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
-====
+NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
+
 
 
 == 识别连接方法
@@ -208,7 +206,7 @@ S3 凭证:: 您必须创建 S3 租户帐户来控制对StorageGRID存储的访�
 
 这些访问密钥必须与具有以下权限的用户相关联：
 
-[source, json]
+[source, console]
 ----
 "s3:ListAllMyBuckets",
 "s3:ListBucket",

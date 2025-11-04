@@ -16,11 +16,9 @@ summary: 使用NetApp Backup and Recovery，可以从备份文件还原整个ONT
 [role="lead"]
 您可以从创建备份的位置获取ONTAP卷数据的备份：Snapshot 副本、复制的卷以及存储在对象存储中的备份。您可以从这些备份位置中的任何一个恢复特定时间点的数据。使用NetApp Backup and Recovery，可以从备份文件还原整个ONTAP卷，或者如果只需要还原几个文件，则可以还原文件夹或单个文件。
 
-[]
-====
-*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
-====
+NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
+
 * 您可以将*卷*（作为新卷）还原到原始系统、使用相同云帐户的其他系统或本地ONTAP系统。
 * 您可以将*文件夹*还原到原始系统中的卷、使用相同云帐户的不同系统中的卷或本地ONTAP系统上的卷。
 * 您可以将*文件*还原到原始系统中的卷、使用相同云帐户的不同系统中的卷或本地ONTAP系统上的卷。

@@ -16,11 +16,9 @@ summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载
 [role="lead"]
 您可以创建一个策略或使用NetApp Backup and Recovery中提供的以下预定义策略之一。
 
-[]
-====
-*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
-====
+NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
+
 .开始之前
 * 如果您不想编辑预定义策略，则应该创建策略。
 * 要将备份从对象存储移动到归档存储，您应该运行ONTAP 9.10.1 或更高版本，并且 Amazon Web Services 或 Microsoft Azure 应该是云提供商。

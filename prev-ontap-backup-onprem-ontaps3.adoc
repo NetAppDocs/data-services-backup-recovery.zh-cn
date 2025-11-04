@@ -18,11 +18,9 @@ summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载
 
 主本地ONTAP系统可以是FAS、 AFF或ONTAP Select系统。辅助ONTAP系统可以是本地ONTAP或Cloud Volumes ONTAP系统。对象存储可以位于本地ONTAP系统或已启用简单存储服务 (S3) 对象存储服务器的Cloud Volumes ONTAP系统上。
 
-[]
-====
-*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
-====
+NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
+
 
 
 == 识别连接方法
@@ -208,7 +206,7 @@ S3 凭证:: 您必须创建 S3 用户来控制对ONTAP S3 存储的访问。 htt
 
 这些访问密钥必须与具有以下权限的用户相关联：
 
-[source, json]
+[source, console]
 ----
 "s3:ListAllMyBuckets",
 "s3:ListBucket",

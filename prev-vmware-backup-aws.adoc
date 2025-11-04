@@ -18,11 +18,9 @@ summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载
 
 如果数据存储与归档策略相关联，您可以选择归档层。支持的存档层是 Glacier 和 Glacier Deep。
 
-[]
-====
-*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
-====
+NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
+
 .开始之前
 确保你已经满足了所有link:prev-vmware-prereqs.html["虚拟机保护要求"]在将数据存储备份到云端之前。
 

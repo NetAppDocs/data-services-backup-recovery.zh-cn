@@ -16,11 +16,9 @@ summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载
 [role="lead"]
 使用NetApp Backup and Recovery，使用NetApp提供的默认备份策略来创建备份，或创建自定义策略。策略控制备份频率、备份时间以及保留的备份文件数量。
 
-[]
-====
-*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
-====
+NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
+
 当您使用激活向导为您的卷启用备份和恢复服务时，您可以从默认策略和系统中已经存在的任何其他策略（Cloud Volumes ONTAP或本地ONTAP系统）中进行选择。如果您想使用与现有策略不同的策略，您可以在使用激活向导之前或使用激活向导时创建该策略。
 
 要了解提供的默认备份策略，请参阅link:prev-ontap-protect-journey.html["规划您的保护之旅"]。

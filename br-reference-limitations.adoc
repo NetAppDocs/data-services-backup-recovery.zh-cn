@@ -56,14 +56,10 @@ FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相
 +
 有关这些加密类型的说明，请参阅https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["配置NetApp卷加密概述"^]。
 
-
-
 * 如果使用SnapMirror策略中的计划在SnapMirror目标卷上启用长期保留快照，则会直接在目标卷上创建快照。在这种情况下，您不应使用NetApp Backup and Recovery备份这些卷，因为这些快照不会移动到对象存储。
 * 备份数据时， NetApp Backup and Recovery将不会维护NetApp卷加密 (NVE)。这意味着 NVE 卷上的加密数据将在数据传输到目标时被解密，并且加密将无法维持。
 +
 有关这些加密类型的说明，请参阅https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["配置NetApp卷加密概述"^]。
-
-
 
 * 如果使用SnapMirror策略中的计划在SnapMirror目标卷上启用长期保留快照，则会直接在目标卷上创建快照。在这种情况下，您不应使用NetApp Backup and Recovery备份这些卷，因为这些快照不会移动到对象存储。
 * 当您创建或编辑备份策略但未向该策略分配任何卷时，保留的备份数量最多可以为 1018。将卷分配给策略后，您可以编辑该策略以创建最多 4000 个备份。
@@ -80,8 +76,6 @@ FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相
 ** 仅支持从ONTAP辅助节点进行备份。
 ** 应用于卷的快照策略必须是NetApp Backup and Recovery可识别的策略之一，包括每日、每周、每月等。默认的“sm_created”策略（用于*镜像所有快照*）无法识别，并且 DP 卷不会显示在可备份的卷列表中。
 ** 当从源或目标进行备份时，SVM-DR 和卷备份和恢复完全独立工作。唯一的限制是 SVM-DR 不会复制SnapMirror云关系。在 DR 场景中，当 SVM 在辅助位置上线时，您必须手动更新SnapMirror云关系。
-
-
 
 
 * MetroCluster支持：

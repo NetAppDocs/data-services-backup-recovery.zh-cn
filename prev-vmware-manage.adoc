@@ -16,11 +16,9 @@ summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载
 [role="lead"]
 您可以在使用NetApp Backup and Recovery和恢复数据之前查看策略、数据存储库和虚拟机。根据数据库、策略或资源组的变化，您可以从NetApp ConsoleUI 查看更新。
 
-[]
-====
-*注意* 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
 
-====
+NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
+
 
 
 == 查看政策
