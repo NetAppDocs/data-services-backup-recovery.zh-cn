@@ -139,7 +139,6 @@
   <block id="2a9854e98da75bbc07132378bef6de4d" category="list-text">不支持启用存储桶级加密的选项。</block>
   <block id="f98d5407ffd34a829996a4bb36d6e582" category="paragraph">在此预览期间，我们鼓励您在推出完整功能之前探索此新功能并提供有关与第三方对象存储集成的反馈。</block>
   <block id="89f166f25960d4442ee3cf41fb712de0" category="doc">SnapMirror到 Cloud Resync 用于卷迁移</block>
-  <block id="f3afa2391337e5c71f0a9b02dedc2753" category="paragraph">SnapMirror到 Cloud Resync 功能简化了NetApp环境中卷迁移期间的数据保护和连续性。当使用SnapMirror逻辑复制 (LRSE) 将卷从一个本地NetApp部署迁移到另一个本地 NetApp 部署或迁移到基于云的解决方案（例如Cloud Volumes ONTAP或Cloud Volumes Service）时， SnapMirror到 Cloud Resync 可确保现有的云备份保持完整且可运行。</block>
   <block id="9de9a72e99be1fee8dc0790411738dd4" category="paragraph">此功能无需耗时且耗费资源的重新基线操作，使备份操作能够在迁移后继续进行。此功能在工作负载迁移场景中很有价值，支持 FlexVols 和 FlexGroups，并且从ONTAP版本 9.16.1 开始可用。</block>
   <block id="9c69774894ac0ae0f2bbae9b12964cfe" category="paragraph">通过保持跨环境的备份连续性， SnapMirror to Cloud Resync 提高了运营效率并降低了混合和多云数据管理的复杂性。</block>
   <block id="5746bb5eeaa153936151cb52823109e6" category="inline-link">使用SnapMirror将卷迁移到 Cloud Resync</block>
@@ -3177,20 +3176,16 @@
   <block id="dff128be4d6710494db3e76f65383ab0" category="paragraph">NetApp Backup and Recovery开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括源数据的完整副本。后续传输包含 Snapshot 副本中包含的主存储数据的差异副本。</block>
   <block id="85ffdbd09ff5b2ecfdcbea6cb8697013" category="summary">NetApp Backup and Recovery中的SnapMirror到云重新同步功能简化了NetApp环境中卷迁移期间的数据保护和连续性。</block>
   <block id="254385f2eec62c0f2399c9da13dde7f6" category="doc">在NetApp Backup and Recovery中使用SnapMirror将卷迁移到 Cloud Resync</block>
-  <block id="c5f2a64f73473ec939d6db529d9d461b" category="paragraph">NetApp Backup and Recovery中的SnapMirror到云重新同步功能简化了NetApp环境中卷迁移期间的数据保护和连续性。当使用SnapMirror逻辑复制 (LRSE) 将卷从一个本地NetApp部署迁移到另一个本地 NetApp 部署或迁移到基于云的解决方案（例如Cloud Volumes ONTAP或Cloud Volumes Service）时， SnapMirror到 Cloud Resync 可确保现有的云备份保持完整且可运行。</block>
   <block id="ee9ee6fb5d3eb14594205c52636211ec" category="admonition">此功能从 2025 年 5 月发布的NetApp Backup and Recovery版本 4.0.3 开始提供。</block>
   <block id="64d100d00b61364f5c3f3456b1dbbc90" category="paragraph">确保满足以下先决条件：</block>
   <block id="c8f1c31ff80f86ac3f0e5c6f159fae6e" category="list-text">目标ONTAP集群必须运行ONTAP版本 9.16.1 或更高版本。</block>
   <block id="5baace87d48cf58cc80858703e408f10" category="list-text">必须使用NetApp Backup and Recovery保护旧的源ONTAP集群。</block>
   <block id="fe31e27d3db6d4e60fa14642098fd46a" category="list-text">SnapMirror到云重新同步功能从 2025 年 5 月发布的NetApp Backup and Recovery版本 4.0.3 开始提供。</block>
-  <block id="d89b5c3996c2c493e8038816381da875" category="list-text">对象存储中的最新备份必须是跨旧源、新源和对象存储的公共快照。公共快照不能早于备份到对象存储的最新快照。</block>
-  <block id="db62eeba01b9529a3e55dd7f235c2184" category="list-text">在开始重新同步操作之前，必须在新ONTAP集群上创建在旧ONTAP上使用的快照和SnapMirror策略。如果要在重新同步过程中使用任何策略，则还必须创建该策略。重新同步操作不会创建策略。</block>
   <block id="6a08ac0900dfba7c4eb26a6326b2b0dd" category="list-text">确保应用于迁移卷SnapMirror关系的SnapMirror策略包含云关系使用的相同标签。为避免出现问题，请使用管理卷和所有快照的精确镜像的策略。</block>
   <block id="0fd23837527e02397f6d558e79af8f07" category="admonition">目前不支持使用 SVM-Migrate、SVM-DR 或 Head Swap 方法迁移后将SnapMirror重新同步到 Cloud。</block>
   <block id="2007e2c409037d48cc1280d97a07ba46" category="section-title">NetApp Backup and Recovery SnapMirror到 Cloud Resync 的工作原理</block>
   <block id="2f4c526e0eb3a3cb463ad97948c171ae" category="paragraph">如果您完成技术更新或将卷从一个ONTAP集群迁移到另一个 ONTAP 集群，那么确保备份继续不间断地工作非常重要。  NetApp Backup and Recovery SnapMirror到 Cloud Resync 可帮助您实现这一点，确保您的云备份即使在卷迁移后也能保持一致。</block>
   <block id="4d947fe0b5c4693f487f4fd1a4295c99" category="paragraph">以下是一个例子：</block>
-  <block id="b9dfd7ca98edd49bd3f4a7fdd06d6b04" category="paragraph">假设您有一个名为 Vol1a 的本地卷。该卷有三个快照：S1、S2 和 S3。这些快照就像还原点。 Vol1 已经使用SnapMirror to Cloud (SM-C) 备份到云对象存储端点。但是，到目前为止只有 S1 和 S2 已备份到对象存储。</block>
   <block id="d6bb362713fc9bbaf305d5ff71996c0c" category="paragraph">现在，您想要将 Vol1 迁移到另一个ONTAP集群。为此，您需要创建与名为 Vol1b 的新云卷的SnapMirror逻辑复制 (LRSE) 关系。这会将所有三个快照（S1、S2 和 S3）从 Vol1a 传输到 Vol1b。</block>
   <block id="3bda701e519ceab26170e54382cd7422" category="paragraph">迁移完成后，您将获得以下设置：</block>
   <block id="739f62b90902f9151f57bd05f8b5cb41" category="list-text">删除原有的SM-C关系（Vol1a→Object store）。</block>
@@ -3201,12 +3196,10 @@
   <block id="ab8b63838f3094c2b29261c6de23249d" category="list-text">系统检查 Vol1a 和对象存储之间的公共快照。在这种情况下，两者都有 S2。</block>
   <block id="87f6e8ca301c2bbabf7f7c871f3faaef" category="list-text">由于这个共享快照，系统只需要传输 S2 和 S3 之间的增量变化。</block>
   <block id="9c228330cd96a2b87676d562aaee89a3" category="paragraph">这意味着只有 S2 之后添加的新数据被发送到对象存储，而不是整个卷。</block>
-  <block id="5d6616ae783c86c93ea04206e03d7bf8" category="paragraph">此过程避免重新发送已备份的数据，节省带宽，并确保您的备份链在迁移后继续顺利进行。</block>
   <block id="753675a6628c39118e0a49f1dbaabe35" category="inline-image-macro">NetApp Backup and RecoverySnapMirror到云重新同步</block>
   <block id="190ec471e0b585a6a52de3549e2bb5df" category="paragraph"><block ref="190ec471e0b585a6a52de3549e2bb5df" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d362ffc6c099983b4f38471b15cc8db7" category="section-title">程序说明</block>
   <block id="d016c7e964eecda50c5d6797f75018c3" category="list-text">不使用NetApp Backup and Recovery执行迁移和技术更新。它们应该由专业服务团队或合格的存储管理员来执行。</block>
-  <block id="c57f78e106fcf67deb2b45f545b5d5cd" category="list-text">NetApp迁移团队负责在源 ONTAP 集群和目标ONTAP集群之间创建SnapMirror关系，以促进卷迁移。</block>
   <block id="c95c640e56df80e4ff47d4e0332f1f55" category="list-text">确保技术更新期间的迁移基于基于SnapMirror的迁移。</block>
   <block id="6dc593a28a72529a8cc11a78416ebec9" category="section-title">如何使用SnapMirror将卷迁移到 Cloud Resync</block>
   <block id="67ceb37b59ef9beeaf11cf13c81bd82a" category="paragraph">使用SnapMirror到 Cloud Resync 迁移卷涉及以下主要步骤，下面将更详细地描述每个步骤：</block>
@@ -3216,7 +3209,6 @@
   <block id="7484331568c74c6afaa6368d5b9840f2" category="inline-image-macro">使用SnapMirror到 Cloud Resync 迁移卷的步骤</block>
   <block id="9e2bbdca5b19270a9ef188c9e57a724f" category="paragraph"><block ref="9e2bbdca5b19270a9ef188c9e57a724f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0da49596473896920fb454c7b4adef70" category="section-title">遵循迁移前检查清单</block>
-  <block id="8edf9aba5b36a329f95932f0cff7cce9" category="paragraph">在开始迁移之前， NetApp技术更新团队会确保满足以下先决条件，以避免数据丢失并确保迁移过程顺利进行。</block>
   <block id="5a0845cc3e888ee557bc5ce868ecfda7" category="list-text">确保所有要迁移的卷都使用NetApp Backup and Recovery进行保护。</block>
   <block id="65ca768e388254cc115e6164e083ed93" category="list-text">记录卷实例 UUID。在开始迁移之前，记下所有卷的实例 UUID。这些标识符对于稍后的映射和重新同步操作至关重要。</block>
   <block id="dcf3f9a7750b00044c988ae0a71a2525" category="list-text">在删除任何SnapMirror关系之前，对每个卷进行最终快照以保留最新状态。</block>
@@ -4781,4 +4773,14 @@
   <block id="36d8cadfad50f92ea039929a8bfc7450" category="list-text">使用以下命令将非root用户添加到<block ref="5b015a9aa658c93e9ef31fbd0e83d2b9" prefix=" " category="inline-code"></block> 在保留现有群体的同时，组建新的群体：</block>
   <block id="aa1cd3801b770b27b2d088367602a652" category="list-text">使用以下命令将挂载路径的所有权授予……<block ref="5b015a9aa658c93e9ef31fbd0e83d2b9" prefix=" " category="inline-code"></block> 用户和组，并更改挂载路径的权限：</block>
   <block id="fba88ec9b188c84767bd0e321c7662a9" category="list-text">如果存在 NetApp_SnapCenter_Backups 目录，请将其删除。</block>
+  <block id="bf8fa5a0ece41e8f5cef54ecc57ba9e8" category="paragraph">SnapMirror到 Cloud Resync 功能简化了NetApp环境中卷迁移期间的数据保护和连续性。当使用SnapMirror逻辑复制 (LRSE) 将卷从一个本地NetApp部署迁移到另一个部署，或迁移到基于云的解决方案（例如Cloud Volumes ONTAP）时， SnapMirror到 Cloud Resync 可确保现有的云备份保持完整并可正常运行。</block>
+  <block id="2d3e6c224764f4312d254a0c593686b7" category="paragraph">NetApp Backup and Recovery中的SnapMirror到云重新同步功能简化了NetApp环境中卷迁移期间的数据保护和连续性。当使用SnapMirror逻辑复制 (LRSE) 将卷从一个本地NetApp部署迁移到另一个部署，或迁移到基于云的解决方案（例如Cloud Volumes ONTAP）时， SnapMirror到 Cloud Resync 可确保现有的云备份保持完整并可正常运行。</block>
+  <block id="0f989d9417a31ea48b76da37866d425f" category="paragraph">此功能无需重新建立基线，即可在迁移后继续备份。此功能在工作负载迁移场景中很有价值，支持 FlexVols 和 FlexGroups，并且从ONTAP版本 9.16.1 开始可用。</block>
+  <block id="c39becfe6784b801997ca42a41200d99" category="paragraph">SnapMirror到 Cloud Resync 可跨环境保持备份连续性，从而更容易在混合云和多云环境中管理数据。</block>
+  <block id="f00b431aa06efee2b4b8ada136e4aa8b" category="list-text">确保对象存储中的最新备份是旧源、新源和对象存储的通用快照。不要使用比备份到对象存储的最新快照更旧的通用快照。</block>
+  <block id="c2a8c75603d66a3586a424709a797962" category="list-text">在开始重新同步操作之前，必须在新ONTAP集群上创建旧ONTAP集群上使用的快照策略和SnapMirror策略。如果在重新同步过程中使用任何策略，则还必须创建该策略。重新同步操作不会创建策略。</block>
+  <block id="ff65f47f6fe8eed3cf9f7990cfceae53" category="paragraph">假设您有一个名为 Vol1a 的本地卷。该卷有三个快照：S1、S2 和 S3。这些快照是还原点。  Vol1 使用SnapMirror to Cloud (SM-C) 备份到云端，但对象存储中只有 S1 和 S2。</block>
+  <block id="61072584d2c0588f0150c943e6e1d86d" category="paragraph">此过程可防止重复备份，节省带宽，并在迁移后保持备份运行。</block>
+  <block id="d59831ba17afe4b93cae3b97e014b988" category="list-text">NetApp迁移团队会在源 ONTAP 集群和目标ONTAP集群之间创建SnapMirror关系，以帮助迁移卷。</block>
+  <block id="afcda94ead598792a58b79c595695a00" category="paragraph">在迁移之前， NetApp技术更新团队会检查这些先决条件，以防止数据丢失并确保过程顺利进行。</block>
 </blocks>

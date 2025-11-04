@@ -344,7 +344,7 @@ NOTE: 本文档旨在介绍如何保护 Microsoft SQL Server 工作负载，目�
 
 === SnapMirror到 Cloud Resync 用于卷迁移
 
-SnapMirror到 Cloud Resync 功能简化了NetApp环境中卷迁移期间的数据保护和连续性。当使用SnapMirror逻辑复制 (LRSE) 将卷从一个本地NetApp部署迁移到另一个本地 NetApp 部署或迁移到基于云的解决方案（例如Cloud Volumes ONTAP或Cloud Volumes Service）时， SnapMirror到 Cloud Resync 可确保现有的云备份保持完整且可运行。
+SnapMirror到 Cloud Resync 功能简化了NetApp环境中卷迁移期间的数据保护和连续性。当使用SnapMirror逻辑复制 (LRSE) 将卷从一个本地NetApp部署迁移到另一个部署，或迁移到基于云的解决方案（例如Cloud Volumes ONTAP）时， SnapMirror到 Cloud Resync 可确保现有的云备份保持完整并可正常运行。
 
 此功能无需耗时且耗费资源的重新基线操作，使备份操作能够在迁移后继续进行。此功能在工作负载迁移场景中很有价值，支持 FlexVols 和 FlexGroups，并且从ONTAP版本 9.16.1 开始可用。
 
