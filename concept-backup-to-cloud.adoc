@@ -281,20 +281,8 @@ NOTE: 还支持从主存储到对象存储，而不仅仅是从二级存储到�
 
 备份副本存储在NetApp Console在您的云帐户中创建的对象存储中。每个集群或系统都有一个对象存储，控制台按如下方式命名该对象存储： `netapp-backup-clusteruuid` 。请确保不要删除此对象存储。
 
-ifdef::aws[]
-
-* 在 AWS 中， NetApp Console支持 https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 阻止公共访问功能"^]在 S3 存储桶上。endif::aws[]
-
-
-ifdef::azure[]
-
-* 在 Azure 中， NetApp Console使用新的或现有的资源组以及 Blob 容器的存储帐户。控制台 https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["阻止公众访问您的 Blob 数据"]默认情况下。endif::azure[]
-
-
-ifdef::gcp[]
-
-endif::gcp[]
-
+* 在 AWS 中， NetApp Console可以实现以下功能： https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 阻止公共访问功能"^]在 S3 铲斗上。
+* 在 Azure 中， NetApp Console使用包含 Blob 容器存储帐户的新建或现有资源组。 https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["阻止公众访问您的 Blob 数据"]默认情况下。
 * 在StorageGRID中，控制台使用现有的存储帐户作为对象存储桶。
 * 在ONTAP S3 中，控制台使用 S3 存储桶的现有用户帐户。
 

@@ -61,8 +61,6 @@ NetApp Backup and Recovery为您的卷备份提供 DataLock 和勒索软件保�
 
 这两个功能都可以保护您的备份文件，以便在您的备份遭受勒索软件攻击时，您始终拥有一个有效的备份文件来恢复数据。满足某些监管要求也很有帮助，在这些要求中，备份需要被锁定并保留一段时间。启用 DataLock 和勒索软件恢复选项后，作为NetApp Backup and Recovery激活的一部分配置的云存储桶将启用对象锁定和对象版本控制。
 
-https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["请参阅 DataLock 和勒索软件保护博客以了解更多详细信息"^]。
-
 此功能不为您的源卷提供保护；仅为这些源卷的备份提供保护。使用一些 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP提供的反勒索软件保护"^]保护您的源卷。
 
 [CAUTION]
@@ -339,7 +337,7 @@ NOTE: Microsoft Azure 使用锁定和解锁模式。
 
 有关降低 DataLock 成本的更多提示，请参阅https://community.netapp.com/t5/Tech-ONTAP-Blogs/Understanding-NetApp-Backup-and-Recovery-DataLock-and-Ransomware-Feature-TCO/ba-p/453475[]
 
-此外，您还可以访问以下网站获取与 DataLock 相关的成本估算： https://bluexp.netapp.com/cloud-backup-service-tco-calculator["NetApp Backup and Recovery总拥有成本 (TCO) 计算器"] 。
+此外，您还可以访问以下网站获取与 DataLock 相关的成本估算： https://www.netapp.com/data-services/backup-and-recovery-tco-calculator/["NetApp Backup and Recovery总拥有成本 (TCO) 计算器"] 。
 
 
 

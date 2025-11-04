@@ -957,7 +957,6 @@
   <block id="663b8460da445a8bdcdacd5586794a5a" category="inline-link-macro">创建策略</block>
   <block id="05b46e53cea9fa986faee5585257dc74" category="list-text">要按计划备份工作负载，请创建管理备份和还原操作的策略。看<block ref="08bf6451e8be54326517c755d3e4cd23" category="inline-link-macro-rx"></block>以获取说明。</block>
   <block id="6abc83c82a1319b4d333fa2233e4f151" category="inline-link-macro">使用NetApp Backup and Recovery为 Hyper-V 工作负载创建和管理保护组</block>
-  <block id="933f98a74e3f3a6a33bc92d89eb10785" category="list-text">创建保护组来管理一组资源的备份和还原操作。看<block ref="3a98616838ef4584f9b95f23a1dc5b1d" category="inline-link-macro-rx"></block>了解更多信息。</block>
   <block id="7560dd7799dfbab82d090d3826c438e5" category="list-text">立即备份工作负载（立即创建按需备份）。</block>
   <block id="7eb85b9ab846044a4d26b2851ea3e18c" category="section-title">立即使用按需备份来备份工作负载</block>
   <block id="a940ef4062bc3a7b375cd592da54d6fe" category="paragraph">您可以立即运行按需备份。如果您要对系统进行更改并希望确保在开始之前进行备份，这将很有帮助。</block>
@@ -1469,7 +1468,6 @@
   <block id="fa72f2cff2f4091c242187f69e0f041e" category="inline-link-macro">立即备份工作负载</block>
   <block id="687bcb00c4bf0542babfafd837f95909" category="list-text"><block ref="687bcb00c4bf0542babfafd837f95909" category="inline-link-macro-rx"></block></block>
   <block id="0f571b8b5e65eea425d1b39d32ca7c0c" category="inline-link-macro">恢复工作负载</block>
-  <block id="66d954cececb6266543a2c081971969d" category="list-text"><block ref="66d954cececb6266543a2c081971969d" category="inline-link-macro-rx"></block></block>
   <block id="a4f395354f5a4064423dba79cff81b7c" category="inline-link-macro">克隆工作负载</block>
   <block id="50e0f33f2ea9c31d05cd7dbe5f77b287" category="list-text"><block ref="50e0f33f2ea9c31d05cd7dbe5f77b287" category="inline-link-macro-rx"></block></block>
   <block id="50becc4bb7baee84bd10aa757aaa2048" category="inline-link-macro">管理工作负载清单</block>
@@ -1823,7 +1821,6 @@
   <block id="d6b2fc5f6100a1d9ca1a63a42e2b74ee" category="list-text">*选择内容*：选择报告是否包含所有备份的摘要或每个备份的详细信息。  （如果您选择“按帐户”）</block>
   <block id="53e06767337b5ec67b8efa63e42148aa" category="list-text">输入报告范围：选择您是否希望报告包含过去一天、过去 7 天、过去 30 天、上个季度或去年的数据。</block>
   <block id="fb197ee87a0f850dc3b7bb98fe408518" category="inline-link-macro">配置设置</block>
-  <block id="33d5eea2cdcc60026d006f7ddcce9495" category="paragraph">在设置页面配置电子邮件通知。有关配置电子邮件通知的详细信息，请参阅<block ref="d31e50b2f0a34cda84cb4d51887db3bf" category="inline-link-macro-rx"></block>。</block>
   <block id="e1fb45ea82cb12d1d1dbdee887e2850a" category="summary">NetApp Backup and Recovery使您能够恢复已通过保护策略保护的应用程序。</block>
   <block id="c75d148fe813178c4a53664110efe289" category="paragraph">NetApp Backup and Recovery使您能够恢复已通过保护策略保护的应用程序。要恢复应用程序，应用程序需要至少有一个可用的恢复点。恢复点由本地快照或对象存储备份（或两者）组成。您可以使用本地、辅助或对象存储存档来恢复应用程序。</block>
   <block id="b2c71ce0eb7f82adff3580d86f20d76d" category="list-text">在应用程序列表中，选择要恢复的应用程序并选择相关的操作菜单。</block>
@@ -2088,9 +2085,7 @@
   <block id="a6298a2c4807e2af14df64a2466b5c3d" category="section-title">备份在对象存储位置的位置</block>
   <block id="ffd285762b9356506becae85785dc749" category="paragraph">备份副本存储在NetApp Console在您的云帐户中创建的对象存储中。每个集群或系统都有一个对象存储，控制台按如下方式命名该对象存储：<block ref="395f30b009fd80d4c1cba9bc07db445d" prefix=" " category="inline-code"></block> 。请确保不要删除此对象存储。</block>
   <block id="e6c344acbe141c46bf8617b9d43d0c2f" category="inline-link">Amazon S3 阻止公共访问功能</block>
-  <block id="c8867dff402ceb204da3cfc92e6045b3" category="list-text">在 AWS 中， NetApp Console支持<block ref="b38667957fcdf9b9da65b213e7fb2492" category="inline-link-rx"></block>在 S3 存储桶上。endif::aws[]</block>
   <block id="33bfcd052df4f75c25d08493f7b03ba3" category="inline-link">阻止公众访问您的 Blob 数据</block>
-  <block id="11ddd579216308a1198badeddb0c455a" category="list-text">在 Azure 中， NetApp Console使用新的或现有的资源组以及 Blob 容器的存储帐户。控制台<block ref="a7068b8d2b60241ce77a1051f3a66ed5" category="inline-link-rx"></block>默认情况下。endif::azure[]</block>
   <block id="3ce8b78035d781517f18a68a71568d3a" category="list-text">在StorageGRID中，控制台使用现有的存储帐户作为对象存储桶。</block>
   <block id="b1796f12b7578cc7c522f2e0a90e02e5" category="list-text">在ONTAP S3 中，控制台使用 S3 存储桶的现有用户帐户。</block>
   <block id="7121743ce2e9941a0eedd6b158490333" category="section-title">备份副本与您的NetApp Console组织相关联</block>
@@ -3396,8 +3391,6 @@
   <block id="051658be4ba182ab30138c3d0fa07f2b" category="section-title">DataLock 和勒索软件保护选项</block>
   <block id="7dc66b1cfd01d4c00dc9fb5720da9bd7" category="paragraph">NetApp Backup and Recovery为您的卷备份提供 DataLock 和勒索软件保护支持。这些功能使您能够锁定备份文件并对其进行扫描以检测备份文件上可能存在的勒索软件。这是一个可选设置，当您想为集群的卷备份提供额外保护时，可以在备份策略中定义它。</block>
   <block id="9e66cd34efdf210b196fd63e7561d89b" category="paragraph">这两个功能都可以保护您的备份文件，以便在您的备份遭受勒索软件攻击时，您始终拥有一个有效的备份文件来恢复数据。满足某些监管要求也很有帮助，在这些要求中，备份需要被锁定并保留一段时间。启用 DataLock 和勒索软件恢复选项后，作为NetApp Backup and Recovery激活的一部分配置的云存储桶将启用对象锁定和对象版本控制。</block>
-  <block id="f45d40d2c3943b450f3c1c0ff3ac37f4" category="inline-link">请参阅 DataLock 和勒索软件保护博客以了解更多详细信息</block>
-  <block id="9119c5c13d4a250d1b7c806e437d4713" category="paragraph"><block ref="340a0b0e8509133a13996f4ac0d4f8c7" category="inline-link-rx"></block>。</block>
   <block id="86fef274eb09e789513af0922e579b5a" category="inline-link">ONTAP提供的反勒索软件保护</block>
   <block id="ff76fcf5a77bc3d2d6fcc0bc89e691e8" category="paragraph">此功能不为您的源卷提供保护；仅为这些源卷的备份提供保护。使用一些<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block>保护您的源卷。</block>
   <block id="9d6ba5ad698127fccb9f60a35f6f12bc" category="list-text">如果您计划使用 DataLock 和勒索软件保护，则可以在创建第一个备份策略并为该集群激活NetApp Backup and Recovery时启用它。您可以稍后使用NetApp Backup and Recovery高级设置启用或禁用勒索软件扫描。</block>
@@ -3510,7 +3503,6 @@
   <block id="42b2f7bad0fae50cc138173e28666296" category="list-text">*带有勒索软件扫描的 DataLock*：为您的数据提供额外的安全保护。此功能有助于检测任何更改备份副本的尝试。如果进行任何尝试，则会谨慎地创建新版本的数据。扫描频率可以更改为 1、2、3、4、5、6 或 7 天。如果将扫描设置为每 7 天一次，则成本会显著降低。</block>
   <block id="9abbf526ee7b5c13e1d474975808827f" category="paragraph">有关降低 DataLock 成本的更多提示，请参阅<block ref="1bb72d6febb3e839de9747cbfe48cdde" category="inline-link-rx"></block></block>
   <block id="1a8428b07edfff7d13154a65388fd082" category="inline-link">NetApp Backup and Recovery总拥有成本 (TCO) 计算器</block>
-  <block id="12d7e3025a87649061c708818596bc9a" category="paragraph">此外，您还可以访问以下网站获取与 DataLock 相关的成本估算：<block ref="66079225e0fcb965eb1ed66adc119d92" category="inline-link-rx"></block> 。</block>
   <block id="2ed85c9d8759c48194524d439a552ff0" category="section-title">档案存储选项</block>
   <block id="7bdfdec65541ae8037e909dd7d0643dd" category="paragraph">使用 AWS、Azure 或 Google 云存储时，您可以在一定天数后将较旧的备份文件移动到较便宜的存档存储类或访问层。您还可以选择立即将备份文件发送到档案存储，而无需写入标准云存储。只需输入 *0* 作为“几天后存档”即可将备份文件直接发送到档案存储。对于很少需要访问云备份数据的用户或正在替换磁带备份解决方案的用户来说，这尤其有用。</block>
   <block id="0bfadff6ad45440425fe5f23292524af" category="paragraph">存档层中的数据在需要时无法立即访问，并且需要更高的检索成本，因此在决定存档备份文件之前，您需要考虑需要多久从备份文件中恢复一次数据。</block>
@@ -3733,7 +3725,6 @@
   <block id="8c4b25218155a1fdb972f4169855d04f" category="section-title">支持的区域</block>
   <block id="c120c4e2a5b4e4e9674aa4b23a31ab0a" category="paragraph">NetApp Backup and Recovery在许多 Amazon Web Services、Microsoft Azure 和 Google Cloud 区域中均支持Cloud Volumes ONTAP 。</block>
   <block id="6c6a0225cb0a619d8872981b7be0ac95" category="inline-link">使用全球区域地图了解更多信息</block>
-  <block id="dac27b02289e52ad3bf6be2e625f4031" category="paragraph"><block ref="70c5fe87a2dc0f089282cb7307d783bf" category="inline-link-rx"></block></block>
   <block id="9f91fcd773ad2a225e5e66714c4ab412" category="paragraph">NetApp Backup and Recovery使您能够将ONTAP卷从以下源系统备份到以下辅助系统以及公共和私有云提供商中的对象存储。快照副本驻留在源系统上。</block>
   <block id="1d85e7a2656bd01575d59e1548bbed4b" category="cell">目标对象存储（备份）ifdef::aws[]</block>
   <block id="c373a9aa878db8431d1195796e8e6695" category="cell">Google 的Cloud Volumes ONTAP</block>
@@ -3880,8 +3871,6 @@
   <block id="8996e9eaff78ab540aab279a66de20ac" category="inline-xref">使用“搜索和还原”功能还原卷、文件夹和文件</block>
   <block id="c3c8ae924b0105406a696e4e3b08bd56" category="list-text"><block ref="28c71e441e3fed1e54d5e765ca1c9c87" category="inline-xref-macro-rx"></block></block>
   <block id="685a6ba7b83ab5e286920feb961c08bb" category="section-title">使用“浏览和还原”功能还原ONTAP数据</block>
-  <block id="06002f3045f467f4d4e6053f86920ca5" category="paragraph">在开始还原卷、文件夹或文件之前，您应该知道要从中还原的卷的名称、卷所在的系统和 SVM 的名称以及要从中还原的备份文件的大致日期。您可以从 Snapshot 副本、复制的卷或存储在对象存储中的备份中恢复ONTAP数据。</block>
-  <block id="9dccd044e84ddfcbc80bd29ce7dc6e8d" category="paragraph">*注意：*如果包含要恢复的数据的备份文件位于存档云存储中（从ONTAP 9.10.1 开始），则恢复操作将花费更长的时间并产生费用。此外，目标集群还必须运行ONTAP 9.10.1 或更高版本才能进行卷还原、9.11.1 才能进行文件还原、9.12.1 才能进行 Google Archive 和StorageGRID还原，以及 9.13.1 才能进行文件夹还原。</block>
   <block id="b23bca1a2a7f2ec270c7be93eb3d5720" category="inline-link-macro">了解有关从 AWS 档案存储恢复的更多信息</block>
   <block id="b03a3a022eb328afd14c51f9d25fd0aa" category="paragraph"><block ref="ee2d4c64a4d42f71a3357c6cd2b7b94b" category="inline-link-macro-rx"></block>。</block>
   <block id="f0a32293e7110abfd30f9402fa924815" category="inline-link-macro">了解有关从 Azure 档案存储还原的详细信息</block>
@@ -3937,7 +3926,6 @@
   <block id="310dbba96c4cb79d0f5f822051257fc8" category="section-title">使用“浏览和还原”还原文件夹和文件</block>
   <block id="a391d0d3fdfe2f62007fc5c6a836f776" category="paragraph">如果您只需要从ONTAP卷备份中恢复几个文件，则可以选择恢复文件夹或单个文件，而不是恢复整个卷。您可以将文件夹和文件还原到原始系统中的现有卷，或还原到使用相同云帐户的其他系统。您还可以将文件夹和文件还原到本地ONTAP系统上的卷。</block>
   <block id="b05475d66d7cbbe07fdea29b594c209b" category="admonition">目前，您只能从对象存储中的备份文件恢复文件夹或单个文件。目前不支持从本地快照副本或驻留在辅助系统（复制卷）中的备份文件还原文件和文件夹。</block>
-  <block id="2cfe9659cdef6b61005a35e5ad1c7305" category="paragraph">如果您选择多个文件，则所有文件都将还原到您选择的同一目标卷。因此，如果您想将文件恢复到不同的卷，则需要多次运行恢复过程。</block>
   <block id="5a583661a8908e9d0eb4e2adb7e14660" category="paragraph">使用ONTAP 9.13.0 或更高版本时，您可以还原文件夹以及其中的所有文件和子文件夹。使用 9.13.0 之前的ONTAP版本时，仅恢复该文件夹中的文件 - 不会恢复子文件夹或子文件夹中的文件。</block>
   <block id="c2d4eb2ee4a0b78ea11dd0bb39d93ab0" category="list-text">如果备份文件已配置 DataLock 和勒索软件保护，则仅当ONTAP版本为 9.13.1 或更高版本时才支持文件夹级还原。如果您使用的是早期版本的ONTAP，则可以从备份文件恢复整个卷，然后访问所需的文件夹和文件。</block>
   <block id="df253d89e3119a8555e39eb63655c32c" category="list-text">如果备份文件驻留在档案存储中，则仅当ONTAP版本为 9.13.1 或更高版本时才支持文件夹级还原。如果您使用的是早期版本的ONTAP，则可以从尚未存档的较新备份文件中还原文件夹，也可以从存档的备份中还原整个卷，然后访问所需的文件夹和文件。</block>
@@ -3950,7 +3938,6 @@
   <block id="57bb710d517f010c4fce20687ec1c6ff" category="list-text">ONTAP版本必须为 9.15.1 p2 或更高版本才能使用浏览和还原选项还原FlexGroup目录。</block>
   <block id="cee5f78cfda5fc2f3b24ce19bdf5119a" category="section-title">文件夹和文件还原过程</block>
   <block id="01a85f08913124872d9b17dfdb08959a" category="paragraph">这个过程如下：</block>
-  <block id="f3c6f7e9aebf0c7de403d55832a37318" category="list-text">当您想要从卷备份中恢复文件夹或一个或多个文件时，请单击“恢复”选项卡，然后单击“浏览和恢复”下的“恢复文件或文件夹”。</block>
   <block id="b85ced4f441572e957c29b3e74a4335e" category="list-text">选择文件夹或文件所在的源系统、卷和备份文件。</block>
   <block id="ecbf4074e5725b458774aa56add04b4e" category="list-text">NetApp Backup and Recovery显示所选备份文件中存在的文件夹和文件。</block>
   <block id="f253b383194bb98b3c6ad49105cca717" category="list-text">选择要从该备份中恢复的文件夹或文件。</block>
@@ -3958,7 +3945,6 @@
   <block id="77a738d7362cefd8d0f8a59020626e57" category="list-text">文件已恢复。</block>
   <block id="983985e7b5c6473861f79292288f8649" category="inline-image-macro">该图显示了使用浏览和恢复执行文件恢复操作的流程。</block>
   <block id="a86b95296a5e8660c2661d4c0fdd6403" category="paragraph"><block ref="b8616ef8bcb9351aff887ce7eb6910c4" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d7d29efd6df2e270e84730caba2e0f5c" category="paragraph">如您所见，您需要知道系统名称、卷名、备份文件日期和文件夹/文件名才能执行文件夹或文件还原。</block>
   <block id="7f3b049ad5900157b661c3f11e45c18c" category="section-title">还原文件夹和文件</block>
   <block id="a6d15ed479d88aab273727debe09b199" category="paragraph">按照以下步骤将文件夹或文件从ONTAP卷备份还原到卷。您应该知道要用于还原文件夹或文件的卷的名称和备份文件的日期。此功能使用实时浏览，以便您可以查看每个备份文件中的目录和文件列表。</block>
   <block id="a19213459f6819b386fb315d0d0a38f3" category="list-text">从“浏览和恢复”部分，选择“恢复文件或文件夹”。</block>
@@ -3984,7 +3970,6 @@
   <block id="3f25e82b6a6ddd7bce8047cf9c5eb6cf" category="list-text">您可以选择任意文件夹。</block>
   <block id="8abf03f0afbcb37f53707147d7dc79ef" category="list-text">您可以将鼠标悬停在文件夹上，然后单击行尾以深入查看子文件夹，然后选择一个文件夹。</block>
   <block id="09fa58168e9af9ca1cd785d08f1c7401" category="list-text">如果您选择了与源文件夹/文件相同的目标系统和卷，则可以选择*维护源文件夹路径*将文件夹或文件还原到源结构中存在的同一文件夹。所有相同的文件夹和子文件夹必须已经存在；不会创建文件夹。将文件还原到原始位置时，您可以选择覆盖源文件或创建新文件。</block>
-  <block id="6e943c91f58858a8bd0571c714c3e072" category="list-text">选择“*恢复*”，您将返回到恢复仪表板，以便您可以查看恢复操作的进度。您还可以单击“作业监控”选项卡来查看恢复进度。</block>
   <block id="8ba7d24c75d9a4c060c33cf7a127b666" category="section-title">使用“搜索和还原”还原ONTAP数据</block>
   <block id="4647e43883c439381a72ddb443f378a3" category="paragraph">您可以使用“搜索和还原”从ONTAP备份文件中还原卷、文件夹或文件。搜索和还原使您能够从所有备份中搜索特定的卷、文件夹或文件，然后执行还原。您不需要知道确切的系统名称、卷名或文件名——搜索会查看所有卷备份文件。</block>
   <block id="bf802d832421f119f7634686c468943a" category="paragraph">搜索操作会查看ONTAP卷中存在的所有本地快照副本、二级存储系统上的所有复制卷以及对象存储中存在的所有备份文件。由于从本地 Snapshot 副本或复制卷恢复数据比从对象存储中的备份文件恢复数据更快且成本更低，因此您可能希望从这些其他位置恢复数据。</block>
@@ -4066,7 +4051,6 @@
   <block id="ff16636545f34f569480118350496efa" category="paragraph">根据系统中卷的大小以及所有 3 个备份位置的备份文件数量，初始索引过程可能需要长达一个小时。此后，它会每小时透明地更新，并进行增量更改以保持最新状态。</block>
   <block id="2a35c64a629740823e349ab7d8194529" category="section-title">使用“搜索和还原”功能还原卷、文件夹和文件</block>
   <block id="7c6af367e4bdf86dd3785aace1789c9e" category="inline-xref">为您的系统启用索引</block>
-  <block id="4d4f3feeb040f356fe74b92f5bd2401d" category="paragraph">之后<block ref="51b9ad2b588348ece74bc98f5103cc45" category="inline-xref-macro-rx"></block>，您可以使用“搜索和还原”还原卷、文件夹和文件。这使您可以使用广泛的过滤器从所有备份文件中找到要恢复的确切文件或卷。</block>
   <block id="de3d19c77cb360691c924a85eb9b5af2" category="list-text">从“搜索和恢复”部分，选择“搜索和恢复”。</block>
   <block id="2d11ad8508024a513d6b7186c8a38a23" category="list-text">从“搜索和还原”页面：</block>
   <block id="50804d8e3eafe9323d24fb2bfd7d13dc" category="list-text">在“搜索栏”中，输入完整或部分卷名、文件夹名或文件名。</block>
@@ -4783,4 +4767,18 @@
   <block id="61072584d2c0588f0150c943e6e1d86d" category="paragraph">此过程可防止重复备份，节省带宽，并在迁移后保持备份运行。</block>
   <block id="d59831ba17afe4b93cae3b97e014b988" category="list-text">NetApp迁移团队会在源 ONTAP 集群和目标ONTAP集群之间创建SnapMirror关系，以帮助迁移卷。</block>
   <block id="afcda94ead598792a58b79c595695a00" category="paragraph">在迁移之前， NetApp技术更新团队会检查这些先决条件，以防止数据丢失并确保过程顺利进行。</block>
+  <block id="6c00cfff6ac17757a455b88d64f5a020" category="list-text">创建保护组来管理一组资源的备份和还原操作。看<block ref="57b3b2c08bb1a6ce1539d80f54a7da11" category="inline-link-macro-rx"></block>了解更多信息。</block>
+  <block id="022bea392176c3deaa4c87fa999a78b5" category="list-text"><block ref="022bea392176c3deaa4c87fa999a78b5" category="inline-link-macro-rx"></block></block>
+  <block id="a53044fc76783d9ee60dfa1066342cef" category="paragraph">在设置页面配置电子邮件通知。有关配置电子邮件通知的详细信息，请参阅<block ref="395b0c19462e78afc4e209cde346ef5d" category="inline-link-macro-rx"></block>。</block>
+  <block id="8b12e8d890ce22ed0ad6e05550a4b8eb" category="list-text">在 AWS 中， NetApp Console可以实现以下功能：<block ref="b38667957fcdf9b9da65b213e7fb2492" category="inline-link-rx"></block>在 S3 铲斗上。</block>
+  <block id="e527fef252b77845c6d10efb41d3077b" category="list-text">在 Azure 中， NetApp Console使用包含 Blob 容器存储帐户的新建或现有资源组。<block ref="a7068b8d2b60241ce77a1051f3a66ed5" category="inline-link-rx"></block>默认情况下。</block>
+  <block id="ec0d6793cc0295c832eb8da5d335a0c2" category="paragraph">此外，您还可以访问以下网站获取与 DataLock 相关的成本估算：<block ref="b1f8c55788f886bad3d3eaf7350ac38f" category="inline-link-rx"></block> 。</block>
+  <block id="4bcdbd17280f1741e2f9e78f6f376421" category="paragraph"><block ref="4bcdbd17280f1741e2f9e78f6f376421" category="inline-link-rx"></block></block>
+  <block id="cb447a62b60246b3a0d4eebb0e7236e4" category="paragraph">恢复之前，请记下源卷名称、源系统和 SVM 以及备份文件日期。您可以从 Snapshot 副本、复制的卷或存储在对象存储中的备份中恢复ONTAP数据。</block>
+  <block id="7eb5606462668a7d8775b600838f4f32" category="admonition">如果您要恢复的备份文件位于归档云存储中（从ONTAP 9.10.1 开始），则恢复操作需要更长时间并会产生费用。对于卷恢复，目标集群必须运行ONTAP 9.10.1 或更高版本；对于文件恢复，目标集群必须运行 ONTAP 9.11.1 或更高版本；对于 Google Archive 和StorageGRID，目标集群必须运行 ONTAP 9.12.1 或更高版本；对于文件夹恢复，目标集群必须运行 ONTAP 9.13.1 或更高版本。</block>
+  <block id="5b386dd69a6743085be6c1e524866fb5" category="paragraph">如果选择多个文件，它们将被还原到同一目标卷。要将文件还原到不同的卷，请多次运行该过程。</block>
+  <block id="b46b886ddef2fe81123875f2839d0892" category="list-text">要从卷备份中恢复文件夹或文件，请选择“恢复”菜单，然后在“浏览和恢复”下选择“恢复文件或文件夹”。</block>
+  <block id="22d1aa2ecc719d7521d0a8859fe171f9" category="paragraph">要还原卷，您需要源系统名称、存储虚拟机、卷名称和备份文件日期。</block>
+  <block id="0e9332d24e8223d33f0f13c12dc28e78" category="list-text">选择“恢复”返回恢复仪表板并查看恢复操作的进度。</block>
+  <block id="dc48f529dae728780c55fde51597adee" category="paragraph">之后<block ref="d2ec4e5679d82dbce801a1d23c311912" category="inline-xref-macro-rx"></block>，您可以使用“搜索和还原”还原卷、文件夹和文件。这使您可以使用广泛的过滤器从所有备份文件中找到要恢复的确切文件或卷。</block>
 </blocks>
