@@ -24,7 +24,7 @@ NetApp Backup and Recovery需要首先发现 Microsoft SQL Server 工作负载�
 
 在发现过程中， NetApp Backup and Recovery会分析组织内系统中的 Microsoft SQL Server 实例和数据库。
 
-NetApp Backup and Recovery评估 Microsoft SQL Server 应用程序。该服务评估现有的保护级别，包括当前的备份保护策略、快照副本以及备份和恢复选项。
+NetApp Backup and Recovery评估 Microsoft SQL Server 应用程序。该服务评估现有保护级别，包括当前的备份保护策略、快照以及备份和恢复选项。
 
 发现以下列方式发生：
 
@@ -59,7 +59,7 @@ NOTE: 如果您已经拥有SnapCenter，请先检查以确保在从SnapCenter导
 
 ==== 导入SnapCenter Server 应用程序和主机资源
 
-第一步从SnapCenter导入主机资源并在NetApp Backup and Recovery清单页面中显示这些资源。此时，资源尚未由NetApp Backup and Recovery管理。
+第一步从SnapCenter导入主机资源，并在NetApp Backup and Recovery清单页面中显示这些资源。此时，资源尚未由NetApp Backup and Recovery管理。
 
 
 TIP: 导入SnapCenter主机资源后， NetApp Backup and Recovery不会自动接管保护管理。为此，您必须明确选择在NetApp Backup and Recovery中管理导入的资源。这可确保您已准备好通过NetApp Backup and Recovery备份这些资源。

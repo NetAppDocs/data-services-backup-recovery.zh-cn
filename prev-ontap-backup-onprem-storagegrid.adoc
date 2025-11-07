@@ -69,7 +69,7 @@ image:diagram_cloud_backup_onprem_storagegrid.png["该图显示了NetApp Backup 
 
 * NetApp Backup and Recovery功能内置于控制台代理中。当以私人模式安装时，您需要定期更新控制台代理软件才能访问新功能。检查link:whats-new.html["NetApp Backup and Recovery新功能"]查看每个NetApp Backup and Recovery版本中的新功能。当您想要使用新功能时，请按照以下步骤操作 https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["升级控制台代理软件"^]。
 +
-NetApp Backup and Recovery的新版本除了可以创建对象存储备份外，还具有安排和创建 Snapshot 副本和复制卷的功能，要求您使用控制台代理的 3.9.31 或更高版本。因此建议您获取此最新版本来管理所有备份。
+新版NetApp Backup and Recovery除了可以创建对象存储备份外，还增加了计划和创建快照及复制卷的功能，但需要使用 3.9.31 或更高版本的控制台代理。因此建议您获取此最新版本来管理所有备份。
 
 * 当您在 SaaS 环境中使用NetApp Backup and Recovery时， NetApp Backup and Recovery配置数据将备份到云端。当您在没有互联网访问的站点中使用NetApp Backup and Recovery时， NetApp Backup and Recovery配置数据将备份到存储备份的StorageGRID桶中。
 
@@ -447,7 +447,7 @@ TIP: 要创建自定义策略，请参阅link:br-use-policies-create.html["创�
 +
 选择或创建一个新的StorageGRID集群。有关创建StorageGRID集群以便控制台可以发现它的详细信息，请参阅 https://docs.netapp.com/us-en/storagegrid-117/["StorageGRID文档"^]。
 
-** *将现有的 Snapshot 副本导出到对象存储作为备份副本*：如果此系统中有任何卷的本地快照副本与您刚刚为此系统选择的备份计划标签（例如，每日、每周等）相匹配，则会显示此附加提示。选中此框可将所有历史快照复制到对象存储作为备份文件，以确保对您的卷进行最全面的保护。
+** *将现有快照导出到对象存储作为备份副本*：如果此系统中存在与您刚刚为此系统选择的备份计划标签（例如，每日、每周等）匹配的卷的本地快照，则会显示此附加提示。选中此框可将所有历史快照复制到对象存储作为备份文件，以确保对您的卷进行最全面的保护。
 
 
 . 选择“下一步”。
@@ -466,7 +466,7 @@ TIP: 要创建自定义策略，请参阅link:br-use-policies-create.html["创�
 
 
 .结果
-NetApp Backup and Recovery开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括源数据的完整副本。后续传输包含 Snapshot 副本中包含的主存储数据的差异副本。
+NetApp Backup and Recovery开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括源数据的完整副本。后续传输包含快照中包含的主存储数据的差异副本。
 
 在目标集群中创建一个复制卷，该卷将与主存储卷同步。
 

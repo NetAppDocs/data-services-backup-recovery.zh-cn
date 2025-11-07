@@ -14,7 +14,7 @@ summary: 使用NetApp Backup and Recovery保护您的 KVM 工作负载。
 
 
 [role="lead"]
-使用NetApp Backup and Recovery从快照副本、复制到二级存储的保护组备份或存储在对象存储中的备份恢复 KVM 虚拟机。
+使用NetApp Backup and Recovery从快照、复制到辅助存储的保护组备份或存储在对象存储中的备份恢复 KVM 虚拟机。
 
 .从这些位置恢复
 您可以从不同的起始位置还原虚拟机：

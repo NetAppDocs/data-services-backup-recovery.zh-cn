@@ -14,7 +14,7 @@ summary: 使用NetApp Backup and Recovery保护您的 Oracle 工作负载。
 
 
 [role="lead"]
-使用NetApp Backup and Recovery从快照副本、复制到二级存储的备份或存储在对象存储中的备份恢复 Oracle 数据库。
+使用NetApp Backup and Recovery从快照、复制到辅助存储的备份或存储在对象存储中的备份恢复 Oracle 数据库。
 
 .从这些位置恢复
 您可以从不同的起始位置恢复数据库：

@@ -22,7 +22,7 @@ NetApp Backup and Recovery服务需要首先发现在ONTAP系统上运行的 VMw
 
 == 发现 VMware 工作负载并选择性地导入SnapCenter资源
 
-在发现过程中， NetApp Backup and Recovery会分析组织内的 VMware 工作负载，并评估和导入现有的保护策略、快照副本以及备份和恢复选项。
+在发现过程中， NetApp Backup and Recovery会分析您组织内的 VMware 工作负载，并评估和导入现有的保护策略、快照以及备份和恢复选项。
 
 您可以将 VMware NFS 和 VMFS 数据存储库和虚拟机从其内部部署的SnapCenter Plug-in for VMware vSphere到NetApp Backup and Recovery库存中。
 
@@ -36,7 +36,7 @@ NOTE: 此版本的NetApp Backup and Recovery仅支持 VMware vCenter，并且无
 * 准备 vCenter 的元数据并在NetApp Console中将其标记为不受管理。
 * 配置数据库访问。
 * 发现 VMware vCenter、数据存储区和虚拟机。
-* 从SnapCenter Plug-in for VMware vSphere现有的保护策略、快照副本以及备份和还原选项。
+* 从SnapCenter Plug-in for VMware vSphere导入现有的保护策略、快照以及备份和恢复选项。
 * 显示在NetApp Backup and Recovery清单页面中发现的资源。
 
 
@@ -156,3 +156,14 @@ NOTE: 如果SnapCenter插件已注册，您可以更新现有的注册详细信�
 
 .结果
 清单页面显示新管理的 vCenter 资源。
+
+
+
+==== 继续访问NetApp Backup and Recovery仪表板
+
+. 要显示仪表板，请从“备份和恢复”菜单中选择“仪表板”。
+. 审查数据保护的健康状况。处于危险中或受保护的工作负载的数量会根据新发现、受保护和备份的工作负载而增加。
++
+link:br-use-dashboard.html["了解仪表板显示的内容"]。
+
+
