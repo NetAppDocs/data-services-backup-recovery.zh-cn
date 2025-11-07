@@ -670,6 +670,42 @@ image:diagram_search_restore_vol_file.png["该图显示了使用“搜索和还�
 如果您的系统已启用索引，请转到下一部分来恢复您的数据。
 
 .为系统启用索引的步骤：
+如果您的系统已启用索引，请转到下一部分来恢复您的数据。
+
+您首先需要挂载一个单独的卷来存放目录文件。这样可以防止因保存快照的文件过大而导致数据丢失。并非每个集群都需要这样做；您可以从环境中的任何集群挂载任何一个卷。如果不这样做，索引可能无法正常工作。
+
+对于装订体积，请参考以下尺寸指南：
+
+* 使用NetApp NVS 卷
+* 推荐使用磁盘吞吐量为 300 MB/s 的AFF存储。吞吐量降低会影响搜索和其他操作。
+* 启用NetApp快照功能，除了保护目录备份 zip 文件外，还可以保护目录元数据。
+* 每10亿个文件占用50GB空间
+* 目录数据占用 20 GB 空间，另有空间用于创建 zip 文件和存放临时文件。
+
+
+.挂载卷以重新索引目录的步骤
+. 将卷挂载到 `/opt/application/netapp/cbs` 输入以下命令，其中：
++
+** `volume name` 这是集群上用于存储目录文件的卷。
+** `/opt/application/netapp/cbs` 这是它安装的路径。
++
+[source, console]
+----
+mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
+----
++
+示例：
+
++
+[source, console]
+----
+mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
+----
+
+
+
+
+.启用索引的步骤
 . 执行以下操作之一：
 +
 ** 如果没有系统被索引，请在“恢复仪表板”的“搜索和恢复”下，选择“启用系统索引”。
