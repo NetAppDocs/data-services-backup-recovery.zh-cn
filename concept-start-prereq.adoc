@@ -216,6 +216,12 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 ** Microsoft Hyper-V 2019、2022 和 2025 版本
 ** ASP.NET Core Runtime 8.0.12 托管包（以及所有后续 8.0.x 补丁）
 ** PowerShell 7.4.2 或更高版本
+** 如果非管理员域用户要保护 Hyper-V 虚拟机，请确保该用户拥有以下权限：
++
+*** 请确保该用户是本地管理员组成员。
+*** 确保用户已加入“以服务身份登录”本地安全策略。
+
+
 ** 确保 Windows 防火墙设置中允许以下端口进行双向 HTTPS 通信：
 +
 *** 8144（适用于 Hyper-V 的NetApp插件）

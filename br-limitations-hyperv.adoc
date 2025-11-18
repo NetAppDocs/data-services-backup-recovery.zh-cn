@@ -22,7 +22,8 @@ summary: NetApp Backup and Recovery需要首先发现数据，以便您使用该
 
 NetApp Backup and Recovery中的 Hyper-V 工作负载的私人预览版不支持以下操作：
 
-* 创建资源组
+* 使用来自多个 Hyper-V 主机的虚拟机创建资源组
+* 将虚拟机还原到备用位置
 * 跨磁盘（跨多个 CIFS 共享）
 * 通过 SAN 保护虚拟机
 * 编辑保护组

@@ -346,7 +346,6 @@
   <block id="a9ad02ebb13f3d9fa3cb4a1b59be6548" category="paragraph">此处列出了与此版本不兼容或不能很好地兼容的平台、设备或功能。仔细阅读这些限制。</block>
   <block id="0e32e31adc232e70ce479856e16c7f00" category="section-title">不支持的操作</block>
   <block id="57a114780f98fd4bb0b06506b0ca9577" category="paragraph">NetApp Backup and Recovery中的 Hyper-V 工作负载的私人预览版不支持以下操作：</block>
-  <block id="020a36deb114af1bb518c70d5975e940" category="list-text">创建资源组</block>
   <block id="5ae6a8a06c30125d00a57910609856cf" category="list-text">跨磁盘（跨多个 CIFS 共享）</block>
   <block id="5cb642b37b3102019402cbd3b93a5693" category="list-text">通过 SAN 保护虚拟机</block>
   <block id="0fffe3f2fb1497b9e344ba8dceac922b" category="list-text">保护使用系统中心虚拟机管理器 (SCVMM) 集群的 Hyper-V 主机</block>
@@ -677,7 +676,6 @@
   <block id="6fa0f470d5826983538c3b3091b8d4f3" category="list-text">选择与该主机一起使用的控制台代理。</block>
   <block id="f536637d4867fa48ae5f42ffcabb3da0" category="list-text">输入此凭证的名称。</block>
   <block id="c7312d0cf4cda8f78a6f1769e7958906" category="list-text">输入该帐户的用户名和密码。</block>
-  <block id="5cf90f1e7bb7c40d89ed2ddaf928978f" category="list-text">*主机注册*：添加新的 Hyper-V 主机。输入主机的 FQDN 或 IP 地址、凭据、控制台代理和端口号。</block>
   <block id="98ab4e23cce41ca38b39c7baf6ef4567" category="admonition">此过程可能需要几分钟。</block>
   <block id="d4908a7dd622060706f5e0df98a716da" category="paragraph">NetApp Backup and Recovery发现资源后，“清单”页面会在工作负载列表中显示 Hyper-V 工作负载。</block>
   <block id="8c75bc4aab98ebfa4607c6737296d0fa" category="section-title">继续访问NetApp Backup and Recovery仪表板</block>
@@ -4538,8 +4536,6 @@
   <block id="299981ed6b0aaf1c2eed2a8e35151313" category="list-text">*启用快速恢复*：选择此选项可执行快速恢复操作。您可以立即使用恢复的卷和数据。请勿在需要高性能的卷上使用此功能，因为在快速恢复过程中，访问数据的速度可能比平时慢。</block>
   <block id="ca9d8ef3573c04098ddeb120eb1f19e5" category="list-text">*启用电子邮件通知*：选择获取有关恢复操作的电子邮件通知并选择您想要的通知类型。</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Hyper-V Windows Server 主机的软件要求：</block>
-  <block id="1acabacd9fabb89313b2019250c36913" category="inline-link">Microsoft Windows Server 文档</block>
-  <block id="a05b36aea5976933f3daab44cd5602a1" category="list-text">确保已安装主机监护服务角色（请参阅<block ref="48d767cc816bb4d4b129a75bf7c81af1" category="inline-link-rx"></block> （获取说明）</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">如果还原操作未完成，请等到作业监视器显示“失败”后再重试还原操作。</block>
   <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">您可以使用NetApp Backup and Recovery将虚拟机数据从云还原到本地 vCenter Server。您可以将虚拟机还原到与备份完全相同的位置或其他位置。如果虚拟机是使用存档策略备份的，那么您可以设置存档还原优先级。</block>
   <block id="51e153ee1aa6cdb4ca7796e926180b53" category="admonition">要切换到NetApp Backup and Recovery工作负载，请参阅<block ref="e56b09183f5489111204017fecace77e" category="inline-link-macro-rx"></block>。</block>
@@ -4791,4 +4787,9 @@
   <block id="b341302252cb59acb02da2074d4fe6c4" category="list-text">*服务费用*： NetApp Backup and Recovery费用。但是，如果源卷位于使用 CVO 专业计划的存储系统中，则NetApp Backup and Recovery是免费提供的。</block>
   <block id="40d372f97e4d897da51bc1fa5978329b" category="paragraph">当您使用 Google Cloud Platform 时，请向NetApp申请私有报价，并在 Google Cloud Marketplace 激活时选择您的套餐。</block>
   <block id="3cd3cc23191003954a83615e7dc619e1" category="list-text">Oracle 工作负载（预览版）</block>
+  <block id="14e2c3c5d70d421449af52fed7355245" category="list-text">使用来自多个 Hyper-V 主机的虚拟机创建资源组</block>
+  <block id="c224c03fd1f5cab444913dab60a8d013" category="list-text">*主机注册*：通过输入主机的 FQDN 或 IP 地址、凭据、控制台代理和端口号来添加新的 Hyper-V 主机。如果控制台代理无法解析 FQDN，则改用 IP 地址。对于 FCI 集群，请输入 FCI 集群管理 IP 地址。</block>
+  <block id="36c0d00755a4d8daae367144e5daca38" category="list-text">如果非管理员域用户要保护 Hyper-V 虚拟机，请确保该用户拥有以下权限：</block>
+  <block id="57d2171dbc8d8d7a864a60de1ab4656c" category="list-text">请确保该用户是本地管理员组成员。</block>
+  <block id="27bc296e867cae2ef33b5cac51392cb2" category="list-text">确保用户已加入“以服务身份登录”本地安全策略。</block>
 </blocks>
