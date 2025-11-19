@@ -293,12 +293,40 @@ NOTE: 在 AWS 中国区域创建备份时，您需要将 IAM 策略中所有_Res
 
 link:prev-ontap-protect-journey.html["了解有关创建您自己的存储桶的更多信息"^]。
 
-如果您创建自己的存储桶，则应使用存储桶名称“netapp-backup”。如果您需要使用自定义名称，请编辑 `ontapcloud-instance-policy-netapp-backup`IAMRole 用于现有的 CVO，并将以下列表添加到 S3 权限。您需要包括 `"Resource": "arn:aws:s3:::*"`并分配与存储桶关联的所有必要权限。
+如果您创建自己的存储桶，则应使用存储桶名称“netapp-backup”。如果需要使用自定义名称，请编辑 `ontapcloud-instance-policy-netapp-backup`为现有 CVO 添加 IAMRole，并将以下 JSON 块添加到 S3 权限中 `Statement`大批。您需要包括 `"Resource": "arn:aws:s3:::*"`并分配与存储桶关联的所有必要权限。
 
 [%collapsible]
 ====
-“操作”：[“S3：ListBucket”“S3：GetBucketLocation”]“资源”：“arn：aws：s3 ::: *”，“效果”：“允许”}，{“操作”：[“S3：GetObject”，“S3：PutObject”，“S3：DeleteObject”，“S3：ListAllMyBuckets”，“S3：PutObjectTagging”，“S3：GetObjectTagging”，“S3：RestoreObject”，“S3：GetBucketObjectLockConfiguration”，“S3：GetObjectRetention”，“S3：PutBucketObjectLockConfiguration”，“S3：PutObjectRetention”]“资源”：“arn：aws：s3 ::: *”，
-
+[source, json]
+----
+[
+  {
+    "Effect": "Allow",
+    "Action": [
+      "s3:ListBucket",
+      "s3:GetBucketLocation"
+    ],
+    "Resource": "arn:aws:s3:::*"
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "s3:GetObject",
+      "s3:PutObject",
+      "s3:DeleteObject",
+      "s3:ListAllMyBuckets",
+      "s3:PutObjectTagging",
+      "s3:GetObjectTagging",
+      "s3:RestoreObject",
+      "s3:GetBucketObjectLockConfiguration",
+      "s3:GetObjectRetention",
+      "s3:PutBucketObjectLockConfiguration",
+      "s3:PutObjectRetention"
+    ],
+    "Resource": "arn:aws:s3:::*"
+  }
+]
+----
 ====
 
 
@@ -332,9 +360,9 @@ https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-blu
 . 从 AWS 控制台获取端点的 DNS 名称。
 . 从 VPC S3 端点获取证书。你可以通过以下方式做到这一点 https://docs.netapp.com/us-en/console-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["登录到托管控制台代理的虚拟机"^]并运行以下命令。输入端点的 DNS 名称时，在开头添加“bucket”，替换“*”：
 +
-[source, text]
+[source, console]
 ----
-[ec2-user@ip-10-160-4-68 ~]$ openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vpce.amazonaws.com:443 -showcerts
+openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vpce.amazonaws.com:443 -showcerts
 ----
 . 从此命令的输出中，复制 S3 证书的数据（BEGIN / END CERTIFICATE 标签之间（包括 BEGIN / END CERTIFICATE 标签）的所有数据）：
 +
@@ -352,7 +380,7 @@ GqvbOz/oO2NWLLFCqI+xmkLcMiPrZy+/6Af+HH2mLCM4EsI2b+IpBmPkriWnnxo=
 ----
 . 登录ONTAP集群 CLI 并使用以下命令应用您复制的证书（替换您自己的存储虚拟机名称）：
 +
-[source, text]
+[source, console]
 ----
 cluster1::> security certificate install -vserver cluster1 -type server-ca
 Please enter Certificate: Press <Enter> when done

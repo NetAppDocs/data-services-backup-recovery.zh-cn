@@ -1,0 +1,324 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-restore-browse.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp Backup and Recovery，通过浏览和恢复功能恢复ONTAP数据。 
+---
+= 使用“浏览和还原”功能还原ONTAP数据
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用NetApp Backup and Recovery，通过浏览和恢复功能恢复ONTAP数据。恢复之前，请记下源卷名称、源系统和 SVM 以及备份文件日期。您可以从快照、复制卷或存储在对象存储中的备份恢复ONTAP数据。
+
+恢复功能取决于您的ONTAP版本：
+
+* *文件夹：* 使用ONTAP 9.13.0 或更高版本，您可以恢复包含所有文件和子文件夹的文件夹；使用早期版本，您只能恢复文件夹中的文件。
+* *归档存储：*从归档存储恢复（ ONTAP 9.10.1 或更高版本可用）速度较慢，并且可能会产生额外费用。
+* *目标集群要求：*
++
+** 卷恢复： ONTAP 9.10.1 或更高版本
+** 文件恢复： ONTAP 9.11.1 或更高版本
+** Google Archive 和StorageGRID： ONTAP 9.12.1 或更高版本
+** 文件夹恢复： ONTAP 9.13.1 或更高版本
+
+
+
+
+ifdef::aws[]
+
+link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"]。
+
+endif::aws[]
+
+ifdef::azure[]
+
+link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"]。
+
+endif::azure[]
+
+ifdef::gcp[]
+
+link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"]。
+
+endif::gcp[]
+
+
+NOTE: 将数据从 Azure 档案存储还原到StorageGRID系统时不支持高优先级。
+
+
+
+== 浏览并恢复支持的系统和对象存储提供商
+
+您可以将ONTAP数据从位于二级系统（复制卷）或对象存储（备份文件）中的备份文件还原到以下系统。快照保存在源系统上，并且只能还原到同一系统。
+
+*注意：*您可以从任何类型的备份文件恢复卷，但目前只能从对象存储中的备份文件恢复文件夹或单个文件。
+
+[cols="25,25,25,25"]
+|===
+| *来自对象存储（备份）* | *来自主（快照）* | *来自辅助系统（复制）* | 到目标系统 ifdef::aws[] 
+
+
+| Amazon S3 | AWS 本地ONTAP系统中的Cloud Volumes ONTAP | AWS 本地ONTAP系统中的Cloud Volumes ONTAP endif::aws[] ifdef::azure[] | Azure Blob 
+
+
+| Azure 本地ONTAP系统中的Cloud Volumes ONTAP | Azure 中的Cloud Volumes ONTAP本地ONTAP系统 endif::azure[] ifdef::gcp[] | Google Cloud Storage | Google 本地ONTAP系统中的Cloud Volumes ONTAP 
+
+
+| Google 本地ONTAP系统中的Cloud Volumes ONTAP endif::gcp[] | NetAppStorageGRID | 本地ONTAP系统 | 本地ONTAP系统Cloud Volumes ONTAP 
+
+
+| 到本地ONTAP系统 | ONTAP S3 | 本地ONTAP系统 | 本地ONTAP系统Cloud Volumes ONTAP 
+|===
+对于浏览和恢复，控制台代理可以安装在以下位置：
+
+ifdef::aws[]
+
+* 对于 Amazon S3，控制台代理可以部署在 AWS 或您的场所
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* 对于 Azure Blob，控制台代理可以部署在 Azure 中或您的本地
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* 对于 Google Cloud Storage，控制台代理必须部署在您的 Google Cloud Platform VPC 中
+
+
+endif::gcp[]
+
+* 对于StorageGRID，控制台代理必须部署在您的场所；无论是否有互联网访问
+* 对于ONTAP S3，控制台代理可以部署在您的场所（有或没有互联网访问）或云提供商环境中
+
+
+请注意，“本地ONTAP系统”包括FAS、 AFF和ONTAP Select系统。
+
+
+NOTE: 如果您系统上的ONTAP版本低于 9.13.1，并且备份文件已配置 DataLock 和勒索软件，则您无法恢复文件夹或文件。在这种情况下，您可以从备份文件恢复整个卷，然后访问所需的文件。
+
+
+
+== 使用“浏览和还原”还原卷
+
+当您从备份文件恢复卷时， NetApp Backup and Recovery会使用备份中的数据创建一个_新_卷。使用对象存储备份时，您可以将数据还原到原始系统中的卷、与源系统位于同一云帐户的其他系统或本地ONTAP系统。
+
+将云备份还原到使用ONTAP 9.13.0 或更高版本的Cloud Volumes ONTAP系统或运行ONTAP 9.14.1 的本地ONTAP系统时，您可以选择执行_快速还原_操作。快速恢复非常适合需要尽快提供对卷的访问的灾难恢复情况。快速还原将备份文件中的元数据还原到卷，而不是还原整个备份文件。不建议对性能或延迟敏感的应用程序使用快速恢复，并且不支持归档存储中的备份。
+
+
+NOTE: 仅当创建云备份的源系统运行ONTAP 9.12.1 或更高版本时， FlexGroup卷才支持快速还原。并且仅当源系统运行ONTAP 9.11.0 或更高版本时才支持SnapLock卷。
+
+从复制卷还原时，您可以将卷还原到原始系统或Cloud Volumes ONTAP或本地ONTAP系统。
+
+image:diagram_browse_restore_volume.png["该图显示了使用浏览和还原执行卷还原操作的流程。"]
+
+要还原卷，您需要源系统名称、存储虚拟机、卷名称和备份文件日期。
+
+.步骤
+. 从控制台菜单中，选择*保护>备份和恢复*。
+. 选择“*恢复*”选项卡，将显示“恢复仪表板”。
+. 从“浏览和恢复”部分，选择“恢复卷”。
+. 在“选择源”页面中，导航到要恢复的卷的备份文件。选择具有要恢复的日期/时间戳的*系统*、*卷*和*备份*文件。
++
+*位置* 列显示备份文件（快照）是*本地*（源系统上的快照）、*辅助*（辅助ONTAP系统上的复制卷）还是*对象存储*（对象存储中的备份文件）。选择您想要恢复的文件。
+
+. 选择“下一步”。
++
+请注意，如果您选择对象存储中的备份文件，并且该备份的勒索软件恢复功能处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复功能），则系统会提示您在恢复数据之前对备份文件运行额外的勒索软件扫描。我们建议您扫描备份文件以查找勒索软件。  （您将需要向云提供商支付额外的出口成本才能访问备份文件的内容。）
+
+. 在“选择目标”页面中，选择要恢复卷的*系统*。
+. 从对象存储还原备份文件时，如果您选择本地ONTAP系统并且尚未配置与对象存储的集群连接，系统将提示您输入其他信息：
++
+ifdef::aws[]
+
++
+** 从 Amazon S3 还原时，选择ONTAP集群中目标卷所在的 IP 空间，输入您创建的用户的访问密钥和密钥，以授予ONTAP集群对 S3 存储桶的访问权限，并可选择选择私有 VPC 端点以进行安全数据传输。
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* 从 Azure Blob 还原时，选择目标卷所在的ONTAP集群中的 IP 空间，选择用于访问对象存储的 Azure 订阅，并通过选择 VNet 和子网来选择用于安全数据传输的私有端点。
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* 从 Google Cloud Storage 还原时，选择 Google Cloud 项目以及访问密钥和密钥来访问对象存储、存储备份的区域以及目标卷所在的ONTAP集群中的 IP 空间。
+
+
+endif::gcp[]
+
+* 从StorageGRID还原时，输入StorageGRID服务器的 FQDN 和ONTAP应用于与StorageGRID进行 HTTPS 通信的端口，选择访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。
+* 从ONTAP S3 还原时，输入ONTAP S3 服务器的 FQDN 和ONTAP应用于与ONTAP S3 进行 HTTPS 通信的端口，选择访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。
++
+.. 输入要用于恢复的卷的名称，然后选择卷所在的存储虚拟机和聚合。恢复FlexGroup卷时，您需要选择多个聚合。默认情况下，*<source_volume_name>_restore* 用作卷名。
++
+当将备份从对象存储还原到使用ONTAP 9.13.0 或更高版本的Cloud Volumes ONTAP系统或运行ONTAP 9.14.1 的本地ONTAP系统时，您可以选择执行_快速还原_操作。
+
++
+如果您要从位于归档存储层（从ONTAP 9.10.1 开始可用）中的备份文件还原卷，则可以选择还原优先级。
+
++
+ifdef::aws[]
+
+
+
+
+
+link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"]。
+
+endif::aws[]
+
+ifdef::azure[]
+
+link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"]。
+
+endif::azure[]
+
+ifdef::gcp[]
+
+link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"]。Google Archive 存储层中的备份文件几乎可以立即恢复，并且不需要恢复优先级。
+
+endif::gcp[]
+
+. 选择“*下一步*”来选择是否执行正常还原或快速还原过程：
++
+** *正常还原*：在需要高性能的卷上使用正常还原。还原过程完成之前，卷将不可用。
+** *快速恢复*：恢复的卷和数据将立即可用。请勿在需要高性能的卷上使用此功能，因为在快速恢复过程中，访问数据的速度可能比平时慢。
+
+
+. 选择“*恢复*”，您将返回到恢复仪表板，以便查看恢复操作的进度。
+
+
+.结果
+NetApp Backup and Recovery根据您选择的备份创建一个新卷。
+
+请注意，从驻留在档案存储中的备份文件恢复卷可能需要几分钟或几小时，具体取决于档案层和恢复优先级。您可以选择“作业监控”选项卡来查看恢复进度。
+
+
+
+== 使用“浏览和还原”还原文件夹和文件
+
+如果您只需要从ONTAP卷备份中恢复几个文件，则可以选择恢复文件夹或单个文件，而不是恢复整个卷。您可以将文件夹和文件还原到原始系统中的现有卷，或还原到使用相同云帐户的其他系统。您还可以将文件夹和文件还原到本地ONTAP系统上的卷。
+
+
+NOTE: 目前，您只能从对象存储中的备份文件恢复文件夹或单个文件。目前不支持从本地快照或位于辅助系统（复制卷）中的备份文件恢复文件和文件夹。
+
+如果选择多个文件，它们将被还原到同一目标卷。要将文件还原到不同的卷，请多次运行该过程。
+
+使用ONTAP 9.13.0 或更高版本时，您可以还原文件夹以及其中的所有文件和子文件夹。使用 9.13.0 之前的ONTAP版本时，仅恢复该文件夹中的文件 - 不会恢复子文件夹或子文件夹中的文件。
+
+[NOTE]
+====
+* 如果备份文件已配置 DataLock 和勒索软件保护，则仅当ONTAP版本为 9.13.1 或更高版本时才支持文件夹级还原。如果您使用的是早期版本的ONTAP，则可以从备份文件恢复整个卷，然后访问所需的文件夹和文件。
+* 如果备份文件驻留在档案存储中，则仅当ONTAP版本为 9.13.1 或更高版本时才支持文件夹级还原。如果您使用的是早期版本的ONTAP，则可以从尚未存档的较新备份文件中还原文件夹，也可以从存档的备份中还原整个卷，然后访问所需的文件夹和文件。
+* 使用ONTAP 9.15.1，您可以使用“浏览和恢复”选项恢复FlexGroup文件夹。此功能处于技术预览模式。
++
+您可以使用 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["NetApp Backup and Recovery2024 年 7 月版本博客"^]。
+
+
+
+====
+
+
+=== 还原文件夹和文件
+
+按照以下步骤将文件夹或文件从ONTAP卷备份还原到卷。您应该知道要用于还原文件夹或文件的卷的名称和备份文件的日期。此功能使用实时浏览，以便您可以查看每个备份文件中的目录和文件列表。
+
+image:diagram_browse_restore_file.png["该图显示了使用浏览和恢复执行文件恢复操作的流程。"]
+
+.开始之前
+* ONTAP版本必须为 9.6 或更高版本才能执行_文件_恢复操作。
+* ONTAP版本必须为 9.11.1 或更高版本才能执行_文件夹_还原操作。如果数据位于档案存储中，或者备份文件使用 DataLock 和勒索软件保护，则需要ONTAP版本 9.13.1。
+* ONTAP版本必须为 9.15.1 p2 或更高版本才能使用浏览和还原选项还原FlexGroup目录。
+
+
+.步骤
+. 从控制台菜单中，选择*保护>备份和恢复*。
+. 选择“*恢复*”选项卡，将显示“恢复仪表板”。
+. 从“浏览和恢复”部分，选择“恢复文件或文件夹”。
+. 在“选择源”页面中，导航到包含要还原的文件夹或文件的卷的备份文件。选择具有要从中恢复文件的日期/时间戳的*系统*、*卷*和*备份*。
+. 选择“*下一步*”，将显示卷备份中的文件夹和文件列表。
++
+如果您要从位于档案存储层的备份文件还原文件夹或文件，则可以选择还原优先级。
+
++
+link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"]。link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"]。link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"]。Google Archive 存储层中的备份文件几乎可以立即恢复，并且不需要恢复优先级。
+
++
+如果备份文件的勒索软件恢复功能处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复功能），则会提示您在恢复数据之前对备份文件运行额外的勒索软件扫描。我们建议您扫描备份文件以查找勒索软件。  （您将需要向云提供商支付额外的出口成本才能访问备份文件的内容。）
+
+. 在“选择项目”页面中，选择要恢复的文件夹或文件，然后选择“继续”。为了帮助您找到该物品：
++
+** 如果看到文件夹或文件名，您可以选择它。
+** 您可以选择搜索图标并输入文件夹或文件的名称以直接导航到该项目。
+** 您可以使用行尾的向下箭头向下导航文件夹级别来查找特定文件。
++
+当您选择文件时，它们会被添加到页面的左侧，以便您可以看到已经选择的文件。如果需要，您可以通过选择文件名旁边的 *x* 从此列表中删除文件。
+
+
+
+. 在“选择目标”页面中，选择要恢复项目的*系统*。
++
+如果您选择本地集群，并且尚未配置与对象存储的集群连接，系统将提示您输入其他信息：
+
++
+ifdef::aws[]
+
++
+** 从 Amazon S3 还原时，输入目标卷所在的ONTAP集群中的 IP 空间，以及访问对象存储所需的 AWS 访问密钥和密钥。您还可以选择专用链接配置来连接到集群。
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* 从 Azure Blob 还原时，输入目标卷所在的ONTAP集群中的 IP 空间。您还可以为与集群的连接选择私有端点配置。
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* 从 Google Cloud Storage 恢复时，输入目标卷所在的ONTAP集群中的 IP 空间，以及访问对象存储所需的访问密钥和密钥。
+
+
+endif::gcp[]
+
+* 从StorageGRID还原时，输入StorageGRID服务器的 FQDN 和ONTAP应用于与StorageGRID进行 HTTPS 通信的端口，输入访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。
++
+.. 然后选择要恢复文件夹或文件的*卷*和*文件夹*。
++
+恢复文件夹和文件时，您有几个位置选项可供选择。
+
+
+
+* 当您选择“选择目标文件夹”时，如上所示：
++
+** 您可以选择任意文件夹。
+** 您可以将鼠标悬停在文件夹上，然后单击行尾以深入查看子文件夹，然后选择一个文件夹。
+
+
+* 如果您选择了与源文件夹/文件相同的目标系统和卷，则可以选择*维护源文件夹路径*将文件夹或文件还原到源结构中存在的同一文件夹。所有相同的文件夹和子文件夹必须已经存在；不会创建文件夹。将文件还原到原始位置时，您可以选择覆盖源文件或创建新文件。
++
+.. 选择“恢复”返回恢复仪表板并查看恢复操作的进度。
+
+
+

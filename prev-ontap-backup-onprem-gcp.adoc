@@ -92,7 +92,7 @@ image:diagram_cloud_backup_onprem_gcp_private.png["该图表展示了NetApp Back
 . 选择*编辑角色*来更新角色的权限。
 . 选择*添加权限*为角色添加以下新权限。
 +
-[source, console]
+[source, text]
 ----
 bigquery.jobs.get
 bigquery.jobs.list
@@ -243,7 +243,7 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 . 在 https://console.cloud.google.com["Google 云端控制台"^]，转到*角色*页面。
 . https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["创建新角色"^]具有以下权限：
 +
-[source, console]
+[source, text]
 ----
 storage.buckets.create
 storage.buckets.delete
@@ -297,7 +297,7 @@ link:prev-ontap-protect-journey.html["了解有关创建您自己的存储桶的
 * 您需要有密钥环和密钥名称，以便可以在激活向导中添加此信息。 https://cloud.google.com/kms/docs/cmek["了解有关客户管理加密密钥的更多信息"^] 。
 * 您需要验证控制台代理的角色是否包含这些必需的权限：
 +
-[source, console]
+[source, text]
 ----
 cloudkms.cryptoKeys.get
 cloudkms.cryptoKeys.getIamPolicy

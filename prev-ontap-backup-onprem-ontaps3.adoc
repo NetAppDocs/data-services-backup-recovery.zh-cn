@@ -206,7 +206,7 @@ S3 凭证:: 您必须创建 S3 用户来控制对ONTAP S3 存储的访问。 htt
 
 这些访问密钥必须与具有以下权限的用户相关联：
 
-[source, console]
+[source, text]
 ----
 "s3:ListAllMyBuckets",
 "s3:ListBucket",

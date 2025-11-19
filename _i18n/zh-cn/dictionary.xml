@@ -2811,8 +2811,6 @@
   <block id="12486a40437a6b66be9b1d2eaf68dacb" category="list-text">（可选）使用 VPC 终端节点接口配置系统以进行私有连接。</block>
   <block id="0d0602824136f714807f54069c6d5a89" category="paragraph">您需要配置两组权限：</block>
   <block id="7ae76139c799959d1409fade800fdde1" category="list-text">确保控制台代理具有所需的权限。有关详细信息，请参阅<block ref="e7a931c701625a10dc7f3233361e94bd" category="inline-link-rx"></block>。</block>
-  <block id="7ce349bd25d973c660fddbe184efffb5" category="paragraph">如果您创建自己的存储桶，则应使用存储桶名称“netapp-backup”。如果您需要使用自定义名称，请编辑<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block>IAMRole 用于现有的 CVO，并将以下列表添加到 S3 权限。您需要包括<block ref="87307b2ef4c880d061c68a6a4277d9a9" prefix=" " category="inline-code"></block>并分配与存储桶关联的所有必要权限。</block>
-  <block id="3bf9e0d7d11ed7ade49f8eabd71927c8" category="paragraph">“操作”：[“S3：ListBucket”“S3：GetBucketLocation”]“资源”：“arn：aws：s3 ::: *”，“效果”：“允许”}，{“操作”：[“S3：GetObject”，“S3：PutObject”，“S3：DeleteObject”，“S3：ListAllMyBuckets”，“S3：PutObjectTagging”，“S3：GetObjectTagging”，“S3：RestoreObject”，“S3：GetBucketObjectLockConfiguration”，“S3：GetObjectRetention”，“S3：PutBucketObjectLockConfiguration”，“S3：PutObjectRetention”]“资源”：“arn：aws：s3 ::: *”，</block>
   <block id="868fb9c55d4ddac7523d9c4697eb9d9f" category="section-title">设置客户管理的 AWS 密钥以进行数据加密</block>
   <block id="72828ef5ab3d5aa027bfcdd1a9224f67" category="paragraph">如果您想使用默认的 Amazon S3 加密密钥来加密您的本地集群和 S3 存储桶之间传递的数据，那么您已经完成了所有设置，因为默认安装使用这种类型的加密。</block>
   <block id="aa9f769e3ac07b6605a7c510f6467b0d" category="paragraph">如果您想使用自己的客户管理密钥进行数据加密而不是使用默认密钥，那么您需要在启动NetApp Backup and Recovery向导之前设置加密管理密钥。</block>
@@ -3715,19 +3713,16 @@
   <block id="3b4f7847e0c80a6665d11cb27ec353f5" category="list-text">后续备份是增量的，不会产生这种影响。</block>
   <block id="418dfdb508c036c09d2c850937665491" category="list-text">如果在最初创建卷时将分层策略分配给卷，则您将不会看到此问题。</block>
   <block id="75968f9094e000b12da4b2ead555a058" category="list-text">在分配之前考虑备份的影响<block ref="a181a603769c1f98ad927e7367c7aa51" prefix=" " category="inline-code"></block>对卷进行分层策略。由于数据是立即分层的，NetApp Backup and Recovery将从云层而不是本地层读取数据。由于并发备份操作共享与云对象存储的网络链接，因此如果网络资源饱和，可能会出现性能下降。在这种情况下，您可能需要主动配置多个网络接口 (LIF) 来减少这种类型的网络饱和。</block>
-  <block id="c5a5bd782e20196933e5157112eab21c" category="summary">使用NetApp Backup and Recovery，可以从备份文件还原整个ONTAP卷，或者如果只需要还原几个文件，则可以还原文件夹或单个文件。</block>
   <block id="0d5740d6083fb9ac304bfaa4bb99e957" category="doc">使用NetApp Backup and Recovery从备份文件恢复ONTAP数据</block>
   <block id="bbf0b1b9c16dc904da9a8179519e7e31" category="list-text">您可以将*卷*（作为新卷）还原到原始系统、使用相同云帐户的其他系统或本地ONTAP系统。</block>
   <block id="da7f5e5f2be2e4063a41a28fbb91f494" category="list-text">您可以将*文件夹*还原到原始系统中的卷、使用相同云帐户的不同系统中的卷或本地ONTAP系统上的卷。</block>
   <block id="a4883a32493cbf65048c6ba0d655088d" category="list-text">您可以将*文件*还原到原始系统中的卷、使用相同云帐户的不同系统中的卷或本地ONTAP系统上的卷。</block>
-  <block id="c963f9a0ecc1066aa41c689730948ba3" category="paragraph">需要有效的NetApp Backup and Recovery许可证才能将数据从备份文件恢复到生产系统。</block>
   <block id="d92c1fbc11ff9a4d0db37653e35a2e52" category="paragraph">总而言之，这些是可用于将卷数据还原到ONTAP系统的有效流程：</block>
   <block id="880c04d29288ca6dbdf8598c75af755f" category="list-text">备份文件 -&gt; 恢复卷</block>
   <block id="385ec83416d2acacbf83c42099e5828e" category="list-text">复制卷 -&gt; 恢复卷</block>
   <block id="0039af36cdd68741c89e8c730e7b7442" category="admonition">有关还原ONTAP数据的限制，请参阅<block ref="c27bda4e85978f510ddf0a64d91a61ea" category="inline-link-macro-rx"></block>。</block>
   <block id="65fba989fe7e3d4f06e7b1a4c8b66ff0" category="section-title">恢复仪表板</block>
   <block id="024205acf9405311336c02bbd2193b70" category="inline-image-macro">更多按钮</block>
-  <block id="c0a30a4e0cad41bfc465528739121146" category="paragraph">您可以使用还原仪表板执行卷、文件夹和文件还原操作。您可以通过单击控制台菜单中的“备份和恢复”，然后单击“恢复”选项卡来访问恢复仪表板。您还可以点击<block ref="d1d86609a9d4211430bd00b714af288b" category="inline-image-macro-rx" type="image"></block>&gt; 从服务面板的备份和恢复服务中*查看恢复仪表板*。</block>
   <block id="c699c3ab8b3b70442456dfc7e6c2d402" category="admonition">NetApp Backup and Recovery必须已为至少一个系统激活，并且必须存在初始备份文件。</block>
   <block id="5795e107f70b1fe309798439187a0470" category="paragraph">恢复仪表板提供了两种从备份文件恢复数据的不同方法：*浏览和恢复*和*搜索和恢复*。</block>
   <block id="6b0b2f1ade447e93ec60561aec84daae" category="section-title">比较“浏览和还原”与“搜索和还原”</block>
@@ -3752,13 +3747,9 @@
   <block id="d65d23f3099e6017c3c2569abf596741" category="cell">*恢复文件夹*</block>
   <block id="68295476c4bddb2040705057bdff61c0" category="cell">复制卷</block>
   <block id="6b8f9734c5bdfb71d16a6d3d8a40513c" category="cell">备份文件</block>
-  <block id="8425d41c6f9d3b6f077b56c4d49651a4" category="paragraph">在使用任一恢复方法之前，请确保您已针对独特的资源要求配置了环境。这些要求在以下章节中描述。</block>
   <block id="91679e5e03d41aefa89ddfa7649b05d2" category="paragraph">请参阅要使用的还原操作类型的要求和还原步骤：</block>
   <block id="ab298a1df9e049ac3ba4c02e893cc475" category="inline-xref">使用“浏览和恢复”恢复卷</block>
-  <block id="8c10b03d547a79f12e4be387cd008855" category="list-text"><block ref="64106766a0115c58ac1976a627dae78e" category="inline-xref-macro-rx"></block></block>
-  <block id="657950c649165660c2b1df5994cc6ea1" category="list-text"><block ref="0198cacb5a3b3b848a16a5896a6b781e" category="inline-xref-macro-rx"></block></block>
   <block id="8996e9eaff78ab540aab279a66de20ac" category="inline-xref">使用“搜索和还原”功能还原卷、文件夹和文件</block>
-  <block id="c3c8ae924b0105406a696e4e3b08bd56" category="list-text"><block ref="28c71e441e3fed1e54d5e765ca1c9c87" category="inline-xref-macro-rx"></block></block>
   <block id="685a6ba7b83ab5e286920feb961c08bb" category="section-title">使用“浏览和还原”功能还原ONTAP数据</block>
   <block id="b23bca1a2a7f2ec270c7be93eb3d5720" category="inline-link-macro">了解有关从 AWS 档案存储恢复的更多信息</block>
   <block id="b03a3a022eb328afd14c51f9d25fd0aa" category="paragraph"><block ref="ee2d4c64a4d42f71a3357c6cd2b7b94b" category="inline-link-macro-rx"></block>。</block>
@@ -3789,7 +3780,6 @@
   <block id="8e602d0d71734b6cf234a5890bf1241a" category="paragraph">从复制卷还原时，您可以将卷还原到原始系统或Cloud Volumes ONTAP或本地ONTAP系统。</block>
   <block id="9336df9a96bed9adb0f67170b2dad2b3" category="inline-image-macro">该图显示了使用浏览和还原执行卷还原操作的流程。</block>
   <block id="38aad7ac8bd6898064d142472e3e7624" category="paragraph"><block ref="7d27a3070fb1dce60f7cb72cb7d60b55" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e024fe06d4f879196d3e62343aa21b12" category="paragraph">如您所见，您需要知道源系统名称、存储虚拟机、卷名称和备份文件日期才能执行卷还原。</block>
   <block id="97df4568ca8321a997d9ed32ea75ab0a" category="list-text">选择“*恢复*”选项卡，将显示“恢复仪表板”。</block>
   <block id="00e49e17372cc54391186a012dcec566" category="list-text">从“浏览和恢复”部分，选择“恢复卷”。</block>
   <block id="7eccde2a14cd84f78dde1af09cf04af9" category="list-text">在“选择源”页面中，导航到要恢复的卷的备份文件。选择具有要恢复的日期/时间戳的*系统*、*卷*和*备份*文件。</block>
@@ -3823,13 +3813,7 @@
   <block id="502b9bcf8737b06b486f332278870bbf" category="list-text">ONTAP版本必须为 9.6 或更高版本才能执行_文件_恢复操作。</block>
   <block id="06e9f92e3090a798bd44efa87250ce22" category="list-text">ONTAP版本必须为 9.11.1 或更高版本才能执行_文件夹_还原操作。如果数据位于档案存储中，或者备份文件使用 DataLock 和勒索软件保护，则需要ONTAP版本 9.13.1。</block>
   <block id="57bb710d517f010c4fce20687ec1c6ff" category="list-text">ONTAP版本必须为 9.15.1 p2 或更高版本才能使用浏览和还原选项还原FlexGroup目录。</block>
-  <block id="cee5f78cfda5fc2f3b24ce19bdf5119a" category="section-title">文件夹和文件还原过程</block>
   <block id="01a85f08913124872d9b17dfdb08959a" category="paragraph">这个过程如下：</block>
-  <block id="b85ced4f441572e957c29b3e74a4335e" category="list-text">选择文件夹或文件所在的源系统、卷和备份文件。</block>
-  <block id="ecbf4074e5725b458774aa56add04b4e" category="list-text">NetApp Backup and Recovery显示所选备份文件中存在的文件夹和文件。</block>
-  <block id="f253b383194bb98b3c6ad49105cca717" category="list-text">选择要从该备份中恢复的文件夹或文件。</block>
-  <block id="af40ce2fd276ed07b36265ad3349591a" category="list-text">选择要恢复文件夹或文件的目标位置（系统、卷和文件夹），然后单击“*恢复*”。</block>
-  <block id="77a738d7362cefd8d0f8a59020626e57" category="list-text">文件已恢复。</block>
   <block id="983985e7b5c6473861f79292288f8649" category="inline-image-macro">该图显示了使用浏览和恢复执行文件恢复操作的流程。</block>
   <block id="a86b95296a5e8660c2661d4c0fdd6403" category="paragraph"><block ref="b8616ef8bcb9351aff887ce7eb6910c4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7f3b049ad5900157b661c3f11e45c18c" category="section-title">还原文件夹和文件</block>
@@ -3857,11 +3841,6 @@
   <block id="3f25e82b6a6ddd7bce8047cf9c5eb6cf" category="list-text">您可以选择任意文件夹。</block>
   <block id="8abf03f0afbcb37f53707147d7dc79ef" category="list-text">您可以将鼠标悬停在文件夹上，然后单击行尾以深入查看子文件夹，然后选择一个文件夹。</block>
   <block id="09fa58168e9af9ca1cd785d08f1c7401" category="list-text">如果您选择了与源文件夹/文件相同的目标系统和卷，则可以选择*维护源文件夹路径*将文件夹或文件还原到源结构中存在的同一文件夹。所有相同的文件夹和子文件夹必须已经存在；不会创建文件夹。将文件还原到原始位置时，您可以选择覆盖源文件或创建新文件。</block>
-  <block id="8ba7d24c75d9a4c060c33cf7a127b666" category="section-title">使用“搜索和还原”还原ONTAP数据</block>
-  <block id="4647e43883c439381a72ddb443f378a3" category="paragraph">您可以使用“搜索和还原”从ONTAP备份文件中还原卷、文件夹或文件。搜索和还原使您能够从所有备份中搜索特定的卷、文件夹或文件，然后执行还原。您不需要知道确切的系统名称、卷名或文件名——搜索会查看所有卷备份文件。</block>
-  <block id="852fc25af352236327df0d0cfcc56af6" category="paragraph">当您从备份文件恢复_完整卷_时， NetApp Backup and Recovery会使用备份中的数据创建一个_新_卷。您可以将数据作为原始系统中的卷还原到与源系统位于同一云帐户的其他系统或本地ONTAP系统。</block>
-  <block id="1c207467db02af6d5369de8a352a5deb" category="paragraph">您可以将文件夹或文件还原到原始卷位置、同一系统中的不同卷、使用同一云帐户的不同系统或本地ONTAP系统上的卷。</block>
-  <block id="20f2d0bb5e696b331efc736ffadbb3f3" category="paragraph">如果要还原的卷的备份文件位于档案存储中（从ONTAP 9.10.1 开始可用），则还原操作将花费更长的时间并产生额外的费用。请注意，目标集群还必须运行ONTAP 9.10.1 或更高版本才能进行卷还原、9.11.1 才能进行文件还原、9.12.1 才能进行 Google Archive 和StorageGRID，以及 9.13.1 才能进行文件夹还原。</block>
   <block id="123d4cc43e1a5345167ea23371a1a2c3" category="list-text">如果对象存储中的备份文件已配置 DataLock 和勒索软件保护，则仅当ONTAP版本为 9.13.1 或更高版本时才支持文件夹级还原。如果您使用的是早期版本的ONTAP，则可以从备份文件恢复整个卷，然后访问所需的文件夹和文件。</block>
   <block id="151be02e2bd1749a3dd2015c36005736" category="list-text">如果对象存储中的备份文件驻留在档案存储中，则仅当ONTAP版本为 9.13.1 或更高版本时才支持文件夹级还原。如果您使用的是早期版本的ONTAP，则可以从尚未存档的较新备份文件中还原文件夹，也可以从存档的备份中还原整个卷，然后访问所需的文件夹和文件。</block>
   <block id="3ddfa13cbce20cc68cd19aca6f181eb0" category="list-text">将数据从 Azure 档案存储还原到StorageGRID系统时，不支持“高”还原优先级。</block>
@@ -3904,29 +3883,9 @@
   <block id="35823b9a43e6a86ef9fc8613d01ca7e0" category="list-text">卷、文件夹或文件已恢复。</block>
   <block id="03a6f07a65b68a9b91d1456b096d425e" category="inline-image-macro">该图显示了使用“搜索和还原”执行卷、文件夹或文件还原操作的流程。</block>
   <block id="326eb26933ce22b49d0c6ddf7a6e6180" category="paragraph"><block ref="1d155a4bab8461674fe4d884066d77ce" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2a88d3ad33e6ade48c9940511206948e" category="paragraph">如您所见，您实际上只需要知道部分名称， NetApp Backup and Recovery就会搜索与您的搜索相匹配的所有备份文件。</block>
   <block id="5b9c355299c911b3f66ca50a1acb17d6" category="section-title">为每个系统启用索引目录</block>
   <block id="f5b73dece12edcdf156fa7e3afdcb5ac" category="paragraph">在使用搜索和还原之前，您需要在计划还原卷或文件的每个源系统上启用“索引”。这使得索引目录可以跟踪每个卷和每个备份文件 - 使您的搜索非常快速和高效。</block>
   <block id="ba56376909400e0d6a0546d3b85498ef" category="paragraph">索引目录是一个数据库，用于存储系统中所有卷和备份文件的元数据。搜索和恢复功能使用它来快速找到包含要恢复的数据的备份文件。</block>
-  <block id="ace26ef20d7de77728de7522bd26d7de" category="paragraph-title">索引目录 v2 功能</block>
-  <block id="eb3e11343b7aaea59c83d36c6e8c8591" category="paragraph">索引目录 v2 于 2025 年 2 月发布，并于 2025 年 6 月更新，其功能使其更高效、更易于使用。此版本具有显著的性能增强，并且默认为所有新客户启用。</block>
-  <block id="e45e80a3aa32c47a9d6ef311dd8f2980" category="paragraph">回顾有关 v2 的以下注意事项：</block>
-  <block id="b98d519952606f96dcc615efa4f4e85c" category="list-text">索引目录 v2 处于预览模式。</block>
-  <block id="951398abbe6e1c3079efe911a6951621" category="list-text">如果您是现有客户并想要使用 Catalog v2，则需要完全重新索引您的环境。</block>
-  <block id="eb720e0effbb1828841ea62695a758b9" category="list-text">Catalog v2 仅索引具有快照标签的快照。</block>
-  <block id="0823f8728ac8dd7f06c41db39f3c9e79" category="list-text">NetApp Backup and Recovery不会使用“每小时” SnapMirror标签对快照进行索引。如果您想使用“每小时” SnapMirror标签索引快照，则需要在 v2 处于预览模式时手动启用它。</block>
-  <block id="7d130cb45fabc3f14e6b9b7f4708d18d" category="list-text">NetApp Backup and Recovery将仅使用 Catalog v2 为受NetApp Backup and Recovery保护的系统关联的卷和快照编制索引。在控制台平台上发现的其他系统将不会被编入索引。</block>
-  <block id="d018a9ab185158e1903377238af640ce" category="list-text">使用 Catalog v2 进行数据索引发生在本地环境以及 Amazon Web Services、Microsoft Azure 和 Google Cloud Platform (GCP) 环境中。</block>
-  <block id="cba8da890b429c54fa89c60426136832" category="paragraph">索引目录 v2 支持以下内容：</block>
-  <block id="d0ddbbe5ee1059ccc8adc742a7b4fc17" category="paragraph-title">为系统启用索引目录</block>
-  <block id="9f0efd5842b284741e756914a3653c06" category="paragraph">当您使用 Indexed Catalog v2 时，该服务不会提供单独的存储桶。相反，对于存储在 AWS、Azure、Google Cloud Platform、 StorageGRID或ONTAP S3 中的备份，该服务会在控制台代理或云提供商环境上提供空间。</block>
-  <block id="13873715cccde14b864681e744f0f6e5" category="paragraph">如果您在 v2 版本之前启用了索引目录，则系统会出现以下情况：</block>
-  <block id="1bf27db2b6cddc0bbfeb50bd92d954d2" category="inline-link">Amazon Athena 交互式查询服务</block>
-  <block id="304514e0e009199a95060650dbf9337e" category="inline-link">AWS Glue 无服务器数据集成服务</block>
-  <block id="7f55f1ead15a67b08eea9e732f6ed59d" category="list-text">对于存储在 AWS 中的备份，它会提供一个新的 S3 bucket 和<block ref="d5a117e0ffd0e43cc6657792905f20d6" category="inline-link-rx"></block>和<block ref="101f211ea2a04b6a9a7d1de9342390c3" category="inline-link-rx"></block>。</block>
-  <block id="1a57137c00ac13558ef22f60c946d8b3" category="list-text">对于存储在 Azure 中的备份，它会提供一个 Azure Synapse 工作区和一个 Data Lake 文件系统作为存储工作区数据的容器。</block>
-  <block id="b3cf2a0723236b8965edb17a6adc8bf5" category="list-text">对于存储在 Google Cloud 中的备份，它会配置一个新的存储桶，并且<block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block>在帐户/项目级别进行配置。</block>
-  <block id="5452e61fa37cd56c55cfda6a5bbda2d3" category="list-text">对于存储在StorageGRID或ONTAP S3 中的备份，它会在控制台代理或云提供商环境中提供空间。</block>
   <block id="b72b787d86099aed222777bb2de8b6b5" category="paragraph">如果您的系统已启用索引，请转到下一部分来恢复您的数据。</block>
   <block id="851644a4a48fea1ac5cc79f5c9d8277e" category="list-title">为系统启用索引的步骤：</block>
   <block id="e539a0c2cd27f449c2afc370c19cfb8a" category="list-text">如果没有系统被索引，请在“恢复仪表板”的“搜索和恢复”下，选择“启用系统索引”。</block>
@@ -4652,9 +4611,7 @@
   <block id="e527fef252b77845c6d10efb41d3077b" category="list-text">在 Azure 中， NetApp Console使用包含 Blob 容器存储帐户的新建或现有资源组。<block ref="a7068b8d2b60241ce77a1051f3a66ed5" category="inline-link-rx"></block>默认情况下。</block>
   <block id="ec0d6793cc0295c832eb8da5d335a0c2" category="paragraph">此外，您还可以访问以下网站获取与 DataLock 相关的成本估算：<block ref="b1f8c55788f886bad3d3eaf7350ac38f" category="inline-link-rx"></block> 。</block>
   <block id="4bcdbd17280f1741e2f9e78f6f376421" category="paragraph"><block ref="4bcdbd17280f1741e2f9e78f6f376421" category="inline-link-rx"></block></block>
-  <block id="7eb5606462668a7d8775b600838f4f32" category="admonition">如果您要恢复的备份文件位于归档云存储中（从ONTAP 9.10.1 开始），则恢复操作需要更长时间并会产生费用。对于卷恢复，目标集群必须运行ONTAP 9.10.1 或更高版本；对于文件恢复，目标集群必须运行 ONTAP 9.11.1 或更高版本；对于 Google Archive 和StorageGRID，目标集群必须运行 ONTAP 9.12.1 或更高版本；对于文件夹恢复，目标集群必须运行 ONTAP 9.13.1 或更高版本。</block>
   <block id="5b386dd69a6743085be6c1e524866fb5" category="paragraph">如果选择多个文件，它们将被还原到同一目标卷。要将文件还原到不同的卷，请多次运行该过程。</block>
-  <block id="b46b886ddef2fe81123875f2839d0892" category="list-text">要从卷备份中恢复文件夹或文件，请选择“恢复”菜单，然后在“浏览和恢复”下选择“恢复文件或文件夹”。</block>
   <block id="22d1aa2ecc719d7521d0a8859fe171f9" category="paragraph">要还原卷，您需要源系统名称、存储虚拟机、卷名称和备份文件日期。</block>
   <block id="0e9332d24e8223d33f0f13c12dc28e78" category="list-text">选择“恢复”返回恢复仪表板并查看恢复操作的进度。</block>
   <block id="dc48f529dae728780c55fde51597adee" category="paragraph">之后<block ref="d2ec4e5679d82dbce801a1d23c311912" category="inline-xref-macro-rx"></block>，您可以使用“搜索和还原”还原卷、文件夹和文件。这使您可以使用广泛的过滤器从所有备份文件中找到要恢复的确切文件或卷。</block>
@@ -4749,13 +4706,10 @@
   <block id="30e07a9dd02dd98f372bd162ec8456ef" category="paragraph">当您为系统启用NetApp Backup and Recovery时，您最初选择的所有卷都将使用您选择的策略进行备份。您可以为快照、复制卷和备份文件选择不同的策略。如果您想要为具有不同恢复点目标 (RPO) 的某些卷分配不同的备份策略，则可以为该集群创建其他策略，并在激活NetApp Backup and Recovery后将这些策略分配给其他卷。</block>
   <block id="fa3dd3bcafecb630044b7d1eddb7cd43" category="admonition">应用于卷的快照策略必须具有您在复制策略和备份到对象策略中使用的标签之一。如果未找到匹配的标签，则不会创建备份文件。例如，如果您想要创建“每周”复制卷和备份文件，则必须使用创建“每周”快照的快照策略。</block>
   <block id="9e813756b5af6bc196c66209061d9d1a" category="paragraph">默认情况下启用计划的勒索软件防护扫描。扫描频率的默认设置为 7 天。扫描仅发生在最新的快照上。可以禁用计划扫描以降低成本。您可以通过“高级设置”页面上的选项，启用或禁用最新快照上的计划勒索软件扫描。如果启用它，则默认每周执行一次扫描。您可以将该计划更改为几天或几周，或者禁用它，以节省成本。</block>
-  <block id="c379b9e8581a6fd59a6755037f41a617" category="paragraph">ONTAP卷数据的备份可以从您创建备份的位置获取：快照、复制卷和存储在对象存储中的备份。您可以从这些备份位置中的任何一个恢复特定时间点的数据。使用NetApp Backup and Recovery，可以从备份文件还原整个ONTAP卷，或者如果只需要还原几个文件，则可以还原文件夹或单个文件。</block>
   <block id="02c75a95538b43e9e819f0d1b0cc19f2" category="list-text">快照 -&gt; 已恢复卷</block>
-  <block id="2630c5e201ef46189b621a683ffbc8dc" category="paragraph">恢复之前，请记下源卷名称、源系统和 SVM 以及备份文件日期。您可以从快照、复制卷或存储在对象存储中的备份恢复ONTAP数据。</block>
   <block id="68601916ccf016a3cbb9b91a847005f5" category="paragraph">您可以将ONTAP数据从位于二级系统（复制卷）或对象存储（备份文件）中的备份文件还原到以下系统。快照保存在源系统上，并且只能还原到同一系统。</block>
   <block id="2b3e9f7492129e1cad66eb9ef0df47d2" category="paragraph">*位置* 列显示备份文件（快照）是*本地*（源系统上的快照）、*辅助*（辅助ONTAP系统上的复制卷）还是*对象存储*（对象存储中的备份文件）。选择您想要恢复的文件。</block>
   <block id="8ba8feef9dc91a81337c3e1c3f636d2e" category="admonition">目前，您只能从对象存储中的备份文件恢复文件夹或单个文件。目前不支持从本地快照或位于辅助系统（复制卷）中的备份文件恢复文件和文件夹。</block>
-  <block id="0c33ea8397b0b32c84a3332e9860b200" category="paragraph">搜索操作会查找ONTAP卷的所有本地快照、辅助存储系统上的所有复制卷以及对象存储中存在的所有备份文件。由于从本地快照或复制卷恢复数据比从对象存储中的备份文件恢复数据速度更快、成本更低，因此您可能需要从这些其他位置恢复数据。</block>
   <block id="0b7639e600f1d3ff92ed788a9be2c0dd" category="list-text">必须在 SVM 上激活 SnapDiff RPC 服务器。当您在系统上启用索引时，控制台会自动执行此操作。（SnapDiff 是一种能够快速识别快照之间文件和目录差异的技术。）</block>
   <block id="dff115c532ece3121746427a98f68318" category="list-text">在“过滤依据”区域中，选择过滤条件。例如，您可以选择数据所在的系统和文件类型，例如 .JPEG 文件。或者，如果您只想在对象存储中的可用快照或备份文件中搜索结果，则可以选择备份位置类型。</block>
   <block id="4fbc8584021c60a153dbf213f698df58" category="paragraph">请注意，搜索结果会识别包含您搜索文件的本地卷快照和远程复制卷。您可以选择从云备份文件、快照或复制卷中恢复。</block>
@@ -4792,4 +4746,37 @@
   <block id="36c0d00755a4d8daae367144e5daca38" category="list-text">如果非管理员域用户要保护 Hyper-V 虚拟机，请确保该用户拥有以下权限：</block>
   <block id="57d2171dbc8d8d7a864a60de1ab4656c" category="list-text">请确保该用户是本地管理员组成员。</block>
   <block id="27bc296e867cae2ef33b5cac51392cb2" category="list-text">确保用户已加入“以服务身份登录”本地安全策略。</block>
+  <block id="6d397139779cf4483cf1c4693e7f6cfc" category="paragraph">如果您创建自己的存储桶，则应使用存储桶名称“netapp-backup”。如果需要使用自定义名称，请编辑<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block>为现有 CVO 添加 IAMRole，并将以下 JSON 块添加到 S3 权限中<block ref="2af6fd9ec72aee193ee7ffe09638e08f" prefix=" " category="inline-code"></block>大批。您需要包括<block ref="87307b2ef4c880d061c68a6a4277d9a9" prefix=" " category="inline-code"></block>并分配与存储桶关联的所有必要权限。</block>
+  <block id="3f05712ac311679f5293cdeca4b95c4a" category="summary">使用NetApp Backup and Recovery，通过浏览和恢复功能恢复ONTAP数据。</block>
+  <block id="a9069e9a58042b9bc7056398756845ee" category="paragraph">使用NetApp Backup and Recovery，通过浏览和恢复功能恢复ONTAP数据。恢复之前，请记下源卷名称、源系统和 SVM 以及备份文件日期。您可以从快照、复制卷或存储在对象存储中的备份恢复ONTAP数据。</block>
+  <block id="05347845672273f3cffd76e4077cdb51" category="paragraph">恢复功能取决于您的ONTAP版本：</block>
+  <block id="a03a5900281bf25c93cb811180bba191" category="list-text">*文件夹：* 使用ONTAP 9.13.0 或更高版本，您可以恢复包含所有文件和子文件夹的文件夹；使用早期版本，您只能恢复文件夹中的文件。</block>
+  <block id="781858cefae9b60efaca9b16a3878de8" category="list-text">*归档存储：*从归档存储恢复（ ONTAP 9.10.1 或更高版本可用）速度较慢，并且可能会产生额外费用。</block>
+  <block id="39ec579fcc2df5001dd753b681b0b968" category="list-text">*目标集群要求：*</block>
+  <block id="40a94f15cd6f305f18348e67a7079bb0" category="list-text">卷恢复： ONTAP 9.10.1 或更高版本</block>
+  <block id="093fffba6528268e08d16655a00408c0" category="list-text">文件恢复： ONTAP 9.11.1 或更高版本</block>
+  <block id="e2a690f8f0185ec41067ba5b3b30a529" category="list-text">Google Archive 和StorageGRID： ONTAP 9.12.1 或更高版本</block>
+  <block id="8ca6fb4bb5529d6adfde15cbdb57e634" category="list-text">文件夹恢复： ONTAP 9.13.1 或更高版本</block>
+  <block id="be0215992cfd3511d910e845d0356599" category="summary">您可以使用搜索和恢复功能从ONTAP备份文件中恢复卷、文件夹或文件。</block>
+  <block id="7e1d8ccd1392087c63490394612a8c15" category="doc">使用搜索和恢复功能从ONTAP备份恢复</block>
+  <block id="e7831cd0e41fd9e35bee516b706fabdd" category="paragraph">您可以使用搜索和恢复功能从ONTAP备份文件中恢复卷、文件夹或文件。搜索和恢复功能允许您搜索所有备份（包括本地快照、复制卷和对象存储），而无需提供确切的系统、卷或文件名。</block>
+  <block id="ac7a11fed1e42e0aabdca6e9d3df239d" category="paragraph">从本地快照或复制卷恢复通常比从对象存储恢复更快、更便宜。</block>
+  <block id="84c030a8c3b510739684721f83cf4004" category="paragraph">恢复整个卷时， NetApp Backup and Recovery会使用备份数据创建一个新卷。您可以恢复到原始系统、同一云帐户内的另一个系统或本地ONTAP系统。文件夹和文件可以恢复到其原始位置、同一系统中的不同卷、同一云帐户中的另一个系统或本地系统。</block>
+  <block id="1a7f268901b8ff64a74ae8d0296ce039" category="section-title">搜索与恢复的先决条件</block>
+  <block id="baa8edebfac5781913655070b19655c8" category="inline-xref">挂载卷以重新索引目录</block>
+  <block id="dca45b6ea4888774fa36a0cd7a4b4e66" category="list-text">NetApp建议在控制台代理上挂载单独的卷，以提高搜索和恢复的弹性。有关说明，请参阅<block ref="dc95f46ff7385c77f28ead631c4ffc28" category="inline-xref-macro-rx"></block>。</block>
+  <block id="cafaac51a733b2507a0934e42ab1b5de" category="section-title">旧版搜索与恢复的先决条件（使用索引目录 v1）</block>
+  <block id="d3373e3f2429c68c0bce2afd2ff81bea" category="paragraph">您只需要知道部分名称， NetApp Backup and Recovery就会搜索所有与您的搜索匹配的备份文件。</block>
+  <block id="a6e55f722772b5f4e23c95969086688d" category="paragraph-title">索引目录功能</block>
+  <block id="d828defb287ef7f6ab63c8e2aa939f7c" category="paragraph">使用索引目录时， NetApp Backup and Recovery不会配置单独的存储桶。相反，对于存储在 AWS、Azure、Google Cloud Platform、 StorageGRID或ONTAP S3 中的备份，该服务会在控制台代理或云提供商环境上提供空间。</block>
+  <block id="489e35e793accc52ca3476061b2e9092" category="paragraph">索引目录支持以下功能：</block>
+  <block id="bb5d5c858e67c64d78268e97ef8e801d" category="paragraph">ONTAP卷数据的备份以快照的形式存储在复制卷上，或存储在对象存储中。您可以从这些位置中的任何一个位置恢复特定时间点的数据。使用NetApp Backup and Recovery，您可以根据需要恢复整个卷、文件夹或单个文件。</block>
+  <block id="e59ea42c20b1c148846a0526ff44c47a" category="paragraph">您需要有效的NetApp Backup and Recovery许可证才能将数据恢复到生产系统。</block>
+  <block id="d3d7e7b22ee5c56584493699998d9117" category="paragraph">您可以使用还原仪表板执行卷、文件夹和文件还原操作。要访问恢复仪表板，请从控制台菜单中选择“备份和恢复”，然后选择“恢复”选项卡。您也可以选择<block ref="d1d86609a9d4211430bd00b714af288b" category="inline-image-macro-rx" type="image"></block>从“服务”面板的“备份和恢复服务”中查看“恢复仪表板”。</block>
+  <block id="25578ef4f1298f0ec4e133f88caee125" category="paragraph">在使用任何一种恢复方法之前，请配置您的环境以满足资源要求。详情请见以下章节。</block>
+  <block id="a8c20c3f2c501cda4b216ab5d3a59157" category="list-text"><block ref="f9cc88ea2514d9b9242d31770690af88" category="inline-link-macro-rx"></block></block>
+  <block id="5e763606a0239729deac991a560d57c0" category="list-text"><block ref="34e43cfade3963995cc048abf44b0989" category="inline-link-macro-rx"></block></block>
+  <block id="b72cbffce68718636e4f9c2f1c2a8173" category="list-text"><block ref="f0a1a1822bca6dd563c941cbc831d447" category="inline-link-macro-rx"></block></block>
+  <block id="cee41b55e417d2c681bd345802b719fd" category="sidebar">恢复概述</block>
+  <block id="a49488740a7ad2d76917598dae6b3fbb" category="sidebar">使用“浏览和恢复”功能从ONTAP备份恢复数据</block>
 </blocks>
