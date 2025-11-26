@@ -3734,10 +3734,6 @@
   <block id="c601431e32ca59eda5545781d799fc84" category="cell">通过部分或完整卷名、部分或完整文件夹/文件名、大小范围和其他搜索过滤器，在*所有备份文件*中搜索卷、文件夹或文件。</block>
   <block id="8042f6982b79849d158e3d7ac9190cc2" category="cell">如果文件已被删除或重命名，并且用户不知道原始文件名，则不处理文件恢复</block>
   <block id="609c9e9bd29468f2ba84839f3741b886" category="cell">处理新创建/删除/重命名的目录和新创建/删除/重命名的文件</block>
-  <block id="c6df30fd69d443c5f65257f03e22d182" category="cell">无需额外的云提供商资源</block>
-  <block id="ba3b7ed6a9e20a17536af523c17d7d72" category="cell">当您从云端恢复时，每个帐户需要额外的存储桶和公共云提供商资源。</block>
-  <block id="f487cfb88239842615093e7eb26153a0" category="cell">无需额外的云提供商成本</block>
-  <block id="e4da0c30ee3e36e87eec129bd901c319" category="cell">当您从云端恢复时，扫描备份和卷以获取搜索结果需要额外的费用。</block>
   <block id="bc7f13477d0119c48bad565ccf971e6a" category="cell">支持快速恢复。</block>
   <block id="acf00c252198c9be0294aaf561c5d662" category="cell">不支持快速恢复。</block>
   <block id="36bce3524e4446bfe42ccad6f813430a" category="paragraph">该表根据备份文件所在的位置提供了有效还原操作的列表。</block>
@@ -4715,7 +4711,6 @@
   <block id="4fbc8584021c60a153dbf213f698df58" category="paragraph">请注意，搜索结果会识别包含您搜索文件的本地卷快照和远程复制卷。您可以选择从云备份文件、快照或复制卷中恢复。</block>
   <block id="8cb59bcb28ab4d28eff3f32b41c1619f" category="paragraph">您首先需要挂载一个单独的卷来存放目录文件。这样可以防止因保存快照的文件过大而导致数据丢失。并非每个集群都需要这样做；您可以从环境中的任何集群挂载任何一个卷。如果不这样做，索引可能无法正常工作。</block>
   <block id="49b1bd86131611255094bea2f77118b7" category="paragraph">对于装订体积，请参考以下尺寸指南：</block>
-  <block id="0207db4ce855854d816d06443ff062ea" category="list-text">使用NetApp NVS 卷</block>
   <block id="aa45cf8d923bfb8185fed2178e78d921" category="list-text">推荐使用磁盘吞吐量为 300 MB/s 的AFF存储。吞吐量降低会影响搜索和其他操作。</block>
   <block id="076bea46cdc896921ec2687cf3f345bb" category="list-text">启用NetApp快照功能，除了保护目录备份 zip 文件外，还可以保护目录元数据。</block>
   <block id="1c3669c2099ac1b271c6bc4f19601ca5" category="list-text">每10亿个文件占用50GB空间</block>
@@ -4779,4 +4774,7 @@
   <block id="b72cbffce68718636e4f9c2f1c2a8173" category="list-text"><block ref="f0a1a1822bca6dd563c941cbc831d447" category="inline-link-macro-rx"></block></block>
   <block id="cee41b55e417d2c681bd345802b719fd" category="sidebar">恢复概述</block>
   <block id="a49488740a7ad2d76917598dae6b3fbb" category="sidebar">使用“浏览和恢复”功能从ONTAP备份恢复数据</block>
+  <block id="4db9a239be0f58f8e4742665ad2371e2" category="paragraph">启用搜索和恢复功能前，请确保您的环境满足以下要求：</block>
+  <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">以下是使用传统索引时搜索和恢复功能的要求：</block>
+  <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">使用NetApp NFS 卷</block>
 </blocks>
