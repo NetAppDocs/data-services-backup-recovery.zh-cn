@@ -46,6 +46,7 @@ FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相
 
 
 * 从本地ONTAP系统创建复制时，如果目标Cloud Volumes ONTAP系统上的ONTAP版本为 9.8、9.9 或 9.11，则只允许镜像保管库策略。
+* NetApp Backup & Recovery 不支持在保持云备份功能的同时，将具有活动云备份关系的FlexVol volume转换为FlexGroup卷。
 
 
 
