@@ -1,0 +1,15 @@
+= VMware 工作负载预览增强功能
+:allow-uri-read: 
+
+
+
+
+=== VMware 工作负载预览增强功能
+
+VMware 工作负载预览版引入了以下增强功能：
+
+* 现在您可以将备份和快照恢复到备用位置。如果您想要管理不同 VMware vCenter 部署、VMware ESXi 主机或 VMware 数据存储上的虚拟机版本，这将非常有用。
+* 现在您可以从主位置或辅助位置恢复特定的 VMware 虚拟磁盘（VMDK 映像），从而实现对恢复 VM 数据的更精细控制。
+
+
+link:br-use-vmware-restore.html["了解更多关于使用NetApp Backup and Recovery恢复 VMware 工作负载的信息"]。

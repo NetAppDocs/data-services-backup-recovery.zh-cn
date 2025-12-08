@@ -1037,7 +1037,6 @@
   <block id="8dee103972185c1aba0e0c814961a8db" category="list-text">*通知*部分：</block>
   <block id="d705348f84095bf9f266942da2cf2b84" category="list-text">*启用电子邮件通知*：选择此选项可接收有关恢复操作的电子邮件通知，并指示您想要接收的通知类型。</block>
   <block id="f77361b272ce81d8275727f7b1a756a8" category="list-text">选择*恢复*。</block>
-  <block id="aef04a364ab7bd7fcab1346a4084cdaa" category="paragraph">不适用于 Hyper-V 私人预览版。</block>
   <block id="4c931104d6ff5fdc2a76bdfc6fba4662" category="summary">您可以保护从本地ONTAP系统到 Amazon Web Services、Microsoft Azure、Google Cloud Platform 和StorageGRID 的Kubernetes 应用程序和应用程序数据，确保您的数据受到保护。</block>
   <block id="ff1a3fbe6f92249e286b8a93cf5b5d2e" category="doc">管理 Kubernetes 工作负载概览</block>
   <block id="14cca4b1ac5c46a49fffa25e733381e7" category="paragraph">通过在NetApp Backup and Recovery中管理 Kubernetes 工作负载，您可以在一个地方发现、管理和保护您的 Kubernetes 集群和应用程序。您可以管理托管在 Kubernetes 集群上的资源和应用程序。您还可以创建保护策略并将其与 Kubernetes 工作负载关联，所有这些都使用单一界面完成。</block>
@@ -1090,7 +1089,6 @@
   <block id="42b3c9b2282ae6b4644cee5b5995979d" category="summary">使用NetApp Backup and Recovery保护您的 KVM 工作负载。</block>
   <block id="02055854e5f8d7c0a2161503c5645d5a" category="doc">使用NetApp Backup and Recovery还原 KVM 虚拟机</block>
   <block id="4ebed5b1ff5b9230bfba78b5f3751082" category="paragraph">您可以从不同的起始位置还原虚拟机：</block>
-  <block id="2003d1dd0ff605a8b0183ae69c3823f3" category="paragraph">您可以将数据恢复到原始位置；在此预览版中不提供恢复到备用位置的功能。</block>
   <block id="c149f6b4ccbdba8011de4b1e3579b42f" category="list-text">恢复到原始位置</block>
   <block id="25a77bf38583c396d6997e367e9268c8" category="section-title">虚拟机恢复的工作原理</block>
   <block id="01d60535f98ec4122ee816d29473c760" category="paragraph">还原虚拟机时，会发生以下情况：</block>
@@ -1101,7 +1099,6 @@
   <block id="108ce4e259c8e5532d28e1f7b55053e0" category="paragraph">使用恢复选项恢复 KVM 虚拟机。您可以按名称或使用过滤器来搜索快照。</block>
   <block id="28826b6f1571b9d0354ca0ae481f50c6" category="list-text">从名称搜索字段右侧的下拉列表中，选择 *KVM*。</block>
   <block id="066fa262c239f022506c95a1e09ebb65" category="list-text">输入要还原的 VM 的名称或筛选要还原的资源所在的 VM 主机或存储池。</block>
-  <block id="7f95c9104d9c5d062c442ee5aade255c" category="paragraph">不适用于 KVM 预览。</block>
   <block id="67833cdc3e0f9b5bea226d3734262615" category="summary">NetApp Backup and Recovery使您能够管理执行挂钩，以便在应用程序保护操作之前或之后采取行动。</block>
   <block id="3d932cbb71cd117a65669b165e078b5b" category="doc">管理适用于 Kubernetes 工作负载的NetApp Backup and Recovery执行挂钩模板</block>
   <block id="ac84b7596169ab3fb6c24e8a5c85c234" category="inline-link">使用 KubeVirt 虚拟机保护数据</block>
@@ -1916,16 +1913,7 @@
   <block id="ba48c3305320f5df1a8db5cbd6fed75a" category="paragraph">您可以将数据恢复到以下点：</block>
   <block id="600582313b42616fbf96d317e8033ef9" category="paragraph">使用恢复选项恢复 VMware 工作负载。您可以按名称或使用过滤器来搜索快照。</block>
   <block id="1ca9578c25474d5cfeaa6c44bdbaa9b2" category="paragraph">*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复恢复管理员角色。<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> 。</block>
-  <block id="71032b474c00a68ab57e3f805cdf5d61" category="list-text">从名称搜索字段右侧的下拉列表中，选择“*虚拟机*”。</block>
   <block id="2aceb93307f82c2d88347faa7eaa4e71" category="list-text">输入要恢复的资源的名称，或者筛选要恢复的资源所在的 vCenter、数据中心或数据存储。</block>
-  <block id="3fca73cfa6e5a82be82156106e4db553" category="paragraph">出现恢复位置选项列表。</block>
-  <block id="eb58d19c210547f2e0cbe6a7689d6a12" category="list-text">选择要还原快照的还原位置：</block>
-  <block id="c318ddc11c1d9b56e2cfda2af9351a42" category="list-text">本地：将快照还原到原始位置。</block>
-  <block id="e4e4935a5dbb6b2200b975d599e683e4" category="list-text">二级存储：将快照恢复到二级存储位置。</block>
-  <block id="33a039fcca21669940ad7ee10455c43d" category="list-text">对象存储：将快照恢复到对象存储位置。</block>
-  <block id="6fa9a019160376f2b85947c9116180fb" category="paragraph">如果选择对象存储，请在恢复之前检查是否要再次扫描快照。</block>
-  <block id="0bff45ae654663c7b091c0f6dd70d653" category="paragraph">在“还原目标详细信息”页面中，输入以下信息：</block>
-  <block id="c8f730ad9d8597b4dfcdd623d5a511aa" category="paragraph">不适用于 VMware 预览版。</block>
   <block id="a5315c2927cf2b05876fdd6713fbd713" category="summary">NetApp Backup and Recovery是一种数据服务，可为您的所有ONTAP工作负载（包括卷、数据库、虚拟机和 Kubernetes 工作负载）提供高效、安全且经济高效的数据保护。</block>
   <block id="0541ead918a4013aad82336e0654ba53" category="paragraph">所有ONTAP系统都已内置对备份和恢复的支持，因此无需额外的硬件、软件许可证或媒体网关。这使得备份操作变得简单且经济高效。  NetApp控制台简化了任何备份策略的实施，包括全方位的 3-2-1 备份变体，而无需多个资源管理器或专业人员。</block>
   <block id="8fa16cd18cf0722e85fe3e62f649f0c8" category="admonition">有关保护 VMware、KVM、Hyper-V 和 Kubernetes 工作负载的文档以技术预览的形式提供。对于此预览版产品， NetApp保留在正式发布之前修改产品详细信息、内容和时间表的权利。</block>
@@ -4487,9 +4475,6 @@
   <block id="2b2261b532e949e52edc443eb38fcb1c" category="admonition">您可能需要向云提供商支付额外费用才能访问备份文件。</block>
   <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">在“恢复”页面（搜索和恢复）中，您可以通过使用过滤器搜索快照来恢复资源，即使您不记得它的确切名称、位置或最后已知日期。</block>
   <block id="167f8fde1782c144b38a4f581246608e" category="paragraph">如果您选择二级存储，请输入数据和日志的源位置和目标位置。</block>
-  <block id="9908b0e588dc1ce9587bfb1206e3118e" category="paragraph">接下来，选择目标设置和恢复前和恢复后选项。</block>
-  <block id="299981ed6b0aaf1c2eed2a8e35151313" category="list-text">*启用快速恢复*：选择此选项可执行快速恢复操作。您可以立即使用恢复的卷和数据。请勿在需要高性能的卷上使用此功能，因为在快速恢复过程中，访问数据的速度可能比平时慢。</block>
-  <block id="ca9d8ef3573c04098ddeb120eb1f19e5" category="list-text">*启用电子邮件通知*：选择获取有关恢复操作的电子邮件通知并选择您想要的通知类型。</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Hyper-V Windows Server 主机的软件要求：</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">如果还原操作未完成，请等到作业监视器显示“失败”后再重试还原操作。</block>
   <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">您可以使用NetApp Backup and Recovery将虚拟机数据从云还原到本地 vCenter Server。您可以将虚拟机还原到与备份完全相同的位置或其他位置。如果虚拟机是使用存档策略备份的，那么您可以设置存档还原优先级。</block>
@@ -4778,4 +4763,40 @@
   <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">以下是使用传统索引时搜索和恢复功能的要求：</block>
   <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">使用NetApp NFS 卷</block>
   <block id="459af9b852bd375bac17fb30c8c1b979" category="list-text">NetApp Backup &amp; Recovery 不支持在保持云备份功能的同时，将具有活动云备份关系的FlexVol volume转换为FlexGroup卷。</block>
+  <block id="063090df0880212c0ba8eec878096a21" category="doc">VMware 工作负载预览增强功能</block>
+  <block id="24936fb650df7af8295e75a3667becef" category="list-text">现在您可以将备份和快照恢复到备用位置。如果您想要管理不同 VMware vCenter 部署、VMware ESXi 主机或 VMware 数据存储上的虚拟机版本，这将非常有用。</block>
+  <block id="99ee61e75520f174d08caa35e0ad294d" category="list-text">现在您可以从主位置或辅助位置恢复特定的 VMware 虚拟磁盘（VMDK 映像），从而实现对恢复 VM 数据的更精细控制。</block>
+  <block id="814957340a966bc73ff87feca2905da9" category="inline-link-macro">了解更多关于使用NetApp Backup and Recovery恢复 VMware 工作负载的信息</block>
+  <block id="8b8a6f71e41f04ff546fb14f0800f38f" category="paragraph"><block ref="9f09945a70747c90951b9e96b5ea16be" category="inline-link-macro-rx"></block>。</block>
+  <block id="7689264f717abcf16a917111f707d7e0" category="paragraph">不适用于 Hyper-V 工作负载预览。</block>
+  <block id="77f252cb66af8ee7dab8b27bcf3851ca" category="paragraph">不适用于 KVM 工作负载预览。</block>
+  <block id="516f1f530028d7905b72cd1b035c8a73" category="list-text">*恢复到原始位置*：虚拟机将恢复到原始位置，即相同的 vCenter 部署、ESXi 主机和数据存储。虚拟机及其所有数据均被覆盖。</block>
+  <block id="d2f574e5e69d11881580660614b89ba3" category="list-text">*恢复到备用位置*：您可以选择不同的 vCenter、ESXi 主机或数据存储作为虚拟机的恢复目标。这对于管理位于不同位置和状态的同一虚拟机的不同副本非常有用。</block>
+  <block id="fa378eb8651e1bbe815e91c2a4ec5b2b" category="list-text">从名称搜索字段右侧的下拉列表中，选择 *VMware*。</block>
+  <block id="b2135f4d6adba994b22c157197d8699b" category="paragraph">将显示符合您搜索条件的虚拟机列表。</block>
+  <block id="7e4be521d13fb903d20636d087795bdb" category="list-text">在列表中找到要从中恢复的虚拟机，然后选择该虚拟机的“恢复虚拟机”按钮。</block>
+  <block id="02e027e60aca2a9aa354a74b09718442" category="paragraph">显示在该虚拟机上创建的快照（还原点）列表。</block>
+  <block id="a15361d377b43197c1044f0729f9742e" category="list-text">选中要恢复的快照对应的复选框。</block>
+  <block id="4716cc8d1f61fba6b3c321e87aece13d" category="paragraph">显示快照位置选项。</block>
+  <block id="f16b36eea83bd45d35d7613cab7f6cf8" category="list-text">选择快照的还原目标位置：</block>
+  <block id="086fbde8fbe590f104f5100808b42c0b" category="list-text">*本地*：从本地位置恢复快照。</block>
+  <block id="3a786499ea5d54fb6bb418032aca3117" category="list-text">*辅助*：从远程存储位置恢复快照。</block>
+  <block id="bc9234ce73c565f247a8ae290b842ff6" category="list-text">选择目标设置以及恢复前和恢复后选项。</block>
+  <block id="8ed9e5a565b596ef7f9cb364cf2536d7" category="paragraph">恢复到原始位置时，您无法更改目标 vCenter、ESXi 主机、数据存储或虚拟机的名称。恢复操作会覆盖原始虚拟机。</block>
+  <block id="10b0d3ffb47c4e67fc652e3b0f0220d7" category="list-text">选择“原始位置”窗格。</block>
+  <block id="1b8d4d654146b4eec3cc22bd8b461dbb" category="list-text">从下列选项中进行选择：</block>
+  <block id="9969fdcd80f8f04232cfe10158190f8c" category="list-text">*恢复前选项*部分：</block>
+  <block id="3e4b444bf949d263dd0a42369aeba637" category="list-text">*预设脚本*：启用此选项可在恢复操作开始前运行自定义脚本，以自动执行其他任务。请输入要运行的脚本的完整路径以及脚本接受的所有参数。</block>
+  <block id="181dff5c613144551ed16703a090b3b5" category="list-text">*恢复后选项*部分：</block>
+  <block id="81dcec9119b8491a178fac7f1cf17c92" category="list-text">*重启虚拟机*：启用此选项可在恢复操作完成后以及应用恢复后脚本后重启虚拟机。</block>
+  <block id="7de4def82cb6f4cb7277085992e1be0a" category="list-text">*附言*：启用此选项可在恢复完成后运行自定义脚本，从而自动执行其他任务。请输入要运行的脚本的完整路径以及脚本接受的所有参数。</block>
+  <block id="72e03b5a87389f676881b79f8d4170ca" category="paragraph">恢复到备用位置时，您可以更改目标 vCenter、ESXi 主机、数据存储和虚拟机名称，以便在不同的位置或使用不同的名称创建虚拟机的新副本。</block>
+  <block id="d9a04cc80eb84134a783629255c7bc36" category="list-text">选择“备用位置”窗格。</block>
+  <block id="f78868ada341077e1afdf76ea00e0454" category="list-text">*目的地设置*部分：</block>
+  <block id="fd6f2a9c82421585e9dfe5f8820c97c0" category="list-text">*vCenter FQDN 或 IP 地址*：选择要还原快照的 vCenter 服务器。</block>
+  <block id="a239cc572a24441f1bb1a7abc259ccab" category="list-text">*ESXi 主机*：选择要将快照还原到的主机。</block>
+  <block id="c2942751152cd0449e1de7861200bde4" category="list-text">*网络*：选择要将快照还原到的网络。</block>
+  <block id="08c806f7ec865a3481f751e978944e5d" category="list-text">*数据存储区*：输入要将快照还原到的数据存储区的名称。</block>
+  <block id="70fd3915e87d44c5f19fc35858b165f8" category="list-text">*虚拟机名称*：输入要将快照还原到的虚拟机的名称。如果名称与数据存储中已存在的虚拟机匹配，备份和恢复功能会通过附加当前时间戳来使名称唯一。</block>
+  <block id="2727f68982ff25e8b3c57e026120561d" category="section-title">2025年12月8日</block>
 </blocks>
