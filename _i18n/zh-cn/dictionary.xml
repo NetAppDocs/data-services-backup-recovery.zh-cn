@@ -389,7 +389,6 @@
   <block id="eace16d66cdd93ad876c620db7456077" category="list-text">挂载</block>
   <block id="1281764038ea27ade56d7d2b8be22798" category="list-text">卸载</block>
   <block id="25e66e51214e8342374fa891a42988b3" category="list-text">恢复至备用位置</block>
-  <block id="635e272d16a4b652a6ff48968baf8726" category="list-text">还原 VMDK</block>
   <block id="00c5709c4d9ca9f8035d5d0e33f2421e" category="list-text">附加 VMDK</block>
   <block id="097b06a0d5de05867037a2fdc678ef17" category="list-text">分离 VMDK</block>
   <block id="ef18d76ed6c710e78abb28c0e09b3e30" category="list-text">vVol 支持</block>
@@ -4474,7 +4473,6 @@
   <block id="fc7c1a6c328c3622bdd68b73c548bb4f" category="paragraph">如果为对象存储中的备份文件启用了勒索软件恢复功能，则要求您在恢复之前运行额外的检查。我们建议进行扫描。</block>
   <block id="2b2261b532e949e52edc443eb38fcb1c" category="admonition">您可能需要向云提供商支付额外费用才能访问备份文件。</block>
   <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">在“恢复”页面（搜索和恢复）中，您可以通过使用过滤器搜索快照来恢复资源，即使您不记得它的确切名称、位置或最后已知日期。</block>
-  <block id="167f8fde1782c144b38a4f581246608e" category="paragraph">如果您选择二级存储，请输入数据和日志的源位置和目标位置。</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Hyper-V Windows Server 主机的软件要求：</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">如果还原操作未完成，请等到作业监视器显示“失败”后再重试还原操作。</block>
   <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">您可以使用NetApp Backup and Recovery将虚拟机数据从云还原到本地 vCenter Server。您可以将虚拟机还原到与备份完全相同的位置或其他位置。如果虚拟机是使用存档策略备份的，那么您可以设置存档还原优先级。</block>
@@ -4766,17 +4764,12 @@
   <block id="063090df0880212c0ba8eec878096a21" category="doc">VMware 工作负载预览增强功能</block>
   <block id="24936fb650df7af8295e75a3667becef" category="list-text">现在您可以将备份和快照恢复到备用位置。如果您想要管理不同 VMware vCenter 部署、VMware ESXi 主机或 VMware 数据存储上的虚拟机版本，这将非常有用。</block>
   <block id="99ee61e75520f174d08caa35e0ad294d" category="list-text">现在您可以从主位置或辅助位置恢复特定的 VMware 虚拟磁盘（VMDK 映像），从而实现对恢复 VM 数据的更精细控制。</block>
-  <block id="814957340a966bc73ff87feca2905da9" category="inline-link-macro">了解更多关于使用NetApp Backup and Recovery恢复 VMware 工作负载的信息</block>
-  <block id="8b8a6f71e41f04ff546fb14f0800f38f" category="paragraph"><block ref="9f09945a70747c90951b9e96b5ea16be" category="inline-link-macro-rx"></block>。</block>
   <block id="7689264f717abcf16a917111f707d7e0" category="paragraph">不适用于 Hyper-V 工作负载预览。</block>
   <block id="77f252cb66af8ee7dab8b27bcf3851ca" category="paragraph">不适用于 KVM 工作负载预览。</block>
   <block id="516f1f530028d7905b72cd1b035c8a73" category="list-text">*恢复到原始位置*：虚拟机将恢复到原始位置，即相同的 vCenter 部署、ESXi 主机和数据存储。虚拟机及其所有数据均被覆盖。</block>
   <block id="d2f574e5e69d11881580660614b89ba3" category="list-text">*恢复到备用位置*：您可以选择不同的 vCenter、ESXi 主机或数据存储作为虚拟机的恢复目标。这对于管理位于不同位置和状态的同一虚拟机的不同副本非常有用。</block>
   <block id="fa378eb8651e1bbe815e91c2a4ec5b2b" category="list-text">从名称搜索字段右侧的下拉列表中，选择 *VMware*。</block>
   <block id="b2135f4d6adba994b22c157197d8699b" category="paragraph">将显示符合您搜索条件的虚拟机列表。</block>
-  <block id="7e4be521d13fb903d20636d087795bdb" category="list-text">在列表中找到要从中恢复的虚拟机，然后选择该虚拟机的“恢复虚拟机”按钮。</block>
-  <block id="02e027e60aca2a9aa354a74b09718442" category="paragraph">显示在该虚拟机上创建的快照（还原点）列表。</block>
-  <block id="a15361d377b43197c1044f0729f9742e" category="list-text">选中要恢复的快照对应的复选框。</block>
   <block id="4716cc8d1f61fba6b3c321e87aece13d" category="paragraph">显示快照位置选项。</block>
   <block id="f16b36eea83bd45d35d7613cab7f6cf8" category="list-text">选择快照的还原目标位置：</block>
   <block id="086fbde8fbe590f104f5100808b42c0b" category="list-text">*本地*：从本地位置恢复快照。</block>
@@ -4796,7 +4789,40 @@
   <block id="fd6f2a9c82421585e9dfe5f8820c97c0" category="list-text">*vCenter FQDN 或 IP 地址*：选择要还原快照的 vCenter 服务器。</block>
   <block id="a239cc572a24441f1bb1a7abc259ccab" category="list-text">*ESXi 主机*：选择要将快照还原到的主机。</block>
   <block id="c2942751152cd0449e1de7861200bde4" category="list-text">*网络*：选择要将快照还原到的网络。</block>
-  <block id="08c806f7ec865a3481f751e978944e5d" category="list-text">*数据存储区*：输入要将快照还原到的数据存储区的名称。</block>
   <block id="70fd3915e87d44c5f19fc35858b165f8" category="list-text">*虚拟机名称*：输入要将快照还原到的虚拟机的名称。如果名称与数据存储中已存在的虚拟机匹配，备份和恢复功能会通过附加当前时间戳来使名称唯一。</block>
   <block id="2727f68982ff25e8b3c57e026120561d" category="section-title">2025年12月8日</block>
+  <block id="14a4fd4957d1a547c2b4ccadbaed0a90" category="inline-link-macro">了解更多关于使用NetApp Backup and Recovery恢复 VMware 虚拟机的信息</block>
+  <block id="6dc955af209317a9d714156228721ed4" category="paragraph"><block ref="dd7466c8c4dbfb4163f16106a1d7f80c" category="inline-link-macro-rx"></block>。</block>
+  <block id="01f07264521662850e2d8465c322c978" category="inline-link-macro">了解更多关于使用NetApp Backup and Recovery恢复 VMware 虚拟磁盘的信息</block>
+  <block id="61b4efc27d21705d0d4d56786ccc1f78" category="paragraph"><block ref="78a5fc4b6640a61792f9693d7c0f443b" category="inline-link-macro-rx"></block>。</block>
+  <block id="af5eb3f6323875097e7bb24b26d6173d" category="summary">您可以从传统虚拟机或 vVol 虚拟机的主备份或辅助备份中恢复现有的 VMDK 或已删除或分离的 VMDK。</block>
+  <block id="26b80604718acd7f55cf527a0bdacff9" category="doc">从备份中恢复特定虚拟磁盘</block>
+  <block id="49ad71250d1ffd36154d69faa3ad6ea1" category="paragraph">您可以从传统虚拟机的主备份或辅助备份中恢复现有的虚拟磁盘 (VMDK)，或者已删除或已分离的虚拟磁盘。这样，您就可以只恢复特定的虚拟机数据或应用程序，而无需在仅影响特定数据的情况下恢复整个虚拟机及其所有关联的虚拟磁盘。虚拟磁盘恢复后，会附加到其原始虚拟机，即可使用。</block>
+  <block id="25734bf6409795c4ad848a8de171d984" category="paragraph">您可以将虚拟机上的一个或多个虚拟机磁盘 (VMDK) 还原到同一数据存储或不同的数据存储。</block>
+  <block id="65edaa2fcae57d6f852991cc8468f875" category="admonition">为了提高 NFS 环境中恢复操作的性能，请启用 VMware 应用程序 vStorage API for Array Integration (VAAI)。</block>
+  <block id="9560f1f6257455641b369c78c24ba389" category="list-text">必须存在备份。</block>
+  <block id="8b5bb04e87b59bfec2f1d748b4ce1dc1" category="list-text">VM 不得处于传输状态。</block>
+  <block id="ded66736229bb16e0827ec27ef3ebd43" category="paragraph">您要恢复的虚拟机不能处于 vMotion 或 Storage vMotion 状态。</block>
+  <block id="35317c90c50ee8180041c9d51a4f8af2" category="list-text">如果 VMDK 被删除或从 VM 中分离，则还原操作会将 VMDK 附加到 VM。</block>
+  <block id="1e6537897e726c537f77519264b64453" category="list-text">如果虚拟机所在的FabricPool的存储层不可用，则恢复操作可能会失败。</block>
+  <block id="b59c69b3461a70dfc0aa2e0732ab7524" category="list-text">连接和恢复操作使用默认的 SCSi 控制器连接 VMDK。但是，当备份连接到具有 NVMe 磁盘的 VM 的 VMDK 时，连接和恢复操作将使用 NVMe 控制器（如果可用）。</block>
+  <block id="bcaa22a88e6250de97f1c34ff1815b3e" category="list-text">在列表中找到要从中恢复的虚拟机，然后选择该虚拟机的选项菜单按钮。</block>
+  <block id="2bf7491fa72c164885118e8edcadf89c" category="list-text">在出现的菜单中，选择“恢复虚拟磁盘”。</block>
+  <block id="4ebce1ab53c9ce1f839951332126f91e" category="paragraph">显示在该虚拟机上创建的快照（还原点）列表。默认情况下，会显示您在“时间范围”下拉菜单中选择的时间范围内的最新快照。</block>
+  <block id="20bc64a67ad04aa40e6f57492daf95cd" category="paragraph">对于每个快照，*位置*列中任何亮起的图标都表示快照可用的存储位置（主存储、辅助存储或对象存储）。</block>
+  <block id="cd1f1a4a4415e09f2c3fc9ab17aff625" category="list-text">启用要恢复的快照对应的单选按钮。</block>
+  <block id="57385260ec48afcc58eb70dc9059c8c0" category="list-text">*对象存储*：从对象存储恢复快照。</block>
+  <block id="c1389ae5f188f85d79b6e1088e21576d" category="paragraph">如果选择辅助存储，请从下拉列表中选择目标位置。</block>
+  <block id="a1ff6993d36232fbd0d0471769216a69" category="list-text">选择目标设置以及恢复前和恢复后选项：</block>
+  <block id="21ba1fcc630eae9c060829f621ac7124" category="paragraph">恢复到原始位置时，您无法更改目标 vCenter、ESXi 主机、数据存储或虚拟磁盘的名称。原虚拟磁盘被覆盖。</block>
+  <block id="9f63eee4b169a6ac1fce2d2e6ec65d64" category="list-text">在“目标设置”部分，选中要恢复的任何虚拟磁盘的复选框。</block>
+  <block id="e3926503d87ede09d428d2ca5fc4abf5" category="paragraph">恢复到备用位置时，您可以更改目标数据存储。无论您选择哪个数据存储，恢复操作后虚拟磁盘都会附加到原始虚拟机。</block>
+  <block id="a52505a238fc5c9d5d1a17651cbc03f5" category="list-text">对于您选择的任何虚拟磁盘：</block>
+  <block id="9f53070c09f51b35472e37750d246cce" category="list-text">选择“选择数据存储”可为虚拟磁盘选择不同的数据存储还原目标。</block>
+  <block id="51b825d58961da2f3a3564b41afdfb96" category="list-text">选择“选择”以确认您的选择并关闭选择窗口。</block>
+  <block id="ba17c5605be67b2a72ebec653d77cbda" category="list-text">当您从本地快照或远程备份还原工作负载时，如果您还原到原始位置， NetApp Backup and Recovery会覆盖原始虚拟机；如果您还原到备用位置，则会创建一个新的资源。</block>
+  <block id="28a03a8c8c98d85d8de8ad54702a82fa" category="list-text">从复制的工作负载恢复时，您可以将工作负载恢复到原始的本地ONTAP系统，也可以恢复到不同的本地ONTAP系统。</block>
+  <block id="7580e90069a8f15fc27aabfe1ca9e800" category="list-text">在出现的菜单中，选择“恢复虚拟机”。</block>
+  <block id="17f7a448c0fdbce6c9a45d289bcf9e83" category="list-text">*数据存储*：从下拉列表中，选择要将快照还原到的数据存储的名称。</block>
+  <block id="92ef4bdfd24483ff1f89cbc83ac91ce5" category="list-text">您可以将虚拟机恢复到与备份完全相同的位置或其他位置。</block>
 </blocks>

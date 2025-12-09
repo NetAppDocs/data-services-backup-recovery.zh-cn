@@ -143,6 +143,8 @@ sidebar:
         url: "/br-use-vmware-backup.html"
       - title: 恢复 VMware 工作负载
         url: "/br-use-vmware-restore.html"
+      - title: 从备份中恢复特定虚拟磁盘
+        url: "/br-use-vmware-restore-vmdks-from-backups.html"
     - title: 保护 VMware 工作负载（使用适用于 VMware 的SnapCenter插件）
       entries:
       - title: 保护虚拟机工作负载概述
