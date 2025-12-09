@@ -1286,7 +1286,6 @@
   <block id="f12cc055f626f9974e07168ee36fc2b6" category="list-text">从NetApp Backup and Recovery菜单中，选择 *监控*。</block>
   <block id="e81a8bad1be4be12a837fcfb49f51617" category="list-text">要显示其他列（系统、SVM、用户名、工作负载、策略名称、快照标签），请选择加号。</block>
   <block id="87aa191eff82d3ce3518c07577f209bd" category="section-title">搜索并过滤职位列表</block>
-  <block id="9d0747ab797d5b67d7daca67845988b1" category="paragraph">您可以使用多个过滤器来过滤“作业监控”页面上的操作，例如策略、快照标签、操作类型（保护、恢复、保留或其他）和保护类型（本地快照、复制或备份到云）。</block>
   <block id="7f8ba7d41d11ab3b1061dbce2eeadb52" category="paragraph">默认情况下，“作业监控”页面显示过去 24 小时的保护和恢复作业。您可以使用时间范围过滤器更改时间范围。</block>
   <block id="a466bc110c2ee16333fcf19f4e7b5dc2" category="list-text">要对结果进行不同的排序，请选择每个列标题以按状态、开始时间、资源名称等进行排序。</block>
   <block id="abfa7a0ebf0068a9c8b2a22cab7ee2b3" category="list-text">如果您正在寻找特定的工作，请选择“高级搜索和过滤”区域以打开“搜索”面板。</block>
@@ -1311,16 +1310,13 @@
   <block id="2b0ecb40cc305f7af9fe7f986b5bb2dd" category="list-text">要下载所有作业的 CSV 文件，请选择“下载”按钮并在下载目录中找到该文件。</block>
   <block id="1dc45daaf063a4c51a123d4f491b6b42" category="list-text">要下载单个作业的 JSON 文件，请选择“操作”菜单<block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block>对于该作业，选择*下载 JSON 文件*，然后在下载目录中找到该文件。</block>
   <block id="f1a15f873b659fefcf2800c9489b580b" category="section-title">审查保留（备份生命周期）作业</block>
-  <block id="5168f75ce01db43e41309dbb9ba106a7" category="paragraph">“保留”作业类型捕获在受NetApp Backup and Recovery保护的卷上启动的所有快照删除作业。</block>
   <block id="9304f305aa89a02039b5cb4ac930f498" category="list-text">选择“高级搜索和过滤”区域以打开搜索面板。</block>
   <block id="67e8772c27eee052c978af0d5760e36a" category="list-text">选择“保留”作为工作类型。</block>
   <block id="1c3cccbea914c20304f63319b99fb585" category="section-title">在NetApp Console通知中心查看备份和恢复警报</block>
   <block id="bacd9783e91bb01896a4e564be2f9207" category="paragraph">NetApp Console通知中心跟踪您启动的备份和恢复作业的进度，以便您可以验证操作是否成功。</block>
   <block id="44d4deb8868ac8159ee85f4a8e68725c" category="inline-link">了解有关通知中心以及如何发送备份和恢复作业警报电子邮件的更多信息</block>
-  <block id="3b27991b1aa229f52835df236ba4b917" category="paragraph">通知中心显示大量快照、复制、备份到云和恢复事件，但只有某些事件会触发电子邮件警报：</block>
   <block id="9e35f94818feb2156d0744e4be9fb2ea" category="cell">操作类型</block>
   <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">事件</block>
-  <block id="630469b1210edbcdbdfbbd418f05c1ca" category="cell">警报级别</block>
   <block id="cfa4593b1fb6aea2e32d9928f2c4349b" category="cell">电子邮件已发送</block>
   <block id="a9a62e70841c4d06dd16306a85700d36" category="cell">激活</block>
   <block id="c74709859d025e289686ff60f170d924" category="cell">系统备份和恢复激活失败</block>
@@ -1992,11 +1988,8 @@
   <block id="705d7d5204c001ada8d7869c065a6a70" category="list-text">如果您计划从已移动到档案对象存储的备份文件中恢复卷数据，则云提供商会收取额外的每 GiB 检索费和每请求费。</block>
   <block id="e44d61516574d94ce56af3468723e18a" category="list-text">如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 DataLock 和勒索软件恢复功能），那么您还将产生来自云提供商的额外出口成本。</block>
   <block id="e1b4a0ddcd3124f71fd5c65649282433" category="paragraph">*服务费*</block>
-  <block id="40ff88020bcb9f0e42545b8535db30db" category="paragraph">服务费用支付给NetApp ，涵盖创建对象存储备份的成本以及从这些备份中恢复卷或文件的成本。您只需为对象存储中保护的数据付费，该费用按备份到对象存储的ONTAP卷的源逻辑使用容量（ ONTAP效率之前）计算。此容量也称为前端兆字节 (FETB)。</block>
   <block id="9b84371e23a14f93e2d9314a2599ac9a" category="admonition">对于 Microsoft SQL Server，当您启动将快照复制到辅助ONTAP目标或对象存储时，会产生费用。</block>
-  <block id="da19f2e50cbb3312d0bcc973d8486544" category="paragraph">有三种方式可以支付备份服务费用：</block>
   <block id="032820ef020ebdcb4972d36db7394681" category="list-text">第一个选项是从您的云提供商处订阅，这样您就可以按月付费。</block>
-  <block id="a426b39cc5038676b39d2265b22cebec" category="list-text">第二种选择是签订年度合同。</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="inline-xref">许可</block>
   <block id="8426d45850b9ec06adef93652db54080" category="list-text">第三种选择是直接从NetApp购买许可证。阅读<block ref="b839456cc57645a9392f4db60a4f044a" category="inline-xref-macro-rx"></block>部分了解详情。</block>
   <block id="30c887a11915f5c1adb97321b93a9e39" category="paragraph">NetApp Backup and Recovery适用于以下消费模式：</block>
@@ -4608,7 +4601,6 @@
   <block id="35521e84b87db7ff299e3d292854a426" category="paragraph">使用NetApp Backup and Recovery从快照、复制到辅助存储的工作负载备份或存储在对象存储中的备份恢复 Hyper-V 工作负载。</block>
   <block id="c71707f07223923dbaab7d7f94cf956b" category="paragraph">使用NetApp Backup and Recovery从快照、复制到辅助存储的保护组备份或存储在对象存储中的备份恢复 KVM 虚拟机。</block>
   <block id="c4a9fad82bfaa655d1dc063df314c9ed" category="list-text">配置日志目录（从 *清单* &gt; *主机*）。如果要在快照中备份数据库主机的日志，请首先在NetApp Backup and Recovery中配置日志。有关详细信息，请参阅<block ref="24412093cd6bfc9d3bb3355f8f2561e8" category="inline-link-macro-rx"></block>。</block>
-  <block id="d4269b8b09864c01c1c86fd8fbf36f7e" category="paragraph">备份生命周期作业跟踪所有已删除或正在排队等待删除的快照。从ONTAP 9.13 开始，您可以在“作业监控”页面上查看所有称为“保留”的作业类型。</block>
   <block id="e55271e37b053fabbe06b3671cfb3c48" category="paragraph">NetApp Backup and Recovery使用NetApp SnapMirror通过创建快照并将其传输到备份位置来同步备份。</block>
   <block id="ac953870175731881060585a6b9ee690" category="paragraph">NetApp Backup and Recovery使您能够将以下源系统中的 Microsoft SQL Server 实例和数据库备份到以下辅助系统以及公有云和私有云提供商中的对象存储。快照保留在源系统上。</block>
   <block id="d07d19d5986209f0a00db1f8289e73d2" category="paragraph">您可以将 Microsoft SQL Server 实例和数据库从驻留在主存储或辅助系统（复制卷）或对象存储（备份文件）中的备份还原到以下系统。快照保存在源系统上，并且只能还原到同一系统。</block>
@@ -4825,4 +4817,36 @@
   <block id="7580e90069a8f15fc27aabfe1ca9e800" category="list-text">在出现的菜单中，选择“恢复虚拟机”。</block>
   <block id="17f7a448c0fdbce6c9a45d289bcf9e83" category="list-text">*数据存储*：从下拉列表中，选择要将快照还原到的数据存储的名称。</block>
   <block id="92ef4bdfd24483ff1f89cbc83ac91ce5" category="list-text">您可以将虚拟机恢复到与备份完全相同的位置或其他位置。</block>
+  <block id="c8114f7295c45b5e4daffaaf7225f524" category="paragraph">您可以使用多个筛选器在“作业监控”页面上筛选操作，例如策略、快照标签、操作类型（保护、恢复、保留或其他）和保护类型（本地快照、复制或备份到云）。</block>
+  <block id="8e357ee9c7f7033fb2069bec01bfa7b5" category="paragraph">备份生命周期作业跟踪所有已删除或正在排队等待删除的快照。从ONTAP 9.13 开始，您可以在“作业监控”页面上查看所有名为“保留”的作业类型。</block>
+  <block id="192bfa3d569dc6662018c9e874cd07e8" category="paragraph">“保留”作业类型捕获在受NetApp Backup and Recovery保护的卷上启动的所有快照删除作业。</block>
+  <block id="81f2ef03318777ac36a4a73237288610" category="paragraph">通知中心会显示大量的快照、复制、云备份和恢复事件，但只有某些事件会触发电子邮件警报：</block>
+  <block id="5dd32721e3e223e6a87039f75b4c315d" category="cell">已生成警报</block>
+  <block id="a907ac316a0e62996e50939eddb00cf1" category="cell">卷现在与快照策略关联</block>
+  <block id="de05700e8dd719721f13f9c6b00f1b7a" category="cell">卷备份或状态已修改</block>
+  <block id="832781ccddafcada7da950ee920e4677" category="cell">系统备份和恢复激活成功</block>
+  <block id="f4ceecec904030bc411eb94dfb80f45a" category="cell">临时卷备份失败</block>
+  <block id="80fd95bd893f8df76c2fa9dd4bad6849" category="cell">临时卷备份成功</block>
+  <block id="5ed835b77018cbf32fbdfb39bcc25527" category="cell">多卷备份失败</block>
+  <block id="0298583ff5a55aeec25dc314bbd47357" category="cell">定时任务</block>
+  <block id="f771739629c02b8a1545a40985444450" category="cell">检查是否缺少快照标签</block>
+  <block id="39e7a35fbe3bf187f05710b99a1abab5" category="cell">未能向ONTAP发送此系统的安全令牌</block>
+  <block id="1da6059b2e40a5d5dcd0f29c0344d522" category="cell">酒吧/订阅活动</block>
+  <block id="75c3b3bb89bde01f9166a94cbfa98588" category="cell">连接失败</block>
+  <block id="4d40cebef25fff7de69b66a1fd2b91ac" category="cell">删除计划快照失败</block>
+  <block id="01a38301f446b2e021e1fa29a4fb17a3" category="cell">卷的计划备份失败</block>
+  <block id="331af99e5b6a5cf68b545ebe121bccfb" category="cell">卷恢复成功</block>
+  <block id="6be567f0c08a3a4af17cffb149fa98ce" category="cell">卷恢复失败</block>
+  <block id="232a2b16a1710c0ed1d16548ba8bb8f1" category="cell">勒索软件</block>
+  <block id="cac26c3a96c9684d7c23fab2394f7ee9" category="cell">备份副本上发现潜在勒索软件攻击</block>
+  <block id="4f7bae4887ae7adfba52529b1ef897f1" category="cell">该系统的备份副本上检测到潜在的勒索软件攻击</block>
+  <block id="781ab27075c39bdc6b2c5a6f2d1c7999" category="cell">修改复制关系以克服容量故障</block>
+  <block id="dcbc181d9286ddc85c2def0e5a88a627" category="cell">目标行动</block>
+  <block id="490b6cef8b42244be7db684255156f74" category="cell">恢复到本地或云端目标故障</block>
+  <block id="985aacac93e75bfb41dca796dd136773" category="cell">按需恢复失败</block>
+  <block id="df660ed534483b04ecb1bf0371cdbe53" category="cell">系统操作</block>
+  <block id="eb31ef8eb2f5dc2e91e3fc628c278047" category="cell">临时卷快照创建失败</block>
+  <block id="cf45f15c2dbe19bdbf9de3e329061b93" category="paragraph">服务费支付给NetApp ，涵盖创建备份到对象存储或ONTAP目标的成本，以及从这些备份恢复卷或文件的成本。您只需为在对象存储或ONTAP中保护的数据付费（这包括SnapMirror配置）。费用是根据备份到对象存储或ONTAP目标的ONTAP卷的源逻辑已用容量（在ONTAP效率之前）计算的。此容量也称为前端兆字节 (FETB)。</block>
+  <block id="1da151060a18e6460ac3d7eb0f913a37" category="paragraph">备份和恢复服务有三种付费方式：</block>
+  <block id="6fa5c823869ff5f58a4f5dcaaa68d86d" category="list-text">第二种选择是购买年度合同。</block>
 </blocks>
