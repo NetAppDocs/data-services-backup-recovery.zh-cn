@@ -4838,7 +4838,7 @@
   <block id="331af99e5b6a5cf68b545ebe121bccfb" category="cell">卷恢复成功</block>
   <block id="6be567f0c08a3a4af17cffb149fa98ce" category="cell">卷恢复失败</block>
   <block id="232a2b16a1710c0ed1d16548ba8bb8f1" category="cell">勒索软件</block>
-  <block id="cac26c3a96c9684d7c23fab2394f7ee9" category="cell">备份副本上发现潜在勒索软件攻击</block>
+  <block id="cac26c3a96c9684d7c23fab2394f7ee9" category="cell">在备份副本上发现潜在的勒索软件攻击</block>
   <block id="4f7bae4887ae7adfba52529b1ef897f1" category="cell">该系统的备份副本上检测到潜在的勒索软件攻击</block>
   <block id="781ab27075c39bdc6b2c5a6f2d1c7999" category="cell">修改复制关系以克服容量故障</block>
   <block id="dcbc181d9286ddc85c2def0e5a88a627" category="cell">目标行动</block>
@@ -4846,7 +4846,4 @@
   <block id="985aacac93e75bfb41dca796dd136773" category="cell">按需恢复失败</block>
   <block id="df660ed534483b04ecb1bf0371cdbe53" category="cell">系统操作</block>
   <block id="eb31ef8eb2f5dc2e91e3fc628c278047" category="cell">临时卷快照创建失败</block>
-  <block id="cf45f15c2dbe19bdbf9de3e329061b93" category="paragraph">服务费支付给NetApp ，涵盖创建备份到对象存储或ONTAP目标的成本，以及从这些备份恢复卷或文件的成本。您只需为在对象存储或ONTAP中保护的数据付费（这包括SnapMirror配置）。费用是根据备份到对象存储或ONTAP目标的ONTAP卷的源逻辑已用容量（在ONTAP效率之前）计算的。此容量也称为前端兆字节 (FETB)。</block>
-  <block id="1da151060a18e6460ac3d7eb0f913a37" category="paragraph">备份和恢复服务有三种付费方式：</block>
-  <block id="6fa5c823869ff5f58a4f5dcaaa68d86d" category="list-text">第二种选择是购买年度合同。</block>
 </blocks>
