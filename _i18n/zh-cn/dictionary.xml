@@ -1986,7 +1986,6 @@
   <block id="705d7d5204c001ada8d7869c065a6a70" category="list-text">如果您计划从已移动到档案对象存储的备份文件中恢复卷数据，则云提供商会收取额外的每 GiB 检索费和每请求费。</block>
   <block id="e44d61516574d94ce56af3468723e18a" category="list-text">如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 DataLock 和勒索软件恢复功能），那么您还将产生来自云提供商的额外出口成本。</block>
   <block id="e1b4a0ddcd3124f71fd5c65649282433" category="paragraph">*服务费*</block>
-  <block id="9b84371e23a14f93e2d9314a2599ac9a" category="admonition">对于 Microsoft SQL Server，当您启动将快照复制到辅助ONTAP目标或对象存储时，会产生费用。</block>
   <block id="032820ef020ebdcb4972d36db7394681" category="list-text">第一个选项是从您的云提供商处订阅，这样您就可以按月付费。</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="inline-xref">许可</block>
   <block id="30c887a11915f5c1adb97321b93a9e39" category="paragraph">NetApp Backup and Recovery适用于以下消费模式：</block>
@@ -4845,8 +4844,9 @@
   <block id="d6c67ddd6689909f9ab7e453c230fd09" category="paragraph">NetApp Backup and Recovery使用NetApp SnapMirror通过创建快照并将其传输到备份位置来同步备份。</block>
   <block id="488ee5eee6409c61723daa55708c1c38" category="paragraph">在NetApp Backup and Recovery中，创建 Microsoft SQL Server 工作负载的报告，以查看备份状态和详细信息，包括成功和失败的备份计数、备份类型、存储系统和时间戳。</block>
   <block id="683c401da81ee8eab953d27954a799cf" category="paragraph">所有ONTAP系统都已内置对备份和恢复的支持，因此无需额外的硬件、软件许可证或媒体网关。这使得备份操作变得简单且经济高效。NetApp Console简化了任何备份策略的实施，包括所有 3-2-1 备份变体，而无需多个资源管理器或专业人员。</block>
-  <block id="cf45f15c2dbe19bdbf9de3e329061b93" category="paragraph">服务费支付给NetApp ，涵盖创建备份到对象存储或ONTAP目标的成本，以及从这些备份恢复卷或文件的成本。您只需为在对象存储或ONTAP中保护的数据付费（这包括SnapMirror配置）。费用是根据备份到对象存储或ONTAP目标的ONTAP卷的源逻辑已用容量（在ONTAP效率之前）计算的。此容量也称为前端兆字节 (FETB)。</block>
   <block id="1da151060a18e6460ac3d7eb0f913a37" category="paragraph">备份和恢复服务有三种付费方式：</block>
   <block id="6fa5c823869ff5f58a4f5dcaaa68d86d" category="list-text">第二种选择是购买年度合同。</block>
   <block id="41bda454559167e0de7967190676c8d0" category="list-text">第三种选择是直接从NetApp购买许可证。请参阅 <block ref="b839456cc57645a9392f4db60a4f044a" category="inline-xref-macro-rx"></block> 详情请见相关章节。</block>
+  <block id="6f2ce7f1231e53c03d29e2df6055acf0" category="paragraph">对于ONTAP卷工作负载，您只需为受对象存储保护的卷付费。费用是根据源ONTAP卷在应用效率之前所使用的逻辑容量计算的，也称为前端 TB（FETB）。</block>
+  <block id="2e122fa1e06865f6dee3fd6d67ea1488" category="paragraph">对于所有其他工作负载，您需要为至少保护到一个辅助存储目标或对象存储目标的资源付费。费用是根据源工作负载的逻辑大小计算的。对于数据库而言，这意味着数据库的大小；对于虚拟机而言，这意味着虚拟机的大小。</block>
 </blocks>
