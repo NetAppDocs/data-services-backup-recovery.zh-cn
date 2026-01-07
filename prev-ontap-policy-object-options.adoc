@@ -72,7 +72,7 @@ NetApp Backup and Recovery为您的卷备份提供 DataLock 和勒索软件保�
 
 === 什么是DataLock
 
-使用此功能，您可以将通过SnapMirror复制到云的云快照锁定，还可以启用该功能来检测勒索软件攻击并恢复对象存储上快照的一致副本。  AWS、Azure 和StorageGRID支持此功能。
+借助此功能，您可以锁定通过SnapMirror复制到云端的云快照，还可以启用该功能来检测勒索软件攻击并恢复对象存储上快照的一致副本。此功能在 AWS、Azure、Google Cloud Platform 和StorageGRID上均受支持。
 
 DataLock 可保护您的备份文件在一定时间内不被修改或删除 - 也称为_不可变存储_。此功能使用对象存储提供商的技术进行“对象锁定”。
 
@@ -165,25 +165,23 @@ DataLock 保留设置将覆盖备份策略中的策略保留设置。这可能�
 
 [cols="55,45"]
 |===
-| 源系统 | 备份文件目标 ifdef::aws[] 
+| 源系统 | 备份文件目标位置 
 
 
-| AWS 中的Cloud Volumes ONTAP | 亚马逊 S3 endif::aws[] ifdef::azure[] 
+| AWS 中的Cloud Volumes ONTAP | Amazon S3 
 
 
-| Azure 中的Cloud Volumes ONTAP | Azure Blob endif::azure[] ifdef::gcp[] 
+| Azure 中的Cloud Volumes ONTAP | Azure Blob 
 
 
-| Google Cloud 中的Cloud Volumes ONTAP | 谷歌云 endif::gcp[] 
+| Google Cloud 中的Cloud Volumes ONTAP | Google Cloud 
 
 
-| 本地ONTAP系统 | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Azure Blob endif::azure[] ifdef::gcp[] Google Cloud endif::gcp[] NetApp StorageGRID 
+| 本地ONTAP系统 | Amazon S3 Azure Blob Google Cloud NetApp StorageGRID 
 |===
 
 
 === 要求
-
-ifdef::aws[]
 
 * 对于 AWS：
 +
@@ -228,33 +226,17 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * 对于 Azure：
 +
 ** 您的集群必须运行ONTAP 9.12.1 或更高版本
 ** 控制台代理可以部署在云端或您的本地
 
 
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * 对于 Google Cloud：
 +
 ** 您的集群必须运行ONTAP 9.17.1 或更高版本
 ** 控制台代理可以部署在云端或您的本地
 
-
-
-
-endif::gcp[]
 
 * 对于StorageGRID：
 +
@@ -355,8 +337,6 @@ NOTE: Microsoft Azure 使用锁定和解锁模式。
 ====
 每个备份策略都提供了一个“存档策略”部分，您可以将其应用于备份文件。
 
-ifdef::aws[]
-
 * 在 AWS 中，备份从“标准”存储类开始，并在 30 天后转换到“标准-不频繁访问”存储类。
 +
 如果您的集群使用的是ONTAP 9.10.1 或更高版本，您可以将较旧的备份分层到 _S3 Glacier_ 或 _S3 Glacier Deep Archive_ 存储。link:prev-reference-aws-archive-storage-tiers.html["了解有关 AWS 档案存储的更多信息"]。
@@ -369,42 +349,23 @@ ifdef::aws[]
 
 
 
-endif::aws[]
-
-ifdef::azure[]
-
 * 在 Azure 中，备份与 _Cool_ 访问层相关联。
 +
 如果您的集群使用的是ONTAP 9.10.1 或更高版本，则可以将旧备份分层到_Azure Archive_存储。link:prev-reference-azure-archive-storage-tiers.html["了解有关 Azure 档案存储的更多信息"]。
 
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 * 在 GCP 中，备份与 _Standard_ 存储类相关联。
 +
 如果您的本地集群使用的是ONTAP 9.12.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and Recovery UI 中的“_Archive_”存储中，以进一步优化成本。link:prev-reference-gcp-archive-storage-tiers.html["详细了解 Google 归档存储"]。
-
-
-
-endif::gcp[]
 
 * 在StorageGRID中，备份与 _Standard_ 存储类相关联。
 +
 如果您的本地集群使用ONTAP 9.12.1 或更高版本，并且您的StorageGRID系统使用 11.4 或更高版本，则可以将较旧的备份文件存档到公共云档案存储。
 
++
+** 对于 AWS，您可以将备份分层存储到 AWS _S3 Glacier_ 或 _S3 Glacier Deep Archive_ 存储中。link:prev-reference-aws-archive-storage-tiers.html["了解有关 AWS 档案存储的更多信息"^]。
+** 对于 Azure，您可以将较旧的备份分层存储到 _Azure Archive_ 存储中。link:prev-reference-azure-archive-storage-tiers.html["了解有关 Azure 档案存储的更多信息"^]。
 
 
-ifdef::aws[]
 
-+ ** 对于 AWS，您可以将备份分层到 AWS _S3 Glacier_ 或 _S3 Glacier Deep Archive_ 存储。link:prev-reference-aws-archive-storage-tiers.html["了解有关 AWS 档案存储的更多信息"^]。
-
-endif::aws[]
-
-ifdef::azure[]
-
-+ ** 对于 Azure，您可以将旧备份分层到_Azure Archive_存储。link:prev-reference-azure-archive-storage-tiers.html["了解有关 Azure 档案存储的更多信息"^]。
-
-endif::azure[]

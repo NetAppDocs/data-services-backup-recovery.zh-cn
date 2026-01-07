@@ -236,27 +236,12 @@ NOTE: 数据保护卷不支持按需卷备份。
 如果您的集群运行的是ONTAP 9.10.1 或更高版本，您还可以选择在一定天数后启用或禁用备份分层到档案存储。
 
 +
-ifdef::aws[]
+link:prev-reference-aws-archive-storage-tiers.html["了解有关使用 AWS 档案存储的更多信息"]。link:prev-reference-azure-archive-storage-tiers.html["了解有关使用 Azure 档案存储的详细信息"]。link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何使用 Google 归档存储"]。（需要ONTAP 9.12.1。）
+
++
+请注意，如果您停止将备份分层到归档存储，则任何已分层到归档存储的备份文件仍将保留在该层中 - 它们不会自动移回标准层。只有新创建的卷备份才会位于标准层。
 
 
-
-link:prev-reference-aws-archive-storage-tiers.html["了解有关使用 AWS 档案存储的更多信息"]。
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["了解有关使用 Azure 档案存储的详细信息"]。
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何使用 Google 归档存储"]。（需要ONTAP 9.12.1。）
-
-endif::gcp[]
-
-+ 请注意，如果您停止将备份分层到存档，则任何已分层到存档存储的备份文件都会留在该层中 - 它们不会自动移回标准层。只有新的卷备份才会驻留在标准层。
 
 
 
@@ -282,25 +267,9 @@ endif::gcp[]
 如果您的集群运行的是ONTAP 9.10.1 或更高版本，您还可以选择在一定天数后启用或禁用备份分层到档案存储。
 
 +
-ifdef::aws[]
+link:prev-reference-aws-archive-storage-tiers.html["了解有关使用 AWS 档案存储的更多信息"]。link:prev-reference-azure-archive-storage-tiers.html["了解有关使用 Azure 档案存储的详细信息"]。link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何使用 Google 归档存储"]。（需要ONTAP 9.12.1。）
 
 
-
-link:prev-reference-aws-archive-storage-tiers.html["了解有关使用 AWS 档案存储的更多信息"]。
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["了解有关使用 Azure 档案存储的详细信息"]。
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何使用 Google 归档存储"]。（需要ONTAP 9.12.1。）
-
-endif::gcp[]
 
 
 

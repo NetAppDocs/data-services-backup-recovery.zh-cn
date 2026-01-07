@@ -34,23 +34,7 @@ summary: 您可以使用搜索和恢复功能从ONTAP备份文件中恢复卷、
 
 
 
-ifdef::aws[]
-
-link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"]。
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"]。
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"]。
-
-endif::gcp[]
+link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案存储恢复的更多信息"]。link:prev-reference-azure-archive-storage-tiers.html["了解有关从 Azure 档案存储还原的详细信息"]。link:prev-reference-gcp-archive-storage-tiers.html["详细了解如何从 Google 存档存储中恢复"]。
 
 [NOTE]
 ====
@@ -76,16 +60,16 @@ endif::gcp[]
 2+| 备份文件位置 | 目的地系统 
 
 
-| *对象存储（备份）* | *辅助系统（复制）* | ifdef::aws[] 
+| *对象存储（备份）* | *辅助系统（复制）* |  
 
 
-| Amazon S3 | AWS 本地ONTAP系统中的Cloud Volumes ONTAP | AWS 本地ONTAP系统中的Cloud Volumes ONTAP endif::aws[] ifdef::azure[] 
+| Amazon S3 | AWS 本地ONTAP系统中的Cloud Volumes ONTAP | AWS 本地ONTAP系统中的Cloud Volumes ONTAP 
 
 
-| Azure Blob | Azure 本地ONTAP系统中的Cloud Volumes ONTAP | Azure 中的Cloud Volumes ONTAP本地ONTAP系统 endif::azure[] ifdef::gcp[] 
+| Azure Blob | Azure 本地ONTAP系统中的Cloud Volumes ONTAP | Azure 本地ONTAP系统中的Cloud Volumes ONTAP 
 
 
-| Google Cloud Storage | Google 本地ONTAP系统中的Cloud Volumes ONTAP | Google 本地ONTAP系统中的Cloud Volumes ONTAP endif::gcp[] 
+| Google Cloud Storage | Google 本地ONTAP系统中的Cloud Volumes ONTAP | Google 本地ONTAP系统中的Cloud Volumes ONTAP 
 
 
 | NetAppStorageGRID | 本地ONTAP系统Cloud Volumes ONTAP | 本地ONTAP系统 
@@ -95,27 +79,9 @@ endif::gcp[]
 |===
 对于搜索和还原，控制台代理可以安装在以下位置：
 
-ifdef::aws[]
-
 * 对于 Amazon S3，控制台代理可以部署在 AWS 或您的场所
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * 对于 Azure Blob，控制台代理可以部署在 Azure 中或您的本地
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * 对于 Google Cloud Storage，控制台代理必须部署在您的 Google Cloud Platform VPC 中
-
-
-endif::gcp[]
-
 * 对于StorageGRID，控制台代理必须部署在您的场所；无论是否有互联网访问
 * 对于ONTAP S3，控制台代理可以部署在您的场所（有或没有互联网访问）或云提供商环境中
 
@@ -147,8 +113,6 @@ endif::gcp[]
 
 [%collapsible]
 ====
-ifdef::aws[]
-
 * AWS 要求：
 +
 ** 必须将特定的 Amazon Athena、AWS Glue 和 AWS S3 权限添加到为控制台提供权限的用户角色。link:prev-ontap-backup-onprem-aws.html["确保所有权限均已正确配置"]。
@@ -158,10 +122,6 @@ ifdef::aws[]
 
 
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 * Azure 要求：
 +
@@ -175,10 +135,6 @@ ifdef::azure[]
 
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 * Google Cloud 要求：
 +
 ** 必须将特定的 Google BigQuery 权限添加到为NetApp Console提供权限的用户角色。link:prev-ontap-backup-onprem-gcp.html["确保所有权限均已正确配置"]。
@@ -186,10 +142,6 @@ ifdef::gcp[]
 如果您已经使用NetApp Backup and Recovery以及您过去配置的控制台代理，则现在需要将 BigQuery 权限添加到控制台用户角色。它们是搜索和恢复所必需的。
 
 
-
-
-
-endif::gcp[]
 
 * StorageGRID和ONTAP S3 要求：
 +
@@ -336,34 +288,15 @@ mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
 如果您选择本地ONTAP系统，并且尚未配置与对象存储的集群连接，系统将提示您输入其他信息：
 
 +
-ifdef::aws[]
-
-+
 *** 从 Amazon S3 还原时，选择ONTAP集群中目标卷所在的 IP 空间，输入您创建的用户的访问密钥和密钥，以授予ONTAP集群对 S3 存储桶的访问权限，并可选择选择私有 VPC 端点以进行安全数据传输。link:prev-ontap-backup-onprem-aws.html["查看有关这些要求的详细信息"]。
+*** 从 Azure Blob 还原时，选择目标卷所在的ONTAP集群中的 IP 空间，并通过选择 VNet 和子网来选择用于安全数据传输的私有端点。link:prev-ontap-backup-onprem-azure.html["查看有关这些要求的详细信息"]。
+*** 从 Google Cloud Storage 恢复时，选择目标卷所在的ONTAP集群中的 IP 空间，以及用于访问对象存储的访问密钥和密钥。link:prev-ontap-backup-onprem-gcp.html["查看有关这些要求的详细信息"]。
+*** 从StorageGRID还原时，输入StorageGRID服务器的 FQDN 和ONTAP应用于与StorageGRID进行 HTTPS 通信的端口，输入访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。link:prev-ontap-backup-onprem-storagegrid.html["查看有关这些要求的详细信息"]。
+*** 从ONTAP S3 还原时，输入ONTAP S3 服务器的 FQDN 和ONTAP应用于与ONTAP S3 进行 HTTPS 通信的端口，选择访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。link:prev-ontap-backup-onprem-ontaps3.html["查看有关这些要求的详细信息"]。
 
 
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* 从 Azure Blob 还原时，选择目标卷所在的ONTAP集群中的 IP 空间，并通过选择 VNet 和子网来选择用于安全数据传输的私有端点。link:prev-ontap-backup-onprem-azure.html["查看有关这些要求的详细信息"]。
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* 从 Google Cloud Storage 恢复时，选择目标卷所在的ONTAP集群中的 IP 空间，以及用于访问对象存储的访问密钥和密钥。link:prev-ontap-backup-onprem-gcp.html["查看有关这些要求的详细信息"]。
-
-
-endif::gcp[]
-
-* 从StorageGRID还原时，输入StorageGRID服务器的 FQDN 和ONTAP应用于与StorageGRID进行 HTTPS 通信的端口，输入访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。link:prev-ontap-backup-onprem-storagegrid.html["查看有关这些要求的详细信息"]。
-* 从ONTAP S3 还原时，输入ONTAP S3 服务器的 FQDN 和ONTAP应用于与ONTAP S3 进行 HTTPS 通信的端口，选择访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。link:prev-ontap-backup-onprem-ontaps3.html["查看有关这些要求的详细信息"]。
 
 
 .结果

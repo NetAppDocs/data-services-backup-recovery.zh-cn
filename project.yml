@@ -9,19 +9,6 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   rss_page: whats-new.html
-  filter:
-    label: 云提供商
-    default: 所有云提供商
-    options:
-    - name: Amazon Web Services
-      alias: AWS
-      id: aws
-    - name: Google Cloud
-      alias: Google Cloud
-      id: gcp
-    - name: Microsoft Azure
-      alias: Azure
-      id: azure
   langs: zh-cn,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-tw
 sidebar:
   entries:

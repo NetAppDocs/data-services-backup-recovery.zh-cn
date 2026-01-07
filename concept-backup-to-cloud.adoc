@@ -136,35 +136,13 @@ NetApp不会向您收取试用版的使用费用。但是，您需要承担与�
 
 * 对于使用“搜索和还原”还原数据，您的云提供商会提供某些资源，并且您的搜索请求扫描的数据量会产生每 TiB 成本。  （浏览和恢复不需要这些资源。）
 +
-ifdef::aws[]
-
-+
 ** 在 AWS 中， https://aws.amazon.com/athena/faqs/["亚马逊雅典娜"^]和 https://aws.amazon.com/glue/faqs/["AWS Glue"^]资源部署在新的 S3 存储桶中。
-+
-endif::aws[]
-
-
-
-+
-ifdef::azure[]
-
-+
 ** 在 Azure 中， https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapse 工作区"^]和 https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure 数据湖存储"^]在您的存储帐户中配置以存储和分析您的数据。
-+
-endif::azure[]
+** 在 Google 中，部署了一个新的存储桶，并且 https://cloud.google.com/bigquery["Google Cloud BigQuery 服务"^]在帐户/项目级别进行配置。
 
 
-
-
-
-ifdef::gcp[]
-
-* 在 Google 中，部署了一个新的存储桶，并且 https://cloud.google.com/bigquery["Google Cloud BigQuery 服务"^]在帐户/项目级别进行配置。endif::gcp[]
-+
-** 如果您计划从已移动到档案对象存储的备份文件中恢复卷数据，则云提供商会收取额外的每 GiB 检索费和每请求费。
-** 如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 DataLock 和勒索软件恢复功能），那么您还将产生来自云提供商的额外出口成本。
-
-
+* 如果您计划从已移动到档案对象存储的备份文件中恢复卷数据，则云提供商会收取额外的每 GiB 检索费和每请求费。
+* 如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 DataLock 和勒索软件恢复功能），那么您还将产生来自云提供商的额外出口成本。
 
 
 *服务费*

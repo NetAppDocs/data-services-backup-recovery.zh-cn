@@ -24,11 +24,7 @@ Amazon Web Services (AWS) Identity and access Roles Anywhere 服务使您能够�
 
 在此版本中，对 AWS IAM Roles Anywhere 服务的支持是一种技术预览。
 
-ifdef::aws[]
-
 这适用于link:prev-ontap-backup-cvo-aws.html["将Cloud Volumes ONTAP备份到 AWS"]。
-
-endif::aws[]
 
 参考 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["NetApp Backup and Recovery2024 年 7 月发布博客"]。
 

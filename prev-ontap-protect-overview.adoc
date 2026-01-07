@@ -107,19 +107,19 @@ NetApp Backup and Recovery使您能够将ONTAP卷从以下源系统备份到以�
 
 [cols="33,33,33"]
 |===
-| 源系统 | 辅助系统（复制） | 目标对象存储（备份）ifdef::aws[] 
+| 源系统 | 辅助系统（复制） | 目标对象存储（备份） 
 
 
-| AWS 中的Cloud Volumes ONTAP | AWS 本地ONTAP系统中的Cloud Volumes ONTAP | 亚马逊 S3 endif::aws[] ifdef::azure[] 
+| AWS 中的Cloud Volumes ONTAP | AWS 本地ONTAP系统中的Cloud Volumes ONTAP | Amazon S3 
 
 
-| Azure 中的Cloud Volumes ONTAP | Azure 本地ONTAP系统中的Cloud Volumes ONTAP | Azure Blob endif::azure[] ifdef::gcp[] 
+| Azure 中的Cloud Volumes ONTAP | Azure 本地ONTAP系统中的Cloud Volumes ONTAP | Azure Blob 
 
 
-| Google 的Cloud Volumes ONTAP | Google 本地ONTAP系统中的Cloud Volumes ONTAP | Google 云端存储 endif::gcp[] 
+| Google 的Cloud Volumes ONTAP | Google 本地ONTAP系统中的Cloud Volumes ONTAP | Google Cloud Storage 
 
 
-| 本地ONTAP系统 | Cloud Volumes ONTAP本地ONTAP系统 | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Azure Blob endif::azure[] ifdef::gcp[] Google Cloud Storage endif::gcp[] NetApp StorageGRID ONTAP S3 
+| 本地ONTAP系统 | Cloud Volumes ONTAP本地ONTAP系统 | Amazon S3 Azure Blob Google Cloud Storage NetApp StorageGRID ONTAP S3 
 |===
 
 
@@ -132,16 +132,16 @@ NetApp Backup and Recovery使您能够将ONTAP卷从以下源系统备份到以�
 2+| 备份文件位置 | 目的地系统 
 
 
-| *对象存储（备份）* | *辅助系统（复制）* | ifdef::aws[] 
+| *对象存储（备份）* | *辅助系统（复制）* |  
 
 
-| Amazon S3 | AWS 本地ONTAP系统中的Cloud Volumes ONTAP | AWS 本地ONTAP系统中的Cloud Volumes ONTAP endif::aws[] ifdef::azure[] 
+| Amazon S3 | AWS 本地ONTAP系统中的Cloud Volumes ONTAP | AWS 本地ONTAP系统中的Cloud Volumes ONTAP 
 
 
-| Azure Blob | Azure 本地ONTAP系统中的Cloud Volumes ONTAP | Azure 中的Cloud Volumes ONTAP本地ONTAP系统 endif::azure[] ifdef::gcp[] 
+| Azure Blob | Azure 本地ONTAP系统中的Cloud Volumes ONTAP | Azure 本地ONTAP系统中的Cloud Volumes ONTAP 
 
 
-| Google Cloud Storage | Google 本地ONTAP系统中的Cloud Volumes ONTAP | Google 本地ONTAP系统中的Cloud Volumes ONTAP endif::gcp[] 
+| Google Cloud Storage | Google 本地ONTAP系统中的Cloud Volumes ONTAP | Google 本地ONTAP系统中的Cloud Volumes ONTAP 
 
 
 | NetAppStorageGRID | 本地ONTAP系统Cloud Volumes ONTAP | 本地ONTAP系统 
@@ -187,33 +187,10 @@ NOTE: NetApp Backup and Recovery不支持FlexCache卷的备份。
 
 * 对于使用“搜索和还原”还原数据，您的云提供商会提供某些资源，并且您的搜索请求扫描的数据量会产生每 TiB 成本。  （浏览和恢复不需要这些资源。）
 +
-ifdef::aws[]
-
-+
 ** 在 AWS 中， https://aws.amazon.com/athena/faqs/["亚马逊雅典娜"^]和 https://aws.amazon.com/glue/faqs/["AWS Glue"^]资源部署在新的 S3 存储桶中。
-+
-endif::aws[]
-
-
-
-+
-ifdef::azure[]
-
-+
 ** 在 Azure 中， https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapse 工作区"^]和 https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure 数据湖存储"^]在您的存储帐户中配置以存储和分析您的数据。
-+
-endif::azure[]
+** 在 Google 中，部署了一个新的存储桶，并且 https://cloud.google.com/bigquery["Google Cloud BigQuery 服务"^]在帐户/项目级别进行配置。
 
-
-
-
-
-ifdef::gcp[]
-
-* 在 Google 中，部署了一个新的存储桶，并且 https://cloud.google.com/bigquery["Google Cloud BigQuery 服务"^]在帐户/项目级别进行配置。
-
-
-endif::gcp[]
 
 * 如果您计划从已移动到档案对象存储的备份文件中恢复卷数据，则云提供商会收取额外的每 GiB 检索费和每请求费。
 * 如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您已为云备份启用了 DataLock 和勒索软件恢复功能），那么您还将产生来自云提供商的额外出口成本。
@@ -262,17 +239,11 @@ link:br-start-licensing.html["了解如何设置即用即付订阅"]。
 
 === 年度合同
 
-ifdef::aws[]
-
 使用 AWS 时，有两种年度合同可供选择，期限分别为 1 年、2 年或 3 年：
 
 * “云备份”计划使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
 * “CVO Professional”计划使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括根据此许可证收费的Cloud Volumes ONTAP卷的无限制备份（备份容量不计入许可证）。
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 使用 Azure 时，有两种年度合同可供选择，分别为 1 年、2 年或 3 年：
 
@@ -280,13 +251,7 @@ ifdef::azure[]
 * “CVO Professional”计划使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括根据此许可证收费的Cloud Volumes ONTAP卷的无限制备份（备份容量不计入许可证）。
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 当您使用 GCP 时，您可以向NetApp请求私人优惠，然后在NetApp Backup and Recovery激活期间从 Google Cloud Marketplace 订阅时选择该计划。
-
-endif::gcp[]
 
 link:br-start-licensing.html["了解如何制定年度合同"]。
 
@@ -314,29 +279,15 @@ image:diagram-backup-recovery-general.png["该图显示了NetApp Backup and Reco
 * 快照存储在源系统的源卷上。
 * _复制卷_驻留在二级存储系统上 - Cloud Volumes ONTAP或本地ONTAP系统。
 * _备份副本_存储在控制台在您的云帐户中创建的对象存储中。每个集群/系统有一个对象存储，控制台将对象存储命名为：“netapp-backup-clusteruuid”。请确保不要删除此对象存储。
++
+** 在 AWS 中，控制台可以实现 https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 阻止公共访问功能"^] 在 S3 铲斗上。
+** 在 Azure 中，控制台使用新的或现有的资源组，并为 Blob 容器分配存储帐户。控制台 https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["阻止公众访问您的 Blob 数据"] 默认情况下。
+** 在 GCP 中，控制台使用带有 Google Cloud Storage 存储桶存储帐户的新项目或现有项目。
+** 在StorageGRID中，控制台使用现有的租户帐户来管理 S3 存储桶。
+** 在ONTAP S3 中，控制台使用 S3 存储桶的现有用户帐户。
 
 
-ifdef::aws[]
 
-+ ** 在 AWS 中，控制台启用 https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 阻止公共访问功能"^]在 S3 存储桶上。
-
-endif::aws[]
-
-ifdef::azure[]
-
-+ ** 在 Azure 中，控制台使用带有 Blob 容器存储帐户的新资源组或现有资源组。控制台 https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["阻止公众访问您的 Blob 数据"]默认情况下。
-
-endif::azure[]
-
-ifdef::gcp[]
-
-+ ** 在 GCP 中，控制台使用带有存储帐户的新项目或现有项目作为 Google Cloud Storage 存储桶。
-
-endif::gcp[]
-
-+ ** 在StorageGRID中，控制台使用现有的租户帐户作为 S3 存储桶。
-
-+ ** 在ONTAP S3 中，控制台使用 S3 存储桶的现有用户帐户。
 
 如果您将来想要更改集群的目标对象存储，则需要link:prev-ontap-backup-manage.html["取消注册系统的NetApp Backup and Recovery"]，然后使用新的云提供商信息启用NetApp Backup and Recovery 。
 
@@ -387,17 +338,11 @@ TIP: 如果您将备份分层到档案存储，则无法启用 DataLock。
 
 使用某些云存储时，您可以在一定天数后将较旧的备份文件移动到较便宜的存储类/访问层。您还可以选择立即将备份文件发送到档案存储，而无需写入标准云存储。请注意，如果您启用了 DataLock，则无法使用档案存储。
 
-ifdef::aws[]
-
 * 在 AWS 中，备份从“标准”存储类开始，并在 30 天后转换到“标准-不频繁访问”存储类。
 +
 如果您的集群使用的是ONTAP 9.10.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and RecoveryUI 中的“S3 Glacier”或“S3 Glacier Deep Archive”存储，以进一步优化成本。link:prev-reference-aws-archive-storage-tiers.html["了解有关 AWS 档案存储的更多信息"]。
 
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 * 在 Azure 中，备份与 _Cool_ 访问层相关联。
 +
@@ -405,17 +350,9 @@ ifdef::azure[]
 
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 * 在 GCP 中，备份与 _Standard_ 存储类相关联。
 +
 如果您的集群使用的是ONTAP 9.12.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and Recovery UI 中的“_Archive_”存储中，以进一步优化成本。link:prev-reference-gcp-archive-storage-tiers.html["详细了解 Google 归档存储"]。
-
-
-
-endif::gcp[]
 
 * 在StorageGRID中，备份与 _Standard_ 存储类相关联。
 +
