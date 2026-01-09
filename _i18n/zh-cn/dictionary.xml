@@ -1013,10 +1013,7 @@
   <block id="47d76616568defc7344e2cfbcdf92653" category="paragraph">出现可能的还原点列表。</block>
   <block id="effade56c0dfab07db57229c5b4e6e4e" category="list-text">选择您想要使用的还原点。</block>
   <block id="6f012e8e8abed5b3c7ee277d331469f3" category="list-text">选择快照源位置。</block>
-  <block id="39e791cd576f013480b8ac3c88fcd655" category="list-text">选择“*完成*”或“*下一步*”继续进入“恢复目标设置”页面。</block>
-  <block id="94697b58b65e2562f9eac2c0fef08c35" category="paragraph">接下来，您可以选择目标设置以及恢复前和恢复后选项。</block>
   <block id="23de539bf06cfaf2cd9dc515802272ce" category="floating-title">目的地选择</block>
-  <block id="5dd0bd8435aec915fe085d771534ba47" category="list-text">选择目标设置以及恢复前和恢复后选项。</block>
   <block id="abfc7c0c366258e23e15cd12a5f89811" category="open-title">恢复到原始位置</block>
   <block id="f841432c2e7b95f0e1480a64c27a957d" category="list-text">*启用快速恢复*：选择此选项可执行快速恢复操作。恢复的卷和数据将立即可用。请勿在需要高性能的卷上使用此功能，因为在快速恢复过程中，访问数据的速度可能比平时慢。</block>
   <block id="6ca1e0675a4f2fa0425b153f38956afe" category="list-text">*预恢复选项*：输入应在恢复操作之前运行的脚本的完整路径以及该脚本所采用的任何参数。</block>
@@ -1590,7 +1587,6 @@
   <block id="e778183067d12c261c4b71b0ccc4eaad" category="open-title">从快照还原，无需恢复</block>
   <block id="e9bde7b168cf5fbb3d9d5b297ca8bfb2" category="list-text">选择*从没有恢复的快照中恢复*。</block>
   <block id="002b8c566162a2cd02c4e355805ac3f6" category="paragraph">显示匹配的快照。</block>
-  <block id="ae0355b3acbc8735275d2415050e631f" category="list-text">选择“*下一步*”继续进入“恢复目标设置”页面。</block>
   <block id="98b2af096c36f02920b21c788a2a0dc6" category="list-text">*目的地设置*：</block>
   <block id="12c0707880528cef62d0f97d7a498d1a" category="list-text">选择恢复整个数据库或仅恢复数据库的表空间。</block>
   <block id="78847577cebd91850d891ed95fe6bce3" category="list-text">*控制文件*：可选地，启用此选项也可以恢复数据库控制文件。</block>
@@ -4698,7 +4694,6 @@
   <block id="f16b36eea83bd45d35d7613cab7f6cf8" category="list-text">选择快照的还原目标位置：</block>
   <block id="086fbde8fbe590f104f5100808b42c0b" category="list-text">*本地*：从本地位置恢复快照。</block>
   <block id="3a786499ea5d54fb6bb418032aca3117" category="list-text">*辅助*：从远程存储位置恢复快照。</block>
-  <block id="bc9234ce73c565f247a8ae290b842ff6" category="list-text">选择目标设置以及恢复前和恢复后选项。</block>
   <block id="8ed9e5a565b596ef7f9cb364cf2536d7" category="paragraph">恢复到原始位置时，您无法更改目标 vCenter、ESXi 主机、数据存储或虚拟机的名称。恢复操作会覆盖原始虚拟机。</block>
   <block id="10b0d3ffb47c4e67fc652e3b0f0220d7" category="list-text">选择“原始位置”窗格。</block>
   <block id="1b8d4d654146b4eec3cc22bd8b461dbb" category="list-text">从下列选项中进行选择：</block>
@@ -4737,7 +4732,6 @@
   <block id="cd1f1a4a4415e09f2c3fc9ab17aff625" category="list-text">启用要恢复的快照对应的单选按钮。</block>
   <block id="57385260ec48afcc58eb70dc9059c8c0" category="list-text">*对象存储*：从对象存储恢复快照。</block>
   <block id="c1389ae5f188f85d79b6e1088e21576d" category="paragraph">如果选择辅助存储，请从下拉列表中选择目标位置。</block>
-  <block id="a1ff6993d36232fbd0d0471769216a69" category="list-text">选择目标设置以及恢复前和恢复后选项：</block>
   <block id="21ba1fcc630eae9c060829f621ac7124" category="paragraph">恢复到原始位置时，您无法更改目标 vCenter、ESXi 主机、数据存储或虚拟磁盘的名称。原虚拟磁盘被覆盖。</block>
   <block id="9f63eee4b169a6ac1fce2d2e6ec65d64" category="list-text">在“目标设置”部分，选中要恢复的任何虚拟磁盘的复选框。</block>
   <block id="e3926503d87ede09d428d2ca5fc4abf5" category="paragraph">恢复到备用位置时，您可以更改目标数据存储。无论您选择哪个数据存储，恢复操作后虚拟磁盘都会附加到原始虚拟机。</block>
@@ -4811,4 +4805,9 @@
   <block id="fc2c90af4df4de3a15611b7cf431a683" category="list-text">在 GCP 中，控制台使用带有 Google Cloud Storage 存储桶存储帐户的新项目或现有项目。</block>
   <block id="96e895b3970ec91a00e97afd2eb59250" category="list-text">在StorageGRID中，控制台使用现有的租户帐户来管理 S3 存储桶。</block>
   <block id="836b4aa41fc8e9938df6b2350419d4f6" category="paragraph"><block ref="ee2d4c64a4d42f71a3357c6cd2b7b94b" category="inline-link-macro-rx"></block>。<block ref="bf09a0f29ffa1dc0ee63da51e58f16ef" category="inline-link-macro-rx"></block>。<block ref="9220ac6939e2eccbf843225c6d0eb5f6" category="inline-link-macro-rx"></block>。</block>
+  <block id="ab042cf6b82a1ca2824a55aecccf0f72" category="list-text">选择“下一步”继续。</block>
+  <block id="38cf859695687379726e3ea14b05ddc1" category="list-text">选择恢复目标位置和设置：</block>
+  <block id="a30b9d9cd5fcd792454de596b4a70bbf" category="paragraph">恢复到原始位置后，您可以通过展开“目标设置”部分来查看目标设置，但您无法更改它们。</block>
+  <block id="6ae1e8b4e49e0eb340bfe865ab9bf2be" category="list-text">在“恢复后选项”部分，请考虑以下选项：</block>
+  <block id="549fac1df4ed1f1a9ecf014524bf6245" category="paragraph">*重启虚拟机*：启用此选项可在恢复后启动新的虚拟机。</block>
 </blocks>
