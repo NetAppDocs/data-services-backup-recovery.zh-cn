@@ -45,3 +45,14 @@ NetApp Backup and Recovery中的 KVM 工作负载的私人预览版不支持以�
 * RAW磁盘格式
 * NetFS 以外的存储池类型（仅支持 NetFS）
 
+
+
+
+== 故障排除说明
+
+使用NetApp Backup and Recovery的 KVM 工作负载私有预览版时，请注意以下事项：
+
+* 为确保 KVM 工作负载恢复成功完成，请确保在用于 KVM 备份的保护策略中启用“启用 VM 一致性快照”设置。
+* 除非将所有受管主机添加到NetApp Backup and Recovery，否则无法备份由 Apache CloudStack 管理的 KVM 主机的存储池。作为一种变通方法，将每个 CloudStack 管理的 KVM 主机添加到NetApp Backup and Recovery。
+* 您无法备份属于保护组的已停止虚拟机。作为一种变通方法，在开始备份之前，将已停止的虚拟机从保护组中移除。
+

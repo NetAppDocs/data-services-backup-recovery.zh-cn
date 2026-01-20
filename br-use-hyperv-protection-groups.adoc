@@ -36,7 +36,7 @@ summary: 在NetApp Backup and Recovery中创建和管理 Hyper-V 工作负载的
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择一个工作负载来查看保护详细信息。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
-. 选择*保护组*选项卡。
+. 选择“保护组”菜单。
 . 选择*创建保护组*。
 . 为保护组提供一个名称。
 . 选择要包含在保护组中的虚拟机。
@@ -45,6 +45,25 @@ summary: 在NetApp Backup and Recovery中创建和管理 Hyper-V 工作负载的
 . 选择“下一步”。
 . 检查配置。
 . 选择“*创建*”来创建保护组。
+
+
+
+
+== 编辑保护组
+
+编辑保护组以更改其名称或设置。如果保护组中的资源发生了变化，您可能需要编辑该保护组。
+
+.步骤
+. 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
+. 选择一个工作负载来查看保护详细信息。
+. 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
+. 选择*保护组*选项卡。
+. 选择要编辑的保护组。
+. 选择“操作”图标 image:../media/icon-action.png["操作选项"] > *编辑*。
+. 更改保护组的任何设置，例如名称或组中的虚拟机。
+. 选择“下一步”。
+. 必要时更改保护策略。完成后，选择“下一步”。
+. 检查配置并选择“提交”。
 
 
 

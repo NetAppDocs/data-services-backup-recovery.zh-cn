@@ -129,9 +129,19 @@ sidebar:
       - title: 备份 VMware 工作负载
         url: "/br-use-vmware-backup.html"
       - title: 恢复 VMware 工作负载
-        url: "/br-use-vmware-restore.html"
-      - title: 从备份中恢复特定虚拟磁盘
-        url: "/br-use-vmware-restore-vmdks-from-backups.html"
+        entries:
+        - title: 恢复 VMware 虚拟机
+          url: "/br-use-vmware-restore.html"
+        - title: 恢复特定虚拟磁盘
+          url: "/br-use-vmware-restore-vmdks-from-backups.html"
+        - title: 恢复访客文件和文件夹
+          entries:
+          - title: 工作流程、先决条件和限制
+            url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
+          - title: 从 VMDK 还原客户机文件和文件夹
+            url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
+          - title: 访客文件恢复故障排除
+            url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
     - title: 保护 VMware 工作负载（使用适用于 VMware 的SnapCenter插件）
       entries:
       - title: 保护虚拟机工作负载概述

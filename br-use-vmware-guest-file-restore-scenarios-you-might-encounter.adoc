@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html 
+keywords:  
+summary: 尝试恢复客户机文件时，您可能会遇到客户机文件恢复会话为空白、客户机文件恢复附加磁盘操作失败或客户机文件恢复会话停止后备份未分离的情况。 
+---
+= 访客文件恢复故障排除
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+尝试恢复访客文件时，您可能会遇到以下任一情况。
+
+
+
+== 来宾文件恢复会话为空白
+
+如果在创建客户机文件恢复会话期间客户机操作系统重启，则会出现此问题。客户操作系统中的 VMDK 可能处于离线状态，因此客户文件恢复会话列表为空。
+
+要解决此问题，请在客户操作系统中手动将 VMDK 重新置于联机状态。当 VMDK 在线时，来宾文件恢复会话将显示正确的内容。
+
+
+
+== 来宾文件恢复附加磁盘操作失败
+
+当您启动客户机文件还原操作时会出现此问题，但即使 VMware 工具正在运行且客户机操作系统凭据正确，连接磁盘操作也会失败。如果发生这种情况，将返回以下错误：
+
+`Error while validating guest credentials, failed to access guest system using specified credentials: Verify VMWare tools is running properly on system and account used is Administrator account, Error is SystemError vix error codes = (3016, 0).`
+
+要解决此问题，请在客户机操作系统上重新启动 VMware Tools Windows 服务，然后重试客户机文件还原操作。
+
+
+
+== 来宾文件恢复会话停止后，备份不会分离
+
+当您从 VM 一致的备份执行来宾文件还原操作时会出现此问题。当来宾文件恢复会话处于活动状态时，将对同一 VM 执行另一个 VM 一致性备份。当客户文件恢复会话断开时（手动或 24 小时后自动断开），该会话的备份不会被分离。
+
+要解决此问题，请手动分离从活动来宾文件还原会话附加的 VMDK。

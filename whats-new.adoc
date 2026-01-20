@@ -18,6 +18,60 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 
 
+== 2026年1月19日
+
+此NetApp Backup and Recovery版本包括以下更新。
+
+
+
+=== ONTAP卷工作负载增强
+
+此版本的ONTAP卷工作负载引入了以下增强功能：
+
+*支持多个存储桶*：（私有预览）从ONTAP 9.17.1 及更高版本开始，您现在可以保护系统中的卷，每个系统最多可跨不同的云提供商使用 6 个存储桶。
+
+link:prev-ontap-backup-manage.html["了解更多关于使用NetApp Backup and Recovery备份ONTAP卷数据的信息"]。
+
+
+
+=== VMware 工作负载增强功能
+
+此版本的 VMware 工作负载引入了以下增强功能：
+
+* NetApp Backup and Recovery现已正式提供 VMware 工作负载支持 (GA)。
+* 您现在可以恢复客户操作系统文件和文件夹。
+
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["了解更多关于使用NetApp Backup and Recovery恢复 VMware 虚拟机的信息"]。
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore-guest-files-and-folders-overview.html["了解更多关于恢复访客文件和文件夹的信息"]。
+
+
+
+=== Hyper-V 工作负载预览增强功能
+
+此版本的 Hyper-V 工作负载引入了以下增强功能：
+
+* 现在您可以将 Hyper-V VM 备份和快照还原到备用位置。如果您想管理不同 Hyper-V 主机上的虚拟机版本，这将非常有用。
+* NetApp Backup and Recovery现在支持由 System Center Virtual Machine Manager (SCVMM) 配置并托管在 CIFS 共享上的 Hyper-V 虚拟机。
+* 您现在可以编辑保护组了。
+
+
+
+NOTE: 仅在此版本中，您无法使用“操作”菜单中的“升级”选项升级 Hyper-V 或 Windows 的NetApp插件。相反，请删除每个 Hyper-V 主机，然后重新添加以更新插件。
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restore.html["了解更多关于使用NetApp Backup and Recovery恢复 Hyper-V 虚拟机的信息"]。
+
+
+
+=== KVM工作负载预览增强功能
+
+KVM 工作负载预览版现在支持与 Apache CloudStack 管理平台集成，使您能够保护由 Apache CloudStack 管理的 KVM 主机和虚拟机。
+
+有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
+
+
+
 == 2025年12月8日
 
 此NetApp Backup and Recovery版本包括以下更新。

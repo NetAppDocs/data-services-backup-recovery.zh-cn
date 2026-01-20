@@ -26,6 +26,8 @@ NetApp Backup and Recovery中的 Hyper-V 工作负载的私人预览版不支持
 * 将虚拟机还原到备用位置
 * 跨磁盘（跨多个 CIFS 共享）
 * 通过 SAN 保护虚拟机
-* 编辑保护组
-* 保护使用系统中心虚拟机管理器 (SCVMM) 集群的 Hyper-V 主机
+* 即使 Hyper-V 中的“处理器兼容性”设置正确，也无法在 CPU 厂商不同的系统之间（例如 Intel 和 AMD 或反之）还原虚拟机或虚拟机数据。此设置仅支持同一厂商不同代产品之间的兼容性（例如，Intel 到 Intel 或 AMD 到 AMD）。
 
+
+
+NOTE: 在 2026 年 1 月 19 日发布的版本中，您无法使用“操作”菜单中的“升级”选项来升级 Hyper-V 或 Windows 的NetApp插件。相反，请删除每个 Hyper-V 主机，然后重新添加以更新插件。
