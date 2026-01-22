@@ -4769,21 +4769,16 @@
   <block id="c380d2c239579706adcab966ccded39a" category="paragraph"><block ref="040f925aac1483fc9f3f6e8bd68d3888" category="inline-link-macro-rx"></block>。</block>
   <block id="558e5aec99d772eb277c493188d3c607" category="section-title">VMware 工作负载增强功能</block>
   <block id="d8cf45a94e57901a57764525baf2f9bf" category="paragraph">此版本的 VMware 工作负载引入了以下增强功能：</block>
-  <block id="0f685163e47b1dbc7208e24f5639ed4c" category="list-text">NetApp Backup and Recovery现已正式提供 VMware 工作负载支持 (GA)。</block>
   <block id="3b2cdba7e0b9954f4d9e79b310fdbccd" category="list-text">您现在可以恢复客户操作系统文件和文件夹。</block>
-  <block id="7646858e9d2b15a6ffb584e47fd5567e" category="paragraph"><block ref="4f4eca7ac15d647aeef99bf9ca19ff76" category="inline-link-rx"></block>。</block>
   <block id="1ae0fe82c82eb100fa0d7221b899a229" category="inline-link">了解更多关于恢复访客文件和文件夹的信息</block>
   <block id="f73006a3da0451caefdac27f55b5a651" category="paragraph"><block ref="ec740e6f2b69e9d5eeb44cc6164f597c" category="inline-link-rx"></block>。</block>
   <block id="2fcce708931d6d68e1d88fc4a46eef94" category="section-title">Hyper-V 工作负载预览增强功能</block>
   <block id="0c95402d3c8d84b27c1f2eb1f4757c29" category="paragraph">此版本的 Hyper-V 工作负载引入了以下增强功能：</block>
-  <block id="1bfaec2035ab816cb33f0b9264b08184" category="list-text">现在您可以将 Hyper-V VM 备份和快照还原到备用位置。如果您想管理不同 Hyper-V 主机上的虚拟机版本，这将非常有用。</block>
-  <block id="86ef33bcd420761fa8d995a0d265b43f" category="list-text">NetApp Backup and Recovery现在支持由 System Center Virtual Machine Manager (SCVMM) 配置并托管在 CIFS 共享上的 Hyper-V 虚拟机。</block>
   <block id="3d0f94ed484d5b1224a05746eeef7916" category="list-text">您现在可以编辑保护组了。</block>
   <block id="33c7653a8f2aa564c4ccd96aaacf4f4f" category="admonition">仅在此版本中，您无法使用“操作”菜单中的“升级”选项升级 Hyper-V 或 Windows 的NetApp插件。相反，请删除每个 Hyper-V 主机，然后重新添加以更新插件。</block>
   <block id="2e9a0674716cf9fc0f20713c35ea7c92" category="inline-link">了解更多关于使用NetApp Backup and Recovery恢复 Hyper-V 虚拟机的信息</block>
   <block id="b6346010c4ef2da943c1c7fa6a17d974" category="paragraph"><block ref="7ec45f32ee1da46f6d69c07cb5d19e8e" category="inline-link-rx"></block>。</block>
   <block id="4b39db76689788868bda30b97106ca4a" category="section-title">KVM工作负载预览增强功能</block>
-  <block id="0daeca72fa8b0acaee6fea8ae743cb8c" category="paragraph">KVM 工作负载预览版现在支持与 Apache CloudStack 管理平台集成，使您能够保护由 Apache CloudStack 管理的 KVM 主机和虚拟机。</block>
   <block id="432d122bca6b826d0ff8b770008cb6da" category="list-text">即使 Hyper-V 中的“处理器兼容性”设置正确，也无法在 CPU 厂商不同的系统之间（例如 Intel 和 AMD 或反之）还原虚拟机或虚拟机数据。此设置仅支持同一厂商不同代产品之间的兼容性（例如，Intel 到 Intel 或 AMD 到 AMD）。</block>
   <block id="cbf60595828cc0c9aea61a13478c0526" category="admonition">在 2026 年 1 月 19 日发布的版本中，您无法使用“操作”菜单中的“升级”选项来升级 Hyper-V 或 Windows 的NetApp插件。相反，请删除每个 Hyper-V 主机，然后重新添加以更新插件。</block>
   <block id="fa1b7fd0ad5ec372cdf9f907c6fbf709" category="section-title">故障排除说明</block>
@@ -4975,4 +4970,8 @@
   <block id="367aa9be05b109b226ffbefe3981ac88" category="list-text">如果恢复加密的文件或文件夹，则不会保留加密属性。</block>
   <block id="34454c78e4e96cfe4c311b8ba072f6cd" category="list-text">您无法将文件或文件夹还原到加密文件夹。</block>
   <block id="86a44ece7a205cf4a21804522a9cd44a" category="list-text">隐藏的文件和文件夹会显示在文件浏览页面中，但您无法对其进行筛选。</block>
+  <block id="84e342f82fe0ee384175add283bd1f4e" category="list-text">VMware 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (GA)。</block>
+  <block id="f411222cfe4404b6e0b3d9790460b804" category="list-text">现在，您可以将 Hyper-V VM 备份和快照还原到备用位置。使用此功能可以管理不同 Hyper-V 主机上的 VM 版本。</block>
+  <block id="83de53928b74eea738d883969ca231fa" category="list-text">NetApp Backup and Recovery 现在支持由 System Center Virtual Machine Manager (SCVMM) 调配并托管在 CIFS 共享上的 Hyper-V 虚拟机。</block>
+  <block id="fe3a06f4a23ebd296fcaecd751b29ac6" category="paragraph">KVM 工作负载预览现在保护由 Apache CloudStack 管理的 KVM 主机和虚拟机。</block>
 </blocks>

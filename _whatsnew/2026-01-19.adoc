@@ -18,11 +18,9 @@ link:prev-ontap-backup-manage.html["了解更多关于使用NetApp Backup and Re
 
 此版本的 VMware 工作负载引入了以下增强功能：
 
-* NetApp Backup and Recovery现已正式提供 VMware 工作负载支持 (GA)。
+* VMware 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (GA)。
 * 您现在可以恢复客户操作系统文件和文件夹。
 
-
-https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["了解更多关于使用NetApp Backup and Recovery恢复 VMware 虚拟机的信息"]。
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore-guest-files-and-folders-overview.html["了解更多关于恢复访客文件和文件夹的信息"]。
 
@@ -32,8 +30,8 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restor
 
 此版本的 Hyper-V 工作负载引入了以下增强功能：
 
-* 现在您可以将 Hyper-V VM 备份和快照还原到备用位置。如果您想管理不同 Hyper-V 主机上的虚拟机版本，这将非常有用。
-* NetApp Backup and Recovery现在支持由 System Center Virtual Machine Manager (SCVMM) 配置并托管在 CIFS 共享上的 Hyper-V 虚拟机。
+* 现在，您可以将 Hyper-V VM 备份和快照还原到备用位置。使用此功能可以管理不同 Hyper-V 主机上的 VM 版本。
+* NetApp Backup and Recovery 现在支持由 System Center Virtual Machine Manager (SCVMM) 调配并托管在 CIFS 共享上的 Hyper-V 虚拟机。
 * 您现在可以编辑保护组了。
 
 
@@ -46,6 +44,6 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restor
 
 === KVM工作负载预览增强功能
 
-KVM 工作负载预览版现在支持与 Apache CloudStack 管理平台集成，使您能够保护由 Apache CloudStack 管理的 KVM 主机和虚拟机。
+KVM 工作负载预览现在保护由 Apache CloudStack 管理的 KVM 主机和虚拟机。
 
 有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
