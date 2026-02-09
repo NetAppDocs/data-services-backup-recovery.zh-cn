@@ -80,17 +80,17 @@ indexpage:
       url: "/br-use-hyperv-backup.html"
     - title: 恢复 Hyper-V 工作负载
       url: "/br-use-hyperv-restore.html"
-  - title: 保护 Oracle 工作负载（私人预览版）
+  - title: 保护 Oracle Database 工作负载（私有预览）
     links:
-    - title: 保护 Oracle 工作负载概述
+    - title: 保护 Oracle 数据库工作负载概述
       url: "/br-use-oracle-protect-overview.html"
-    - title: 发现 Oracle 工作负载
+    - title: 发现 Oracle Database 工作负载
       url: "/br-start-discover-oracle.html"
-    - title: 为 Oracle 工作负载创建和管理保护组
+    - title: 为 Oracle Database 工作负载创建和管理保护组
       url: "/br-use-oracle-protection-groups.html"
-    - title: 备份 Oracle 工作负载
+    - title: 备份 Oracle Database 工作负载
       url: "/br-use-oracle-backup.html"
-    - title: 恢复 Oracle 工作负载
+    - title: 还原 Oracle Database 工作负载
       url: "/br-use-oracle-restore.html"
   - title: 保护 Kubernetes 工作负载（预览版）
     links:

@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: br-rbac-setup.html 
+keywords: backup, back up, restore, recovery, aws, azure 
+summary: 为提高安全性，请配置 NetApp Backup and Recovery 中特定角色的访问权限。 
+---
+= 在 NetApp Backup and Recovery 中设置基于角色的访问控制
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+若要提高安全性并控制资源访问，请为 NetApp Backup and Recovery 配置基于角色的访问。NetApp Console 支持某些 Backup and Recovery 工作负载的基于角色的访问控制 (RBAC)。您可以为这些工作负载指定特定的管理员或查看者角色。在支持项目级关联之前，具有 Backup and Recovery 角色的所有用户仍可访问尚未支持基于角色的访问控制的其他工作负载。
+
+按照下面的步骤控制对组织中资源的访问。在 NetApp Console 菜单的*管理 > 身份和访问*页面中进行更改。
+
+
+NOTE: 这些步骤假设您在 Console 中被分配了组织管理员角色。
+
+.步骤
+. 创建身份和访问项目结构。
++
+作为组织管理员，设置工作负载所在的 Identity and access 文件夹和项目结构。
+
+. 分配用户角色。
++
+.. 主要选项：
++
+将用户添加到指定用于工作负载的每个项目，并授予他们适当的角色。例如：
+
++
+*** *组织管理员*和 *Backup and Recovery 超级管理员*：具有这些角色的用户可以查看所有组织中的所有资源，并发现 Backup and Recovery 工作负载并将其分配给项目（例如，US East 或 US West）。
+*** *文件夹或项目管理员*和 *Backup and Recovery 超级管理员*：具有这些角色的用户只能查看其具有权限的文件夹或项目中的资源，但可以发现 Backup and Recovery 工作负载并将其分配给该项目。
+
+
+.. 备选方案：
++
+您可以为自己分配 Backup and Recovery 超级管理员角色并直接发现工作负载，而不是授予用户完整的 Backup and Recovery 管理员访问权限。
+
+
+
+. 在 Backup and Recovery 中发现工作负载。
++
+组织管理员或文件夹或项目管理员发现可用的工作负载，并选择适当的项目（如 US East 或 US West）。每个工作负载都会自动与选定项目关联。
+
+. 将用户添加到项目。
++
+组织管理员或文件夹/项目管理员将 Console 用户添加到具有工作负载的项目。根据用户的访问需求，为其分配组织查看者角色和 Backup and Recovery 角色。具有正确 Backup and Recovery 角色的用户将自动获得对这些项目中新工作负载的访问权限。
+
+
+
+
+
+== 相关信息
+
+* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["了解 NetApp Console 身份和访问管理"^]。
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["NetApp Console中的NetApp Backup and Recovery角色"^]。
+

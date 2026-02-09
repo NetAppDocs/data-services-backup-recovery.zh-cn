@@ -4,7 +4,7 @@ permalink: br-start-discover-oracle.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle 
 summary: NetApp Backup and Recovery需要首先发现工作负载，以便您保护它们。 
 ---
-= 发现NetApp Backup and Recovery中的 Oracle 工作负载
+= 在 NetApp Backup and Recovery 中发现 Oracle 数据库工作负载
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

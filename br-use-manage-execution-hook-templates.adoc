@@ -18,7 +18,7 @@ summary: NetApp Backup and Recovery使您能够管理执行挂钩，以便在应
 
 [NOTE]
 ====
-NetApp Backup and Recovery在数据保护期间冻结和解冻 KubeVirt 等应用程序的文件系统。您可以使用Trident保护文档全局或针对特定应用程序禁用此行为：
+NetApp Backup and Recovery 会在数据保护期间冻结和解冻应用程序的文件系统，例如 KubeVirt。您可以全局禁用此行为，也可以使用 Trident Protect 文档对特定应用程序禁用此行为：
 
 * 要为所有应用程序禁用此行为，请参阅 https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html#protecting-data-with-kubevirt-vms["使用 KubeVirt 虚拟机保护数据"]。
 * 要针对特定应用程序禁用此行为，请参阅 https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-manage-applications.html#define-an-application["定义应用程序"]。
@@ -105,6 +105,9 @@ NOTE: 如果将命名空间过滤器添加到在恢复或克隆操作后运行�
 == 创建执行钩子模板
 
 您可以创建自定义执行挂钩模板，用于在应用程序上执行数据保护操作之前或之后执行操作。
+
+
+NOTE: 此处创建的模板仅在保护 Kubernetes 工作负载时可用。
 
 .步骤
 . 在控制台中，转到*保护*>*备份和恢复*。

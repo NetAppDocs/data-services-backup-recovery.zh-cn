@@ -166,7 +166,7 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 ====
 
 
-== 保护 Oracle 工作负载的要求
+== 保护 Oracle Database 工作负载的要求
 
 确保您的环境满足发现和保护 Oracle 资源的特定要求。
 
@@ -174,6 +174,7 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 +
 ** Oracle 19C 和 21C 在独立部署中受支持。
 ** Oracle 数据库必须部署在主或辅助NetApp ONTAP存储中。
+** 主机操作系统支持：Red Hat Enterprise Linux 8 和 9
 
 
 * 对象存储支持：
@@ -208,7 +209,7 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 * NetApp Trident Protect 25.07 或更高版本（在 Kubernetes 工作负载发现期间安装）
 * NetApp Trident Protect Connector 25.07 或更高版本（在 Kubernetes 工作负载发现期间安装）
 +
-** 确保 Kubernetes 集群、 Trident保护连接器和Trident保护代理之间的出站方向的 TCP 端口 443 未经过滤。
+** 确保 TCP 端口 443 在 Kubernetes 集群、Trident Protect Connector 和 Trident Protect 代理之间的出站方向上未过滤。
 
 
 

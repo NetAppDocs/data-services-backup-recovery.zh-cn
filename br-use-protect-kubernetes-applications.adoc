@@ -28,6 +28,10 @@ NetApp Backup and Recovery使您能够轻松发现 Kubernetes 集群，而无需
 .开始之前
 在添加和保护 Kubernetes 应用程序之前，您需要link:br-start-discover.html["发现 Kubernetes 工作负载"]。
 
+[role="tabbed-block"]
+====
+.使用 Web UI 添加应用程序
+--
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory*。
 . 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
@@ -58,41 +62,130 @@ NOTE: 控制台不存储搜索参数或结果；这些参数用于在选定的 K
 .结果
 应用程序已创建并出现在 Kubernetes 清单的 *应用程序* 选项卡中的应用程序列表中。  NetApp Console根据您的设置启用对应用程序的保护，并且您可以在备份和恢复的*监控*区域中监控进度。
 
-
-
-== 保护现有的 Kubernetes 应用程序
-
-在已添加的 Kubernetes 应用程序上启用保护策略。
-
+--
+.使用 CR 添加应用程序
+--
 .步骤
-. 在NetApp Backup and Recovery中，选择 *Inventory*。
-. 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
-. 选择“*应用程序*”选项卡。
-. 在应用程序列表中，选择要保护的应用程序并选择相关的操作菜单。
-. 选择*保护*。
-. 在“*策略*”区域中，选择现有的保护策略来保护应用程序或创建新策略。参考link:br-use-policies-create.html#create-a-policy["创建策略"]有关创建保护策略的更多信息。
-. 在*Prescripts and postscripts*区域中，启用并配置您想要在备份操作之前或之后运行的任何prescript或postscript执行挂钩。您可以配置执行钩子的类型、它使用的模板、参数和标签选择器。
-. 选择*完成*。
+. 创建目标应用程序 CR 文件：
++
+.. 创建自定义资源 (CR) 文件并将其命名（例如， `my-app-name.yaml`）。
+.. 配置以下属性：
++
+*** *metadata.name*：（_必需_）应用程序自定义资源的名称。请注意您选择的名称，因为保护操作所需的其他 CR 文件会引用此值。
+*** *spec.includedNamespaces*: (_Required_) 使用命名空间和标签选择器指定应用程序使用的命名空间和资源。应用程序命名空间必须是此列表的一部分。标签选择器是可选的，可用于筛选每个指定命名空间内的资源。
+*** *spec.includedClusterScopedResources*: (_Optional_) 使用此属性指定要包含在应用程序定义中的群集范围的资源。此属性允许您根据其组、版本、种类和标签选择这些资源。
++
+**** *groupVersionKind*：（_必需_）指定集群范围内资源的 API 组、版本和种类。
+**** *labelSelector*：（_可选_）根据集群范围资源的标签对其进行筛选。
 
 
-.结果
-控制台根据您的设置启用对应用程序的保护，您可以在备份和恢复的*监控*区域中监控进度。一旦您启用应用程序保护，控制台就会创建该应用程序的完整备份。任何未来的增量备份都将根据您在与该应用程序关联的保护策略中定义的计划创建。
+
+
+.. 如果需要，请配置以下注释：
++
+*** *metadata.annotations.protect.trident.netapp.io/skip-vm-freeze*：（_Optional_）此批注仅适用于从虚拟机定义的应用程序，例如在 KubeVirt 环境中，快照之前会发生文件系统冻结。指定此应用程序是否可以在快照期间写入文件系统。如果设置为 true，应用程序将忽略全局设置，并且可以在快照期间写入文件系统。如果设置为 false，应用程序将忽略全局设置，并在快照期间冻结文件系统。如果指定，但应用程序在应用程序定义中没有虚拟机，则忽略批注。如果未指定，则应用程序遵循 link:trident-protect-requirements.html#protecting-data-with-kubevirt-vms["全局文件系统冻结设置"]。
+*** *protect.trident.netapp.io/protection-command*：（_可选_）使用此注释指示 Backup and Recovery 保护或停止保护应用程序。可能的值为 `protect`或 `unprotect`。
+*** *protect.trident.netapp.io/protection-policy-name*: (_可选_) 使用此注释指定要用于保护此应用程序的 Backup and Recovery 保护策略的名称。此保护策略必须已存在于 Backup and Recovery 中。
++
+[NOTE]
+====
+如果需要在已创建应用程序后应用此批注，可以使用以下命令：
+
+[source, console]
+----
+kubectl annotate application -n <application CR namespace> <application CR name> protect.trident.netapp.io/skip-vm-freeze="true"
+----
+====
++
+示例 YAML：
+
++
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: Application
+metadata:
+  annotations:
+    protect.trident.netapp.io/skip-vm-freeze: "false"
+    protect.trident.netapp.io/protection-command: "protect"
+    protect.trident.netapp.io/protection-policy-name: "policy-name"
+  name: my-app-name
+  namespace: my-app-namespace
+spec:
+  includedNamespaces:
+    - namespace: namespace-1
+      labelSelector:
+        matchLabels:
+          app: example-app
+    - namespace: namespace-2
+      labelSelector:
+        matchLabels:
+          app: another-example-app
+  includedClusterScopedResources:
+    - groupVersionKind:
+        group: rbac.authorization.k8s.io
+        kind: ClusterRole
+        version: v1
+      labelSelector:
+        matchLabels:
+          mylabel: test
+----
 
 
 
-== 立即备份 Kubernetes 应用程序
 
-手动创建 Kubernetes 应用程序的备份，为未来的备份和快照建立基线，或确保最新数据受到保护。
+. （_Optional_）添加包含或排除标有特定标签的资源的筛选：
++
+** *resourceFilter.resourceSelectionCriteria*：（筛选时需要）使用 `Include`或 `Exclude`来包含或排除在 resourceMatchers 中定义的资源。添加以下 resourceMatchers 参数以定义要包括或排除的资源：
++
+*** *resourceFilter.resourceMatchers*：resourceMatcher 对象数组。如果在此数组中定义多个元素，则它们将作为 OR 操作进行匹配，并且每个元素（组、种类、版本）内的字段将作为 AND 操作进行匹配。
++
+**** *resourceMatchers[].group*：（_Optional_）要筛选的资源的组。
+**** *resourceMatchers[].kind*：（_Optional_）要筛选的资源的类型。
+**** *resourceMatchers[].version*：（_Optional_）要筛选的资源的版本。
+**** *resourceMatchers[].names*：（_可选_）要过滤的资源的 Kubernetes metadata.name 字段中的名称。
+**** *resourceMatchers[].namespaces*: (_Optional_) 要过滤的资源的 Kubernetes metadata.name 字段中的命名空间。
+**** *resourceMatchers[].labelSelectors*: (_Optional_) 资源的 Kubernetes metadata.name 字段中的标签选择器字符串，如  https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors["Kubernetes 文档"^] 中所定义。例如： `"trident.netapp.io/os=linux"`。
++
 
-.步骤
-. 在NetApp Backup and Recovery中，选择 *Inventory*。
-. 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
-. 选择“*应用程序*”选项卡。
-. 在应用程序列表中，选择要备份的应用程序并选择相关的操作菜单。
-. 选择*立即备份*。
-. 确保选择了正确的应用程序名称。
-. 选择*备份*。
+NOTE: 当同时使用 `resourceFilter`和 `labelSelector`时， `resourceFilter`首先运行，然后将 `labelSelector`应用于生成的资源。
+
++
+例如：
+
++
+[source, yaml]
+----
+spec:
+  resourceFilter:
+    resourceSelectionCriteria: "Include"
+    resourceMatchers:
+      - group: my-resource-group-1
+        kind: my-resource-kind-1
+        version: my-resource-version-1
+        names: ["my-resource-names"]
+        namespaces: ["my-resource-namespaces"]
+        labelSelectors: ["trident.netapp.io/os=linux"]
+      - group: my-resource-group-2
+        kind: my-resource-kind-2
+        version: my-resource-version-2
+        names: ["my-resource-names"]
+        namespaces: ["my-resource-namespaces"]
+        labelSelectors: ["trident.netapp.io/os=linux"]
+----
 
 
-.结果
-控制台创建应用程序的备份并在备份和恢复的*监控*区域中显示进度。该备份是根据与应用程序关联的保护策略创建的。
+
+
+
+
+. 创建与环境匹配的应用程序 CR 后，应用 CR。例如：
++
+[source, console]
+----
+kubectl apply -f my-app-name.yaml
+----
+
+
+--
+====

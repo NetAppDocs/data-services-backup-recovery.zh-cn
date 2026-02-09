@@ -302,8 +302,6 @@
   <block id="290536edae9da601f8170c5b55f24416" category="list-text">虚拟化数据库</block>
   <block id="fa13bdfd9eed88794d8035a9e287804f" category="list-text">搜索和恢复数据库备份</block>
   <block id="50f97ccd9c70c1fad84f646a4f0a7844" category="list-text">Oracle 仪表板支持</block>
-  <block id="51d8503c0e8b0708c3068080f066d721" category="inline-link">保护 Oracle 工作负载概述</block>
-  <block id="834f349029c5bc6715f25a9eac82f171" category="paragraph">有关保护 Oracle 数据库工作负载的详细信息，请参阅<block ref="aa11c9ead0c1847dba5fa900ff49219a" category="inline-link-rx"></block>。</block>
   <block id="8d799f5cd163dd189424382fcbc55641" category="summary">可通过 Web UI 使用的NetApp Backup and Recovery功能也可通过 RESTful API 使用。</block>
   <block id="3273eb60c717ba9173100472fd580bfa" category="doc">使用NetApp Backup and RecoveryREST API 实现自动化</block>
   <block id="c50c9f52d92103a492abf38f4b5325e0" category="paragraph">可通过 Web UI 使用的NetApp Backup and Recovery功能也可通过备份和恢复 REST API 使用。</block>
@@ -365,14 +363,7 @@
   <block id="5131ec6f366fecc1e6e217f1cd4771d5" category="list-text">跨多个 NFS 挂载点或共享的磁盘</block>
   <block id="60cb90015b7d70207c84b5b4c09b1c4a" category="list-text">RAW磁盘格式</block>
   <block id="def5bb1c4fff047ce52153ac1f2ef9b5" category="list-text">NetFS 以外的存储池类型（仅支持 NetFS）</block>
-  <block id="43250e477f245ad8251ae2cf9a6044b5" category="doc">NetApp Backup and Recovery针对 Oracle 工作负载的已知限制</block>
-  <block id="d905e8ea866675c3cf4643035604b776" category="paragraph">NetApp Backup and Recovery中的 Oracle Database 工作负载的私人预览版不支持以下操作：</block>
   <block id="203b3a4b594fb28b853f0cb7e5561c26" category="list-text">离线备份</block>
-  <block id="ff24590464659ee8cdec688128c35f89" category="list-text">克隆</block>
-  <block id="2f42226f79de76630de2401fec50f917" category="list-text">ASM 配置</block>
-  <block id="79df96f2a2c49c67db8b8abedacd66da" category="list-text">保护存储在 SAN 上的数据库</block>
-  <block id="ed1c3b4d6aee5defa8827a5cd00e2e81" category="paragraph">Oracle 数据库仅支持在 Oracle 工作负载的私人预览版中使用 NFS 作为独立部署。</block>
-  <block id="3af84d3004e466ae586915e19ffb662b" category="summary">NetApp Backup and Recovery服务需要首先发现数据，您才能使用该服务。在发现过程中， NetApp Backup and Recovery会分析组织内系统中的所有卷和文件。</block>
   <block id="11750133b5aeccdb05ec0c5b1027ace4" category="doc">NetApp Backup and Recovery针对 VMware 工作负载的已知限制</block>
   <block id="bd24e6cbfe24fff0710652a52a0736b5" category="paragraph">NetApp Backup and Recovery中的 VMware 工作负载预览版不支持以下操作：</block>
   <block id="eace16d66cdd93ad876c620db7456077" category="list-text">挂载</block>
@@ -669,10 +660,8 @@
   <block id="e7c444e4a1d2f156d71a907145c8a598" category="list-text">选择 *Kubernetes* 工作负载类型。</block>
   <block id="96c35fcba67cbf6710845bcca4668cc2" category="list-text">输入集群名称并选择与集群一起使用的连接器。</block>
   <block id="39b0136210d9abd099b81781cc0a17db" category="list-text">按照出现的命令行说明进行操作：</block>
-  <block id="3b47301a2201ba1175e2a109a103127b" category="list-text">创建Trident保护命名空间</block>
   <block id="ed6eabebedff09350cdabab556887c62" category="list-text">创建 Kubernetes 机密</block>
   <block id="6c27e11d1144953d7877449d5adc966d" category="list-text">添加 Helm 存储库</block>
-  <block id="c1a343fd7e28cea1253758e1b64a4d0d" category="list-text">安装Trident Protect 和Trident Protect 连接器</block>
   <block id="efa5307bfad4cbe53b6ae3c88baa522e" category="paragraph">这些步骤确保NetApp Backup and Recovery可以与集群交互。</block>
   <block id="9bac5e7d53677c1fdcf7d275fd58ed60" category="list-text">完成这些步骤后，选择*发现*。</block>
   <block id="6b3946603d5588826f1cd3f2695b8542" category="paragraph">该集群已添加到清单中。</block>
@@ -686,7 +675,6 @@
   <block id="acaaf9de0e4071fe117da04dbbe9565d" category="list-text">在 KVM 图块中，选择 *发现和管理*。</block>
   <block id="12d8eeba7e97739f6035cbec50bd2369" category="list-text">*工作负载类型*：选择*KVM*。</block>
   <block id="238fb750ebdea9faf36668536aaa8b42" category="paragraph">KVM 工作负载显示在“库存”页面的工作负载列表中。</block>
-  <block id="0a6dc8ac33152480a18098d8eb98ccb6" category="doc">发现NetApp Backup and Recovery中的 Oracle 工作负载</block>
   <block id="945f74309f719db5d0fb0d1bb5a31781" category="paragraph">NetApp Backup and Recovery需要首先发现您的 Oracle 数据库，以便您可以保护它们。</block>
   <block id="bf36d800e1bbaf0ef44cd361867e4e09" category="section-title">添加 Oracle 主机并发现资源</block>
   <block id="8160dc72c9473d18119ea3e52fe65572" category="paragraph">添加 Oracle 主机信息并让NetApp Backup and Recovery发现工作负载。在每个控制台代理中，选择您想要发现工作负载的系统。</block>
@@ -832,8 +820,6 @@
   <block id="8eec52ebd7892b36424f0c784c1a70dc" category="list-text">对于 VMware 工作负载，请参阅<block ref="4c90ef6c5dc037251bf65afdeeb1ee6c" category="inline-link-macro-rx"></block>。</block>
   <block id="cbc99816ef9ba154c39b76f904359040" category="inline-link-macro">发现 KVM 工作负载</block>
   <block id="f8e001546fd93d61022ff713e03298f8" category="list-text">对于 KVM 工作负载，请参阅<block ref="6343f6c391fb966ad325d76211a59524" category="inline-link-macro-rx"></block>。</block>
-  <block id="73e8c7525f434c946114ba1e9477bb6e" category="inline-link-macro">发现 Oracle 工作负载</block>
-  <block id="76b4ef756320e6f6ca5d1c225439f7f5" category="list-text">对于 Oracle 工作负载，请参阅<block ref="0ef9d15a5323698b079164a26f451715" category="inline-link-macro-rx"></block>。</block>
   <block id="8ea9fd29df4eb58092d8258c6ccf3ad8" category="inline-link-macro">发现 Hyper-V 工作负载</block>
   <block id="3b97616ae538f454d8812a77c84392d1" category="list-text">对于 Hyper-V 工作负载，请参阅<block ref="e853aa4eb98908dd4b95a8cc80d9972f" category="inline-link-macro-rx"></block>。</block>
   <block id="e5dd8794e7e239a004607625309c03bb" category="list-text">对于 Kubernetes 工作负载，请参阅<block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block>。</block>
@@ -1491,15 +1477,11 @@
   <block id="f467c6231a57911e62401cfb0159d95b" category="paragraph">与从“恢复”页面恢复时出现的三个选项相同：</block>
   <block id="3cc2b93a80a97a7cacb8c0d4f5da6c20" category="list-text">恢复到特定时间点</block>
   <block id="d25e9ce84a1050d163d601d4bd2fa073" category="list-text">继续执行与“恢复”页面中的恢复选项相同的步骤</block>
-  <block id="7b588dfa65a0573a51e5ab0e2d3023e9" category="summary">使用NetApp备份和恢复保护您的 Oracle 工作负载。</block>
-  <block id="2fb29b6c97ac2109b4c3d3537ae25b9d" category="inline-link-macro">使用NetApp Backup and Recovery为 Oracle 工作负载创建和管理保护组</block>
-  <block id="02cdaf324b33a661330ff286d04c61aa" category="list-text">创建保护组来管理一组资源的备份和还原操作。看<block ref="c9c15450fe1a04e77c0be05f7471779a" category="inline-link-macro-rx"></block>了解更多信息。</block>
   <block id="5a232101cd6b911084269b39726e0f05" category="list-text">立即备份保护组（立即创建按需备份）。</block>
   <block id="99a4d620d348de03a46767ad6dd1a27c" category="list-text">立即备份数据库。</block>
   <block id="0e3dfc8aecedae71e6c1e03c52c544ec" category="section-title">立即使用按需备份来备份数据库</block>
   <block id="4875f551855c5d20449df9a7a54edc8a" category="paragraph">您可以运行单个数据库的按需备份。</block>
   <block id="d8e3db119b7cf9c31602a2121bfa4365" category="list-text">选择要备份的数据库。</block>
-  <block id="630481ffe08dcea3b2119a33662f9d29" category="summary">使用NetApp Backup and Recovery保护您的 Oracle 工作负载。</block>
   <block id="77b7ee08ed330c77cd76797cc7019357" category="doc">使用NetApp Backup and Recovery挂载和卸载 Oracle 数据库恢复点</block>
   <block id="797c8d8b5a0f5a880bd15fd855682db6" category="paragraph">如果您需要以受控状态访问数据库来执行恢复操作，则可能需要安装 Oracle 数据库恢复点。</block>
   <block id="079a3f8ec0bb95d8f0ae5d36f04de7c4" category="section-title">安装 Oracle 数据库还原点</block>
@@ -1523,18 +1505,7 @@
   <block id="504b4d4156c8604edbbda8b908e689cf" category="list-text">选择“卸载”确认操作。</block>
   <block id="bb205d6469d1d38895fc74e5fe58b024" category="summary">您可以保护从本地ONTAP系统到 Amazon Web Services、Microsoft Azure、Google Cloud Platform 和StorageGRID 的Oracle 虚拟机，确保您的数据受到保护。</block>
   <block id="3e4addf457cac6e6f2f337996275bb1f" category="doc">保护 Oracle 数据库工作负载概述</block>
-  <block id="e58749f44abd3f2817fad6c2ae87fb45" category="paragraph">您可以使用NetApp Backup and Recovery执行与 Oracle 工作负载相关的以下任务：</block>
-  <block id="0ef9d15a5323698b079164a26f451715" category="list-text"><block ref="0ef9d15a5323698b079164a26f451715" category="inline-link-macro-rx"></block></block>
-  <block id="f7f66fefaac908c86a635d80ae33c9ef" category="inline-link-macro">为 Oracle 工作负载创建和管理保护组</block>
-  <block id="f647111ef4b009cd2203e0e63adc9ed6" category="list-text"><block ref="f647111ef4b009cd2203e0e63adc9ed6" category="inline-link-macro-rx"></block></block>
-  <block id="4480911dc79312ba167f517766049321" category="inline-link-macro">备份 Oracle 工作负载</block>
-  <block id="e7a6be28bd48e7e2231639888ee15d80" category="list-text"><block ref="e7a6be28bd48e7e2231639888ee15d80" category="inline-link-macro-rx"></block></block>
-  <block id="9a5fb46f313add6fc79aea102dcbaeb7" category="inline-link-macro">恢复 Oracle 工作负载</block>
-  <block id="1cb9d10dd89115a71445adf4d5cf89fd" category="list-text"><block ref="1cb9d10dd89115a71445adf4d5cf89fd" category="inline-link-macro-rx"></block></block>
-  <block id="3fa704a0aa0f3e1205c4156e0affab68" category="summary">在NetApp Backup and Recovery中创建和管理 Oracle 工作负载的保护组。</block>
   <block id="e935651dcc727466a56b42d180db281c" category="paragraph">创建保护组来管理一组 Oracle 数据库资源的备份操作。保护组是您想要一起保护的资源（例如数据库）的逻辑分组。您需要创建一个保护组来备份 Oracle 数据库。</block>
-  <block id="30549a9efedf2c08f7e3c1070d0ec4a4" category="inline-link-macro">立即备份 Oracle 工作负载</block>
-  <block id="9d2eb7298d6b079511014afa9fcf74b8" category="list-text">立即备份保护组。看<block ref="6391799ae7a331a8ab5f8579820481db" category="inline-link-macro-rx"></block>。</block>
   <block id="4d11952e83e906d7c1c3bb7b8d814881" category="doc">使用NetApp Backup and Recovery恢复 Oracle 数据库</block>
   <block id="79f77d8cbb1beb81481eb9b45d453a34" category="paragraph">您可以从不同的起始位置恢复数据库：</block>
   <block id="d69f96cdc13d3a1e25929628b856adfc" category="section-title">Oracle 数据库恢复的工作原理</block>
@@ -1569,7 +1540,6 @@
   <block id="a4aa2f0da5fe920e49b4efa7582a1089" category="list-text">为脚本选择一个超时值。如果脚本未能在此时间段内执行，则恢复仍将继续。</block>
   <block id="f3d19f008b19feab896904cb50b1a321" category="list-text">*后记*：可选地，启用此选项并输入应在恢复操作后运行的脚本的完整路径以及该脚本所采用的任何参数。</block>
   <block id="f8b53e55e8c6663dd48cecfd73eac0aa" category="list-text">*恢复后以 READ-WRITE 模式打开数据库或容器数据库*：恢复操作完成后，备份和恢复将为数据库启用 READ-WRITE 模式。</block>
-  <block id="edbf5d4d98db112afa4f80b2be7e4681" category="paragraph">不适用于 Oracle 工作负载预览。</block>
   <block id="b82be1f9be4e926901513f5106f48a87" category="summary">在NetApp Backup and Recovery中，创建您自己的策略来控制备份频率、备份时间以及保留的备份文件数量。</block>
   <block id="94b302da41c06e07da50582e09e11a6f" category="doc">创建和管理策略来管理NetApp Backup and Recovery中的备份</block>
   <block id="014eafc4485f15b25db30025cd8b8df2" category="paragraph">在NetApp Backup and Recovery中，创建您自己的策略来控制备份频率、备份时间以及保留的备份文件数量。</block>
@@ -1586,7 +1556,6 @@
   <block id="b7e23f2fbc84fffbedf563f644b8df93" category="section-title">查看政策</block>
   <block id="9a23580d7344d92df6d39880be8984ee" category="list-text">从NetApp Backup and Recovery菜单中，选择 *策略*。</block>
   <block id="1acb02454e9197d4580e47cc314bafcc" category="list-text">查看这些政策详情。</block>
-  <block id="6c3c2610bdd335f75a90c7ddab40a182" category="list-text">*工作负载*：示例包括 Microsoft SQL Server、Volumes、VMware、KVM、Hyper-V 或 Kubernetes。</block>
   <block id="c0d97b31eeb845274929b3f74cfce135" category="list-text">*备份类型*：例如完整备份和日志备份。</block>
   <block id="eacf7361c754b5087b6ade2e010c1a1f" category="list-text">*架构*：示例包括本地快照、扇出、级联、磁盘到磁盘和磁盘到对象存储。</block>
   <block id="292fca252d0ac5aa32931919e05e3331" category="list-text">*受保护的资源*：显示该工作负载的总资源中有多少资源受到保护。</block>
@@ -1605,7 +1574,6 @@
   <block id="b2ba8b5a519744f308bb1fe099fca96c" category="admonition">要查看要避免的角色列表，请参阅悬停提示。</block>
   <block id="6fd5c80899312e5732b24f0d6a48f05a" category="list-text">从*代理*列表中选择一个控制台代理。</block>
   <block id="35acdaad091c35b1b0b01e1b4dfa1cae" category="list-text">*备份架构*部分：选择向下箭头并选择备份的数据流，例如 3-2-1 扇出、3-2-1 级联或磁盘到磁盘。</block>
-  <block id="404347b12f0f61e72da6a2792d7aabdc" category="list-text">*3-2-1 扇出*：主存储（磁盘）到二级存储（磁盘）到云（对象存储）。跨不同的存储系统创建数据的多个副本，例如ONTAP到ONTAP以及ONTAP到对象存储配置。这可以是云超大规模对象存储或私有对象存储 - StorageGRID。这些配置有助于实现最佳的数据保护和灾难恢复。</block>
   <block id="6cf0d5d70bb7be2a62ce45235fdc5421" category="admonition">此选项不适用于Amazon FSx for NetApp ONTAP。</block>
   <block id="dd3964688f448cf4c53372241aa29860" category="paragraph">对于 VMware 工作负载，这会在主数据存储或虚拟机上配置本地快照，并从主磁盘存储复制到辅助磁盘存储以及从主存储复制到云对象存储。</block>
   <block id="786fc46f790a4c1a43af79907a835e9f" category="list-text">*3-2-1 级联*：（不适用于 Kubernetes 工作负载）主存储（磁盘）到辅助存储（磁盘）以及主存储（磁盘）到云存储（对象存储）。这可以是云超大规模对象存储或私有对象存储 - StorageGRID。这会在多个系统之间创建数据复制链，以确保冗余和可靠性。</block>
@@ -1724,14 +1692,6 @@
   <block id="4049c9e3b9c424f5991c5f917ad92c40" category="inline-link-macro">执行钩子模板</block>
   <block id="5e97a71c79e2f24deabf91daa3d20cd1" category="list-text">在*Prescripts and postscripts*区域中，启用并配置您想要在备份操作之前或之后运行的任何prescript或postscript执行挂钩。要启用处方或附言，您必须至少已创建了一个<block ref="3059f3d40a47ddab4d322199b8601d95" category="inline-link-macro-rx"></block>。</block>
   <block id="9f77aac915c7dddb04d022bff72e881d" category="paragraph">应用程序已创建并出现在 Kubernetes 清单的 *应用程序* 选项卡中的应用程序列表中。  NetApp Console根据您的设置启用对应用程序的保护，并且您可以在备份和恢复的*监控*区域中监控进度。</block>
-  <block id="d34e75e1972332b08f5260e29a3eb456" category="section-title">保护现有的 Kubernetes 应用程序</block>
-  <block id="bcd7e935fe0f91f433516ff86415dcd4" category="paragraph">在已添加的 Kubernetes 应用程序上启用保护策略。</block>
-  <block id="104d1a34e290d2de5a494845fa1be7b8" category="list-text">在应用程序列表中，选择要保护的应用程序并选择相关的操作菜单。</block>
-  <block id="20d541172ecc7e2d477ce2738120938c" category="list-text">选择*保护*。</block>
-  <block id="f58eabeb108df6c5973f0ece276c562f" category="list-text">在“*策略*”区域中，选择现有的保护策略来保护应用程序或创建新策略。参考<block ref="3739f9f9696bd133d77df1c4736a8480" category="inline-link-macro-rx"></block>有关创建保护策略的更多信息。</block>
-  <block id="6eeabb5a1fdc64db00294aa16e2efc65" category="list-text">在*Prescripts and postscripts*区域中，启用并配置您想要在备份操作之前或之后运行的任何prescript或postscript执行挂钩。您可以配置执行钩子的类型、它使用的模板、参数和标签选择器。</block>
-  <block id="1c5ac4940b53e1922d936ca78379e63f" category="paragraph">控制台根据您的设置启用对应用程序的保护，您可以在备份和恢复的*监控*区域中监控进度。一旦您启用应用程序保护，控制台就会创建该应用程序的完整备份。任何未来的增量备份都将根据您在与该应用程序关联的保护策略中定义的计划创建。</block>
-  <block id="53932eb694521eb34987ea9c43f0a292" category="section-title">立即备份 Kubernetes 应用程序</block>
   <block id="4b6c3c6a317300967177891eec6ba8fd" category="paragraph">手动创建 Kubernetes 应用程序的备份，为未来的备份和快照建立基线，或确保最新数据受到保护。</block>
   <block id="ef4da1dbc592e89fff8af00102b37ff3" category="list-text">在应用程序列表中，选择要备份的应用程序并选择相关的操作菜单。</block>
   <block id="46b6ecff43461a732d3eda912df73a42" category="list-text">选择*立即备份*。</block>
@@ -1906,12 +1866,9 @@
   <block id="492fd59c461c682062524e7444f188c1" category="list-text">Hyper-V 工作负载（预览版）</block>
   <block id="bcd52013d4bab273c97ec6049c73eb19" category="inline-link-macro">保护 Hyper-V 工作负载</block>
   <block id="6a88dd8d1df81c216e94864f62adb181" category="list-text">参考<block ref="5ad55f158503485706ea0446a924f3eb" category="inline-link-macro-rx"></block>。</block>
-  <block id="543cf4a1253e720b7d0efccfee564ef5" category="list-text">Oracle 工作负载（预览）</block>
   <block id="9ccb39720e55d973803af308a46b7f9d" category="list-text">备份和恢复数据库和日志</block>
   <block id="b9f9fe4773f2a73086e819aa78413e31" category="list-text">创建策略来管理数据库和日志备份</block>
   <block id="1aced3c59920e62aa237af558421e7bc" category="list-text">使用 3-2-1 备份架构保护数据库</block>
-  <block id="a0150835683a46b302509d38f9c83e9f" category="inline-link-macro">保护 Oracle 工作负载</block>
-  <block id="f09a108fc13868756069afcfa8a6c090" category="list-text">参考<block ref="5b41776fecc34d5acf699b1f80f8e0f5" category="inline-link-macro-rx"></block>。</block>
   <block id="3066f1ebade966cf5d09fd225d9c82df" category="list-text">Kubernetes 工作负载（预览版）</block>
   <block id="1c1c6b4c5003945f6d28242d24286ee6" category="list-text">在一个地方管理和保护您的 Kubernetes 应用程序和资源。</block>
   <block id="3f06fb8fe2ecccdacfaa2644488d935d" category="list-text">使用保护策略来构建增量备份。</block>
@@ -2098,7 +2055,6 @@
   <block id="0e41245837200bd6043f82d33b20190c" category="list-text">运行内核版本 5.14.0-503.22.1.el9_5.x86_64（长期）或更高版本的现代 Linux 发行版</block>
   <block id="c970c11004fdd5ce2f1cc065c0a6ad6b" category="list-text">QEMU Guest Agent 版本 9.0.0 或更高版本</block>
   <block id="1264706b848dd57765cb327cb40961af" category="list-text">libvirt 版本 10.5.0 或更高版本</block>
-  <block id="a006e7e12c4a49555c6da7767f1640f2" category="section-title">保护 Oracle 工作负载的要求</block>
   <block id="bd1f903de615a0961eab2be934f825c0" category="paragraph">确保您的环境满足发现和保护 Oracle 资源的特定要求。</block>
   <block id="7509d7baf822c07a0ff0cabeada1f21a" category="list-text">Oracle 数据库：</block>
   <block id="d4e3176f0ba3c81be4e51425c09b9e73" category="list-text">Oracle 19C 和 21C 在独立部署中受支持。</block>
@@ -2119,9 +2075,6 @@
   <block id="42113cf11e30b764619d3a98db65262d" category="list-text">Rancher Kubernetes Engine 2（RKE2）v1.26.7+rke2r1、v1.28.5+rke2r1</block>
   <block id="3c230289b9e480de28e2d616db466bc7" category="list-text">Suse Rancher</block>
   <block id="59aaea4a07522d3cb111c0d446b7e7e3" category="list-text">NetApp Trident 24.10 或更高版本</block>
-  <block id="f186f228bc71cb57a140bcc20f23c216" category="list-text">NetApp Trident Protect 25.07 或更高版本（在 Kubernetes 工作负载发现期间安装）</block>
-  <block id="2c2fbc0a1685b20c95a5f489ce3868b3" category="list-text">NetApp Trident Protect Connector 25.07 或更高版本（在 Kubernetes 工作负载发现期间安装）</block>
-  <block id="362363dccd2cc68b02c87c4b9e577f91" category="list-text">确保 Kubernetes 集群、 Trident保护连接器和Trident保护代理之间的出站方向的 TCP 端口 443 未经过滤。</block>
   <block id="e33a9836e18ab4c7f01ac49f666c4e33" category="section-title">保护 Hyper-V 工作负载的要求</block>
   <block id="7e75f7658d8e69b52e07a066a4510af5" category="paragraph">确保您的 Hyper-V 实例满足发现和保护虚拟机的特定要求。</block>
   <block id="99fcf7547e608c33c370f1d5fe54e0a9" category="list-text">Microsoft Hyper-V 2019、2022 和 2025 版本</block>
@@ -4266,7 +4219,6 @@
   <block id="460a4c33ada7a6581872d15b96a4344b" category="sidebar">保护 VMware 工作负载（预览版）</block>
   <block id="6a3bb59ab6ca7e1af58c7f804a58a47c" category="sidebar">保护 KVM 工作负载（私人预览版）</block>
   <block id="d800ef02fd04e0bcce643b8bacdfd33e" category="sidebar">保护 Hyper-V 工作负载（私人预览版）</block>
-  <block id="0b4d495603c5e5fa389805d34bdd9a7f" category="sidebar">保护 Oracle 工作负载（私人预览版）</block>
   <block id="8f12fe2d1611902de146ad61b89b8295" category="sidebar">保护 Kubernetes 工作负载（预览版）</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">博客和社区</block>
   <block id="cc58d3a9b2264c4fd8cb1d3f61b90bdc" category="sidebar">NetApp Data Services</block>
@@ -4278,7 +4230,6 @@
   <block id="fe5216e8c6ca199aaa9802985fb31c17" category="sidebar">VMware 工作负载的已知限制</block>
   <block id="006d31cf1f539a7e450614470546345c" category="sidebar">Hyper-V 工作负载的已知限制</block>
   <block id="c97a0e572b66db226b5bead553a18a21" category="sidebar">KVM 工作负载的已知限制</block>
-  <block id="3feb49183384fc17fa972d94a86ad3c6" category="sidebar">Oracle 工作负载的已知限制</block>
   <block id="af63af72a4851d67644aa944a5b730df" category="sidebar">NetApp Backup and Recovery的先决条件</block>
   <block id="ad4016cac47a83a6e1446b1b38d42180" category="sidebar">为ONTAP和StorageGRID设置安全证书</block>
   <block id="302152c28a081827c4d7c5eeb2372c70" category="sidebar">配置NetApp Backup and Recovery常规设置</block>
@@ -4316,7 +4267,6 @@
   <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">恢复虚拟机数据和数据存储</block>
   <block id="a6c93de7c03701dfba222e9072ffe5e7" category="sidebar">保护 KVM 工作负载（预览版）</block>
   <block id="1db561ecd535caff5b4a1e7b87668d89" category="sidebar">保护 Hyper-V 工作负载（预览版）</block>
-  <block id="d9f824c8f622071705d9d0322fc719f8" category="sidebar">保护 Oracle 工作负载（预览版）</block>
   <block id="34caa737a5a671b66cc6fe7531c1f8b9" category="sidebar">安装和卸载恢复点</block>
   <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">保护 Kubernetes 工作负载（预览版）</block>
   <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">管理 Kubernetes 工作负载的执行钩子模板</block>
@@ -4338,7 +4288,6 @@
   <block id="96804f828cf944ce68e80e74ae8d7cc0" category="list-text">支持 SUSE Rancher Kubernetes 发行版</block>
   <block id="7d6928dd953d625f33fbfd89243bf778" category="paragraph">此版本的NetApp Backup and Recovery引入了对发现和管理 Oracle 数据库工作负载的支持：</block>
   <block id="d2ce5b8a55f10a315816f6647894815f" category="paragraph">执行钩子是一种自定义操作，它与托管 Kubernetes 应用程序中的数据保护操作一起运行。例如，通过使用执行挂钩在快照之前暂停数据库事务并在之后恢复它们来创建应用程序一致的快照。创建执行钩子模板时，指定钩子类型、要运行的脚本以及目标容器的过滤器。使用模板将执行挂钩链接到您的应用程序。</block>
-  <block id="404af526c79edf2284a92604e83b4a45" category="paragraph">NetApp Backup and Recovery在数据保护期间冻结和解冻 KubeVirt 等应用程序的文件系统。您可以使用Trident保护文档全局或针对特定应用程序禁用此行为：</block>
   <block id="d77282c03df8b10c2c7ca1ca7deb9f52" category="list-text">任何适用的自定义预操作执行挂钩都在适当的容器上运行。您可以创建多个自定义预操作挂钩，但它们的执行顺序无法保证或配置。</block>
   <block id="8ae86463dd99c66d5a9ac9fadaa7dbd9" category="list-text">NetApp Backup and Recovery在适当的容器上运行任何适用的自定义操作前执行挂钩。您可以创建多个自定义后操作挂钩，但它们的执行顺序无法保证或配置。</block>
   <block id="fa277bc4215bc063ac5d9134fd68a383" category="paragraph">如果创建多个相同类型的钩子，则无法保证它们的执行顺序。不同类型的钩子总是按照指定的顺序运行。例如，以下是具有所有不同类型钩子的配置的执行顺序：</block>
@@ -4429,13 +4378,11 @@
   <block id="3d1e74249acc11e215f68c784ae29e1f" category="list-text">*从恢复页面*：当您不知道资源的名称、位置或最后有效日期时，使用此选项可恢复资源。使用过滤器搜索快照。</block>
   <block id="925339af26e35afc6f5984d691aa25af" category="list-text">*从库存页面*：当您知道特定资源的名称、位置和最后有效日期时，使用此选项可恢复该资源。浏览列表以查找资源。</block>
   <block id="bf094c6c5fccca6c427a43080edf5833" category="list-text">在数据库菜单中，选择具有“受保护”状态的数据库。</block>
-  <block id="ce2efe5d519e4c1242177b404520665a" category="doc">使用NetApp Backup and RecoveryOracle 工作负载</block>
   <block id="b3b9d779c6c22d1258ffcbda438336c1" category="paragraph">使用NetApp Backup and Recovery将 Oracle 数据库保护组或数据库从本地ONTAP系统备份到云存储，包括 Amazon S3、 NetApp StorageGRID、Microsoft Azure Blob Storage 或ONTAP S3。  NetApp Backup and Recovery每个保护组中的数据库和日志数据。</block>
   <block id="fe390808083985de8172887380a80c5e" category="admonition">要按计划备份保护组或单个数据库，请创建管理备份和还原操作的策略。看<block ref="08bf6451e8be54326517c755d3e4cd23" category="inline-link-macro-rx"></block>以获取说明。</block>
   <block id="26bbb7b442740e80ed850d884bef0605" category="paragraph">在进行系统更改之前运行按需备份以确保您的数据受到保护。</block>
   <block id="0dd484dd2e82385c156b95d98fd2f3fa" category="admonition">NetApp Backup and Recovery对备份和保护组使用相同的策略。</block>
   <block id="b5ba243769c03b5476a2b6c06b8c5b5a" category="paragraph">如果您将数据库的保护策略配置为保留存档日志，则可以挂载恢复点来查看数据库更改历史记录。</block>
-  <block id="d038c8bfa872280d5c1a567bff169d05" category="paragraph">使用NetApp Backup and Recovery保护 Oracle 数据库和日志。获得快速、节省空间、崩溃一致和数据库一致的备份和恢复。将 Oracle 工作负载备份到 AWS S3、 NetApp StorageGRID、Azure Blob Storage 或ONTAP S3。将备份还原到本地 Oracle 主机。</block>
   <block id="21214671e7222d24ea30444729853d36" category="paragraph">将您想要保护的工作负载分组到保护组中，以便一起备份和还原它们。</block>
   <block id="e1a8b67cb61fcb0e0a3b88e66f93f4cd" category="paragraph">暂停保护组以暂停其计划的备份。</block>
   <block id="2efbc86f2f62c8819af426f268c543d5" category="paragraph">删除保护组时，也会删除该组以及该组的所有备份计划。如果不再需要某个保护组，请将其删除。</block>
@@ -4765,7 +4712,6 @@
   <block id="48ddddb06a7cca979a8b0eb4de198113" category="doc">ONTAP卷工作负载增强</block>
   <block id="cbab7e5b614b876bebcce0c29fd1afb6" category="paragraph">*支持多个存储桶*：（私有预览）从ONTAP 9.17.1 及更高版本开始，您现在可以保护系统中的卷，每个系统最多可跨不同的云提供商使用 6 个存储桶。</block>
   <block id="695e42eb94aa8a143b557dc75e4cc65e" category="inline-link-macro">了解更多关于使用NetApp Backup and Recovery备份ONTAP卷数据的信息</block>
-  <block id="c380d2c239579706adcab966ccded39a" category="paragraph"><block ref="040f925aac1483fc9f3f6e8bd68d3888" category="inline-link-macro-rx"></block>。</block>
   <block id="558e5aec99d772eb277c493188d3c607" category="section-title">VMware 工作负载增强功能</block>
   <block id="d8cf45a94e57901a57764525baf2f9bf" category="paragraph">此版本的 VMware 工作负载引入了以下增强功能：</block>
   <block id="3b2cdba7e0b9954f4d9e79b310fdbccd" category="list-text">您现在可以恢复客户操作系统文件和文件夹。</block>
@@ -4974,4 +4920,329 @@
   <block id="83de53928b74eea738d883969ca231fa" category="list-text">NetApp Backup and Recovery 现在支持由 System Center Virtual Machine Manager (SCVMM) 调配并托管在 CIFS 共享上的 Hyper-V 虚拟机。</block>
   <block id="fe3a06f4a23ebd296fcaecd751b29ac6" category="paragraph">KVM 工作负载预览现在保护由 Apache CloudStack 管理的 KVM 主机和虚拟机。</block>
   <block id="e82f8585939ff44aeed4d4c863058cee" category="list-text">从 ONTAP 9.18.1 开始，FlexGroup 卷备份在 MetroCluster 配置中受支持。</block>
+  <block id="09b3e69fece0c8fed98cbfa4f60560d0" category="paragraph">确保 AWS 会话令牌过期时间足以支持任何长时间运行的 s3 备份操作。如果令牌在备份操作期间过期，操作可能会失败。</block>
+  <block id="5eb831e0d78e65bcd3dba1b12bc07037" category="inline-link">AWS API 文档</block>
+  <block id="acc296a904bd0d4d976a52cfe9fe9b8c" category="list-text">有关检查当前会话令牌过期的详细信息，请参见<block ref="718365c4473e4015a2556ceb49bc6d0e" category="inline-link-rx"></block>。</block>
+  <block id="47700faecc8b055ea48413402a7add11" category="inline-link">AWS IAM 文档</block>
+  <block id="40a9530583ad3747ca30675858b0a6cd" category="list-text">有关 AWS 资源凭据的详细信息，请参见<block ref="101809cc7793764f39e2d5fc223ea04c" category="inline-link-rx"></block>。</block>
+  <block id="40a81a4873df306bd0d241dc6c5f81ba" category="admonition">此处创建的模板仅在保护 Kubernetes 工作负载时可用。</block>
+  <block id="782b4a6bf31d7d564f002ed80e56a970" category="doc">Data Mover 超时标记</block>
+  <block id="2cf4114566459ea3b3a5ac507cb86fd9" category="paragraph">在备份和还原操作期间，您可以使用注释<block ref="f49fa3f76b2a4fcdf04dff369d417d84" prefix=" " category="inline-code"></block>来配置数据移动操作的超时。此注释指定数据移动器在超时之前应等待特定操作完成的最长时间（以秒为单位）。在网络问题或其他因素可能导致数据移动操作停止的情况下，它特别有用。它有助于检测和处理停滞的操作，而不是为整个过程设置一般超时。例如，如果由于网络问题而无法恢复卷数据，则操作将根据指定的持续时间超时。</block>
+  <block id="c2b7f24f4ddbaedb4e3d9e19f77eebac" category="paragraph">您可以在 YAML 文件中使用此注释，如下所示：</block>
+  <block id="14a0e26cbe187a4754f8b523ffba6073" category="paragraph">在此示例中，如果还原操作在 2 秒内未发生任何进度，则注释将使<block ref="ec2a2895b09b6030ec8cc1b3c43ddc4d" prefix=" " category="inline-code"></block>操作失败。</block>
+  <block id="c49aaf233c16f1193a8d683c17866eea" category="admonition">如果批注值小于或等于 0，则操作将立即失败。</block>
+  <block id="94d4a30d9c79c7c0ed251e92efa4cf7e" category="paragraph">Trident Protect 在数据保护操作期间为 KubeVirt 虚拟机提供文件系统冻结和解冻功能，以确保数据一致性。虚拟机冻结操作的配置方法和默认行为因 Trident Protect 版本而异，较新的版本通过 Helm 图表参数提供简化的配置。</block>
+  <block id="5ac5b84505fffb8149e9d0cb84ddedbe" category="admonition">在还原操作期间，不会还原为虚拟机 (VM) 创建的任何<block ref="890b633d48ac6398f14ae722463da08b" prefix=" " category="inline-code"></block>。</block>
+  <block id="d7a7411094ef8b2d0700b0d64c688766" category="example-title">Trident Protect 25.10 及更高版本</block>
+  <block id="bef8e5378f20989a496a5caac68e7dc0" category="paragraph">Trident Protect 在数据保护操作期间自动冻结和解冻 KubeVirt 文件系统，以确保一致性。从 Trident Protect 25.10 开始，您可以在 Helm chart 安装期间使用 <block ref="f9e1922095ec0e9e8b4f185586e66425" prefix=" " category="inline-code"></block> 参数禁用此行为。默认情况下，该参数处于启用状态。</block>
+  <block id="e8ac8c64b628b92773c6f939fe2b1102" category="example-title">Trident Protect 24.10.1 至 25.06</block>
+  <block id="a099f4b5b32bb2a3c98bf39fd2eada0d" category="paragraph">从 Trident Protect 24.10.1 开始，Trident Protect 在数据保护操作期间自动冻结和解冻 KubeVirt 文件系统。或者，您可以使用以下命令禁用此自动行为：</block>
+  <block id="ea7f18044a9efb2ea47bdd370e5870f3" category="example-title">Trident Protect 24.10</block>
+  <block id="98d3ce5c789124fc9207b48d4d1e8fc7" category="paragraph">Trident Protect 24.10 不会在数据保护操作期间自动确保 KubeVirt VM 文件系统的一致状态。如果要使用 Trident Protect 24.10 保护 KubeVirt VM 数据，则需要在数据保护操作之前手动为文件系统启用冻结/解冻功能。这可确保文件系统处于一致状态。</block>
+  <block id="acb14ba5b70eb330a1d4de9c6b7a325d" category="inline-link-macro">配置虚拟化</block>
+  <block id="5ea5c247812e1dca5ff02ca853f05032" category="paragraph">您可以通过 <block ref="e0dd4c4b8aa16596df6c3f5cb36d3cdc" category="inline-link-macro-rx"></block> 配置 Trident Protect 24.10 来管理数据保护操作期间虚拟机文件系统的冻结和解冻，然后使用以下命令：</block>
+  <block id="cedf2576eebff15fc6b30d5a7109eb6b" category="doc">还原和故障转移操作期间的命名空间注释和标签</block>
+  <block id="131ff34387be167411ffda7d60b577e7" category="paragraph">在恢复和故障转移操作期间，目标命名空间中的标签和注释将与源命名空间中的标签和注释匹配。将添加目标命名空间中不存在的源命名空间中的标签或注释，并覆盖已存在的任何标签或注释，以匹配源命名空间中的值。仅存在于目标命名空间上的标签或注释保持不变。</block>
+  <block id="20f40e0b9308901dac07ce8a8efb3350" category="inline-link-macro">OpenShift 安全上下文约束文档</block>
+  <block id="80aabc2f42a52376f3d884d3b02360f4" category="admonition">如果使用 Red Hat OpenShift，请务必注意命名空间注释在 OpenShift 环境中的关键作用。命名空间注释可确保还原的 Pod 遵守 OpenShift 安全上下文约束 (SCC) 定义的适当权限和安全配置，并且可以访问卷而不会出现权限问题。有关详细信息，请参见 <block ref="842acfa178c0bbf09e368bf9db0716b8" category="inline-link-macro-rx"></block>。</block>
+  <block id="6c83555d4261acb08ebbc5f24823dc7b" category="paragraph">在执行还原或故障转移操作之前，可以通过设置 Kubernetes 环境变量<block ref="1580ff61f204e9d56cd5324c7e9221ba" prefix=" " category="inline-code"></block>来防止目标命名空间中的特定注释被覆盖。例如：</block>
+  <block id="59f713e31282fe744caf06335d891f9a" category="inline-link-macro">配置其他 Trident Protect helm 图表设置</block>
+  <block id="98b806d92f2e28da541021a181de980f" category="admonition">执行还原或故障切换操作时，在<block ref="22416353aff9ef4322e1ee858f418ae4" prefix=" " category="inline-code"></block>和<block ref="8028cf835d9b72ff2d6f835934c25568" prefix=" " category="inline-code"></block>中指定的任何命名空间批注和标签都将从还原或故障切换操作中排除。确保在初始 Helm 安装过程中配置了这些设置。要了解更多信息，请参阅<block ref="647ed99900e7ff1307ad7b7cec525a2c" category="inline-link-macro-rx"></block>。</block>
+  <block id="d65eac563b898cb7e41b8853a4fe1a3c" category="paragraph">如果使用带有 <block ref="cc1f5c1d16e33b8463c9ee27295cd5df" prefix=" " category="inline-code"></block> 标志的 Helm 安装源应用程序，则会对 <block ref="b068931cc450442b63f5b3d276ea4297" prefix=" " category="inline-code"></block> 标签键进行特殊处理。在还原或故障转移过程中，Trident Protect 会将此标签复制到目标命名空间，但如果来自源的值与源命名空间匹配，则将值更新为目标命名空间值。如果此值与源命名空间不匹配，则将其复制到目标命名空间，不进行任何更改。</block>
+  <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="section-title">示例</block>
+  <block id="1280c48f074ec68fd2281266662c9a3f" category="paragraph">以下示例显示了源和目标命名空间，每个命名空间都有不同的注释和标签。您可以查看操作之前和之后的目标命名空间的状态，以及如何在目标命名空间中组合或覆盖注释和标签。</block>
+  <block id="2cfe257f724ed59a07ab01918c828fb5" category="section-title">还原或故障转移操作之前</block>
+  <block id="c972cd959174c84d137520d91c011446" category="paragraph">下表显示了还原或故障转移操作之前的示例源和目标命名空间的状态：</block>
+  <block id="b3ba0fe968ce39dcfc6fe8cc0f1b02da" category="cell">命名空间</block>
+  <block id="933e469cb306a0ea9faabd3e4235d3be" category="cell">标注</block>
+  <block id="3ad6cb6100190c8f81e99fd52debf7ef" category="cell">标签</block>
+  <block id="86a2c974d76e381c7efd2206939722b7" category="cell">命名空间 ns-1（源）</block>
+  <block id="278dbe8403d8ebf0d4ec8f723ca24aa6" category="list-text">annotation.one/key: "updatedvalue"</block>
+  <block id="7217e7166d38adddcd72b9b1c9359148" category="list-text">annotation.two/key: "true"</block>
+  <block id="a03c56a353af6ece3297a5fcad5250f2" category="list-text">environment=production</block>
+  <block id="d1642f369aa9d43205cf91975f1359d4" category="list-text">合规性=hipaa</block>
+  <block id="fc10b995e3d1c13cbae652922eba0bb6" category="list-text">name=ns-1</block>
+  <block id="58e6b4eeb688a71c985d2593769d2fda" category="cell">命名空间 ns-2（目标）</block>
+  <block id="f0e6f2ec2d0d1aa7012e3b32889c034c" category="list-text">annotation.one/key: "true"</block>
+  <block id="1e678090acf06eb2bf74c38dee9d3317" category="list-text">annotation.three/key: "false"</block>
+  <block id="ebbaf450aa5330e33917a8de9157e099" category="list-text">角色=数据库</block>
+  <block id="46c40b68ab6fcc817f5134602b1985e3" category="section-title">还原操作后</block>
+  <block id="15d6567aa33ad00e352de9164a741b8b" category="paragraph">下表显示了还原或故障转移操作后示例目标命名空间的状态。已添加一些键，一些键已被覆盖，并且已更新 <block ref="b068931cc450442b63f5b3d276ea4297" prefix=" " category="inline-code"></block> 标签以匹配目标命名空间：</block>
+  <block id="a8306d4d1af4239dba9a6bcfd799eba7" category="list-text">name=ns-2</block>
+  <block id="a5085953f7b15a312b4e12827abc66e5" category="list-text">（_可选_）如果需要仅选择要还原的应用程序的某些资源，请添加包含或排除标有特定标签的资源的筛选：</block>
+  <block id="2cb1c3616d5b69db8670e7040d8b858f" category="admonition">Trident Protect 会自动选择一些资源，因为它们与您选择的资源之间存在关系。例如，如果您选择了永久卷声明资源，并且它具有关联的 pod，则 Trident Protect 也将还原关联的 pod。</block>
+  <block id="4a0207b6a74b63dcaaa4d58fe75ec431" category="list-text">*resourceFilter.resourceSelectionCriteria*：（筛选时需要）使用<block ref="f4d72a64acd8929c0cc9ed96a7a336cc" prefix=" " category="inline-code"></block>或<block ref="843f2812f595e7ec7c5036e89fde02d6" prefix=" " category="inline-code"></block>来包含或排除在 resourceMatchers 中定义的资源。添加以下 resourceMatchers 参数以定义要包括或排除的资源：</block>
+  <block id="1eb6c79d30a4cb086ad406cb25fec350" category="list-text">*resourceFilter.resourceMatchers*：resourceMatcher 对象数组。如果在此数组中定义多个元素，则它们将作为 OR 操作进行匹配，并且每个元素（组、种类、版本）内的字段将作为 AND 操作进行匹配。</block>
+  <block id="be16b6e14200639734fb9694e3c0f655" category="list-text">*resourceMatchers[].group*：（_Optional_）要筛选的资源的组。</block>
+  <block id="2162d9f0c97d87c37f838ea27ecb393a" category="list-text">*resourceMatchers[].kind*：（_Optional_）要筛选的资源的类型。</block>
+  <block id="862dca1a77422225d13abda4b7bf539b" category="list-text">*resourceMatchers[].version*：（_Optional_）要筛选的资源的版本。</block>
+  <block id="f5d1dcaf86934b4541162f010db1d3e1" category="list-text">*resourceMatchers[].names*：（_可选_）要过滤的资源的 Kubernetes metadata.name 字段中的名称。</block>
+  <block id="19c69b04e9f9adb29979cc0ff90625b2" category="list-text">*resourceMatchers[].namespaces*: (_Optional_) 要过滤的资源的 Kubernetes metadata.name 字段中的命名空间。</block>
+  <block id="d9348d075dc7b3c91cff99d56dfc327b" category="inline-link">Kubernetes 文档</block>
+  <block id="cb4354b08a6a88b3c12671390a85c520" category="list-text">*resourceMatchers[].labelSelectors*: (_Optional_) 资源的 Kubernetes metadata.name 字段中的标签选择器字符串，如 <block ref="d4ce3da8407a7d8e148bb1287288e778" category="inline-link-rx"></block> 中所定义。例如：<block ref="6ea45baf659f1f35e51c8dc9005eac03" prefix=" " category="inline-code"></block>。</block>
+  <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">例如：</block>
+  <block id="00d3f03654bed141c3478449f1760762" category="paragraph">确保 AWS 会话令牌过期时间足以进行任何长期运行的 s3 还原操作。如果令牌在还原操作期间过期，则操作可能会失败。</block>
+  <block id="89a7d3742e536d3e468bf485545ed9fb" category="paragraph">要了解有关保护 Oracle Database 工作负载的详细信息，请参阅<block ref="dca8e6f6588b72be45d0f60d74204461" category="inline-link-rx"></block>。</block>
+  <block id="37c785778d2185acbba38fa4b6624392" category="paragraph"><block ref="b49343ccc7da9738bd595bd89e3d39db" category="inline-link-macro-rx"></block>。</block>
+  <block id="27f6ebf60d74cce9ba572615629e4416" category="doc">Kubernetes 工作负载增强功能</block>
+  <block id="de8616724d177017abdd720d7365feff" category="paragraph">此版本的 Kubernetes 工作负载引入了以下增强功能：</block>
+  <block id="e83849cb5376223ea17f24fcaf9756e4" category="list-text">*CR 工作流程支持*：现在，您可以使用 CR 以及 Backup and Recovery Web UI 执行常见的保护任务。</block>
+  <block id="e572a091207dcc253fde964cd9d716cb" category="list-text">*集群迁移*：现在，您可以将使用 Trident Protect 保护的现有 Kubernetes 集群添加到 Backup and Recovery。</block>
+  <block id="9674b909ef82dfe8331f77d84e878c04" category="list-text">*警报框架支持*：您现在可以接收某些 Kubernetes 工作负载事件的电子邮件和 UI 警报。</block>
+  <block id="ea6aa972206a8b460e06b79e84a9211b" category="list-text">*还原选项卡集成*：您现在可以从"还原"菜单访问 Kubernetes 工作负载还原操作。</block>
+  <block id="bf72fb868ac644263293cb0c5ccc59c1" category="list-text">*支持 3-2-1 扇出备份架构*：现在，在保护 Kubernetes 工作负载时，您可以在保护策略中使用 3-2-1 扇出架构。</block>
+  <block id="3338619eac8377287ea3a8f33c958b54" category="section-title">Oracle Database 工作负载增强</block>
+  <block id="b663bfd2f714b44e458d15bb1e6002bc" category="paragraph">此版本的 Oracle Database 工作负载引入了以下增强功能：</block>
+  <block id="c1cb9a739430571a50b81bf3a48a1ab8" category="list-text">*非 root 用户支持*：非 root 用户现在可以执行备份、还原和克隆操作，从而提高安全性和合规性。</block>
+  <block id="2b8a690a9b9248405fb6bba05b997f16" category="list-text">*克隆支持*：现在使用 ASM 库 v2 在主 NAS、辅助 NAS、SAN 和 ASM 环境中支持克隆功能，从而实现协调的保护工作流程。</block>
+  <block id="8ff8833aaf25d3ffbe1942bc11221a77" category="list-text">*克隆拆分支持*：您现在可以从父卷拆分可写快照（克隆），从而释放存储空间并启用独立操作。</block>
+  <block id="de315feba3cc97f871a801444cebe8a8" category="list-text">*对象存储的备份和还原*：基于对象的 S3 兼容存储目标现在支持本机备份和还原功能。</block>
+  <block id="ffb4de355aa6d4aa7e8805128e9c2860" category="list-text">*Clone Lifecycle Management (CLM)*：主存储支持克隆刷新操作。</block>
+  <block id="bb34df9f9d35ad561edcc8780a11b63c" category="list-text">*Clone to alternate host*：您现在可以从主存储和二级存储将数据库克隆到不同的主机（用于测试或分析）。</block>
+  <block id="ec76c85c764d367b1028b426d5aaa897" category="list-text">*ONTAP 一致性组支持*：现在支持 ONTAP 一致性组，确保跨多个卷的应用程序一致性快照。</block>
+  <block id="07bac542633034a121251f74bf3c7880" category="list-text">Backup and Recovery 现在支持以下适用于 Oracle Database 工作负载的保护策略体系结构：</block>
+  <block id="8f8f2fbe982fd62b69f6aa2faf0d46da" category="list-text">3-2-1 扇出</block>
+  <block id="55cf8812c6c22803ddfa5fd41279187d" category="list-text">磁盘到磁盘</block>
+  <block id="0f6d38819f95da81f8bc80258fee7071" category="list-text">磁盘到对象存储</block>
+  <block id="e3b858c29172bddae0dbb7e461b2f7df" category="list-text">级联</block>
+  <block id="cc5d8c9d6668803b438b03567e08b611" category="section-title">其他增强功能</block>
+  <block id="6ec61dc6a9b7787975d159ba164424f9" category="paragraph">Hyper-V 工作负载、KVM 工作负载和 VMware 工作负载现已在 NetApp Backup and Recovery 中正式可用 (GA)。</block>
+  <block id="6e56df4eb422b0b15187c84ba551237e" category="summary">在您的环境中使用 Backup and Recovery 之前，请查看这些 NetApp Backup and Recovery 限制。</block>
+  <block id="36f1a2626b3ec6834b4eb361bac96c37" category="doc">Kubernetes 工作负载 NetApp Backup and Recovery 的已知限制</block>
+  <block id="36c070b302c08836d912ffb6841bb46e" category="section-title">更改应用程序的保护策略</block>
+  <block id="ad4e872c3df8cab19a9d649f27b25605" category="paragraph">当您将应用程序的关联保护策略更改为使用不同的存储桶或辅助复制目标时，保护策略可能会失败。</block>
+  <block id="c21b208a187eea104dc2c97a887a8d44" category="paragraph">*解决方法*：删除并重新添加应用程序。</block>
+  <block id="bbe3b273a032bd3c8a5d28ca2ed8a114" category="section-title">3-2-1 保护策略配置限制</block>
+  <block id="9f0dc4af8fb867cc1d90bc96a3df9976" category="paragraph">在创建 3-2-1 保护策略时，如果在复制到辅助存储的同时不执行对象存储备份，则保护策略会在保护应用程序时挂起。</block>
+  <block id="7a9541e3e0859a3bc7198878ae12b9bd" category="paragraph">*解决方法*：删除并重新添加应用程序，并使用不同的保护策略对其进行保护。</block>
+  <block id="3f21300a12c48d2767fb3e5b7f83112b" category="doc">适用于 Oracle 数据库工作负载的 NetApp Backup and Recovery 的已知限制</block>
+  <block id="b295452d4036457162f0388dddf070da" category="paragraph">在 NetApp Backup and Recovery 中 Oracle 数据库工作负载的专用预览版本不支持以下操作：</block>
+  <block id="bc757dcd5d14a5f50685dfc481e61eb9" category="paragraph">在 Oracle Database 工作负载的专用预览版中，仅支持使用 NFS、SAN 或 ASM SAN 的独立部署 Oracle Database。</block>
+  <block id="92342f1ac80ff519b37da9a3148cbbd9" category="summary">为提高安全性，请配置 NetApp Backup and Recovery 中特定角色的访问权限。</block>
+  <block id="42481383ace46d9a4716cce3ab760979" category="doc">在 NetApp Backup and Recovery 中设置基于角色的访问控制</block>
+  <block id="c43786d5855026fcdf77809fb14618c9" category="paragraph">若要提高安全性并控制资源访问，请为 NetApp Backup and Recovery 配置基于角色的访问。NetApp Console 支持某些 Backup and Recovery 工作负载的基于角色的访问控制 (RBAC)。您可以为这些工作负载指定特定的管理员或查看者角色。在支持项目级关联之前，具有 Backup and Recovery 角色的所有用户仍可访问尚未支持基于角色的访问控制的其他工作负载。</block>
+  <block id="0095575f49738915ec4332a4cab3f770" category="paragraph">按照下面的步骤控制对组织中资源的访问。在 NetApp Console 菜单的*管理 &gt; 身份和访问*页面中进行更改。</block>
+  <block id="4ce081445a8183fac4f9d6fc6a51691e" category="admonition">这些步骤假设您在 Console 中被分配了组织管理员角色。</block>
+  <block id="c9b674f0a38b83f43d155669dc9e1dae" category="list-text">创建身份和访问项目结构。</block>
+  <block id="4b146c004809dfbb48c225acceabf595" category="paragraph">作为组织管理员，设置工作负载所在的 Identity and access 文件夹和项目结构。</block>
+  <block id="26564786bd7b3b623f0d304e50e4b2c4" category="list-text">分配用户角色。</block>
+  <block id="bc84f44819baf4c2067c740895559760" category="list-text">主要选项：</block>
+  <block id="5bbec3994efca5a72e64608daaa37c96" category="paragraph">将用户添加到指定用于工作负载的每个项目，并授予他们适当的角色。例如：</block>
+  <block id="a69e66fc51befba55c7c820be12ca0f1" category="list-text">*组织管理员*和 *Backup and Recovery 超级管理员*：具有这些角色的用户可以查看所有组织中的所有资源，并发现 Backup and Recovery 工作负载并将其分配给项目（例如，US East 或 US West）。</block>
+  <block id="44ed33b9e7e797c038285a37d20e899a" category="list-text">*文件夹或项目管理员*和 *Backup and Recovery 超级管理员*：具有这些角色的用户只能查看其具有权限的文件夹或项目中的资源，但可以发现 Backup and Recovery 工作负载并将其分配给该项目。</block>
+  <block id="67703f80cd44bf597b333f1cc2a34901" category="list-text">备选方案：</block>
+  <block id="6d2d1e1d6a9a3cf3960bdb349373c649" category="paragraph">您可以为自己分配 Backup and Recovery 超级管理员角色并直接发现工作负载，而不是授予用户完整的 Backup and Recovery 管理员访问权限。</block>
+  <block id="da57866549888e8bceaf30a4db33bfc5" category="list-text">在 Backup and Recovery 中发现工作负载。</block>
+  <block id="63e4e660d97fd26bbffa7cb3968c22c4" category="paragraph">组织管理员或文件夹或项目管理员发现可用的工作负载，并选择适当的项目（如 US East 或 US West）。每个工作负载都会自动与选定项目关联。</block>
+  <block id="0e8d553f80f80eac9e99c265bf9f4d72" category="list-text">将用户添加到项目。</block>
+  <block id="0da282e170c520798099314d27620ed4" category="paragraph">组织管理员或文件夹/项目管理员将 Console 用户添加到具有工作负载的项目。根据用户的访问需求，为其分配组织查看者角色和 Backup and Recovery 角色。具有正确 Backup and Recovery 角色的用户将自动获得对这些项目中新工作负载的访问权限。</block>
+  <block id="30f60d67f457bb040dffde52197a54da" category="section-title">相关信息</block>
+  <block id="728d17e7146dcd6218a24c46a1de8943" category="inline-link-macro">了解 NetApp Console 身份和访问管理</block>
+  <block id="d612358528f4a89a703f161a8c3e4a9e" category="list-text"><block ref="22de56c086dedbed6837db4613efda62" category="inline-link-macro-rx"></block>。</block>
+  <block id="aedba1ff218d6d25f9aefebf5dfdff4f" category="list-text"><block ref="8432e361253dad22d74ca5fd3ad3c136" category="inline-link-macro-rx"></block>。</block>
+  <block id="509c51772921c8ab860f75456880683f" category="list-text"><block ref="a16a606232229e0e62a5010aaabec2ae" category="inline-xref-macro-rx"></block> 在备份作业之前和之后运行脚本。（仅限 Kubernetes 工作负载）</block>
+  <block id="1d74d204f5274b499e41d2e0238b7bdd" category="inline-link-macro">创建新的保护策略</block>
+  <block id="c7a4eea6d62999931e3442bac0f23c29" category="paragraph">当您发现当前受 Trident Protect 保护的群集时，在发现过程中将禁用与 Trident Protect 一起使用的任何备份计划（Trident Protect 备份计划与 Backup and Recovery 不兼容）。要保护群集的应用程序，<block ref="f0814d3538b9ea88d5e27855ca8d3a8e" category="inline-link-macro-rx"></block>或将应用程序与现有策略关联。然后，如果需要，您可以删除 Trident Protect 备份计划。</block>
+  <block id="a44ad7bb8f2123fa1919c8eb91adac29" category="list-text">创建 Trident Protect 命名空间</block>
+  <block id="75457b35c4c6b70a7664a43e080563ca" category="list-text">安装或升级 Trident Protect 和 Trident Protect 连接器</block>
+  <block id="dff3994b6daee1be81638e1c4964af92" category="doc">在 NetApp Backup and Recovery 中发现 Oracle 数据库工作负载</block>
+  <block id="e242e6f8581d6d11d04b2c80d7a16519" category="inline-link-macro">发现 Oracle Database 工作负载</block>
+  <block id="ec9157f5af288c671e8006da3677d9c3" category="list-text">对于 Oracle Database 工作负载，请参阅 <block ref="c9b387ac576fa007292bb17c9c97e163" category="inline-link-macro-rx"></block>。</block>
+  <block id="72581b2d72c5eaf924f3612a1d930c1f" category="summary">NetApp Backup and Recovery 使您能够使用自定义资源 (CR) 手动备份 Kubernetes 应用程序。</block>
+  <block id="81c6902865980301c496fb545daf563f" category="doc">现在使用 Backup and Recovery 中的自定义资源备份 Kubernetes 应用程序</block>
+  <block id="98059fcd3ca40facbefb17e9841439ff" category="section-title">现在使用自定义资源备份 Kubernetes 应用程序</block>
+  <block id="c2c21ce64dd4770c44c8642d322a5424" category="admonition">如果集群范围的资源在应用程序定义中显式引用，或者它们引用了任何应用程序命名空间，则会包含在备份、快照或克隆中。</block>
+  <block id="fe52ac2568977e4c3fd2c94c3daa5a5a" category="section-title">使用自定义资源创建本地快照</block>
+  <block id="27c1841c409fd90a4c17d9725071d73b" category="paragraph">要创建 Kubernetes 应用程序的快照并将其存储在本地，请使用具有特定属性的 Snapshot 自定义资源。</block>
+  <block id="dde7632642eb239d814cdb58f6e7c1a7" category="list-text">创建自定义资源 (CR) 文件并将其命名为<block ref="f2a957d477f28333fe5340abcdba5f6d" prefix=" " category="inline-code"></block>。</block>
+  <block id="3585700696abe40ccc0973202ddace0a" category="list-text">在创建的文件中，配置以下属性：</block>
+  <block id="3dbbdf39618ebec771728a10e75c52f9" category="list-text">*metadata.name*：（_Required_）此自定义资源的名称；为您的环境选择一个唯一且合理的名称。</block>
+  <block id="14c5017706ef7ba38dbfced0b670f7e4" category="list-text">*spec.applicationRef*：要快照的应用程序的 Kubernetes 名称。</block>
+  <block id="92c5bebe15e018e9b60ed9fa2a5d7736" category="list-text">*spec.appVaultRef*：（_必需_）应存储快照内容（元数据）的 AppVault 的名称。</block>
+  <block id="a9860c462819471295facd0a13fc4275" category="list-text">*spec.reclaimPolicy*：（_可选_）定义删除快照 CR 时快照的 AppArchive 会发生什么情况。这意味着即使设置为<block ref="afece4245269582cb2f1009d4fb52047" prefix=" " category="inline-code"></block>，快照也将被删除。有效选项：</block>
+  <block id="ff5ca6a0665c8d286d507fe36b867e1c" category="list-text"><block ref="afece4245269582cb2f1009d4fb52047" prefix="" category="inline-code"></block> (默认)</block>
+  <block id="c009f85498c5a7a2db78e1874e6dd4b1" category="list-text"><block ref="f2a6c498fb90ee345d997f888fce3b18" prefix="" category="inline-code"></block></block>
+  <block id="7e1f6887e34df6926f4857dbe55cd426" category="list-text">使用正确的值填充<block ref="f2a957d477f28333fe5340abcdba5f6d" prefix=" " category="inline-code"></block>文件后，应用 CR：</block>
+  <block id="094b4f1f6b9b3e907c7b81b6cb1aa90b" category="section-title">使用自定义资源将应用程序备份到对象存储</block>
+  <block id="e66dcb518f5eed46d29f1bce6d1165b8" category="paragraph">创建具有特定属性的 Backup CR，以将应用程序备份到对象存储。</block>
+  <block id="b8bcd9ef37f1224eaa43c22793dbfc80" category="list-text">创建自定义资源 (CR) 文件并将其命名为<block ref="3cc60d6081fbcccb7d8da4092a47553e" prefix=" " category="inline-code"></block>。</block>
+  <block id="888ea90f9844794ae90f13cbee8b341f" category="list-text">*spec.applicationRef*：（_必需_）要备份的应用程序的 Kubernetes 名称。</block>
+  <block id="e2092d1675b7aaf32ee37c20adf69a32" category="list-text">*spec.appVaultRef*：（_必需，与 spec.appVaultTargetsRef 互斥_）如果使用相同的存储桶存储快照和备份，则这是应存储备份内容的 AppVault 的名称。</block>
+  <block id="90acb6b1767d94f7c9ad46c817f6a296" category="list-text">*spec.appVaultTargetsRef*：（_必需，与 spec.appVaultRef 互斥_）如果您使用不同的存储桶来存储快照和备份，这是应存储备份内容的 AppVault 的名称。</block>
+  <block id="c3556f7361ca71ac227ebd903de664ed" category="list-text">*spec.dataMover*：（_Optional_）一个字符串，指示要用于备份操作的备份工具。该值区分大小写，必须为<block ref="250c51527f347066847969f002be67a2" prefix=" " category="inline-code"></block>。</block>
+  <block id="300fad6a76be12ae227fb48393c4df0c" category="list-text">*spec.reclaimPolicy*：（_可选_）定义删除 Backup CR 时备份内容（元数据/卷数据）会发生什么。可能的值：</block>
+  <block id="0353a7a44a8c62ed98420560f469ae63" category="list-text">*spec.cleanupSnapshot*：（_必需_）确保备份 CR 创建的临时快照在备份操作完成后不被删除。建议值：<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>。</block>
+  <block id="c4c1ca05ef023287f122a753e2bf09e2" category="paragraph">使用同一存储桶存储快照和备份时的示例 YAML：</block>
+  <block id="4955d31336096d0bf7fe94f34e2ec86b" category="paragraph">使用不同存储桶存储快照和备份时的示例 YAML：</block>
+  <block id="49fca1eefbaadffc82d25ddcf6f70227" category="list-text">使用正确的值填充<block ref="3cc60d6081fbcccb7d8da4092a47553e" prefix=" " category="inline-code"></block>文件后，应用 CR：</block>
+  <block id="5ecfe1f399971241c89c85a832e8eb34" category="section-title">使用自定义资源创建 3-2-1 扇出备份</block>
+  <block id="5062f68e28a097921937f2397947ef97" category="paragraph">使用 3-2-1 扇出架构进行备份会将备份复制到辅助存储和对象存储。要创建 3-2-1 扇出备份，请创建具有特定属性的 Backup CR。</block>
+  <block id="a4f79e3a595e7199f93e7fc4eee66aad" category="list-text">创建自定义资源 (CR) 文件并将其命名为<block ref="5d14f6fbcd2faed4273ed95afe88d782" prefix=" " category="inline-code"></block>。</block>
+  <block id="8a1eea1b8ed14b7d1a7a0f6ac5a52124" category="list-text">*spec.appVaultTargetsRef*: (_Required_) 备份内容应存储的 AppVault 的名称。</block>
+  <block id="f13a97e3ca838cd3b17d6f7d093dac64" category="list-text">*spec.replicateSnapshot*：（_Required_）指示 Backup and Recovery 将快照复制到二级存储。必需值：<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>。</block>
+  <block id="8b59df0e684df8c88e38a7fccd0b3e1c" category="list-text">*spec.replicateSnapshotReclaimPolicy*: (_Optional_) 定义已复制快照在删除时会发生什么。可能的值：</block>
+  <block id="139f344cca23a89c521bc7cc6c7100b8" category="paragraph">示例 YAML：</block>
+  <block id="743d24f676c4a718096faa6e2308b198" category="list-text">使用正确的值填充<block ref="5d14f6fbcd2faed4273ed95afe88d782" prefix=" " category="inline-code"></block>文件后，应用 CR：</block>
+  <block id="3f09cbddd61fbee1ddfdf268eb77431c" category="section-title">支持的备份注释</block>
+  <block id="7f2c724042753cc2a998724f90cd367b" category="paragraph">下表介绍了创建备份 CR 时可以使用的批注。</block>
+  <block id="55f6611cb342565cf0f5002400f53a95" category="cell">标注</block>
+  <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">类型</block>
+  <block id="31ce3cdcd67850870b616f75b555bbc5" category="cell">默认值</block>
+  <block id="27f412d00b6f20d8bd151bc0355eae9a" category="cell">protect.trident.netapp.io/full-backup</block>
+  <block id="b45cffe084dd3d20d928bee85e7b0f21" category="cell">string</block>
+  <block id="ff6493b4c08e9896ced760eabb2513ed" category="cell">指定备份是否应为非增量备份。设置为<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>以创建非增量备份。最佳做法是定期执行完整备份，然后在完整备份之间执行增量备份，以最大限度地降低与恢复相关的风险。</block>
+  <block id="c07fbc0b2a1a865fe9e3a55c05b4f690" category="cell">"false"</block>
+  <block id="59177e9fd24a996fe7acc348af54e912" category="cell">protect.trident.netapp.io/snapshot-completion-timeout</block>
+  <block id="c464fe04226687fa8c814ba8a8690384" category="cell">整个快照操作完成所允许的最长时间。</block>
+  <block id="435bbfd1496ab991e2a7530d2c7273b1" category="cell">“60 分钟”</block>
+  <block id="a3f0891bded2c705ab3b29833481ffcf" category="cell">protect.trident.netapp.io/volume-snapshots-ready-to-use-timeout</block>
+  <block id="67c844e70c6f5fd7910ea8f4358464b6" category="cell">允许卷快照达到准备就绪状态的最长时间。</block>
+  <block id="38986de1c1221cb10e5c108c3ad55e0e" category="cell">"30 分钟"</block>
+  <block id="af978cfba15392673bcd27f4c22e2926" category="cell">protect.trident.netapp.io/volume-snapshots-created-timeout</block>
+  <block id="c748817d9411064cf0b0b7cc203fc5be" category="cell">允许创建卷快照的最长时间。</block>
+  <block id="e36568406cce6542af248eed6ec657e2" category="cell">"5 分钟"</block>
+  <block id="728633ade1403bcbcd881fc22ec19596" category="cell">protect.trident.netapp.io/pvc-bind-timeout-sec</block>
+  <block id="fc7da248a2f7c60cc6dde87d2093c48e" category="cell">在操作失败之前，等待任何新创建的 PersistentVolumeClaims (PVC) 到达<block ref="685d1f2146dd079015e81918414e8971" prefix=" " category="inline-code"></block>阶段的最长时间（秒）。</block>
+  <block id="d396afb1bbf01f546690ad93f3524626" category="cell">"1200"（20 分钟）</block>
+  <block id="4255dda5f5998cbad65847ed764b4130" category="doc">立即使用 Backup and Recovery Web UI 备份 Kubernetes 应用程序</block>
+  <block id="55ebd262da946bfda89bdb99e1367f0f" category="paragraph">NetApp Backup and Recovery 使您能够使用 Web 界面手动备份 Kubernetes 应用程序。</block>
+  <block id="8b9e73cb622150ff43b7f7777e74619a" category="section-title">立即使用 Web UI 备份 Kubernetes 应用程序</block>
+  <block id="b7d8dcf9545dd644dca99859290097ab" category="summary">您可以使用注释、命名空间设置和存储选项自定义 CR 还原操作。</block>
+  <block id="a38e36651b4997072578f6107bf75c77" category="doc">使用高级自定义资源还原设置</block>
+  <block id="3fbccf21ba46fe754417d45e7396e0e4" category="paragraph">您可以使用高级设置（如注释、命名空间设置和存储选项）自定义还原操作，以满足您的特定要求。</block>
+  <block id="52391deb129507aac52d6fb22aaf137c" category="section-title">支持的字段</block>
+  <block id="c87f7398b288400e3d2c984a3d997d7b" category="paragraph">本节描述可用于还原操作的其他字段。</block>
+  <block id="11162de38772a3876602bb4d9d213f43" category="section-title">存储类映射</block>
+  <block id="b48c8c7ca3eb5e63afdfe6bbd74a35c9" category="paragraph">该<block ref="b57d666629acffb30cc697faadc136b5" prefix=" " category="inline-code"></block> 属性定义从源应用程序中存在的存储类到目标集群上的新存储类的映射。您可以在具有不同存储类的集群之间迁移应用程序或更改 BackupRestore 操作的存储后端时使用此功能。</block>
+  <block id="c26fe677a830587ef1c141567a86c86a" category="paragraph">*示例：*</block>
+  <block id="ffbfa7c1456b1cb991affd8a76d54fd1" category="section-title">支持的注释</block>
+  <block id="738d4e5947ef1239f584cd47619cf356" category="paragraph">本节列出了用于在系统中配置各种行为的支持注释。如果用户未明确设置注释，系统将使用默认值。</block>
+  <block id="f49fa3f76b2a4fcdf04dff369d417d84" category="cell">protect.trident.netapp.io/data-mover-timeout-sec</block>
+  <block id="a666ad37acca2b6a0ee400d7b2acf088" category="cell">允许数据移动器操作停止的最长时间（以秒为单位）。</block>
+  <block id="aff5adfa33a9913ad2ab5d578c3f08c8" category="cell">"300"</block>
+  <block id="3b2f6f0bb673ee02e8aafe624e2e971f" category="cell">protect.trident.netapp.io/kopia-content-cache-size-limit-mb</block>
+  <block id="f044e4dc5e5fdde631180451c25a973c" category="cell">Kopia 内容缓存的最大大小限制（以兆字节为单位）。</block>
+  <block id="9d397fb20eca1ebda087637e32a30a7b" category="cell">"1000"</block>
+  <block id="b5e51a86f312c3ccd69b085ad9c3dbe0" category="cell">在操作失败之前，等待任何新创建的 PersistentVolumeClaims (PVC) 到达<block ref="685d1f2146dd079015e81918414e8971" prefix=" " category="inline-code"></block>阶段的最长时间（以秒为单位）。适用于所有还原 CR 类型（BackupRestore、BackupInplaceRestore、SnapshotRestore、SnapshotInplaceRestore）。如果您的存储后端或集群通常需要更多时间，请使用更高的值。</block>
+  <block id="2151f194894ed39bed85837028624418" category="paragraph">NetApp Backup and Recovery 会在数据保护期间冻结和解冻应用程序的文件系统，例如 KubeVirt。您可以全局禁用此行为，也可以使用 Trident Protect 文档对特定应用程序禁用此行为：</block>
+  <block id="3dcec4402177c92a041652b5ddf0e042" category="inline-xref">删除还原点</block>
+  <block id="87cab9bb9101d164be91b209013585fb" category="admonition">当保护操作仍在运行时，您无法取消对应用程序的保护。要么等待操作完成，要么作为解决方法，<block ref="d905f53d4bafd83a40adfdb447e3be41" category="inline-xref-macro-rx"></block>正在运行的保护操作正在使用的。然后，您可以取消对应用程序的保护。</block>
+  <block id="03b9ad9ea568f0b46cb903165e845c91" category="section-title">删除 Kubernetes 应用程序的还原点</block>
+  <block id="dd9c36f28cc9f5f12040d95ba4f5de93" category="paragraph">如果需要取消对应用程序的保护，并且保护操作当前正在运行，则可能需要删除该应用程序的还原点。</block>
+  <block id="2b1b69f5a5491f8a48a1c6b1ab95e069" category="list-text">在 NetApp Backup and Recovery 菜单中，选择*恢复*。</block>
+  <block id="c37993406f0db941d92735ab7dd5749d" category="list-text">从列表中选择一个 Kubernetes 应用程序，并为该应用程序选择*查看和恢复*。</block>
+  <block id="be2e1ce690d729ac69efe2ac639971e5" category="list-text">选择需要删除的恢复点，然后选择操作图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *删除恢复点* 将其删除。</block>
+  <block id="a4f1667d52f920bc11608f8119eb8eaa" category="summary">通过 NetApp 备份和恢复保护您的 Oracle Database 工作负载。</block>
+  <block id="9081ff61e0c05d14dc1b7c6045823a83" category="doc">使用 NetApp Backup and Recovery 备份 Oracle Database 工作负载</block>
+  <block id="3b395fe1694016ad90a832d1d28d54a9" category="inline-link-macro">使用 NetApp Backup and Recovery 为 Oracle Database 工作负载创建和管理保护组</block>
+  <block id="3c8155ed06e836b39ff46c4fa1cc3c91" category="list-text">创建保护组以管理一组资源的备份和还原操作。有关详细信息，请参见 <block ref="11b8e0fbdcb5cec8e8ac558aea655522" category="inline-link-macro-rx"></block>。</block>
+  <block id="6fe6342988793dfab1cd728ba40b7b6d" category="summary">使用 NetApp Backup and Recovery 保护您的 Oracle Database 工作负载。</block>
+  <block id="172dcc67f8b871ecd3a6df9cfe1f753f" category="paragraph">使用 NetApp Backup and Recovery 保护 Oracle 数据库和日志。获取快速、节省空间、故障一致和数据库一致的备份和恢复。将 Oracle Database 工作负载备份到 AWS S3、NetApp StorageGRID、Azure Blob Storage 或 ONTAP S3。将备份还原到本地 Oracle 主机。</block>
+  <block id="62a3e51100215ef17a24383d5729e00e" category="paragraph">您可以使用 NetApp Backup and Recovery 执行以下与 Oracle 数据库工作负载相关的任务：</block>
+  <block id="c9b387ac576fa007292bb17c9c97e163" category="list-text"><block ref="c9b387ac576fa007292bb17c9c97e163" category="inline-link-macro-rx"></block></block>
+  <block id="0c455356b172e0f15e2d62ca94bfa5c6" category="inline-link-macro">为 Oracle Database 工作负载创建和管理保护组</block>
+  <block id="ce4ef45ffb0bf8da9fa1877ae859c0e3" category="list-text"><block ref="ce4ef45ffb0bf8da9fa1877ae859c0e3" category="inline-link-macro-rx"></block></block>
+  <block id="88ed72683238588c2440ec4dd0ab3eca" category="inline-link-macro">备份 Oracle Database 工作负载</block>
+  <block id="0d34b4ba574939ced489d0243500c926" category="list-text"><block ref="0d34b4ba574939ced489d0243500c926" category="inline-link-macro-rx"></block></block>
+  <block id="7e96e8e02dab57292bff1e9f31e0c7df" category="inline-link-macro">还原 Oracle Database 工作负载</block>
+  <block id="ce74d754b7d458e8a3f95ad96eaea826" category="list-text"><block ref="ce74d754b7d458e8a3f95ad96eaea826" category="inline-link-macro-rx"></block></block>
+  <block id="90549b69fb71fa7637e6a760ce45293c" category="summary">在 NetApp Backup and Recovery 中为 Oracle Database 工作负载创建和管理保护组。</block>
+  <block id="d07e8f6398c66f7d79a80768d3aa858b" category="inline-link-macro">立即备份 Oracle Database 工作负载</block>
+  <block id="5361440c8196cc52ba89e8281bc2ef22" category="list-text">立即备份保护组。请参阅 <block ref="0b07e2abdc1829709878f1d54c90a7ab" category="inline-link-macro-rx"></block>。</block>
+  <block id="ecd7b1e39a181dfd260b4d2201a85373" category="paragraph">不适用于 Oracle Database 工作负载预览。</block>
+  <block id="930da9bc61f880bd2f19e2938c5376f6" category="list-text">*工作负载*：示例包括 Microsoft SQL Server、卷、VMware、KVM、Hyper-V、Oracle Database 或 Kubernetes。</block>
+  <block id="a1b57f3367efea5ba168ebc1b00dfb09" category="list-text">*3-2-1 fanout*：主存储（磁盘）到辅助存储（磁盘）到云（对象存储）。在不同的存储系统中创建多个数据副本，例如 ONTAP 到 ONTAP 和 ONTAP 到对象存储配置。这可以是云超大规模对象存储或私有对象存储。这些配置有助于实现最佳的数据保护和灾难恢复。</block>
+  <block id="7257ebd350ec9dc53fbb407575e942c9" category="open-title">使用 Web UI 添加应用程序</block>
+  <block id="7eb786201a1068df31c2a8d7805c50bf" category="open-title">使用 CR 添加应用程序</block>
+  <block id="b4b10aa7102ef4de9ba1d5672445c895" category="list-text">创建目标应用程序 CR 文件：</block>
+  <block id="17131e6f435088e2e03c7280ff7da690" category="list-text">创建自定义资源 (CR) 文件并将其命名（例如，<block ref="52c90dc70fe5cbabbc6872aba835befa" prefix=" " category="inline-code"></block>）。</block>
+  <block id="18924d9e76d2dc9a88bddb772904461d" category="list-text">配置以下属性：</block>
+  <block id="3b96edf2a12486fc5d9dfaf7e692cdfc" category="list-text">*metadata.name*：（_必需_）应用程序自定义资源的名称。请注意您选择的名称，因为保护操作所需的其他 CR 文件会引用此值。</block>
+  <block id="244fede3edf8f2ab57f281d777777961" category="list-text">*spec.includedNamespaces*: (_Required_) 使用命名空间和标签选择器指定应用程序使用的命名空间和资源。应用程序命名空间必须是此列表的一部分。标签选择器是可选的，可用于筛选每个指定命名空间内的资源。</block>
+  <block id="cc8aa03bb88101c1901ab425b29a1901" category="list-text">*spec.includedClusterScopedResources*: (_Optional_) 使用此属性指定要包含在应用程序定义中的群集范围的资源。此属性允许您根据其组、版本、种类和标签选择这些资源。</block>
+  <block id="eba6898a839f426c3106a97f94614eb9" category="list-text">*groupVersionKind*：（_必需_）指定集群范围内资源的 API 组、版本和种类。</block>
+  <block id="8d8a8010684a930aa7760c829cad4141" category="list-text">*labelSelector*：（_可选_）根据集群范围资源的标签对其进行筛选。</block>
+  <block id="5f47e505a6f61f7f97fe140353dc6594" category="list-text">如果需要，请配置以下注释：</block>
+  <block id="57320d49ea044bfa493c42beb1df6cfe" category="inline-link-macro">全局文件系统冻结设置</block>
+  <block id="2d4560ac7467fc580503e1a2ec64edbc" category="list-text">*metadata.annotations.protect.trident.netapp.io/skip-vm-freeze*：（_Optional_）此批注仅适用于从虚拟机定义的应用程序，例如在 KubeVirt 环境中，快照之前会发生文件系统冻结。指定此应用程序是否可以在快照期间写入文件系统。如果设置为 true，应用程序将忽略全局设置，并且可以在快照期间写入文件系统。如果设置为 false，应用程序将忽略全局设置，并在快照期间冻结文件系统。如果指定，但应用程序在应用程序定义中没有虚拟机，则忽略批注。如果未指定，则应用程序遵循 <block ref="a6fb49ce3deb125e56649f63b2a21282" category="inline-link-macro-rx"></block>。</block>
+  <block id="8f13f2f073acc52149f6e8567d13e534" category="list-text">*protect.trident.netapp.io/protection-command*：（_可选_）使用此注释指示 Backup and Recovery 保护或停止保护应用程序。可能的值为<block ref="124c16e5bae30d956b37ef14c9a00ab4" prefix=" " category="inline-code"></block>或<block ref="354492320803067b5a2cd287e209154d" prefix=" " category="inline-code"></block>。</block>
+  <block id="f0d0a63fd9731679f5ea79603dba4d1f" category="list-text">*protect.trident.netapp.io/protection-policy-name*: (_可选_) 使用此注释指定要用于保护此应用程序的 Backup and Recovery 保护策略的名称。此保护策略必须已存在于 Backup and Recovery 中。</block>
+  <block id="1fdb8b98325df025bfd256fc475c0986" category="paragraph">如果需要在已创建应用程序后应用此批注，可以使用以下命令：</block>
+  <block id="2508b93e69f47b3a094284dbdc9a09de" category="list-text">（_Optional_）添加包含或排除标有特定标签的资源的筛选：</block>
+  <block id="b4d332d25d8164d8387707934254781d" category="admonition">当同时使用<block ref="a25777d0a6883efb33950a7cd7a8f9b9" prefix=" " category="inline-code"></block>和<block ref="2021b5ec814a388ca04af6c6d6c2d16f" prefix=" " category="inline-code"></block>时，<block ref="a25777d0a6883efb33950a7cd7a8f9b9" prefix=" " category="inline-code"></block>首先运行，然后将<block ref="2021b5ec814a388ca04af6c6d6c2d16f" prefix=" " category="inline-code"></block>应用于生成的资源。</block>
+  <block id="964ba319e15e38c5b0f3ee2a3dd4a8f8" category="list-text">创建与环境匹配的应用程序 CR 后，应用 CR。例如：</block>
+  <block id="a23759db2139aa9e17de9cb47110d6d5" category="doc">使用自定义资源还原 Kubernetes 应用程序</block>
+  <block id="415a07ca472058e76674945c8c1ccdb3" category="paragraph">您可以使用自定义资源从快照或备份还原应用程序。将应用程序还原到同一集群时，从现有快照还原将更快。</block>
+  <block id="f346d32ba5d9c332bf8577bf1bacda07" category="list-text">还原应用程序时，为应用程序配置的所有执行挂钩都会随应用程序一起还原。如果存在还原后执行挂钩，它将作为还原操作的一部分自动运行。</block>
+  <block id="961ce5b35a999d2dc3f7e386f74eb614" category="list-text">qtree 卷支持从备份还原到其他命名空间或原始命名空间。但是，qtree 卷不支持从快照还原到其他命名空间或原始命名空间。</block>
+  <block id="57367d979fb9d476b127b8b1c0e64004" category="list-text">您可以使用高级设置自定义还原操作。要了解更多信息，请参阅 <block ref="de6b60e125121f4190b8e2b41a7ccad4" category="inline-link-macro-rx"></block>。</block>
+  <block id="d46abb8b08b9cabb804a375e086762ef" category="section-title">将备份还原到其他命名空间</block>
+  <block id="6b76c2e4af7a396193495c80e698179e" category="paragraph">使用 BackupRestore CR 将备份还原到其他命名空间时，Backup and Recovery 会在新命名空间中还原应用程序，并为还原的应用程序创建应用程序 CR。要保护还原的应用程序，请创建按需备份或快照，或建立保护计划。</block>
+  <block id="cff063350a0daf1b0ee4c6c97eb2e2de" category="list-text">使用现有资源将备份还原到其他命名空间不会更改与备份中的名称共享的任何资源。要还原备份中的所有资源，请删除并重新创建目标命名空间，或将备份还原到新命名空间。</block>
+  <block id="8220f502d7a1609266e7dd4c63b34dc3" category="list-text">使用 CR 还原到新命名空间时，您必须在应用 CR 之前手动创建目标命名空间。Backup and Recovery 仅在使用 CLI 时自动创建命名空间。</block>
+  <block id="d110d36251c4dd04b7da5ef237ac6063" category="inline-link">Kopia 文档</block>
+  <block id="3a5aee390b39f0e0c8e4c0cc152c72f6" category="admonition">使用 Kopia 作为数据移动器还原备份时，可以选择在 CR 中指定注释，以控制 Kopia 使用的临时存储的行为。有关可以配置的选项的详细信息，请参见<block ref="08f67cdc0555f043586a8a4182d9187b" category="inline-link-rx"></block>。</block>
+  <block id="0334c5d881452d9144d4edf93d44ff85" category="list-text">创建自定义资源 (CR) 文件并将其命名为 <block ref="aa3356b96c40153ef83fe9854ede7a70" prefix=" " category="inline-code"></block>。</block>
+  <block id="8ebefb3e84a05b2e3bf54824870d776d" category="list-text">*spec.appArchivePath*：AppVault 中存储备份内容的路径。您可以使用以下命令查找此路径：</block>
+  <block id="3f1db1c30ba33e5d04499f000ed77f97" category="list-text">*spec.appVaultRef*：（_必需_）存储备份内容的 AppVault 的名称。</block>
+  <block id="33dc1feba43183f93ade318576611f4a" category="list-text">*spec.namespaceMapping*：还原操作的源命名空间到目标命名空间的映射。使用环境中的信息替换<block ref="a6f7f0a873c27a67ee3194949076866b" prefix=" " category="inline-code"></block>和<block ref="2cfb071d6be7d4cf9e297100f62858fe" prefix=" " category="inline-code"></block>。</block>
+  <block id="18ad656f28db1ef6b2d76d21959ca243" category="list-text">使用正确的值填充<block ref="aa3356b96c40153ef83fe9854ede7a70" prefix=" " category="inline-code"></block>文件后，应用 CR：</block>
+  <block id="6d5b0033591078b013b5aae0aa8c41df" category="section-title">将备份还原到原始命名空间</block>
+  <block id="7260bc412b6c22c2589f01098c1f4430" category="paragraph">您可以随时将备份还原到原始命名空间。</block>
+  <block id="34653be4af07bad31b9a3775f18b1b5f" category="list-text">创建自定义资源 (CR) 文件并将其命名为<block ref="59a09233aaa2a2c9e25fc46650bd6dee" prefix=" " category="inline-code"></block>。</block>
+  <block id="349d4c53fe9d2e740d60f7ce8094c294" category="list-text">使用正确的值填充<block ref="59a09233aaa2a2c9e25fc46650bd6dee" prefix=" " category="inline-code"></block>文件后，应用 CR：</block>
+  <block id="6b38457a21195fb9cff9562291b07742" category="section-title">将备份还原到其他集群</block>
+  <block id="7fa8874b1f645ca2af9d81b51985b8fb" category="paragraph">如果原始群集出现问题，可以将备份还原到其他群集。</block>
+  <block id="ea67012b60407e642c3e4bbb13486738" category="list-text">当使用 CR 还原到新的命名空间时，您必须在应用 CR 之前手动创建目标命名空间。</block>
+  <block id="dd4ee610bd1d035c73bc0cbcd80e46da" category="paragraph">确保满足以下先决条件：</block>
+  <block id="e23fef665fca7137c4d6ee6b9a9ec06a" category="list-text">目标集群已安装 Trident Protect。</block>
+  <block id="b20f8883edb9068c67a2faeb3c083d38" category="list-text">目标集群可以访问与源集群相同的 AppVault 存储桶路径，备份存储在该路径中。</block>
+  <block id="2358fb4006fff416413cb9bfc04e4b73" category="list-text">确保 AWS 会话令牌过期时间足以进行任何长期运行的还原操作。如果令牌在还原操作期间过期，则操作可能会失败。</block>
+  <block id="df710f89ebb9e663bd3d66607a0bf413" category="inline-link">AWS 文档</block>
+  <block id="f3aa7db516c38030a276a5895520407a" category="list-text">有关 AWS 资源凭据的详细信息，请参见<block ref="968595e57d50a64e3fbe0f06bc16cb91" category="inline-link-rx"></block>。</block>
+  <block id="cfb3749b52f4ce0c21dcdc3a9fce80f2" category="list-text">使用 Trident Protect CLI 插件检查目标集群上 AppVault CR 的可用性：</block>
+  <block id="1ff83a5266e9e025c2984e0c10dea90e" category="admonition">确保目标集群上存在用于应用程序还原的命名空间。</block>
+  <block id="8d433ae9a21c49e9e5433ebd408605c0" category="list-text">从目标集群查看可用的 AppVault 的备份内容：</block>
+  <block id="378e6f0ba7080535a4462b5311befb40" category="paragraph">运行此命令会显示 AppVault 中的可用备份，包括其原始群集、相应的应用程序名称、时间戳和存档路径。</block>
+  <block id="52b5830420efb96c3a91beb52bac3b23" category="paragraph">*输出示例：*</block>
+  <block id="053aba80de03f3fdf626d1c858342330" category="list-text">使用 AppVault 名称和存档路径将应用程序还原到目标集群：</block>
+  <block id="fceebbe32c1f7b24c54d6a4e8a0fa776" category="admonition">如果 BackupRestore CR 不可用，您可以使用步骤 2 中提到的命令查看备份内容。</block>
+  <block id="c4ffbcd8e0c029dda531491d6bee1c78" category="section-title">将快照还原到其他命名空间</block>
+  <block id="ce7cf7554a5476a82205e8d69fb3706e" category="paragraph">您可以使用自定义资源 (CR) 文件将数据从快照还原到不同的命名空间或原始源命名空间。使用 SnapshotRestore CR 将快照还原到其他命名空间时，Backup and Recovery 会在新的命名空间中还原应用程序，并为还原的应用程序创建应用程序 CR。要保护还原的应用程序，请创建按需备份或快照，或建立保护计划。</block>
+  <block id="15910dd29963e5df5f2b5879472bcc00" category="list-text">SnapshotRestore 支持<block ref="b57d666629acffb30cc697faadc136b5" prefix=" " category="inline-code"></block>属性，但仅当源和目标存储类使用相同的存储后端时。如果尝试还原到使用不同存储后端的<block ref="e1e2a331ab1d8dccfea06fc8e04e2f5d" prefix=" " category="inline-code"></block>，还原操作将失败。</block>
+  <block id="a35b06511e032bee46bbed064afa12dc" category="list-text">创建自定义资源 (CR) 文件并将其命名为<block ref="fac6dff7f801a4983f4a536dbcbd40d7" prefix=" " category="inline-code"></block>。</block>
+  <block id="d2e7f59eea5f95f37b023a243745727d" category="list-text">*spec.appVaultRef*：（_必需_）存储快照内容的 AppVault 的名称。</block>
+  <block id="ac6cdb13ccdd5d0ac3195b3301db572c" category="list-text">*spec.appArchivePath*：AppVault 中存储快照内容的路径。您可以使用以下命令查找此路径：</block>
+  <block id="bca1b1b2b1a229dc37dffa4f7012c02d" category="list-text">使用正确的值填充<block ref="fac6dff7f801a4983f4a536dbcbd40d7" prefix=" " category="inline-code"></block>文件后，应用 CR：</block>
+  <block id="c4c7c0b8d390ffc1225601169810e0ae" category="section-title">将快照还原到原始命名空间</block>
+  <block id="a392e5395f0751460dc460cd6ec5e89d" category="paragraph">您可以随时将快照还原到原始命名空间。</block>
+  <block id="4d18dba9a79fbe92e2bb99f0a9300df3" category="list-text">创建自定义资源 (CR) 文件并将其命名为<block ref="620b0dae36dbe6aeaae5d993f961c634" prefix=" " category="inline-code"></block>。</block>
+  <block id="54625166c25afd8a6a484aaf2f346fbb" category="list-text">使用正确的值填充<block ref="620b0dae36dbe6aeaae5d993f961c634" prefix=" " category="inline-code"></block>文件后，应用 CR：</block>
+  <block id="a81b2faa73385ff60c0791d7006409d9" category="doc">使用 Web UI 还原 Kubernetes 应用程序</block>
+  <block id="51621b374731a256fcdaa7e17b724680" category="paragraph">如果要还原使用 Trident Protect 备份的应用程序，请确保 Trident Protect 同时安装在源和目标集群上。</block>
+  <block id="fb5dbc581e0b5b523350175d27ea83c0" category="list-text">选择要使用的还原点的 *Restore* 按钮。</block>
+  <block id="98c52679a9ed385c5482f74fe44c97ae" category="list-text">选择要从中还原的源位置。</block>
+  <block id="d30d07971f43ce3280b143ce31154411" category="admonition">目前不支持将 Trident Protect 创建的本地快照还原到其他集群。</block>
+  <block id="6d99ca24de4c4c5c0b932cbcc18fdbbe" category="list-text">选择还原到原始命名空间或新命名空间。</block>
+  <block id="41af3e90c2d7ebbd0ddd4e36e78220b5" category="list-text">如果选择还原到新命名空间，请输入要使用的目标命名空间。</block>
+  <block id="a2552d8c6714f46cdb5bfe28dbdc9b87" category="list-text">展开 *Destination settings* 部分，然后选择恢复到默认存储类、其他存储类，或者如果要恢复到其他集群，则将存储类映射到目标集群。</block>
+  <block id="a5e9d16a9cc07839a654d90f3a7a4b97" category="list-text">如果选择还原到其他存储类，请选择与每个源存储类匹配的目标存储类。</block>
+  <block id="7a19603af554b25cd8b2df54b3b90a02" category="list-text">或者，如果您要还原使用 Trident Protect 创建的备份或快照，请查看 AppVault 用作还原操作存储桶的详细信息。如果您的环境或 AppVault 状态发生变化，请选择 *Sync App Vault* 以刷新详细信息。</block>
+  <block id="36232457f4c28ae76f2c98b665ead40c" category="inline-link">使用 Trident Protect AppVault 对象管理存储桶</block>
+  <block id="8cce25f9f8aead82fb847fec859b60d7" category="admonition">如果需要在 Kubernetes 集群上创建 AppVault 以便还原使用 Trident Protect 创建的备份或快照，请参阅<block ref="c0135beaf775585a3c544dba5d035e47" category="inline-link-rx"></block>。</block>
+  <block id="833959b645e98d6a80a20300bfd003a1" category="list-text">（可选）展开 *Restore scripts* 部分，并启用 *Postscript* 选项以选择将在还原操作完成后运行的执行钩子模板。如果需要，请输入脚本需要的任何参数，并添加标签选择器以根据资源标签筛选资源。</block>
+  <block id="ecd47ecc902c53d5808953e54e89b94f" category="list-text">*Oracle Database 工作负载（预览）*：</block>
+  <block id="0e8ecb4e7677fd2e4d2af938fc466bff" category="inline-link-macro">保护 Oracle Database 工作负载</block>
+  <block id="95815b21a64646ca02a4d958d053cef7" category="list-text">请参见 <block ref="840bb935154607a5be4199a217b0bf56" category="inline-link-macro-rx"></block>。</block>
+  <block id="4a6440cf633ba5f9e68b3e722f3a2bdd" category="paragraph">对于 Kubernetes 工作负载，将根据所有永久卷的总大小向您收费。</block>
+  <block id="ac48592f4b6ad81597a3d86209bce635" category="section-title">保护 Oracle Database 工作负载的要求</block>
+  <block id="6b4dd2a26d258b058101055118ed2560" category="list-text">主机操作系统支持：Red Hat Enterprise Linux 8 和 9</block>
+  <block id="cd992a76d620e6cac42ca61d20f93f1d" category="list-text">NetApp Trident Protect 25.07 或更高版本（在 Kubernetes 工作负载发现期间安装）</block>
+  <block id="8c703f00b817f5c9121d74efc33cdde9" category="list-text">NetApp Trident Protect Connector 25.07 或更高版本（在 Kubernetes 工作负载发现期间安装）</block>
+  <block id="5254dbe16e57a413455e2c5f7d5e70a1" category="list-text">确保 TCP 端口 443 在 Kubernetes 集群、Trident Protect Connector 和 Trident Protect 代理之间的出站方向上未过滤。</block>
+  <block id="c9d872b23d54864ab58551a55106a3db" category="section-title">2026 年 2 月 09 日</block>
+  <block id="f3effb5ce493101e0cf4cbc9e93014e1" category="sidebar">保护 Oracle Database 工作负载（私有预览）</block>
+  <block id="e45770f83b5d2c438c00dea64c505ce7" category="sidebar">Oracle 数据库工作负载的已知限制</block>
+  <block id="c33d3729ba9e6e1c1dd6ccc4b6c7f949" category="sidebar">保护 Oracle Database 工作负载（预览）</block>
+  <block id="1e6021824e75d382885d2bb2e945f719" category="sidebar">使用自定义资源恢复 Kubernetes 应用程序</block>
 </blocks>

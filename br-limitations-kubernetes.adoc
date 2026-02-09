@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: br-limitations-kubernetes.html 
+keywords: limitations, known, NetApp Backup and Recovery, Kubernetes 
+summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 NetApp Backup and Recovery 限制。 
+---
+= Kubernetes 工作负载 NetApp Backup and Recovery 的已知限制
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+此处列出了与此版本不兼容或不能很好地兼容的平台、设备或功能。仔细阅读这些限制。
+
+
+
+== 更改应用程序的保护策略
+
+当您将应用程序的关联保护策略更改为使用不同的存储桶或辅助复制目标时，保护策略可能会失败。
+
+*解决方法*：删除并重新添加应用程序。
+
+
+
+== 3-2-1 保护策略配置限制
+
+在创建 3-2-1 保护策略时，如果在复制到辅助存储的同时不执行对象存储备份，则保护策略会在保护应用程序时挂起。
+
+*解决方法*：删除并重新添加应用程序，并使用不同的保护策略对其进行保护。

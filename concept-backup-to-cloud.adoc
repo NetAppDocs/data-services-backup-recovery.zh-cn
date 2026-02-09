@@ -77,7 +77,7 @@ NOTE: 有关保护 VMware、KVM、Hyper-V 和 Kubernetes 工作负载的文档�
 ** 参考link:br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载"]。
 
 
-* Oracle 工作负载（预览）
+* *Oracle Database 工作负载（预览）*：
 +
 ** 备份和恢复数据库和日志
 ** 使用保护组管理备份任务
@@ -85,7 +85,7 @@ NOTE: 有关保护 VMware、KVM、Hyper-V 和 Kubernetes 工作负载的文档�
 ** 使用 3-2-1 备份架构保护数据库
 ** 配置备份保留
 ** 挂载和卸载 ARCHIVELOG 备份
-** 参考link:br-use-oracle-protect-overview.html["保护 Oracle 工作负载"]。
+** 请参见 link:br-use-oracle-protect-overview.html["保护 Oracle Database 工作负载"]。
 
 
 * Kubernetes 工作负载（预览版）
@@ -148,6 +148,8 @@ NetApp不会向您收取试用版的使用费用。但是，您需要承担与�
 *服务费*
 
 对于ONTAP卷工作负载，您只需为受对象存储保护的卷付费。费用是根据源ONTAP卷在应用效率之前所使用的逻辑容量计算的，也称为前端 TB（FETB）。
+
+对于 Kubernetes 工作负载，将根据所有永久卷的总大小向您收费。
 
 对于所有其他工作负载，您需要为至少保护到一个辅助存储目标或对象存储目标的资源付费。费用是根据源工作负载的逻辑大小计算的。对于数据库而言，这意味着数据库的大小；对于虚拟机而言，这意味着虚拟机的大小。
 

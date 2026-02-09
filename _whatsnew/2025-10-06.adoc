@@ -104,7 +104,7 @@ VMware 工作负载预览版引入了以下增强功能：
 * Oracle 仪表板支持
 
 
-有关保护 Oracle 数据库工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 工作负载概述"]。
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
 
 
 

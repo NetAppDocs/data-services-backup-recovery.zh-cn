@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-limitations-hyperv.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Hyper-V, SAP HANA database, virtual machine, vm 
-summary: NetApp Backup and Recovery需要首先发现数据，以便您使用该服务。在发现过程中， NetApp Backup and Recovery会分析组织内系统中的所有卷和文件。 
+summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 NetApp Backup and Recovery 限制。 
 ---
 = NetApp Backup and Recovery针对 Hyper-V 工作负载的已知限制
 :hardbreaks:

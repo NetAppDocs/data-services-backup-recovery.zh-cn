@@ -10,7 +10,7 @@
 
 *支持多个存储桶*：（私有预览）从ONTAP 9.17.1 及更高版本开始，您现在可以保护系统中的卷，每个系统最多可跨不同的云提供商使用 6 个存储桶。
 
-link:prev-ontap-backup-manage.html["了解更多关于使用NetApp Backup and Recovery备份ONTAP卷数据的信息"]。
+link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html["了解更多关于使用NetApp Backup and Recovery备份ONTAP卷数据的信息"]。
 
 
 

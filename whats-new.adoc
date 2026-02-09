@@ -18,6 +18,59 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 
 
+== 2026 年 2 月 09 日
+
+此NetApp Backup and Recovery版本包括以下更新。
+
+
+
+=== Kubernetes 工作负载增强功能
+
+此版本的 Kubernetes 工作负载引入了以下增强功能：
+
+* *CR 工作流程支持*：现在，您可以使用 CR 以及 Backup and Recovery Web UI 执行常见的保护任务。
+* *集群迁移*：现在，您可以将使用 Trident Protect 保护的现有 Kubernetes 集群添加到 Backup and Recovery。
+* *警报框架支持*：您现在可以接收某些 Kubernetes 工作负载事件的电子邮件和 UI 警报。
+* *还原选项卡集成*：您现在可以从"还原"菜单访问 Kubernetes 工作负载还原操作。
+* *支持 3-2-1 扇出备份架构*：现在，在保护 Kubernetes 工作负载时，您可以在保护策略中使用 3-2-1 扇出架构。
+
+
+有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
+
+
+
+=== Oracle Database 工作负载增强
+
+此版本的 Oracle Database 工作负载引入了以下增强功能：
+
+* *非 root 用户支持*：非 root 用户现在可以执行备份、还原和克隆操作，从而提高安全性和合规性。
+* *克隆支持*：现在使用 ASM 库 v2 在主 NAS、辅助 NAS、SAN 和 ASM 环境中支持克隆功能，从而实现协调的保护工作流程。
+* *克隆拆分支持*：您现在可以从父卷拆分可写快照（克隆），从而释放存储空间并启用独立操作。
+* *对象存储的备份和还原*：基于对象的 S3 兼容存储目标现在支持本机备份和还原功能。
+* *Clone Lifecycle Management (CLM)*：主存储支持克隆刷新操作。
+* *Clone to alternate host*：您现在可以从主存储和二级存储将数据库克隆到不同的主机（用于测试或分析）。
+* *ONTAP 一致性组支持*：现在支持 ONTAP 一致性组，确保跨多个卷的应用程序一致性快照。
+* Backup and Recovery 现在支持以下适用于 Oracle Database 工作负载的保护策略体系结构：
++
+** 3-2-1 扇出
+** 磁盘到磁盘
+** 磁盘到对象存储
+** 级联
+** 本地快照
+
+
+
+
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
+
+
+
+=== 其他增强功能
+
+Hyper-V 工作负载、KVM 工作负载和 VMware 工作负载现已在 NetApp Backup and Recovery 中正式可用 (GA)。
+
+
+
 == 2026年1月19日
 
 此NetApp Backup and Recovery版本包括以下更新。
@@ -30,7 +83,7 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 *支持多个存储桶*：（私有预览）从ONTAP 9.17.1 及更高版本开始，您现在可以保护系统中的卷，每个系统最多可跨不同的云提供商使用 6 个存储桶。
 
-link:prev-ontap-backup-manage.html["了解更多关于使用NetApp Backup and Recovery备份ONTAP卷数据的信息"]。
+link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html["了解更多关于使用NetApp Backup and Recovery备份ONTAP卷数据的信息"]。
 
 
 
@@ -198,7 +251,7 @@ VMware 工作负载预览版引入了以下增强功能：
 * Oracle 仪表板支持
 
 
-有关保护 Oracle 数据库工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 工作负载概述"]。
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
 
 
 

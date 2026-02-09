@@ -28,7 +28,7 @@ sidebar:
       url: "/br-limitations-hyperv.html"
     - title: KVM 工作负载的已知限制
       url: "/br-limitations-kvm.html"
-    - title: Oracle 工作负载的已知限制
+    - title: Oracle 数据库工作负载的已知限制
       url: "/br-limitations-oracle.html"
   - title: 开始使用
     entries:
@@ -50,6 +50,8 @@ sidebar:
       url: "/br-start-switch-ui.html"
     - title: 配置NetApp Backup and Recovery常规设置
       url: "/br-start-configure.html"
+    - title: 在 NetApp Backup and Recovery 中设置基于角色的访问控制
+      url: "/br-rbac-setup.html"
   - title: 使用NetApp Backup and Recovery
     entries:
     - title: 在仪表板中查看保护健康状况
@@ -188,17 +190,17 @@ sidebar:
         url: "/br-use-hyperv-backup.html"
       - title: 恢复 Hyper-V 工作负载
         url: "/br-use-hyperv-restore.html"
-    - title: 保护 Oracle 工作负载（预览版）
+    - title: 保护 Oracle Database 工作负载（预览）
       entries:
-      - title: 保护 Oracle 工作负载概述
+      - title: 保护 Oracle 数据库工作负载概述
         url: "/br-use-oracle-protect-overview.html"
-      - title: 发现 Oracle 工作负载
+      - title: 发现 Oracle Database 工作负载
         url: "/br-start-discover-oracle.html"
-      - title: 为 Oracle 工作负载创建和管理保护组
+      - title: 为 Oracle Database 工作负载创建和管理保护组
         url: "/br-use-oracle-protection-groups.html"
-      - title: 备份 Oracle 工作负载
+      - title: 备份 Oracle Database 工作负载
         url: "/br-use-oracle-backup.html"
-      - title: 恢复 Oracle 工作负载
+      - title: 还原 Oracle Database 工作负载
         url: "/br-use-oracle-restore.html"
       - title: 安装和卸载恢复点
         url: "/br-use-oracle-mount-unmount.html"
@@ -209,9 +211,21 @@ sidebar:
       - title: 发现 Kubernetes 工作负载
         url: "/br-start-discover-kubernetes.html"
       - title: 添加和保护 Kubernetes 应用程序
-        url: "/br-use-protect-kubernetes-applications.html"
+        entries:
+        - title: 添加和保护 Kubernetes 应用程序
+          url: "/br-use-protect-kubernetes-applications.html"
+        - title: 立即使用 Web UI 备份 Kubernetes 应用程序
+          url: "/br-use-back-up-now-kubernetes-applications-web-ui.html"
+        - title: 现在使用自定义资源备份 Kubernetes 应用程序
+          url: "/br-use-back-up-now-kubernetes-applications-cr.html"
       - title: 恢复 Kubernetes 应用程序
-        url: "/br-use-restore-kubernetes-applications.html"
+        entries:
+        - title: 使用 Web UI 还原 Kubernetes 应用程序
+          url: "/br-use-restore-kubernetes-applications.html"
+        - title: 使用自定义资源恢复 Kubernetes 应用程序
+          url: "/br-use-restore-kubernetes-applications-cr.html"
+        - title: 使用高级自定义资源还原设置
+          url: "/br-use-kubernetes-advanced-restore-settings.html"
       - title: 管理 Kubernetes 集群
         url: "/br-use-manage-kubernetes-clusters.html"
       - title: 管理 Kubernetes 应用程序

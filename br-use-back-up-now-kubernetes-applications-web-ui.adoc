@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: br-use-back-up-now-kubernetes-applications-web-ui.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: NetApp Backup and Recovery使您能够管理工作负载主机信息、数据库信息和实例信息。您可以查看、编辑和删除库存的保护设置。 
+---
+= 立即使用 Backup and Recovery Web UI 备份 Kubernetes 应用程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery 使您能够使用 Web 界面手动备份 Kubernetes 应用程序。
+
+.所需的NetApp Console角色
+组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+
+
+
+== 立即使用 Web UI 备份 Kubernetes 应用程序
+
+手动创建 Kubernetes 应用程序的备份，为未来的备份和快照建立基线，或确保最新数据受到保护。
+
+.步骤
+. 在NetApp Backup and Recovery中，选择 *Inventory*。
+. 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
+. 选择“*应用程序*”选项卡。
+. 在应用程序列表中，选择要备份的应用程序并选择相关的操作菜单。
+. 选择*立即备份*。
+. 确保选择了正确的应用程序名称。
+. 选择*备份*。
+
+
+.结果
+控制台创建应用程序的备份并在备份和恢复的*监控*区域中显示进度。该备份是根据与应用程序关联的保护策略创建的。

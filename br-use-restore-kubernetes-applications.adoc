@@ -4,7 +4,7 @@ permalink: br-use-restore-kubernetes-applications.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: NetApp Backup and Recovery使您能够恢复已通过保护策略保护的应用程序。 
 ---
-= 恢复 Kubernetes 应用程序
+= 使用 Web UI 还原 Kubernetes 应用程序
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,30 +16,32 @@ summary: NetApp Backup and Recovery使您能够恢复已通过保护策略保护
 [role="lead"]
 NetApp Backup and Recovery使您能够恢复已通过保护策略保护的应用程序。要恢复应用程序，应用程序需要至少有一个可用的恢复点。恢复点由本地快照或对象存储备份（或两者）组成。您可以使用本地、辅助或对象存储存档来恢复应用程序。
 
+.开始之前
+如果要还原使用 Trident Protect 备份的应用程序，请确保 Trident Protect 同时安装在源和目标集群上。
+
 .所需的NetApp Console角色
 组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
 .步骤
-. 在NetApp Backup and Recovery中，选择 *Inventory*。
-. 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
-. 选择“*应用程序*”选项卡。
-. 在应用程序列表中，选择要恢复的应用程序并选择相关的操作菜单。
-. 选择*查看和恢复*。
+. 在 NetApp Backup and Recovery 菜单中，选择*恢复*。
+. 从列表中选择一个 Kubernetes 应用程序，并为该应用程序选择*查看和恢复*。
 +
 出现还原点列表。
 
-. 打开您要使用的还原点的操作菜单，然后选择*还原*。
+. 选择要使用的还原点的 *Restore* 按钮。
 
 
 [discrete]
 ===== 常规设置
 
-. 选择要从中恢复的源（本地或对象存储）。
+. 选择要从中还原的源位置。
 . 从*Cluster*列表中选择目标集群。
-. 选择还原目标命名空间。
 +
-您可以恢复到原始命名空间，也可以恢复到新的命名空间。
 
+NOTE: 目前不支持将 Trident Protect 创建的本地快照还原到其他集群。
+
+. 选择还原到原始命名空间或新命名空间。
+. 如果选择还原到新命名空间，请输入要使用的目标命名空间。
 . 选择“下一步”。
 
 
@@ -80,7 +82,13 @@ NOTE: 显示的资源是集群上当前存在的资源。
 [discrete]
 ===== 目的地设置
 
-. 选择恢复到默认存储类或其他存储类。
-. 或者，如果您选择还原到不同的存储类，请选择一个目标存储类来匹配每个源存储类。
+. 展开 *Destination settings* 部分，然后选择恢复到默认存储类、其他存储类，或者如果要恢复到其他集群，则将存储类映射到目标集群。
+. 如果选择还原到其他存储类，请选择与每个源存储类匹配的目标存储类。
+. 或者，如果您要还原使用 Trident Protect 创建的备份或快照，请查看 AppVault 用作还原操作存储桶的详细信息。如果您的环境或 AppVault 状态发生变化，请选择 *Sync App Vault* 以刷新详细信息。
++
+
+NOTE: 如果需要在 Kubernetes 集群上创建 AppVault 以便还原使用 Trident Protect 创建的备份或快照，请参阅 https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["使用 Trident Protect AppVault 对象管理存储桶"]。
+
+. （可选）展开 *Restore scripts* 部分，并启用 *Postscript* 选项以选择将在还原操作完成后运行的执行钩子模板。如果需要，请输入脚本需要的任何参数，并添加标签选择器以根据资源标签筛选资源。
 . 选择*恢复*。
 

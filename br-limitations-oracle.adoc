@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: br-limitations-oracle.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, KVM, SAP HANA database, virtual machine, vm 
-summary: NetApp Backup and Recovery需要首先发现数据，以便您使用该服务。在发现过程中， NetApp Backup and Recovery会分析组织内系统中的所有卷和文件。 
+keywords: NetApp Backup and Recovery, Oracle database 
+summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 NetApp Backup and Recovery 限制。 
 ---
-= NetApp Backup and Recovery针对 Oracle 工作负载的已知限制
+= 适用于 Oracle 数据库工作负载的 NetApp Backup and Recovery 的已知限制
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,12 +16,9 @@ summary: NetApp Backup and Recovery需要首先发现数据，以便您使用该
 [role="lead"]
 此处列出了与此版本不兼容或不能很好地兼容的平台、设备或功能。仔细阅读这些限制。
 
-NetApp Backup and Recovery中的 Oracle Database 工作负载的私人预览版不支持以下操作：
+在 NetApp Backup and Recovery 中 Oracle 数据库工作负载的专用预览版本不支持以下操作：
 
 * 离线备份
-* 克隆
-* ASM 配置
-* 保护存储在 SAN 上的数据库
 
 
-Oracle 数据库仅支持在 Oracle 工作负载的私人预览版中使用 NFS 作为独立部署。
+在 Oracle Database 工作负载的专用预览版中，仅支持使用 NFS、SAN 或 ASM SAN 的独立部署 Oracle Database。
