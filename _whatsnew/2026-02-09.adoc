@@ -1,6 +1,18 @@
-= Kubernetes 工作负载增强功能
+= 一般可用性 (GA) 中支持的 Microsoft Hyper-V 工作负载
 :allow-uri-read: 
 
+
+
+
+=== 一般可用性 (GA) 中支持的 Microsoft Hyper-V 工作负载
+
+Microsoft Hyper-V 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (GA)。
+
+
+
+=== 一般可用性 (GA) 中支持的 KVM 工作负载
+
+KVM 工作负载支持现已在 NetApp Backup and Recovery 中正式提供（GA）。
 
 
 
@@ -42,9 +54,3 @@
 
 
 要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
-
-
-
-=== 其他增强功能
-
-Hyper-V 工作负载、KVM 工作负载和 VMware 工作负载现已在 NetApp Backup and Recovery 中正式可用 (GA)。
