@@ -144,26 +144,6 @@ sidebar:
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: 访客文件恢复故障排除
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
-    - title: 保护 VMware 工作负载（使用适用于 VMware 的SnapCenter插件）
-      entries:
-      - title: 保护虚拟机工作负载概述
-        url: "/prev-vmware-protect-overview.html"
-      - title: 保护虚拟机工作负载的先决条件
-        url: "/prev-vmware-prereqs.html"
-      - title: 创建备份虚拟机数据的策略
-        url: "/prev-vmware-policy-create.html"
-      - title: 将数据存储备份到 Amazon Web Services
-        url: "/prev-vmware-backup-aws.html"
-      - title: 将数据存储备份到 Microsoft Azure
-        url: "/prev-vmware-backup-azure.html"
-      - title: 将数据存储备份到 Google Cloud Platform
-        url: "/prev-vmware-backup-gcp.html"
-      - title: 将数据存储备份到StorageGRID
-        url: "/prev-vmware-backup-storagegrid.html"
-      - title: 管理数据存储和虚拟机数据的保护
-        url: "/prev-vmware-manage.html"
-      - title: 恢复虚拟机数据和数据存储
-        url: "/prev-vmware-restore.html"
     - title: 保护 KVM 工作负载（预览版）
       entries:
       - title: 保护 KVM 工作负载概述
