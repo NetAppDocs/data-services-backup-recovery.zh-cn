@@ -30,9 +30,9 @@ Microsoft Hyper-V 工作负载支持现已在 NetApp Backup and Recovery 中正�
 
 
 
-=== 一般可用性 (GA) 中支持的 KVM 工作负载
+=== 一般可用性 (GA) 中支持的 VMware 工作负载
 
-KVM 工作负载支持现已在 NetApp Backup and Recovery 中正式提供（GA）。
+VMware 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (GA)。
 
 
 
