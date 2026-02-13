@@ -137,3 +137,9 @@ BYOL NetApp Backup and Recovery许可证是一种浮动许可证，其总容量�
 您可以使用NetApp Console来管理 BYOL 许可证。您可以从控制台添加新许可证、更新现有许可证以及查看许可证状态。
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["了解如何添加许可证"^]。
+
+
+
+== 超出许可证容量
+
+超过许可容量会触发 PAYGO 费率；如果没有 PAYGO 订阅，您将无法创建新的备份，尽管现有备份在没有服务保证的情况下仍可恢复。请务必在许可证过期之前续订许可证；过期的许可证会阻止新的备份并中断服务。

@@ -5050,4 +5050,6 @@
   <block id="2e6a10996a90ae08a445bcd92b94e301" category="list-text">支持的连接存储：ONTAP 9.13 或更高版本</block>
   <block id="a58576b20da9581ef64dc73d9299ba68" category="list-text">支持 NFS 和 VMFS 数据存储区。</block>
   <block id="dbeedec7ca35d125dd2a7ee8355c41f5" category="section-title">一般可用性 (GA) 中支持的 VMware 工作负载</block>
+  <block id="1fe60033089958dd8dab2fc11925056d" category="section-title">超出许可证容量</block>
+  <block id="73b5f5184f0b378b50b42a6e8ceb743c" category="paragraph">超过许可容量会触发 PAYGO 费率；如果没有 PAYGO 订阅，您将无法创建新的备份，尽管现有备份在没有服务保证的情况下仍可恢复。请务必在许可证过期之前续订许可证；过期的许可证会阻止新的备份并中断服务。</block>
 </blocks>
