@@ -2025,8 +2025,6 @@
   <block id="074c2f1dacf9047766e7f8d5dce71060" category="paragraph">5 GB</block>
   <block id="f3f916d11656905ba60e080b6d73ea62" category="paragraph">分配足够的磁盘空间并监控日志文件夹的存储消耗。所需的日志空间取决于执行的备份次数和数据保护操作的频率。如果没有足够的空间，则不会为操作创建日志。</block>
   <block id="c02f07fcd7047bf35e0bb82decca0939" category="cell">所需的软件包</block>
-  <block id="fddae060f712e7706e9adb56d9a4fb40" category="list-text">ASP.NET Core Runtime 8.0.12 托管包（以及所有后续 8.0.x 补丁）</block>
-  <block id="f5b6b1603a32d7ce84d327505a80be82" category="list-text">PowerShell 7.4.2</block>
   <block id="fdd736f6cacce38b5102696f59ea433a" category="paragraph">有关受支持版本的最新信息，请参阅<block ref="c2340f294ea0edd3eaa143337cddb591" category="inline-link-rx"></block>。</block>
   <block id="573531ec152a1cc1709422d00088088e" category="section-title">保护 VMware 工作负载的要求</block>
   <block id="4ccfae37bea4d344c283e2a68013c9c1" category="paragraph">您需要特定的要求来发现和保护您的 VMware 工作负载。</block>
@@ -2075,7 +2073,6 @@
   <block id="e33a9836e18ab4c7f01ac49f666c4e33" category="section-title">保护 Hyper-V 工作负载的要求</block>
   <block id="7e75f7658d8e69b52e07a066a4510af5" category="paragraph">确保您的 Hyper-V 实例满足发现和保护虚拟机的特定要求。</block>
   <block id="99fcf7547e608c33c370f1d5fe54e0a9" category="list-text">Microsoft Hyper-V 2019、2022 和 2025 版本</block>
-  <block id="4c6ec01f6ae03e08c146fe6865423a4b" category="list-text">PowerShell 7.4.2 或更高版本</block>
   <block id="4c0e33820cc2625f20df7d75a7db2a90" category="list-text">确保 Windows 防火墙设置中允许以下端口进行双向 HTTPS 通信：</block>
   <block id="2f09bec2ba16dad8a4210aafc07d4e36" category="list-text">8144（适用于 Hyper-V 的NetApp插件）</block>
   <block id="eeb69275da8e2dd563a27a05a24a4ff1" category="list-text">8145（适用于 Windows 的NetApp插件）</block>
@@ -5052,4 +5049,7 @@
   <block id="dbeedec7ca35d125dd2a7ee8355c41f5" category="section-title">一般可用性 (GA) 中支持的 VMware 工作负载</block>
   <block id="1fe60033089958dd8dab2fc11925056d" category="section-title">超出许可证容量</block>
   <block id="73b5f5184f0b378b50b42a6e8ceb743c" category="paragraph">超过许可容量会触发 PAYGO 费率；如果没有 PAYGO 订阅，您将无法创建新的备份，尽管现有备份在没有服务保证的情况下仍可恢复。请务必在许可证过期之前续订许可证；过期的许可证会阻止新的备份并中断服务。</block>
+  <block id="b9c809d8faa35e3cecf28c39b12a0890" category="list-text">ASP.NET Core Runtime 8.0.23 托管捆绑包（以及所有后续的 8.0.x 修补程序）</block>
+  <block id="d5339ec2460f6dc04a037cc1e0c21e2c" category="list-text">PowerShell 7.4.13</block>
+  <block id="6d379457554ecca51ab298da606eeb2d" category="list-text">PowerShell 7.4.13 或更高版本</block>
 </blocks>
