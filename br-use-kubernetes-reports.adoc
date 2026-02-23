@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: br-use-kubernetes-reports.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+summary: 为 Kubernetes 工作负载创建保护报告，以查看保护状态和详细信息，包括成功和失败的备份计数、备份类型、集群健康状况信息等。 
+---
+= 在 NetApp Backup and Recovery 中创建和管理 Kubernetes 工作负载的保护报告
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Backup and Recovery 中，为 Kubernetes 工作负载创建保护报告，以查看保护状态和详细信息，包括成功和失败备份的计数、备份类型、集群健康信息等。
+
+*必需的 NetApp Console 角色* Backup and Recovery 超级管理员、Backup and Recovery 备份管理员或 Backup and Recovery 还原管理员。了解有关link:reference-roles.html["备份和恢复角色和权限"]的信息 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+
+
+
+== 创建保护报告
+
+创建保护报告以查看集群的保护状态。
+
+.步骤
+. 从NetApp Backup and Recovery菜单中，选择 *报告* 选项。
+. 选择*创建报告*。
+. 输入报告范围详细信息：
++
+** *报告名称*：输入报告的唯一名称。
+** *报告类型*：选择是按帐户报告还是按工作负载报告（从列表中选择 Kubernetes）。
+** *Select cluster*：如果您按工作负载选择，请从要为其生成报告的列表中选择集群，然后选择 *Accept*。选择 *Select all* 为所有集群生成报告。
+
+
+. 输入报告范围：选择是否希望报告包括过去一天、过去 7 天、过去 30 天、最后一个季度或去年的数据。
+. 输入报告配置详细信息：选择是仅运行一次报告，还是计划定期生成报告。对于计划报告，请选择重复频率并选择开始日期。
++
+.. 输入电子邮件传递详细信息：（仅适用于计划报告）如果要通过电子邮件传递报告，请输入应接收计划报告的一个或多个电子邮件地址。
+
+
++
+在设置页面配置电子邮件通知。有关配置电子邮件通知的详细信息，请参阅link:br-start-configure.html["配置设置"]。
+
+. 选择“*创建*”。
+
+
+
+
+== 下载保护报告
+
+下载生成的保护报告，可以是 JSON 文件或 PDF 文档，以便您查看和共享。
+
+.步骤
+. 从NetApp Backup and Recovery菜单中，选择 *报告* 选项。
+. 在 *Reports* 页面上，选择 *Reports* 菜单以查看生成的保护报告列表。
+. 对于要下载的报告，请选择操作图标 image:../media/icon-action.png["操作选项"] > *下载*。
++
+** 选择 *Download JSON* 以 JSON 格式下载报告。
+** 选择 *Download PDF* 将报告下载为 PDF 文档。
+
+
+
+
+
+
+== 查看防护报告
+
+快速查看 NetApp Backup and Recovery 中保护报告的交互式详细信息。您可以查看作业摘要信息、数据保护状态、配置详细信息等。
+
+.步骤
+. 从NetApp Backup and Recovery菜单中，选择 *报告* 选项。
+. 在 *Reports* 页面上，选择 *Reports* 菜单以查看生成的保护报告列表。
+. 对于要查看的报告，请选择操作图标 image:../media/icon-action.png["操作选项"] > *查看报告*。
++
+此时将显示报告详细信息。
+
+
+
+
+
+== 删除保护报告
+
+当您不再需要防护报告时，请将其删除。
+
+.步骤
+. 从NetApp Backup and Recovery菜单中，选择 *报告* 选项。
+. 在 *Reports* 页面上，选择 *Reports* 菜单以查看生成的保护报告列表。
+. 对于要删除的报告，请选择"操作"图标 image:../media/icon-action.png["操作选项"] > *Delete*。
+. 选择 *删除* 以确认操作。
+

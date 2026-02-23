@@ -354,7 +354,6 @@
   <block id="e2b26238e3aec34978fbb465dfd6baff" category="list-text">将虚拟机还原到备用位置</block>
   <block id="fe8e9fc813c1e8a639c0cadb6115589f" category="list-text">保护存储在 SAN 上的虚拟机</block>
   <block id="ca73b42f56baa81e1c83e31ee5c53d42" category="list-text">保护应用程序</block>
-  <block id="d5598f128bb28f962fcd8574013f2a43" category="list-text">使用来自多个 KVM 主机的虚拟机创建保护组</block>
   <block id="2fbb28a0f1560254b88f56b3632cf88b" category="list-text">创建用户定义的备份（仅支持从NetApp Console启动的备份）</block>
   <block id="b26873df0260bdc332a7511f6823cf63" category="section-title">不支持的配置</block>
   <block id="f19c49e2c5af4fdef9d76da8243928b8" category="paragraph">不支持以下配置：</block>
@@ -1698,8 +1697,6 @@
   <block id="793c79d603a2a6eb42272304c6135f12" category="list-text">确保选择了正确的应用程序名称。</block>
   <block id="408156cb89b56d3b746dba5ade40b0e4" category="paragraph">控制台创建应用程序的备份并在备份和恢复的*监控*区域中显示进度。该备份是根据与应用程序关联的保护策略创建的。</block>
   <block id="2f2fda22f167ad6c7dcc0ac3f92cd945" category="summary">在NetApp Backup and Recovery中，创建报告以查看备份状态，包括备份数量、成功备份数量和失败备份数量。您还可以查看每个备份的详细信息，包括备份类型、备份使用的存储系统以及备份的时间。</block>
-  <block id="8e6f4a9d7c64e35859548854a52b145a" category="doc">在NetApp Backup and Recovery中为 Microsoft SQL Server 工作负载创建报告</block>
-  <block id="df63e1970b7cb20512cb62b542bcd3f8" category="section-title">创建报告</block>
   <block id="391ccda3039974f5c4561d91d157e4be" category="paragraph">*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员。了解详情<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>。<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> 。</block>
   <block id="a75db1c6ad7a6018f4076429dcb47fd8" category="list-text">从NetApp Backup and Recovery菜单中，选择 *报告* 选项。</block>
   <block id="3b0a91a5ea7b77db2fb83f740b7d1303" category="list-text">选择*创建报告*。</block>
@@ -4525,10 +4522,7 @@
   <block id="432d122bca6b826d0ff8b770008cb6da" category="list-text">即使 Hyper-V 中的“处理器兼容性”设置正确，也无法在 CPU 厂商不同的系统之间（例如 Intel 和 AMD 或反之）还原虚拟机或虚拟机数据。此设置仅支持同一厂商不同代产品之间的兼容性（例如，Intel 到 Intel 或 AMD 到 AMD）。</block>
   <block id="cbf60595828cc0c9aea61a13478c0526" category="admonition">在 2026 年 1 月 19 日发布的版本中，您无法使用“操作”菜单中的“升级”选项来升级 Hyper-V 或 Windows 的NetApp插件。相反，请删除每个 Hyper-V 主机，然后重新添加以更新插件。</block>
   <block id="fa1b7fd0ad5ec372cdf9f907c6fbf709" category="section-title">故障排除说明</block>
-  <block id="9bd2877d70202ee3498597fbe9e5cc2f" category="paragraph">使用NetApp Backup and Recovery的 KVM 工作负载私有预览版时，请注意以下事项：</block>
   <block id="ac034a836e482984e927ce7aef3a7bcc" category="list-text">为确保 KVM 工作负载恢复成功完成，请确保在用于 KVM 备份的保护策略中启用“启用 VM 一致性快照”设置。</block>
-  <block id="a9f8d95d40be1c757e5dddec176f49aa" category="list-text">除非将所有受管主机添加到NetApp Backup and Recovery，否则无法备份由 Apache CloudStack 管理的 KVM 主机的存储池。作为一种变通方法，将每个 CloudStack 管理的 KVM 主机添加到NetApp Backup and Recovery。</block>
-  <block id="a08807a7feb533e9af18670f44dd0184" category="list-text">您无法备份属于保护组的已停止虚拟机。作为一种变通方法，在开始备份之前，将已停止的虚拟机从保护组中移除。</block>
   <block id="caf127224717f7d5605f4155b3a36376" category="list-text"><block ref="473bc5f1f9d293596a6cf3f7d880fe14" category="inline-xref-macro-rx"></block> 适用于NetApp Backup and Recovery需要进行身份验证的任何 Windows、Microsoft SQL Server、Oracle Database 或 Linux 主机。这包括恢复访客文件或文件夹时使用的 Windows 访客操作系统凭据。</block>
   <block id="a22707a596fa8306e8d6a5944e2eda1e" category="list-text"><block ref="89ad28258fc3723b5b08e269206e91aa" category="inline-xref-macro-rx"></block>。（仅限 KVM 工作负载）</block>
   <block id="e0981966cb393b67a49dfbe74acbcaa9" category="paragraph">添加主机资源凭据。NetApp Backup and Recovery使用这些凭据来发现工作负载并应用备份策略。</block>
@@ -5052,4 +5046,46 @@
   <block id="b9c809d8faa35e3cecf28c39b12a0890" category="list-text">ASP.NET Core Runtime 8.0.23 托管捆绑包（以及所有后续的 8.0.x 修补程序）</block>
   <block id="d5339ec2460f6dc04a037cc1e0c21e2c" category="list-text">PowerShell 7.4.13</block>
   <block id="6d379457554ecca51ab298da606eeb2d" category="list-text">PowerShell 7.4.13 或更高版本</block>
+  <block id="5a9e2fbc6e8b2849a76465cd1a86c575" category="doc">一般可用性 (GA) 中支持的 KVM 工作负载</block>
+  <block id="e58f3c7a76cad4e6c2c7f515b3171f76" category="section-title">Kubernetes 在一般可用性 (GA) 中受支持</block>
+  <block id="2c4d488d266d9d0655ce2e1451e05b2d" category="paragraph">Kubernetes 工作负载支持现已在 NetApp Backup and Recovery 中普遍可用（GA）。本次发布的 Kubernetes 工作负载还引入了以下增强功能：</block>
+  <block id="2329c3692bdf2d2f098db291ec4e9427" category="paragraph">*报告支持*：您现在可以为受 NetApp Backup and Recovery 保护的 Kubernetes 集群和应用程序生成保护活动报告。</block>
+  <block id="2b9a71c68fa2528dcd54a63d6e7b908d" category="paragraph">将 KVM 工作负载的私人预览与 NetApp Backup and Recovery 一起使用时，请记下以下内容。</block>
+  <block id="bc077e67c7216de25b87f90d5ec28ac0" category="list-text">如果 QEMU Guest Agent 未在受保护的虚拟机中运行，则备份可能会失败。作为一种解决方法，在启动备份之前，请确保<block ref="c17d9742912ea08e0cfecda90a08c954" prefix=" " category="inline-code"></block>守护程序正在虚拟机上运行。</block>
+  <block id="66330fd6b5a015d85e0b01e96c040005" category="summary">为 Kubernetes 工作负载创建保护报告，以查看保护状态和详细信息，包括成功和失败的备份计数、备份类型、集群健康状况信息等。</block>
+  <block id="7e9944e42087b52e398e40511794ab10" category="doc">在 NetApp Backup and Recovery 中创建和管理 Kubernetes 工作负载的保护报告</block>
+  <block id="59db8c9d0215fa2a51b2a35609aa5bbd" category="paragraph">在 NetApp Backup and Recovery 中，为 Kubernetes 工作负载创建保护报告，以查看保护状态和详细信息，包括成功和失败备份的计数、备份类型、集群健康信息等。</block>
+  <block id="6f0eb8b8a8ac47dbe395a0547f6dba8d" category="paragraph">*必需的 NetApp Console 角色* Backup and Recovery 超级管理员、Backup and Recovery 备份管理员或 Backup and Recovery 还原管理员。了解有关<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>的信息<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
+  <block id="d45ba014e75a2424453d999d1ec1584d" category="section-title">创建保护报告</block>
+  <block id="cf9569ff04e8697d933d86bb055b6753" category="paragraph">创建保护报告以查看集群的保护状态。</block>
+  <block id="764cb0718c60ad28fec23c72e06cd3eb" category="list-text">*报告类型*：选择是按帐户报告还是按工作负载报告（从列表中选择 Kubernetes）。</block>
+  <block id="32e7d2bef37709329417fce15d4ef70a" category="list-text">*Select cluster*：如果您按工作负载选择，请从要为其生成报告的列表中选择集群，然后选择 *Accept*。选择 *Select all* 为所有集群生成报告。</block>
+  <block id="4aa69b04f720d9cf28bddc129bdda982" category="list-text">输入报告范围：选择是否希望报告包括过去一天、过去 7 天、过去 30 天、最后一个季度或去年的数据。</block>
+  <block id="8b1d3f0d4147e569670599b2074a9453" category="list-text">输入报告配置详细信息：选择是仅运行一次报告，还是计划定期生成报告。对于计划报告，请选择重复频率并选择开始日期。</block>
+  <block id="cf5d0c81e1ff395be07be7ab39b273a2" category="list-text">输入电子邮件传递详细信息：（仅适用于计划报告）如果要通过电子邮件传递报告，请输入应接收计划报告的一个或多个电子邮件地址。</block>
+  <block id="6966f88ce9330f288d2ff468e8f1bf31" category="section-title">下载保护报告</block>
+  <block id="ca0fab6dece474777af6f27a9ab6f7bf" category="paragraph">下载生成的保护报告，可以是 JSON 文件或 PDF 文档，以便您查看和共享。</block>
+  <block id="16d046f9df08fac82032019de67dd111" category="list-text">在 *Reports* 页面上，选择 *Reports* 菜单以查看生成的保护报告列表。</block>
+  <block id="46d0b33f9602910da192296aa16047c8" category="list-text">对于要下载的报告，请选择操作图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *下载*。</block>
+  <block id="3e67afef1e2a25129f8131a465c1f233" category="list-text">选择 *Download JSON* 以 JSON 格式下载报告。</block>
+  <block id="6a6e83b2656cc80c95ff1d51721fdfdf" category="list-text">选择 *Download PDF* 将报告下载为 PDF 文档。</block>
+  <block id="907ad6bf80ead0c498e1b96eeac0931b" category="section-title">查看防护报告</block>
+  <block id="5ec71cd773423bccb3eb37e7ca0de834" category="paragraph">快速查看 NetApp Backup and Recovery 中保护报告的交互式详细信息。您可以查看作业摘要信息、数据保护状态、配置详细信息等。</block>
+  <block id="4282f8fe4c83ccf233576c6529acd9cf" category="list-text">对于要查看的报告，请选择操作图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *查看报告*。</block>
+  <block id="ba033453bbd04ac2ce08fa3e831d97b0" category="paragraph">此时将显示报告详细信息。</block>
+  <block id="a1c5f902308b29e3dc37ca9471a1016c" category="section-title">删除保护报告</block>
+  <block id="ba71a8f948ce2ac60c238f470758a980" category="paragraph">当您不再需要防护报告时，请将其删除。</block>
+  <block id="583b019e08073df7e3a4598861ee7567" category="list-text">对于要删除的报告，请选择"操作"图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Delete*。</block>
+  <block id="ea78509096df982db8c5234ed6ea3e7c" category="list-text">选择 *删除* 以确认操作。</block>
+  <block id="9c7a2480e98d69e7a466d0b0fd60ac07" category="list-text">编辑保护组。</block>
+  <block id="3b8d8ee10228976bdc630252832886f7" category="list-text">选择一个主机以列出该主机上的可用 VM。要包括来自所有已发现主机的 VM，请在主机列表中选择 *All*。</block>
+  <block id="fc20073811aa1e335ccc2bd9d99eebc7" category="list-text">选择要包含在保护组中的单个 VM，或选择 *All* 以将列表中的所有 VM 包含在内。</block>
+  <block id="b40b521f6bdf32a177d77954a599ae27" category="paragraph">您选择的虚拟机将显示在*已添加的虚拟机*区域中。您可以从列表中删除单个虚拟机，也可以完全清空列表。您可以将来自多个 KVM 主机的虚拟机添加到列表中。</block>
+  <block id="a9e57cec2c8ac57d718acff237fa31e8" category="list-text">选择要应用于保护组的保护策略，或通过选择 *Create new policy* 来创建新策略。</block>
+  <block id="7e6254a3c499887f0d500958fc6584ed" category="paragraph">如果需要在不删除和重新创建保护组的情况下更改该保护组的详细信息，请编辑该保护组。</block>
+  <block id="78fa67c28bf09a9555618080f725243c" category="list-text">对保护组中的常规详细信息和 VM 进行任何必要的更改。</block>
+  <block id="3573adc4fce66bc7bb13c8f35b9d7e90" category="list-text">如果需要，请更改与保护组关联的策略。</block>
+  <block id="64599804111c69e57052c204fb880b42" category="doc">在 NetApp Backup and Recovery 中为 Microsoft SQL Server 工作负载创建保护报告</block>
+  <block id="8b3c75a910501c009c7e86f190f1825d" category="section-title">2026 年 2 月 23 日</block>
+  <block id="175ddb68a640ea3daeb84c25a2402e6f" category="sidebar">创建和管理保护报告</block>
 </blocks>

@@ -210,6 +210,8 @@ sidebar:
         url: "/br-use-manage-kubernetes-applications.html"
       - title: 管理 Kubernetes 工作负载的执行钩子模板
         url: "/br-use-manage-execution-hook-templates.html"
+      - title: 创建和管理保护报告
+        url: "/br-use-kubernetes-reports.html"
     - title: 监控作业
       url: "/br-use-monitor-tasks.html"
     - title: 重新启动NetApp Backup and Recovery
