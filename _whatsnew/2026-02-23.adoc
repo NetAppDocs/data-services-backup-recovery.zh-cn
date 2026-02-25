@@ -6,13 +6,13 @@
 
 === 一般可用性 (GA) 中支持的 KVM 工作负载
 
-Microsoft Hyper-V 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (GA)。
+KVM 工作负载支持现已在 NetApp Backup and Recovery 中正式提供（GA）。
 
 有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
 
 
 
-=== Kubernetes 在一般可用性 (GA) 中受支持
+=== 一般可用性 (GA) 中支持的 Kubernetes 工作负载
 
 Kubernetes 工作负载支持现已在 NetApp Backup and Recovery 中普遍可用（GA）。本次发布的 Kubernetes 工作负载还引入了以下增强功能：
 
