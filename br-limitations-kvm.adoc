@@ -16,13 +16,13 @@ summary: 此版本的NetApp Backup and Recovery具有以下已知限制。
 [role="lead"]
 此处列出了与此版本不兼容或不能很好地兼容的平台、设备或功能。仔细阅读这些限制。
 
-NetApp Backup and Recovery中的 KVM 工作负载的私人预览版不支持以下操作和配置：
+在 NetApp Backup and Recovery 中的 KVM 工作负载不支持以下操作和配置：
 
 
 
 == 不支持的操作
 
-私人预览版不支持以下操作：
+不支持以下操作：
 
 * 克隆、挂载或卸载虚拟机
 * 将虚拟机还原到备用位置
@@ -48,7 +48,7 @@ NetApp Backup and Recovery中的 KVM 工作负载的私人预览版不支持以�
 
 == 故障排除说明
 
-将 KVM 工作负载的私人预览与 NetApp Backup and Recovery 一起使用时，请记下以下内容。
+将 KVM 工作负载与 NetApp Backup and Recovery 一起使用时，请记下以下内容。
 
 * 如果 QEMU Guest Agent 未在受保护的虚拟机中运行，则备份可能会失败。作为一种解决方法，在启动备份之前，请确保 `qemu-guest-agent`守护程序正在虚拟机上运行。
 

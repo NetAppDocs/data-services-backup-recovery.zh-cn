@@ -19,9 +19,6 @@ NetApp Backup and Recovery是一种数据服务，可为您的所有ONTAP工作�
 所有ONTAP系统都已内置对备份和恢复的支持，因此无需额外的硬件、软件许可证或媒体网关。这使得备份操作变得简单且经济高效。NetApp Console简化了任何备份策略的实施，包括所有 3-2-1 备份变体，而无需多个资源管理器或专业人员。
 
 
-NOTE: 有关保护 VMware、KVM、Hyper-V 和 Kubernetes 工作负载的文档以技术预览的形式提供。对于此预览版产品， NetApp保留在正式发布之前修改产品详细信息、内容和时间表的权利。
-
-
 
 == NetApp Backup and Recovery
 
@@ -44,25 +41,17 @@ NOTE: 有关保护 VMware、KVM、Hyper-V 和 Kubernetes 工作负载的文档�
 ** 参考link:br-use-mssql-protect-overview.html["保护 Microsoft SQL Server 工作负载"]。
 
 
-* VMware 工作负载（使用新 UI 预览，无需SnapCenter Plug-in for VMware vSphere）*：
+* *VMware 工作负载（使用不含 SnapCenter Plug-in for VMware vSphere 的新 UI）*：
 +
 ** 使用NetApp Backup and Recovery保护您的 VMware VM 和数据存储。
-** 将 VMware 工作负载备份到 Amazon Web Services S3 或StorageGRID （预览版）。
+** 将 VMware 工作负载备份到 Amazon Web Services S3 或 StorageGRID。
 ** 将 VMware 数据从云端恢复到本地 vCenter。
 ** 您可以将虚拟机恢复到与备份完全相同的位置或其他位置。
 ** 使用NetApp Backup and Recovery，无需SnapCenter Plug-in for VMware vSphere。
 ** 参考link:br-use-vmware-protect-overview.html["保护 VMware 工作负载"]。
 
 
-* VMware 工作负载（使用SnapCenter Plug-in for VMware vSphere）
-+
-** 将虚拟机和数据存储备份到 Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform 和StorageGRID ，并将虚拟机还原回SnapCenter Plug-in for VMware vSphere。
-** 使用NetApp Backup and Recovery将虚拟机数据从云恢复到本地 vCenter。您可以将虚拟机恢复到与备份完全相同的位置或其他位置。
-** 将NetApp Backup and Recovery与适用于SnapCenter Plug-in for VMware vSphere一起使用。
-** 参考link:prev-vmware-protect-overview.html["保护 VMware 工作负载"]。
-
-
-* KVM 工作负载（预览版）
+* *KVM 工作负载*：
 +
 ** 备份和还原虚拟机
 ** 备份 KVM 存储池
@@ -70,7 +59,7 @@ NOTE: 有关保护 VMware、KVM、Hyper-V 和 Kubernetes 工作负载的文档�
 ** 参考link:br-use-kvm-protect-overview.html["保护KVM工作负载"]。
 
 
-* Hyper-V 工作负载（预览版）
+* *Hyper-V 工作负载*：
 +
 ** 备份和还原虚拟机
 ** 使用保护组管理备份任务
@@ -88,7 +77,7 @@ NOTE: 有关保护 VMware、KVM、Hyper-V 和 Kubernetes 工作负载的文档�
 ** 请参见 link:br-use-oracle-protect-overview.html["保护 Oracle Database 工作负载"]。
 
 
-* Kubernetes 工作负载（预览版）
+* *Kubernetes 工作负载*：
 +
 ** 在一个地方管理和保护您的 Kubernetes 应用程序和资源。
 ** 使用保护策略来构建增量备份。
@@ -203,10 +192,10 @@ NetApp Backup and Recovery可保护以下类型的工作负载：
 * ONTAP卷
 * 存储在物理磁盘和 VMware 虚拟机磁盘 (VMDK) 上的 Microsoft SQL Server 实例和数据库，通过 VMFS 或 NFS 文件系统进行存储。
 * VMware 虚拟机和数据存储区
-* KVM 工作负载（预览）
-* Hyper-V 工作负载（预览版）
+* KVM 工作负载
+* Hyper-V 工作负载
 * Oracle 数据库工作负载（预览版）
-* Kubernetes 工作负载（预览版）
+* Kubernetes 工作负载
 
 
 .支持的系统
@@ -220,9 +209,9 @@ NetApp Backup and Recovery可保护以下类型的工作负载：
 .支持的备份目标
 * 亚马逊网络服务（AWS）S3
 * Google Cloud Storage
-* Microsoft Azure Blob（预览版不适用于 VMware 工作负载）
+* Microsoft Azure Blob（不适用于 VMware 工作负载）
 * StorageGRID
-* ONTAP S3（预览版不适用于 VMware 工作负载）
+* ONTAP S3（不适用于 VMware 工作负载）
 
 
 

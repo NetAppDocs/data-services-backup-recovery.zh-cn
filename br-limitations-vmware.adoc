@@ -16,7 +16,7 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 [role="lead"]
 此处列出了与此版本不兼容或不能很好地兼容的平台、设备或功能。仔细阅读这些限制。
 
-NetApp Backup and Recovery中的 VMware 工作负载预览版不支持以下操作：
+在 NetApp Backup and Recovery 中的 VMware 工作负载不支持以下操作：
 
 * 挂载
 * 卸载

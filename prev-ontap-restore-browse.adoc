@@ -153,7 +153,7 @@ NOTE: 目前，您只能从对象存储中的备份文件恢复文件夹或单�
 ====
 * 如果备份文件已配置 DataLock 和勒索软件保护，则仅当ONTAP版本为 9.13.1 或更高版本时才支持文件夹级还原。如果您使用的是早期版本的ONTAP，则可以从备份文件恢复整个卷，然后访问所需的文件夹和文件。
 * 如果备份文件驻留在档案存储中，则仅当ONTAP版本为 9.13.1 或更高版本时才支持文件夹级还原。如果您使用的是早期版本的ONTAP，则可以从尚未存档的较新备份文件中还原文件夹，也可以从存档的备份中还原整个卷，然后访问所需的文件夹和文件。
-* 使用ONTAP 9.15.1，您可以使用“浏览和恢复”选项恢复FlexGroup文件夹。此功能处于技术预览模式。
+* 使用 ONTAP 9.15.1，您可以使用"浏览和还原"选项还原 FlexGroup 文件夹。
 +
 您可以使用 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["NetApp Backup and Recovery2024 年 7 月版本博客"^]。
 
