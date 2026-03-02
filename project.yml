@@ -178,6 +178,8 @@ sidebar:
         url: "/br-use-oracle-protection-groups.html"
       - title: 备份 Oracle Database 工作负载
         url: "/br-use-oracle-backup.html"
+      - title: 克隆 Oracle 数据库工作负载
+        url: "/br-use-oracle-clone.html"
       - title: 还原 Oracle Database 工作负载
         url: "/br-use-oracle-restore.html"
       - title: 安装和卸载恢复点

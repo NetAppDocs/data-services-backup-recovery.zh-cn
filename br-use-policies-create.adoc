@@ -36,7 +36,7 @@ NOTE: 其中一些选项和配置部分并不适用于所有工作负载。
 . 从NetApp Backup and Recovery菜单中，选择 *策略*。
 . 查看这些政策详情。
 +
-** *工作负载*：示例包括 Microsoft SQL Server、卷、VMware、KVM、Hyper-V、Oracle Database 或 Kubernetes。
+** *工作负载*：示例包括 Microsoft SQL Server、ONTAP 卷、VMware、KVM、Hyper-V、Oracle 数据库或 Kubernetes。
 ** *备份类型*：例如完整备份和日志备份。
 ** *架构*：示例包括本地快照、扇出、级联、磁盘到磁盘和磁盘到对象存储。
 ** *受保护的资源*：显示该工作负载的总资源中有多少资源受到保护。
