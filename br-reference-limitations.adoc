@@ -46,18 +46,13 @@ FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相
 
 
 * 从本地ONTAP系统创建复制时，如果目标Cloud Volumes ONTAP系统上的ONTAP版本为 9.8、9.9 或 9.11，则只允许镜像保管库策略。
-* NetApp Backup & Recovery 不支持在保持云备份功能的同时，将具有活动云备份关系的FlexVol volume转换为FlexGroup卷。
+* 当您将一个 FlexVol 卷转换为一个 FlexGroup 卷或反之时，转换后的卷将被视为一个新卷；您需要在转换后为转换后的卷设置保护。您可以将转换前创建的备份还原到其他卷。
 
 
 
 
 == ONTAP卷的备份到对象限制
 
-* 备份数据时， NetApp Backup and Recovery将不会维护NetApp卷加密 (NVE)。这意味着 NVE 卷上的加密数据将在数据传输到目标时被解密，并且加密将无法维持。
-+
-有关这些加密类型的说明，请参阅https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["配置NetApp卷加密概述"^]。
-
-* 如果使用SnapMirror策略中的计划在SnapMirror目标卷上启用长期保留快照，则会直接在目标卷上创建快照。在这种情况下，您不应使用NetApp Backup and Recovery备份这些卷，因为这些快照不会移动到对象存储。
 * 备份数据时， NetApp Backup and Recovery将不会维护NetApp卷加密 (NVE)。这意味着 NVE 卷上的加密数据将在数据传输到目标时被解密，并且加密将无法维持。
 +
 有关这些加密类型的说明，请参阅https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["配置NetApp卷加密概述"^]。
@@ -89,7 +84,7 @@ FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相
 * 数据保护卷不支持使用“*立即备份*”按钮进行临时卷备份。
 * 不支持 SM-BC 配置。
 * ONTAP不支持从单个卷到多个对象存储的SnapMirror关系扇出；因此， NetApp Backup and Recovery不支持此配置。
-* 目前，Amazon S3、Azure 和StorageGRID支持对象存储上的 WORM/Compliance 模式。这被称为 DataLock 功能，必须使用NetApp Backup and Recovery设置来管理，而不是使用云提供商界面。
+* 目前，Amazon S3、Google Cloud Platform (GCP)、Azure 和 StorageGRID 上的对象存储支持 WORM/合规模式。这被称为 DataLock 功能，必须使用 NetApp Backup and Recovery 设置进行管理，而不是使用云提供商界面。
 
 
 
@@ -109,8 +104,6 @@ FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相
 
 * 仅当集群运行ONTAP 9.13.1 及更高版本时，才支持对驻留在档案存储中的数据进行目录/文件夹还原。
 * 仅当集群运行ONTAP 9.13.1 及更高版本时，才支持使用 DataLock 保护的数据的目录/文件夹还原。
-* 目前不支持通过复制和/或本地快照进行目录/文件夹还原。
-* 不支持从FlexGroup卷还原到FlexVol卷，或从FlexVol卷还原到FlexGroup卷。
 * 正在恢复的文件必须使用与目标卷上的语言相同的语言。如果语言不一样，您将收到一条错误消息。
 * 将数据从 Azure 档案存储还原到StorageGRID系统时，不支持“高”还原优先级。
 * 如果您备份了 DP 卷，然后决定中断与该卷的SnapMirror关系，则无法将文件还原到该卷，除非您也删除SnapMirror关系或反转SnapMirror方向。

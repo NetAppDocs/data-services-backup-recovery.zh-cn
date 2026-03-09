@@ -88,7 +88,7 @@ kubectl apply -f local-snapshot-cr.yaml
 ** *spec.applicationRef*：（_必需_）要备份的应用程序的 Kubernetes 名称。
 ** *spec.appVaultRef*：（_必需，与 spec.appVaultTargetsRef 互斥_）如果使用相同的存储桶存储快照和备份，则这是应存储备份内容的 AppVault 的名称。
 ** *spec.appVaultTargetsRef*：（_必需，与 spec.appVaultRef 互斥_）如果您使用不同的存储桶来存储快照和备份，这是应存储备份内容的 AppVault 的名称。
-** *spec.dataMover*：（_Optional_）一个字符串，指示要用于备份操作的备份工具。该值区分大小写，必须为 `CBS`。
+** *spec.dataMover*：（_可选，从 Trident Protect 迁移的集群必需_）表示要用于备份操作的备份工具的字符串。如果此集群已从 Trident Protect 迁移到 Backup and Recovery，则该值区分大小写，并且必须为 `CBS`。
 ** *spec.reclaimPolicy*：（_可选_）定义删除 Backup CR 时备份内容（元数据/卷数据）会发生什么。可能的值：
 +
 *** `Delete`

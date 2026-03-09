@@ -20,8 +20,6 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 
 * 挂载
 * 卸载
-* 附加 VMDK
-* 分离 VMDK
 * vVol 支持
 * NVMe 支持
 * 电子邮件集成

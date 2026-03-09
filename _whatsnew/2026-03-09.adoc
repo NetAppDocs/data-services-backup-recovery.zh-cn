@@ -1,0 +1,32 @@
+= ONTAP Volumes 工作负载增强
+:allow-uri-read: 
+
+
+
+
+=== ONTAP Volumes 工作负载增强
+
+在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：
+
+* *还原到源位置*：您现在可以将文件从本地快照和复制快照还原到源位置以及备用位置。
+* *每小时卷发现*：Dashboard 现在可以更快地发现和刷新新卷。
+* *支持暗站点*：您现在可以从 https://mysupport.netapp.com/site/products/all/details/netapp-console/downloads-tab/download/61906/4.4.0/downloads["NetApp 支持站点"]下载暗站点的 Backup and Recovery。目前，暗站点的 NetApp Backup and Recovery 仅支持 ONTAP Volumes 工作负载。
+* *Unicode 兼容性改进*：目录索引现在可以更好地处理 Unicode 字符。
+* *改进的 FlexGroup 兼容性*：将 ONTAP FlexVol 卷转换为 FlexGroup 卷时，现在可以恢复转换前所做的备份。
+* *多存储桶支持*：您现在可以使用跨不同云提供商的每个系统最多 6 个存储桶来保护系统中的卷。
+
+
+要了解有关保护 ONTAP Volume 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["保护 ONTAP Volume 工作负载概述"]。
+
+
+
+=== VMware 工作负载增强功能
+
+在此版本中，VMware 工作负载引入了以下增强功能：
+
+* *从对象存储还原访客数据*：您现在可以从对象存储还原访客文件和文件夹。
+* *VMFS/NFS 快速还原*：现在可以在还原到备用位置时启用快速还原选项。启用后，将仅从对象存储中检索 VM 元数据（文件、LUN 和命名空间），从而使卷的可用性快于完全恢复。
+* *支持 Amazon FSx for NetApp ONTAP*：VMware 工作负载现在支持运行 9.13.1 或更高版本的 Amazon FSx for NetApp ONTAP 存储系统。
+
+
+有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。

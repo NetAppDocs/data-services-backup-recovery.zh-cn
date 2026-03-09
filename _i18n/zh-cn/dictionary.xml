@@ -364,8 +364,6 @@
   <block id="eace16d66cdd93ad876c620db7456077" category="list-text">挂载</block>
   <block id="1281764038ea27ade56d7d2b8be22798" category="list-text">卸载</block>
   <block id="25e66e51214e8342374fa891a42988b3" category="list-text">恢复至备用位置</block>
-  <block id="00c5709c4d9ca9f8035d5d0e33f2421e" category="list-text">附加 VMDK</block>
-  <block id="097b06a0d5de05867037a2fdc678ef17" category="list-text">分离 VMDK</block>
   <block id="ef18d76ed6c710e78abb28c0e09b3e30" category="list-text">vVol 支持</block>
   <block id="2cc658d562a11cd1528c2219f2d25da7" category="list-text">NVMe 支持</block>
   <block id="98dc7ecfe4c87955d5fb8b98b895eac7" category="list-text">电子邮件集成</block>
@@ -452,7 +450,6 @@
   <block id="ff65f252d2a0aa40e634cf2ad7eaa2d3" category="list-text">数据保护卷不支持使用“*立即备份*”按钮进行临时卷备份。</block>
   <block id="3dd0180637528cde8671a0c957cf90da" category="list-text">不支持 SM-BC 配置。</block>
   <block id="28014e4f484f0639d9b0151965328912" category="list-text">ONTAP不支持从单个卷到多个对象存储的SnapMirror关系扇出；因此， NetApp Backup and Recovery不支持此配置。</block>
-  <block id="139c263dc37495a1365dde941627eb32" category="list-text">目前，Amazon S3、Azure 和StorageGRID支持对象存储上的 WORM/Compliance 模式。这被称为 DataLock 功能，必须使用NetApp Backup and Recovery设置来管理，而不是使用云提供商界面。</block>
   <block id="3e6e24d49c1e2a7357bbe49c1cf7e682" category="section-title">ONTAP卷的还原限制</block>
   <block id="79ec871c574dbe9adf17973bdb4bf029" category="paragraph">这些限制适用于恢复文件和文件夹的搜索和恢复方法以及浏览和恢复方法；除非特别指出。</block>
   <block id="03a5b9815bb473e6f4be8d24abee633a" category="list-text">浏览和恢复一次最多可以恢复 100 个单独的文件。</block>
@@ -462,8 +459,6 @@
   <block id="118a57e2fb1b730b4d9702fc0590ed48" category="paragraph">使用 9.11.1 之前的ONTAP版本时，不支持文件夹还原。</block>
   <block id="caac6b6b759dd099323676db10be1564" category="list-text">仅当集群运行ONTAP 9.13.1 及更高版本时，才支持对驻留在档案存储中的数据进行目录/文件夹还原。</block>
   <block id="e8573f3934d023dbb0b6cea67803d326" category="list-text">仅当集群运行ONTAP 9.13.1 及更高版本时，才支持使用 DataLock 保护的数据的目录/文件夹还原。</block>
-  <block id="2ad2934a6b663d3e1150684467ab796f" category="list-text">目前不支持通过复制和/或本地快照进行目录/文件夹还原。</block>
-  <block id="b2ff0fb046b03e40e599f1561ed5ebd3" category="list-text">不支持从FlexGroup卷还原到FlexVol卷，或从FlexVol卷还原到FlexGroup卷。</block>
   <block id="5f5966e9da5716290dfc2b88ceeb2217" category="list-text">正在恢复的文件必须使用与目标卷上的语言相同的语言。如果语言不一样，您将收到一条错误消息。</block>
   <block id="0bfb7259f1f6626c1cdf5b3afe490baa" category="list-text">将数据从 Azure 档案存储还原到StorageGRID系统时，不支持“高”还原优先级。</block>
   <block id="baa1235434f9122bbcf4cd93c72c3ed3" category="list-text">如果您备份了 DP 卷，然后决定中断与该卷的SnapMirror关系，则无法将文件还原到该卷，除非您也删除SnapMirror关系或反转SnapMirror方向。</block>
@@ -1995,7 +1990,6 @@
   <block id="573531ec152a1cc1709422d00088088e" category="section-title">保护 VMware 工作负载的要求</block>
   <block id="4ccfae37bea4d344c283e2a68013c9c1" category="paragraph">您需要特定的要求来发现和保护您的 VMware 工作负载。</block>
   <block id="1269e07e6a9265be5844ea32a0494a7f" category="paragraph">软件支持</block>
-  <block id="2d5a6b46412544fb6ac242fbc736934e" category="list-text">支持的 NFS 版本：NFS 3 和 NFS 4.1</block>
   <block id="40f1a54f3602033103d74e381708e352" category="list-text">支持的 VMware ESXi Server 版本：7.0U1 及以上</block>
   <block id="c7d133a7d1fcc4fc9f8bf51535dc3ef0" category="list-text">支持的 VMware vCenter vSphere 版本：7.0U1 及以上</block>
   <block id="f3c396a6341d422a1f0e7a503896ed29" category="list-text">IP 地址：IPv4 和 IPv6</block>
@@ -4341,7 +4335,6 @@
   <block id="4db9a239be0f58f8e4742665ad2371e2" category="paragraph">启用搜索和恢复功能前，请确保您的环境满足以下要求：</block>
   <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">以下是使用传统索引时搜索和恢复功能的要求：</block>
   <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">使用NetApp NFS 卷</block>
-  <block id="459af9b852bd375bac17fb30c8c1b979" category="list-text">NetApp Backup &amp; Recovery 不支持在保持云备份功能的同时，将具有活动云备份关系的FlexVol volume转换为FlexGroup卷。</block>
   <block id="063090df0880212c0ba8eec878096a21" category="doc">VMware 工作负载预览增强功能</block>
   <block id="24936fb650df7af8295e75a3667becef" category="list-text">现在您可以将备份和快照恢复到备用位置。如果您想要管理不同 VMware vCenter 部署、VMware ESXi 主机或 VMware 数据存储上的虚拟机版本，这将非常有用。</block>
   <block id="99ee61e75520f174d08caa35e0ad294d" category="list-text">现在您可以从主位置或辅助位置恢复特定的 VMware 虚拟磁盘（VMDK 映像），从而实现对恢复 VM 数据的更精细控制。</block>
@@ -4999,8 +4992,6 @@
   <block id="6108d5ad430f0631e5c6e10714ba980c" category="doc">一般可用性 (GA) 中支持的 Microsoft Hyper-V 工作负载</block>
   <block id="c5db154b8366e71dcf87e4624b1a0112" category="paragraph">Microsoft Hyper-V 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (GA)。</block>
   <block id="bd7b6aa0517dacb10ee10e479293ef82" category="sidebar">保护 Oracle Database 工作负载（预览）</block>
-  <block id="2e6a10996a90ae08a445bcd92b94e301" category="list-text">支持的连接存储：ONTAP 9.13 或更高版本</block>
-  <block id="a58576b20da9581ef64dc73d9299ba68" category="list-text">支持 NFS 和 VMFS 数据存储区。</block>
   <block id="dbeedec7ca35d125dd2a7ee8355c41f5" category="section-title">一般可用性 (GA) 中支持的 VMware 工作负载</block>
   <block id="1fe60033089958dd8dab2fc11925056d" category="section-title">超出许可证容量</block>
   <block id="73b5f5184f0b378b50b42a6e8ceb743c" category="paragraph">超过许可容量会触发 PAYGO 费率；如果没有 PAYGO 订阅，您将无法创建新的备份，尽管现有备份在没有服务保证的情况下仍可恢复。请务必在许可证过期之前续订许可证；过期的许可证会阻止新的备份并中断服务。</block>
@@ -5110,4 +5101,29 @@
   <block id="8616a450958f68321bde3e8f34b8c9c5" category="section-title">卸载 Oracle 数据库恢复点</block>
   <block id="df197f1a2e9f772f8de9983ed94d9541" category="list-text">*工作负载*：示例包括 Microsoft SQL Server、ONTAP 卷、VMware、KVM、Hyper-V、Oracle 数据库或 Kubernetes。</block>
   <block id="e1589447f05ccd92a0e9ade876573b81" category="sidebar">克隆 Oracle 数据库工作负载</block>
+  <block id="76c3536921b70f0616becde2e9340a54" category="doc">ONTAP Volumes 工作负载增强</block>
+  <block id="78b068f24da5a7e17080acceea02e506" category="paragraph">在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：</block>
+  <block id="61f251cc47dddbc52bddd098d342b6d5" category="list-text">*还原到源位置*：您现在可以将文件从本地快照和复制快照还原到源位置以及备用位置。</block>
+  <block id="b64975edc0e1d4d2b77bbc09821fe6c1" category="list-text">*每小时卷发现*：Dashboard 现在可以更快地发现和刷新新卷。</block>
+  <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link">NetApp 支持站点</block>
+  <block id="8f504b1c826d739819c7ea02c4fd893f" category="list-text">*支持暗站点*：您现在可以从<block ref="e2fed6b5af5d107fdef5614adaedfcef" category="inline-link-rx"></block>下载暗站点的 Backup and Recovery。目前，暗站点的 NetApp Backup and Recovery 仅支持 ONTAP Volumes 工作负载。</block>
+  <block id="ccf9e1de6190057c9e2e1a10c6b8f07f" category="list-text">*Unicode 兼容性改进*：目录索引现在可以更好地处理 Unicode 字符。</block>
+  <block id="a173f0fc9f4786dd11c96099dd446ec8" category="list-text">*改进的 FlexGroup 兼容性*：将 ONTAP FlexVol 卷转换为 FlexGroup 卷时，现在可以恢复转换前所做的备份。</block>
+  <block id="f32d4e838dfc925da7a940c6e55acf8c" category="list-text">*多存储桶支持*：您现在可以使用跨不同云提供商的每个系统最多 6 个存储桶来保护系统中的卷。</block>
+  <block id="e32587f34260a350a3a49e3604fb2a4c" category="inline-link">保护 ONTAP Volume 工作负载概述</block>
+  <block id="db44a854b206d5d90008224f3bb5b2da" category="paragraph">要了解有关保护 ONTAP Volume 工作负载的详细信息，请参阅<block ref="660ec036763d30562702201a56aaa402" category="inline-link-rx"></block>。</block>
+  <block id="f154c542c430b30dc73d2d3e87fd6f65" category="paragraph">在此版本中，VMware 工作负载引入了以下增强功能：</block>
+  <block id="63eb1b3f5c128e6460c85c7b6e5d2bb9" category="list-text">*从对象存储还原访客数据*：您现在可以从对象存储还原访客文件和文件夹。</block>
+  <block id="7d88c93c0ec65e1bcc3564692a490a5b" category="list-text">*VMFS/NFS 快速还原*：现在可以在还原到备用位置时启用快速还原选项。启用后，将仅从对象存储中检索 VM 元数据（文件、LUN 和命名空间），从而使卷的可用性快于完全恢复。</block>
+  <block id="ba95b1986315d65e4bb0f2dcb924f870" category="list-text">*支持 Amazon FSx for NetApp ONTAP*：VMware 工作负载现在支持运行 9.13.1 或更高版本的 Amazon FSx for NetApp ONTAP 存储系统。</block>
+  <block id="4313ef91d0af92358d4bfc05358d4692" category="list-text">当您将一个 FlexVol 卷转换为一个 FlexGroup 卷或反之时，转换后的卷将被视为一个新卷；您需要在转换后为转换后的卷设置保护。您可以将转换前创建的备份还原到其他卷。</block>
+  <block id="d88c13a12326a1a581751edb0a83ae1b" category="list-text">目前，Amazon S3、Google Cloud Platform (GCP)、Azure 和 StorageGRID 上的对象存储支持 WORM/合规模式。这被称为 DataLock 功能，必须使用 NetApp Backup and Recovery 设置进行管理，而不是使用云提供商界面。</block>
+  <block id="106839ddc74bb36d184d46f6f8d5016f" category="list-text">*spec.dataMover*：（_可选，从 Trident Protect 迁移的集群必需_）表示要用于备份操作的备份工具的字符串。如果此集群已从 Trident Protect 迁移到 Backup and Recovery，则该值区分大小写，并且必须为<block ref="250c51527f347066847969f002be67a2" prefix=" " category="inline-code"></block>。</block>
+  <block id="06e1026570d8a901d8b6dedf9e5d6f66" category="list-text">*快速还原*：启用此选项可指示 Backup and Recovery 仅从对象存储还原 VM 元数据（文件、LUN 和命名空间）。这使得卷的可用性比完全还原更快。</block>
+  <block id="5b6eae3d36833d14f04c696b7a2e75a9" category="list-text">支持 NFSv3、NFSv4.1 和 VMFS 数据存储区。</block>
+  <block id="eff24131b4bb3e0f34de9a437296c19b" category="list-text">支持的连接存储：</block>
+  <block id="9e2d6035ec7a18aa99db06aab17683c8" category="list-text">ONTAP 9.13.1 或更高版本</block>
+  <block id="84926f15fa96e5fbcf319691a6c909e3" category="list-text">运行 9.13.1 或更高版本的 Amazon FSx for NetApp ONTAP 存储系统</block>
+  <block id="d683472bc4b099b7787d3a9d8df4673e" category="admonition">如果选择 *自带存储桶*，请确保创建作为备份目标的容器与 Azure 存储帐户同名。</block>
+  <block id="df4bdd45174b09881add6730bdfaf045" category="section-title">2026 年 3 月 09 日</block>
 </blocks>
