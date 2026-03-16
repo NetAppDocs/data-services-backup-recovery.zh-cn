@@ -188,11 +188,7 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 | 需求 | 支持 
 
 
-| 部署拓扑  a| 
-* 独立（NFS、SAN、ASM SAN）
-* 基于 ASM 的 RAC（VMFS 上的 VMDK）
-
-
+| 部署拓扑 | 独立（NFS、SAN、ASM SAN） 
 
 
 | Oracle 数据库版本  a| 
