@@ -18,6 +18,22 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 
 
+== 2026 年 3 月 16 日
+
+此NetApp Backup and Recovery版本包括以下更新。
+
+
+
+=== VMware 工作负载增强功能
+
+在此版本中，VMware 工作负载引入了以下增强功能：
+
+*每个计划层的虚拟机一致性支持*：现在，在为 VMware 工作负载配置保护策略时，您可以为特定计划层启用虚拟机一致性和应用程序一致性备份。支持年度、月度和周度层。
+
+有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。
+
+
+
 == 2026 年 3 月 09 日
 
 此NetApp Backup and Recovery版本包括以下更新。

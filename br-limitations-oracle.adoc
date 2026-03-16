@@ -20,5 +20,3 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 
 * 离线备份
 
-
-在 Oracle Database 工作负载的专用预览版中，仅支持使用 NFS、SAN 或 ASM SAN 的独立部署 Oracle Database。

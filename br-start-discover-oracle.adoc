@@ -50,14 +50,14 @@ summary: NetApp Backup and Recovery需要首先发现工作负载，以便您保
 . *高级设置*：执行以下操作：
 +
 .. 输入要用于 NetApp 插件的端口和安装路径。该插件支持 Oracle 数据库主机与 NetApp Backup and Recovery 之间的通信。
-.. 选择是允许 NetApp Backup and Recovery 自动安装此插件，还是跳过安装（您需要在主机上手动安装此插件）。
+.. 选择是允许 NetApp Backup and Recovery 自动安装此插件，还是跳过自动安装此插件（如果启用*使用手动安装*，您需要在主机上手动安装此插件）。
 .. 选择是执行安装前检查还是跳过它们。
 
 
 . 选择*发现*。
 +
 
-TIP: 此过程可能需要几分钟。
+TIP: 添加资源可能需要几分钟的时间。要查看进度，请在 Inventory 页面底部的状态对话框中选择 *Track progress*，或从左侧菜单中选择 *Monitoring*。
 
 
 

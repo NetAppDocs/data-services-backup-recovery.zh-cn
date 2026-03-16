@@ -88,19 +88,31 @@ NOTE: 如果您已经拥有SnapCenter，请先检查以确保在从SnapCenter导
 
 软件支持
 
-* 支持 NFSv3、NFSv4.1 和 VMFS 数据存储区。
-* 支持的 VMware ESXi Server 版本：7.0U1 及以上
-* 支持的 VMware vCenter vSphere 版本：7.0U1 及以上
-* IP 地址：IPv4 和 IPv6
-* VMware TLS：1.2、1.3
-* 支持的连接存储：
-+
-** ONTAP 9.13.1 或更高版本
-** 运行 9.13.1 或更高版本的 Amazon FSx for NetApp ONTAP 存储系统
+|===
+| 需求 | 支持 
 
 
+| 数据存储库类型 | NFSv3、NFSv4.1 和 VMFS 
 
 
+| VMware ESXi Server 版本 | 7.0U1 及更高版本 
+
+
+| VMware vCenter vSphere 版本 | 7.0U1 及更高版本 
+
+
+| IP 地址类型 | IPv4，IPv6 
+
+
+| VMware TLS 版本 | 1.2, 1.3 
+
+
+| 已连接存储  a| 
+* ONTAP 9.13.1 或更高版本
+* 运行 9.13.1 或更高版本的 Amazon FSx for NetApp ONTAP 存储系统
+
+
+|===
 *保护 VMware 工作负载的连接和端口要求*
 
 [cols="33,66a"]
@@ -114,7 +126,9 @@ NOTE: 如果您已经拥有SnapCenter，请先检查以确保在从SnapCenter导
 
 
 | 存储集群或存储虚拟机端口  a| 
-443（HTTPS），双向。80（HTTP），双向。此端口用于虚拟设备与存储虚拟机或包含存储虚拟机的集群之间的通信。
+* 443 (HTTPS)，双向。
+* 80 (HTTP)，双向。此端口用于在虚拟设备与存储 VM 或包含存储 VM 的集群之间进行通信。
+
 
 |===
 *保护 VMware 工作负载的基于角色的访问控制 (RBAC) 要求*
@@ -168,25 +182,44 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 
 == 保护 Oracle Database 工作负载的要求
 
-确保您的环境满足发现和保护 Oracle 资源的特定要求。
+确保您的环境满足特定要求，以发现和保护 Oracle Database 资源。
 
-* Oracle 数据库：
-+
-** Oracle 19C 和 21C 在独立部署中受支持。
-** Oracle 数据库必须部署在主或辅助NetApp ONTAP存储中。
-** 主机操作系统支持：Red Hat Enterprise Linux 8 和 9
+|===
+| 需求 | 支持 
 
 
-* 对象存储支持：
-+
-** Azure 对象存储
-** 亚马逊 AWS
-** NetAppStorageGRID
-** ONTAP S3
+| 部署拓扑  a| 
+* 独立（NFS、SAN、ASM SAN）
+* 基于 ASM 的 RAC（VMFS 上的 VMDK）
 
 
 
 
+| Oracle 数据库版本  a| 
+* Oracle Database 19c
+* Oracle Database 21c
+
+
+
+
+| 数据库存储 | 必须部署在 NetApp ONTAP（主要或次要） 
+
+
+| 主机操作系统  a| 
+* Red Hat Enterprise Linux 8
+* Red Hat Enterprise Linux 9
+
+
+
+
+| 对象存储（备份目标）  a| 
+* Azure 对象存储
+* 亚马逊 AWS
+* NetAppStorageGRID
+* ONTAP S3
+
+
+|===
 
 
 == 保护 Kubernetes 应用程序的要求
@@ -220,42 +253,56 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 
 确保您的 Hyper-V 实例满足发现和保护虚拟机的特定要求。
 
-* Hyper-V Windows Server 主机的软件要求：
-+
-** Microsoft Hyper-V 2019、2022 和 2025 版本
-** ASP.NET Core Runtime 8.0.23 托管捆绑包（以及所有后续的 8.0.x 修补程序）
-** PowerShell 7.4.13 或更高版本
-** 如果非管理员域用户要保护 Hyper-V 虚拟机，请确保该用户拥有以下权限：
-+
-*** 请确保该用户是本地管理员组成员。
-*** 确保用户已加入“以服务身份登录”本地安全策略。
+*Hyper-V Windows Server 主机的软件要求*
+
+|===
+| 需求 | 支持 
 
 
-** 确保 Windows 防火墙设置中允许以下端口进行双向 HTTPS 通信：
-+
-*** 8144（适用于 Hyper-V 的NetApp插件）
-*** 8145（适用于 Windows 的NetApp插件）
+| Microsoft Hyper-V | 2019、2022 和 2025 版本 
+
+
+| ASP.NET Core Runtime | 8.0.23 Hosting Bundle（以及所有后续的 8.0.x 补丁） 
+
+
+| PowerShell | 7.0U1 及更高版本 
+
+
+| 如果非管理员用户将保护 Hyper-V VM，请确保用户具有以下权限  a| 
+* 本地管理员组的成员
+* "作为服务登录"本地安全策略的一部分
 
 
 
 
-* Hyper-V 主机的硬件要求：
-+
-** 支持独立主机和 FCI 集群主机
-** Hyper-V 主机上的NetApp Hyper-V 插件至少需要 1GB RAM
-** Hyper-V 主机上插件的最低安装和日志空间为 5GB
+| 确保在 Windows 防火墙设置中允许以下端口的双向 HTTPS 流量  a| 
+* TCP 8144（NetApp Plugin for Hyper-V）
+* TCP 8145（NetApp Plugin for Windows）
+
+
+
+
+| 已连接存储  a| 
+* ONTAP 9.13.1 或更高版本
+* 运行 9.13.1 或更高版本的 Amazon FSx for NetApp ONTAP 存储系统
+
+
+|===
+*Hyper-V 主机的硬件要求*
+
+* 支持独立主机和 FCI 集群主机
+* Hyper-V 主机上的NetApp Hyper-V 插件至少需要 1GB RAM
+* Hyper-V 主机上插件的最低安装和日志空间为 5GB
 +
 
 NOTE: 确保在 Hyper-V 主机上为日志文件夹分配足够的磁盘空间并定期监控其使用情况。所需空间取决于备份和数据保护操作发生的频率。如果空间不足，则不会生成日志。
 
 
 
-* NetApp ONTAP配置要求：
-+
-** 主ONTAP系统（ONTAP 9.14.1 或更高版本）
-** 对于使用 CIFS 共享存储虚拟机数据的 Hyper-V 部署，请确保在ONTAP系统上启用了连续可用性共享属性。请参阅 https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["ONTAP 文档"^]以获取说明。
+*NetApp ONTAP 配置要求*
 
-
+* 主ONTAP系统（ONTAP 9.14.1 或更高版本）
+* 对于使用 CIFS 共享存储虚拟机数据的 Hyper-V 部署，请确保在ONTAP系统上启用了连续可用性共享属性。请参阅 https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["ONTAP 文档"^]以获取说明。
 
 
 
