@@ -5120,7 +5120,6 @@
   <block id="a5f167b540745795bfa82881525658b7" category="paragraph">确保您的环境满足特定要求，以发现和保护 Oracle Database 资源。</block>
   <block id="be84d19651fadb3105ee4563b1a749a1" category="cell">部署拓扑</block>
   <block id="6573228c28e984dea35ef8e206b9b22e" category="list-text">独立（NFS、SAN、ASM SAN）</block>
-  <block id="40462b3520e204c56d496704b2197731" category="list-text">基于 ASM 的 RAC（VMFS 上的 VMDK）</block>
   <block id="23288ce9e4c4065a0c262950a798255a" category="cell">Oracle 数据库版本</block>
   <block id="0ac3a1f034484f75f44fe8688e650ffe" category="list-text">Oracle Database 19c</block>
   <block id="e78bd68f4ea5809752852eea2f74942d" category="list-text">Oracle Database 21c</block>
@@ -5147,4 +5146,5 @@
   <block id="86a1075e6640849bd364878900fd5412" category="paragraph">您还可以按照以下步骤在_标准模式_本地使用 Backup and Recovery 时替换 Console 代理并恢复其上存储的配置数据，当不涉及云帐户时（例如，使用 NetApp StorageGrid 作为备份目标时）。</block>
   <block id="72edcbdd4436f32d101a83a36dd2d1db" category="list-text">运行 *ls* 命令以确保已创建文件夹"catalogdb1"并包含子文件夹<block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>、<block ref="b17be6650251f2e6c7d4e90209beb4e0" prefix=" " category="inline-code"></block>和<block ref="695633290d050f31cec0c9d4bd4a57fe" prefix=" " category="inline-code"></block>。</block>
   <block id="69b1a964078d5301a2aa9822cb2304f2" category="section-title">2026 年 3 月 16 日</block>
+  <block id="5896522d63454009d1844a27f9e16972" category="cell">7.4.13 或更高版本</block>
 </blocks>
