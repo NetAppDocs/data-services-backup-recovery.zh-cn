@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: br-start-configure-oracle-database.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle, configure 
+summary: 在 NetApp Backup and Recovery 中配置 Oracle 数据库。 
+---
+= 在 NetApp Backup and Recovery 中配置 Oracle 数据库
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以更改新的独立或群集 Oracle 数据库的身份验证和节点设置。NetApp Backup and Recovery 可以在不进行这些更改的情况下保护数据库。如果发现后环境发生变化，则可能需要更新数据库设置。
+
+*所需的控制台角色* 备份和恢复超级管理员。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+
+
+
+== 配置 Oracle 数据库
+
+更改独立或群集 Oracle 数据库的配置。
+
+.步骤
+. 从NetApp Console菜单中，选择“保护”>“备份和恢复”。
+. 在“工作负载”下，选择“Oracle”磁贴。
+. 在 Oracle 清单中，选择 *Databases* 菜单。
+. 在数据库列表中，为要配置的数据库选择 *Configure database*（独立数据库）或 *Configure RAC database*（集群数据库）。
+. *配置数据库设置*：为独立或群集数据库配置身份验证设置。
++
+** 选择 *OS authentication* 仅使用主机操作系统进行身份验证。Backup and Recovery 使用您在发现期间指定的主机凭据。
+** 当数据库需要凭据时，选择 *Database authentication*。然后选择现有凭据或添加新凭据，并选择用于连接的端口。
+
+
+. *配置 RMAN 目录*：在保护策略中启用自动编目或手动编目恢复点时，选择存储此数据库或集群的备份和恢复操作元数据的位置：
++
+** 选择 *Target control file* 将元数据存储在数据库目标控制文件中。
+** 选择 *Catalog database* 将元数据存储在 RMAN 恢复目录中。选择凭据和 Transparent Network Substrate (TNS) 名称以连接到恢复目录。
++
+RMAN 恢复目录是 RMAN 实用程序使用的独立数据库架构，用于存储有关已注册数据库的备份和恢复操作的元数据。它在目标控制文件丢失或需要历史数据时提供冗余和长期保留。启用此选项可在 RMAN 存储库中注册数据文件和归档日志副本，以便 RMAN 可以跟踪和管理这些副本以进行报告和恢复。
+
+
+
+. *配置节点*（仅限集群数据库）：从保护中添加或删除节点，或使用箭头按钮更改节点优先级。
++
+优先级较高的节点将首先受到保护。只有当较高优先级的节点无法访问或不健康时，才会保护较低优先级的节点。
+
+. 完成后，选择 *Done* 。
+
+
+.结果
+Backup and Recovery 使用新设置连接到数据库。

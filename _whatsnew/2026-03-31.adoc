@@ -1,0 +1,15 @@
+= Oracle Database 工作负载增强
+:allow-uri-read: 
+
+
+
+
+=== Oracle Database 工作负载增强
+
+在此版本中，Oracle 数据库工作负载引入了以下增强功能：
+
+* *群集主机支持*：您现在可以发现和保护使用 Oracle Automatic Storage Management (ASM) 并使用 VMDK 在 VMFS 文件系统上部署的 Oracle Real Application Clusters (RAC) 数据库。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-discover-oracle.html["发现 Oracle Database 工作负载"]。
+* *RMAN 目录支持*：您现在可以将 Backup and Recovery 配置为在 RMAN 恢复目录中存储保护元数据，从而在目标控制文件丢失时提供冗余和长期保留。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-configure-oracle-database.html["配置 Oracle 数据库"]。
+
+
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
