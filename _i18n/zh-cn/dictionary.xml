@@ -344,11 +344,9 @@
   <block id="a9ad02ebb13f3d9fa3cb4a1b59be6548" category="paragraph">此处列出了与此版本不兼容或不能很好地兼容的平台、设备或功能。仔细阅读这些限制。</block>
   <block id="0e32e31adc232e70ce479856e16c7f00" category="section-title">不支持的操作</block>
   <block id="5ae6a8a06c30125d00a57910609856cf" category="list-text">跨磁盘（跨多个 CIFS 共享）</block>
-  <block id="5cb642b37b3102019402cbd3b93a5693" category="list-text">通过 SAN 保护虚拟机</block>
   <block id="4a03732927298c2d8d1492b3d08bb831" category="summary">此版本的NetApp Backup and Recovery具有以下已知限制。</block>
   <block id="5050c99de0a6e1bcf02e7ce66edabd97" category="doc">NetApp Backup and Recovery针对 KVM 工作负载的已知限制</block>
   <block id="a06f7c3d3eb77822719225d3ee611842" category="list-text">克隆、挂载或卸载虚拟机</block>
-  <block id="e2b26238e3aec34978fbb465dfd6baff" category="list-text">将虚拟机还原到备用位置</block>
   <block id="fe8e9fc813c1e8a639c0cadb6115589f" category="list-text">保护存储在 SAN 上的虚拟机</block>
   <block id="ca73b42f56baa81e1c83e31ee5c53d42" category="list-text">保护应用程序</block>
   <block id="2fbb28a0f1560254b88f56b3632cf88b" category="list-text">创建用户定义的备份（仅支持从NetApp Console启动的备份）</block>
@@ -554,10 +552,7 @@
   <block id="d9b1378a4d73683cda9aba471e2f7de2" category="paragraph">提供访问存储帐户的凭据。  NetApp Backup and Recovery使用这些凭据来发现您想要备份的工作负载。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">开始之前</block>
   <block id="d4cb0fb4281a915d52ee13b56b9d21b7" category="paragraph">您需要先发现至少一个工作负载，然后才能添加异地备份目标。</block>
-  <block id="470ce3913d71cf58779c55ed1199ab47" category="list-text">选择*异地备份目标*选项卡。</block>
   <block id="5d93632dd21f2b862652e38274ab25f3" category="list-text">选择*发现备份目标*。</block>
-  <block id="abd59a7e6214ae0bc1f2eb0e1d451616" category="list-text">选择以下备份目标类型之一：*Amazon Web Services (AWS) S3*、*Microsoft Azure Blob Storage*、* StorageGRID* 或 * ONTAP S3*。</block>
-  <block id="0222d44a84ea3563d85d453d801f6427" category="list-text">在“选择凭证位置”部分中，选择凭证所在的位置，然后选择如何关联凭证。</block>
   <block id="e6cd86d61f4639c8a27006c6c29b3e9f" category="list-text">选择“下一步”。</block>
   <block id="f3ade6a9606e111612431ac1a3ff68e2" category="list-text">输入凭据信息。根据您选择的备份目标类型和凭据位置，信息会有所不同。</block>
   <block id="83933361b1e2abf7e7f406666cc9c104" category="list-text">对于 AWS：</block>
@@ -949,7 +944,6 @@
   <block id="3850249b64193fae9627627088cec7a4" category="list-text">当您从本地备份文件恢复工作负载时， NetApp Backup and Recovery会使用备份中的数据创建一个_新_资源。</block>
   <block id="b0ea04995bb7a05b4310a459f5315a78" category="list-text">从复制的工作负载恢复时，您可以将工作负载恢复到原始系统或本地ONTAP系统。</block>
   <block id="4967eb3bddc1aeeafa7fa83be9252bb4" category="section-title">从恢复选项恢复工作负载数据（搜索和恢复）</block>
-  <block id="ef14b6cabf130697cc9bf71b74faf58b" category="paragraph">使用恢复选项恢复 Hyper-V 工作负载。您可以按名称或使用过滤器来搜索快照。</block>
   <block id="d1e52fcdb63677c060eb2093a79135fe" category="paragraph">*所需的控制台角色* 备份和恢复超级管理员或备份和恢复恢复管理员角色。<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> 。</block>
   <block id="f0b7d058add557b4607545e73a9337e1" category="list-text">从NetApp Backup and Recovery菜单中，选择 *恢复*。</block>
   <block id="29020414ea8232d236539005c93e656b" category="list-text">从名称搜索字段右侧的下拉列表中，选择 *Hyper-V*。</block>
@@ -961,10 +955,7 @@
   <block id="6f012e8e8abed5b3c7ee277d331469f3" category="list-text">选择快照源位置。</block>
   <block id="23de539bf06cfaf2cd9dc515802272ce" category="floating-title">目的地选择</block>
   <block id="abfc7c0c366258e23e15cd12a5f89811" category="open-title">恢复到原始位置</block>
-  <block id="f841432c2e7b95f0e1480a64c27a957d" category="list-text">*启用快速恢复*：选择此选项可执行快速恢复操作。恢复的卷和数据将立即可用。请勿在需要高性能的卷上使用此功能，因为在快速恢复过程中，访问数据的速度可能比平时慢。</block>
-  <block id="6ca1e0675a4f2fa0425b153f38956afe" category="list-text">*预恢复选项*：输入应在恢复操作之前运行的脚本的完整路径以及该脚本所采用的任何参数。</block>
   <block id="f6987a32d735b6271ff912d44965c894" category="list-text">*恢复后选项*：</block>
-  <block id="ea2aae05e390bc85fbb0d97c87c463b9" category="list-text">*重新启动 VM*：选择此选项可在还原操作完成后以及应用还原后脚本后重新启动 VM。</block>
   <block id="7372225e7abae430b5d3b91b0083eed6" category="list-text">*后记*：输入恢复操作后应运行的脚本的完整路径以及脚本所采用的任何参数。</block>
   <block id="8dee103972185c1aba0e0c814961a8db" category="list-text">*通知*部分：</block>
   <block id="d705348f84095bf9f266942da2cf2b84" category="list-text">*启用电子邮件通知*：选择此选项可接收有关恢复操作的电子邮件通知，并指示您想要接收的通知类型。</block>
@@ -1024,9 +1015,6 @@
   <block id="01d60535f98ec4122ee816d29473c760" category="paragraph">还原虚拟机时，会发生以下情况：</block>
   <block id="89c8ee0998fc3ade53e623aef3c405f5" category="list-text">从复制的虚拟机还原时，您可以将其还原到原始系统或本地ONTAP系统。</block>
   <block id="87c3095123e0b86646a971efa8ddb507" category="list-text">从对象存储还原备份时，您可以将数据还原到原始系统或本地ONTAP系统。</block>
-  <block id="efd6041a8afe86576886b814fa55572b" category="paragraph">从“还原”页面（也称为“搜索和还原”），您可以还原虚拟机，即使您不记得确切的名称、虚拟机所在的位置或虚拟机上次处于良好状态的日期。您可以使用过滤器搜索快照。</block>
-  <block id="85a4cc7ef763e2612a5384a8608d0633" category="section-title">从恢复选项恢复虚拟机（搜索和恢复）</block>
-  <block id="108ce4e259c8e5532d28e1f7b55053e0" category="paragraph">使用恢复选项恢复 KVM 虚拟机。您可以按名称或使用过滤器来搜索快照。</block>
   <block id="28826b6f1571b9d0354ca0ae481f50c6" category="list-text">从名称搜索字段右侧的下拉列表中，选择 *KVM*。</block>
   <block id="066fa262c239f022506c95a1e09ebb65" category="list-text">输入要还原的 VM 的名称或筛选要还原的资源所在的 VM 主机或存储池。</block>
   <block id="67833cdc3e0f9b5bea226d3734262615" category="summary">NetApp Backup and Recovery使您能够管理执行挂钩，以便在应用程序保护操作之前或之后采取行动。</block>
@@ -1532,7 +1520,6 @@
   <block id="af5b784334cc5cfd8f61f1fa34d0aca5" category="list-text">删除策略</block>
   <block id="b7e23f2fbc84fffbedf563f644b8df93" category="section-title">查看政策</block>
   <block id="9a23580d7344d92df6d39880be8984ee" category="list-text">从NetApp Backup and Recovery菜单中，选择 *策略*。</block>
-  <block id="1acb02454e9197d4580e47cc314bafcc" category="list-text">查看这些政策详情。</block>
   <block id="c0d97b31eeb845274929b3f74cfce135" category="list-text">*备份类型*：例如完整备份和日志备份。</block>
   <block id="eacf7361c754b5087b6ade2e010c1a1f" category="list-text">*架构*：示例包括本地快照、扇出、级联、磁盘到磁盘和磁盘到对象存储。</block>
   <block id="292fca252d0ac5aa32931919e05e3331" category="list-text">*受保护的资源*：显示该工作负载的总资源中有多少资源受到保护。</block>
@@ -1544,36 +1531,21 @@
   <block id="5bb208fd69907e30f2098ede81682a03" category="inline-link">ONTAP中的快照锁定</block>
   <block id="e0b5eb9f9d2446a8058c07e393201d73" category="paragraph">有关快照锁定的一般信息，请参阅<block ref="8b0c087cbf38ba7d67f735ef687ec456" category="inline-link-rx"></block>。</block>
   <block id="678bf77479fcbfef4dc290f0d62e98ff" category="list-text">在“策略”页面中，选择“创建新策略”。</block>
-  <block id="385b9aea2790f1bf9fe2b79fdafc5b1e" category="list-text">在“策略”页面中，提供以下信息。</block>
-  <block id="dcf438c461663e08d25441c21a02eb89" category="list-text">*详细信息*部分：</block>
   <block id="9f2195b22f953bea34bcee5f51d4c405" category="list-text">工作负载类型：选择将使用该策略的工作负载。</block>
   <block id="c6dc8fc5264ca3745831ad65554a2b72" category="list-text">输入策略名称。</block>
-  <block id="b2ba8b5a519744f308bb1fe099fca96c" category="admonition">要查看要避免的角色列表，请参阅悬停提示。</block>
   <block id="6fd5c80899312e5732b24f0d6a48f05a" category="list-text">从*代理*列表中选择一个控制台代理。</block>
-  <block id="35acdaad091c35b1b0b01e1b4dfa1cae" category="list-text">*备份架构*部分：选择向下箭头并选择备份的数据流，例如 3-2-1 扇出、3-2-1 级联或磁盘到磁盘。</block>
-  <block id="6cf0d5d70bb7be2a62ce45235fdc5421" category="admonition">此选项不适用于Amazon FSx for NetApp ONTAP。</block>
   <block id="dd3964688f448cf4c53372241aa29860" category="paragraph">对于 VMware 工作负载，这会在主数据存储或虚拟机上配置本地快照，并从主磁盘存储复制到辅助磁盘存储以及从主存储复制到云对象存储。</block>
-  <block id="786fc46f790a4c1a43af79907a835e9f" category="list-text">*3-2-1 级联*：（不适用于 Kubernetes 工作负载）主存储（磁盘）到辅助存储（磁盘）以及主存储（磁盘）到云存储（对象存储）。这可以是云超大规模对象存储或私有对象存储 - StorageGRID。这会在多个系统之间创建数据复制链，以确保冗余和可靠性。</block>
   <block id="f260fb21bc5bc536dbe37c5499027093" category="paragraph">对于 VMware 工作负载，这会在主存储上的数据存储区或虚拟机上配置本地快照，以及从主磁盘存储到辅助磁盘存储再到云对象存储的级联。</block>
-  <block id="047b5386a7c666d31be5990a4869e7da" category="list-text">*磁盘到磁盘*：（不适用于 Kubernetes 工作负载）主存储（磁盘）到辅助存储（磁盘）。ONTAP到ONTAP数据保护策略在两个ONTAP系统之间复制数据，以确保高可用性和灾难恢复。这通常是使用SnapMirror实现的，它支持同步和异步复制。此方法可确保您的数据持续更新并可在多个位置使用，从而提供强大的数据丢失保护。</block>
   <block id="25979dfae534db8e00ebdd633f01363f" category="paragraph">对于 VMware 工作负载，这会在主存储系统上的数据存储或 VMware 上配置本地快照，然后将数据从主磁盘存储系统复制到辅助磁盘存储系统。</block>
-  <block id="32726057a180b606f3393a3235c80796" category="list-text">*磁盘到对象存储*：主存储（磁盘）到云（对象存储）。这会将数据从ONTAP系统复制到对象存储系统，例如 AWS S3、Azure Blob Storage 或StorageGRID。这通常是使用SnapMirror Cloud 实现的，它通过在初始基线传输后仅传输更改的数据块来提供永久增量备份。这可以是云超大规模对象存储或私有对象存储 - StorageGRID。该方法非常适合长期数据保留和存档，为数据保护提供了经济高效且可扩展的解决方案。</block>
   <block id="01bec1ecce16d176197624a69b31324a" category="paragraph">对于 VMWare 工作负载，这会在主数据存储或虚拟机上配置本地快照，并从主磁盘存储到云对象存储进行复制。</block>
-  <block id="68348a4aedf069fed0da1ef391e470d8" category="list-text">*磁盘到磁盘扇出*：（不适用于 Kubernetes 工作负载）主存储（磁盘）到辅助存储（磁盘）以及主存储（磁盘）到辅助存储（磁盘）。</block>
-  <block id="da35c57efd612e967c7ee5f6ae122173" category="admonition">您可以为磁盘到磁盘扇出选项配置多个辅助设置。</block>
   <block id="63b46edf6d861b9b0fa883d434749d6c" category="paragraph">对于 VMware 工作负载，这会将主磁盘存储配置为辅助磁盘存储，并将主磁盘存储复制到辅助磁盘存储。</block>
-  <block id="616b55bd02c84f6ab465c1910be4b976" category="list-text">*本地快照*：所选卷上的本地快照（Microsoft SQL Server）。本地快照是数据保护策略的关键组成部分，可以捕获特定时间点的数据状态。这将创建工作负载正在运行的生产卷的只读、时间点副本。快照占用的存储空间极小，并且产生的性能开销可以忽略不计，因为它仅记录自上次快照以来文件的更改。您可以使用本地快照来恢复数据丢失或损坏，以及为灾难恢复目的创建备份。</block>
   <block id="7075256eb0d207286bf20c1dc937a246" category="paragraph">对于 VMware 工作负载，这会在主存储系统上的数据存储或虚拟机上配置本地快照。</block>
-  <block id="6e2bd59b02565b32b4f5f494be2d3b3c" category="paragraph">提供本地快照的信息。</block>
   <block id="e9d8287a41228c8441743b04206c47e0" category="list-text">选择“*添加计划*”选项来选择快照计划或计划。您最多可以有 5 个时间表。</block>
   <block id="ea26bb825f76fc9d9f25830201533996" category="list-text">*快照频率*：选择每小时、每天、每周、每月或每年的频率。  Kubernetes 工作负载没有年度频率。</block>
   <block id="b144c9152bc25d1fc7d07fee5de2ecc6" category="list-text">*快照保留*：输入要保留的快照数量。</block>
   <block id="5e4be38dc556e235a6420a92a206702f" category="inline-link-macro">配置日志目录</block>
   <block id="e9d92be9485a424b4d9ade8388ba97d8" category="list-text">*启用日志备份*：（仅适用于 Microsoft SQL Server 工作负载和 Oracle 数据库工作负载。）启用此选项可备份日志并设置日志备份的频率和保留。为此，您必须已经配置了日志备份。看<block ref="c4a2a21123ec8dd6e71a040e68355146" category="inline-link-macro-rx"></block>。</block>
   <block id="bb61fc1ad01698b21c5e6cc50604eb7f" category="list-text">*备份后修剪存档日志*：（仅限 Oracle 数据库工作负载）如果启用了日志备份，您可以选择启用此功能来限制备份和恢复保留 Oracle 存档日志的时间。您可以选择保留期限以及备份和恢复应删除存档日志的位置。</block>
-  <block id="6f55153177e57b6d7eb7c4cad4a859a7" category="list-text">*提供商*：（仅限 Kubernetes 工作负载）选择托管 Kubernetes 应用程序资源的存储提供商。</block>
-  <block id="71eec9b2b57a1b041e6be9fdbb7e9d77" category="section-title">为辅助设置创建策略（复制到辅助存储）</block>
-  <block id="52406c3fd83be5518f3dd4d7253e4388" category="paragraph">提供复制到辅助存储的信息。本地快照设置的计划信息会显示在辅助设置中。这些设置不适用于 Kubernetes 工作负载。</block>
   <block id="334741c071e30fd510f26dae69ca8081" category="list-text">*备份*：选择每小时、每天、每周、每月或每年的频率。</block>
   <block id="25dc47e7051f405808b9f9bda4500952" category="list-text">*备份目标*：选择二级存储上用于备份的目标系统。</block>
   <block id="a14908893407f655cc108e2629a2bb98" category="list-text">*保留*：输入要保留的快照数量。</block>
@@ -1583,40 +1555,20 @@
   <block id="c6b1efb6a3381715b935aaf64195be83" category="list-text">默认情况下，选择 * ONTAP传输计划 - 内联* 选项，这表示快照会立即传输到二级存储系统。您不需要安排备份。</block>
   <block id="ea593eb0ffc75f929e0088d1e36356cf" category="list-text">其他选项：如果您选择延期转账，则转账不是立即进行的，您可以设置时间表。</block>
   <block id="cc7a1e67eff230a3c65fb315a1c8d1f0" category="list-text">* SnapMirror和SnapVault SMAS 二级关系*：对 SQL Server 工作负载使用SnapMirror和SnapVault SMAS 二级关系。</block>
-  <block id="6da15e4cc3cd48ba84eedc785f7dabba" category="paragraph">提供备份到对象存储的信息。这些设置被称为 Kubernetes 工作负载的“备份设置”。</block>
   <block id="5d53f1521f3c11d2c706909ba7322fd1" category="admonition">出现的字段根据所选的提供商和架构而有所不同。</block>
-  <block id="b587c71b7d020bee3acae62fa485fb09" category="section-title">为 AWS 对象存储创建策略</block>
-  <block id="f0ad13134f34ae870b3d782613b1f84b" category="paragraph">在这些字段中输入信息：</block>
-  <block id="58413e0b575947c7dfddeb43bffc2437" category="list-text">*提供商*：选择*AWS*。</block>
-  <block id="1b7cdb9f82184915046bea4e1a9565f2" category="list-text">*AWS 账户*：选择 AWS 账户。</block>
-  <block id="60f283433707cef6010e159b09378f13" category="list-text">*备份目标*：选择已注册的 S3 对象存储目标。确保目标在您的备份环境中可访问。</block>
   <block id="aea6f666cce57b356fb2085a81658754" category="list-text">*IPspace*：选择用于备份操作的 IP 空间。如果您有多个 IP 空间并想要控制哪一个用于备份，这将非常有用。</block>
   <block id="61c7ccb12ec5421abd7bf85769ede78b" category="list-text">*计划设置*：选择为本地快照设置的计划。您可以删除计划，但不能添加计划，因为计划是根据本地快照计划设置的。</block>
   <block id="862e7b38e5001fd43b1ca0f3fd8c2d53" category="list-text">*保留副本*：输入要保留的快照数量。</block>
   <block id="ec370fb76715b21191f8c5ccfe4a8546" category="list-text">*运行于*：选择ONTAP传输计划将数据备份到对象存储。</block>
   <block id="3ce2a491ae98ac2e9d6b23907b1dcd27" category="list-text">*将备份从对象存储分层到档案存储*：如果您选择将备份分层到档案存储（例如，AWS Glacier），请选择层选项和存档天数。</block>
-  <block id="40326237e0daf52204e6c0741a48393c" category="list-text">*启用完整性扫描*：（不适用于 Kubernetes 工作负载）选择是否要在对象存储上启用完整性扫描（快照锁定）。这可确保备份有效并可成功恢复。完整性扫描频率默认设置为 7 天。为了保护您的备份不被修改或删除，请选择*完整性扫描*选项。扫描仅发生在最新的快照上。您可以对最新快照启用或禁用完整性扫描。</block>
-  <block id="31ee9d78859d29e5c393e057d2b8883d" category="section-title">为 Microsoft Azure 对象存储创建策略</block>
-  <block id="23eecd93dc734bba9a3aceb6ea7c4fa1" category="list-text">*提供商*：选择*Azure*。</block>
-  <block id="32f2f5c602ba8ff14d675c75d1e966b2" category="list-text">*Azure 订阅*：从发现的 Azure 订阅中选择。</block>
-  <block id="ce4c783f6171e76ad97c25d98455c50b" category="list-text">*Azure 资源组*：从发现的资源组中选择 Azure 资源组。</block>
   <block id="a4ddb079e754d05f977f299ecb91e78e" category="list-text">*备份目标*：选择已注册的对象存储目标。确保目标在您的备份环境中可访问。</block>
-  <block id="d5925d9bd9c79530e0bdc1bbacddcef5" category="list-text">*将备份从对象存储分层到档案存储*：如果您选择将备份分层到档案存储，请选择层选项和存档天数。</block>
-  <block id="7204d147d18d03bef470881e1c48a4ec" category="section-title">为StorageGRID对象存储创建策略</block>
   <block id="749ef9bfd50fd41baeffea89c1ed7056" category="list-text">*提供商*：选择* StorageGRID*。</block>
-  <block id="ed2a04c5d33aaed659b154df1ec6ccb6" category="list-text">* StorageGRID凭证*：从发现的凭证中选择StorageGRID凭证。这些凭据用于访问StorageGRID对象存储系统，并在“设置”选项中输入。</block>
-  <block id="3b486c2dbabac9b818a25cc3193772a0" category="list-text">*保留副本*：输入每个频率保留的快照数量。</block>
-  <block id="d378c1eea94467d835f2ff1193c8131f" category="list-text">*对象存储的传输计划*：（不适用于 Kubernetes 工作负载）选择ONTAP传输计划将数据备份到对象存储。</block>
-  <block id="bf1958c1bc76ae08b8a6257056c420b0" category="list-text">*将备份从对象存储分层到档案存储*：（不适用于 Kubernetes 工作负载）如果您选择将备份分层到档案存储，请选择层选项和存档天数。</block>
   <block id="40f2be2919d2f491fc533133b0784afb" category="section-title">在策略中配置高级设置</block>
-  <block id="4e4381e17f8cb7bdd84a1e418735d165" category="paragraph">您也可以选择在策略中配置高级设置。这些设置适用于所有备份架构，包括本地快照、复制到二级存储以及备份到对象存储。这些设置不适用于 Kubernetes 工作负载。可用的高级设置将根据您在页面顶部选择的工作负载而有所不同，因此此处描述的高级设置可能不适用于所有工作负载。为 Kubernetes 工作负载配置策略时，高级设置不可用。</block>
   <block id="5a0e602c662c4aadb0e187c46db2f1be" category="list-text">在“*策略 &gt; 高级*”设置部分中，选择“*选择高级操作*”菜单，从高级设置列表中进行选择。</block>
   <block id="e9dbaabb96bed2c8d241fb55527037d6" category="list-text">启用您想要查看或更改的任何设置，然后选择*接受*。</block>
   <block id="13c1455885d16af64f1bb96c4e48680a" category="list-text">提供以下信息：</block>
   <block id="2d3225fe5eb535adc15ef1f21e507c5f" category="list-text">*仅复制备份*：（仅适用于 Microsoft SQL Server 工作负载）如果您需要使用其他备份应用程序备份资源，请选择仅复制备份（一种 Microsoft SQL Server 备份）。</block>
   <block id="f9c3e66c40db24d227563cfba061a4ea" category="list-text">*可用性组设置*：（仅适用于 Microsoft SQL Server 工作负载）选择首选备份副本或指定特定副本。如果您有一个 SQL Server 可用性组并且想要控制用于备份的副本，则此设置很有用。</block>
-  <block id="73a43948bd7a3f1ff765863e2f49aceb" category="list-text">*最大传输速率*：若不设置带宽使用限制，请选择*无限制*。如果要限制传输速率，请选择*限制*，并选择分配给将备份上传到对象存储的 1 到 1,000 Mbps 之间的网络带宽。默认情况下， ONTAP可以使用无限量的带宽将备份数据从系统中的卷传输到对象存储。如果您注意到备份流量影响了正常的用户工作负载，请考虑减少传输过程中使用的网络带宽量。</block>
-  <block id="1d9dcd5641a380621da1bad708aac2df" category="list-text">*备份重试*：（不适用于 VMware 工作负载）要在发生故障或中断时重试作业，请选择*启用故障期间的作业重试*。输入快照和备份作业重试的最大次数以及重试时间间隔。重新计票数必须少于 10。如果您想要确保在发生故障或中断时重试备份作业，此设置很有用。</block>
   <block id="ebc38593846bd56262189cdea41159c0" category="admonition">如果快照频率设置为 1 小时，则最大延迟以及重试次数不应超过 45 分钟。</block>
   <block id="febcf1de845ae5c111f7fe2fdf9a0023" category="list-text">*勒索软件扫描*：选择是否要在每个存储桶上启用勒索软件扫描。这需要对对象存储进行 DataLock 锁定。输入扫描频率（以天为单位）。此选项适用于 AWS 和 Microsoft Azure 对象存储。请注意，此选项可能会产生额外费用，具体取决于云提供商。</block>
   <block id="a276106fc685cb5d2acecf05047b555c" category="list-text">*备份验证*：（不适用于 VMware 工作负载）选择是否要启用备份验证以及是否立即或稍后进行。此功能可确保备份有效并可成功恢复。我们建议您启用此选项以确保备份的完整性。默认情况下，如果配置了辅助存储，则备份验证从辅助存储运行。如果未配置辅助存储，则备份验证从主存储运行。</block>
@@ -1631,7 +1583,6 @@
   <block id="6eacc1b39140cb9cd360bd817c16a00f" category="list-text">*独立磁盘*：（仅适用于 VMware 工作负载）选中此项可将任何包含临时数据的独立磁盘数据存储包含在备份中。独立磁盘是未包含在 VMware 快照中的 VM 磁盘。</block>
   <block id="87bf438f6aafcccba8118644c7f4ed8b" category="list-text">* SnapMirror卷和快照格式*：（可选）在管理 Microsoft SQL Server 工作负载备份的策略中输入您自己的快照名称。输入格式和自定义文本。如果您选择备份到二级存储，您还可以添加SnapMirror卷前缀和后缀。</block>
   <block id="fb6e9d876191a4c0c156e739e377be59" category="section-title">编辑策略</block>
-  <block id="1f5ec7f8a8c15e5d3277be8ae844a249" category="paragraph">您可以编辑备份架构、备份频率、保留策略和策略的其他设置。</block>
   <block id="f985f1951686384a15ea5ddf855b3cab" category="paragraph">您可以在编辑策略时添加另一个保护级别，但不能删除保护级别。例如，如果策略仅保护本地快照，则可以将复制添加到辅助存储或将备份添加到对象存储。如果您有本地快照和复制，则可以添加对象存储。但是，如果您有本地快照、复制和对象存储，则不能删除其中一个级别。</block>
   <block id="f28c1acceb60dde3fa2b864db8f83957" category="paragraph">如果您正在编辑备份到对象存储的策略，则可以启用存档。</block>
   <block id="eeef4d21ae9c8e573641508f4902329d" category="paragraph">如果您从SnapCenter导入资源，您可能会发现SnapCenter中使用的策略与NetApp Backup and Recovery中使用的策略存在一些差异。看<block ref="323b251497d754074219cdf246ce74d7" category="inline-link-macro-rx"></block>。</block>
@@ -1717,10 +1668,7 @@
   <block id="d1980609675dd3ea40abaebd4a0989d8" category="doc">使用NetApp Backup and RecoveryVMware 工作负载</block>
   <block id="30a409f022898dd26f006e04486b81e0" category="paragraph">将 VMware VM 和数据存储区从本地ONTAP系统备份到 Amazon Web Services、 Azure NetApp Files或StorageGRID，以确保您的数据受到保护。备份会自动生成并存储在您的公共或私有云帐户的对象存储中。</block>
   <block id="f941928782d55bd3ba649990c808fcbd" category="inline-link-macro">使用NetApp Backup and Recovery为 VMware 工作负载创建和管理保护组</block>
-  <block id="5de3942039e76389abef36b50acb39b1" category="list-text">创建保护组来管理一组资源的备份和还原操作。看<block ref="893166a637904a8f47baaabfd56a660f" category="inline-link-macro-rx"></block>了解更多信息。</block>
   <block id="bd3847966f48b6808bad35d652e79b8b" category="list-text">从备份和恢复菜单中，选择*库存*。</block>
-  <block id="ee73fa99742e9e3aeb7d0ac2cf688922" category="list-text">选择要备份的保护组、数据存储区或虚拟机。</block>
-  <block id="2acfb0be8da66026203d2891fe18d378" category="admonition">应用于备份的策略与分配给保护组、数据存储区或虚拟机的策略相同。</block>
   <block id="f1e9f00ae199ca6520d1d2e98102cd84" category="doc">使用NetApp Backup and Recovery发现 VMware 工作负载</block>
   <block id="7ac2807cf305b6eed9abb3096eafd7b5" category="paragraph">NetApp Backup and Recovery服务需要首先发现在ONTAP系统上运行的 VMware 数据存储和虚拟机，以便您使用该服务。如果您已安装SnapCenter Plug-in for VMware vSphere导入备份数据和策略。</block>
   <block id="dcd2ed119bd25caa1d2e5fbbadd0e260" category="section-title">发现 VMware 工作负载并选择性地导入SnapCenter资源</block>
@@ -1785,7 +1733,6 @@
   <block id="67be53a7407be581ba3d325c10016332" category="summary">在NetApp Backup and Recovery中创建和管理 VMware 工作负载的保护组。</block>
   <block id="dfadb287a92482d24b34b55bed0b6dac" category="paragraph">创建保护组来管理一组工作负载的备份和还原操作。保护组是您想要一起保护的资源（例如虚拟机和数据存储区）的逻辑分组。</block>
   <block id="f710d48f4e4bcee1159eb8476c761956" category="inline-link-macro">立即备份 VMware 工作负载</block>
-  <block id="3d5278f5bd3ffe2b4cded72fffe73d2b" category="list-text">立即备份保护组。看<block ref="887743b22b352bdbc6f2d55fc0901200" category="inline-link-macro-rx"></block>。</block>
   <block id="29881d0b044ceba86593dcfef30e0573" category="list-text">暂停和恢复保护组的备份计划。</block>
   <block id="99ea4945ef61f5a29b7463a5d1480fe7" category="list-text">选择要包含在保护组中的虚拟机或数据库。</block>
   <block id="224efd4fdb5f19c474ab2b6ea6b4132b" category="section-title">暂停保护组的备份计划</block>
@@ -4272,7 +4219,6 @@
   <block id="14e2c3c5d70d421449af52fed7355245" category="list-text">使用来自多个 Hyper-V 主机的虚拟机创建资源组</block>
   <block id="c224c03fd1f5cab444913dab60a8d013" category="list-text">*主机注册*：通过输入主机的 FQDN 或 IP 地址、凭据、控制台代理和端口号来添加新的 Hyper-V 主机。如果控制台代理无法解析 FQDN，则改用 IP 地址。对于 FCI 集群，请输入 FCI 集群管理 IP 地址。</block>
   <block id="6d397139779cf4483cf1c4693e7f6cfc" category="paragraph">如果您创建自己的存储桶，则应使用存储桶名称“netapp-backup”。如果需要使用自定义名称，请编辑<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block>为现有 CVO 添加 IAMRole，并将以下 JSON 块添加到 S3 权限中<block ref="2af6fd9ec72aee193ee7ffe09638e08f" prefix=" " category="inline-code"></block>大批。您需要包括<block ref="87307b2ef4c880d061c68a6a4277d9a9" prefix=" " category="inline-code"></block>并分配与存储桶关联的所有必要权限。</block>
-  <block id="3f05712ac311679f5293cdeca4b95c4a" category="summary">使用NetApp Backup and Recovery，通过浏览和恢复功能恢复ONTAP数据。</block>
   <block id="a9069e9a58042b9bc7056398756845ee" category="paragraph">使用NetApp Backup and Recovery，通过浏览和恢复功能恢复ONTAP数据。恢复之前，请记下源卷名称、源系统和 SVM 以及备份文件日期。您可以从快照、复制卷或存储在对象存储中的备份恢复ONTAP数据。</block>
   <block id="05347845672273f3cffd76e4077cdb51" category="paragraph">恢复功能取决于您的ONTAP版本：</block>
   <block id="a03a5900281bf25c93cb811180bba191" category="list-text">*文件夹：* 使用ONTAP 9.13.0 或更高版本，您可以恢复包含所有文件和子文件夹的文件夹；使用早期版本，您只能恢复文件夹中的文件。</block>
@@ -4282,9 +4228,7 @@
   <block id="093fffba6528268e08d16655a00408c0" category="list-text">文件恢复： ONTAP 9.11.1 或更高版本</block>
   <block id="e2a690f8f0185ec41067ba5b3b30a529" category="list-text">Google Archive 和StorageGRID： ONTAP 9.12.1 或更高版本</block>
   <block id="8ca6fb4bb5529d6adfde15cbdb57e634" category="list-text">文件夹恢复： ONTAP 9.13.1 或更高版本</block>
-  <block id="be0215992cfd3511d910e845d0356599" category="summary">您可以使用搜索和恢复功能从ONTAP备份文件中恢复卷、文件夹或文件。</block>
   <block id="7e1d8ccd1392087c63490394612a8c15" category="doc">使用搜索和恢复功能从ONTAP备份恢复</block>
-  <block id="e7831cd0e41fd9e35bee516b706fabdd" category="paragraph">您可以使用搜索和恢复功能从ONTAP备份文件中恢复卷、文件夹或文件。搜索和恢复功能允许您搜索所有备份（包括本地快照、复制卷和对象存储），而无需提供确切的系统、卷或文件名。</block>
   <block id="ac7a11fed1e42e0aabdca6e9d3df239d" category="paragraph">从本地快照或复制卷恢复通常比从对象存储恢复更快、更便宜。</block>
   <block id="84c030a8c3b510739684721f83cf4004" category="paragraph">恢复整个卷时， NetApp Backup and Recovery会使用备份数据创建一个新卷。您可以恢复到原始系统、同一云帐户内的另一个系统或本地ONTAP系统。文件夹和文件可以恢复到其原始位置、同一系统中的不同卷、同一云帐户中的另一个系统或本地系统。</block>
   <block id="1a7f268901b8ff64a74ae8d0296ce039" category="section-title">搜索与恢复的先决条件</block>
@@ -4431,7 +4375,6 @@
   <block id="836b4aa41fc8e9938df6b2350419d4f6" category="paragraph"><block ref="ee2d4c64a4d42f71a3357c6cd2b7b94b" category="inline-link-macro-rx"></block>。<block ref="bf09a0f29ffa1dc0ee63da51e58f16ef" category="inline-link-macro-rx"></block>。<block ref="9220ac6939e2eccbf843225c6d0eb5f6" category="inline-link-macro-rx"></block>。</block>
   <block id="ab042cf6b82a1ca2824a55aecccf0f72" category="list-text">选择“下一步”继续。</block>
   <block id="38cf859695687379726e3ea14b05ddc1" category="list-text">选择恢复目标位置和设置：</block>
-  <block id="a30b9d9cd5fcd792454de596b4a70bbf" category="paragraph">恢复到原始位置后，您可以通过展开“目标设置”部分来查看目标设置，但您无法更改它们。</block>
   <block id="6ae1e8b4e49e0eb340bfe865ab9bf2be" category="list-text">在“恢复后选项”部分，请考虑以下选项：</block>
   <block id="48ddddb06a7cca979a8b0eb4de198113" category="doc">ONTAP卷工作负载增强</block>
   <block id="cbab7e5b614b876bebcce0c29fd1afb6" category="paragraph">*支持多个存储桶*：（私有预览）从ONTAP 9.17.1 及更高版本开始，您现在可以保护系统中的卷，每个系统最多可跨不同的云提供商使用 6 个存储桶。</block>
@@ -4449,7 +4392,6 @@
   <block id="b6346010c4ef2da943c1c7fa6a17d974" category="paragraph"><block ref="7ec45f32ee1da46f6d69c07cb5d19e8e" category="inline-link-rx"></block>。</block>
   <block id="4b39db76689788868bda30b97106ca4a" category="section-title">KVM工作负载预览增强功能</block>
   <block id="432d122bca6b826d0ff8b770008cb6da" category="list-text">即使 Hyper-V 中的“处理器兼容性”设置正确，也无法在 CPU 厂商不同的系统之间（例如 Intel 和 AMD 或反之）还原虚拟机或虚拟机数据。此设置仅支持同一厂商不同代产品之间的兼容性（例如，Intel 到 Intel 或 AMD 到 AMD）。</block>
-  <block id="cbf60595828cc0c9aea61a13478c0526" category="admonition">在 2026 年 1 月 19 日发布的版本中，您无法使用“操作”菜单中的“升级”选项来升级 Hyper-V 或 Windows 的NetApp插件。相反，请删除每个 Hyper-V 主机，然后重新添加以更新插件。</block>
   <block id="fa1b7fd0ad5ec372cdf9f907c6fbf709" category="section-title">故障排除说明</block>
   <block id="ac034a836e482984e927ce7aef3a7bcc" category="list-text">为确保 KVM 工作负载恢复成功完成，请确保在用于 KVM 备份的保护策略中启用“启用 VM 一致性快照”设置。</block>
   <block id="caf127224717f7d5605f4155b3a36376" category="list-text"><block ref="473bc5f1f9d293596a6cf3f7d880fe14" category="inline-xref-macro-rx"></block> 适用于NetApp Backup and Recovery需要进行身份验证的任何 Windows、Microsoft SQL Server、Oracle Database 或 Linux 主机。这包括恢复访客文件或文件夹时使用的 Windows 访客操作系统凭据。</block>
@@ -4506,7 +4448,6 @@
   <block id="ad41a0253f0fa950ebd266549a680870" category="list-text">必要时更改保护策略。完成后，选择“下一步”。</block>
   <block id="c3db3d5055385cdff6f17b6bf22a7152" category="list-text">检查配置并选择“提交”。</block>
   <block id="90f68f3e2b7c1b2173cf20adbaecd7aa" category="list-text">恢复到备用位置</block>
-  <block id="7979de06740fd39ab039421367c0315f" category="paragraph">从“恢复”页面（也称为“搜索和恢复”），您可以恢复资源，即使您不记得确切的名称、它所在的位置或它最后处于良好状态的日期。您可以使用过滤器搜索快照。</block>
   <block id="20ca6e882fe3b588e30201e762f2131d" category="list-text">*启动虚拟机*：启用此选项可在恢复后启动新的虚拟机。</block>
   <block id="e826f41c4b42c72f20eb65258162843d" category="list-text">在“目标设置”部分，输入以下信息：</block>
   <block id="1b24040896cd5eefd580726b364e1b23" category="list-text">*Hyper-V FQDN 或 IP 地址*：输入目标 Hyper-V 主机的完全限定域名或 IP 地址。</block>
@@ -4531,28 +4472,13 @@
   <block id="898c4d9cd797d45ca2066478fd269974" category="paragraph">当您从 VM 一致的备份执行来宾文件还原操作时会出现此问题。当来宾文件恢复会话处于活动状态时，将对同一 VM 执行另一个 VM 一致性备份。当客户文件恢复会话断开时（手动或 24 小时后自动断开），该会话的备份不会被分离。</block>
   <block id="5857a2699c75798b2ae21bc0b06aff95" category="paragraph">要解决此问题，请手动分离从活动来宾文件还原会话附加的 VMDK。</block>
   <block id="0bf794e2b090829c5f342b426fa04d5c" category="summary">您可以从 Windows 客户操作系统上的 VMDK 还原一个或多个文件或文件夹。</block>
-  <block id="9cda0c7b074ab9336e54e5c799f32f1d" category="doc">从 VMDK 还原客户机文件和文件夹</block>
   <block id="a26360f952d07b84e1088cc6c613eafe" category="admonition">在从NetApp Backup and Recovery中还原文件和文件夹之前，您需要为来宾虚拟机创建凭据。NetApp Backup and Recovery使用这些凭据在附加虚拟磁盘时对来宾虚拟机进行身份验证。</block>
-  <block id="84768fbdedcb14c4c8dd78daf9604451" category="paragraph">来宾文件或文件夹恢复性能取决于两个因素：正在恢复的文件或文件夹的大小；以及正在恢复的文件或文件夹的数量。如果要恢复的数据集大小相同，则恢复大量小文件可能比恢复少量大文件花费的时间比预期的要长。</block>
   <block id="851e8e79b33ecfa430d9ed62957e5cad" category="admonition">一台虚拟机上同时只能运行一个连接或还原操作。您不能在同一台虚拟机上运行并行连接或恢复操作。</block>
-  <block id="7392d9ba3083cd42958684b4749d4c72" category="admonition">借助访客恢复功能，您可以查看和恢复系统文件和隐藏文件，以及查看加密文件。请勿覆盖现有系统文件或将加密文件恢复到加密文件夹。在恢复操作期间，访客文件的隐藏属性、系统属性和加密属性不会保留在恢复的文件中。查看或浏览保留分区可能会导致错误。</block>
   <block id="b422ec3f16fdaa990ba1990cb6991810" category="list-text">选择“虚拟机”菜单。</block>
-  <block id="c05c3e6e65adc438464f134095bf4d0b" category="list-text">从列表中选择包含要恢复的文件的虚拟机。</block>
-  <block id="53542a230db2440f13432651fe6b3487" category="list-text">选择“操作”图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> 针对该虚拟机。</block>
   <block id="c0bb93c6bec67d2385d257bd2f31eeb2" category="list-text">选择“恢复文件和文件夹”。</block>
   <block id="08cc4acec34cca35a8c76fb3d615326d" category="list-text">选择要从中恢复的快照，然后选择“下一步”。</block>
   <block id="da8e304a7760412a8328c95f01373d11" category="list-text">选择要从中恢复的快照位置。如果选择辅助位置，请从列表中选择辅助快照。</block>
-  <block id="1e6ec30e7907b02414675ea9e2c04c5f" category="list-text">从列表中选择要附加到虚拟机的虚拟磁盘，然后选择“下一步”。</block>
-  <block id="39538cdb3b7fefca1983a30c57bbf632" category="list-text">在“选择虚拟机凭据”页面上，如果您尚未存储客户虚拟机的凭据，请选择“添加凭据”并执行以下操作：</block>
-  <block id="77d4955805adede5c1d4b622d127cfa3" category="list-text">*身份验证模式*：选择 *Windows*。</block>
-  <block id="a542c5909f4fe575b0d1bcb5a4350a01" category="list-text">*代理*：从列表中选择一个控制台代理，该代理将处理NetApp Backup and Recovery与此主机之间的通信。</block>
-  <block id="18de7c55432e8413c4ce2a56b3996ea8" category="list-text">*密码*：请输入凭据的密码。</block>
   <block id="60ec0884c18a5fb50c01015fd5a57742" category="list-text">选择用于向客户虚拟机进行身份验证的虚拟机凭据。</block>
-  <block id="35f90aab6a0dab3fe0d57225980eb834" category="paragraph">NetApp Backup and Recovery将虚拟磁盘附加到虚拟机，并显示所有文件和文件夹，包括隐藏的文件和文件夹。它会为每个分区（包括系统保留分区）分配一个驱动器号。</block>
-  <block id="9d9478caad2fb1071aba58520617939e" category="paragraph">您选择的文件和文件夹会列在屏幕右侧窗格中。</block>
-  <block id="e079f71e45cefb5cf18407d7fb49ea4e" category="list-text">输入将恢复所选文件的来宾的 UNC 共享路径。</block>
-  <block id="ae5705d13bba8928a397a3ac415b0498" category="list-text">IPv4 地址示例：<block ref="c1efda00eba14c667cfd89393b2be583" prefix=" " category="inline-code"></block></block>
-  <block id="b1e8bed47212dec25b77d52a670930a0" category="list-text">IPv6地址示例：<block ref="f7a108079a0dc952ef09921776f4796f" prefix=" " category="inline-code"></block></block>
   <block id="568b266180f72a62a6b7a16e74fd7c84" category="paragraph">如果存在同名文件，您可以选择覆盖或跳过它们。</block>
   <block id="9400685c82ef048826c1183065e6283e" category="paragraph">您可以在“作业监控”页面上查看恢复进度。</block>
   <block id="e4bfaed3f3210f4076310e841130f424" category="summary">您可以从 Windows 客户操作系统上的虚拟机磁盘 (VMDK) 还原文件或文件夹。</block>
@@ -4567,15 +4493,12 @@
   <block id="2bd339d85ee3b33e513359ce781b60cc" category="list-text">还原</block>
   <block id="850eb27faf64ee4adf2b325fd847bf4d" category="paragraph">将选定的文件或文件夹还原到指定位置。</block>
   <block id="8584d390f3574a98d0772b42a6ba1d23" category="section-title">恢复访客文件和文件夹的先决条件</block>
-  <block id="6a7a37bd722f9a7ebe568ae7d8778d8f" category="paragraph">在 Windows 客户操作系统上从 VMDK 还原文件或文件夹之前，请检查所有要求。</block>
   <block id="36139d788258b0f7f760e90a7e475cfb" category="list-text">必须安装并运行 VMware 工具。</block>
-  <block id="9809213078fe536846ce61d52cfab742" category="paragraph">NetApp Backup and Recovery使用来自 VMware 工具的信息来建立与 VMware 客户操作系统的连接。</block>
   <block id="697ea025ecb303d4f40d1bf3a8b4bde0" category="inline-link">NetApp互操作性矩阵工具 (IMT)</block>
   <block id="95477275bd206a7fb98bf4a8ec799a0b" category="paragraph">有关受支持版本的最新信息，请参阅<block ref="dd731ea0dfaa7ba4b5325a39b353b5a2" category="inline-link-rx"></block>。</block>
   <block id="73e99419f23009b467a68b78510f24c7" category="list-text">目标虚拟机的凭据使用用户名为“Administrator”的内置域或本地管理员帐户。在开始恢复操作之前，请配置要附加虚拟磁盘的虚拟机的凭据。附加和恢复操作都需要凭据。工作组用户可以使用内置的本地管理员帐户。</block>
   <block id="ae010d54b0afb3a6e93783bbe5550d22" category="admonition">如果您必须使用非内置管理员帐户但在 VM 内具有管理权限的帐户，则必须在来宾 VM 上禁用 UAC。</block>
   <block id="8eb1b908e8b622c31068641ddc091252" category="list-text">您必须知道要从中恢复的备份快照和 VMDK。</block>
-  <block id="3f4fed5ff0dc846844f8156e2545446d" category="paragraph">NetApp Backup and Recovery不支持搜索文件或文件夹进行还原。开始之前，您必须知道快照中的文件或文件夹以及相应的 VMDK 的位置。</block>
   <block id="96fdba8a07d31243e627a47b806ee47d" category="list-text">要附加的虚拟磁盘必须位于NetApp Backup and Recovery备份中。</block>
   <block id="3cb16855769c9ad83ad9563474e376db" category="paragraph">包含要还原的文件或文件夹的虚拟磁盘必须位于使用NetApp Backup and Recovery执行的 VM 备份中。</block>
   <block id="7f395b83396bafcd5e1d1206370ba67d" category="list-text">对于名称非英文字母的文件，您必须将它们恢复到目录中，而不是作为单个文件。</block>
@@ -4583,8 +4506,6 @@
   <block id="9229096468701d10aab6b30f546310c1" category="section-title">来宾文件还原限制</block>
   <block id="ce6cdc51d08da1519febc60a0e9593aa" category="paragraph">在从客户操作系统恢复文件或文件夹之前，您应该了解其功能限制。</block>
   <block id="0938c50db6a8d08637c074ab0c183305" category="list-text">您无法在来宾操作系统内恢复动态磁盘类型。</block>
-  <block id="21e6b4873654be153e3c8d0024f83773" category="list-text">您无法从 Linux 客户操作系统恢复。</block>
-  <block id="eccd74f81ec87affcad9c90ed7e1c714" category="paragraph">您无法从运行 Linux 客户操作系统的 VM 还原文件和文件夹。但是，您可以附加 VMDK，然后手动恢复文件和文件夹。有关受支持的客户操作系统的最新信息，请参阅<block ref="dd731ea0dfaa7ba4b5325a39b353b5a2" category="inline-link-rx"></block>。</block>
   <block id="a24b5bfa95a0c9efe3023cae447296e6" category="list-text">您无法从 NTFS 文件系统还原到 FAT 文件系统。</block>
   <block id="b4d6235f9c53c6f6c0666f45953094dc" category="paragraph">当您尝试从 NTFS 格式还原为 FAT 格式时，不会复制 NTFS 安全描述符，因为 FAT 文件系统不支持 Windows 安全属性。</block>
   <block id="a23a5720d2a1cff6970cbb72b31dc86c" category="list-text">您无法从克隆的 VMDK 或未初始化的 VMDK 恢复客户文件。</block>
@@ -4628,7 +4549,6 @@
   <block id="194a29c3464a05de3c32434145c0b5d6" category="section-title">2026年1月19日</block>
   <block id="88009dbb638181324526010a9eff3c19" category="sidebar">恢复 VMware 虚拟机</block>
   <block id="9b7e5fddcf3e2a7a93fe6669de87fbc2" category="sidebar">恢复特定虚拟磁盘</block>
-  <block id="6d74a680eadd149117f584cf67b83c34" category="sidebar">恢复访客文件和文件夹</block>
   <block id="3a4d751e404219df1dc6de0a13c8db55" category="sidebar">工作流程、先决条件和限制</block>
   <block id="d85468613eebe17a50e2bf01c2bd42f5" category="paragraph">将虚拟磁盘附加到客户虚拟机并启动客户文件恢复会话。</block>
   <block id="b2c5a3b35bd8f72bf653aa42e54cc06c" category="list-text">Windows 客户操作系统必须运行 Windows Server 2008 R2 或更高版本。</block>
@@ -4866,7 +4786,6 @@
   <block id="d07e8f6398c66f7d79a80768d3aa858b" category="inline-link-macro">立即备份 Oracle Database 工作负载</block>
   <block id="5361440c8196cc52ba89e8281bc2ef22" category="list-text">立即备份保护组。请参阅 <block ref="0b07e2abdc1829709878f1d54c90a7ab" category="inline-link-macro-rx"></block>。</block>
   <block id="ecd7b1e39a181dfd260b4d2201a85373" category="paragraph">不适用于 Oracle Database 工作负载预览。</block>
-  <block id="a1b57f3367efea5ba168ebc1b00dfb09" category="list-text">*3-2-1 fanout*：主存储（磁盘）到辅助存储（磁盘）到云（对象存储）。在不同的存储系统中创建多个数据副本，例如 ONTAP 到 ONTAP 和 ONTAP 到对象存储配置。这可以是云超大规模对象存储或私有对象存储。这些配置有助于实现最佳的数据保护和灾难恢复。</block>
   <block id="7257ebd350ec9dc53fbb407575e942c9" category="open-title">使用 Web UI 添加应用程序</block>
   <block id="7eb786201a1068df31c2a8d7805c50bf" category="open-title">使用 CR 添加应用程序</block>
   <block id="b4b10aa7102ef4de9ba1d5672445c895" category="list-text">创建目标应用程序 CR 文件：</block>
@@ -5014,7 +4933,6 @@
   <block id="98c68c9df24559c3d5cf6d8c6cc85b9f" category="paragraph">将 KVM 工作负载与 NetApp Backup and Recovery 一起使用时，请记下以下内容。</block>
   <block id="5a7772dd6a45520c18defbce09d0dedf" category="paragraph">在 NetApp Backup and Recovery 中 Oracle 数据库工作负载的预览版本不支持以下操作：</block>
   <block id="fffe6dab1367a6da9b1ff43e10e3c12a" category="paragraph">在 NetApp Backup and Recovery 中的 VMware 工作负载不支持以下操作：</block>
-  <block id="c06eb245245b3fcd57078c80941d50ca" category="paragraph">不适用于 KVM 工作负载。</block>
   <block id="97c13d527bcfec5ed7f29badd43016d8" category="list-text">编辑策略（不适用于 VMware 工作负载）</block>
   <block id="332f36926e04f03459b83b7c8da214a6" category="list-text">*VMware 工作负载（使用不含 SnapCenter Plug-in for VMware vSphere 的新 UI）*：</block>
   <block id="66484fcd4199c3f1b40e50c680ad4e56" category="list-text">将 VMware 工作负载备份到 Amazon Web Services S3 或 StorageGRID。</block>
@@ -5141,8 +5059,6 @@
   <block id="b77d45fa1e71e6bf913df1f7680aa70c" category="list-text">*群集主机支持*：您现在可以发现和保护使用 Oracle Automatic Storage Management (ASM) 并使用 VMDK 在 VMFS 文件系统上部署的 Oracle Real Application Clusters (RAC) 数据库。有关详细信息，请参阅<block ref="d0dab0542f96585a18cc2e536da75fd6" category="inline-link-rx"></block>。</block>
   <block id="cb7dc55d43e841bfb3cf4e114d10c93d" category="inline-link">配置 Oracle 数据库</block>
   <block id="11bf1aa4a1c990ba08edcb69e7bd16a5" category="list-text">*RMAN 目录支持*：您现在可以将 Backup and Recovery 配置为在 RMAN 恢复目录中存储保护元数据，从而在目标控制文件丢失时提供冗余和长期保留。有关详细信息，请参阅<block ref="c357671575c77250cb0b189fb7b1b3b4" category="inline-link-rx"></block>。</block>
-  <block id="1336b537734375879229275580e44691" category="inline-link">保护 Oracle 数据库工作负载概述</block>
-  <block id="1862dacb480058987868f9ba0ecb7166" category="paragraph">要了解有关保护 Oracle Database 工作负载的详细信息，请参阅<block ref="a1bc2d91e29f35544fc66a9a951bc0f5" category="inline-link-rx"></block>。</block>
   <block id="f2e80d71f106d051f3936857dd104cec" category="summary">在 NetApp Backup and Recovery 中配置 Oracle 数据库。</block>
   <block id="a8926a2556cafdec73bce23cdd25f47b" category="doc">在 NetApp Backup and Recovery 中配置 Oracle 数据库</block>
   <block id="7b0a807dfc43b9f12f43aed88675eb15" category="paragraph">您可以更改新的独立或群集 Oracle 数据库的身份验证和节点设置。NetApp Backup and Recovery 可以在不进行这些更改的情况下保护数据库。如果发现后环境发生变化，则可能需要更新数据库设置。</block>
@@ -5188,4 +5104,169 @@
   <block id="40462b3520e204c56d496704b2197731" category="list-text">基于 ASM 的 RAC（VMFS 上的 VMDK）</block>
   <block id="d8fdc2681cdec613a02ac551c44a6e8c" category="section-title">2026 年 3 月 31 日</block>
   <block id="e2ff2fbe928113326186485b8655d712" category="sidebar">装载、卸载和编目恢复点</block>
+  <block id="db1da6f84847ade23be98a17bc4b5b1e" category="paragraph">在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：</block>
+  <block id="a83b3bb31eda1beff171bab61e67aa23" category="paragraph">*支持 NetApp MetroCluster 主动/主动配置*：NetApp Backup and Recovery for Volumes 工作负载现在支持 MetroCluster 主动-主动配置。</block>
+  <block id="cd11b988c9f7b5a4f534d244c8f742a8" category="inline-link">保护 ONTAP 卷工作负载概述</block>
+  <block id="cb64e7530a451b6a29edd3427495ec90" category="paragraph">要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅<block ref="c12abefe1b46a590752410462324e2ee" category="inline-link-rx"></block>。</block>
+  <block id="19455401d550e37f86235df1de2da367" category="paragraph">在此版本中，Kubernetes 工作负载引入了以下保护策略增强功能：</block>
+  <block id="8832a3317e409faa663d5b3be7a37383" category="list-text">*编辑保护策略*：如果需要更改，现在可以编辑 Kubernetes 工作负载保护策略</block>
+  <block id="67c0c04b74d317df3fb38678dfce9d57" category="list-text">*磁盘到磁盘支持*：您现在可以使用磁盘到磁盘备份架构配置 Kubernetes 保护策略。</block>
+  <block id="1f22edbdac095058ea8301cd1b0fa03f" category="list-text">*Google Cloud Platform 存储桶支持*：您现在可以配置 Kubernetes 保护策略以备份到 Google Cloud Platform 存储桶。</block>
+  <block id="55dcb475c806e158ae812c3e721ff829" category="inline-link">在 NetApp Backup and Recovery 中创建和管理保护策略</block>
+  <block id="a51dec4d18c2ec4a0870f9ac159087be" category="paragraph">有关保护策略的详细信息，请参阅<block ref="f4766eb2cdd623ee9325b7be7c1e14e2" category="inline-link-rx"></block>。</block>
+  <block id="c1389306eef9d4289001dc6323eecb0c" category="section-title">Hyper-V 工作负载增强功能</block>
+  <block id="5ab87f8d29b60ea3a36ab56b1afa32c3" category="paragraph">在此版本中，Hyper-V 工作负载引入了以下增强功能：</block>
+  <block id="6f9c0bad860671276c7314dda8468d6b" category="list-text">*改进的作业处理*：NetApp Backup and Recovery 现在可以更有效地同时处理多个作业。</block>
+  <block id="f02d5e72af9add59ab18089e0f4cc895" category="list-text">*SAN 支持（预览）*：Backup and Recovery 现在支持保护存储在 SAN 存储上的 Hyper-V VM。</block>
+  <block id="354bffd56a05a78c1495900b2fa41f88" category="section-title">KVM 工作负载增强</block>
+  <block id="9e61640a2e25b290407c7bce4b5f72fb" category="paragraph">在此版本中，KVM 工作负载引入了以下增强功能：</block>
+  <block id="2695e041e7821912ad62ed125ae887a9" category="list-text">*还原到备用位置（预览）*：您现在可以将 KVM VM 还原到备用目标。有关详细信息，请参阅<block ref="c82574f572233aef5ee5178c16dc1758" category="inline-link-rx"></block>。</block>
+  <block id="318e7f91a44ca688085735c8092e7c69" category="inline-link">创建和管理保护组</block>
+  <block id="b4ad3ee842f554f84ff60d2d0f7228a6" category="list-text">*基于标记的保护*：VMware 工作负载的备份和恢复现在支持对存储在 NFS 和 VMFS 卷上的虚拟机的基于标记的保护，使您能够从 vCenter 标记而不是从单个虚拟机或数据存储构建保护组。当您在 vCenter 中标记虚拟机和数据存储时，备份和恢复会自动发现并将其包含在未来的备份中，而无需任何手动组维护。有关详细信息，请参阅<block ref="863c691e599eacbfae8d86e5506c4592" category="inline-link-rx"></block>。</block>
+  <block id="cab9c79c2324192af6049aa8cd78508d" category="list-text">*还原到备用存储系统*：即使原始（主）存储系统完全不可用，您现在也可以将虚拟机还原到备用存储系统。有关详细信息，请参阅<block ref="f3d02f39d5e1822fd83675aa2d7843de" category="inline-link-rx"></block>。</block>
+  <block id="9486b4129634e76f84d1e52fbd1b3326" category="inline-link">还原文件和文件夹</block>
+  <block id="19e7d45c6bedb302dc81dcad6024f1c3" category="list-text">*将文件还原到 Linux VM*：您现在可以将 VM 文件和文件夹还原到 Linux VM。有关详细信息，请参阅<block ref="d14b743b42535a5def60386aae0617f3" category="inline-link-rx"></block>。</block>
+  <block id="cbd6efe68945c4eed8277905a2c0fe44" category="list-text">*还原文件和文件夹时支持代理虚拟机* - 您现在可以将文件和文件夹还原到源 vCenter 上托管的其他虚拟机。有关详细信息，请参阅<block ref="f3d02f39d5e1822fd83675aa2d7843de" category="inline-link-rx"></block>。</block>
+  <block id="b8f9bd73e7115f55039fdbc342c5bf1f" category="list-text">*递归文件和文件夹搜索* - 您现在可以在整个 VMDK 中搜索特定文件或文件夹。有关详细信息，请参阅<block ref="f3d02f39d5e1822fd83675aa2d7843de" category="inline-link-rx"></block>。</block>
+  <block id="7868afad22516e76c1d3b0f45146b148" category="list-text">选择 *Managed offsite backup targets* 选项卡。</block>
+  <block id="e75ea37e96b8396fc26e7835fb754851" category="list-text">从可用的备份目标类型中选择一种：*AWS*、*Azure*、*StorageGRID*、*ONTAP S3* 或 *GCP*。</block>
+  <block id="c6ef992c54853d072b258e289ef08dd0" category="list-text">（仅适用于 AWS 和 Azure 备份目标）在 *选择凭据位置* 部分，选择凭据所在的位置，然后选择如何关联凭据。</block>
+  <block id="3d138696a1e858f52942d736c24c1bd5" category="list-text">对于 GCP：</block>
+  <block id="b2f385fda6ddca9e16bfe40b90994155" category="list-text">*凭据名称*：输入 Google Cloud 凭据名称。</block>
+  <block id="7902f16b21e15bfb1cddc25224cd572a" category="list-text">*访问密钥*：输入 Google Cloud 访问密钥。</block>
+  <block id="e44e7117f3ae3e87f382dfb3c778ff92" category="list-text">*密钥*：输入 Google Cloud 密钥。</block>
+  <block id="c723602a5c96d6a4f5c3462927d641be" category="list-text">选择 *Managed offsite backup targets*。</block>
+  <block id="b054d8e2a18fe4e350f13d024953aa8f" category="list-text">*存储桶名称*：输入 Google Cloud 存储桶的名称。</block>
+  <block id="d4e12036c5885fe3db728e0ff90b2385" category="list-text">*GCP 项目*：选择 Google Cloud 项目的名称。</block>
+  <block id="c4366421a636f973ac0a44746588f3f0" category="list-text">*存储桶区域*：为 Google Cloud 存储桶选择一个区域。</block>
+  <block id="7a39559ae62ff6325a41e1d2e21ae805" category="list-text">*对象锁定*：选择此选项可启用此存储桶中对象的保留期。在保留期有效期间，无法修改或删除对象，并且在期限到期之前不可变。如果为存储桶启用此选项，则无法将其关闭。</block>
+  <block id="ad501edabfde8a6fbad53d1e289cfde9" category="paragraph">从"还原"页面，可以还原资源，即使不记得确切的名称、驻留位置或上次状态良好的日期。您可以使用过滤器搜索快照。</block>
+  <block id="48039917e01c24d33020a4e88b1c26cb" category="paragraph">使用"还原"菜单还原 Hyper-V 工作负载。您可以按快照名称或使用过滤器搜索快照。</block>
+  <block id="8e3ed50707ba6a187fccaa3ddd0a90cb" category="list-text">选择 *Original location* 窗格。当您还原到原始位置时，您可以通过展开 *Destination settings* 部分查看目标设置，但不能更改它们。</block>
+  <block id="59a9c45d2d42ec7ace06337c0ddb74ab" category="paragraph">从还原页面，您可以还原 VM，即使您不记得确切的名称、它所在的位置或上次状态良好的日期。您可以使用过滤器搜索快照。</block>
+  <block id="bd388205d06a997206a3077f6f06b20b" category="section-title">还原 KVM 虚拟机</block>
+  <block id="e324268afc6938421b16b847091f71a1" category="paragraph">使用"还原"菜单还原 KVM 虚拟机。您可以按快照名称或使用过滤器搜索快照。</block>
+  <block id="bcc1225a04b96d25ceeaa1d2157718ae" category="list-text">在 *Post-restore options* 部分中，启用 *Restart virtual machine* 选项以在还原操作完成后重新启动 VM。</block>
+  <block id="ec68266580b164799b81cfa97e1db628" category="list-text">在 *Cloudstack settings* 部分中，提供以下信息：</block>
+  <block id="7178a793fecdd7736a17284bf3517125" category="list-text">*Zone*：从列表中选择一个目标 CloudStack zone。</block>
+  <block id="6762ae0962439eebbff22ef5182f0dbb" category="list-text">*Pod*：从列表中选择所选区域内的目标 pod。</block>
+  <block id="4242d0742424426df816648eacf9170d" category="list-text">*Cluster* ：从列表中选择所选 pod 内的目标集群。</block>
+  <block id="4c9e4dda826cf369a3cfad990ee46ca7" category="list-text">*Host*：从列表中选择集群中的目标主机。</block>
+  <block id="dd5864c534b72c8c37038fb6275b8e3a" category="list-text">*存储池*：从列表中选择一个目标存储池（目标卷应位于此处）。</block>
+  <block id="243086b43e1acabcfdf75dc9d6229acd" category="list-text">*网络*：选择恢复的虚拟机将连接到的网络。</block>
+  <block id="ab7a84418f629e235277b1b471eba95a" category="list-text">*VM name*：输入要恢复的 VM 的名称。</block>
+  <block id="a957ce059dcb4f4dee84f8c6110ade36" category="list-text">*显示名称*：输入应在 Backup and Recovery 中为此虚拟机显示的名称。</block>
+  <block id="2f6091f80091b08ac4d3a5ee6f030a65" category="list-text">*Storage Pool Path*：输入将存储 VM 卷的存储池路径。</block>
+  <block id="0439c609bff89919fee0461273c81471" category="list-text">从 *Select service offering* 列表中选择一个定义您首选资源分配级别的服务产品。</block>
+  <block id="215e57751084a02641dbea41aac16699" category="list-text">启用 *Forced* 选项以导入已还原的 VM，即使一个或多个 VM 的 NIC MAC 地址已存在。如果 MAC 地址已存在，则会为该 NIC 生成新的 MAC 地址。</block>
+  <block id="d16cfeb7f9ca96d9a344af76b8a9d0cb" category="list-text">*重新启动虚拟机*：启用此选项可在还原后启动新虚拟机。</block>
+  <block id="31e7ebba1ac987c8bffcf4d2372686ba" category="list-text">查看政策详细信息。例如：</block>
+  <block id="de40ed6dd3cd9961e6a666e3eb4411cb" category="paragraph">此时将显示策略页面。</block>
+  <block id="a367939b0516b53b9b7a6ee95913db71" category="list-text">在 *详细信息* 部分中输入信息：</block>
+  <block id="3e292ccda5c971a4b3e12f28c1896c96" category="list-text">在 *备份架构* 部分中输入信息。从列表中选择备份的数据流：</block>
+  <block id="882709ae2f159dd4483f21419cc1577a" category="list-text">*3-2-1 扇出*：主存储（磁盘）到辅助存储（磁盘）到云（对象存储）。跨不同存储系统创建多个数据副本，例如 ONTAP 到 ONTAP 和 ONTAP 到对象存储配置。这可以是云超大规模对象存储或私有对象存储。最适合优化数据保护和灾难恢复。此选项不适用于 Amazon FSx for NetApp ONTAP。</block>
+  <block id="9fee15229aeafc04f7f5ecc1bcbadb28" category="list-text">*3-2-1 级联*：（不适用于 Kubernetes 工作负载）主存储（磁盘）到辅助存储（磁盘）和主存储（磁盘）到云存储（对象存储）。这可以是云超大规模对象存储或私有对象存储，例如 StorageGRID。这创建了跨多个系统的数据复制链，以确保冗余和可靠性。此选项不适用于 Amazon FSx for NetApp ONTAP。</block>
+  <block id="be84ac32aad421d6a1cb46ce683e66b6" category="list-text">*磁盘到磁盘*：主存储（磁盘）到辅助存储（磁盘）。ONTAP 到 ONTAP 数据保护策略在两个 ONTAP 系统之间复制数据，以确保高可用性和灾难恢复。这通常使用 SnapMirror 来实现，它支持同步和异步复制。此方法可使您的数据在不同位置保持更新和可用，以实现强大的数据保护。</block>
+  <block id="81c8b39fe11eaceb3d9d1d404c6fcabd" category="list-text">*磁盘到对象存储*：主存储（磁盘）到云（对象存储）。这会将数据从 ONTAP 系统复制到对象存储系统。这可以是云超大规模对象存储，也可以是私有对象存储，如 StorageGRID。这种方法非常适合长期数据保留和存档。</block>
+  <block id="00e3096d7681cc99d56e85ff2b1840d4" category="list-text">*磁盘到磁盘扇出*：（不适用于 Kubernetes 工作负载）主存储（磁盘）到辅助存储（磁盘）和主存储（磁盘）到辅助存储（磁盘）。您可以为磁盘到磁盘扇出选项配置多个辅助设置。</block>
+  <block id="851135c947a89fc1b09d7dcc201469ab" category="list-text">*本地快照*：选定卷上的本地快照。这将创建运行工作负载的生产卷的只读时间点副本。您可以使用本地快照从数据丢失或损坏中恢复，并出于灾难恢复目的创建备份。</block>
+  <block id="fbdef52c241b79ead35478ff22576f90" category="list-text">为 *本地快照设置* 部分提供信息：</block>
+  <block id="ce58b9a7f0f2d4c7c52770bc83100166" category="list-text">*Provider*：（仅限 Kubernetes 工作负载）选择托管 Kubernetes 应用程序资源的存储提供商，并输入凭据以向提供商进行身份验证。</block>
+  <block id="090b970b75ee26b50d8123db3db2ba55" category="list-text">提供 *Secondary settings* 部分的信息（复制到二级存储）：</block>
+  <block id="8eae3d632795cead3b5b2a2b7e7f2062" category="list-text">提供 *Object store settings* 部分的信息（备份到对象存储）：</block>
+  <block id="a296e85150d178100dae6943b3a33304" category="list-text">*Provider*：选择对象存储的提供程序，并在相应字段中输入凭据（凭据字段因提供程序而异）。</block>
+  <block id="294ac024c56ddf3b6d099615e93da940" category="list-text">*启用完整性扫描*：（不适用于 Kubernetes 工作负载）选择是否要在对象存储上启用完整性扫描（快照锁定）。这确保了备份的有效性和可恢复性。完整性扫描频率默认设置为 7 天。要防止备份被修改或删除，请选择*完整性扫描*选项。扫描仅在最新快照上进行。您可以在最新快照上启用或禁用完整性扫描。</block>
+  <block id="cfb3db612527a3fd28e835844ac13303" category="paragraph">您可以选择在策略中配置高级设置。您可以将这些选项用于所有备份架构和存储目标。可用的高级选项取决于您在页面顶部选择的工作负载，因此此处描述的某些选项可能不适用于所有工作负载。您无法为 Kubernetes 工作负载设置高级选项。</block>
+  <block id="d286fd76908ab2d585d6d23d6ad9c32b" category="list-text">*最大传输速率*：要不设置带宽使用限制，请选择 *无限制*。如果要限制传输速率，请选择 *限制*，然后选择分配给将备份上传到对象存储的网络带宽在 1 到 1,000 Mbps 之间。默认情况下，ONTAP 可以使用无限量的带宽将备份数据从系统中的卷传输到对象存储。如果备份流量影响工作负载，请减少传输的网络带宽。</block>
+  <block id="a0c908f43c331f6fa08951ed4bc367bd" category="list-text">*备份重试*：（不适用于 VMware 工作负载）要在失败或中断时重试作业，请选择*失败时启用作业重试*。输入快照和备份作业重试的最大次数以及重试时间间隔。重试次数必须小于 10。</block>
+  <block id="7fae0c750c285630f201343267804d41" category="paragraph">您可以编辑策略的备份体系结构、备份频率、保留策略和其他设置。对于 Kubernetes 工作负载策略，您只能编辑计划和保留设置。</block>
+  <block id="4eb58c82c9f0b1e3d063fbbfbb010e19" category="inline-link-macro">创建保护策略</block>
+  <block id="ea067fa7b1bc3f8c8350fa0bceb0595c" category="list-text">若要按计划备份工作负载，请创建管理备份和还原操作的策略。有关说明，请参阅 <block ref="4bb5b2bd7c04f7593085f04d6e04e3c7" category="inline-link-macro-rx"></block>。</block>
+  <block id="ba00b67b788600ebbd7fe09a91650e86" category="list-text">创建保护组以管理一组资源的备份和还原操作。有关更多信息，请参见 <block ref="b41906c18d12e015df4a4a84e93664b0" category="inline-link-macro-rx"></block>。</block>
+  <block id="edd991153578c98da31ca3ad55e14003" category="list-text">选择 *Protection Groups*、*Datastores*、*Virtual machines* 或 *Tags* 菜单标题。</block>
+  <block id="d983c9df766c3aa63bbf3a6281d16100" category="list-text">选择要备份的保护组、数据存储库、虚拟机或标记的资源。</block>
+  <block id="737d9b83706d4ff929e834c21c31d9b2" category="admonition">应用于备份的策略与分配给保护组、数据存储、虚拟机或标记资源的策略相同。</block>
+  <block id="698cac04635d0523df894d166b3d5497" category="list-text">通过手动将虚拟机添加到组或使用 VMware vSphere 标记创建保护组。</block>
+  <block id="f2f817e0b92f9a198cdaec2b19163257" category="list-text">立即备份保护组。请参阅 <block ref="887743b22b352bdbc6f2d55fc0901200" category="inline-link-macro-rx"></block>。</block>
+  <block id="d74e019c0ba8fa4728a1554302380c0e" category="list-text">选择要应用于保护组的保护策略。</block>
+  <block id="37d0f4b5d8724cc7201cc446873e04d6" category="section-title">使用 vSphere 标记创建保护组</block>
+  <block id="8b3f160f535442c6fa67e2f7b5b5218c" category="paragraph">使用基于标记的保护来简化 Backup and Recovery 中保护组的管理。</block>
+  <block id="d9c948c9e617e8b36f4e9f8ebc4a7793" category="paragraph">以下是使用基于标签的保护的好处：</block>
+  <block id="dbcf47b066ee50d07327870e08c02459" category="list-text">当您将 vSphere 标记添加到 vCenter 中的虚拟机或数据存储区时，该对象将自动包含在引用该标记的任何 Backup and Recovery 保护组的下一个备份中。</block>
+  <block id="3ee9fae4ef781d4c9014ac642352ae4a" category="list-text">当您从虚拟机或数据存储中删除 vSphere 标记时，该对象将自动从该基于标记的保护组的后续备份中排除。</block>
+  <block id="9c31f9bafac8cffb5f02640267d721d9" category="list-text">如果在 vCenter 中删除了 vSphere 标签，后续备份将跳过该标签并报告警告。</block>
+  <block id="bd747bb8eef35887261b9982676b40a0" category="list-text">如果将 VM 迁移到其他数据存储，只要它仍然具有属于基于标记的保护组的标记，它就会受到保护。</block>
+  <block id="6cbd33d5e36fc1cca8f70b65396de2b0" category="admonition">不支持混合资源类型（例如，将标记与同一保护组中的单个虚拟机或数据存储区组合）。</block>
+  <block id="6ad4cf5fcdb7c67f52ade5e3f8eeb6ad" category="list-text">确保您的环境正在使用受支持的 VMware vSphere 版本。</block>
+  <block id="a27119a291cfccb589b86846392873b4" category="list-text">在 vCenter 中，确保要保护的虚拟机和数据存储已与一个或多个 vSphere 标记关联。</block>
+  <block id="735df7f2e37c9dd264e94c878ea7d619" category="admonition">标签成员资格在备份时从 vCenter 解析。您在 vCenter 中对标签所做的任何更改（添加/删除标签、删除标签、添加/删除 VM）都会自动反映在下一次备份中。</block>
+  <block id="78f5b108a98a534559a6cf92a45c2217" category="list-text">Sign in 到 NetApp Backup and Recovery。</block>
+  <block id="18fb5ad2d600be360bf3764f9f3ecde0" category="list-text">导航到 *Protection Groups* 视图。</block>
+  <block id="cd3a16077759ca894aa916f1ea83ff7d" category="list-text">选择 *Create Protection Group* 。</block>
+  <block id="62f284e1a3d11fed54a40973514efa1c" category="list-text">在 *General details &gt; Protection group name* 下，输入保护组的名称。</block>
+  <block id="2f53c8083ddbdd3400114aae9665b5bf" category="list-text">在 *常规详细信息 &gt; 保护组资源* 部分中，选择 *标签*。</block>
+  <block id="7c1b4c1e439306457293167fe1af03c9" category="list-text">如果配置了多个 vCenters，请从列表中选择相应的 vCenter 以显示该 vCenter 可用的标签。</block>
+  <block id="1a3c34cef3f6ab3008d2418bb5560afe" category="list-text">在 *Select tags* 部分：</block>
+  <block id="cb935c3c84220062774fc03b78d0d1d8" category="list-text">在左侧：</block>
+  <block id="c75b80af3b6c8be91412f6db0cfef092" category="list-text">从列表中选择一个 vCenter。</block>
+  <block id="9b2449abfee053f106944314550a4fb9" category="list-text">在该 vCenter 中选择一个或多个标签的复选框。</block>
+  <block id="f3e54e3fd8ea8b3a0c648874c68324ed" category="list-text">在右侧：</block>
+  <block id="325c135a9bba8c7f6e551af758c71fe4" category="list-text">查看选定标签的列表，按 vCenter 分组。</block>
+  <block id="de001ae1700794f3bd2f6447c9750cbe" category="list-text">删除保护组中不需要的任何标记。</block>
+  <block id="6a6c8216e6380fa87d23abc6456110a7" category="list-text">在*查看*步骤中查看标签设置。</block>
+  <block id="cef2f01b5a9d6194b30ee87880a2501f" category="paragraph">新的基于标记的保护组显示在列表中，由标记图标指示。</block>
+  <block id="a22504a40a8afdfa908ab0544ecc4178" category="doc">从 VMDK 还原文件和文件夹</block>
+  <block id="24519b4fc7c6f69129233c5f1654a6e4" category="paragraph">您可以将一个或多个文件或文件夹从 VMDK 还原到原始 VM 或同一 VMware vCenter 服务器上的其他 VM。支持 Windows 和 Linux 来宾。</block>
+  <block id="32de0b1da4ab4b8f52bfe3ce1811b043" category="list-text">请查看 <block ref="538cee55729c515ab8aab7ca0ccd040a" category="inline-link-macro-rx"></block> 中的先决条件和限制。</block>
+  <block id="7b7824cad48305f033e7a7b04105000a" category="paragraph">文件或文件夹还原性能取决于两个因素：要还原的文件或文件夹的大小；以及要还原的文件或文件夹的数量。如果要还原的数据集大小相同，则还原大量小文件所需的时间可能比还原少量大文件所需的时间要长。</block>
+  <block id="ec4a88c3778360f79e6ff325a92a3d17" category="paragraph">您可以还原到远程 VM（称为跨 VM 还原），但源和目标操作系统必须相同。</block>
+  <block id="4c9600bd9236b2e70ac2b1114017de33" category="admonition">使用文件和文件夹还原功能，您可以查看和还原系统和隐藏文件以及查看加密文件。请勿覆盖现有系统文件或将加密文件还原到加密文件夹。在还原操作期间，来宾文件的隐藏、系统和加密属性不会保留在还原的文件中。查看或浏览保留的分区可能会导致错误。</block>
+  <block id="3e06033eac23d3464498e98c2a13f82d" category="open-title">将文件和文件夹还原到原始 VM</block>
+  <block id="923c2be14ab1a46fb997485d1b8b8a4d" category="paragraph">将来宾文件和文件夹从虚拟磁盘还原到原始（源）虚拟机。</block>
+  <block id="19a7ed3b19960c1d22474edf3f03f892" category="list-text">在虚拟机列表中，选择包含要还原的文件的虚拟机的"操作"图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="d465b892e7707a7c517f87c0630068c3" category="list-text">从列表中选择要附加到 VM 的虚拟磁盘，然后选择*下一步*。</block>
+  <block id="bd573ab03c0ee475ede63ff83e686f56" category="list-text">在 _Guest virtual machine details_ 页面上，执行以下操作：</block>
+  <block id="c6e8a4c6e5322c1ceb8b26f4b2439795" category="list-text">在 *Guest virtual machine details* 部分，通过选择 *Original virtual machine* 将虚拟磁盘附加到原始 VM。</block>
+  <block id="4f771cccc6eb6e31cbe75447322c430a" category="list-text">在 *Guest virtual machine credentials* 部分，如果您尚未存储访客虚拟机的凭据，请选择 *Add credentials*，输入 Windows 或 Linux 主机的凭据信息，然后选择 *Add*。</block>
+  <block id="e4d0f550a74efd46e53d2c10ae5af484" category="paragraph">NetApp Backup and Recovery 将虚拟磁盘连接到虚拟机，并显示所有文件和文件夹，包括隐藏的文件和文件夹。对于 Windows 来宾，它为每个分区（包括系统保留分区）分配一个驱动器号。</block>
+  <block id="eb239c6e755285e102501b3b2c0382cd" category="paragraph">您可以使用文件浏览器窗格附近的放大镜（搜索）图标来搜索文件和文件夹。不支持模式匹配，但您可以根据名称或扩展名的子集搜索文件或文件夹。</block>
+  <block id="622573067c12083b451e0b5802f31fc1" category="list-text">选择要还原的文件或文件夹。</block>
+  <block id="030ef4a6604fa5d6b0af3172a454ed6a" category="paragraph">屏幕右侧窗格中会列出您选择要还原的文件和文件夹。</block>
+  <block id="4e6324c68794e57f43cb14b274707b92" category="list-text">在"还原到路径"部分中，输入要将所选文件还原到的来宾路径：</block>
+  <block id="097f9151e6a7e1515f9962684b6e00dc" category="list-text">对于 Windows 来宾，输入 UNC 共享路径：</block>
+  <block id="1ee4d011c88c8d217a30c51644b126a2" category="list-text">IPv4 路径示例：<block ref="c1efda00eba14c667cfd89393b2be583" prefix=" " category="inline-code"></block></block>
+  <block id="6f0e49df443b7ad85886779a44b22750" category="list-text">IPv6 路径示例：<block ref="f7a108079a0dc952ef09921776f4796f" prefix=" " category="inline-code"></block></block>
+  <block id="f3a4af525d957339e91e406b8215ce55" category="list-text">对于 Linux 来宾，输入本地文件系统路径或远程来宾地址和路径：</block>
+  <block id="36cd6911f28eb4d2836a6f36630319ab" category="list-text">本地路径示例：<block ref="eeb7a05395e240242091459d33444db8" prefix=" " category="inline-code"></block></block>
+  <block id="54dd4a35d8cf45457b3d28ec1c8555f4" category="list-text">IPv4 路径示例：<block ref="13b4425d0a3271ecf9f63cf3fd9e8d3a" prefix=" " category="inline-code"></block></block>
+  <block id="ae506f4f3b2f41295e927a2a84ba4abb" category="list-text">IPv6 路径示例：<block ref="1822c00862f8d247a7e6656b8838a5b4" prefix=" " category="inline-code"></block></block>
+  <block id="b7a3b9fc054d5af5835b24611cb82f2a" category="list-text">在"后期还原选项"部分，您可以选择在还原完成后通过启用 *还原完成后断开来宾会话* 设置来断开来宾会话。这会分离 VMDK 并卸载数据存储库。这意味着在执行任何其他文件和文件夹还原操作之前，您需要重新连接来宾会话。</block>
+  <block id="3915e57fb69cd6ec67340fe0fd3e0214" category="open-title">将文件和文件夹还原到其他 VM</block>
+  <block id="24b469e148bda42df48ef38c8ee87352" category="paragraph">使用代理 VM（与原始 VM 在同一个 vCenter 上的不同 VM）将来宾文件和文件夹从虚拟磁盘还原到另一个虚拟机。</block>
+  <block id="63240001bfd20bd297440f370de9df9f" category="list-text">在 *Guest virtual machine details* 部分：</block>
+  <block id="466d39120cac10999cfd322f5ef15c59" category="list-text">通过选择*代理虚拟机*将虚拟磁盘连接到代理虚拟机。</block>
+  <block id="52ab29c54b643acc4f96c4e8ca7e0c2d" category="list-text">从列表中选择源 vCenter、数据中心和数据存储库。</block>
+  <block id="b3a640a593628a2d983c21b7abc31fc6" category="list-text">选择要还原到的虚拟机。所选虚拟机将显示在右侧窗格中。</block>
+  <block id="5aaba1bfb08f20b4b36449fd15d4916e" category="paragraph">您可以从 Windows 或 Linux 来宾操作系统上的虚拟机磁盘 (VMDK) 还原文件或文件夹。</block>
+  <block id="ab08ae9b37014ead8598f03e3ced4d5a" category="paragraph">在从 VMDK 还原文件或文件夹之前，请查看所有要求。</block>
+  <block id="6b654052b7ec38473aa3cbf529a0c95d" category="paragraph">NetApp Backup and Recovery 使用来自 VMware 工具的信息来建立与 VMware 来宾操作系统的连接。</block>
+  <block id="c9023d91559fd2e7aeebe57ffa5233e2" category="paragraph">有关访客操作系统支持的最新信息，请参见 <block ref="dd731ea0dfaa7ba4b5325a39b353b5a2" category="inline-link-rx"></block>。</block>
+  <block id="45559be8af2a428057b76210bf3dbb1d" category="section-title">Windows 客户机</block>
+  <block id="7cad5f451232387a167e944ce2f39945" category="section-title">Linux 客户机</block>
+  <block id="77aac16c424e511f90657047012bfb6e" category="list-text">支持以下来宾操作系统发行版：</block>
+  <block id="6fe8b98c53e8d099686936732785d471" category="list-text">Debian</block>
+  <block id="3b738bcf0252fc9edf5f304901addf35" category="list-text">Run-As 帐户需要 root 或 sudo 权限。</block>
+  <block id="a1f316919d6ee6dc4555dd8c215dd639" category="list-text">对于跨虚拟机还原（还原到其他 Linux 虚拟机），SSH 必须在目标虚拟机上运行。</block>
+  <block id="0904d2f230fc0f0277b7da11a64a4fdb" category="list-text">不能在不同操作系统的来宾之间还原文件或文件夹（还原到不同的 VM 时，目标 OS 类型必须与源 OS 类型相同）。</block>
+  <block id="dbbb5df4d99995be20065b232a8370ff" category="list-text">*目标存储*部分（仅在从对象存储还原时可见）：</block>
+  <block id="60dda7eb5d8d89865794c9953a4b00ab" category="list-text">*更改默认存储位置*：启用此选项可在源存储位置无法访问或已满时将对象存储备份还原到其他存储 VM。选择要使用的其他集群、存储 VM 或聚合。</block>
+  <block id="b07f4d391521e556166d0e8a85f249d6" category="admonition">NetApp 强烈建议为用于 Kubernetes 工作负载的 Console 代理分配静态 IP 地址，以避免代理 IP 地址更改时出现问题。</block>
+  <block id="8633711cbf80a219cb9603b1e0c09dcf" category="list-text">SAN 存储（预览）（支持从主存储和二级存储备份和还原到原始位置）</block>
+  <block id="1873f6028647ed72cee9a7bccf68c491" category="summary">使用 NetApp Backup and Recovery，通过浏览和还原功能还原 ONTAP 数据。</block>
+  <block id="9b0b495cd3a28a2977dbab61bc1cbce8" category="summary">您可以使用 Search and Restore 从 ONTAP 备份文件中恢复卷、文件夹或文件。</block>
+  <block id="153309581b8b7324fe069ec2701fe5ca" category="doc">使用搜索和还原从 ONTAP 备份还原</block>
+  <block id="ca8d2f28de45d440f4baf4c07d4c8107" category="paragraph">您可以使用 Search and Restore 从 ONTAP 备份文件中恢复卷、文件夹或文件。Search and Restore 使您能够跨所有备份（包括本地快照、已复制卷和对象存储）进行搜索，而无需确切的系统、卷或文件名。</block>
+  <block id="13805175d1bc9d9656654bec32406f98" category="admonition">Backup and Recovery 不会为创建时间戳与同一卷的另一个快照完全匹配的任何快照编制索引。</block>
+  <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">2026 年 4 月 13 日</block>
+  <block id="462fcd2b84c5fc16f3d89522a2068baa" category="sidebar">文件和文件夹恢复故障排除</block>
 </blocks>

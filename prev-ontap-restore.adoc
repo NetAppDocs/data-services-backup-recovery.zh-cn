@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 您可以使用搜索和恢复功能从ONTAP备份文件中恢复卷、文件夹或文件。 
+summary: 您可以使用 Search and Restore 从 ONTAP 备份文件中恢复卷、文件夹或文件。 
 ---
 = 使用NetApp Backup and Recovery从备份文件恢复ONTAP数据
 :hardbreaks:

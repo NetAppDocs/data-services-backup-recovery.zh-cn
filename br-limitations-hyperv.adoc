@@ -23,11 +23,6 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 NetApp Backup and Recovery 中的 Hyper-V 工作负载不支持以下操作：
 
 * 使用来自多个 Hyper-V 主机的虚拟机创建资源组
-* 将虚拟机还原到备用位置
 * 跨磁盘（跨多个 CIFS 共享）
-* 通过 SAN 保护虚拟机
 * 即使 Hyper-V 中的“处理器兼容性”设置正确，也无法在 CPU 厂商不同的系统之间（例如 Intel 和 AMD 或反之）还原虚拟机或虚拟机数据。此设置仅支持同一厂商不同代产品之间的兼容性（例如，Intel 到 Intel 或 AMD 到 AMD）。
 
-
-
-NOTE: 在 2026 年 1 月 19 日发布的版本中，您无法使用“操作”菜单中的“升级”选项来升级 Hyper-V 或 Windows 的NetApp插件。相反，请删除每个 Hyper-V 主机，然后重新添加以更新插件。

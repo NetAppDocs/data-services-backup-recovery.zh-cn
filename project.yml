@@ -42,8 +42,6 @@ sidebar:
       url: "/task-setup-ca-certificates.html"
     - title: 在使用NetApp Backup and Recovery之前设置备份目标
       url: "/br-start-setup.html"
-    - title: 登录NetApp Backup and Recovery
-      url: "/br-start-login.html"
     - title: 发现备份目标
       url: "/br-start-discover-backup-targets.html"
     - title: 切换到不同的NetApp Backup and Recovery工作负载
@@ -54,6 +52,8 @@ sidebar:
       url: "/br-rbac-setup.html"
   - title: 使用NetApp Backup and Recovery
     entries:
+    - title: 登录NetApp Backup and Recovery
+      url: "/br-start-login.html"
     - title: 在仪表板中查看保护健康状况
       url: "/br-use-dashboard.html"
     - title: 创建策略来管理备份和恢复
@@ -134,13 +134,13 @@ sidebar:
           url: "/br-use-vmware-restore.html"
         - title: 恢复特定虚拟磁盘
           url: "/br-use-vmware-restore-vmdks-from-backups.html"
-        - title: 恢复访客文件和文件夹
+        - title: 还原文件和文件夹
           entries:
           - title: 工作流程、先决条件和限制
             url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
-          - title: 从 VMDK 还原客户机文件和文件夹
+          - title: 从 VMDK 还原文件和文件夹
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
-          - title: 访客文件恢复故障排除
+          - title: 文件和文件夹恢复故障排除
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
     - title: 保护KVM工作负载
       entries:
