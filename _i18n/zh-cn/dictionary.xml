@@ -4472,13 +4472,10 @@
   <block id="898c4d9cd797d45ca2066478fd269974" category="paragraph">当您从 VM 一致的备份执行来宾文件还原操作时会出现此问题。当来宾文件恢复会话处于活动状态时，将对同一 VM 执行另一个 VM 一致性备份。当客户文件恢复会话断开时（手动或 24 小时后自动断开），该会话的备份不会被分离。</block>
   <block id="5857a2699c75798b2ae21bc0b06aff95" category="paragraph">要解决此问题，请手动分离从活动来宾文件还原会话附加的 VMDK。</block>
   <block id="0bf794e2b090829c5f342b426fa04d5c" category="summary">您可以从 Windows 客户操作系统上的 VMDK 还原一个或多个文件或文件夹。</block>
-  <block id="a26360f952d07b84e1088cc6c613eafe" category="admonition">在从NetApp Backup and Recovery中还原文件和文件夹之前，您需要为来宾虚拟机创建凭据。NetApp Backup and Recovery使用这些凭据在附加虚拟磁盘时对来宾虚拟机进行身份验证。</block>
   <block id="851e8e79b33ecfa430d9ed62957e5cad" category="admonition">一台虚拟机上同时只能运行一个连接或还原操作。您不能在同一台虚拟机上运行并行连接或恢复操作。</block>
-  <block id="b422ec3f16fdaa990ba1990cb6991810" category="list-text">选择“虚拟机”菜单。</block>
   <block id="c0bb93c6bec67d2385d257bd2f31eeb2" category="list-text">选择“恢复文件和文件夹”。</block>
   <block id="08cc4acec34cca35a8c76fb3d615326d" category="list-text">选择要从中恢复的快照，然后选择“下一步”。</block>
   <block id="da8e304a7760412a8328c95f01373d11" category="list-text">选择要从中恢复的快照位置。如果选择辅助位置，请从列表中选择辅助快照。</block>
-  <block id="60ec0884c18a5fb50c01015fd5a57742" category="list-text">选择用于向客户虚拟机进行身份验证的虚拟机凭据。</block>
   <block id="568b266180f72a62a6b7a16e74fd7c84" category="paragraph">如果存在同名文件，您可以选择覆盖或跳过它们。</block>
   <block id="9400685c82ef048826c1183065e6283e" category="paragraph">您可以在“作业监控”页面上查看恢复进度。</block>
   <block id="e4bfaed3f3210f4076310e841130f424" category="summary">您可以从 Windows 客户操作系统上的虚拟机磁盘 (VMDK) 还原文件或文件夹。</block>
@@ -4489,7 +4486,6 @@
   <block id="0f68101772bd5397ef8eb1b632798652" category="list-text">等待</block>
   <block id="75acbae837699c01fe86ee8a2c9fec00" category="paragraph">请等待附加操作完成，然后才能浏览和恢复。附加操作完成后，会自动创建一个访客文件恢复会话。</block>
   <block id="137bf66cd89f2d7f861099ca8519563c" category="list-text">选择文件或文件夹</block>
-  <block id="bc67d1c399dfdffa3650a08e1bbd1222" category="paragraph">浏览 VMDK 文件，选择一个或多个文件或文件夹进行还原。</block>
   <block id="2bd339d85ee3b33e513359ce781b60cc" category="list-text">还原</block>
   <block id="850eb27faf64ee4adf2b325fd847bf4d" category="paragraph">将选定的文件或文件夹还原到指定位置。</block>
   <block id="8584d390f3574a98d0772b42a6ba1d23" category="section-title">恢复访客文件和文件夹的先决条件</block>
@@ -4550,7 +4546,6 @@
   <block id="88009dbb638181324526010a9eff3c19" category="sidebar">恢复 VMware 虚拟机</block>
   <block id="9b7e5fddcf3e2a7a93fe6669de87fbc2" category="sidebar">恢复特定虚拟磁盘</block>
   <block id="3a4d751e404219df1dc6de0a13c8db55" category="sidebar">工作流程、先决条件和限制</block>
-  <block id="d85468613eebe17a50e2bf01c2bd42f5" category="paragraph">将虚拟磁盘附加到客户虚拟机并启动客户文件恢复会话。</block>
   <block id="b2c5a3b35bd8f72bf653aa42e54cc06c" category="list-text">Windows 客户操作系统必须运行 Windows Server 2008 R2 或更高版本。</block>
   <block id="367aa9be05b109b226ffbefe3981ac88" category="list-text">如果恢复加密的文件或文件夹，则不会保留加密属性。</block>
   <block id="34454c78e4e96cfe4c311b8ba072f6cd" category="list-text">您无法将文件或文件夹还原到加密文件夹。</block>
@@ -4587,7 +4582,6 @@
   <block id="80aabc2f42a52376f3d884d3b02360f4" category="admonition">如果使用 Red Hat OpenShift，请务必注意命名空间注释在 OpenShift 环境中的关键作用。命名空间注释可确保还原的 Pod 遵守 OpenShift 安全上下文约束 (SCC) 定义的适当权限和安全配置，并且可以访问卷而不会出现权限问题。有关详细信息，请参见 <block ref="842acfa178c0bbf09e368bf9db0716b8" category="inline-link-macro-rx"></block>。</block>
   <block id="6c83555d4261acb08ebbc5f24823dc7b" category="paragraph">在执行还原或故障转移操作之前，可以通过设置 Kubernetes 环境变量<block ref="1580ff61f204e9d56cd5324c7e9221ba" prefix=" " category="inline-code"></block>来防止目标命名空间中的特定注释被覆盖。例如：</block>
   <block id="59f713e31282fe744caf06335d891f9a" category="inline-link-macro">配置其他 Trident Protect helm 图表设置</block>
-  <block id="98b806d92f2e28da541021a181de980f" category="admonition">执行还原或故障切换操作时，在<block ref="22416353aff9ef4322e1ee858f418ae4" prefix=" " category="inline-code"></block>和<block ref="8028cf835d9b72ff2d6f835934c25568" prefix=" " category="inline-code"></block>中指定的任何命名空间批注和标签都将从还原或故障切换操作中排除。确保在初始 Helm 安装过程中配置了这些设置。要了解更多信息，请参阅<block ref="647ed99900e7ff1307ad7b7cec525a2c" category="inline-link-macro-rx"></block>。</block>
   <block id="d65eac563b898cb7e41b8853a4fe1a3c" category="paragraph">如果使用带有 <block ref="cc1f5c1d16e33b8463c9ee27295cd5df" prefix=" " category="inline-code"></block> 标志的 Helm 安装源应用程序，则会对 <block ref="b068931cc450442b63f5b3d276ea4297" prefix=" " category="inline-code"></block> 标签键进行特殊处理。在还原或故障转移过程中，Trident Protect 会将此标签复制到目标命名空间，但如果来自源的值与源命名空间匹配，则将值更新为目标命名空间值。如果此值与源命名空间不匹配，则将其复制到目标命名空间，不进行任何更改。</block>
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="section-title">示例</block>
   <block id="1280c48f074ec68fd2281266662c9a3f" category="paragraph">以下示例显示了源和目标命名空间，每个命名空间都有不同的注释和标签。您可以查看操作之前和之后的目标命名空间的状态，以及如何在目标命名空间中组合或覆盖注释和标签。</block>
@@ -5126,8 +5120,6 @@
   <block id="cab9c79c2324192af6049aa8cd78508d" category="list-text">*还原到备用存储系统*：即使原始（主）存储系统完全不可用，您现在也可以将虚拟机还原到备用存储系统。有关详细信息，请参阅<block ref="f3d02f39d5e1822fd83675aa2d7843de" category="inline-link-rx"></block>。</block>
   <block id="9486b4129634e76f84d1e52fbd1b3326" category="inline-link">还原文件和文件夹</block>
   <block id="19e7d45c6bedb302dc81dcad6024f1c3" category="list-text">*将文件还原到 Linux VM*：您现在可以将 VM 文件和文件夹还原到 Linux VM。有关详细信息，请参阅<block ref="d14b743b42535a5def60386aae0617f3" category="inline-link-rx"></block>。</block>
-  <block id="cbd6efe68945c4eed8277905a2c0fe44" category="list-text">*还原文件和文件夹时支持代理虚拟机* - 您现在可以将文件和文件夹还原到源 vCenter 上托管的其他虚拟机。有关详细信息，请参阅<block ref="f3d02f39d5e1822fd83675aa2d7843de" category="inline-link-rx"></block>。</block>
-  <block id="b8f9bd73e7115f55039fdbc342c5bf1f" category="list-text">*递归文件和文件夹搜索* - 您现在可以在整个 VMDK 中搜索特定文件或文件夹。有关详细信息，请参阅<block ref="f3d02f39d5e1822fd83675aa2d7843de" category="inline-link-rx"></block>。</block>
   <block id="7868afad22516e76c1d3b0f45146b148" category="list-text">选择 *Managed offsite backup targets* 选项卡。</block>
   <block id="e75ea37e96b8396fc26e7835fb754851" category="list-text">从可用的备份目标类型中选择一种：*AWS*、*Azure*、*StorageGRID*、*ONTAP S3* 或 *GCP*。</block>
   <block id="c6ef992c54853d072b258e289ef08dd0" category="list-text">（仅适用于 AWS 和 Azure 备份目标）在 *选择凭据位置* 部分，选择凭据所在的位置，然后选择如何关联凭据。</block>
@@ -5216,23 +5208,17 @@
   <block id="6a6c8216e6380fa87d23abc6456110a7" category="list-text">在*查看*步骤中查看标签设置。</block>
   <block id="cef2f01b5a9d6194b30ee87880a2501f" category="paragraph">新的基于标记的保护组显示在列表中，由标记图标指示。</block>
   <block id="a22504a40a8afdfa908ab0544ecc4178" category="doc">从 VMDK 还原文件和文件夹</block>
-  <block id="24519b4fc7c6f69129233c5f1654a6e4" category="paragraph">您可以将一个或多个文件或文件夹从 VMDK 还原到原始 VM 或同一 VMware vCenter 服务器上的其他 VM。支持 Windows 和 Linux 来宾。</block>
   <block id="32de0b1da4ab4b8f52bfe3ce1811b043" category="list-text">请查看 <block ref="538cee55729c515ab8aab7ca0ccd040a" category="inline-link-macro-rx"></block> 中的先决条件和限制。</block>
   <block id="7b7824cad48305f033e7a7b04105000a" category="paragraph">文件或文件夹还原性能取决于两个因素：要还原的文件或文件夹的大小；以及要还原的文件或文件夹的数量。如果要还原的数据集大小相同，则还原大量小文件所需的时间可能比还原少量大文件所需的时间要长。</block>
   <block id="ec4a88c3778360f79e6ff325a92a3d17" category="paragraph">您可以还原到远程 VM（称为跨 VM 还原），但源和目标操作系统必须相同。</block>
   <block id="4c9600bd9236b2e70ac2b1114017de33" category="admonition">使用文件和文件夹还原功能，您可以查看和还原系统和隐藏文件以及查看加密文件。请勿覆盖现有系统文件或将加密文件还原到加密文件夹。在还原操作期间，来宾文件的隐藏、系统和加密属性不会保留在还原的文件中。查看或浏览保留的分区可能会导致错误。</block>
-  <block id="3e06033eac23d3464498e98c2a13f82d" category="open-title">将文件和文件夹还原到原始 VM</block>
   <block id="923c2be14ab1a46fb997485d1b8b8a4d" category="paragraph">将来宾文件和文件夹从虚拟磁盘还原到原始（源）虚拟机。</block>
   <block id="19a7ed3b19960c1d22474edf3f03f892" category="list-text">在虚拟机列表中，选择包含要还原的文件的虚拟机的"操作"图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>。</block>
-  <block id="d465b892e7707a7c517f87c0630068c3" category="list-text">从列表中选择要附加到 VM 的虚拟磁盘，然后选择*下一步*。</block>
   <block id="bd573ab03c0ee475ede63ff83e686f56" category="list-text">在 _Guest virtual machine details_ 页面上，执行以下操作：</block>
   <block id="c6e8a4c6e5322c1ceb8b26f4b2439795" category="list-text">在 *Guest virtual machine details* 部分，通过选择 *Original virtual machine* 将虚拟磁盘附加到原始 VM。</block>
-  <block id="4f771cccc6eb6e31cbe75447322c430a" category="list-text">在 *Guest virtual machine credentials* 部分，如果您尚未存储访客虚拟机的凭据，请选择 *Add credentials*，输入 Windows 或 Linux 主机的凭据信息，然后选择 *Add*。</block>
-  <block id="e4d0f550a74efd46e53d2c10ae5af484" category="paragraph">NetApp Backup and Recovery 将虚拟磁盘连接到虚拟机，并显示所有文件和文件夹，包括隐藏的文件和文件夹。对于 Windows 来宾，它为每个分区（包括系统保留分区）分配一个驱动器号。</block>
   <block id="eb239c6e755285e102501b3b2c0382cd" category="paragraph">您可以使用文件浏览器窗格附近的放大镜（搜索）图标来搜索文件和文件夹。不支持模式匹配，但您可以根据名称或扩展名的子集搜索文件或文件夹。</block>
   <block id="622573067c12083b451e0b5802f31fc1" category="list-text">选择要还原的文件或文件夹。</block>
   <block id="030ef4a6604fa5d6b0af3172a454ed6a" category="paragraph">屏幕右侧窗格中会列出您选择要还原的文件和文件夹。</block>
-  <block id="4e6324c68794e57f43cb14b274707b92" category="list-text">在"还原到路径"部分中，输入要将所选文件还原到的来宾路径：</block>
   <block id="097f9151e6a7e1515f9962684b6e00dc" category="list-text">对于 Windows 来宾，输入 UNC 共享路径：</block>
   <block id="1ee4d011c88c8d217a30c51644b126a2" category="list-text">IPv4 路径示例：<block ref="c1efda00eba14c667cfd89393b2be583" prefix=" " category="inline-code"></block></block>
   <block id="6f0e49df443b7ad85886779a44b22750" category="list-text">IPv6 路径示例：<block ref="f7a108079a0dc952ef09921776f4796f" prefix=" " category="inline-code"></block></block>
@@ -5240,13 +5226,8 @@
   <block id="36cd6911f28eb4d2836a6f36630319ab" category="list-text">本地路径示例：<block ref="eeb7a05395e240242091459d33444db8" prefix=" " category="inline-code"></block></block>
   <block id="54dd4a35d8cf45457b3d28ec1c8555f4" category="list-text">IPv4 路径示例：<block ref="13b4425d0a3271ecf9f63cf3fd9e8d3a" prefix=" " category="inline-code"></block></block>
   <block id="ae506f4f3b2f41295e927a2a84ba4abb" category="list-text">IPv6 路径示例：<block ref="1822c00862f8d247a7e6656b8838a5b4" prefix=" " category="inline-code"></block></block>
-  <block id="b7a3b9fc054d5af5835b24611cb82f2a" category="list-text">在"后期还原选项"部分，您可以选择在还原完成后通过启用 *还原完成后断开来宾会话* 设置来断开来宾会话。这会分离 VMDK 并卸载数据存储库。这意味着在执行任何其他文件和文件夹还原操作之前，您需要重新连接来宾会话。</block>
-  <block id="3915e57fb69cd6ec67340fe0fd3e0214" category="open-title">将文件和文件夹还原到其他 VM</block>
-  <block id="24b469e148bda42df48ef38c8ee87352" category="paragraph">使用代理 VM（与原始 VM 在同一个 vCenter 上的不同 VM）将来宾文件和文件夹从虚拟磁盘还原到另一个虚拟机。</block>
   <block id="63240001bfd20bd297440f370de9df9f" category="list-text">在 *Guest virtual machine details* 部分：</block>
   <block id="466d39120cac10999cfd322f5ef15c59" category="list-text">通过选择*代理虚拟机*将虚拟磁盘连接到代理虚拟机。</block>
-  <block id="52ab29c54b643acc4f96c4e8ca7e0c2d" category="list-text">从列表中选择源 vCenter、数据中心和数据存储库。</block>
-  <block id="b3a640a593628a2d983c21b7abc31fc6" category="list-text">选择要还原到的虚拟机。所选虚拟机将显示在右侧窗格中。</block>
   <block id="5aaba1bfb08f20b4b36449fd15d4916e" category="paragraph">您可以从 Windows 或 Linux 来宾操作系统上的虚拟机磁盘 (VMDK) 还原文件或文件夹。</block>
   <block id="ab08ae9b37014ead8598f03e3ced4d5a" category="paragraph">在从 VMDK 还原文件或文件夹之前，请查看所有要求。</block>
   <block id="6b654052b7ec38473aa3cbf529a0c95d" category="paragraph">NetApp Backup and Recovery 使用来自 VMware 工具的信息来建立与 VMware 来宾操作系统的连接。</block>
@@ -5269,4 +5250,29 @@
   <block id="13805175d1bc9d9656654bec32406f98" category="admonition">Backup and Recovery 不会为创建时间戳与同一卷的另一个快照完全匹配的任何快照编制索引。</block>
   <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">2026 年 4 月 13 日</block>
   <block id="462fcd2b84c5fc16f3d89522a2068baa" category="sidebar">文件和文件夹恢复故障排除</block>
+  <block id="44c66f240c569e9a6734099280701e88" category="admonition">执行还原或故障切换操作时，在<block ref="22416353aff9ef4322e1ee858f418ae4" prefix=" " category="inline-code"></block>和<block ref="8028cf835d9b72ff2d6f835934c25568" prefix=" " category="inline-code"></block>中指定的任何命名空间批注和标签都将从还原或故障切换操作中排除。确保在初始 Helm 安装过程中配置了这些设置。要了解更多信息，请参阅<block ref="b9fc3066a0a1e2a32e2c8ea860fac505" category="inline-link-rx"></block>。</block>
+  <block id="12dc36f8332118bd4fe7f1b4633c0a17" category="list-text">*还原文件和文件夹时支持代理 VM* - 当您不希望将虚拟磁盘附加到原始 VM 时，现在可以使用代理 VM 从虚拟磁盘还原文件和文件夹。有关详细信息，请参阅<block ref="d14b743b42535a5def60386aae0617f3" category="inline-link-rx"></block>。</block>
+  <block id="ddd4881e88c799f792de41fafe0a11d7" category="list-text">*递归文件和文件夹搜索* - 您现在可以搜索整个虚拟磁盘以查找特定文件或文件夹。有关详细信息，请参阅<block ref="d14b743b42535a5def60386aae0617f3" category="inline-link-rx"></block>。</block>
+  <block id="d07a2c33b1ba6b58e2a1a775e9fc5aa7" category="doc">从虚拟磁盘还原文件和文件夹</block>
+  <block id="979479a71f02703e287e1fad2bc3d0ae" category="paragraph">将文件或文件夹从虚拟磁盘还原到原始 VM 或其他 VM。如果您不希望将虚拟磁盘连接到原始 VM，则可以将其连接到代理 VM。</block>
+  <block id="e66fc9654ba30e5bd71aa3b351339afa" category="list-text">要使用代理 VM 还原文件和文件夹，请确保在开始文件和文件夹还原过程之前已配置代理 VM。</block>
+  <block id="c127ae612a3e24c3b1f14accf888c545" category="list-text">您需要在 NetApp Backup and Recovery 中为源虚拟磁盘和目标虚拟机创建凭据，然后才能还原文件和文件夹。NetApp Backup and Recovery 使用这些凭据在还原文件和文件夹时向虚拟磁盘和目标虚拟机进行身份验证。</block>
+  <block id="1c130d484b2f6c43fe50844352c0fbab" category="open-title">将 VMDK 附加到原始 VM 以还原文件和文件夹</block>
+  <block id="a0ec642000121309c4291ca16bcc0eb6" category="list-text">从页面右上角的工作负载列表中选择 *VMware*。</block>
+  <block id="46bd056de8e50f2386373b1ab72d25cc" category="list-text">从列表中选择具有需要还原的文件和文件夹的虚拟磁盘，然后选择 *Next*。</block>
+  <block id="0ee359b2883aea99ab54c5f6e1cbbdd2" category="list-text">在 *Guest virtual machine credentials* 部分，如果您尚未存储源虚拟磁盘和目标 VM 的凭据，请选择 *Add credentials*，输入 Windows 或 Linux 凭据信息，然后选择 *Add*。</block>
+  <block id="96d873c9c5f4f0cb774b7fef8b1af828" category="admonition">源和目标虚拟机必须运行相同的操作系统系列；操作系统版本可以不同。</block>
+  <block id="23d80b2131ccbe0c66cc4388cf4b96e7" category="list-text">从列表中选择要使用的虚拟机凭据。</block>
+  <block id="17a0fe355ba048bffab9be2e21aa1892" category="paragraph">NetApp Backup and Recovery 将虚拟磁盘连接到原始虚拟机，并显示所有文件和文件夹，包括隐藏的文件和文件夹。对于 Windows 来宾，它会为每个分区（包括系统保留的分区）分配一个驱动器盘符。</block>
+  <block id="9e987ea26d0bf564e3720c8384a36055" category="list-text">在"还原到路径"部分，输入要还原选定文件的目标 VM 和文件系统位置的路径：</block>
+  <block id="c4726c55925fe78699115ff6d865e58e" category="list-text">在"Post-restore-options"部分，您可以选择在还原完成后通过启用 *Disconnect guest session after the restore completes* 设置来断开来宾会话。这会分离虚拟磁盘并卸载数据存储库。这意味着在执行任何其他文件和文件夹还原操作之前，您需要重新连接来宾会话。</block>
+  <block id="f0d553382a9457e98c5a1c5257bf7df3" category="open-title">将 VMDK 附加到代理 VM 以还原文件和文件夹</block>
+  <block id="d647f20440ac814961fd11fbcaa98199" category="paragraph">当您不想将虚拟磁盘连接到原始虚拟机时，请使用代理虚拟机（与原始虚拟机位于同一 vCenter 上的不同虚拟机）来还原来宾文件和文件夹。</block>
+  <block id="eb66e9de2a9e101b66f49d6a53b11ee2" category="list-text">从列表中选择代理虚拟机所在的 vCenter、数据中心和数据存储区。</block>
+  <block id="679423ab325845a4f1b212c4c6d83db5" category="list-text">从列表中选择一个 VM 用作代理 VM。虚拟磁盘将连接到此 VM。所选代理 VM 将显示在右侧窗格中。</block>
+  <block id="f5a81b5e2c809dbce0854edbe51083cf" category="paragraph">NetApp Backup and Recovery 将虚拟磁盘连接到代理虚拟机，并显示所有文件和文件夹，包括隐藏的文件和文件夹。对于 Windows 来宾，它为每个分区（包括系统保留分区）分配一个驱动器号。</block>
+  <block id="f02fee54a71e292fba6eea93ae620b05" category="paragraph">将虚拟磁盘连接到来宾 VM 或代理 VM，并启动来宾文件还原会话。</block>
+  <block id="cc306461c288d34376cc4d746276d7cd" category="paragraph">浏览或搜索虚拟磁盘文件，并选择一个或多个要还原的文件或文件夹。</block>
+  <block id="3277407828b8713b5f9be81275930144" category="list-text">要使用代理 VM，必须配置代理 VM。</block>
+  <block id="2770d470ed8c5f3c1a3f955553de9580" category="paragraph">如果要将虚拟磁盘连接到代理 VM，必须在连接和还原操作开始之前配置代理 VM。</block>
 </blocks>
