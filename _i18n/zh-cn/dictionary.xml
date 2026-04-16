@@ -2461,12 +2461,8 @@
   <block id="22f12d99e813b34048e25ac4a5f568f3" category="section-title">删除卷的所有备份文件</block>
   <block id="a8ba6304562632a6eb4762aebfe0d175" category="paragraph">删除卷的所有备份也会禁用该卷的未来备份。</block>
   <block id="8f0a75d2d5a82f31f2cf069c3b0ee684" category="inline-image-macro">更多图标</block>
-  <block id="fac3794c7ab19ecf79400a46e7b334b1" category="list-text">在“卷”选项卡中，单击<block ref="a1d09704e1f652cf0082bca28cb44e87" category="inline-image-macro-rx" type="image"></block>对于源卷并选择*详细信息和备份列表*。</block>
   <block id="782b223a2a5766a12495d35a0f0fc4a1" category="paragraph">显示所有备份文件的列表。</block>
-  <block id="2c9220461da540ceac8b243e96929a74" category="list-text">选择*操作* &gt; *删除所有备份*。</block>
-  <block id="125aa7ed80cb288006b134021f74ae4d" category="list-text">输入卷名称。</block>
   <block id="0c7a693eba5a0f2f80ac9cdb747411a8" category="section-title">删除卷的单个备份文件</block>
-  <block id="0f077fe78e4dac585cd0607f12f1a2b3" category="paragraph">您不能删除复制的卷（数据保护卷）。</block>
   <block id="c6f11bef049f9978b6acc052d17daf5a" category="list-text">从“卷”选项卡中选择<block ref="a1d09704e1f652cf0082bca28cb44e87" category="inline-image-macro-rx" type="image"></block>对于源卷并选择*查看卷详细信息*。</block>
   <block id="f92abbb1e1dd381a84bc092e3bc1232f" category="list-text">选择“*快照*”或“*备份*”来查看要删除的备份文件类型。</block>
   <block id="8dac01775d5cf014de7509d0b8b228e4" category="list-text">选择<block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>对于要删除的卷备份文件，然后选择*删除*。</block>
@@ -2477,10 +2473,8 @@
   <block id="495f64bce7d9d754a435527baf769353" category="paragraph">仅当您的系统运行ONTAP 9.12.1 或更高版本时，此功能才可用。</block>
   <block id="1173c80b35af26bafcc4b74670bfa9c8" category="inline-link">从那里删除卷</block>
   <block id="8e219be71b8bc390ef2ad2ec3a99ccae" category="paragraph">您无法从NetApp Backup and Recovery用户界面删除源卷。但是，您可以打开控制台*系统*页面上的卷详细信息页面，然后<block ref="65a826e779230e29e5ca1795b6b89aba" category="inline-link-rx"></block>。</block>
-  <block id="ccabb5f58c34ffd48f5d3b3d41985f1a" category="admonition">一旦关系被删除，您就无法删除单个卷备份文件。但是，您可以删除该卷的所有备份。</block>
   <block id="07351083dae4540a45ff30e023e217c2" category="list-text">从“卷”选项卡中选择<block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>对于源卷，然后选择*备份*&gt;*删除关系*。</block>
   <block id="97966562c30303c0bc168db1ef4e82e6" category="section-title">停用系统的NetApp Backup and Recovery</block>
-  <block id="0f6ffb20cbd2ef0bd7c4d4ab751ef397" category="paragraph">停用系统的NetApp Backup and Recovery会禁用系统上每个卷的备份，还会禁用还原卷的功能。任何现有的备份都不会被删除。这不会从系统中取消注册备份服务 - 它基本上允许您暂停所有备份和恢复活动一段时间。</block>
   <block id="8764d766d622ae40812776b15d742a79" category="inline-xref">删除备份</block>
   <block id="150316ac807c8abc9de05ff5720178a5" category="paragraph">请注意，除非您<block ref="f0fba6094ff5354e1300b0446d643e3c" category="inline-xref-macro-rx"></block>。</block>
   <block id="a0fb50abe315f82d405a6dfa5e9af373" category="list-text">从“备份设置”页面中选择<block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>对于您想要禁用备份的系统，然后选择*停用备份*。</block>
@@ -4138,7 +4132,6 @@
   <block id="44b2c63b1441a7eef6175bc2818c45c0" category="paragraph">显示卷的详细信息和快照列表。</block>
   <block id="2e3f296276fc537735df961d32dd7d12" category="cell">暂停快照的增量传输，以更新目标卷。如果您想重新开始增量更新，可以稍后再恢复。</block>
   <block id="695fbf9213e2d5d1e929e9356fa04c37" category="paragraph">请注意，此操作不会影响快照或复制卷——这些类型的备份文件不会被删除。</block>
-  <block id="241f8ce89369b1ae16481599cd708881" category="paragraph">如果您不再需要单个备份文件，可以将其删除。这包括删除卷快照的单个备份或对象存储中的备份。</block>
   <block id="9c01aed76561204d094a863f38d38ad2" category="paragraph">显示卷的详细信息，您可以选择*快照*、*复制*或*备份*来查看该卷的所有备份文件的列表。默认情况下，会显示可用的快照。</block>
   <block id="d525060e9ad215c3aa2a00862d266e25" category="list-text">*将现有快照导出到对象存储作为备份副本*：如果此系统中存在与您刚刚为此系统选择的备份计划标签（例如，每日、每周等）匹配的卷的本地快照，则会显示此附加提示。选中此框可将所有历史快照复制到对象存储作为备份文件，以确保对您的卷进行最全面的保护。</block>
   <block id="7c5de50c41f0a8634817597808c6df4b" category="paragraph">NetApp Backup and Recovery开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括主存储系统数据的完整副本。后续传输包含快照中所含主数据的差异副本。</block>
@@ -5275,4 +5268,17 @@
   <block id="cc306461c288d34376cc4d746276d7cd" category="paragraph">浏览或搜索虚拟磁盘文件，并选择一个或多个要还原的文件或文件夹。</block>
   <block id="3277407828b8713b5f9be81275930144" category="list-text">要使用代理 VM，必须配置代理 VM。</block>
   <block id="2770d470ed8c5f3c1a3f955553de9580" category="paragraph">如果要将虚拟磁盘连接到代理 VM，必须在连接和还原操作开始之前配置代理 VM。</block>
+  <block id="af2c1f489f4f9d807eced3ce9373d494" category="admonition">删除备份关系后，无法删除单个卷备份文件。在删除卷的备份关系之前，请先删除卷的备份文件。</block>
+  <block id="cfa2bf6d634376c1523db558d932eaf5" category="list-text">从 *Volumes* 菜单中，单击源卷的 <block ref="a1d09704e1f652cf0082bca28cb44e87" category="inline-image-macro-rx" type="image"></block>，然后选择 *Manage backups &gt; View backup*。</block>
+  <block id="f74e6d79341b7e46d6c52bdcd8276a98" category="list-text">从列表中选择一个备份，然后选择 *Actions &gt; Delete all Backups*。</block>
+  <block id="4ca052e900c34762a65354caedd304de" category="list-text">通过输入卷名称确认删除。</block>
+  <block id="a8bb7b9012738cd41e48f167d1714196" category="list-text">展开 *高级设置* 区域。</block>
+  <block id="afdbab0392d56d54bcc63c43d76d3df9" category="list-text">在 *强制删除备份* 下，选择是否强制删除所有备份。</block>
+  <block id="90c8ee9391c34f8b5ae2ca133a2fcc2f" category="paragraph">在极少数情况下，您可能需要撤销 NetApp Backup and Recovery 对备份的访问权限；例如，如果 Backup and Recovery 失去对备份存储区的访问权限，或者备份受到 DataLock 保护，但您不再需要它们。使用此选项可在卷和系统级别强制删除备份。</block>
+  <block id="13f46cde2a09e7db91e4561b9c4a0cd6" category="admonition">此选项仅用于极端清理。启用后，NetApp Backup and Recovery 将不再访问这些备份（即使对象仍保留在云存储中）。您必须从云提供商手动删除它们。</block>
+  <block id="2e3d3d23fe0a12335b64a112f20e2924" category="paragraph">当不再需要单个备份时，请将其删除。您无法删除已复制卷（数据保护卷）。</block>
+  <block id="24a354b4e93e0d1659baa023a11ddcda" category="inline-xref">删除此卷的所有备份文件</block>
+  <block id="6a9a9c5f060efdfcbe5e8180b067f48a" category="admonition">删除备份关系后，无法删除单个卷备份文件。但是，您可以<block ref="3808038aea69a954ce325a28d1d98875" category="inline-xref-macro-rx"></block>。</block>
+  <block id="a251d9e6fa7397f3631b218bdece2a5c" category="admonition">删除备份关系后，无法删除单个卷备份文件。但是，可以<block ref="3808038aea69a954ce325a28d1d98875" category="inline-xref-macro-rx"></block>。如果需要删除卷的备份关系，请确保首先删除卷的备份，然后删除备份关系。</block>
+  <block id="015c04742dc48d5005ee2eea17467386" category="paragraph">停用系统的 NetApp Backup and Recovery 会暂停其所有卷的备份和还原，而不会删除现有备份。这使您能够在一段时间内暂停所有备份和还原活动，而无需从此系统注销备份服务。</block>
 </blocks>
