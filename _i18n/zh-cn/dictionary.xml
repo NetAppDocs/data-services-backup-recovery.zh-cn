@@ -4555,7 +4555,6 @@
   <block id="40a9530583ad3747ca30675858b0a6cd" category="list-text">有关 AWS 资源凭据的详细信息，请参见<block ref="101809cc7793764f39e2d5fc223ea04c" category="inline-link-rx"></block>。</block>
   <block id="40a81a4873df306bd0d241dc6c5f81ba" category="admonition">此处创建的模板仅在保护 Kubernetes 工作负载时可用。</block>
   <block id="782b4a6bf31d7d564f002ed80e56a970" category="doc">Data Mover 超时标记</block>
-  <block id="2cf4114566459ea3b3a5ac507cb86fd9" category="paragraph">在备份和还原操作期间，您可以使用注释<block ref="f49fa3f76b2a4fcdf04dff369d417d84" prefix=" " category="inline-code"></block>来配置数据移动操作的超时。此注释指定数据移动器在超时之前应等待特定操作完成的最长时间（以秒为单位）。在网络问题或其他因素可能导致数据移动操作停止的情况下，它特别有用。它有助于检测和处理停滞的操作，而不是为整个过程设置一般超时。例如，如果由于网络问题而无法恢复卷数据，则操作将根据指定的持续时间超时。</block>
   <block id="c2b7f24f4ddbaedb4e3d9e19f77eebac" category="paragraph">您可以在 YAML 文件中使用此注释，如下所示：</block>
   <block id="14a0e26cbe187a4754f8b523ffba6073" category="paragraph">在此示例中，如果还原操作在 2 秒内未发生任何进度，则注释将使<block ref="ec2a2895b09b6030ec8cc1b3c43ddc4d" prefix=" " category="inline-code"></block>操作失败。</block>
   <block id="c49aaf233c16f1193a8d683c17866eea" category="admonition">如果批注值小于或等于 0，则操作将立即失败。</block>
@@ -4570,14 +4569,9 @@
   <block id="acb14ba5b70eb330a1d4de9c6b7a325d" category="inline-link-macro">配置虚拟化</block>
   <block id="5ea5c247812e1dca5ff02ca853f05032" category="paragraph">您可以通过 <block ref="e0dd4c4b8aa16596df6c3f5cb36d3cdc" category="inline-link-macro-rx"></block> 配置 Trident Protect 24.10 来管理数据保护操作期间虚拟机文件系统的冻结和解冻，然后使用以下命令：</block>
   <block id="cedf2576eebff15fc6b30d5a7109eb6b" category="doc">还原和故障转移操作期间的命名空间注释和标签</block>
-  <block id="131ff34387be167411ffda7d60b577e7" category="paragraph">在恢复和故障转移操作期间，目标命名空间中的标签和注释将与源命名空间中的标签和注释匹配。将添加目标命名空间中不存在的源命名空间中的标签或注释，并覆盖已存在的任何标签或注释，以匹配源命名空间中的值。仅存在于目标命名空间上的标签或注释保持不变。</block>
   <block id="20f40e0b9308901dac07ce8a8efb3350" category="inline-link-macro">OpenShift 安全上下文约束文档</block>
-  <block id="80aabc2f42a52376f3d884d3b02360f4" category="admonition">如果使用 Red Hat OpenShift，请务必注意命名空间注释在 OpenShift 环境中的关键作用。命名空间注释可确保还原的 Pod 遵守 OpenShift 安全上下文约束 (SCC) 定义的适当权限和安全配置，并且可以访问卷而不会出现权限问题。有关详细信息，请参见 <block ref="842acfa178c0bbf09e368bf9db0716b8" category="inline-link-macro-rx"></block>。</block>
-  <block id="6c83555d4261acb08ebbc5f24823dc7b" category="paragraph">在执行还原或故障转移操作之前，可以通过设置 Kubernetes 环境变量<block ref="1580ff61f204e9d56cd5324c7e9221ba" prefix=" " category="inline-code"></block>来防止目标命名空间中的特定注释被覆盖。例如：</block>
   <block id="59f713e31282fe744caf06335d891f9a" category="inline-link-macro">配置其他 Trident Protect helm 图表设置</block>
-  <block id="d65eac563b898cb7e41b8853a4fe1a3c" category="paragraph">如果使用带有 <block ref="cc1f5c1d16e33b8463c9ee27295cd5df" prefix=" " category="inline-code"></block> 标志的 Helm 安装源应用程序，则会对 <block ref="b068931cc450442b63f5b3d276ea4297" prefix=" " category="inline-code"></block> 标签键进行特殊处理。在还原或故障转移过程中，Trident Protect 会将此标签复制到目标命名空间，但如果来自源的值与源命名空间匹配，则将值更新为目标命名空间值。如果此值与源命名空间不匹配，则将其复制到目标命名空间，不进行任何更改。</block>
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="section-title">示例</block>
-  <block id="1280c48f074ec68fd2281266662c9a3f" category="paragraph">以下示例显示了源和目标命名空间，每个命名空间都有不同的注释和标签。您可以查看操作之前和之后的目标命名空间的状态，以及如何在目标命名空间中组合或覆盖注释和标签。</block>
   <block id="2cfe257f724ed59a07ab01918c828fb5" category="section-title">还原或故障转移操作之前</block>
   <block id="c972cd959174c84d137520d91c011446" category="paragraph">下表显示了还原或故障转移操作之前的示例源和目标命名空间的状态：</block>
   <block id="b3ba0fe968ce39dcfc6fe8cc0f1b02da" category="cell">命名空间</block>
@@ -5243,7 +5237,6 @@
   <block id="13805175d1bc9d9656654bec32406f98" category="admonition">Backup and Recovery 不会为创建时间戳与同一卷的另一个快照完全匹配的任何快照编制索引。</block>
   <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">2026 年 4 月 13 日</block>
   <block id="462fcd2b84c5fc16f3d89522a2068baa" category="sidebar">文件和文件夹恢复故障排除</block>
-  <block id="44c66f240c569e9a6734099280701e88" category="admonition">执行还原或故障切换操作时，在<block ref="22416353aff9ef4322e1ee858f418ae4" prefix=" " category="inline-code"></block>和<block ref="8028cf835d9b72ff2d6f835934c25568" prefix=" " category="inline-code"></block>中指定的任何命名空间批注和标签都将从还原或故障切换操作中排除。确保在初始 Helm 安装过程中配置了这些设置。要了解更多信息，请参阅<block ref="b9fc3066a0a1e2a32e2c8ea860fac505" category="inline-link-rx"></block>。</block>
   <block id="12dc36f8332118bd4fe7f1b4633c0a17" category="list-text">*还原文件和文件夹时支持代理 VM* - 当您不希望将虚拟磁盘附加到原始 VM 时，现在可以使用代理 VM 从虚拟磁盘还原文件和文件夹。有关详细信息，请参阅<block ref="d14b743b42535a5def60386aae0617f3" category="inline-link-rx"></block>。</block>
   <block id="ddd4881e88c799f792de41fafe0a11d7" category="list-text">*递归文件和文件夹搜索* - 您现在可以搜索整个虚拟磁盘以查找特定文件或文件夹。有关详细信息，请参阅<block ref="d14b743b42535a5def60386aae0617f3" category="inline-link-rx"></block>。</block>
   <block id="d07a2c33b1ba6b58e2a1a775e9fc5aa7" category="doc">从虚拟磁盘还原文件和文件夹</block>
@@ -5281,4 +5274,16 @@
   <block id="6a9a9c5f060efdfcbe5e8180b067f48a" category="admonition">删除备份关系后，无法删除单个卷备份文件。但是，您可以<block ref="3808038aea69a954ce325a28d1d98875" category="inline-xref-macro-rx"></block>。</block>
   <block id="a251d9e6fa7397f3631b218bdece2a5c" category="admonition">删除备份关系后，无法删除单个卷备份文件。但是，可以<block ref="3808038aea69a954ce325a28d1d98875" category="inline-xref-macro-rx"></block>。如果需要删除卷的备份关系，请确保首先删除卷的备份，然后删除备份关系。</block>
   <block id="015c04742dc48d5005ee2eea17467386" category="paragraph">停用系统的 NetApp Backup and Recovery 会暂停其所有卷的备份和还原，而不会删除现有备份。这使您能够在一段时间内暂停所有备份和还原活动，而无需从此系统注销备份服务。</block>
+  <block id="ac702e35e5d377649ce818c63f8cb9d6" category="paragraph">使用注释<block ref="f49fa3f76b2a4fcdf04dff369d417d84" prefix=" " category="inline-code"></block>在备份和还原期间设置每个操作的数据移动器超时(秒)。它指定数据移动器在超时之前等待操作取得进展的时间。这对于检测和处理停滞的传输（例如，当网络问题阻止卷数据还原进度时）非常有用。</block>
+  <block id="aaaf3fb2db80e20e6d50218f16d99f4f" category="paragraph">在还原和故障转移期间，将更新目标命名空间标签和注释以匹配源：源中的密钥将添加到目标密钥或覆盖目标密钥，而仅存在于目标中的密钥将保持不变。</block>
+  <block id="a0c960e39999d3e07d43b18aadea4f7e" category="admonition">在 Red Hat OpenShift 中，命名空间注释很重要，因为它们确保还原的 Pod 收到正确的安全上下文约束和权限，使它们能够访问卷并在没有权限错误的情况下运行。有关详细信息，请参见 <block ref="842acfa178c0bbf09e368bf9db0716b8" category="inline-link-macro-rx"></block>。</block>
+  <block id="96cd9f82d7fe1a044069b8c1e88870d3" category="paragraph">设置 Kubernetes 环境变量</block>
+  <block id="6e18bf7adc407522d3adc14c25f83f28" category="paragraph">在恢复或故障切换之前，以防止覆盖特定的目标命名空间注释。例如：</block>
+  <block id="67f7d0d1a6c01cbe0e09404d53ae8fac" category="admonition">在还原或故障切换期间，在<block ref="22416353aff9ef4322e1ee858f418ae4" prefix=" " category="inline-code"></block>和<block ref="8028cf835d9b72ff2d6f835934c25568" prefix=" " category="inline-code"></block>中指定的任何命名空间注释和标签将从还原或故障切换操作中排除。确保在初始 Helm 安装过程中配置了这些设置。要了解更多信息，请参阅<block ref="b9fc3066a0a1e2a32e2c8ea860fac505" category="inline-link-rx"></block>。</block>
+  <block id="3e3fc64dca0b9c44d365fc5635e23463" category="paragraph">如果您使用带有<block ref="cc1f5c1d16e33b8463c9ee27295cd5df" prefix=" " category="inline-code"></block>标志的 Helm 来安装源应用程序，Trident Protect 会将名称标签复制到目标命名空间。如果标签值与源命名空间名称匹配，则替换为目标命名空间名称；如果不匹配，则保持原样。</block>
+  <block id="5ac7bbd26db92893a2f8bcca7d6084a4" category="paragraph">以下示例显示了具有不同标签和注释的源和目标命名空间，并显示了操作之前和之后的目标命名空间，以说明键是如何添加、合并或覆盖的。</block>
+  <block id="c7ac12b44e81f24dcab5d6e8675df0a1" category="paragraph">在此版本中，VMware 工作负载引入了以下增强功能：</block>
+  <block id="4f06e500210ecec059ecf486106df9e6" category="list-text">*ASA r2 SAN 支持*：VMware 工作负载现在支持保护由 NetApp ASA r2 SAN 专用环境托管的 VMFS 数据存储上的 VM。</block>
+  <block id="fe6a65d4e5dee2ab8e25b78186c2fa25" category="list-text">ASA r2 仅限 SAN 系统（需要 ONTAP 9.17.1 或更高版本）</block>
+  <block id="6dba6d956d3e495df0c0575cd1b23218" category="section-title">2026 年 4 月 20 日</block>
 </blocks>
