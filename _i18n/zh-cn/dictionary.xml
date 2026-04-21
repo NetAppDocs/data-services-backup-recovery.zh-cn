@@ -4338,7 +4338,6 @@
   <block id="683c401da81ee8eab953d27954a799cf" category="paragraph">所有ONTAP系统都已内置对备份和恢复的支持，因此无需额外的硬件、软件许可证或媒体网关。这使得备份操作变得简单且经济高效。NetApp Console简化了任何备份策略的实施，包括所有 3-2-1 备份变体，而无需多个资源管理器或专业人员。</block>
   <block id="1da151060a18e6460ac3d7eb0f913a37" category="paragraph">备份和恢复服务有三种付费方式：</block>
   <block id="6fa5c823869ff5f58a4f5dcaaa68d86d" category="list-text">第二种选择是购买年度合同。</block>
-  <block id="41bda454559167e0de7967190676c8d0" category="list-text">第三种选择是直接从NetApp购买许可证。请参阅 <block ref="b839456cc57645a9392f4db60a4f044a" category="inline-xref-macro-rx"></block> 详情请见相关章节。</block>
   <block id="6f2ce7f1231e53c03d29e2df6055acf0" category="paragraph">对于ONTAP卷工作负载，您只需为受对象存储保护的卷付费。费用是根据源ONTAP卷在应用效率之前所使用的逻辑容量计算的，也称为前端 TB（FETB）。</block>
   <block id="2e122fa1e06865f6dee3fd6d67ea1488" category="paragraph">对于所有其他工作负载，您需要为至少保护到一个辅助存储目标或对象存储目标的资源付费。费用是根据源工作负载的逻辑大小计算的。对于数据库而言，这意味着数据库的大小；对于虚拟机而言，这意味着虚拟机的大小。</block>
   <block id="0d3a443ca8a1a321c3c002699cfc04c3" category="section-title">支持的工作负载、系统和备份目标</block>
@@ -4923,7 +4922,6 @@
   <block id="5c4a8ce913e27612e0af180d6ef12ee6" category="list-text">Hyper-V 工作负载</block>
   <block id="49396edcdc3d3d7e4bec42adc037a5ef" category="list-text">Kubernetes 工作负载</block>
   <block id="2432a396f38937322a4e606bf0aa7f0a" category="list-text">Microsoft Azure Blob（不适用于 VMware 工作负载）</block>
-  <block id="ab95f28db65589c3a2b5f277f324e60b" category="list-text">ONTAP S3（不适用于 VMware 工作负载）</block>
   <block id="1d57820923cf47d0bb8ab74db80344ab" category="list-text">使用 ONTAP 9.15.1，您可以使用"浏览和还原"选项还原 FlexGroup 文件夹。</block>
   <block id="5bc860fb25e08cbdf4fb6e1eb9fa16c9" category="paragraph">发现 Oracle 数据库使 NetApp Backup and Recovery 能够通过创建和恢复备份和快照来保护它们。</block>
   <block id="e82e6b5a702d1fc223d9ea698359376e" category="section-title">添加 Oracle 数据库主机并发现资源</block>
@@ -5286,4 +5284,8 @@
   <block id="fe6a65d4e5dee2ab8e25b78186c2fa25" category="list-text">ASA r2 仅限 SAN 系统（需要 ONTAP 9.17.1 或更高版本）</block>
   <block id="6dba6d956d3e495df0c0575cd1b23218" category="section-title">2026 年 4 月 20 日</block>
   <block id="15c76b732e7da21111f18374ed2e9ae6" category="list-text">*metadata.annotations.protect.trident.netapp.io/skip-vm-freeze*：（_Optional_）此注释仅适用于从虚拟机定义的应用程序，例如在 KubeVirt 环境中，在快照之前会发生文件系统冻结。指定此应用程序是否可以在快照期间写入文件系统。如果设置为 true，应用程序将忽略全局设置，并且可以在快照期间写入文件系统。如果设置为 false，应用程序将忽略全局设置，并在快照期间冻结文件系统。如果指定，但应用程序在应用程序定义中没有虚拟机，则忽略注释。如果未指定，则应用程序遵循<block ref="3047941e3fa7c2760a995edc5fae820b" category="inline-link-rx"></block>。</block>
+  <block id="238d7a2bebc2cf898422ec1dbda4a73b" category="paragraph">工作负载是系统内资源的逻辑分组，作为一个单位管理，用于保护、治理、检测和恢复。在 Backup and Recovery 中，工作负载是您保护的单位。其含义取决于数据源：对于 Kubernetes，工作负载是一个应用程序，对于 VM 环境，它是一个虚拟机，对于数据库环境，它是一个数据库。</block>
+  <block id="eb0aff97ddec7b6894c0ea9cc7a6b66c" category="list-text">在 Google Cloud 中，将部署一个新的存储桶，并在帐户/项目级别配置<block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block>。</block>
+  <block id="3addfc338787d5dc6d9709962161e00d" category="list-text">第三种选择是直接从 NetApp 购买许可证。请参见 <block ref="ba0ccbd18ea5b5cc8b06635e1ea19aa1" category="inline-xref-macro-rx"></block> 一节了解详细信息。</block>
+  <block id="09e249805f01ac51656bbbc88c3f5e37" category="list-text">ONTAP S3（不适用于 VMware 工作负载）</block>
 </blocks>
