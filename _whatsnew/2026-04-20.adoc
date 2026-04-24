@@ -8,7 +8,6 @@
 
 在此版本中，VMware 工作负载引入了以下增强功能：
 
-* *ASA r2 SAN 支持*：VMware 工作负载现在支持保护由 NetApp ASA r2 SAN 专用环境托管的 VMFS 数据存储上的 VM。
-
+*ASA r2 SAN 支持*：VMware 工作负载现在支持保护由 NetApp ASA r2 SAN 专用环境托管的 VMFS 数据存储上的 VM。
 
 有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。

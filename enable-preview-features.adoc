@@ -1,0 +1,181 @@
+---
+sidebar: sidebar 
+permalink: enable-preview-features.html 
+keywords: preview features, preview, Backup and Recovery, configuration, NetApp Backup and Recovery 
+summary: 启用 NetApp Backup and Recovery 的预览和隐藏功能。 
+---
+= 启用 NetApp Backup and Recovery 的预览和隐藏功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+启用 NetApp Backup and Recovery 的预览和隐藏功能。
+
+*所需的NetApp Console角色* 备份和恢复超级管理员。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+
+
+
+== 可用预览功能
+
+您可以为 NetApp Backup and Recovery 启用以下预览功能。
+
+[cols="50,50"]
+|===
+| 功能标志 | 功能说明 
+
+
+| `"folder-restore-from-local": true` | 启用从本地 ONTAP 卷快照的文件夹级还原。默认情况下，ONTAP 仅支持从对象存储备份还原文件夹。启用此标志后，您还可以从本地和复制的快照还原整个目录。 
+
+
+| `"prioritize-restore": true` | 在 Backup and Recovery Web UI 中的还原工作流期间，使 *优先还原而非现有作业队列* 选项可选。在还原工作流期间选择此选项时，还原操作优先于其他排队的作业，因此即使在队列繁忙时也会运行。 
+|===
+
+
+== 启用预览功能
+
+启用预览功能标记选项以使用尚未正式推出的功能。在生产环境中谨慎使用预览功能。
+
+.步骤
+. 使用 SSH 登录到 Console 代理。
+. 更改为 root 用户：
++
+[source, console]
+----
+sudo su
+----
+. 在 Docker 中查找 Backup and Recovery 卷：
++
+[source, console]
+----
+docker volume ls | grep cbs
+----
++
+输出结果应与以下内容类似：
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. 查找卷的挂载点：
++
+[source, console]
+----
+docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+云部署和私有部署之间的挂载点不同。此输出示例显示了一个云部署：
+
++
+[listing]
+----
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. 更改到 docker 卷配置目录，该目录位于 mountpoint 目录中。例如：
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
+----
+. 创建一个包含以下 JSON 结构和要启用的每个功能标志的键/值对的文件。根据您的部署类型命名此文件：
++
+** 云部署： `production-customer.json`
+** 私有/暗站点部署： `darksite-customer.json`
++
+有关功能标记信息，请参阅 <<anchor-flags,可用标志>>。例如：
+
++
+[source, json]
+----
+{
+  "feature-flags": {
+    "folder-restore-from-local": true,
+    "prioritize-restore": true
+  }
+}
+----
+
+
+. 重新启动 Backup and Recovery 容器：
++
+[source, console]
+----
+docker restart cloudmanager_cbs
+----
+. 在 Web 浏览器中重新加载 Backup and Recovery UI。
++
+
+NOTE: 要禁用预览功能，请按照相同的步骤操作，但将功能标志值设置为 `false`。
+
+
+
+
+
+== 禁用属于存储 VM 的所有卷的索引
+
+按照以下步骤为属于特定存储 VM 的所有卷禁用索引，而不是为每个单独的卷禁用索引。
+
+.步骤
+. 使用 SSH 登录到 Console 代理。
+. 更改为 root 用户：
++
+[source, console]
+----
+sudo su
+----
+. 在 Docker 中查找 Backup and Recovery 卷：
++
+[source, console]
+----
+docker volume ls | grep cbs
+----
++
+输出结果应与以下内容类似：
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. 查找卷的挂载点：
++
+[source, console]
+----
+docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+云部署和私有部署之间的挂载点不同。此输出示例显示了一个云部署：
+
++
+[listing]
+----
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. 更改到 docker 卷配置目录，该目录位于 mountpoint 目录中。例如：
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
+----
+. 创建一个名为  `production-customer.json` 的文件，其中包含以下内容。将示例中的存储 VM 名称替换为您环境中的存储 VM 名称：
++
+[source, json]
+----
+{
+  "indexing": {
+    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3"
+  }
+}
+----
+. 重新启动 Backup and Recovery 索引编录容器：
++
+[source, console]
+----
+docker restart cloudmanager_cbs_catalog
+----
+
