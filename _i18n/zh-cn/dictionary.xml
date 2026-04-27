@@ -937,7 +937,6 @@
   <block id="6e32536aeb87365f67ba5a96c664e861" category="paragraph-title">恢复到这些点</block>
   <block id="4acf582ba1791858c42c901e8d64f664" category="paragraph">您可以将数据恢复到原始位置；在此私人预览版中不提供恢复到备用位置的功能。</block>
   <block id="485775104c27dcbdf8d49f22f897f823" category="paragraph-title">从对象存储中恢复的注意事项</block>
-  <block id="88e3d91fca73ce1aaac6067b9552277d" category="paragraph">如果您选择对象存储中的备份文件，并且该备份的勒索软件保护处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复），则系统会提示您在恢复数据之前对备份文件运行额外的完整性检查。我们建议您执行扫描。</block>
   <block id="fb1b557500e8d14608e76a0b93711e4c" category="admonition">您将需要向云提供商支付额外的出口费用才能访问备份文件的内容。</block>
   <block id="10f4565a78ebd1822c60902cbb077e98" category="section-title">恢复工作负载的工作原理</block>
   <block id="68976f4a60a7e436e5b5aff0b5dabf41" category="paragraph">恢复工作负载时，会发生以下情况：</block>
@@ -1401,7 +1400,6 @@
   <block id="66b1424fe6641f4697268af9ed07b5e0" category="list-text">从快照还原</block>
   <block id="c1f62c4a8bd3bfc797c0a4be8f29b273" category="list-text">恢复到最新备份</block>
   <block id="4a2c019e4f44d11b6cc64ba3161fb171" category="doc">使用NetApp Backup and Recovery恢复 Microsoft SQL Server 工作负载</block>
-  <block id="42ace45b519d448bedf9ce14d8cc4c23" category="paragraph">如果您选择对象存储中的备份文件，并且该备份的勒索软件恢复功能处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复功能），则系统会提示您在恢复数据之前对备份文件运行额外的完整性检查。我们建议您执行扫描。</block>
   <block id="52386b1f1b11ed7ab3350096c7964c69" category="list-text">当您从备份文件恢复工作负载时， NetApp Backup and Recovery会使用备份中的数据创建一个_新_资源。</block>
   <block id="b70369c3c6532f77755358e7ea82a3d2" category="inline-image-macro">显示恢复资源的流程的图表</block>
   <block id="2ce2b4590446a5b67b1664d9a59c0e14" category="paragraph"><block ref="2ce2b4590446a5b67b1664d9a59c0e14" category="inline-image-macro-rx" type="image"></block></block>
@@ -1811,7 +1809,6 @@
   <block id="82ba9e045163c7c72098c50671704351" category="list-text">在 Azure 中，<block ref="a3ff4de37e7a195a145416e9f02577ac" category="inline-link-rx"></block>和<block ref="47b506e6a2508a9b210c02fa89bbdc24" category="inline-link-rx"></block>在您的存储帐户中配置以存储和分析您的数据。</block>
   <block id="9fece9ac1c7d50fbf1a1498b93cbeb15" category="inline-link">Google Cloud BigQuery 服务</block>
   <block id="705d7d5204c001ada8d7869c065a6a70" category="list-text">如果您计划从已移动到档案对象存储的备份文件中恢复卷数据，则云提供商会收取额外的每 GiB 检索费和每请求费。</block>
-  <block id="e44d61516574d94ce56af3468723e18a" category="list-text">如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 DataLock 和勒索软件恢复功能），那么您还将产生来自云提供商的额外出口成本。</block>
   <block id="e1b4a0ddcd3124f71fd5c65649282433" category="paragraph">*服务费*</block>
   <block id="032820ef020ebdcb4972d36db7394681" category="list-text">第一个选项是从您的云提供商处订阅，这样您就可以按月付费。</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="inline-xref">许可</block>
@@ -2153,7 +2150,6 @@
   <block id="ec32f8eb7058323c02b13f59dd447a40" category="admonition">如果您选择了现有的存储桶，则加密信息已经可用，因此您现在无需输入。</block>
   <block id="2283ed1c2d2204e889a93d07486e3a8b" category="list-text">*备份策略*：选择现有的备份到对象存储策略或创建一个。</block>
   <block id="37c981be270bef0d7503a46e3ee55d35" category="admonition">要在激活备份之前创建自定义策略，请参阅<block ref="d9904d3bd7927987056edc09c02007e9" category="inline-link-macro-rx"></block>。</block>
-  <block id="72c9277e73379a7669bea5aea529fe2e" category="list-text">对于备份到对象策略，设置 DataLock 和 Ransomware Resilience 设置。有关 DataLock 和勒索软件恢复的详细信息，请参阅<block ref="7a234b4add653baca92b7b8d8c25d2af" category="inline-link-macro-rx"></block>。</block>
   <block id="1637762bf8b62862e92c5779dd292872" category="section-title">检查您的选择</block>
   <block id="6ff9dd41947ac05f6484a120fb4310b2" category="paragraph">这是审查您的选择并在必要时进行调整的机会。</block>
   <block id="5e60167ed1d8120de85b8b38a5697af4" category="list-text">在“审核”页面中，审核您的选择。</block>
@@ -2343,7 +2339,6 @@
   <block id="0b7010c12f32f5c43b68db881b80db60" category="paragraph">如果备份的 GCP 目标作为系统存在于控制台*系统*页面上，则可以将ONTAP集群拖到 GCP 对象存储上。</block>
   <block id="cc54d40dc91fd9f2adf463d5e6a20e64" category="paragraph">请注意，如果您选择的卷已经应用了快照或复制策略，那么您稍后选择的策略将覆盖这些现有策略。</block>
   <block id="1605cf9a721d88df92a0b71e1a8b76fe" category="admonition">如果您选择的卷具有与您在此步骤中选择的策略不同的快照和复制策略，则现有策略将被覆盖。</block>
-  <block id="87a6427c4107d7090d449e6c8d7aa59e" category="list-text">对于备份到对象策略，配置 Datalock 和 Ransomware Resilience。有关 Datalock 和勒索软件恢复的详细信息，请参阅<block ref="7a234b4add653baca92b7b8d8c25d2af" category="inline-link-macro-rx"></block>。</block>
   <block id="ce182ee406d8f3ee95a365ecbd21b287" category="list-text">*提供商*：选择*Google Cloud*。</block>
   <block id="da0548d3a8553d8564284dcd029706f5" category="list-text">*加密密钥*：如果您创建了新的 Google 存储桶，请输入提供商提供给您的加密密钥信息。选择是否使用默认的 Google Cloud 加密密钥，或者从您的 Google 帐户中选择您自己的客户管理密钥来管理您的数据加密。</block>
   <block id="b3aa83b2922f617a64fa1875bdb6aad9" category="admonition">如果您选择了现有的 Google Cloud 存储桶，则加密信息已经可用，因此您现在无需输入。</block>
@@ -2364,7 +2359,6 @@
   <block id="40a7b9f9f8520270d9a6a6f8c3b155e3" category="list-text">检查此卷的备份设置，然后选择*激活备份*。</block>
   <block id="617bf089a60793ed8197f15849023ab0" category="section-title">更改分配给现有卷的备份设置</block>
   <block id="6c143468a72ae48b392ccaf6bfdab3dd" category="section-title">编辑单个卷上的备份设置</block>
-  <block id="28d4180de7948c969ad2c178ab5ac2ba" category="paragraph">如果在为此集群激活NetApp Backup and Recovery时，在初始备份策略中为云备份启用了 _DataLock 和 Ransomware Resilience_，您将只会看到已使用 DataLock 配置的其他策略。如果您在激活NetApp Backup and Recovery时未启用“DataLock 和 Ransomware Resilience”，您将只会看到未配置 DataLock 的其他云备份策略。</block>
   <block id="ed3685aa06ca7db640e77339c669a75e" category="section-title">编辑多个卷上的备份设置</block>
   <block id="90d35772fb2c0d1903fd5cb179fca792" category="paragraph">如果您想在多个卷上使用相同的备份设置，您可以同时在多个卷上激活或编辑备份设置。您可以选择没有备份设置、只有快照设置、只有备份到云设置等的卷，并使用不同的备份设置对所有这些卷进行批量更改。</block>
   <block id="254b8ee80daf8cdfb1e85c4784ce11e4" category="paragraph">当使用多个卷时，所有卷必须具有以下共同特征：</block>
@@ -2388,7 +2382,6 @@
   <block id="2df585918dfe79cb1c0f8dfb403b8933" category="paragraph">您可以随时创建按需备份来捕获卷的当前状态。如果对卷进行了非常重要的更改并且您不想等待下一次计划的备份来保护该数据，这将非常有用。您还可以使用此功能为当前未备份且想要捕获其当前状态的卷创建备份。</block>
   <block id="75f0ab2aa06321fc5a92c205273b43b6" category="paragraph">备份名称包含时间戳，以便您可以从其他计划备份中识别出您的按需备份。</block>
   <block id="6ee3062ac668cf28f71bf489fd741bcd" category="inline-link-macro">了解有关 DataLock 和勒索软件保护的更多信息</block>
-  <block id="b6488996839d3ef81eaf4ab204a7cf5a" category="paragraph">如果在为此集群激活NetApp Backup and Recovery时启用了“DataLock 和 Ransomware Resilience”，则按需备份也将配置 DataLock，保留期为 30 天。临时备份不支持勒索软件扫描。<block ref="17481ecd9087b2947e2c31f934c4a716" category="inline-link-macro-rx"></block>。</block>
   <block id="34654042ecfc4226d89a0eec5901d43e" category="inline-link">了解如何使用ONTAP CLI 删除快照</block>
   <block id="4786401e865ef261720869019898fa6c" category="paragraph">当您创建临时备份时，会在源卷上创建快照。由于此快照不是正常快照计划的一部分，因此它不会旋转。备份完成后，您可能希望从源卷中手动删除此快照。这将允许释放与此快照相关的块。快照名称将以<block ref="3fbd2a9ee3863b8841029b21d6bf8e89" prefix=" " category="inline-code"></block>。<block ref="7e565776b86561f26a3208af24c76dc9" category="inline-link-rx"></block> 。</block>
   <block id="a7ddc69bf51887dfb9d3f72e57328bff" category="admonition">数据保护卷不支持按需卷备份。</block>
@@ -2400,11 +2393,9 @@
   <block id="b1cb92c2a23b4cbaa76face717d899cf" category="list-text">选择“*快照*”、“*复制*”或“*备份*”以查看每种备份类型的所有备份文件列表。</block>
   <block id="c3da5f4c5e9e366bce0761355a7a32b9" category="section-title">对对象存储中的卷备份运行勒索软件扫描</block>
   <block id="76d4ec74983530f8007b9dfb9961f585" category="paragraph">当创建目标文件备份时以及恢复备份文件中的数据时， NetApp Backup and Recovery会扫描您的备份文件以查找勒索软件攻击的证据。您还可以随时运行按需扫描，以验证对象存储中特定备份文件的可用性。如果您在特定卷上遇到勒索软件问题并且想要验证该卷的备份不受影响，这将很有用。</block>
-  <block id="cf2a8b330499d1a7ec5ed6bef1f8ed38" category="paragraph">仅当卷备份是从具有ONTAP 9.11.1 或更高版本的系统创建的，并且在备份到对象策略中启用了_DataLock 和 Ransomware Resilience_ 时，此功能才可用。</block>
   <block id="5f10de94b506d8ff164c981c019bd24a" category="paragraph">将显示该卷的详细信息。</block>
   <block id="aa132131d3096dd036d6592cccc8f815" category="list-text">选择*备份*以查看对象存储中的备份文件列表。</block>
   <block id="faaa44db37f803e5f9607b2a2e619de9" category="list-text">选择<block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>对于您想要扫描勒索软件的卷备份文件，然后单击*扫描勒索软件*。</block>
-  <block id="7fc99b18054450dcbf8338f8ee8c67db" category="paragraph">勒索软件恢复力列显示扫描正在进行中。</block>
   <block id="7ce389d951938726d9655f7501c33bfb" category="section-title">管理与源卷的复制关系</block>
   <block id="b75f2bb92b2f898b4d1052fdc12c5b0d" category="paragraph">在两个系统之间设置数据复制后，您可以管理数据复制关系。</block>
   <block id="552d9d27b17eb9bf973d8bf7569a67d7" category="list-text">从“卷”选项卡中选择<block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>对于源卷并选择*复制*选项。您可以看到所有可用的选项。</block>
@@ -2429,7 +2420,6 @@
   <block id="333d93ae30f96072d9533be9257871fc" category="paragraph">选择操作后，控制台将更新关系。</block>
   <block id="e5c31b44cc452f945aec38b328ab97da" category="section-title">编辑现有的备份到云策略</block>
   <block id="27adbc6c374272e79f9592a18fa6b31c" category="paragraph">您可以更改当前应用于系统中的卷的备份策略的属性。更改备份策略会影响所有使用该策略的现有卷。</block>
-  <block id="f84b10497d58e1c905bec8056b6bd2f3" category="list-text">如果在为此集群激活NetApp Backup and Recovery时在初始策略中启用了_DataLock 和 Ransomware Resilience_，则您编辑的任何策略都必须配置相同的 DataLock 设置（治理或合规性）。如果您在激活NetApp Backup and Recovery时未启用“DataLock 和 Ransomware Resilience”，则现在无法启用 DataLock。</block>
   <block id="393cdac7e3ba811fae25e3e3bbfa2f9e" category="list-text">在 AWS 上创建备份时，如果您在激活NetApp Backup and Recovery时在第一个备份策略中选择了 _S3 Glacier_ 或 _S3 Glacier Deep Archive_，则该层将是编辑备份策略时唯一可用的存档层。如果您在第一个备份策略中未选择存档层，那么在编辑策略时，_S3 Glacier_ 将是您唯一的存档选项。</block>
   <block id="fb74ece6972051de48e476af9e1e3b61" category="list-text">从*Volumes*选项卡中，选择*Backup Settings*。</block>
   <block id="03e9f860a103616b43466e85b0aa6489" category="list-text">在“备份设置”页面中，选择<block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>对于您想要更改策略设置的系统，然后选择*管理策略*。</block>
@@ -2443,7 +2433,6 @@
   <block id="704cbb6a4b98702a1ff1e784b08e0bc1" category="paragraph">当您为系统启用NetApp Backup and Recovery时，您最初选择的所有卷都将使用您定义的默认备份策略进行备份。如果您想为具有不同恢复点目标 (RPO) 的某些卷分配不同的备份策略，您可以为该集群创建其他策略并将这些策略分配给其他卷。</block>
   <block id="ebef09b04d71dbdf490084193f232a2f" category="inline-xref">将策略应用于该系统中的卷</block>
   <block id="49411695d7d9015ad07ddd38f74e331d" category="paragraph">如果要将新的备份策略应用到系统中的某些卷，首先需要将备份策略添加到系统中。然后你可以<block ref="e642665ab169685987c0c09bf6eca490" category="inline-xref-macro-rx"></block>。</block>
-  <block id="fce77d9eed9f09cf06c385de40bc0a13" category="list-text">如果在为此集群激活NetApp Backup and Recovery时在初始策略中启用了_DataLock 和 Ransomware Resilience_，则您创建的任何其他策略都必须使用相同的 DataLock 设置（治理或合规性）进行配置。如果您在激活NetApp Backup and Recovery时未启用“DataLock 和 Ransomware Resilience”，则无法创建使用 DataLock 的新策略。</block>
   <block id="33728a43a58c6c49f30ad0f6afe6cb1a" category="list-text">在 AWS 上创建备份时，如果您在激活NetApp Backup and Recovery时在第一个备份策略中选择了 _S3 Glacier_ 或 _S3 Glacier Deep Archive_，则该层将是该集群未来备份策略可用的唯一存档层。如果您在第一个备份策略中未选择存档层，那么_S3 Glacier_ 将是您未来策略的唯一存档选项。</block>
   <block id="32c508c6d8137a2e6d45fe3a47abfd20" category="list-text">在“备份设置”页面中，选择<block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>对于您想要添加新策略的系统，然后选择*管理策略*。</block>
   <block id="424f2e0883bc9947bd7d3e3b3a3981a1" category="list-text">从“管理策略”页面中，选择“添加新策略”。</block>
@@ -2786,10 +2775,8 @@
   <block id="08cdeb7ce64fda06111111c8fea66510" category="section-title">准备StorageGRID作为备份目标</block>
   <block id="ef58a6d55100435043d388bfdf72c624" category="paragraph">StorageGRID必须满足以下要求。查看<block ref="babf3072d9403ab5e1ffb9e4bb9a27cb" category="inline-link-rx"></block>了解更多信息。</block>
   <block id="45167bc71bd7fe459b6a35c45730024a" category="inline-link-macro">备份到对象策略选项</block>
-  <block id="dc4fb298a2d915a967ad75e9e4604270" category="paragraph">有关StorageGRID的 DataLock 和勒索软件恢复要求的详细信息，请参阅<block ref="bbc9f622da531392bbcdbdc340d647a2" category="inline-link-macro-rx"></block>。</block>
   <block id="793640ee72b7150dff71a288a821c67c" category="list-text">支持的StorageGRID版本</block>
   <block id="8a456872aea50fd247449bd552854586" category="list-text">支持StorageGRID 10.3 及更高版本。</block>
-  <block id="fa622700003f81750a23f422e28a7076" category="paragraph">要使用 DataLock 和 Ransomware Resilience 进行备份，您的StorageGRID系统必须运行 11.6.0.3 或更高版本。</block>
   <block id="a3c3d46eb7dece1ea66293e26e27c747" category="paragraph">要将旧备份分层到云档案存储，您的StorageGRID系统必须运行 11.3 或更高版本。此外，您的StorageGRID系统必须在控制台*系统*页面上被发现。</block>
   <block id="de84af939f41492b1264ce8c3df573a9" category="paragraph">对于用户档案存储，需要管理节点 IP 访问。</block>
   <block id="a99287c7990930f58a55c1e2dba88d64" category="paragraph">始终需要网关 IP 访问。</block>
@@ -2838,7 +2825,6 @@
   <block id="cde236f353f324c0446bb3b8cfb426fc" category="list-text">*网络*：选择要备份的卷所在的ONTAP集群中的 IP 空间。此 IP 空间的集群间 LIF 必须具有出站互联网访问权限（当控制台代理安装在“暗站”中时不需要）。</block>
   <block id="7f62bdecf08bb9ff2fd358b915cc37e0" category="admonition">选择正确的 IP 空间可确保NetApp Backup and Recovery可以建立从ONTAP到StorageGRID对象存储的连接。</block>
   <block id="29ec9eea05a4e021ec0af54e27e66224" category="list-text">*备份策略*：选择现有的备份到对象存储策略或创建一个。</block>
-  <block id="8c306f494c349b42fe04266c23f46cd1" category="paragraph">如果您的集群使用的是ONTAP 9.11.1 或更高版本，您可以选择通过配置“DataLock”和“Ransomware Resilience”来保护您的备份免遭删除和勒索软件攻击。  _DataLock_ 保护您的备份文件不被修改或删除，而 _Ransomware Resilience_ 会扫描您的备份文件以查找备份文件中勒索软件攻击的证据。</block>
   <block id="b1e78dfdd8adc3005cff56ffd24b2af1" category="inline-xref">了解如何配置您的系统以实现此功能</block>
   <block id="43f4c1811765abf291168aea7f16a205" category="paragraph">如果您的集群使用的是ONTAP 9.12.1 或更高版本，并且您的StorageGRID系统使用的是 11.4 或更高版本，您可以选择在一定天数后将旧备份分层到公共云存档层。当前支持 AWS S3 Glacier/S3 Glacier Deep Archive 或 Azure Archive 存储层。<block ref="bf8884094e353a761ed88341de6eaf54" category="inline-xref-macro-rx"></block>。</block>
   <block id="1f56b8f69150cdfb9829cf942c51a8d3" category="list-text">*分层备份到公共云*：选择您想要分层备份的云提供商并输入提供商详细信息。</block>
@@ -3013,8 +2999,6 @@
   <block id="69ef3b07789885abe39838d3bdd565ae" category="list-text">在高级设置页面中，展开*年度快照删除*部分。</block>
   <block id="906f0c83e11579cff84ef8bb2602e8ee" category="list-text">选择“*禁用*”以在源系统上保留年度快照。</block>
   <block id="32a5c26baa0363b9a3a4a05896b16fd9" category="section-title">启用或禁用勒索软件扫描</block>
-  <block id="4451065c28f2079aa69e4b099c64d39a" category="inline-link-macro">DataLock 和勒索软件恢复选项</block>
-  <block id="653a7bec9106146215db26707b6bc097" category="paragraph">有关 DataLock 和勒索软件恢复选项的详细信息，请参阅<block ref="9598f959fcd7486a6e0c3ffa9bbb6de9" category="inline-link-macro-rx"></block>。</block>
   <block id="823af9cc6541e49164fb4b1c88f90a63" category="paragraph">您可以将该计划更改为几天或几周，或者禁用它，以节省成本。</block>
   <block id="c000460328529e6cc52a2a89e3a697dc" category="admonition">根据云提供商的不同，启用勒索软件扫描将产生额外费用。</block>
   <block id="753626f8e1f5bd64d141de3a2128da9a" category="paragraph">如果禁用计划的勒索软件扫描，您仍然可以执行按需扫描，并且恢复操作期间的扫描仍会发生。</block>
@@ -3043,7 +3027,6 @@
   <block id="182fb5e3aa2936674fedf15788f2264b" category="paragraph">年度备份在传输到对象存储后会自动从源系统中删除。可以在系统的高级设置页面中更改此默认行为。</block>
   <block id="051658be4ba182ab30138c3d0fa07f2b" category="section-title">DataLock 和勒索软件保护选项</block>
   <block id="7dc66b1cfd01d4c00dc9fb5720da9bd7" category="paragraph">NetApp Backup and Recovery为您的卷备份提供 DataLock 和勒索软件保护支持。这些功能使您能够锁定备份文件并对其进行扫描以检测备份文件上可能存在的勒索软件。这是一个可选设置，当您想为集群的卷备份提供额外保护时，可以在备份策略中定义它。</block>
-  <block id="9e66cd34efdf210b196fd63e7561d89b" category="paragraph">这两个功能都可以保护您的备份文件，以便在您的备份遭受勒索软件攻击时，您始终拥有一个有效的备份文件来恢复数据。满足某些监管要求也很有帮助，在这些要求中，备份需要被锁定并保留一段时间。启用 DataLock 和勒索软件恢复选项后，作为NetApp Backup and Recovery激活的一部分配置的云存储桶将启用对象锁定和对象版本控制。</block>
   <block id="86fef274eb09e789513af0922e579b5a" category="inline-link">ONTAP提供的反勒索软件保护</block>
   <block id="ff76fcf5a77bc3d2d6fcc0bc89e691e8" category="paragraph">此功能不为您的源卷提供保护；仅为这些源卷的备份提供保护。使用一些<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block>保护您的源卷。</block>
   <block id="9d6ba5ad698127fccb9f60a35f6f12bc" category="list-text">如果您计划使用 DataLock 和勒索软件保护，则可以在创建第一个备份策略并为该集群激活NetApp Backup and Recovery时启用它。您可以稍后使用NetApp Backup and Recovery高级设置启用或禁用勒索软件扫描。</block>
@@ -3071,11 +3054,7 @@
   <block id="b31b5b22923a2871f33f5a4b77d6be83" category="paragraph">DataLock 保留设置将覆盖备份策略中的策略保留设置。这可能会影响您的存储成本，因为您的备份文件将在对象存储中保存更长时间。</block>
   <block id="010f0e105bcb6f73ab6c815fef84dd1c" category="section-title">启用 DataLock 和勒索软件保护</block>
   <block id="9f2f26447f0350dee8acbf4adae7b4e0" category="paragraph">您可以在创建策略时启用 DataLock 和勒索软件保护。创建策略后，您无法启用、修改或禁用此功能。</block>
-  <block id="96c619118e08abc143b6b640fdb4e7f2" category="list-text">创建策略时，展开“DataLock 和勒索软件弹性”部分。</block>
   <block id="a7a08622ee5c8019b57354b99b7693b2" category="list-text">选择下列选项之一：</block>
-  <block id="3f15918939b0d7ada1ed6774a4499a87" category="list-text">*无*：DataLock 保护和勒索软件恢复功能已禁用。</block>
-  <block id="7acb96413bf2eea8adc563517b923bc2" category="list-text">*已解锁*：DataLock 保护和勒索软件恢复功能已启用。具有特定权限的用户可以在保留期内覆盖或删除受保护的备份文件。</block>
-  <block id="d984b99ff22b79acc66b9407e7e42ff0" category="list-text">*已锁定*：DataLock 保护和勒索软件恢复功能已启用。在保留期内，任何用户都不能覆盖或删除受保护的备份文件。这满足了完全的监管合规性。</block>
   <block id="76b58aa0d11cd1d400e558a828802ece" category="inline-link-macro">如何在“高级设置”页面中更新勒索软件防护选项</block>
   <block id="889bdea355a306913d8f15b2cc991732" category="paragraph">参考<block ref="e041470535c4f2089ff7e958a066947f" category="inline-link-macro-rx"></block>。</block>
   <block id="57f10edfffe2adcbce7ee7a76dc7702f" category="section-title">什么是勒索软件保护</block>
@@ -3191,7 +3170,6 @@
   <block id="72d6d7225fde1dafbc05317df9f5b442" category="paragraph">*不同备份方法的比较*</block>
   <block id="8d4622541c56b47641b741cdbe4f8ddf" category="paragraph">下表显示了三种备份方法的总体比较。虽然对象存储空间通常比本地磁盘存储便宜，但如果您认为您可能会频繁从云中恢复数据，那么云提供商的出口费用可能会减少您的一些节省。您需要确定需要多久从云中的备份文件中恢复数据。</block>
   <block id="15d3cc7c4c3352d19d2b3b84f9c0fc46" category="inline-link-macro">了解有关 DataLock 和勒索软件保护以及档案存储设置的更多信息</block>
-  <block id="e69519c6174a5664192ef13628b25053" category="paragraph">除了此标准之外，如果您使用 DataLock 和勒索软件恢复功能，云存储还可以提供额外的安全选项，并且通过为旧备份文件选择存档存储类可以节省额外的成本。<block ref="0c861116d28daa1fe6085df5c3fb8bde" category="inline-link-macro-rx"></block>。</block>
   <block id="ddb99ca7cced831bad7ef70c4a866fbf" category="cell">备份速度</block>
   <block id="e1cc17541eaf2c504e414ddff25f2eab" category="cell">备份成本</block>
   <block id="ffe53eb9663918ea5038c796f2cb2f26" category="cell">恢复速度</block>
@@ -3365,7 +3343,6 @@
   <block id="9b228e8142c1f49c9a7b1365505bc5d5" category="paragraph">使用NetApp Backup and Recovery与ONTAP系统相关的成本有两种：资源费用和服务费用。这两项费用均针对服务的对象部分备份。</block>
   <block id="dd49bc28723be22ffdd3f04630c122df" category="paragraph">由于NetApp Backup and Recovery保留了源卷的存储效率，因此您需要向云提供商对象存储支付ONTAP效率之后的数据费用（针对应用重复数据删除和压缩后的较少量的数据）。</block>
   <block id="fedaab8c05c476a14c09d3ad41bf9a22" category="list-text">在 Google 中，部署了一个新的存储桶，并且<block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block>在帐户/项目级别进行配置。</block>
-  <block id="1cd41d0d05820bca7b344cb3376a61e1" category="list-text">如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您已为云备份启用了 DataLock 和勒索软件恢复功能），那么您还将产生来自云提供商的额外出口成本。</block>
   <block id="060b6e252a88502e803f6fdc3115b5d9" category="paragraph">服务费用支付给NetApp ，涵盖创建对象存储备份的成本以及从这些备份中恢复卷或文件的成本。您只需为对象存储中保护的数据付费，该费用按备份到对象存储的ONTAP卷的源逻辑使用容量（ ONTAP效率之前）计算。此容量也称为前端兆字节 (FETB)。</block>
   <block id="e71616090dfab7da8f9d13556cae146a" category="paragraph">有三种方式可以支付备份服务费用。第一个选项是从您的云提供商处订阅，这样您就可以按月付费。第二种选择是签订年度合同。第三种选择是直接从NetApp购买许可证。</block>
   <block id="38692e39e588de5b1294ee4cca656080" category="list-text">*BYOL*：从NetApp购买的许可证，可与任何云提供商一起使用。</block>
@@ -3401,7 +3378,6 @@
   <block id="27f4e7945442348457ec28cf1aa6eefd" category="paragraph">一旦达到某个类别或间隔的最大备份数量，较旧的备份就会被删除，以便您始终拥有最新的备份（因此过时的备份不会继续占用空间）。</block>
   <block id="c1855e2778d4090a158417283de29dbc" category="admonition">数据保护卷备份的保留期与源SnapMirror关系中定义的保留期相同。如果您愿意，可以使用 API 来更改此设置。</block>
   <block id="01ec9d3adb6b85775aeeda0d6d533e54" category="section-title">备份文件保护设置</block>
-  <block id="03159d4daf48846363441f62acc89b17" category="paragraph">如果您的集群使用ONTAP 9.11.1 或更高版本，您可以保护对象存储中的备份免遭删除和勒索软件攻击。每个备份策略都为_DataLock 和 Ransomware Resilience_ 提供了一个部分，可以在特定时间段（即_保留期_）内应用于您的备份文件。</block>
   <block id="8756c7c925830c8c39d9804961d7d40b" category="list-text">_DataLock_ 保护您的备份文件不被修改或删除。</block>
   <block id="c73b2d161daabc3a9a53d6dd0c4df263" category="list-text">_勒索软件保护_会在创建备份文件时以及恢复备份文件中的数据时扫描您的备份文件以查找勒索软件攻击的证据。</block>
   <block id="78505512ebd89d20931322ac265d9153" category="paragraph">备份保留期与备份计划保留期相同，再加上最多 31 天的缓冲期。例如，每周备份保留 5 份副本，每个备份文件将锁定 5 周。每月备份保留 6 份副本，每个备份文件将锁定 6 个月。</block>
@@ -3486,7 +3462,6 @@
   <block id="97df4568ca8321a997d9ed32ea75ab0a" category="list-text">选择“*恢复*”选项卡，将显示“恢复仪表板”。</block>
   <block id="00e49e17372cc54391186a012dcec566" category="list-text">从“浏览和恢复”部分，选择“恢复卷”。</block>
   <block id="7eccde2a14cd84f78dde1af09cf04af9" category="list-text">在“选择源”页面中，导航到要恢复的卷的备份文件。选择具有要恢复的日期/时间戳的*系统*、*卷*和*备份*文件。</block>
-  <block id="2dbe24936b99777ea029c253c6887625" category="paragraph">请注意，如果您选择对象存储中的备份文件，并且该备份的勒索软件恢复功能处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复功能），则系统会提示您在恢复数据之前对备份文件运行额外的勒索软件扫描。我们建议您扫描备份文件以查找勒索软件。  （您将需要向云提供商支付额外的出口成本才能访问备份文件的内容。）</block>
   <block id="ec4f513ca338429ab9e381b2d0283d04" category="list-text">在“选择目标”页面中，选择要恢复卷的*系统*。</block>
   <block id="4f77ec7cb4d938e815d515d86daf431e" category="list-text">从对象存储还原备份文件时，如果您选择本地ONTAP系统并且尚未配置与对象存储的集群连接，系统将提示您输入其他信息：</block>
   <block id="8e494bd03a27f49a3a42559fa89f035a" category="list-text">从 Amazon S3 还原时，选择ONTAP集群中目标卷所在的 IP 空间，输入您创建的用户的访问密钥和密钥，以授予ONTAP集群对 S3 存储桶的访问权限，并可选择选择私有 VPC 端点以进行安全数据传输。</block>
@@ -3524,7 +3499,6 @@
   <block id="a4d28c95dc9a398dc52d0e10b7e6526a" category="list-text">选择“*下一步*”，将显示卷备份中的文件夹和文件列表。</block>
   <block id="cbb08f72335795850ccfc691c171d12b" category="paragraph">如果您要从位于档案存储层的备份文件还原文件夹或文件，则可以选择还原优先级。</block>
   <block id="85a7bc53afc77150588eb7e96fff336f" category="paragraph"><block ref="ee2d4c64a4d42f71a3357c6cd2b7b94b" category="inline-link-macro-rx"></block>。<block ref="bf09a0f29ffa1dc0ee63da51e58f16ef" category="inline-link-macro-rx"></block>。<block ref="9220ac6939e2eccbf843225c6d0eb5f6" category="inline-link-macro-rx"></block>。Google Archive 存储层中的备份文件几乎可以立即恢复，并且不需要恢复优先级。</block>
-  <block id="f6c5eba49b66c3e5c7068b19b8b149fe" category="paragraph">如果备份文件的勒索软件恢复功能处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件恢复功能），则会提示您在恢复数据之前对备份文件运行额外的勒索软件扫描。我们建议您扫描备份文件以查找勒索软件。  （您将需要向云提供商支付额外的出口成本才能访问备份文件的内容。）</block>
   <block id="fa7edcf4876f70f9cdbd4ded39683873" category="list-text">在“选择项目”页面中，选择要恢复的文件夹或文件，然后选择“继续”。为了帮助您找到该物品：</block>
   <block id="7a08363d26933e1e3210eaeb8dcd46e6" category="list-text">如果看到文件夹或文件名，您可以选择它。</block>
   <block id="660646010d4764a96991255190b6923f" category="list-text">您可以选择搜索图标并输入文件夹或文件的名称以直接导航到该项目。</block>
@@ -3975,7 +3949,6 @@
   <block id="a08a1e6a1f964b7941dd14205238bfcb" category="paragraph">立即备份您的数据以立即保护它。</block>
   <block id="b4ae20208d5c757b694d673276341786" category="paragraph">恢复数据库以保护您的数据。</block>
   <block id="3f6fab6bedfff19150a3d6ab054b0391" category="paragraph">您现在可以备份您的 Microsoft SQL Server 实例和数据库，以立即保护您的数据。</block>
-  <block id="fc7c1a6c328c3622bdd68b73c548bb4f" category="paragraph">如果为对象存储中的备份文件启用了勒索软件恢复功能，则要求您在恢复之前运行额外的检查。我们建议进行扫描。</block>
   <block id="2b2261b532e949e52edc443eb38fcb1c" category="admonition">您可能需要向云提供商支付额外费用才能访问备份文件。</block>
   <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">在“恢复”页面（搜索和恢复）中，您可以通过使用过滤器搜索快照来恢复资源，即使您不记得它的确切名称、位置或最后已知日期。</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">如果还原操作未完成，请等到作业监视器显示“失败”后再重试还原操作。</block>
@@ -5320,4 +5293,30 @@
   <block id="8dff4fed8a1d5381eb2f6576f3f06b7d" category="list-text">创建一个名为 <block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block> 的文件，其中包含以下内容。将示例中的存储 VM 名称替换为您环境中的存储 VM 名称：</block>
   <block id="7577767aaa58a8a7950977e3a65ee191" category="list-text">重新启动 Backup and Recovery 索引编录容器：</block>
   <block id="e6cce919f01af0ea557dc3414a5f3d13" category="sidebar">启用预览和隐藏功能</block>
+  <block id="a66cf4720f5d5d39ed0b714a10c544b8" category="paragraph">如果您在对象存储中选择一个备份文件，并且该备份的勒索软件保护处于活动状态（如果您在备份策略中启用了 Datalock 和勒索软件保护），则在还原数据之前，系统会提示您对备份文件运行其他完整性检查。我们建议您执行扫描。</block>
+  <block id="244ec7a150e9351c3fc76e657044f42c" category="paragraph">如果对对象存储中的备份文件启用了勒索软件保护，则要求您在还原之前运行额外的检查。我们建议执行扫描。</block>
+  <block id="04d519be10632791c717b79e98c10651" category="list-text">如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 Datalock 和勒索软件保护），那么您也将从云提供商那里产生额外的出口成本。</block>
+  <block id="1ca7dcaeea297c00bd40d178b2115682" category="list-text">对于备份到对象策略，请设置 Datalock 和 Ransomware 保护设置。有关 Datalock 和 Ransomware 保护的详细信息，请参阅 <block ref="7a234b4add653baca92b7b8d8c25d2af" category="inline-link-macro-rx"></block>。</block>
+  <block id="6561c6e3caa260f1bdb6d3649d38be46" category="list-text">对于备份到对象策略，请配置 Datalock 和 Ransomware 保护。有关 Datalock 和 Ransomware 保护的详细信息，请参阅 <block ref="7a234b4add653baca92b7b8d8c25d2af" category="inline-link-macro-rx"></block>。</block>
+  <block id="103c7334307f719a470f3172605a3edc" category="paragraph">如果在激活此群集的 NetApp Backup and Recovery 时，在初始备份策略中为云备份启用了_数据锁和勒索软件保护_，则只能看到已配置 DataLock 的其他策略。如果您在激活 NetApp Backup and Recovery 时没有启用_数据锁和勒索软件保护_，您只会看到其他未配置 DataLock 的云备份策略。</block>
+  <block id="ebca7a02fb232e1d7aeb6ae091d6ab26" category="paragraph">如果在激活此集群的 NetApp Backup and Recovery 时启用了_Datalock 和 Ransomware 保护_，则按需备份也将配置 DataLock，保留期为 30 天。临时备份不支持勒索软件扫描。<block ref="17481ecd9087b2947e2c31f934c4a716" category="inline-link-macro-rx"></block>。</block>
+  <block id="90b54eef4622c06e289761aabac1fdae" category="paragraph">仅当卷备份是从运行 ONTAP 9.11.1 或更高版本的系统创建的，并且您在备份到对象策略中启用了_数据锁和勒索软件保护_时，此功能才可用。</block>
+  <block id="62fe09f51891d84daa25048262b9784e" category="paragraph">勒索软件防护列显示扫描正在进行中。</block>
+  <block id="9c21e5de2077bd6b91b7d39f7b0ffc44" category="list-text">如果在为此群集激活 NetApp Backup and Recovery 时在初始策略中启用了_数据锁和勒索软件保护_，则必须使用相同的 DataLock 设置（治理或合规性）配置您编辑的任何策略。如果您在激活 NetApp Backup and Recovery 时没有启用_数据锁和勒索软件保护_，则您现在无法启用 DataLock。</block>
+  <block id="87c88da4757cbf0be58b4080cd9a5671" category="list-text">如果在为此群集激活 NetApp Backup and Recovery 时在初始策略中启用了_数据锁和勒索软件保护_，则必须使用相同的 DataLock 设置（治理或合规性）配置您创建的任何其他策略。如果您在激活 NetApp Backup and Recovery 时未启用_数据锁和勒索软件保护_，则无法创建使用 DataLock 的新策略。</block>
+  <block id="b7e1023dddb526d0820d1e7544ac67e0" category="paragraph">有关 StorageGRID 的 Datalock 和 Ransomware 保护要求的详细信息，请参阅 <block ref="bbc9f622da531392bbcdbdc340d647a2" category="inline-link-macro-rx"></block>。</block>
+  <block id="31ae6e5d2e23d698ed4b4cddb30323f6" category="paragraph">要使用 DataLock &amp; Ransomware 防护进行备份，您的 StorageGRID 系统必须运行 11.6.0.3 或更高版本。</block>
+  <block id="aa0c387c2ebbcc0a1d666f326c80c9a9" category="paragraph">如果您的集群使用的是 ONTAP 9.11.1 或更高版本，则可以通过配置 _Datalock and Ransomware protection_ 来选择保护备份免受删除和勒索软件攻击。_DataLock_ 保护您的备份文件不被修改或删除，_ransomware protection_ 扫描您的备份文件，在备份文件中查找勒索软件攻击的证据。</block>
+  <block id="6840e12b66031c15136d328122561a9b" category="inline-link-macro">Datalock 和勒索软件防护选项</block>
+  <block id="45d934ae623f3901db2701ce1288ced6" category="paragraph">有关 Datalock 和勒索软件防护选项的详细信息，请参阅 <block ref="5df7ef8295177adf3f7534eb40e8a229" category="inline-link-macro-rx"></block>。</block>
+  <block id="129af5be2558be9e6958d9dd7be03e2f" category="paragraph">这两项功能都可以保护您的备份文件，以便在备份遭到勒索软件攻击时，您始终拥有有效的备份文件来恢复数据。在备份需要锁定和保留一段时间的情况下，满足某些监管要求也很有帮助。启用 *Datalock and Ransomware protection* 选项后，作为 NetApp Backup and Recovery 激活的一部分配置的云存储桶将启用对象锁定和对象版本控制。</block>
+  <block id="08bc3d60d9cfe6d536c5f5f872dd11f5" category="list-text">创建策略时，展开 *Datalock 和 Ransomware 防护* 部分。</block>
+  <block id="e8145252a24c7b875d1308baca22078f" category="list-text">*无*：已禁用 DataLock 保护和勒索软件保护。</block>
+  <block id="4ffacb9062f3a8dc8d0afee0a9baa13c" category="list-text">*已解锁*：已启用 DataLock 保护和勒索软件保护。具有特定权限的用户可以在保留期间覆盖或删除受保护的备份文件。</block>
+  <block id="9d5c4b9e1cb1933717aca7e5b1cea2b4" category="list-text">*已锁定*：已启用 DataLock 保护和勒索软件保护。在保留期间，任何用户都不能覆盖或删除受保护的备份文件。这满足了完全的法规遵从性。</block>
+  <block id="59d35a98a25ac407c3c2871937dd7dc2" category="paragraph">除了此标准之外，如果您使用 *Datalock and Ransomware protection* 功能，云存储还提供额外的安全选项，并通过为较旧的备份文件选择存档存储类来节省额外的成本。<block ref="0c861116d28daa1fe6085df5c3fb8bde" category="inline-link-macro-rx"></block>.</block>
+  <block id="d195ddcd2f3d984477faa5a1a97516bf" category="list-text">如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 Datalock 和勒索软件保护），那么您也将从云提供商那里产生额外的出口成本。</block>
+  <block id="fb71a072e6e449316b8305b9767a4e9e" category="paragraph">如果您的群集使用的是 ONTAP 9.11.1 或更高版本，您可以保护对象存储中的备份免受删除和勒索软件攻击。每个备份策略都提供了_数据锁和勒索软件保护_部分，可在特定时间段（_保留期_）内应用于您的备份文件。</block>
+  <block id="fe096dc1f619b5ae2f454275962bf893" category="paragraph">请注意，如果您在对象存储中选择一个备份文件，并且该备份的勒索软件保护处于活动状态（如果您在备份策略中启用了 Datalock 和勒索软件保护），则在还原数据之前，系统会提示您对备份文件运行其他勒索软件扫描。我们建议您扫描备份文件以查找勒索软件。（为了访问备份文件的内容，您的云提供商将产生额外的出口成本。）</block>
+  <block id="a38244f145eb7bb81ea84601f169276b" category="paragraph">如果备份文件的勒索软件保护处于活动状态（如果您在备份策略中启用了 Datalock 和勒索软件保护），则在还原数据之前，系统会提示您对备份文件运行其他勒索软件扫描。我们建议您扫描备份文件以查找勒索软件。（为了访问备份文件的内容，您的云提供商将产生额外的出口成本。）</block>
 </blocks>
