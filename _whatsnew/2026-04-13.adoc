@@ -18,7 +18,7 @@
 
 在此版本中，Kubernetes 工作负载引入了以下保护策略增强功能：
 
-* *编辑保护策略*：如果需要更改，现在可以编辑 Kubernetes 工作负载保护策略
+* *编辑保护策略*：如果需要更改 Kubernetes 工作负载保护策略，您现在可以对其进行编辑。
 * *磁盘到磁盘支持*：您现在可以使用磁盘到磁盘备份架构配置 Kubernetes 保护策略。
 * *Google Cloud Platform 存储桶支持*：您现在可以配置 Kubernetes 保护策略以备份到 Google Cloud Platform 存储桶。
 

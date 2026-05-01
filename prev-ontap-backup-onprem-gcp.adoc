@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-gcp.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载。 
+summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。 
 ---
 = 使用NetApp Backup and Recovery将本地ONTAP数据备份到 Google Cloud Storage
 :hardbreaks:
@@ -194,7 +194,7 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 +
 如果您使用的是 Private Google Access 或 Private Service Connect，请确保您的 DNS 服务器已配置为指向 `storage.googleapis.com`到正确的内部（私有）IP 地址。
 
-* 请注意，如果您使用的 IP 空间与默认 IP 空间不同，则可能需要创建静态路由才能访问对象存储。
+* 请注意，如果您使用的 IPspace 与 Default 不同，则可能需要创建静态路由以访问对象存储。
 * 如有必要，请更新防火墙规则，以允许NetApp Backup and Recovery通过端口 443 从ONTAP连接到对象存储，并通过端口 53（TCP/UDP）从存储虚拟机到 DNS 服务器的名称解析流量。
 
 

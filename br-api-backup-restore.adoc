@@ -48,9 +48,9 @@ NetApp Backup and Recovery中定义了十类端点：
 NOTE: 如果您使用服务帐户，则应该使用服务访问令牌而不是用户令牌。“client_id”的值（“Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC”）是固定值，无法更改。在这种情况下，请按照此处的说明进行操作： https://docs.netapp.com/us-en/console-automation/platform/create_service_token.html["创建服务访问令牌"^] 。
 
 .步骤
-. 从NetApp NetApp Console网站获取用户令牌。
+. 从 NetApp Console 网站获取用户令牌。
 +
-确保从以下链接生成刷新令牌： https://services.cloud.netapp.com/refresh-token/.刷新令牌是一个字母数字字符串，您将使用它来生成用户令牌。
+确保通过以下链接生成刷新令牌：https://services.cloud.netapp.com/refresh-token。刷新令牌是用于生成用户令牌的字母数字字符串。
 
 +
 [source, console]

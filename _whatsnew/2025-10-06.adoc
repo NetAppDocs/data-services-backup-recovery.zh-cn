@@ -20,7 +20,7 @@ NetApp Console建立在增强和重组的BlueXP基础之上，可在企业级内
 
 === Hyper-V 工作负载支持作为私人预览版
 
-此版本的NetApp Backup and Recovery引入了对发现和管理 Hyper-V 工作负载的支持：
+此版本的 NetApp Backup and Recovery 支持发现和管理 Hyper-V 工作负载：
 
 * 在独立实例以及故障转移群集实例 (FCI) 上备份和恢复虚拟机
 * 保护存储在 SMB3 共享上的虚拟机
@@ -36,7 +36,7 @@ NetApp Console建立在增强和重组的BlueXP基础之上，可在企业级内
 
 === KVM 工作负载支持作为私人预览
 
-此版本的NetApp Backup and Recovery引入了对发现和管理 KVM 工作负载的支持：
+此版本的 NetApp Backup and Recovery 支持发现和管理 KVM 工作负载：
 
 * 备份和恢复存储在 NFS 共享上的 qcow2 VM 映像
 * 备份存储池

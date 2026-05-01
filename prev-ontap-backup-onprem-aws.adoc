@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-aws.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用NetApp NetApp Backup and Recovery保护您的 VMware 工作负载。 
+summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。 
 ---
 = 使用NetApp Backup and Recovery将本地ONTAP数据备份到 Amazon S3
 :hardbreaks:
@@ -165,7 +165,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 当您设置NetApp Backup and Recovery时，系统会提示您输入要使用的 IP 空间。您应该选择与这些 LIF 关联的 IP 空间。这可能是“默认” IP 空间或您创建的自定义 IP 空间。
 
 +
-如果您使用的 IP 空间与“默认”不同，那么您可能需要创建静态路由来访问对象存储。
+如果使用的 IPspace 不同于"Default"，则可能需要创建静态路由才能访问对象存储。
 
 +
 IP 空间内的所有集群间 LIF 都必须具有对象存储的访问权限。如果您无法为当前 IP 空间配置此功能，则需要创建一个专用 IP 空间，其中所有集群间 LIF 都可以访问对象存储。
@@ -369,7 +369,7 @@ openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vp
 [source, text]
 ----
 Certificate chain
-0 s:/CN=s3.us-west-2.amazonaws.com`
+0 s:/CN=s3.us-west-2.amazonaws.com
    i:/C=US/O=Amazon/OU=Server CA 1B/CN=Amazon
 -----BEGIN CERTIFICATE-----
 MIIM6zCCC9OgAwIBAgIQA7MGJ4FaDBR8uL0KR3oltTANBgkqhkiG9w0BAQsFADBG

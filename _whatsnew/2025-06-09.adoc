@@ -31,7 +31,7 @@
 
 === ONTAP S3 上支持SnapMirror到云重新同步
 
-以前的版本引入了对SnapMirror到 Cloud Resync（SM-C Resync）的支持。该功能简化了NetApp环境中卷迁移期间的数据保护。此版本增加了对ONTAP S3 上的 SM-C Resync 以及其他与 S3 兼容的提供商（如 Wasabi 和 MinIO）的支持。
+上一版本引入了对 SnapMirror 到云重新同步（SM-C Resync）的支持。该功能简化了 NetApp 环境中卷迁移期间的数据保护。此版本增加了对 ONTAP S3 以及 Wasabi 和 MinIO 等其他 S3 兼容提供商的 SM-C Resync 支持。
 
 
 
