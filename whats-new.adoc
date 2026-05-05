@@ -18,6 +18,26 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 
 
+== 2026 年 5 月 05 日
+
+此NetApp Backup and Recovery版本包括以下更新。
+
+
+
+=== Kubernetes 工作负载增强功能
+
+在此版本中，Kubernetes 工作负载引入了以下增强功能：
+
+* *对保护 VM 的本机支持*：您现在可以创建基于 VM 的应用程序，使您能够以保护任何其他应用程序的方式保护虚拟机。
+* *资源转换*：您现在可以使用资源转换和资源转换模板在还原过程中添加、删除和修改资源属性。
+* *从 Backup and Recovery 升级 Trident Protect*：您现在可以直接从 Backup and Recovery 升级 Kubernetes 集群的 Trident Protect。
+* *查看受保护的资源*：您现在可以查看应用程序的每个恢复点中包含的资源，并下载详细的 JSON 报告。这使您可以全面了解您的恢复点，并简化审计合规性。
+
+
+有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
+
+
+
 == 2026 年 4 月 20 日
 
 此NetApp Backup and Recovery版本包括以下更新。

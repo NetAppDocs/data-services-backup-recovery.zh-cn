@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery使您能够管理工作负载主机信息、
 
 
 [role="lead"]
-NetApp Backup and Recovery使您能够轻松发现 Kubernetes 集群，而无需生成和上传 kubeconfig 文件。您可以使用从NetApp Console用户界面复制的简单命令连接 Kubernetes 集群并安装所需的软件。
+NetApp Backup and Recovery 使您能够通过 Web UI 或应用自定义资源文件来添加 Kubernetes 应用程序。应用程序可以基于命名空间，由标准 Kubernetes 资源组成，也可以基于 VM，由一个或多个虚拟机组成。
 
 .所需的NetApp Console角色
 组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
@@ -23,14 +23,14 @@ NetApp Backup and Recovery使您能够轻松发现 Kubernetes 集群，而无需
 
 == 添加并保护新的 Kubernetes 应用程序
 
-保护 Kubernetes 应用程序的第一步是在NetApp Backup and Recovery中创建应用程序。创建应用程序时，您会让控制台了解 Kubernetes 集群上正在运行的应用程序。
+保护 Kubernetes 应用程序的第一步是在 NetApp Backup and Recovery 中创建一个应用程序。创建应用程序时，您可以使 Backup and Recovery 了解 Kubernetes 集群上正在运行的应用程序。
 
 .开始之前
 在添加和保护 Kubernetes 应用程序之前，您需要link:br-start-discover.html["发现 Kubernetes 工作负载"]。
 
 [role="tabbed-block"]
 ====
-.使用 Web UI 添加应用程序
+.添加基于命名空间的应用程序 (web UI)
 --
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory*。
@@ -38,22 +38,54 @@ NetApp Backup and Recovery使您能够轻松发现 Kubernetes 集群，而无需
 . 选择“*应用程序*”选项卡。
 . 选择*创建应用程序*。
 . 输入应用程序的名称。
+. 从 *Cluster* 列表中，选择托管应用程序的集群。
+. 在 *过滤器* 下，选择 *命名空间* 以按命名空间过滤应用程序。
 . 或者，选择以下任意字段来搜索您想要保护的资源：
 +
-** 关联集群
 ** 关联的命名空间
 ** 资源类型
 ** 标签选择器
-
-
-. （可选）选择“集群范围资源”以选择任何在集群级别范围限定的资源。如果包含这些资源，它们会在创建应用程序时添加到应用程序中。
-. 或者，选择“*搜索*”以根据您的搜索条件查找资源。
++
+... 选择 *Add cluster-scoped resources* 以添加在集群级别作用域的资源。如果包含它们，它们将在创建应用程序时添加到应用程序中。
+... 或者，选择“*搜索*”以根据您的搜索条件查找资源。
 +
 
-NOTE: 控制台不存储搜索参数或结果；这些参数用于在选定的 Kubernetes 集群中搜索可包含在应用程序中的资源。
+NOTE: Backup and Recovery 不存储搜索参数或结果；这些参数用于搜索所选 Kubernetes 集群中可以包含在应用程序中的资源。
 
-. 控制台显示符合您的搜索条件的资源列表。
+
+
+
+
+. Backup and Recovery 显示符合搜索条件的资源列表。
 . 如果列表包含您想要保护的资源，请选择“下一步”。
+. （可选）在“*策略*”区域中，选择现有保护策略来保护应用程序，或者创建新策略。如果不选择策略，则创建的应用程序将不带保护策略。你可以link:br-use-policies-create.html#create-a-policy["添加保护策略"]之后。
+. 在*Prescripts and postscripts*区域中，启用并配置您想要在备份操作之前或之后运行的任何prescript或postscript执行挂钩。要启用处方或附言，您必须至少已创建了一个link:br-use-manage-execution-hook-templates.html["执行钩子模板"]。
+. 选择“*创建*”。
+
+
+.结果
+应用程序已创建并显示在 Kubernetes 库存的 *Applications* 选项卡中的应用程序列表中。Backup and Recovery 可根据您的设置为应用程序提供保护，您可以在 *Monitoring* 区域中监控进度。
+
+--
+.添加基于 VM 的应用程序（Web UI）
+--
+.步骤
+. 在NetApp Backup and Recovery中，选择 *Inventory*。
+. 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
+. 选择“*应用程序*”选项卡。
+. 选择*创建应用程序*。
+. 输入应用程序的名称。
+. 从 *Cluster* 列表中，选择托管应用程序的集群。
+. 在 *筛选器* 下，选择 *虚拟机* 以创建基于 VM 的应用程序。
+. 通过选择命名空间并可选地包括标签选择器，查找要添加到应用程序的虚拟机。
++
+
+NOTE: 如果从列表中选择 VM，则应用程序定义为静态—稍后不会将新 VM 添加到应用程序（您需要编辑应用程序以添加和保护它们）。如果使用标签选择器，则无法选择单个 VM 或编辑生成的列表，但后来与选择器匹配的任何 VM 都会自动包括在内并受到保护。
+
++
+所选虚拟机将显示在右侧的列表中。
+
+. 如果列表包含要保护的虚拟机，请选择 *下一步*。
 . （可选）在“*策略*”区域中，选择现有保护策略来保护应用程序，或者创建新策略。如果不选择策略，则创建的应用程序将不带保护策略。你可以link:br-use-policies-create.html#create-a-policy["添加保护策略"]之后。
 . 在*Prescripts and postscripts*区域中，启用并配置您想要在备份操作之前或之后运行的任何prescript或postscript执行挂钩。要启用处方或附言，您必须至少已创建了一个link:br-use-manage-execution-hook-templates.html["执行钩子模板"]。
 . 选择“*创建*”。
@@ -63,7 +95,7 @@ NOTE: 控制台不存储搜索参数或结果；这些参数用于在选定的 K
 应用程序已创建并出现在 Kubernetes 清单的 *应用程序* 选项卡中的应用程序列表中。  NetApp Console根据您的设置启用对应用程序的保护，并且您可以在备份和恢复的*监控*区域中监控进度。
 
 --
-.使用 CR 添加应用程序
+.添加基于命名空间的应用程序 (CR)
 --
 .步骤
 . 创建目标应用程序 CR 文件：

@@ -206,6 +206,8 @@ sidebar:
           url: "/br-use-restore-kubernetes-applications-cr.html"
         - title: 使用高级自定义资源还原设置
           url: "/br-use-kubernetes-advanced-restore-settings.html"
+        - title: 在还原操作期间使用自定义资源修改资源
+          url: "/br-use-modify-resources-kubernetes-cr.html"
       - title: 管理 Kubernetes 集群
         url: "/br-use-manage-kubernetes-clusters.html"
       - title: 管理 Kubernetes 应用程序

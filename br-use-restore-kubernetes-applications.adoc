@@ -16,11 +16,36 @@ summary: NetApp Backup and Recovery使您能够恢复已通过保护策略保护
 [role="lead"]
 NetApp Backup and Recovery使您能够恢复已通过保护策略保护的应用程序。要恢复应用程序，应用程序需要至少有一个可用的恢复点。恢复点由本地快照或对象存储备份（或两者）组成。您可以使用本地、辅助或对象存储存档来恢复应用程序。
 
+
+
+== 查看应用程序还原点的受保护资源
+
+对于使用 Backup and Recovery 保护的每个应用程序，您可以查看已针对特定还原点备份的资源。
+
+.所需的NetApp Console角色
+备份和恢复查看器。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^].
+
+.步骤
+. 在 NetApp Backup and Recovery 中，选择 *库存* > *应用程序*。
+. 从应用程序列表中，选择一个应用程序，然后选择操作图标 image:../media/icon-action.png["操作选项"] > *View and Restore*。
+. 从还原点列表中，选择一个还原点，然后选择操作图标 image:../media/icon-action.png["操作选项"] > *查看资源*。
++
+此时将显示资源及其详细信息的列表。您可以按命名空间或集群范围查看资源，并将列表作为 JSON 文件下载以供将来审核。
+
+. 完成后，选择 *关闭* 。
+
+
+
+
+== 恢复 Kubernetes 应用程序
+
+您可以从还原点还原基于命名空间或基于 VM 的应用程序，既可以还原所有资源，也可以选择要还原的资源子集。
+
 .开始之前
 如果要还原使用 Trident Protect 备份的应用程序，请确保 Trident Protect 同时安装在源和目标集群上。
 
 .所需的NetApp Console角色
-组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+Backup and Recovery 超级管理员或 Backup and Recovery 还原管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^].
 
 .步骤
 . 在 NetApp Backup and Recovery 菜单中，选择*恢复*。
@@ -29,58 +54,88 @@ NetApp Backup and Recovery使您能够恢复已通过保护策略保护的应用
 出现还原点列表。
 
 . 选择要使用的还原点的 *Restore* 按钮。
-
-
-[discrete]
-===== 常规设置
++
+还原数据向导开始，并显示 _常规设置_ 页面。
 
 . 选择要从中还原的源位置。
 . 从*Cluster*列表中选择目标集群。
+. 选择还原到原始命名空间或新命名空间。
 +
 
-NOTE: 目前不支持将 Trident Protect 创建的本地快照还原到其他集群。
+NOTE: 当前不支持从本地快照进行基于 VM 的应用程序的就地还原（还原到原始命名空间和原始群集）。
 
-. 选择还原到原始命名空间或新命名空间。
 . 如果选择还原到新命名空间，请输入要使用的目标命名空间。
 . 选择“下一步”。
-
-
-[discrete]
-===== 资源选择
++
+此时将显示 _Resource selection_ 页面。
 
 . 选择是否要恢复与应用程序相关的所有资源，或者使用过滤器选择要恢复的特定资源：
-
-
++
 [role="tabbed-block"]
 ====
-.恢复所有资源
+.所有资源
 --
-. 选择*恢复所有资源*。
-. 选择“下一步”。
+.. 选择*恢复所有资源*。
++
+还原基于虚拟机的应用程序时，Backup and Recovery 会列出恢复点中的所有虚拟机。
+
+.. 选择“下一步”。
 
 
 --
-.恢复特定资源
+.基于特定命名空间的应用资源
 --
-. 选择*选择性资源*。
-. 选择资源过滤器的行为。如果您选择“*包括*”，则会恢复您选择的资源。如果您选择“*排除*”，则您选择的资源将不会被恢复。
-. 选择*添加规则*来添加定义选择资源的过滤器的规则。您至少需要一条规则来过滤资源。
+.. 选择 *Selective resources* 并选择是根据规则还是根据命名空间筛选所选资源。
++
+[cols="1,1"]
+|===
+| 资源选择方法 | 步骤 
+
+
+| 使用规则筛选资源  a| 
+... 选择 *Rules* 选项卡。
+... 选择资源过滤器的行为。如果您选择“*包括*”，则会恢复您选择的资源。如果您选择“*排除*”，则您选择的资源将不会被恢复。
+... 选择*添加规则*来添加定义选择资源的过滤器的规则。您至少需要一条规则来过滤资源。
 +
 每个规则都可以根据资源命名空间、标签、组、版本和种类等标准进行过滤。
 
-. 选择*保存*来保存每条规则。
-. 添加完所有需要的规则后，选择*搜索*即可查看备份档案中符合过滤条件的可用资源。
+... 选择*保存*来保存每条规则。
+... 添加所需的所有规则后，选择 *Show resources* 以查看备份存档中符合筛选条件的可用资源。
+
+
+
+
+| 从列表中手动选择资源  a| 
+... 选择 *Custom* 选项卡。
+... 选择 *Namespace-Scoped* 或 *Cluster-Scoped* 以查看相应的资源。
++
+备份和恢复列出恢复点中的所有资源。
+
+... 选择要包含在还原操作中的资源。
+
+
+|===
 +
 
 NOTE: 显示的资源是集群上当前存在的资源。
 
-. 对结果满意后，选择*下一步*。
+.. 完成后，选择 *下一步* 。
+
+
+--
+.特定的基于 VM 的应用资源
+--
+.. 选择*选择性资源*。
++
+Backup and Recovery 列出了恢复点中的所有虚拟机。您可以选择要包含在还原操作中的虚拟机。
+
+.. 完成后，选择 *下一步* 。
 
 
 --
 ====
-[discrete]
-===== 目的地设置
++
+此时将显示 _目标设置_ 页面。
 
 . 展开 *Destination settings* 部分，然后选择恢复到默认存储类、其他存储类，或者如果要恢复到其他集群，则将存储类映射到目标集群。
 . 如果选择还原到其他存储类，请选择与每个源存储类匹配的目标存储类。
@@ -90,5 +145,24 @@ NOTE: 显示的资源是集群上当前存在的资源。
 NOTE: 如果需要在 Kubernetes 集群上创建 AppVault 以便还原使用 Trident Protect 创建的备份或快照，请参阅 https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["使用 Trident Protect AppVault 对象管理存储桶"]。
 
 . （可选）展开 *Restore scripts* 部分，并启用 *Postscript* 选项以选择将在还原操作完成后运行的执行钩子模板。如果需要，请输入脚本需要的任何参数，并添加标签选择器以根据资源标签筛选资源。
-. 选择*恢复*。
+. （可选）在还原过程期间，展开 *Resource transformations* 部分以添加、删除或修改资源属性。然后，执行以下操作：
++
+
+NOTE: 当前不支持修改 PersistentVolumeClaims 和命名空间。
+
++
+.. 启用 *Resource transformation* 选项以更改修饰符。
+.. 从*模板*列表中选择模板，即可快速应用常用的修饰符设置。此列表包括常见场景的预定义模板以及您已创建的自定义模板。
++
+
+NOTE: 在全局 link:br-start-configure.html#create-a-resource-modifier-template["设置"^] 区域创建资源转换模板。
+
+.. 通过输入资源组、版本、种类和名称，指定要修改的资源。
+.. 通过从 *Operation* 列表中选择一个操作，指定要对资源执行的操作。
+.. 输入要更改的特定密钥的 JSON 路径。
+.. 如果适用，请输入要使用的新值。*Value* 字段仅显示某些操作（例如 *Add* 或 *Replace*）。
+.. （可选）根据需要添加更多资源转换。
+
+
+. 完成后，选择 *Restore*。
 

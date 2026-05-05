@@ -16,12 +16,13 @@ summary: 完成几个步骤来配置NetApp Backup and Recovery。
 [role="lead"]
 设置NetApp Console后，配置备份和恢复设置。添加主机资源的凭据、导入SnapCenter资源、配置日志目录以及设置 VMware vCenter 设置。在备份或恢复数据之前完成这些步骤。
 
-* <<为主机资源添加凭据>> 适用于NetApp Backup and Recovery需要进行身份验证的任何 Windows、Microsoft SQL Server、Oracle Database 或 Linux 主机。这包括恢复访客文件或文件夹时使用的 Windows 访客操作系统凭据。
+* <<为主机资源添加凭据>> 适用于任何 Windows、Microsoft SQL Server、Oracle Database 或 Linux 主机，NetApp Backup and Recovery 需要对其进行身份验证。这包括在还原文件或文件夹时使用的来宾操作系统凭据。
 * <<维护 VMware vCenter 设置>>。
 * <<导入和管理SnapCenter主机资源>>。（仅限 Microsoft SQL Server 工作负载）
 * <<添加 KVM 管理平台>>。（仅限 KVM 工作负载）
 * <<在 Windows 主机的快照中配置日志目录>>。
 * <<创建执行钩子模板>> 在备份作业之前和之后运行脚本。（仅限 Kubernetes 工作负载）
+* <<创建资源转换模板>> 在还原资源时对其进行修改。
 
 
 *所需的NetApp Console角色* 备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
@@ -292,4 +293,36 @@ NOTE: 此处创建的模板仅在保护 Kubernetes 工作负载时可用。
 +
 创建模板后，它将出现在*执行挂钩模板*部分的模板列表中。
 
+
+
+
+
+== 创建资源转换模板
+
+创建资源转换模板，以便在还原资源时存储对资源进行的常见转换。
+
+.步骤
+. 从NetApp Backup and Recovery菜单中，选择 *设置*。
+. 选择向下箭头以展开 *Resource modifer template* 部分。
+. 选择 *Create template*。
+. 输入资源转换模板的名称。
+. （可选）输入模板说明。
+. 描述目标资源：
++
+.. 输入资源类型（例如 Pod 或 Deployment）。此字段为必填项。
+.. （可选）输入资源组、版本、名称。
+
+
+. 构建操作：
++
+.. 从 *操作* 列表中选择一个操作。
+.. 输入操作应用到的 JSON 路径。
+.. 如果适用，请输入要添加或更新的值，或要从中移动的 JSON 路径。
++
+这些字段仅出现在需要它们的操作中。
+
+.. 要向此模板添加另一个操作，请选择 *Add operation*。
+
+
+. 完成后，选择“添加”。
 
