@@ -18,6 +18,59 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 
 
+== 2026 年 5 月 11 日
+
+此NetApp Backup and Recovery版本包括以下更新。
+
+
+
+=== Hyper-V 工作负载增强功能
+
+在此版本中，Hyper-V 工作负载引入了以下增强功能：
+
+* *保护 SAN 存储上的 VM*：您现在可以保护 SAN 对象存储上的 VM。
+* *还原到备用位置增强功能*：现在，您可以从 SAN 存储上的 VM 的主要位置和次要位置还原到备用位置。
+* *将文件和文件夹还原到来宾虚拟机*：现在，您可以将文件和文件夹从主存储上的快照还原到来宾 Windows 虚拟机。只有 CIFS 虚拟机才支持此功能。
+
+
+有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载概述"]。
+
+
+
+=== KVM 工作负载增强
+
+在此版本中，KVM 工作负载引入了以下增强功能：
+
+*还原到备用位置*：您现在可以将 KVM VM 还原到备用目标（此功能现已正式发布）。
+
+有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
+
+
+
+=== Oracle Database 工作负载增强
+
+在此版本中，Oracle 数据库工作负载引入了以下增强功能：
+
+* *Oracle AI Database 26ai 支持*：Backup and Recovery 现在支持 Oracle AI Database 26ai。
+* *备份验证支持*：您现在可以配置备份策略以自动验证 Oracle 数据库备份的完整性。
+
+
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
+
+
+
+=== VMware 工作负载增强功能
+
+在此版本中，VMware 工作负载引入了以下增强功能：
+
+* *保护组的跨数据存储支持*：现在，您可以在保护其虚拟磁盘跨越多个数据存储的虚拟机时选择保护组的行为。
+* *克隆支持*：现在可以从主存储和二级存储创建虚拟机快照的克隆。
+
+
+有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。
+
+
+
 == 2026 年 5 月 05 日
 
 此NetApp Backup and Recovery版本包括以下更新。

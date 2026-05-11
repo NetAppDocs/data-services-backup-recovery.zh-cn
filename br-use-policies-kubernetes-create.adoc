@@ -1,0 +1,163 @@
+---
+sidebar: sidebar 
+permalink: br-use-policies-kubernetes-create.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+summary: 在NetApp Backup and Recovery中，创建您自己的策略来控制备份频率、备份时间以及保留的备份文件数量。 
+---
+= 在 NetApp Backup and Recovery 中创建和管理 Kubernetes 备份策略
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Backup and Recovery 中，创建自己的 Kubernetes 备份策略，以管理备份频率、备份执行时间以及保留的备份文件数。
+
+
+NOTE: 其中一些选项和配置部分并不适用于所有工作负载。
+
+如果从SnapCenter导入资源，您可能会发现SnapCenter中使用的策略与NetApp Backup and Recovery中使用的策略存在一些差异。看link:reference-policy-differences-snapcenter.html["SnapCenter与NetApp Backup and Recovery之间的策略差异"]。
+
+您可以实现以下与政策相关的目标：
+
+* 创建本地快照策略
+* 创建复制到辅助存储的策略
+* 为对象存储设置创建策略
+* 配置高级策略设置
+* 编辑策略
+* 删除策略
+
+
+
+
+== 查看政策
+
+. 从NetApp Backup and Recovery菜单中，选择 *策略*。
+. 查看政策详细信息。例如：
++
+** *工作负载*：示例包括 Microsoft SQL Server、ONTAP 卷、VMware、KVM、Hyper-V、Oracle 数据库或 Kubernetes。
+** *备份类型*：例如完整备份和日志备份。
+** *架构*：示例包括本地快照、扇出、级联、磁盘到磁盘和磁盘到对象存储。
+** *受保护的资源*：显示该工作负载的总资源中有多少资源受到保护。
+** *勒索软件保护*：显示策略是否包括本地快照上的快照锁定、二级存储上的快照锁定或对象存储上的 DataLock 锁定。
+
+
+
+
+
+
+== 创建策略
+
+您可以创建策略来管理本地快照、复制到二级存储以及备份到对象存储。3-2-1 策略的一部分包括创建主存储系统上的实例、数据库、应用程序或虚拟机的快照。
+
+*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+
+.开始之前
+如果您计划复制到二级存储并希望在本地快照或远程ONTAP二级存储上使用快照锁定，则首先需要在集群级别初始化ONTAP合规时钟。这是在策略中启用快照锁定的要求。
+
+有关如何执行此操作的说明，请参阅 https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html["在ONTAP中初始化合规性时钟"^]。
+
+有关快照锁定的一般信息，请参阅 https://docs.netapp.com/us-en/ontap/snaplock/snapshot-lock-concept.html["ONTAP中的快照锁定"^]。
+
+.步骤
+. 从NetApp Backup and Recovery菜单中，选择 *策略*。
+. 在“策略”页面中，选择“创建新策略”。
++
+此时将显示策略页面。
+
+. 在 *详细信息* 部分中输入信息：
++
+** 工作负载类型：选择 *Kubernetes*。
+** 输入策略名称。
+** 从*代理*列表中选择一个控制台代理。
+
+
+. 在 *备份架构* 部分中输入信息。从列表中选择备份的数据流：
++
+** *3-2-1 扇出*：主存储（磁盘）到辅助存储（磁盘）到云（对象存储）。跨不同存储系统创建多个数据副本，例如 ONTAP 到 ONTAP 和 ONTAP 到对象存储配置。这可以是云超大规模对象存储或私有对象存储。最适合优化数据保护和灾难恢复。此选项不适用于 Amazon FSx for NetApp ONTAP。
+** *磁盘到磁盘*：主存储（磁盘）到辅助存储（磁盘）。ONTAP 到 ONTAP 数据保护策略在两个 ONTAP 系统之间复制数据，以确保高可用性和灾难恢复。这通常使用 SnapMirror 来实现，它支持同步和异步复制。此方法可使您的数据在不同位置保持更新和可用，以实现强大的数据保护。
+** *磁盘到对象存储*：主存储（磁盘）到云（对象存储）。这会将数据从 ONTAP 系统复制到对象存储系统。这可以是云超大规模对象存储，也可以是私有对象存储，如 StorageGRID。这种方法非常适合长期数据保留和存档。
+** *本地快照*：选定卷上的本地快照。这将创建运行工作负载的生产卷的只读时间点副本。您可以使用本地快照从数据丢失或损坏中恢复，并出于灾难恢复目的创建备份。
+
+
+. 为 *本地快照设置* 部分提供信息：
++
+** 选择“*添加计划*”选项来选择快照计划或计划。您最多可以有 5 个时间表。
+** *快照频率*：选择每小时、每天、每周、每月或每年的频率。  Kubernetes 工作负载没有年度频率。
+** *快照保留*：输入要保留的快照数量。
+** *Provider*：选择托管 Kubernetes 应用程序资源的存储提供商，并输入凭据以向提供商进行身份验证。
+
+
+. 提供 *Secondary settings* 部分的信息（复制到二级存储）：
++
+** *备份*：选择每小时、每天、每周、每月或每年的频率。
+** *备份目标*：选择二级存储上用于备份的目标系统。
+** *保留*：输入要保留的快照数量。
+** *启用快照锁定*：选择是否要启用防篡改快照。
+** *快照锁定期限*：输入您想要锁定快照的天数、月数或年数。
+** *转入中学*：
++
+*** 默认情况下，选择 * ONTAP传输计划 - 内联* 选项，这表示快照会立即传输到二级存储系统。您不需要安排备份。
+*** 其他选项：如果您选择延期转账，则转账不是立即进行的，您可以设置时间表。
+
+
+** * SnapMirror和SnapVault SMAS 二级关系*：对 SQL Server 工作负载使用SnapMirror和SnapVault SMAS 二级关系。
+** *Provider*：选择托管 Kubernetes 应用程序资源的存储提供商，并输入凭据以向提供商进行身份验证。
+
+
+. 提供 *Object store settings* 部分的信息（备份到对象存储）：
++
+
+NOTE: 出现的字段根据所选的提供商和架构而有所不同。
+
++
+** *Provider*：选择对象存储的提供程序，并在相应字段中输入凭据（凭据字段因提供程序而异）。
+** *备份目标*：选择已注册的对象存储目标。确保目标在您的备份环境中可访问。
+** *IPspace*：选择用于备份操作的 IP 空间。如果您有多个 IP 空间并想要控制哪一个用于备份，这将非常有用。
+** *计划设置*：选择为本地快照设置的计划。您可以删除计划，但不能添加计划，因为计划是根据本地快照计划设置的。
+** *保留副本*：输入要保留的快照数量。
+** *运行于*：选择ONTAP传输计划将数据备份到对象存储。
+** *将备份从对象存储分层到档案存储*：如果您选择将备份分层到档案存储（例如，AWS Glacier），请选择层选项和存档天数。
+
+
+
+
+
+
+== 编辑策略
+
+您可以编辑策略的备份体系结构、备份频率、保留策略和其他设置。对于 Kubernetes 工作负载策略，您只能编辑计划和保留设置。
+
+您可以在编辑策略时添加另一个保护级别，但不能删除保护级别。例如，如果策略仅保护本地快照，则可以将复制添加到辅助存储或将备份添加到对象存储。如果您有本地快照和复制，则可以添加对象存储。但是，如果您有本地快照、复制和对象存储，则不能删除其中一个级别。
+
+如果您正在编辑备份到对象存储的策略，则可以启用存档。
+
+如果您从SnapCenter导入资源，您可能会发现SnapCenter中使用的策略与NetApp Backup and Recovery中使用的策略存在一些差异。看link:reference-policy-differences-snapcenter.html["SnapCenter与NetApp Backup and Recovery之间的策略差异"]。
+
+.所需的NetApp Console角色
+备份和恢复超级管理员。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+
+.步骤
+. 在NetApp Console中，转到 *保护* > *备份和恢复*。
+. 选择*政策*选项。
+. 选择要编辑的策略。
+. 选择*操作*image:icon-action.png["操作图标"]图标，然后选择*编辑*。
+
+
+
+
+== 删除策略
+
+如果您不再需要某个策略，则可以将其删除。
+
+
+TIP: 您不能删除与工作负载关联的策略。
+
+.步骤
+. 在控制台中，转到*保护*>*备份和恢复*。
+. 选择*政策*选项。
+. 选择要删除的策略。
+. 选择*操作*image:icon-action.png["操作图标"]图标，然后选择*删除*。
+. 确认操作，然后选择*删除*。
+
