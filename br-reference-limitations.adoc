@@ -57,7 +57,7 @@ FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相
 +
 有关这些加密类型的说明，请参阅https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["配置NetApp卷加密概述"^]。
 
-* 如果使用SnapMirror策略中的计划在SnapMirror目标卷上启用长期保留快照，则会直接在目标卷上创建快照。在这种情况下，您不应使用NetApp Backup and Recovery备份这些卷，因为这些快照不会移动到对象存储。
+* 请勿备份已启用长期保留快照的 SnapMirror 目标卷。这些快照直接在目标上创建，不会移动到对象存储。即使稍后将 SnapMirror 策略更改为禁用长期保留，此限制也适用。
 * 当您创建或编辑备份策略但未向该策略分配任何卷时，保留的备份数量最多可以为 1018。将卷分配给策略后，您可以编辑该策略以创建最多 4000 个备份。
 * 备份数据保护 (DP) 卷时：
 +

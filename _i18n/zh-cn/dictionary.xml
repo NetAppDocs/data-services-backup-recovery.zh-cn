@@ -415,7 +415,6 @@
   <block id="baab0bf328a764b384d4ecab2375f4fa" category="list-text">备份数据时， NetApp Backup and Recovery将不会维护NetApp卷加密 (NVE)。这意味着 NVE 卷上的加密数据将在数据传输到目标时被解密，并且加密将无法维持。</block>
   <block id="c638f77e97a62d0d11f775816222d62a" category="inline-link">配置NetApp卷加密概述</block>
   <block id="3553f96cf9281793975488d9cea2ab17" category="paragraph">有关这些加密类型的说明，请参阅<block ref="4e5be28408ee7dfd001133bf87f0a28f" category="inline-link-rx"></block>。</block>
-  <block id="d13da1ef1c5dbdc58b74265b9363e815" category="list-text">如果使用SnapMirror策略中的计划在SnapMirror目标卷上启用长期保留快照，则会直接在目标卷上创建快照。在这种情况下，您不应使用NetApp Backup and Recovery备份这些卷，因为这些快照不会移动到对象存储。</block>
   <block id="3a3d9f6ee5fa05f3aa042e0258eebf58" category="list-text">当您创建或编辑备份策略但未向该策略分配任何卷时，保留的备份数量最多可以为 1018。将卷分配给策略后，您可以编辑该策略以创建最多 4000 个备份。</block>
   <block id="dd717dd6a5197fd72bf9aae1e454dd3e" category="list-text">备份数据保护 (DP) 卷时：</block>
   <block id="c73aeadbe74d06b3eebf4d0a5f283344" category="list-text">与SnapMirror标签的关系<block ref="b17c9a947d4e38d7975718380fab6b7a" prefix=" " category="inline-code"></block>和<block ref="02d69a40f5f4cdc817176fabd085b511" prefix=" " category="inline-code"></block>不会备份到云端。</block>
@@ -4436,7 +4435,6 @@
   <block id="9255ea030351a8ee8402a7708baf0223" category="list-text">展开“勒索软件扫描”部分。</block>
   <block id="194a29c3464a05de3c32434145c0b5d6" category="section-title">2026年1月19日</block>
   <block id="88009dbb638181324526010a9eff3c19" category="sidebar">恢复 VMware 虚拟机</block>
-  <block id="9b7e5fddcf3e2a7a93fe6669de87fbc2" category="sidebar">恢复特定虚拟磁盘</block>
   <block id="3a4d751e404219df1dc6de0a13c8db55" category="sidebar">工作流程、先决条件和限制</block>
   <block id="b2c5a3b35bd8f72bf653aa42e54cc06c" category="list-text">Windows 客户操作系统必须运行 Windows Server 2008 R2 或更高版本。</block>
   <block id="367aa9be05b109b226ffbefe3981ac88" category="list-text">如果恢复加密的文件或文件夹，则不会保留加密属性。</block>
@@ -5055,7 +5053,6 @@
   <block id="6cbd33d5e36fc1cca8f70b65396de2b0" category="admonition">不支持混合资源类型（例如，将标记与同一保护组中的单个虚拟机或数据存储区组合）。</block>
   <block id="6ad4cf5fcdb7c67f52ade5e3f8eeb6ad" category="list-text">确保您的环境正在使用受支持的 VMware vSphere 版本。</block>
   <block id="735df7f2e37c9dd264e94c878ea7d619" category="admonition">标签成员资格在备份时从 vCenter 解析。您在 vCenter 中对标签所做的任何更改（添加/删除标签、删除标签、添加/删除 VM）都会自动反映在下一次备份中。</block>
-  <block id="a22504a40a8afdfa908ab0544ecc4178" category="doc">从 VMDK 还原文件和文件夹</block>
   <block id="32de0b1da4ab4b8f52bfe3ce1811b043" category="list-text">请查看 <block ref="538cee55729c515ab8aab7ca0ccd040a" category="inline-link-macro-rx"></block> 中的先决条件和限制。</block>
   <block id="7b7824cad48305f033e7a7b04105000a" category="paragraph">文件或文件夹还原性能取决于两个因素：要还原的文件或文件夹的大小；以及要还原的文件或文件夹的数量。如果要还原的数据集大小相同，则还原大量小文件所需的时间可能比还原少量大文件所需的时间要长。</block>
   <block id="ec4a88c3778360f79e6ff325a92a3d17" category="paragraph">您可以还原到远程 VM（称为跨 VM 还原），但源和目标操作系统必须相同。</block>
@@ -5549,4 +5546,10 @@
   <block id="d4989fe657e38f56766b05260a139da1" category="sidebar">创建和管理 Hyper-V 工作负载备份策略</block>
   <block id="4cd8801cdee679bb024e188753022546" category="sidebar">创建和管理 Oracle Database 工作负载备份策略</block>
   <block id="9bb7a57e0f15167076e59ed085570cb6" category="sidebar">创建和管理 Kubernetes 工作负载备份策略</block>
+  <block id="2a09eaa4306f964591fbfdee1bad3329" category="list-text">请勿备份已启用长期保留快照的 SnapMirror 目标卷。这些快照直接在目标上创建，不会移动到对象存储。即使稍后将 SnapMirror 策略更改为禁用长期保留，此限制也适用。</block>
+  <block id="cb7e1594adc03f9d88413ab9198e9c43" category="admonition">在 Azure 中创建用作备份目标的容器时，请确保创建的容器具有与 Azure 存储帐户相同的名称。</block>
+  <block id="76382b5bdb7a0a65db2779738439703c" category="sidebar">还原 VMware 虚拟磁盘</block>
+  <block id="160bf2703f3a2319b3965b541340256a" category="sidebar">还原 VMware 文件和文件夹</block>
+  <block id="b5c91904decad9b84ae436053f327229" category="sidebar">从 VMDK 还原 VMware 文件和文件夹</block>
+  <block id="d68e9c9c6cd6479fbac7751c3f91f5a3" category="sidebar">还原 Hyper-V 文件和文件夹</block>
 </blocks>
