@@ -5029,7 +5029,6 @@
   <block id="3e292ccda5c971a4b3e12f28c1896c96" category="list-text">在 *备份架构* 部分中输入信息。从列表中选择备份的数据流：</block>
   <block id="882709ae2f159dd4483f21419cc1577a" category="list-text">*3-2-1 扇出*：主存储（磁盘）到辅助存储（磁盘）到云（对象存储）。跨不同存储系统创建多个数据副本，例如 ONTAP 到 ONTAP 和 ONTAP 到对象存储配置。这可以是云超大规模对象存储或私有对象存储。最适合优化数据保护和灾难恢复。此选项不适用于 Amazon FSx for NetApp ONTAP。</block>
   <block id="be84ac32aad421d6a1cb46ce683e66b6" category="list-text">*磁盘到磁盘*：主存储（磁盘）到辅助存储（磁盘）。ONTAP 到 ONTAP 数据保护策略在两个 ONTAP 系统之间复制数据，以确保高可用性和灾难恢复。这通常使用 SnapMirror 来实现，它支持同步和异步复制。此方法可使您的数据在不同位置保持更新和可用，以实现强大的数据保护。</block>
-  <block id="81c8b39fe11eaceb3d9d1d404c6fcabd" category="list-text">*磁盘到对象存储*：主存储（磁盘）到云（对象存储）。这会将数据从 ONTAP 系统复制到对象存储系统。这可以是云超大规模对象存储，也可以是私有对象存储，如 StorageGRID。这种方法非常适合长期数据保留和存档。</block>
   <block id="851135c947a89fc1b09d7dcc201469ab" category="list-text">*本地快照*：选定卷上的本地快照。这将创建运行工作负载的生产卷的只读时间点副本。您可以使用本地快照从数据丢失或损坏中恢复，并出于灾难恢复目的创建备份。</block>
   <block id="fbdef52c241b79ead35478ff22576f90" category="list-text">为 *本地快照设置* 部分提供信息：</block>
   <block id="090b970b75ee26b50d8123db3db2ba55" category="list-text">提供 *Secondary settings* 部分的信息（复制到二级存储）：</block>
@@ -5552,4 +5551,5 @@
   <block id="160bf2703f3a2319b3965b541340256a" category="sidebar">还原 VMware 文件和文件夹</block>
   <block id="b5c91904decad9b84ae436053f327229" category="sidebar">从 VMDK 还原 VMware 文件和文件夹</block>
   <block id="d68e9c9c6cd6479fbac7751c3f91f5a3" category="sidebar">还原 Hyper-V 文件和文件夹</block>
+  <block id="e193e26700d466b0349ce7e559d96967" category="list-text">*磁盘到对象存储*：主存储（磁盘）到云（对象存储）。这会将数据从 ONTAP 系统复制到对象存储系统。这可以是云超大规模对象存储或私有对象存储，例如 StorageGRID。这种方法非常适合长期数据保留和存档。此选项不适用于 Amazon FSx for NetApp ONTAP。</block>
 </blocks>
