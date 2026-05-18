@@ -3344,7 +3344,6 @@
   <block id="75968f9094e000b12da4b2ead555a058" category="list-text">在分配之前考虑备份的影响<block ref="a181a603769c1f98ad927e7367c7aa51" prefix=" " category="inline-code"></block>对卷进行分层策略。由于数据是立即分层的，NetApp Backup and Recovery将从云层而不是本地层读取数据。由于并发备份操作共享与云对象存储的网络链接，因此如果网络资源饱和，可能会出现性能下降。在这种情况下，您可能需要主动配置多个网络接口 (LIF) 来减少这种类型的网络饱和。</block>
   <block id="0d5740d6083fb9ac304bfaa4bb99e957" category="doc">使用NetApp Backup and Recovery从备份文件恢复ONTAP数据</block>
   <block id="bbf0b1b9c16dc904da9a8179519e7e31" category="list-text">您可以将*卷*（作为新卷）还原到原始系统、使用相同云帐户的其他系统或本地ONTAP系统。</block>
-  <block id="da7f5e5f2be2e4063a41a28fbb91f494" category="list-text">您可以将*文件夹*还原到原始系统中的卷、使用相同云帐户的不同系统中的卷或本地ONTAP系统上的卷。</block>
   <block id="a4883a32493cbf65048c6ba0d655088d" category="list-text">您可以将*文件*还原到原始系统中的卷、使用相同云帐户的不同系统中的卷或本地ONTAP系统上的卷。</block>
   <block id="d92c1fbc11ff9a4d0db37653e35a2e52" category="paragraph">总而言之，这些是可用于将卷数据还原到ONTAP系统的有效流程：</block>
   <block id="880c04d29288ca6dbdf8598c75af755f" category="list-text">备份文件 -&gt; 恢复卷</block>
@@ -5556,4 +5555,6 @@
   <block id="99d6bb7f841b0ddd33dd9e23fe42b4e8" category="list-text"><block ref="2f0729ea8ff63f23144ca016d097072b" prefix="" category="inline-code"></block>：不应为其卷编制索引的存储 VM 的逗号分隔列表</block>
   <block id="a4c2ad915aa7ffe7e12eaa0ec56e0fcb" category="list-text"><block ref="2e56f3828d4fc676b207b81b442eafdd" prefix="" category="inline-code"></block>：不应编制索引的单个卷的逗号分隔列表</block>
   <block id="2e7ba7a2addeb2881d5673ae4329306b" category="list-text">创建一个名为<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block>的文件，并自定义 Storage VM 和卷名以匹配您的环境：</block>
+  <block id="48be46e5153e88189d804da13793e42d" category="list-text">不支持从本地快照还原文件夹。</block>
+  <block id="dfad9bc0d0d8b9068168d9197cc59866" category="list-text">您可以将*文件夹*从复制或对象存储快照还原到原始系统中的卷、使用相同云帐户的不同系统中的卷或本地 ONTAP 系统上的卷。不支持从本地快照还原文件夹。</block>
 </blocks>
