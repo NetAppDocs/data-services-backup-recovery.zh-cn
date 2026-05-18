@@ -5173,9 +5173,6 @@
   <block id="ac5cd439e0017b06be1e4642e8b56e41" category="list-text">重新启动 Backup and Recovery 容器：</block>
   <block id="1a9463a420291fe177279490d84a12e3" category="list-text">在 Web 浏览器中重新加载 Backup and Recovery UI。</block>
   <block id="a0d8143bf8014bb28b405e42d77fe94e" category="admonition">要禁用预览功能，请按照相同的步骤操作，但将功能标志值设置为<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>。</block>
-  <block id="0914e8028f83c39209dd353fbe4c3cc0" category="section-title">禁用属于存储 VM 的所有卷的索引</block>
-  <block id="25453b410cc5b5a300cb25323d146096" category="paragraph">按照以下步骤为属于特定存储 VM 的所有卷禁用索引，而不是为每个单独的卷禁用索引。</block>
-  <block id="8dff4fed8a1d5381eb2f6576f3f06b7d" category="list-text">创建一个名为 <block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block> 的文件，其中包含以下内容。将示例中的存储 VM 名称替换为您环境中的存储 VM 名称：</block>
   <block id="7577767aaa58a8a7950977e3a65ee191" category="list-text">重新启动 Backup and Recovery 索引编录容器：</block>
   <block id="e6cce919f01af0ea557dc3414a5f3d13" category="sidebar">启用预览和隐藏功能</block>
   <block id="a66cf4720f5d5d39ed0b714a10c544b8" category="paragraph">如果您在对象存储中选择一个备份文件，并且该备份的勒索软件保护处于活动状态（如果您在备份策略中启用了 Datalock 和勒索软件保护），则在还原数据之前，系统会提示您对备份文件运行其他完整性检查。我们建议您执行扫描。</block>
@@ -5554,4 +5551,9 @@
   <block id="be3cd190a86975f6f424dc4b62841598" category="section-title">在灾难恢复配置中启用索引</block>
   <block id="07df367027530700215f6c0b89225a68" category="paragraph">在灾难恢复 (DR) 配置中对存储 VM 集群启用索引时，会出现一个错误，说明不允许在配置为 Vserver DR 目标的 Vserver 上执行该操作。尽管出现错误，后端进程仍会将源存储 VM 的<block ref="f97a37281422aa65185ec69709f5c22b" prefix=" " category="inline-code"></block>状态设置为"on"。存储 VM DR 策略计划运行后，此状态将传播到目标存储 VM。</block>
   <block id="f3a85d41d14b1d81bc48b863a2e8b370" category="paragraph">*解决方法*：等待 storage VM DR 策略计划在初始错误后运行，然后再次尝试启用索引。</block>
+  <block id="17ee1e3baa1892c1f3d00118ea446fca" category="section-title">禁用卷的索引</block>
+  <block id="9d0f404c5a1959bdade3f7db9b0dfed5" category="paragraph">使用以下选项标志禁用特定卷或属于一个或多个存储 VM 的所有卷的索引：</block>
+  <block id="99d6bb7f841b0ddd33dd9e23fe42b4e8" category="list-text"><block ref="2f0729ea8ff63f23144ca016d097072b" prefix="" category="inline-code"></block>：不应为其卷编制索引的存储 VM 的逗号分隔列表</block>
+  <block id="a4c2ad915aa7ffe7e12eaa0ec56e0fcb" category="list-text"><block ref="2e56f3828d4fc676b207b81b442eafdd" prefix="" category="inline-code"></block>：不应编制索引的单个卷的逗号分隔列表</block>
+  <block id="2e7ba7a2addeb2881d5673ae4329306b" category="list-text">创建一个名为<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block>的文件，并自定义 Storage VM 和卷名以匹配您的环境：</block>
 </blocks>
