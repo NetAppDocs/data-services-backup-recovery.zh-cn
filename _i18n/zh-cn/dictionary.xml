@@ -2775,7 +2775,6 @@
   <block id="e2a74f20d433c85025a6f5807d74682d" category="paragraph">选择或创建一个新的StorageGRID集群。有关创建StorageGRID集群以便控制台可以发现它的详细信息，请参阅<block ref="babf3072d9403ab5e1ffb9e4bb9a27cb" category="inline-link-rx"></block>。</block>
   <block id="85ffdbd09ff5b2ecfdcbea6cb8697013" category="summary">NetApp Backup and Recovery中的SnapMirror到云重新同步功能简化了NetApp环境中卷迁移期间的数据保护和连续性。</block>
   <block id="254385f2eec62c0f2399c9da13dde7f6" category="doc">在NetApp Backup and Recovery中使用SnapMirror将卷迁移到 Cloud Resync</block>
-  <block id="ee9ee6fb5d3eb14594205c52636211ec" category="admonition">此功能从 2025 年 5 月发布的NetApp Backup and Recovery版本 4.0.3 开始提供。</block>
   <block id="64d100d00b61364f5c3f3456b1dbbc90" category="paragraph">确保满足以下先决条件：</block>
   <block id="c8f1c31ff80f86ac3f0e5c6f159fae6e" category="list-text">目标ONTAP集群必须运行ONTAP版本 9.16.1 或更高版本。</block>
   <block id="5baace87d48cf58cc80858703e408f10" category="list-text">必须使用NetApp Backup and Recovery保护旧的源ONTAP集群。</block>
@@ -5552,4 +5551,7 @@
   <block id="b5c91904decad9b84ae436053f327229" category="sidebar">从 VMDK 还原 VMware 文件和文件夹</block>
   <block id="d68e9c9c6cd6479fbac7751c3f91f5a3" category="sidebar">还原 Hyper-V 文件和文件夹</block>
   <block id="e193e26700d466b0349ce7e559d96967" category="list-text">*磁盘到对象存储*：主存储（磁盘）到云（对象存储）。这会将数据从 ONTAP 系统复制到对象存储系统。这可以是云超大规模对象存储或私有对象存储，例如 StorageGRID。这种方法非常适合长期数据保留和存档。此选项不适用于 Amazon FSx for NetApp ONTAP。</block>
+  <block id="be3cd190a86975f6f424dc4b62841598" category="section-title">在灾难恢复配置中启用索引</block>
+  <block id="07df367027530700215f6c0b89225a68" category="paragraph">在灾难恢复 (DR) 配置中对存储 VM 集群启用索引时，会出现一个错误，说明不允许在配置为 Vserver DR 目标的 Vserver 上执行该操作。尽管出现错误，后端进程仍会将源存储 VM 的<block ref="f97a37281422aa65185ec69709f5c22b" prefix=" " category="inline-code"></block>状态设置为"on"。存储 VM DR 策略计划运行后，此状态将传播到目标存储 VM。</block>
+  <block id="f3a85d41d14b1d81bc48b863a2e8b370" category="paragraph">*解决方法*：等待 storage VM DR 策略计划在初始错误后运行，然后再次尝试启用索引。</block>
 </blocks>
