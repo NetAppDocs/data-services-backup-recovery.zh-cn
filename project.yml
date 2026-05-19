@@ -254,8 +254,6 @@ sidebar:
       url: "/prev-reference-azure-archive-storage-tiers.html"
     - title: 支持的 Google Cloud 归档存储层
       url: "/prev-reference-gcp-archive-storage-tiers.html"
-    - title: 在暗站中恢复配置数据
-      url: "/reference-backup-cbs-db-in-dark-site.html"
   - title: 法律声明
     url: "/legal-notices.html"
 product-family:

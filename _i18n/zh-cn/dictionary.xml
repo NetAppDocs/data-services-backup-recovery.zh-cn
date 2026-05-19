@@ -3606,9 +3606,7 @@
   <block id="fd161debce2c53100b7c61aa8b2d7c6b" category="list-text">恢复我在 Google Archive 中存档的对象需要多长时间？</block>
   <block id="efce98c74b9fc5fb1711b2f3d4da8f34" category="list-text">*检索时间*：从存档中检索备份文件并将其放置在标准存储中的时间。这有时被称为“补水”时间。与其他云提供商提供的“最冷”存储解决方案不同，您的数据可以在几毫秒内访问。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">关于此任务</block>
-  <block id="b92e6028af16604f3b6fd4eade9dfec6" category="summary">在没有互联网访问的站点（称为“私有模式”）中使用NetApp Backup and Recovery时， NetApp Backup and Recovery配置数据将备份到存储备份的StorageGRID或ONTAP S3 存储桶中。如果您将来遇到控制台代理主机系统问题，您可以部署新的控制台代理并恢复关键的NetApp Backup and Recovery数据。</block>
   <block id="a215e32a572a4f73138eb57df3fb494d" category="doc">在暗站中恢复NetApp Backup and Recovery配置数据</block>
-  <block id="e49ea1690cc473e646cdffd861381cbc" category="paragraph">在没有互联网访问的站点（称为_私有模式_）中使用NetApp Backup and Recovery时， NetApp Backup and Recovery配置数据将备份到存储备份的StorageGRID或ONTAP S3 存储桶中。如果控制台代理主机系统出现问题，您可以部署新的控制台代理并恢复关键的NetApp Backup and Recovery数据。</block>
   <block id="701ba6e125e8ce791098165f107eb472" category="admonition">此过程仅适用于ONTAP卷数据。</block>
   <block id="28f81c5bbd7730901f36546c0e51e06f" category="paragraph">备份的数据有两种类型：</block>
   <block id="8ad7c680cb0d9e95e7294cf3e192be1f" category="list-text">NetApp Backup and Recovery数据库 - 包含所有卷、备份文件、备份策略和配置信息的列表。</block>
@@ -3843,7 +3841,6 @@
   <block id="f5b61ddaf24256f9a32421bae22a1e21" category="sidebar">将本地ONTAP备份到 Azure Blob</block>
   <block id="e8f201c141a8ad9fbe4ea92510b4ca30" category="sidebar">将本地ONTAP备份到 Google Cloud</block>
   <block id="6a2941303bd6f981e2724af76bf3da2e" category="sidebar">将本地ONTAP备份到StorageGRID</block>
-  <block id="14873f48c9db88415c7c75e61a0ddd00" category="sidebar">在暗站中恢复配置数据</block>
   <block id="5ee1bd11e1cae9e48854c491affa72a6" category="sidebar">管理ONTAP备份</block>
   <block id="0f18ca4c27c34246c6bc09d2bbf775c6" category="sidebar">从ONTAP备份还原</block>
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">管理 Microsoft SQL Server 库存</block>
@@ -5557,4 +5554,6 @@
   <block id="2e7ba7a2addeb2881d5673ae4329306b" category="list-text">创建一个名为<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block>的文件，并自定义 Storage VM 和卷名以匹配您的环境：</block>
   <block id="48be46e5153e88189d804da13793e42d" category="list-text">不支持从本地快照还原文件夹。</block>
   <block id="dfad9bc0d0d8b9068168d9197cc59866" category="list-text">您可以将*文件夹*从复制或对象存储快照还原到原始系统中的卷、使用相同云帐户的不同系统中的卷或本地 ONTAP 系统上的卷。不支持从本地快照还原文件夹。</block>
+  <block id="637d209786fc6476ac3ed36c800de343" category="summary">在私有模式（无互联网访问）下，NetApp Backup and Recovery 将其配置数据存储在用于备份的相同 StorageGRID 或 ONTAP S3 存储桶中。如果 Console 代理主机系统出现故障，您可以部署新的 Console 代理并恢复此数据。</block>
+  <block id="7bc0231d1aacc728e66087d46a205aab" category="paragraph">在_私有模式_（无互联网访问）下，NetApp Backup and Recovery 将其配置数据存储在用于备份的相同 StorageGRID 或 ONTAP S3 存储桶中。如果 Console 代理主机系统出现故障，您可以部署新的 Console 代理并恢复此数据。</block>
 </blocks>
