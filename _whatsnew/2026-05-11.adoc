@@ -48,3 +48,15 @@
 
 
 有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。
+
+
+
+=== Kubernetes 工作负载增强功能
+
+在此版本中，Kubernetes 工作负载引入了以下增强功能：
+
+* *Trident Protect 26.05.1*：此版本包括 Trident Protect 26.05.1。
+* *基于 VM 的应用程序的就地还原*：您现在可以将基于 VM 的应用程序还原到原始命名空间和原始集群。
+
+
+有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。

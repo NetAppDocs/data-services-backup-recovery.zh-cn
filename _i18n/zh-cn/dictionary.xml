@@ -5239,10 +5239,8 @@
   <block id="23a8c2c2f00449fb258432bb555df792" category="paragraph">在此版本中，Kubernetes 工作负载引入了以下增强功能：</block>
   <block id="fa4bdb2a7b9d92b88314f56020b6233b" category="list-text">*对保护 VM 的本机支持*：您现在可以创建基于 VM 的应用程序，使您能够以保护任何其他应用程序的方式保护虚拟机。</block>
   <block id="26941edb78c4dbe9ef9eecfa96d0effe" category="list-text">*资源转换*：您现在可以使用资源转换和资源转换模板在还原过程中添加、删除和修改资源属性。</block>
-  <block id="283ac99a03bae81366bef44dc5d0e7d7" category="list-text">*从 Backup and Recovery 升级 Trident Protect*：您现在可以直接从 Backup and Recovery 升级 Kubernetes 集群的 Trident Protect。</block>
   <block id="2473cfa7d58a8b216d39f3987c07594f" category="list-text">*查看受保护的资源*：您现在可以查看应用程序的每个恢复点中包含的资源，并下载详细的 JSON 报告。这使您可以全面了解您的恢复点，并简化审计合规性。</block>
   <block id="6e56df4eb422b0b15187c84ba551237e" category="summary">在您的环境中使用 Backup and Recovery 之前，请查看这些 NetApp Backup and Recovery 限制。</block>
-  <block id="a53f9fc03c44857823108d186061d746" category="section-title">不支持从本地快照就地还原基于 VM 的应用程序</block>
   <block id="3e204d8b8cd27fb138dc9f8b97e831ad" category="paragraph">当前不支持从本地快照进行基于 VM 的应用程序的就地还原（还原到原始命名空间和原始群集）。</block>
   <block id="930dce8dab04ce68bb76e7e3616a93a1" category="list-text"><block ref="473bc5f1f9d293596a6cf3f7d880fe14" category="inline-xref-macro-rx"></block> 适用于任何 Windows、Microsoft SQL Server、Oracle Database 或 Linux 主机，NetApp Backup and Recovery 需要对其进行身份验证。这包括在还原文件或文件夹时使用的来宾操作系统凭据。</block>
   <block id="9d07cf053c6372eed523592068e90499" category="list-text"><block ref="9bcb031751ebe08f6f5c4f1caa70f94f" category="inline-xref-macro-rx"></block> 在还原资源时对其进行修改。</block>
@@ -5556,4 +5554,8 @@
   <block id="dfad9bc0d0d8b9068168d9197cc59866" category="list-text">您可以将*文件夹*从复制或对象存储快照还原到原始系统中的卷、使用相同云帐户的不同系统中的卷或本地 ONTAP 系统上的卷。不支持从本地快照还原文件夹。</block>
   <block id="637d209786fc6476ac3ed36c800de343" category="summary">在私有模式（无互联网访问）下，NetApp Backup and Recovery 将其配置数据存储在用于备份的相同 StorageGRID 或 ONTAP S3 存储桶中。如果 Console 代理主机系统出现故障，您可以部署新的 Console 代理并恢复此数据。</block>
   <block id="7bc0231d1aacc728e66087d46a205aab" category="paragraph">在_私有模式_（无互联网访问）下，NetApp Backup and Recovery 将其配置数据存储在用于备份的相同 StorageGRID 或 ONTAP S3 存储桶中。如果 Console 代理主机系统出现故障，您可以部署新的 Console 代理并恢复此数据。</block>
+  <block id="529ee13269734b9af20d3b6447ab6b9f" category="list-text">*Trident Protect 26.05*：此版本包括 Trident Protect 26.05。</block>
+  <block id="54f8a7826ae5101b3374158dadb22dbe" category="list-text">*从 Backup and Recovery 升级 Trident Protect*：如果您的 Kubernetes 集群正在运行 Trident Protect 26.05 或更高版本，您现在可以直接从 Backup and Recovery 升级 Trident Protect。</block>
+  <block id="482d8dda04ea30da4fa480c529cb09b0" category="list-text">*Trident Protect 26.05.1*：此版本包括 Trident Protect 26.05.1。</block>
+  <block id="d0426b89e832dc9c7bd7771552d69499" category="list-text">*基于 VM 的应用程序的就地还原*：您现在可以将基于 VM 的应用程序还原到原始命名空间和原始集群。</block>
 </blocks>
