@@ -27,9 +27,6 @@ summary: 您可以保护 Hyper-V 虚拟机，从本地ONTAP系统到主存储和
 
 当您添加 Hyper-V 主机并发现资源时， NetApp Backup and Recovery会在 Hyper-V 主机上安装NetApp Hyper-V 插件和NetApp SnapCenter Windows FileSystem 插件，以帮助管理和保护虚拟机。
 
-
-NOTE: 要切换到NetApp Backup and Recovery UI 版本或从 NetApp Backup and Recovery UI 版本切换，请参阅link:br-start-switch-ui.html["切换到以前的NetApp Backup and RecoveryUI"]。
-
 您可以使用NetApp Backup and Recovery执行与 Hyper-V 工作负载相关的以下任务：
 
 * link:br-start-discover-hyperv.html["发现 Hyper-V 工作负载"]
