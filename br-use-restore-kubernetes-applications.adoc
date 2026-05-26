@@ -151,7 +151,7 @@ NOTE: 当前不支持修改 PersistentVolumeClaims 和命名空间。
 .. 从*模板*列表中选择模板，即可快速应用常用的修饰符设置。此列表包括常见场景的预定义模板以及您已创建的自定义模板。
 +
 
-NOTE: 在全局 link:br-start-configure.html#create-a-resource-modifier-template["设置"^] 区域创建资源转换模板。
+NOTE: 在全局 link:br-start-configure.html#create-a-resource-transformation-template["设置"^] 区域创建资源转换模板。
 
 .. 通过输入资源组、版本、种类和名称，指定要修改的资源。
 .. 通过从 *Operation* 列表中选择一个操作，指定要对资源执行的操作。
