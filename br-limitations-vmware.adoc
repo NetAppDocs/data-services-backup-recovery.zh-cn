@@ -18,12 +18,7 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 
 在 NetApp Backup and Recovery 中的 VMware 工作负载不支持以下操作：
 
-* 挂载
-* 卸载
 * vVol 支持
-* NVMe 支持
 * 电子邮件集成
-* 编辑政策
-* 编辑保护组
 * 基于角色的访问控制 (RBAC) 支持
 
