@@ -2827,9 +2827,7 @@
   <block id="42ae5c9bea47cb038f5eb5c20c14c009" category="list-text">选择“上传卷映射详细信息”下的“上传”，将完成的 CSV 表上传到NetApp Backup and RecoveryUI。</block>
   <block id="52fe5bc906babbd082ffb0764b349da3" category="list-text">输入重新同步操作所需的提供商和网络配置信息。</block>
   <block id="43b0700358df39b882c5da30b98d8dcd" category="list-text">选择*提交*开始验证过程。</block>
-  <block id="c64a45891aedaa884bd5102de27a4a78" category="paragraph">NetApp Backup and Recovery验证选择重新同步的每个卷是否都是最新快照，并且至少有一个通用快照。这可确保卷已准备好进行SnapMirror到 Cloud Resync 操作。</block>
   <block id="8463b887dbd61aa1995dcc0260b60f9f" category="list-text">查看验证结果，包括新的源卷名称和每个卷的重新同步状态。</block>
-  <block id="b98c88f62c4834a257b2a73ee9fbb4dd" category="list-text">检查容量是否合格。系统检查卷是否符合重新同步的条件。如果卷不符合条件，则意味着它不是最新的快照或未找到通用快照。</block>
   <block id="4d37de81f19963c13dc2e27a80c87068" category="admonition">为了确保卷仍然符合SnapMirror到 Cloud Resync 操作的条件，请在迁移前阶段删除任何SnapMirror关系之前，为每个卷拍摄最终快照。这保留了数据的最新状态。</block>
   <block id="c856ee3b535d4aa35b19af5253f54e81" category="list-text">选择*重新同步*以开始重新同步操作。系统使用最新且通用的快照仅传输增量更改，确保备份的连续性。</block>
   <block id="8d2d3fb9cf8aa026f491048ab9fdf368" category="list-text">在作业监视器页面中监视重新同步过程。</block>
@@ -5552,4 +5550,7 @@
   <block id="b53801e3c4b30277c5f2975ffed7720c" category="list-text">（可选）在 *Policy* 区域中，选择一个现有的保护策略来保护应用程序或创建一个新策略。如果未选择策略，则创建的应用程序将没有保护策略。您可以<block ref="ee6916d2984f9ce63f3c3b8b1b4f14f9" category="inline-link-macro-rx"></block>稍后进行。</block>
   <block id="fefcfa5dbc8a28e96b9d098440cd7d4a" category="admonition">在全局 <block ref="3ce10431a19a41e956e68fb70b49b83e" category="inline-link-macro-rx"></block> 区域创建资源转换模板。</block>
   <block id="40ccff053be8d0d5d48c09ba075b58e5" category="admonition">当您还原启用了 SnapLock 的卷时，只有当目标存储启用了 WORM 时，还原的卷才会保留 SnapLock 保护。如果还原到非 WORM 目标，则会从还原的卷中删除 SnapLock 状态。</block>
+  <block id="ae560942cdf67d205fbeeda3a63a14a3" category="admonition">请勿使用"Vault"类型的 SnapMirror 策略将卷从旧 ONTAP 群集克隆到新 ONTAP 群集或在级联架构设置中。Vault 策略在传输过程中更改快照的版本 UUID。快照的版本 UUID 用于确定源和目标之间是否存在公共快照。</block>
+  <block id="eccb056c811f6da5d84262d7dd856d5c" category="paragraph">NetApp Backup and Recovery 验证所选用于重新同步的每个卷是否与对象存储共享一个通用快照。具体来说，存储在对象存储中的最新快照也必须存在于新克隆卷的本地快照中。此检查确保卷已准备好进行 SnapMirror 到云端重新同步操作。</block>
+  <block id="4869420875f3291b832867e066be6b05" category="list-text">检查卷的资格。系统检查卷是否符合重新同步的资格。如果卷不合格，则表示未建立通用快照条件。</block>
 </blocks>

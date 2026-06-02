@@ -112,6 +112,9 @@ image:diagram-snapmirror-cloud-resync-migration-steps.png["使用SnapMirror到 C
 
 迁移后， NetApp技术更新团队将确保完成以下步骤以建立保护并为重新同步做好准备。
 
+
+NOTE: 请勿使用"Vault"类型的 SnapMirror 策略将卷从旧 ONTAP 群集克隆到新 ONTAP 群集或在级联架构设置中。Vault 策略在传输过程中更改快照的版本 UUID。快照的版本 UUID 用于确定源和目标之间是否存在公共快照。
+
 . 记录目标ONTAP集群中所有迁移卷的新卷实例 UUID。
 . 确认旧ONTAP集群中可用的所有必需SnapMirror策略均已在新ONTAP集群中正确配置。
 . 在控制台*系统*页面中将新的ONTAP集群添加为系统。
@@ -156,10 +159,10 @@ NOTE: 应该使用卷实例 UUID，而不是卷 ID。卷实例 UUID 是一个唯
 . 输入重新同步操作所需的提供商和网络配置信息。
 . 选择*提交*开始验证过程。
 +
-NetApp Backup and Recovery验证选择重新同步的每个卷是否都是最新快照，并且至少有一个通用快照。这可确保卷已准备好进行SnapMirror到 Cloud Resync 操作。
+NetApp Backup and Recovery 验证所选用于重新同步的每个卷是否与对象存储共享一个通用快照。具体来说，存储在对象存储中的最新快照也必须存在于新克隆卷的本地快照中。此检查确保卷已准备好进行 SnapMirror 到云端重新同步操作。
 
 . 查看验证结果，包括新的源卷名称和每个卷的重新同步状态。
-. 检查容量是否合格。系统检查卷是否符合重新同步的条件。如果卷不符合条件，则意味着它不是最新的快照或未找到通用快照。
+. 检查卷的资格。系统检查卷是否符合重新同步的资格。如果卷不合格，则表示未建立通用快照条件。
 +
 
 IMPORTANT: 为了确保卷仍然符合SnapMirror到 Cloud Resync 操作的条件，请在迁移前阶段删除任何SnapMirror关系之前，为每个卷拍摄最终快照。这保留了数据的最新状态。
