@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: reference-audit-actions.html 
+keywords: audit, audit actions, NetApp Console, Backup and Recovery, audit log 
+summary: NetApp Console 审核支持的备份和恢复操作的参考。 
+---
+= 审核的备份和恢复操作
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console 审核页面记录用户在 Backup and Recovery 中执行的以下操作，作为其审核功能的一部分。有关如何查看和筛选审核事件的详细信息，请参阅 Console 文档中的 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["从"审核"页面审核用户活动"^]。
+
+对于每个已审核的操作，Console 都会记录服务名称、代理、资源、用户和操作状态。
+
+.审核的备份和恢复操作
+* 从备份还原卷或文件
+* 将卷还原为快照
+* 启动文件资源管理器
+* 从 Snapshot 还原文件
+* 注册云凭据
+* 更新云凭据
+* 删除云凭据
+* 创建对象存储桶
+* 修改对象存储桶
+* 验证备份迁移
+* 在 ONTAP 系统之间迁移备份
+* 初始化源保护
+* 用于保护的对等集群
+* 初始化目标保护
+* 启动卷复制
+* 创建 Cyber Vault 系统
+* 删除 Cyber Vault 系统
+* 启用 Cyber Vault 访问权限
+* 禁用 Cyber Vault 访问权限
+* 创建临时快照
+* 发现卷和关系
+* 更新应用程序配置
+* 启用卷的全景保护
+* 修改卷的全景保护
+* 修改系统的对象存储
+* 创建临时云备份
+* 初始化系统保护
+* 启用卷的全景保护
+* 修改卷的全景保护
+* 刷新卷备份元数据（计划）
+* 在卷中启用备份
+* 修改卷的全景保护
+* 删除 ANF 快照策略
+* 激活系统中的全景保护
+* 修改系统中的全景保护
+
+
+
+
+== 更多信息
+
+* https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["从"审核"页面审核用户活动"^]
+

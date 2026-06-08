@@ -24,9 +24,6 @@ summary: 使用NetApp Backup and Recovery保护您的 Hyper-V 工作负载。
 * 从对象存储备份还原（仅恢复到原始位置）
 
 
-
-NOTE: 驻留在 SAN 存储上的虚拟机不支持从对象存储备份还原。
-
 .恢复到这些点
 您可以将数据恢复到以下点：
 

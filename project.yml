@@ -70,6 +70,8 @@ sidebar:
         url: "/prev-ontap-policy-object-advanced-settings.html"
       - title: 将Cloud Volumes ONTAP备份到 Amazon S3
         url: "/prev-ontap-backup-cvo-aws.html"
+      - title: 将 Cloud Volumes ONTAP 备份到 S3 兼容存储
+        url: "/prev-ontap-backup-cvo-s3-compatible.html"
       - title: 将Cloud Volumes ONTAP备份到 Azure Blob
         url: "/prev-ontap-backup-cvo-azure.html"
       - title: 将Cloud Volumes ONTAP备份到 Google Cloud
@@ -242,6 +244,8 @@ sidebar:
     url: "/br-api-backup-restore.html"
   - title: 参考
     entries:
+    - title: 审核的备份和恢复操作
+      url: "/reference-audit-actions.html"
     - title: SnapCenter中的策略与NetApp Backup and Recovery的策略比较
       url: "/reference-policy-differences-snapcenter.html"
     - title: NetApp Backup and Recovery角色和权限

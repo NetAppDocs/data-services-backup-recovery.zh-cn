@@ -18,6 +18,33 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 
 
+== 2026 年 6 月 08 日
+
+此NetApp Backup and Recovery版本包括以下更新。
+
+
+
+=== ONTAP Volumes 工作负载增强
+
+在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：
+
+*支持 S3 兼容云存储*：卷工作负载的 NetApp Backup and Recovery 现在支持备份到 S3 兼容云存储。
+
+要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["保护 ONTAP 卷工作负载概述"]。
+
+
+
+=== Hyper-V 工作负载增强功能
+
+在此版本中，Hyper-V 工作负载引入了以下增强功能：
+
+* *将文件和文件夹还原到来宾 VM 改进*：您现在可以将文件和文件夹从主存储或二级存储上的快照还原到来宾 Windows VM。CIFS 和 SAN VM 现在支持此功能。
+
+
+有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载概述"]。
+
+
+
 == 2026 年 5 月 11 日
 
 此NetApp Backup and Recovery版本包括以下更新。
