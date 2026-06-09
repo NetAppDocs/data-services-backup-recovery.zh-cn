@@ -5572,7 +5572,6 @@
   <block id="47d7a1c349dd710c7b70de2cc5f8bef1" category="admonition">Wasabi 目前是唯一符合条件的 S3 兼容对象存储提供商。其他 S3 兼容的提供商尚未通过验证。</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="811a794fc3af22bb5e0566f56adc0406" category="list-text">S3 兼容存储</block>
-  <block id="d0a6d4081b2093e4e5a535bdce1e44c0" category="cell">S3 兼容对象存储中的 Cloud Volumes ONTAP</block>
   <block id="29fc78ad7b30ceab82a6fad5327f5e05" category="cell">S3 兼容对象存储</block>
   <block id="d0eb32456912dd737e495d1233503746" category="summary">NetApp Console 审核支持的备份和恢复操作的参考。</block>
   <block id="a29588ca393407a53992df452b4d7451" category="doc">审核的备份和恢复操作</block>
@@ -5615,4 +5614,5 @@
   <block id="0714572f5e60fbb935fc53015369f585" category="list-text"><block ref="0714572f5e60fbb935fc53015369f585" category="inline-link-rx"></block></block>
   <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">2026 年 6 月 08 日</block>
   <block id="83600b516c30dfc55e0311442c5d9002" category="sidebar">将 Cloud Volumes ONTAP 备份到 S3 兼容存储</block>
+  <block id="3a6182405315948a2b482f267396231c" category="admonition">对"本地 ONTAP 系统"的引用包括 FAS、AFF 和 ONTAP Select 系统。</block>
 </blocks>
