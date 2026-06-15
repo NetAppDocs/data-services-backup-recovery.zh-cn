@@ -4659,7 +4659,6 @@
   <block id="fb5dbc581e0b5b523350175d27ea83c0" category="list-text">选择要使用的还原点的 *Restore* 按钮。</block>
   <block id="98c52679a9ed385c5482f74fe44c97ae" category="list-text">选择要从中还原的源位置。</block>
   <block id="6d99ca24de4c4c5c0b932cbcc18fdbbe" category="list-text">选择还原到原始命名空间或新命名空间。</block>
-  <block id="41af3e90c2d7ebbd0ddd4e36e78220b5" category="list-text">如果选择还原到新命名空间，请输入要使用的目标命名空间。</block>
   <block id="a2552d8c6714f46cdb5bfe28dbdc9b87" category="list-text">展开 *Destination settings* 部分，然后选择恢复到默认存储类、其他存储类，或者如果要恢复到其他集群，则将存储类映射到目标集群。</block>
   <block id="a5e9d16a9cc07839a654d90f3a7a4b97" category="list-text">如果选择还原到其他存储类，请选择与每个源存储类匹配的目标存储类。</block>
   <block id="7a19603af554b25cd8b2df54b3b90a02" category="list-text">或者，如果您要还原使用 Trident Protect 创建的备份或快照，请查看 AppVault 用作还原操作存储桶的详细信息。如果您的环境或 AppVault 状态发生变化，请选择 *Sync App Vault* 以刷新详细信息。</block>
@@ -5615,4 +5614,16 @@
   <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">2026 年 6 月 08 日</block>
   <block id="83600b516c30dfc55e0311442c5d9002" category="sidebar">将 Cloud Volumes ONTAP 备份到 S3 兼容存储</block>
   <block id="3a6182405315948a2b482f267396231c" category="admonition">对"本地 ONTAP 系统"的引用包括 FAS、AFF 和 ONTAP Select 系统。</block>
+  <block id="248bbbcb51ef3ddd3bd9dc8e6ef8b5a1" category="list-text">*Trident Protect 26.06*：此版本包括 Trident Protect 26.06。</block>
+  <block id="a322829a7429e3dce13d41945775197c" category="list-text">*在还原期间跳过应用程序创建*：现在，您可以在还原操作期间跳过自动创建应用程序自定义资源对象。这减少了应用程序清单中不必要的条目。</block>
+  <block id="b6e7f9bbbf3d504dc4f264292161745a" category="list-text">*还原虚拟机永久卷声明*：现在，在还原基于虚拟机的应用程序时，您可以还原单个永久卷声明，而无需还原整个虚拟机，从而在特定磁盘或卷受损坏或数据丢失影响时加快恢复速度。</block>
+  <block id="bf6f998632908219ca091b00cfa53117" category="list-text">*作业监视器改进*：作业监控现在提供了对 Kubernetes 保护作业的增强可见性。您可以查看有关作业和子作业的详细状态信息，并查看每个作业和子作业使用的目标存储。</block>
+  <block id="2fa234e4bf58407b9116597669532c73" category="list-text">如果选择还原到新命名空间，请执行以下操作：</block>
+  <block id="b74045bc4ba6e80e41145047c07e7187" category="list-text">输入要使用的目标命名空间。</block>
+  <block id="d99b2f4ce740b964bfc13369bafa70b1" category="list-text">输入目标应用程序名称。</block>
+  <block id="5639f1fbdf481a03dd07036133bb85db" category="list-text">（可选）选择*不为还原的资源创建应用程序*选项，在不创建应用程序自定义资源对象的情况下还原资源。这减少了应用程序清单中不必要的条目。</block>
+  <block id="928e9cbce0c62c73be1d4bd0799f3a7a" category="list-text">要恢复整个虚拟机，请选择*虚拟机*选项卡。</block>
+  <block id="d7b53b986ac236d7156eb62ccb254f74" category="list-text">要恢复单个持久卷声明，请选择*持久卷声明*选项卡。</block>
+  <block id="dbdc850e2c6c701a4218daf5d558b642" category="paragraph">Backup and Recovery 列出了恢复点中的所有永久卷声明。您可以选择要在还原操作中包含的永久卷声明。</block>
+  <block id="15957f5a10d7c37b0a0a1daa1c46013a" category="section-title">2026 年 6 月 15 日</block>
 </blocks>

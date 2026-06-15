@@ -18,6 +18,26 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 
 
+== 2026 年 6 月 15 日
+
+此NetApp Backup and Recovery版本包括以下更新。
+
+
+
+=== Kubernetes 工作负载增强功能
+
+在此版本中，Kubernetes 工作负载引入了以下增强功能：
+
+* *Trident Protect 26.06*：此版本包括 Trident Protect 26.06。
+* *在还原期间跳过应用程序创建*：现在，您可以在还原操作期间跳过自动创建应用程序自定义资源对象。这减少了应用程序清单中不必要的条目。
+* *还原虚拟机永久卷声明*：现在，在还原基于虚拟机的应用程序时，您可以还原单个永久卷声明，而无需还原整个虚拟机，从而在特定磁盘或卷受损坏或数据丢失影响时加快恢复速度。
+* *作业监视器改进*：作业监控现在提供了对 Kubernetes 保护作业的增强可见性。您可以查看有关作业和子作业的详细状态信息，并查看每个作业和子作业使用的目标存储。
+
+
+有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
+
+
+
 == 2026 年 6 月 08 日
 
 此NetApp Backup and Recovery版本包括以下更新。
