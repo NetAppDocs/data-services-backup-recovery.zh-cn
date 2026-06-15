@@ -19,6 +19,18 @@
 在此版本中，Hyper-V 工作负载引入了以下增强功能：
 
 * *将文件和文件夹还原到来宾 VM 改进*：您现在可以将文件和文件夹从主存储或二级存储上的快照还原到来宾 Windows VM。CIFS 和 SAN VM 现在支持此功能。
+* *保护组现在使用主机时区计划*：保护组现在使用 Hyper-V 主机的时区。在引入主机时区调度之前创建的保护组继续使用其先前配置的时间（通常为 UTC）。要更新这些保护组以使用 Hyper-V 主机时区，必须重新创建计划。有关详细信息，请参见 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protection-groups.html["为 Hyper-V 工作负载创建和管理保护组"]。
 
 
 有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载概述"]。
+
+
+
+=== VMware 工作负载增强功能
+
+在此版本中，VMware 工作负载引入了以下增强功能：
+
+* *保护组现在使用主机时区计划*：保护组现在使用托管 VMware vCenter Server 的时区。在引入主机时区计划之前创建的保护组继续在其先前配置的时区（通常为 UTC）上运行。要使用 vCenter 时区，必须重新创建计划。请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protection-groups.html["为 VMware 工作负载创建和管理保护组"]以获取更多信息。
+
+
+有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。

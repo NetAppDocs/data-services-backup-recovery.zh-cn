@@ -29,6 +29,9 @@ NOTE: 其中一些选项和配置部分并不适用于所有工作负载。
 
 
 
+NOTE: 对于 VMware 工作负载，备份计划使用 VMware vCenter Server 的时区，而不是 UTC 或浏览器的本地时间。此时区在创建计划时设置。如果主机时区发生更改，则必须刷新主机并重新创建计划，以使新时区生效。有关详细信息，请参见 link:br-use-vmware-protection-groups.html["为 VMware 工作负载创建和管理保护组"]。
+
+
 
 == 查看政策
 

@@ -4265,8 +4265,6 @@
   <block id="d866b8b94a3e8b940c5c063a7cf79472" category="paragraph">编辑保护组以更改其名称或设置。如果保护组中的资源发生了变化，您可能需要编辑该保护组。</block>
   <block id="2028d26ecaf3fcd5b07a86fe6beca923" category="list-text">选择要编辑的保护组。</block>
   <block id="712a9492193e1ef0b35be30256c2d566" category="list-text">选择“操作”图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *编辑*。</block>
-  <block id="08483165aa1f33d41b512e87d0481649" category="list-text">更改保护组的任何设置，例如名称或组中的虚拟机。</block>
-  <block id="ad41a0253f0fa950ebd266549a680870" category="list-text">必要时更改保护策略。完成后，选择“下一步”。</block>
   <block id="c3db3d5055385cdff6f17b6bf22a7152" category="list-text">检查配置并选择“提交”。</block>
   <block id="90f68f3e2b7c1b2173cf20adbaecd7aa" category="list-text">恢复到备用位置</block>
   <block id="20ca6e882fe3b588e30201e762f2131d" category="list-text">*启动虚拟机*：启用此选项可在恢复后启动新的虚拟机。</block>
@@ -5626,4 +5624,21 @@
   <block id="15957f5a10d7c37b0a0a1daa1c46013a" category="section-title">2026 年 6 月 15 日</block>
   <block id="eb985c23c2b4157b8059d99e50538799" category="paragraph">有关 NetApp Console 要求，请参阅 <block ref="a1e048c2b33797bd5e09f13ddaff6fff" category="inline-xref-macro-rx"></block>。</block>
   <block id="d1a5a28bec1ce98df5bea6fe830a4f31" category="list-text">使用 Wasabi 对象存储进行了测试和验证；客户还报告了使用 MinIO、IBM Cloud Object Storage 和 Apple Object Store 的成功部署</block>
+  <block id="11cb5552207ff0aa19a1682353b76f93" category="list-text">*保护组现在使用主机时区计划*：保护组现在使用 Hyper-V 主机的时区。在引入主机时区调度之前创建的保护组继续使用其先前配置的时间（通常为 UTC）。要更新这些保护组以使用 Hyper-V 主机时区，必须重新创建计划。有关详细信息，请参见<block ref="d7b709a60ba856948f2de1f387e47906" category="inline-link-rx"></block>。</block>
+  <block id="327e5e3e392a7cf832926cb52870097c" category="list-text">*保护组现在使用主机时区计划*：保护组现在使用托管 VMware vCenter Server 的时区。在引入主机时区计划之前创建的保护组继续在其先前配置的时区（通常为 UTC）上运行。要使用 vCenter 时区，必须重新创建计划。请参阅<block ref="5181f9a713551c0880da1b785cb2e8f3" category="inline-link-rx"></block>以获取更多信息。</block>
+  <block id="d041f642a2d3785a0e94ba8db99dbb87" category="list-text">请注意，对于 Hyper-V 工作负载，计划备份时间以管理主机的时区进行解释。有关详细信息，请参见 <block ref="6abbe22a47895e202e8193141aa3411e" category="inline-link-macro-rx"></block>。</block>
+  <block id="2c1cd28b4c922c58abcbcf35e3928c82" category="paragraph">编辑保护组向导将引导您完成保护组中的设置。</block>
+  <block id="099b64c43a578b47f6704f18b87a7a7f" category="list-text">在向导的每个屏幕上进行必要的更改。</block>
+  <block id="ee50c8cd836b2085ab8f01315cef077a" category="list-text">完成后，选择*提交*。</block>
+  <block id="1aeeb7dce233dd15c02742ecac270391" category="section-title">将更新的主机时区应用于现有保护组</block>
+  <block id="3d7dc123777dfed33a5f55d552bfa333" category="paragraph">计划备份使用创建保护组的计划时记录的 Hyper-V 主机的时区。如果更改主机的时区，现有保护组将继续按其原始时区（通常为 UTC）运行，直到您更新其计划。</block>
+  <block id="b691fa63eb388ff83c950ba41d60f083" category="admonition">只有在修改保护组名称、添加或删除虚拟机、更改分配的策略或更新前/后脚本时，才会重新创建计划。不做任何更改而保存将不会更新计划。此计划更新是每个保护组的一次性操作，不会立即启动备份。</block>
+  <block id="1d9b7a2cf50c0d4395425719e90736b9" category="list-text">刷新 Hyper-V 主机，以便检索其当前时区。</block>
+  <block id="dbff8d173c910d8884b39289ba861aec" category="list-text">编辑保护组并将其名称更改为其他值，然后保存。</block>
+  <block id="075bcf42a67adc33e136e805e5049090" category="admonition">对于 Hyper-V 工作负载，备份计划使用 Hyper-V 主机的时区，而不是 UTC 或浏览器的本地时间。此时区在创建计划时设置。如果主机时区发生更改，则必须刷新主机并重新创建计划，新时区才能生效。有关详细信息，请参见 <block ref="25003dd775b8cc60c4948243bfa5b95f" category="inline-link-macro-rx"></block>。</block>
+  <block id="6d55b984a1a7d79f913f0cf893df29e2" category="admonition">对于 VMware 工作负载，备份计划使用 VMware vCenter Server 的时区，而不是 UTC 或浏览器的本地时间。此时区在创建计划时设置。如果主机时区发生更改，则必须刷新主机并重新创建计划，以使新时区生效。有关详细信息，请参见 <block ref="d56582b18b2c53315e597c8a39e49a92" category="inline-link-macro-rx"></block>。</block>
+  <block id="0acbc3c15cbb4ede69f094274dea781f" category="list-text">请注意，对于 VMware 工作负载，计划备份时间以管理主机的时区来解释。有关详细信息，请参见 <block ref="5e4c8524c39497e064cba735f55e2d8d" category="inline-link-macro-rx"></block>。</block>
+  <block id="fab4e94712a0410b3069e33d1470fe7c" category="section-title">将更新后的 vCenter 时区应用于现有保护组</block>
+  <block id="ee19d16e1df2ea16cdf0906f9c62e70b" category="paragraph">计划备份使用创建保护组计划时记录的 vCenter Server 时区。如果更改 vCenter Server 时区，现有保护组将继续按其原始时区（通常为 UTC）运行，直到更新其计划。</block>
+  <block id="2b33678c8eba4dacaa294cad350a79f8" category="list-text">刷新 vCenter 服务器，以便检索其当前时区。</block>
 </blocks>

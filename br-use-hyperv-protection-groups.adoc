@@ -32,6 +32,10 @@ summary: 在NetApp Backup and Recovery中创建和管理 Hyper-V 工作负载的
 
 *所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
+.开始之前
+* 请注意，对于 Hyper-V 工作负载，计划备份时间以管理主机的时区进行解释。有关详细信息，请参见 link:br-use-policies-hyper-v-create.html["在 NetApp Backup and Recovery 中创建和管理 Hyper-V 备份策略"]。
+
+
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择一个工作负载来查看保护详细信息。
@@ -60,10 +64,25 @@ summary: 在NetApp Backup and Recovery中创建和管理 Hyper-V 工作负载的
 . 选择*保护组*选项卡。
 . 选择要编辑的保护组。
 . 选择“操作”图标 image:../media/icon-action.png["操作选项"] > *编辑*。
-. 更改保护组的任何设置，例如名称或组中的虚拟机。
-. 选择“下一步”。
-. 必要时更改保护策略。完成后，选择“下一步”。
-. 检查配置并选择“提交”。
++
+编辑保护组向导将引导您完成保护组中的设置。
+
+. 在向导的每个屏幕上进行必要的更改。
+. 完成后，选择*提交*。
+
+
+
+
+=== 将更新的主机时区应用于现有保护组
+
+计划备份使用创建保护组的计划时记录的 Hyper-V 主机的时区。如果更改主机的时区，现有保护组将继续按其原始时区（通常为 UTC）运行，直到您更新其计划。
+
+
+NOTE: 只有在修改保护组名称、添加或删除虚拟机、更改分配的策略或更新前/后脚本时，才会重新创建计划。不做任何更改而保存将不会更新计划。此计划更新是每个保护组的一次性操作，不会立即启动备份。
+
+.步骤
+. 刷新 Hyper-V 主机，以便检索其当前时区。
+. 编辑保护组并将其名称更改为其他值，然后保存。
 
 
 
