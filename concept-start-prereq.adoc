@@ -306,7 +306,7 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 
 您需要特定的要求来发现 Kubernetes 资源并保护您的 Kubernetes 应用程序。
 
-有关NetApp Console要求，请参阅<<In NetApp Console>>。
+有关 NetApp Console 要求，请参阅 <<准备 NetApp Console>>。
 
 
 NOTE: NetApp 强烈建议为用于 Kubernetes 工作负载的 Console 代理分配静态 IP 地址，以避免代理 IP 地址更改时出现问题。
