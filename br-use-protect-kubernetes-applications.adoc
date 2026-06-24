@@ -34,7 +34,8 @@ NetApp Backup and Recovery 使您能够通过 Web UI 或应用自定义资源文
 --
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory*。
-. 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
+. 在页面右上角，确保在工作负载列表中选择了 *Kubernetes*。
+. 选择工作负载行项目的*View*以查看 Kubernetes 资源。
 . 选择“*应用程序*”选项卡。
 . 选择*创建应用程序*。
 . 输入应用程序的名称。
@@ -71,7 +72,8 @@ NOTE: Backup and Recovery 不存储搜索参数或结果；这些参数用于搜
 --
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory*。
-. 选择一个 Kubernetes 实例，然后选择“查看”以查看与该实例关联的资源。
+. 在页面右上角，确保在工作负载列表中选择了 *Kubernetes*。
+. 选择工作负载行项目的*View*以查看 Kubernetes 资源。
 . 选择“*应用程序*”选项卡。
 . 选择*创建应用程序*。
 . 输入应用程序的名称。

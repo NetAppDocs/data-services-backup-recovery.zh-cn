@@ -45,7 +45,7 @@ VPC 网关端点必须已经存在于您的 VPC 中。 https://docs.aws.amazon.c
 
 * 将崩溃一致性和应用一致性快照从本地 ONTAP 备份到第三方 S3 兼容对象存储
 * 核心数据保护工作流：备份、还原和备份删除
-* 使用 Wasabi 对象存储进行了测试和验证；客户还报告了使用 MinIO、IBM Cloud Object Storage 和 Apple Object Store 的成功部署
+* 已使用 Wasabi 对象存储进行测试和验证；客户还报告了使用 MinIO 和 IBM Cloud Object Storage 的成功部署
 * NetApp 支持接受和分类涉及第三方 S3 兼容对象存储的所有支持请求
 
 
