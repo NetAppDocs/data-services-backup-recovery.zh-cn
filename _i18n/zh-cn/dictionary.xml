@@ -1990,7 +1990,6 @@
   <block id="bade104de773419f0c559bd71478cc40" category="inline-link-macro">激活系统中附加卷的备份</block>
   <block id="7b58ae9806fd4e9bf78fdc8568395ab6" category="paragraph">您可以选择保护FlexVol或FlexGroup卷；但是，在激活系统备份时不能选择这些卷的混合。了解如何<block ref="7239f8ae1ce8c5a40d4003de7480554a" category="inline-link-macro-rx"></block>（FlexVol或FlexGroup）在为初始卷配置备份后。</block>
   <block id="e9dfd7a5bc1d9c55d3cafeb50c863440" category="list-text">您一次只能在单个FlexGroup卷上激活备份。</block>
-  <block id="8678ec2b63284b1fce3f9da35c37df05" category="list-text">您选择的卷必须具有相同的SnapLock设置。所有卷都必须启用SnapLock Enterprise或禁用SnapLock 。</block>
   <block id="8a6e28d635ac6cca84e8efc5d0dd4b54" category="paragraph">如果您选择的卷已经应用了快照或复制策略，那么您稍后选择的策略将覆盖这些现有策略。</block>
   <block id="60956fee8c3d9f3ef0f2f7652f27143f" category="list-text">在“选择卷”页面中，选择要保护的一个或多个卷。</block>
   <block id="faf9e3428a892363316a8c1e34a4551b" category="list-text">或者，过滤行以仅显示具有特定卷类型、样式等的卷，以便更轻松地进行选择。</block>
@@ -5518,7 +5517,6 @@
   <block id="0b0bee32bf0c7158fbba14e4b17f1e23" category="paragraph">要对 ONTAP 卷工作负载使用 NetApp Backup and Recovery，需要满足以下主机系统、空间和大小调整先决条件。</block>
   <block id="f17da14a026a5974537cf1303ac53974" category="list-text">需要 ONTAP 9.8 或更高版本。</block>
   <block id="45b096193f4470968c1063df19d1c253" category="list-text">本地 ONTAP 实例上必须已启用 ONTAP One 许可证。</block>
-  <block id="9cf387a6f708f4467810768eb8e4d31f" category="list-text">备份或恢复到 S3 兼容的对象存储需要 ONTAP 9.17.1 或更高版本。</block>
   <block id="ddaa1c8bd07bda0816a8b44d87c10997" category="paragraph">有关受支持的功能、卷类型、备份和还原目标等信息，请参阅 <block ref="1d638e05920fe33426fac4dc6285a639" category="inline-link-macro-rx"></block>。</block>
   <block id="ba0f269b2bdb85161db3fe51338e6a7b" category="cell">数据库主机</block>
   <block id="bff50f1947dbec1e11bc66d60ca0b1d9" category="cell">支持的存储</block>
@@ -5642,4 +5640,7 @@
   <block id="a7ffc4809e4a33a20f30769fc3e62703" category="list-text">S3 兼容存储（仅限 ONTAP Volumes 工作负载）</block>
   <block id="7229e78ecf33d07a5618d54695f22e2b" category="list-text">Microsoft Azure Blob Storage</block>
   <block id="746c4e9758e4e986d2c5f289c1d7e4ed" category="list-text">已使用 Wasabi 对象存储进行测试和验证；客户还报告了使用 MinIO 和 IBM Cloud Object Storage 的成功部署</block>
+  <block id="df9ce829d97bcaaccefd13ad9443c5fe" category="list-text">ONTAP 9.12.1 或更高版本是 FlexGroup 卷保护的必要条件。有关详细信息，请参见 <block ref="a1845bf1ef98236015caabc5bbd8f351" category="inline-link-macro-rx"></block>。</block>
+  <block id="bc75b0ab08d9eba6d835f75a9dc3780f" category="list-text">备份或还原到与 S3 兼容的对象存储需要 ONTAP 9.17.1 或更高版本。</block>
+  <block id="6e61da6259c2e5766003325feb7a477a" category="list-text">在选择要保护的源卷时，只能选择具有匹配 SnapLock 设置的卷。您选择的卷必须全部启用 SnapLock 功能，或者全部禁用 SnapLock 功能。</block>
 </blocks>

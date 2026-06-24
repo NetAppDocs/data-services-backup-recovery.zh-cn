@@ -78,8 +78,9 @@ https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-o
 要对 ONTAP 卷工作负载使用 NetApp Backup and Recovery，需要满足以下主机系统、空间和大小调整先决条件。
 
 * 需要 ONTAP 9.8 或更高版本。
+* ONTAP 9.12.1 或更高版本是 FlexGroup 卷保护的必要条件。有关详细信息，请参见 link:br-reference-limitations.html["NetApp Backup and Recovery for ONTAP卷的已知限制"]。
+* 备份或还原到与 S3 兼容的对象存储需要 ONTAP 9.17.1 或更高版本。
 * 本地 ONTAP 实例上必须已启用 ONTAP One 许可证。
-* 备份或恢复到 S3 兼容的对象存储需要 ONTAP 9.17.1 或更高版本。
 
 
 有关受支持的功能、卷类型、备份和还原目标等信息，请参阅 link:prev-ontap-protect-overview.html["保护您的ONTAP卷数据"]。

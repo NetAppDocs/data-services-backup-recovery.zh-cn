@@ -274,7 +274,7 @@ NOTE: 如果您想选择资源组的名称，请在部署Cloud Volumes ONTAP时*
 [NOTE]
 ====
 * 您一次只能在单个FlexGroup卷上激活备份。
-* 您选择的卷必须具有相同的SnapLock设置。所有卷都必须启用SnapLock Enterprise或禁用SnapLock 。
+* 在选择要保护的源卷时，只能选择具有匹配 SnapLock 设置的卷。您选择的卷必须全部启用 SnapLock 功能，或者全部禁用 SnapLock 功能。
 
 
 ====
