@@ -778,7 +778,6 @@
   <block id="e5dd8794e7e239a004607625309c03bb" category="list-text">对于 Kubernetes 工作负载，请参阅<block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block>。</block>
   <block id="47531513e36377c6a5c78be39708d962" category="summary">在使用NetApp Backup and Recovery之前，请执行几个步骤来设置备份目标。</block>
   <block id="e902bc2010ef35580633bf1114aee5b3" category="doc">在使用NetApp Backup and Recovery之前设置备份目标</block>
-  <block id="8a0933307f827fb9f8c7b526a219880b" category="paragraph">在使用NetApp Backup and Recovery之前，请执行几个步骤来设置备份目标。</block>
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">前提条件</block>
   <block id="1ee0b624eb9dbd226bf2ec0c999c84a7" category="paragraph">在开始之前，请查看<block ref="2eebb303c5f465d9ddee1afb9c070240" category="inline-link-macro-rx"></block>以确保您的环境已准备就绪。</block>
   <block id="7fada33e4007d6c45f21f39f8f564f62" category="section-title">准备备份目标</block>
@@ -5298,7 +5297,6 @@
   <block id="87e187714ad3406b822e2c0bf109240b" category="summary">您可以将一个或多个文件或文件夹从 Hyper-V VM 快照还原到 Windows 来宾 VM。</block>
   <block id="cd21aa174cd18a8828140ba323628bfb" category="doc">从 Hyper-V VM 备份还原文件和文件夹</block>
   <block id="d822ec23856d26a5af79fad29ce2f55e" category="paragraph">从快照装载虚拟磁盘，并将文件和文件夹从其中还原到原始（源）Windows VM。</block>
-  <block id="d4bb35603ef1e4c4f849336d35413c6f" category="paragraph">在还原文件和文件夹之前，必须在 NetApp Backup and Recovery 中为源虚拟机创建凭据。此凭据用于在还原过程中向虚拟机进行身份验证。</block>
   <block id="17a458fd7a6b6ae191ac9219e3b46deb" category="paragraph">通过装载虚拟磁盘打开文件和文件夹还原会话时，会话将保持活动状态 48 小时。</block>
   <block id="392177f0b4a0bc4b5bc23ef82eee9fff" category="paragraph">还原性能取决于要还原的文件或文件夹的大小和数量。对于给定的数据集大小，还原大量小文件通常需要比还原少量大文件更长的时间。</block>
   <block id="0c1d8f103b8f05dc9e681f213a4140ed" category="paragraph">还原文件和文件夹时请注意以下几点：</block>
@@ -5378,7 +5376,6 @@
   <block id="96cd77faff8587f3ee978f6d738fc506" category="list-text">*验证服务器*：可选地，从列表中选择一个或多个注册的 Oracle 主机用作脱机验证服务器。如果未选择服务器，则验证将直接在源数据库主机上运行。否则，Backup and Recovery 会将快照克隆装载到其中一个选定主机上，并在其中验证备份，从而将验证 I/O 与生产数据库服务器隔离。验证服务器必须：</block>
   <block id="a96c5b49f0e2679b8f6884c399905c08" category="list-text">已安装 NetApp 插件</block>
   <block id="aa525d522adb224988fcdcd6f1e78c30" category="list-text">已安装 Oracle 数据库二进制文件</block>
-  <block id="7ed52864c10e2ddd715752fb3ab3a33f" category="list-text">与源数据库具有相同的 Oracle Database 版本</block>
   <block id="ed72ca5994ca086c703a8fad4669ac29" category="list-text">对存储快照的存储具有网络访问权限（主要或次要）</block>
   <block id="a6b9c0ae442c5226d495a5c8fcbaec6c" category="list-text">能够挂载克隆的卷并运行 Oracle Database DBVERIFY 实用程序。</block>
   <block id="ee722f1985ae6abb41cf3cea75ae2afd" category="list-text">*最大传输速率*：启用 *启用最大传输速率* 为选定主机设置最大传输速率。要不设置带宽使用限制，请选择 *无限*。如果要限制传输速率，请选择 *限制* 并选择分配给将备份上传到对象存储的网络带宽，范围在 1 到 1,000 Mbps 之间。默认情况下，ONTAP 可以使用无限量的带宽将备份数据从系统中的卷传输到对象存储。如果备份流量影响工作负载，请减少传输的网络带宽。</block>
@@ -5644,4 +5641,6 @@
   <block id="2b4ccece5f6493a03ab0eed818dd5e54" category="list-text">将 VMware 工作负载备份到受支持的存储提供商。</block>
   <block id="947289c8d4497907d6f4aedc1502dce8" category="list-text">Google Cloud Storage（仅限 ONTAP 卷和 Kubernetes 工作负载）</block>
   <block id="0692ea49da3133a6dc624be3e9654369" category="paragraph">在不涉及云帐户的情况下（例如，使用 NetApp StorageGRID 作为备份目标），您还可以按照以下步骤更换控制台代理，并在本地以_标准模式_使用备份和恢复时恢复其上存储的配置数据。</block>
+  <block id="2be7e1093c386d54e43c7fc0e8de4a1f" category="paragraph">在还原文件和文件夹之前，必须在 NetApp Backup and Recovery 中为源虚拟机创建凭据。此凭据用于在还原过程中向虚拟机进行身份验证。</block>
+  <block id="9f5917bbc05d835882ed9022aa56ac20" category="list-text">与源数据库具有相同的 Oracle Database 版本</block>
 </blocks>
