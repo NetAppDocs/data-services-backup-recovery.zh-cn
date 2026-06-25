@@ -1513,7 +1513,6 @@
   <block id="b46669fe80ca2a5b9a2d07aed9bdb568" category="list-text">*转入中学*：</block>
   <block id="c6b1efb6a3381715b935aaf64195be83" category="list-text">默认情况下，选择 * ONTAP传输计划 - 内联* 选项，这表示快照会立即传输到二级存储系统。您不需要安排备份。</block>
   <block id="ea593eb0ffc75f929e0088d1e36356cf" category="list-text">其他选项：如果您选择延期转账，则转账不是立即进行的，您可以设置时间表。</block>
-  <block id="cc7a1e67eff230a3c65fb315a1c8d1f0" category="list-text">* SnapMirror和SnapVault SMAS 二级关系*：对 SQL Server 工作负载使用SnapMirror和SnapVault SMAS 二级关系。</block>
   <block id="5d53f1521f3c11d2c706909ba7322fd1" category="admonition">出现的字段根据所选的提供商和架构而有所不同。</block>
   <block id="aea6f666cce57b356fb2085a81658754" category="list-text">*IPspace*：选择用于备份操作的 IP 空间。如果您有多个 IP 空间并想要控制哪一个用于备份，这将非常有用。</block>
   <block id="61c7ccb12ec5421abd7bf85769ede78b" category="list-text">*计划设置*：选择为本地快照设置的计划。您可以删除计划，但不能添加计划，因为计划是根据本地快照计划设置的。</block>
@@ -4724,8 +4723,6 @@
   <block id="5a7772dd6a45520c18defbce09d0dedf" category="paragraph">在 NetApp Backup and Recovery 中 Oracle 数据库工作负载的预览版本不支持以下操作：</block>
   <block id="fffe6dab1367a6da9b1ff43e10e3c12a" category="paragraph">在 NetApp Backup and Recovery 中的 VMware 工作负载不支持以下操作：</block>
   <block id="97c13d527bcfec5ed7f29badd43016d8" category="list-text">编辑策略（不适用于 VMware 工作负载）</block>
-  <block id="332f36926e04f03459b83b7c8da214a6" category="list-text">*VMware 工作负载（使用不含 SnapCenter Plug-in for VMware vSphere 的新 UI）*：</block>
-  <block id="66484fcd4199c3f1b40e50c680ad4e56" category="list-text">将 VMware 工作负载备份到 Amazon Web Services S3 或 StorageGRID。</block>
   <block id="6a4470b3ca7a52803928f40d397b0521" category="list-text">*KVM 工作负载*：</block>
   <block id="c4d36d8f4f3b72c9d5cac59995049781" category="list-text">*Hyper-V 工作负载*：</block>
   <block id="b6178e1ff85723d95932c36399cc61c2" category="list-text">*Kubernetes 工作负载*：</block>
@@ -4835,7 +4832,6 @@
   <block id="4698b69bed4ee276f187d88f25644b08" category="cell">确保在 Windows 防火墙设置中允许以下端口的双向 HTTPS 流量</block>
   <block id="d213948679817ac06e8c20f73a6d5e50" category="list-text">TCP 8144（NetApp Plugin for Hyper-V）</block>
   <block id="eb24ddd0422049219f581858a9ae2714" category="list-text">TCP 8145（NetApp Plugin for Windows）</block>
-  <block id="86a1075e6640849bd364878900fd5412" category="paragraph">您还可以按照以下步骤在_标准模式_本地使用 Backup and Recovery 时替换 Console 代理并恢复其上存储的配置数据，当不涉及云帐户时（例如，使用 NetApp StorageGrid 作为备份目标时）。</block>
   <block id="72edcbdd4436f32d101a83a36dd2d1db" category="list-text">运行 *ls* 命令以确保已创建文件夹"catalogdb1"并包含子文件夹<block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>、<block ref="b17be6650251f2e6c7d4e90209beb4e0" prefix=" " category="inline-code"></block>和<block ref="695633290d050f31cec0c9d4bd4a57fe" prefix=" " category="inline-code"></block>。</block>
   <block id="69b1a964078d5301a2aa9822cb2304f2" category="section-title">2026 年 3 月 16 日</block>
   <block id="5896522d63454009d1844a27f9e16972" category="cell">7.4.13 或更高版本</block>
@@ -5643,4 +5639,9 @@
   <block id="df9ce829d97bcaaccefd13ad9443c5fe" category="list-text">ONTAP 9.12.1 或更高版本是 FlexGroup 卷保护的必要条件。有关详细信息，请参见 <block ref="a1845bf1ef98236015caabc5bbd8f351" category="inline-link-macro-rx"></block>。</block>
   <block id="bc75b0ab08d9eba6d835f75a9dc3780f" category="list-text">备份或还原到与 S3 兼容的对象存储需要 ONTAP 9.17.1 或更高版本。</block>
   <block id="6e61da6259c2e5766003325feb7a477a" category="list-text">在选择要保护的源卷时，只能选择具有匹配 SnapLock 设置的卷。您选择的卷必须全部启用 SnapLock 功能，或者全部禁用 SnapLock 功能。</block>
+  <block id="fa428977bbfd079a1a152d734ac0da9a" category="list-text">*使用现有 SnapMirror 和 SyncMirror 次要关系*：启用此选项可使用现有 SnapMirror 或 SyncMirror 关系将快照传输到指定的目标集群。</block>
+  <block id="2d86afc1dea874d04cb6b44f9329cb39" category="list-text">*VMware 工作负载*：</block>
+  <block id="2b4ccece5f6493a03ab0eed818dd5e54" category="list-text">将 VMware 工作负载备份到受支持的存储提供商。</block>
+  <block id="947289c8d4497907d6f4aedc1502dce8" category="list-text">Google Cloud Storage（仅限 ONTAP 卷和 Kubernetes 工作负载）</block>
+  <block id="0692ea49da3133a6dc624be3e9654369" category="paragraph">在不涉及云帐户的情况下（例如，使用 NetApp StorageGRID 作为备份目标），您还可以按照以下步骤更换控制台代理，并在本地以_标准模式_使用备份和恢复时恢复其上存储的配置数据。</block>
 </blocks>
