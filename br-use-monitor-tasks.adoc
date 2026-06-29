@@ -146,6 +146,9 @@ NetApp Console通知中心跟踪您启动的备份和恢复作业的进度，以
 | 激活 | 系统备份和恢复激活失败 | 是 | 是 
 
 
+| 激活 | 系统备份和恢复激活成功 | 是 | 是 
+
+
 | 激活 | 系统备份和恢复编辑失败 | 是 | 是 
 
 
@@ -153,9 +156,6 @@ NetApp Console通知中心跟踪您启动的备份和恢复作业的进度，以
 
 
 | 激活 | 卷备份或状态已修改 | 是 | 是 
-
-
-| 激活 | 系统备份和恢复激活成功 | 是 | 是 
 
 
 | 激活 | 临时卷备份失败 | 是 | 是 
@@ -167,10 +167,10 @@ NetApp Console通知中心跟踪您启动的备份和恢复作业的进度，以
 | 激活 | 多卷备份失败 | 是 | 是 
 
 
-| 定时任务 | 检查是否缺少快照标签 | 是 | 是 
+| 定时任务 | Snapshot 策略/备份策略标签不匹配 | 是 | 是 
 
 
-| 定时任务 | 未能向ONTAP发送此系统的安全令牌 | 是 | 是 
+| 定时任务 | 无法在此系统的 ONTAP 中更新对象存储凭据 | 是 | 是 
 
 
 | 酒吧/订阅活动 | 连接失败 | 是 | 否 
@@ -203,22 +203,22 @@ NetApp Console通知中心跟踪您启动的备份和恢复作业的进度，以
 | 复制 | NetApp Backup and Recovery临时复制作业失败 | 是 | 是 
 
 
-| 复制 | NetApp Backup and Recovery复制暂停作业失败 | 是 | 否 
+| 复制 | NetApp Backup and Recovery 复制关系暂停作业失败 | 是 | 否 
 
 
-| 复制 | NetApp Backup and Recovery复制中断作业失败 | 是 | 否 
+| 复制 | NetApp Backup and Recovery 复制关系中断作业失败 | 是 | 否 
 
 
-| 复制 | NetApp Backup and Recovery复制重新同步作业失败 | 是 | 否 
+| 复制 | NetApp Backup and Recovery 复制关系重新同步作业失败 | 是 | 否 
 
 
 | 复制 | NetApp Backup and Recovery复制停止作业失败 | 是 | 否 
 
 
-| 复制 | NetApp Backup and Recovery复制反向重新同步作业失败 | 是 | 是 
+| 复制 | NetApp Backup and Recovery 复制关系反向重新同步作业失败 | 是 | 是 
 
 
-| 复制 | NetApp Backup and Recovery复制删除作业失败 | 是 | 是 
+| 复制 | NetApp Backup and Recovery 复制关系删除作业失败 | 是 | 是 
 
 
 | 目标行动 | 恢复到本地或云端目标故障 | 是 | 是 
@@ -228,6 +228,9 @@ NetApp Console通知中心跟踪您启动的备份和恢复作业的进度，以
 
 
 | 系统操作 | 临时卷快照创建失败 | 是 | 是 
+
+
+| 系统操作 | 卷备份的索引编制失败 | 是 | 是 
 |===
 
 NOTE: 从ONTAP 9.13.0 开始，所有警报都会出现在Cloud Volumes ONTAP和本地ONTAP系统中。对于具有Cloud Volumes ONTAP 9.13.0 和本地ONTAP 的系统，仅出现与“恢复作业已完成，但有警告”相关的警报。

@@ -1209,13 +1209,8 @@
   <block id="32316833f8e2552223d79fb99979ff7f" category="cell">NetApp Backup and Recovery临时快照创建作业失败</block>
   <block id="8c340dc334134096f68b880b42a8692c" category="cell">复制</block>
   <block id="def1939e9c93c839079171f6dd5e3291" category="cell">NetApp Backup and Recovery临时复制作业失败</block>
-  <block id="08a671649ac55e1aa9d353651e865c93" category="cell">NetApp Backup and Recovery复制暂停作业失败</block>
   <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="cell">否</block>
-  <block id="de07da0681d640a8e5bfdf21bac49e81" category="cell">NetApp Backup and Recovery复制中断作业失败</block>
-  <block id="d275c1564b9f2a250f9bf30d6e8bab26" category="cell">NetApp Backup and Recovery复制重新同步作业失败</block>
   <block id="9f6cd0f0a12191a75f16414b3b601822" category="cell">NetApp Backup and Recovery复制停止作业失败</block>
-  <block id="93d1a6c01d156e393187858c16c5c626" category="cell">NetApp Backup and Recovery复制反向重新同步作业失败</block>
-  <block id="594e604651fd901124d237d8caf5c86f" category="cell">NetApp Backup and Recovery复制删除作业失败</block>
   <block id="910e8697aa5e0e59e920af3a4cf26b12" category="admonition">从ONTAP 9.13.0 开始，所有警报都会出现在Cloud Volumes ONTAP和本地ONTAP系统中。对于具有Cloud Volumes ONTAP 9.13.0 和本地ONTAP 的系统，仅出现与“恢复作业已完成，但有警告”相关的警报。</block>
   <block id="4e1654b110548c12172bd1f4aa2a9b85" category="paragraph">要接收NetApp Backup and Recovery电子邮件警报，您需要在通知设置页面中选择通知严重性类型“严重”、“警告”和“错误”。</block>
   <block id="ac92ec63bcc51fd7fbdc332411a1c313" category="inline-link">了解如何发送备份和恢复作业的警报电子邮件</block>
@@ -4138,8 +4133,6 @@
   <block id="80fd95bd893f8df76c2fa9dd4bad6849" category="cell">临时卷备份成功</block>
   <block id="5ed835b77018cbf32fbdfb39bcc25527" category="cell">多卷备份失败</block>
   <block id="0298583ff5a55aeec25dc314bbd47357" category="cell">定时任务</block>
-  <block id="f771739629c02b8a1545a40985444450" category="cell">检查是否缺少快照标签</block>
-  <block id="39e7a35fbe3bf187f05710b99a1abab5" category="cell">未能向ONTAP发送此系统的安全令牌</block>
   <block id="1da6059b2e40a5d5dcd0f29c0344d522" category="cell">酒吧/订阅活动</block>
   <block id="75c3b3bb89bde01f9166a94cbfa98588" category="cell">连接失败</block>
   <block id="4d40cebef25fff7de69b66a1fd2b91ac" category="cell">删除计划快照失败</block>
@@ -5642,4 +5635,12 @@
   <block id="6b181f9b8f3365a62a308265f446f30b" category="admonition">客户管理的密钥加密仅支持 Amazon FSx for NetApp ONTAP。Cloud Volumes ONTAP for AWS 不支持此功能。</block>
   <block id="e46ce594d7f94f0d680627c5f9150ad6" category="inline-link">在 AWS 中设置客户管理的密钥加密</block>
   <block id="fe921914a3a58bce833cfd4d4785fb2b" category="paragraph">请参阅<block ref="445e5997f02f6fbbedcd2ff2bda158c4" category="inline-link-rx"></block>。</block>
+  <block id="a5f837afad6e28e74cc2bc1ddf30b10c" category="cell">Snapshot 策略/备份策略标签不匹配</block>
+  <block id="0c1df2a13aa2696a312b568815c83f15" category="cell">无法在此系统的 ONTAP 中更新对象存储凭据</block>
+  <block id="14714a38e65ddb4109cc93b0e6a171b9" category="cell">NetApp Backup and Recovery 复制关系暂停作业失败</block>
+  <block id="6532e5d724a28a601ca7648d508d625b" category="cell">NetApp Backup and Recovery 复制关系中断作业失败</block>
+  <block id="cb807b65bdf438c727793dce019ff942" category="cell">NetApp Backup and Recovery 复制关系重新同步作业失败</block>
+  <block id="633255f387c732126e8cdceb4ac9fceb" category="cell">NetApp Backup and Recovery 复制关系反向重新同步作业失败</block>
+  <block id="d59074181d2dab51d18ca27cb4fc47d8" category="cell">NetApp Backup and Recovery 复制关系删除作业失败</block>
+  <block id="5df069a4ec3b3f8731b57ed05f942930" category="cell">卷备份的索引编制失败</block>
 </blocks>
