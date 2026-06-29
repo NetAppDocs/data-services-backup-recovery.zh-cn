@@ -2426,10 +2426,6 @@
   <block id="868fb9c55d4ddac7523d9c4697eb9d9f" category="section-title">设置客户管理的 AWS 密钥以进行数据加密</block>
   <block id="72828ef5ab3d5aa027bfcdd1a9224f67" category="paragraph">如果您想使用默认的 Amazon S3 加密密钥来加密您的本地集群和 S3 存储桶之间传递的数据，那么您已经完成了所有设置，因为默认安装使用这种类型的加密。</block>
   <block id="aa9f769e3ac07b6605a7c510f6467b0d" category="paragraph">如果您想使用自己的客户管理密钥进行数据加密而不是使用默认密钥，那么您需要在启动NetApp Backup and Recovery向导之前设置加密管理密钥。</block>
-  <block id="81d60e20c02d2dc4f1f049ef17d9c0f3" category="inline-link">请参阅如何在Cloud Volumes ONTAP中使用您自己的 Amazon 加密密钥</block>
-  <block id="eb3f4e9630751efd3957882fa3339f53" category="paragraph"><block ref="a7e77aaf059fb9a4b638710225357142" category="inline-link-rx"></block>。</block>
-  <block id="8ceec43667de81f25c5ddfbde5549946" category="inline-link">请参阅如何在NetApp Backup and Recovery中使用您自己的 Amazon 加密密钥</block>
-  <block id="3869dda903236d84654e6efafcb9d188" category="paragraph"><block ref="8fe101e295f009741416862cf90e3f6c" category="inline-link-rx"></block>。</block>
   <block id="486567bdd60f21beefa59174661f6d52" category="section-title">使用 VPC 终端节点接口配置系统以进行私有连接</block>
   <block id="f50abdb59982020e158a4a180050f908" category="paragraph">如果您想使用标准公共互联网连接，那么所有权限都由控制台代理设置，您无需执行任何其他操作。</block>
   <block id="26dcafbb92de47e3c098da4f6dfb38ae" category="paragraph">如果您希望通过互联网从本地数据中心到 VPC 建立更安全的连接，则可以在备份激活向导中选择 AWS PrivateLink 连接。如果您计划使用 VPN 或 AWS Direct Connect 通过使用私有 IP 地址的 VPC 终端节点接口连接您的本地系统，则需要它。</block>
@@ -5643,4 +5639,7 @@
   <block id="0692ea49da3133a6dc624be3e9654369" category="paragraph">在不涉及云帐户的情况下（例如，使用 NetApp StorageGRID 作为备份目标），您还可以按照以下步骤更换控制台代理，并在本地以_标准模式_使用备份和恢复时恢复其上存储的配置数据。</block>
   <block id="2be7e1093c386d54e43c7fc0e8de4a1f" category="paragraph">在还原文件和文件夹之前，必须在 NetApp Backup and Recovery 中为源虚拟机创建凭据。此凭据用于在还原过程中向虚拟机进行身份验证。</block>
   <block id="9f5917bbc05d835882ed9022aa56ac20" category="list-text">与源数据库具有相同的 Oracle Database 版本</block>
+  <block id="6b181f9b8f3365a62a308265f446f30b" category="admonition">客户管理的密钥加密仅支持 Amazon FSx for NetApp ONTAP。Cloud Volumes ONTAP for AWS 不支持此功能。</block>
+  <block id="e46ce594d7f94f0d680627c5f9150ad6" category="inline-link">在 AWS 中设置客户管理的密钥加密</block>
+  <block id="fe921914a3a58bce833cfd4d4785fb2b" category="paragraph">请参阅<block ref="445e5997f02f6fbbedcd2ff2bda158c4" category="inline-link-rx"></block>。</block>
 </blocks>

@@ -336,9 +336,10 @@ link:prev-ontap-protect-journey.html["了解有关创建您自己的存储桶的
 
 如果您想使用自己的客户管理密钥进行数据加密而不是使用默认密钥，那么您需要在启动NetApp Backup and Recovery向导之前设置加密管理密钥。
 
-https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["请参阅如何在Cloud Volumes ONTAP中使用您自己的 Amazon 加密密钥"^]。
 
-https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["请参阅如何在NetApp Backup and Recovery中使用您自己的 Amazon 加密密钥"^]。
+NOTE: 客户管理的密钥加密仅支持 Amazon FSx for NetApp ONTAP。Cloud Volumes ONTAP for AWS 不支持此功能。
+
+请参阅 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["在 AWS 中设置客户管理的密钥加密"^]。
 
 
 
