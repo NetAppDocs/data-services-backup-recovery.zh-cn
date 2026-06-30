@@ -1867,7 +1867,6 @@
   <block id="523f5e6af5276c06e274c9d76b2d4467" category="admonition">确保在 Hyper-V 主机上为日志文件夹分配足够的磁盘空间并定期监控其使用情况。所需空间取决于备份和数据保护操作发生的频率。如果空间不足，则不会生成日志。</block>
   <block id="1498907a7069094c1a1b679e2a53087a" category="list-text">主ONTAP系统（ONTAP 9.14.1 或更高版本）</block>
   <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">ONTAP 文档</block>
-  <block id="0a2b6c395fc07f332dac7e7046c239c4" category="list-text">对于使用 CIFS 共享存储虚拟机数据的 Hyper-V 部署，请确保在ONTAP系统上启用了连续可用性共享属性。请参阅<block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block>以获取说明。</block>
   <block id="f6e9a28cc6109da66451b7ed0caaea35" category="list-text">对于ONTAP S3，控制台代理可以部署在您的场所（有或没有互联网访问）或云提供商环境中</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律声明</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法律声明提供对版权声明、商标、专利等的访问。</block>
@@ -5423,7 +5422,6 @@
   <block id="e77e2a03d88f40058869e1cc3d680930" category="list-text">ASP.NET Core Runtime 8.0.24 托管捆绑包（以及所有后续的 8.0.x 修补程序）</block>
   <block id="9e75b63d575b523917aa9e47b41b52fb" category="list-text">Oracle AI Database 26ai</block>
   <block id="f9fe5abdb3368e0236fd36a21bb8f840" category="cell">8.0.24 Hosting Bundle（以及所有后续的 8.0.x 补丁）</block>
-  <block id="55c7dc18349be92e97f9965c696cb850" category="list-text">SAN 存储（支持备份以及从主存储或二级存储还原到原始位置）</block>
   <block id="9b70df306d1f1719fd9d70e02911394c" category="section-title">2026 年 5 月 11 日</block>
   <block id="a37ef823bf93d8b834512d7ddfdf36cd" category="sidebar">创建和管理 Microsoft SQL Server 工作负载备份策略</block>
   <block id="2287427b367a426395bab449f1e777dc" category="sidebar">创建和管理 VMware 工作负载备份策略</block>
@@ -5643,4 +5641,7 @@
   <block id="633255f387c732126e8cdceb4ac9fceb" category="cell">NetApp Backup and Recovery 复制关系反向重新同步作业失败</block>
   <block id="d59074181d2dab51d18ca27cb4fc47d8" category="cell">NetApp Backup and Recovery 复制关系删除作业失败</block>
   <block id="5df069a4ec3b3f8731b57ed05f942930" category="cell">卷备份的索引编制失败</block>
+  <block id="9823593ea29f31b6d988e92cd15483f6" category="list-text">SMB 共享</block>
+  <block id="e3438f0f5d63a3c8de989b98d3095c8d" category="list-text">通过 iSCSI 或光纤通道连接的 SAN 存储</block>
+  <block id="81bdc0623ea533b24d0e11cb1d26ba25" category="list-text">对于使用 SMB 共享存储虚拟机数据的 Hyper-V 部署，请确保在 ONTAP 系统上启用连续可用性共享属性。有关说明，请参阅<block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block>。</block>
 </blocks>
