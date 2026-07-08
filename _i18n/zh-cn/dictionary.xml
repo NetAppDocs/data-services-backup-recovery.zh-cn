@@ -617,7 +617,6 @@
   <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">执行以下操作之一：</block>
   <block id="6226950d1b144f972ce9b5d3caea9b42" category="list-text">如果您已经发现 Kubernetes 工作负载，请在NetApp Backup and Recovery中选择 *Inventory* &gt; *Workloads*，然后选择 *Discover resources*。</block>
   <block id="e7c444e4a1d2f156d71a907145c8a598" category="list-text">选择 *Kubernetes* 工作负载类型。</block>
-  <block id="96c35fcba67cbf6710845bcca4668cc2" category="list-text">输入集群名称并选择与集群一起使用的连接器。</block>
   <block id="39b0136210d9abd099b81781cc0a17db" category="list-text">按照出现的命令行说明进行操作：</block>
   <block id="ed6eabebedff09350cdabab556887c62" category="list-text">创建 Kubernetes 机密</block>
   <block id="6c27e11d1144953d7877449d5adc966d" category="list-text">添加 Helm 存储库</block>
@@ -5644,4 +5643,5 @@
   <block id="e3438f0f5d63a3c8de989b98d3095c8d" category="list-text">通过 iSCSI 或光纤通道连接的 SAN 存储</block>
   <block id="81bdc0623ea533b24d0e11cb1d26ba25" category="list-text">对于使用 SMB 共享存储虚拟机数据的 Hyper-V 部署，请确保在 ONTAP 系统上启用连续可用性共享属性。有关说明，请参阅<block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block>。</block>
   <block id="09e4a6980ec8e49e9c338d71a078b029" category="paragraph">如果您有来自市场的年度合同，则所有 NetApp Backup and Recovery 消耗都将从该合同中扣除。</block>
+  <block id="fe336167ccf46f9fb348006254d0f3ee" category="list-text">输入集群名称并选择要与集群一起使用的控制台代理。</block>
 </blocks>

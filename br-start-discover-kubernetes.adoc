@@ -37,7 +37,7 @@ NetApp Backup and Recovery需要在保护 Kubernetes 工作负载之前发现它
 
 
 . 选择 *Kubernetes* 工作负载类型。
-. 输入集群名称并选择与集群一起使用的连接器。
+. 输入集群名称并选择要与集群一起使用的控制台代理。
 . 按照出现的命令行说明进行操作：
 +
 ** 创建 Trident Protect 命名空间
