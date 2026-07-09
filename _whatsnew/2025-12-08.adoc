@@ -4,6 +4,7 @@
 
 
 
+[[vmware-workloads-preview-enhancements]]
 === VMware 工作负载预览增强功能
 
 VMware 工作负载预览版引入了以下增强功能：

@@ -20,6 +20,7 @@ summary: 此版本的NetApp Backup and Recovery具有以下已知限制。
 
 
 
+[[unsupported-actions]]
 == 不支持的操作
 
 不支持以下操作：
@@ -32,6 +33,7 @@ summary: 此版本的NetApp Backup and Recovery具有以下已知限制。
 
 
 
+[[unsupported-configurations]]
 == 不支持的配置
 
 不支持以下配置：
@@ -45,6 +47,7 @@ summary: 此版本的NetApp Backup and Recovery具有以下已知限制。
 
 
 
+[[troubleshooting-notes]]
 == 故障排除说明
 
 将 KVM 工作负载与 NetApp Backup and Recovery 一起使用时，请记下以下内容。

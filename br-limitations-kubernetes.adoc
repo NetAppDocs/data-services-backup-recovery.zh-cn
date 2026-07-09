@@ -18,6 +18,7 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 
 
 
+[[changing-the-protection-policy-for-an-application]]
 == 更改应用程序的保护策略
 
 当您将应用程序的关联保护策略更改为使用不同的存储桶或辅助复制目标时，保护策略可能会失败。
@@ -26,6 +27,7 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 
 
 
+[[3-2-1-protection-policy-configuration-limitation]]
 == 3-2-1 保护策略配置限制
 
 在创建 3-2-1 保护策略时，如果在复制到辅助存储的同时不执行对象存储备份，则保护策略会在保护应用程序时挂起。

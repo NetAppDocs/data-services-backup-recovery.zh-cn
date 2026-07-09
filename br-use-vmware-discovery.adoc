@@ -20,6 +20,7 @@ NetApp Backup and Recovery服务需要首先发现在ONTAP系统上运行的 VMw
 
 
 
+[[discover-vmware-workloads-and-optionally-import-snapcenter-resources]]
 == 发现 VMware 工作负载并选择性地导入SnapCenter资源
 
 在发现过程中， NetApp Backup and Recovery会分析您组织内的 VMware 工作负载，并评估和导入现有的保护策略、快照以及备份和恢复选项。
@@ -52,6 +53,7 @@ NOTE: 如果您已有SnapCenter插件，请确保在从SnapCenter导入之前已
 
 
 
+[[if-snapcenter-plug-in-is-not-already-installed-add-a-vcenter-and-discover-resources]]
 === 如果尚未安装SnapCenter插件，请添加 vCenter 并发现资源
 
 如果您尚未安装适用于 VMware 的SnapCenter插件，请添加 vCenter 信息并让NetApp Backup and Recovery发现工作负载。在每个控制台代理中，选择您想要发现工作负载的系统。
@@ -83,6 +85,7 @@ TIP: 此过程可能需要几分钟。
 
 
 
+[[if-snapcenter-plug-in-is-already-installed-import-snapcenter-plug-in-for-vmware-resources-into-netapp-backup-and-recovery]]
 === 如果已安装SnapCenter插件，请将适用于 VMware 资源的SnapCenter插件导入NetApp Backup and Recovery
 
 如果您已安装适用于 VMware 的SnapCenter插件，请按照以下步骤将SnapCenter插件资源导入NetApp Backup and Recovery 。控制台发现 vCenter 中的 ESXi 主机、数据存储区和虚拟机，并从插件中安排时间表；您不必重新创建所有这些信息。

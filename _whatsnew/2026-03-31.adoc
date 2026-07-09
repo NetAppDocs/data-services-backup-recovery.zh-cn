@@ -4,6 +4,7 @@
 
 
 
+[[oracle-database-workloads-enhancements]]
 === Oracle Database 工作负载增强
 
 在此版本中，Oracle 数据库工作负载引入了以下增强功能：

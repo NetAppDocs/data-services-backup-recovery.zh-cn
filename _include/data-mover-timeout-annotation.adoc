@@ -4,6 +4,7 @@
 
 
 
+[[data-mover-timeout-annotation]]
 == Data Mover 超时标记
 
 使用注释 `protect.trident.netapp.io/data-mover-timeout-sec`在备份和还原期间设置每个操作的数据移动器超时(秒)。它指定数据移动器在超时之前等待操作取得进展的时间。这对于检测和处理停滞的传输（例如，当网络问题阻止卷数据还原进度时）非常有用。

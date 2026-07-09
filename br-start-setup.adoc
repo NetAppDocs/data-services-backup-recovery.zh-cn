@@ -18,6 +18,7 @@ summary: 在使用NetApp Backup and Recovery之前，请执行几个步骤来设
 
 
 
+[[prepare-the-backup-destination]]
 == 准备备份目标
 
 准备以下一个或多个备份目标：
@@ -53,6 +54,7 @@ summary: 在使用NetApp Backup and Recovery之前，请执行几个步骤来设
 
 
 
+[[set-up-s3-permissions]]
 == 设置 S3 权限
 
 您需要配置两组 AWS S3 权限：

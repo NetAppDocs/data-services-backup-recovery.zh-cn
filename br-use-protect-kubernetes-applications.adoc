@@ -21,6 +21,7 @@ NetApp Backup and Recovery 使您能够通过 Web UI 或应用自定义资源文
 
 
 
+[[add-and-protect-a-new-kubernetes-application]]
 == 添加并保护新的 Kubernetes 应用程序
 
 保护 Kubernetes 应用程序的第一步是在 NetApp Backup and Recovery 中创建一个应用程序。创建应用程序时，您可以使 Backup and Recovery 了解 Kubernetes 集群上正在运行的应用程序。

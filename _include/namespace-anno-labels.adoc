@@ -4,6 +4,7 @@
 
 
 
+[[namespace-annotations-and-labels-during-restore-and-failover-operations]]
 == 还原和故障转移操作期间的命名空间注释和标签
 
 在还原和故障转移期间，将更新目标命名空间标签和注释以匹配源：源中的密钥将添加到目标密钥或覆盖目标密钥，而仅存在于目标中的密钥将保持不变。
@@ -32,6 +33,7 @@ NOTE: 在还原或故障切换期间，在 `restoreSkipNamespaceAnnotations`和 
 
 
 
+[[example]]
 === 示例
 
 以下示例显示了具有不同标签和注释的源和目标命名空间，并显示了操作之前和之后的目标命名空间，以说明键是如何添加、合并或覆盖的。

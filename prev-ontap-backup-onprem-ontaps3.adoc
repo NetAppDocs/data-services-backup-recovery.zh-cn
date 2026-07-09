@@ -23,6 +23,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 
 
 
+[[identify-the-connection-method]]
 == 识别连接方法
 
 您可以使用多种配置在ONTAP系统上创建 S3 存储桶的备份。下面显示了两种情况。
@@ -41,12 +42,14 @@ image:diagram_cloud_backup_onprem_ontap_s3_cloud.png["该图显示了NetApp Back
 
 
 
+[[prepare-your-console-agent]]
 == 准备控制台代理
 
 控制台代理是控制台功能的主要软件。需要控制台代理来备份和恢复您的ONTAP数据。
 
 
 
+[[create-or-switch-console-agents]]
 === 创建或切换控制台代理
 
 当您将数据备份到ONTAP S3 时，您的本地或云中必须有控制台代理。您需要安装新的控制台代理，或者确保当前选定的控制台代理位于其中一个位置。本地控制台代理可以安装在有或没有互联网访问的站点中。
@@ -60,6 +63,7 @@ image:diagram_cloud_backup_onprem_ontap_s3_cloud.png["该图显示了NetApp Back
 
 
 
+[[prepare-console-agent-networking-requirements]]
 === 准备控制台代理网络要求
 
 确保安装控制台代理的网络启用以下连接：
@@ -79,6 +83,7 @@ NetApp Backup and Recovery功能内置于控制台代理中。当以私人模式
 
 
 
+[[verify-license-requirements]]
 == 验证许可证要求
 
 在为集群激活NetApp Backup and Recovery之前，您需要从NetApp购买并激活NetApp Backup and Recovery BYOL 许可证。该许可证用于备份和恢复对象存储 - 创建快照或复制卷不需要许可证。此许可证适用于该帐户，可跨多个系统使用。
@@ -90,6 +95,7 @@ TIP: 将文件备份到ONTAP S3 时不支持 PAYGO 许可。
 
 
 
+[[prepare-your-ontap-clusters]]
 == 准备ONTAP集群
 
 准备源本地ONTAP系统和任何辅助本地ONTAP或Cloud Volumes ONTAP系统。
@@ -104,6 +110,7 @@ TIP: 将文件备份到ONTAP S3 时不支持 PAYGO 许可。
 
 
 
+[[discover-your-ontap-systems-in-netapp-console]]
 === 在NetApp Console中发现您的ONTAP系统
 
 您的源本地ONTAP系统和任何辅助本地ONTAP或Cloud Volumes ONTAP系统都必须在NetApp Console*系统* 页面上可用。
@@ -112,6 +119,7 @@ TIP: 将文件备份到ONTAP S3 时不支持 PAYGO 许可。
 
 
 
+[[verify-ontap-system-requirements]]
 === 验证ONTAP系统要求
 
 确保您的ONTAP系统满足以下要求：
@@ -133,6 +141,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 
 
+[[verify-ontap-networking-requirements-for-backing-up-data-to-object-storage]]
 === 验证ONTAP网络要求以将数据备份到对象存储
 
 您必须确保连接到对象存储的系统满足以下要求。
@@ -166,6 +175,7 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 === 验证ONTAP复制卷的网络要求
 
 如果您计划使用NetApp Backup and Recovery在辅助ONTAP系统上创建复制卷，请确保源系统和目标系统满足以下网络要求。
@@ -190,6 +200,7 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 
 
 
+[[prepare-ontap-s3-as-your-backup-target]]
 == 准备ONTAP S3 作为备份目标
 
 您必须在计划用于对象存储备份的ONTAP集群中启用简单存储服务 (S3) 对象存储服务器。查看 https://docs.netapp.com/us-en/ontap/s3-config/index.html["ONTAP S3 文档"^]了解详情。
@@ -221,6 +232,7 @@ S3 凭证:: 您必须创建 S3 用户来控制对ONTAP S3 存储的访问。 htt
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == 激活ONTAP卷上的备份
 
 随时直接从您的本地系统激活备份。
@@ -236,6 +248,7 @@ S3 凭证:: 您必须创建 S3 用户来控制对ONTAP S3 存储的访问。 htt
 
 
 
+[[start-the-wizard]]
 === 启动向导
 
 .步骤
@@ -258,6 +271,7 @@ S3 凭证:: 您必须创建 S3 用户来控制对ONTAP S3 存储的访问。 htt
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === 选择要备份的卷
 
 选择您想要保护的卷。受保护的卷是具有以下一项或多项的卷：快照策略、复制策略、备份到对象策略。
@@ -286,6 +300,7 @@ S3 凭证:: 您必须创建 S3 用户来控制对ONTAP S3 存储的访问。 htt
 
 
 
+[[define-the-backup-strategy]]
 === 定义备份策略
 
 定义备份策略涉及配置以下选项：
@@ -389,6 +404,7 @@ TIP: 要使用备份和恢复创建自定义策略，请参阅link:br-use-polici
 
 
 
+[[review-your-selections]]
 === 检查您的选择
 
 这是审查您的选择并在必要时进行调整的机会。
@@ -412,6 +428,7 @@ NetApp Backup and Recovery开始对您的卷进行初始备份。复制卷和备
 
 
 
+[[show-the-api-commands]]
 === 显示 API 命令
 
 您可能想要显示并选择性地复制激活备份和恢复向导中使用的 API 命令。您可能希望这样做以便在未来的系统中自动激活备份。

@@ -32,12 +32,14 @@ NetApp Backup and Recovery中定义了十类端点：
 
 
 
+[[api-reference]]
 == API 参考
 
 每个NetApp Backup and RecoveryAPI 的文档均可从以下位置获取 https://docs.netapp.com/us-en/console-automation/cbs/overview.html["NetApp Console自动化，用于NetApp Backup and Recovery"^]。
 
 
 
+[[getting-started]]
 == 入门
 
 要开始使用NetApp Backup and RecoveryAPI，您需要获取用户令牌、 NetApp Console帐户 ID 和控制台代理 ID。
@@ -112,6 +114,7 @@ Header:
 
 
 
+[[example-using-the-apis]]
 == 使用 API 的示例
 
 以下示例显示了在 Azure 云中的 East-US-2 区域中，在具有新策略的系统上激活NetApp Backup and Recovery 的API 调用，该策略设置了每日、每小时和每周标签，并将存档天数设置为 180 天。请注意，这仅启用系统上的备份，但不会备份任何卷。

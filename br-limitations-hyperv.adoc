@@ -18,6 +18,7 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 
 
 
+[[unsupported-actions]]
 == 不支持的操作
 
 NetApp Backup and Recovery 中的 Hyper-V 工作负载不支持以下操作：

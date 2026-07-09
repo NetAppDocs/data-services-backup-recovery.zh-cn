@@ -21,6 +21,7 @@ NetApp Backup and Recovery 使您能够使用 Web 界面手动备份 Kubernetes 
 
 
 
+[[back-up-a-kubernetes-application-now-using-the-web-ui]]
 == 立即使用 Web UI 备份 Kubernetes 应用程序
 
 手动创建 Kubernetes 应用程序的备份，为未来的备份和快照建立基线，或确保最新数据受到保护。

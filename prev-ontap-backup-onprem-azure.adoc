@@ -24,6 +24,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 
 
 
+[[identify-the-connection-method]]
 == 识别连接方法
 
 选择在配置从本地ONTAP系统到 Azure Blob 的备份时要使用的两种连接方法中的哪一种。
@@ -44,12 +45,14 @@ image:diagram_cloud_backup_onprem_azure_private.png["该图显示了NetApp Backu
 
 
 
+[[prepare-your-console-agent]]
 == 准备控制台代理
 
 控制台代理是NetApp Console功能的主要软件。需要控制台代理来备份和恢复您的ONTAP数据。
 
 
 
+[[create-or-switch-console-agents]]
 === 创建或切换控制台代理
 
 如果您已经在 Azure VNet 或本地部署了控制台代理，那么一切就绪了。
@@ -67,6 +70,7 @@ image:diagram_cloud_backup_onprem_azure_private.png["该图显示了NetApp Backu
 
 
 
+[[prepare-networking-for-the-console-agent]]
 === 为控制台代理准备网络
 
 确保控制台代理具有所需的网络连接。
@@ -85,6 +89,7 @@ image:diagram_cloud_backup_onprem_azure_private.png["该图显示了NetApp Backu
 
 
 
+[[verify-or-add-permissions-to-the-console-agent]]
 === 验证或添加控制台代理的权限
 
 要使用NetApp Backup and Recovery搜索和还原功能，您需要在控制台代理的角色中拥有特定权限，以便它可以访问 Azure Synapse 工作区和数据湖存储帐户。请参阅下面的权限，如果需要修改策略，请按照以下步骤操作。
@@ -161,6 +166,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 
 
 
+[[verify-license-requirements]]
 == 验证许可证要求
 
 您需要验证 Azure 和控制台的许可证要求：
@@ -180,6 +186,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 
 
 
+[[prepare-your-ontap-clusters]]
 == 准备ONTAP集群
 
 准备源本地ONTAP系统和任何辅助本地ONTAP或Cloud Volumes ONTAP系统。
@@ -194,6 +201,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 
 
 
+[[discover-your-ontap-systems-in-netapp-console]]
 === 在NetApp Console中发现您的ONTAP系统
 
 您的源本地ONTAP系统和任何辅助本地ONTAP或Cloud Volumes ONTAP系统都必须在NetApp Console*系统* 页面上可用。
@@ -202,6 +210,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 
 
 
+[[verify-ontap-system-requirements]]
 === 验证ONTAP系统要求
 
 确保您的ONTAP系统满足以下要求：
@@ -223,6 +232,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 
 
+[[verify-ontap-networking-requirements-for-backing-up-data-to-object-storage]]
 === 验证ONTAP网络要求以将数据备份到对象存储
 
 您必须在连接到对象存储的系统上配置以下要求。
@@ -250,6 +260,7 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 === 验证ONTAP复制卷的网络要求
 
 如果您计划使用NetApp Backup and Recovery在辅助ONTAP系统上创建复制卷，请确保源系统和目标系统满足以下网络要求。
@@ -274,6 +285,7 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 
 
 
+[[prepare-azure-blob-as-your-backup-target]]
 == 准备 Azure Blob 作为备份目标
 
 . 您可以在激活向导中使用自己的自定义管理密钥进行数据加密，而不是使用默认的 Microsoft 管理加密密钥。在这种情况下，您将需要有 Azure 订阅、Key Vault 名称和密钥。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["了解如何使用自己的密钥"^] 。
@@ -285,6 +297,7 @@ ONTAP从对象存储中读取和写入数据。对象存储从不启动，它只
 
 
 
+[[create-your-azure-blob-storage-account]]
 === 创建 Azure Blob 存储帐户
 
 默认情况下，该服务会为您创建存储帐户。如果您想使用自己的存储帐户，您可以在启动备份激活向导之前创建它们，然后在向导中选择这些存储帐户。
@@ -293,6 +306,7 @@ link:prev-ontap-protect-journey.html["了解有关创建自己的存储帐户的
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == 激活ONTAP卷上的备份
 
 随时直接从您的本地系统激活备份。
@@ -308,6 +322,7 @@ link:prev-ontap-protect-journey.html["了解有关创建自己的存储帐户的
 
 
 
+[[start-the-wizard]]
 === 启动向导
 
 .步骤
@@ -333,6 +348,7 @@ link:prev-ontap-protect-journey.html["了解有关创建自己的存储帐户的
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === 选择要备份的卷
 
 选择您想要保护的卷。受保护的卷是具有以下一项或多项的卷：快照策略、复制策略、备份到对象策略。
@@ -361,6 +377,7 @@ link:prev-ontap-protect-journey.html["了解有关创建自己的存储帐户的
 
 
 
+[[define-the-backup-strategy]]
 === 定义备份策略
 
 定义备份策略涉及设置以下选项：
@@ -488,6 +505,7 @@ TIP: 要在激活备份之前创建自定义策略，请参阅link:br-use-polici
 
 
 
+[[review-your-selections]]
 === 检查您的选择
 
 这是审查您的选择并在必要时进行调整的机会。
@@ -509,6 +527,7 @@ NetApp Backup and Recovery开始对您的卷进行初始备份。复制卷和备
 
 
 
+[[show-the-api-commands]]
 === 显示 API 命令
 
 您可能想要显示并选择性地复制激活备份和恢复向导中使用的 API 命令。您可能希望这样做以便在未来的系统中自动激活备份。

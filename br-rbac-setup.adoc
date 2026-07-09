@@ -53,6 +53,7 @@ NOTE: 这些步骤假设您在 Console 中被分配了组织管理员角色。
 
 
 
+[[related-information]]
 == 相关信息
 
 * link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["了解 NetApp Console 身份和访问管理"^]。

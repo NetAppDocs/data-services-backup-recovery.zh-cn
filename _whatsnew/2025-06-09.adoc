@@ -4,6 +4,7 @@
 
 
 
+[[indexed-catalog-support-updates]]
 === 索引目录支持更新
 
 2025 年 2 月，我们推出了更新的索引功能（索引目录 v2），您可以在“搜索和还原”数据恢复方法中使用该功能。以前的版本显著提高了本地环境中的数据索引性能。在此版本中，索引目录现在可用于 Amazon Web Services、Microsoft Azure 和 Google Cloud Platform (GCP) 环境。
@@ -19,6 +20,7 @@
 
 
 
+[[azure-private-link-endpoints-and-service-endpoints]]
 === Azure 专用链接终结点和服务终结点
 
 通常， NetApp Backup and Recovery会与云提供商建立一个私有端点来处理保护任务。此版本引入了一个可选设置，可让您启用或禁用NetApp Backup and Recovery自动创建私有端点。如果您想要更好地控制私有端点创建过程，这可能对您有用。
@@ -29,12 +31,14 @@
 
 
 
+[[support-for-snapmirror-to-cloud-resync-on-ontap-s3]]
 === ONTAP S3 上支持SnapMirror到云重新同步
 
 上一版本引入了对 SnapMirror 到云重新同步（SM-C Resync）的支持。该功能简化了 NetApp 环境中卷迁移期间的数据保护。此版本增加了对 ONTAP S3 以及 Wasabi 和 MinIO 等其他 S3 兼容提供商的 SM-C Resync 支持。
 
 
 
+[[bring-your-own-bucket-for-storagegrid]]
 === 为StorageGRID带来您自己的存储桶
 
 当您在对象存储中为工作环境创建备份文件时，默认情况下， NetApp Backup and Recovery会为您配置的对象存储帐户中的备份文件创建容器（存储桶或存储帐户）。以前，您可以覆盖此功能并为 Amazon S3、Azure Blob Storage 和 Google Cloud Storage 指定您自己的容器。通过此版本，您现在可以携带自己的StorageGRID对象存储容器。

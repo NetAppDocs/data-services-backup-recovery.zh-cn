@@ -20,6 +20,7 @@ summary: 在 NetApp Backup and Recovery 中的还原操作期间修改资源。
 
 
 
+[[how-resource-modification-works]]
 == 资源修改的工作原理
 
  `transformations` 字段在  `SnapshotRestore`、 `BackupRestore`、 `AppMirrorRelationship` 以及其他还原资源中，使您能够在还原过程中修改 Kubernetes 资源。这对于通过更改主机名、注册表 URL、资源限制或环境变量，将应用程序或虚拟机适配到新集群非常有用。
@@ -54,6 +55,7 @@ spec:
 ----
 
 
+[[supported-resources]]
 === 支持的资源
 
 您可以将资源转换与符合以下标准的资源一起使用：
@@ -69,6 +71,7 @@ NOTE: 当前不支持修改 PersistentVolumeClaims 和命名空间。
 
 
 
+[[supported-operations]]
 === 支持的操作
 
 您可以使用以下操作修改资源：
@@ -83,6 +86,7 @@ NOTE: 当前不支持修改 PersistentVolumeClaims 和命名空间。
 
 
 
+[[add-a-value-to-a-resource]]
 == 向资源添加值
 
 使用  `add` 操作在指定路径上添加新字段或值。您可以将数据添加到对象或数组。以下示例将节点选择器添加到 Deployment 资源：
@@ -107,6 +111,7 @@ tridentctl-protect --transformation 'apps,v1,Deployment:add{"path":"/spec/templa
 ----
 
 
+[[copy-a-value-within-a-resource]]
 == 复制资源中的值
 
 使用  `copy` 操作将同一资源中的值从一个路径复制到另一个路径。源未更改。以下示例复制 ConfigMap 对象的数据键：
@@ -129,6 +134,7 @@ tridentctl-protect --transformation ',v1,ConfigMap:copy{"from":"/data/source-key
 ----
 
 
+[[move-a-value-within-a-resource]]
 == 在资源内移动值
 
 使用  `move` 操作将同一资源内的值从一个路径移动到另一个路径。源被删除，值被放置在目的地。以下示例重命名 ConfigMap 对象的数据键：
@@ -151,6 +157,7 @@ tridentctl-protect --transformation ',v1,ConfigMap:move{"from":"/data/OLD_KEY","
 ----
 
 
+[[remove-a-value-from-a-resource]]
 == 从资源中删除值
 
 使用  `remove` 操作可删除指定路径中的字段或值。以下示例从 ConfigMap 资源中删除批注：
@@ -175,6 +182,7 @@ tridentctl-protect --transformation ',v1,ConfigMap:remove{"path":"/metadata/anno
 ----
 
 
+[[replace-a-value-within-a-resource]]
 == 替换资源中的值
 
 使用  `replace` 操作替换指定路径下资源中的现有值。JSON 路径必须已存在。以下示例更改 Route 对象的主机名：
@@ -198,6 +206,7 @@ tridentctl-protect --transformation 'route.openshift.io,v1,Route:replace{"path":
 ----
 
 
+[[test-the-resource-modification]]
 == 测试资源修改
 
 使用 `test`操作来测试路径上的值是否与预期值匹配。如果测试失败，整个修改将被回滚。以下示例仅在 `database-host`为 `environment`时才更新 `staging`：

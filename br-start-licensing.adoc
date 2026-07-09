@@ -28,6 +28,7 @@ link:concept-backup-to-cloud.html["了解有关使用NetApp Backup and Recovery 
 
 
 
+[[30-day-free-trial]]
 == 30天免费试用
 
 如果您在云提供商的市场中注册按使用量付费订阅 * NetApp Intelligent Services*，则可以获得NetApp Backup and Recovery 30 天免费试用。免费试用从您订阅市场列表时开始。请注意，如果您在部署Cloud Volumes ONTAP系统时支付市场订阅费用，然后在 10 天后开始NetApp Backup and Recovery免费试用，那么您将有 20 天的剩余时间来使用免费试用版。
@@ -36,6 +37,7 @@ link:concept-backup-to-cloud.html["了解有关使用NetApp Backup and Recovery 
 
 
 
+[[end-the-free-trial]]
 === 结束免费试用
 
 如果您想在免费试用结束后继续使用NetApp Backup and Recovery ，则必须设置付费订阅。您可以从NetApp Console界面导航到计费部分并选择适合您需求的订阅计划来执行此操作。如果您不想继续使用NetApp Backup and Recovery，您可以结束免费试用。
@@ -52,6 +54,7 @@ link:concept-backup-to-cloud.html["了解有关使用NetApp Backup and Recovery 
 
 
 
+[[use-a-netapp-backup-and-recovery-paygo-subscription]]
 == 使用NetApp Backup and Recovery PAYGO 订阅
 
 对于即用即付，您将在单个订阅中按小时向云提供商支付对象存储成本和NetApp备份许可成本。即使您有免费试用版或自带许可证 (BYOL)，也应该在 Marketplace 中订阅 * NetApp Intelligent Services*：
@@ -82,6 +85,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 
 
 
+[[use-an-annual-contract]]
 == 使用年度合同
 
 通过购买年度合同每年支付NetApp Backup and Recovery的费用。期限分为 1 年、2 年或 3 年。
@@ -124,6 +128,7 @@ NetApp向您提供专属优惠后，您可以在激活NetApp Backup and Recovery
 
 
 
+[[use-a-netapp-backup-and-recovery-byol-license]]
 == 使用NetApp Backup and RecoveryBYOL 许可证
 
 NetApp提供的自带许可证的有效期为 1 年、2 年或 3 年。您只需为您保护的数据付费，该费用根据正在备份的源ONTAP卷的逻辑使用容量（任何效率之前）计算。此容量也称为前端兆字节 (FETB)。
@@ -140,6 +145,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 
 
 
+[[exceeding-license-capacity]]
 == 超出许可证容量
 
 超过许可容量会触发 PAYGO 费率；如果没有 PAYGO 订阅，您将无法创建新的备份，尽管现有备份在没有服务保证的情况下仍可恢复。请务必在许可证过期之前续订许可证；过期的许可证会阻止新的备份并中断服务。

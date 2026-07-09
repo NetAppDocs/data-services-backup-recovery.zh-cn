@@ -20,6 +20,7 @@ NetApp Backup and Recovery需要在保护 Kubernetes 工作负载之前发现它
 
 
 
+[[discover-kubernetes-workloads]]
 == 发现 Kubernetes 工作负载
 
 在备份和恢复清单中，发现您环境中的 Kubernetes 工作负载。添加工作负载会将 Kubernetes 集群添加到NetApp Backup and Recovery。然后，您可以添加应用程序并保护集群资源。
@@ -58,6 +59,7 @@ NetApp Backup and Recovery需要在保护 Kubernetes 工作负载之前发现它
 
 
 
+[[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == 继续访问NetApp Backup and Recovery仪表板
 
 按照以下步骤查看NetApp Backup and Recovery仪表板。

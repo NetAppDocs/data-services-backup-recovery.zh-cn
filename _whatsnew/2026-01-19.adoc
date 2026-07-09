@@ -4,6 +4,7 @@
 
 
 
+[[ontap-volume-workloads-enhancements]]
 === ONTAP卷工作负载增强
 
 此版本的ONTAP卷工作负载引入了以下增强功能：
@@ -14,6 +15,7 @@ link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-back
 
 
 
+[[vmware-workloads-enhancements]]
 === VMware 工作负载增强功能
 
 此版本的 VMware 工作负载引入了以下增强功能：
@@ -26,6 +28,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restor
 
 
 
+[[hyper-v-workloads-preview-enhancements]]
 === Hyper-V 工作负载预览增强功能
 
 此版本的 Hyper-V 工作负载引入了以下增强功能：
@@ -42,6 +45,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restor
 
 
 
+[[kvm-workloads-preview-enhancements]]
 === KVM工作负载预览增强功能
 
 KVM 工作负载预览现在保护由 Apache CloudStack 管理的 KVM 主机和虚拟机。
