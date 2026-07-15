@@ -16,7 +16,7 @@ summary: 在 NetApp Backup and Recovery 中的还原操作期间修改资源。
 [role="lead"]
 资源转换使您能够在还原资源时对其进行修改。这在还原版本需要与原始版本不同时非常有用，例如，在将虚拟机还原到其他网络时更改其 IP 地址。您也可以link:br-use-restore-kubernetes-applications.html#restore-kubernetes-applications["使用 Web UI 还原资源时对其进行修改"^]。
 
-*必需的 NetApp Console 角色* Backup and Recovery 超级管理员或 Backup and Recovery 还原管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^].
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复还原管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^].
 
 
 
