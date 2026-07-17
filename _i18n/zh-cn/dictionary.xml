@@ -379,7 +379,6 @@
   <block id="57b1247e7f03d92db03014c3eccb187b" category="paragraph">NetApp Backup and Recovery不会从SnapCenter导入仅日志备份策略。如果SnapCenter策略包含仅日志备份， NetApp Backup and Recovery将不会导入该资源。</block>
   <block id="3e198374294563ab1ca9095cfbe697f4" category="paragraph">*解决方法*：在SnapCenter中使用不仅仅使用日志备份的策略。</block>
   <block id="1ccf75762b2e153de8560735dcafec7b" category="section-title">主机映射</block>
-  <block id="72988ee77cb813fdfc748963123982d0" category="paragraph">SnapCenter没有将资源映射到主机的存储集群或 SVM，但NetApp Backup and Recovery有。本地ONTAP集群或 SVM 将不会映射到NetApp Backup and Recovery预览版中的主机。此外， NetApp Console不支持 SVM。</block>
   <block id="a22e73b13b82cd076838f09dbdaca099" category="paragraph">*解决方法*：在从SnapCenter导入资源之前，请在NetApp Backup and Recovery中为在本地SnapCenter中注册的所有本地ONTAP存储系统创建一个系统。然后，将该集群的资源从SnapCenter导入NetApp Backup and Recovery。</block>
   <block id="b76fe15e5efb181107a884a8a169710c" category="section-title">班次间隔不为 15 分钟</block>
   <block id="150bc9b32553d2cdbf1033715f83d268" category="paragraph">如果您有一个SnapCenter策略计划，该计划在特定时间启动并以 15 分钟间隔以外的间隔重复，NetApp Backup and Recovery将不会导入该计划。</block>
@@ -417,7 +416,6 @@
   <block id="09f886550e235192e436c0e4a062288b" category="list-text">SVM-DR 卷备份受以下限制支持：</block>
   <block id="ed09c1b67736709db40a3664c46e855a" category="list-text">仅支持从ONTAP辅助节点进行备份。</block>
   <block id="d587577f2a166dd11688b6c30c3d3cf9" category="list-text">应用于卷的快照策略必须是NetApp Backup and Recovery可识别的策略之一，包括每日、每周、每月等。默认的“sm_created”策略（用于*镜像所有快照*）无法识别，并且 DP 卷不会显示在可备份的卷列表中。</block>
-  <block id="757ec8d082a1a9becacdf32c01678f5b" category="list-text">当从源或目标进行备份时，SVM-DR 和卷备份和恢复完全独立工作。唯一的限制是 SVM-DR 不会复制SnapMirror云关系。在 DR 场景中，当 SVM 在辅助位置上线时，您必须手动更新SnapMirror云关系。</block>
   <block id="27e92fcddc23071f7a376e1c06fa20d6" category="list-text">MetroCluster支持：</block>
   <block id="fa5ec1bbbde705a6b3fbd36d5f35b9f9" category="list-text">当您使用ONTAP 9.12.1 GA 或更高版本时，连接到主系统时支持备份。整个备份配置被传输到辅助系统，以便切换后自动继续备份到云端。您不需要在辅助系统上设置备份（事实上，您被禁止这样做）。</block>
   <block id="a1e9108dbd21ffa07a61d3c3e7ecf506" category="list-text">当您使用ONTAP 9.12.0 及更早版本时，仅支持从ONTAP辅助系统进行备份。</block>
@@ -692,7 +690,6 @@
   <block id="02a0978d1df3ca052a64d05249709cc3" category="summary">您可以通过从云提供商处购买按使用量付费或年度市场订阅来获得NetApp Backup and Recovery 的许可，或者通过从NetApp购买自带许可证来获得许可。需要有效的许可证才能在系统上激活NetApp Backup and Recovery 、创建生产数据的备份以及将备份数据还原到生产系统。</block>
   <block id="d44c500b8ff5c565a7d3b02d14def6a3" category="paragraph">您可以通过从云提供商处购买按使用量付费 (PAYGO) 或年度市场订阅 * NetApp Intelligent Services* 来获得NetApp Backup and Recovery许可，或者通过从NetApp购买自带许可 (BYOL)。需要有效的许可证才能在系统上激活NetApp Backup and Recovery 、创建生产数据的备份以及将备份数据还原到生产系统。</block>
   <block id="80186f1230af2267e2c2e4d2ab8c030e" category="paragraph">在您继续阅读之前，请注意以下几点：</block>
-  <block id="02ce7de51e9d88d5d9e2278150758f8b" category="list-text">如果您已经在云提供商的市场中订阅了Cloud Volumes ONTAP系统的即用即付 (PAYGO) 订阅，那么您也会自动订阅NetApp Backup and Recovery 。您无需再次订阅。</block>
   <block id="0afafddaf42e76b83acff428b8613a7e" category="list-text">NetApp Backup and Recovery自带许可证 (BYOL) 是一种浮动许可证，您可以在与NetApp Console组织或帐户关联的所有系统中使用它。因此，如果您现有的 BYOL 许可证具有足够的备份容量，则无需购买另一个 BYOL 许可证。</block>
   <block id="98ed4c44ab8a3c8a5b08f8e91a585c40" category="list-text">如果您使用 BYOL 许可证，建议您也订阅 PAYGO 订阅。如果您备份的数据超出了 BYOL 许可证允许的范围，或者许可证期限已过期，则备份将通过您的即用即付订阅继续进行 - 不会中断服务。</block>
   <block id="31f730de563a8876975a231ee55bc4d7" category="list-text">将本地ONTAP数据备份到StorageGRID时，您需要 BYOL 许可证，但云提供商存储空间无需付费。</block>
@@ -1159,7 +1156,6 @@
   <block id="f5c50f0f405ba073846066df149c9150" category="paragraph">您从NetApp Backup and RecoveryUI 和 API 启动的快照、复制、对象存储备份和还原操作均可在“作业监控”选项卡中找到。</block>
   <block id="d263c7d70394e4465e07f91a7cda636c" category="inline-link-macro">了解如何重新启动NetApp Backup and Recovery</block>
   <block id="f12cc055f626f9974e07168ee36fc2b6" category="list-text">从NetApp Backup and Recovery菜单中，选择 *监控*。</block>
-  <block id="e81a8bad1be4be12a837fcfb49f51617" category="list-text">要显示其他列（系统、SVM、用户名、工作负载、策略名称、快照标签），请选择加号。</block>
   <block id="87aa191eff82d3ce3518c07577f209bd" category="section-title">搜索并过滤职位列表</block>
   <block id="7f8ba7d41d11ab3b1061dbce2eeadb52" category="paragraph">默认情况下，“作业监控”页面显示过去 24 小时的保护和恢复作业。您可以使用时间范围过滤器更改时间范围。</block>
   <block id="a466bc110c2ee16333fcf19f4e7b5dc2" category="list-text">要对结果进行不同的排序，请选择每个列标题以按状态、开始时间、资源名称等进行排序。</block>
@@ -1169,14 +1165,12 @@
   <block id="78898e52fcbdc5337204a384f2456d4f" category="list-text">Microsoft SQL Server</block>
   <block id="76b0fa668c1cd016096eb9bc1bfde44a" category="list-text">虚拟机</block>
   <block id="30136395f01879792198317c11831ea4" category="list-text">Kubernetes</block>
-  <block id="72c66d8bb214415b4829ddc521a1d9cf" category="list-text">仅当您首先选择了一个系统后，您才可以在特定的“SVM”中搜索数据。</block>
   <block id="17b4d0b2054bd5ed8d8b6430dc8f6936" category="list-text">只有当您选择了“保护”的“类型”时，您才可以使用“保护类型”过滤器进行搜索。</block>
   <block id="63a6a88c066880c5ac42394a22803ca6" category="inline-image-macro">刷新</block>
   <block id="81651a87dc9c981a87ea4cbde8b47b8b" category="list-text">要立即更新页面，请选择<block ref="26403496cb9a151e9afeeb59244dd01b" category="inline-image-macro-rx" type="image"></block>按钮。否则，此页面每 15 分钟刷新一次，以便您始终看到最新的工作状态结果。</block>
   <block id="ec7d92235d0dc6e0acfa017dfe7f1dbd" category="section-title">查看职位详情</block>
   <block id="ee3f8d79ef4be283abca6676023d9d44" category="paragraph">您可以查看与特定已完成作业相对应的详细信息。您可以以 JSON 格式导出特定作业的详细信息。</block>
   <block id="cd9a2b6f2b025e6e8e644553495fcb38" category="paragraph">您可以查看作业类型（计划或按需）、 SnapMirror备份类型（初始或定期）、开始和结束时间、持续时间、从系统到对象存储的传输数据量、平均传输速率、策略名称、启用的保留锁、执行的勒索软件扫描、保护源详细信息和保护目标详细信息等详细信息。</block>
-  <block id="0a69ea19b47193a98acb95f75e5f4cd7" category="paragraph">恢复作业显示详细信息，例如备份目标提供商（Amazon Web Services、Microsoft Azure、Google Cloud、本地）、S3 存储桶名称、SVM 名称、源卷名称、目标卷、快照标签、恢复的对象数、文件名、文件大小、上次修改日期和完整文件路径。</block>
   <block id="18ace58a9d18e3907eb7cd150e193461" category="list-text">选择作业的名称。</block>
   <block id="a338f0236c9cd90b94c866169e207597" category="list-text">选择“操作”菜单<block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block>并选择“查看详细信息”。</block>
   <block id="a2f820f1e803ccce8bb7aecd68c2172d" category="list-text">展开每个部分以查看详细信息。</block>
@@ -1290,7 +1284,6 @@
   <block id="6987bed2ad146152ae0908d4028df162" category="list-text">要仅跳过下一个刷新计划，请选择*仅跳过下一个刷新计划*。</block>
   <block id="81397f7503542040ff1aa87c847e281b" category="list-text">要继续，请选择*跳过*。</block>
   <block id="67728477667cd78a4cb8ac8a3336c7ef" category="paragraph">您可以拆分 Microsoft SQL Server 工作负载的克隆。拆分克隆将从克隆中创建一个新的备份。新的备份可用于恢复工作负载。</block>
-  <block id="f4ed3104414bb69a5dfac99135ef72f2" category="paragraph">您可以选择将克隆拆分为独立克隆或长期克隆。向导会显示 SVM 的聚合列表、其大小以及克隆卷所在的位置。 NetApp Backup and Recovery还会指示是否有足够的空间来拆分克隆。克隆分裂后，克隆成为一个独立的数据库进行保护。</block>
   <block id="3cc3bf063b3735dfee9852891c6d4ef6" category="list-text">选择一个克隆。</block>
   <block id="42db557ffc18279f75ced7531cb65db0" category="list-text">选择“操作”图标<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>&gt; *分裂克隆*。</block>
   <block id="91a9421f27cf61e52bea5d9c90e7f79e" category="list-text">查看拆分克隆详细信息并选择*拆分*。</block>
@@ -1998,7 +1991,6 @@
   <block id="b9ebe3d0d7df348b69f3c32d402c98f6" category="list-text">输入策略的名称。</block>
   <block id="45615060bd87b8eea27fbb07754a6988" category="list-text">选择最多五个时间表，通常频率不同。</block>
   <block id="213a83a67c5e44c90f0095122508333a" category="list-text">*复制*：设置以下选项：</block>
-  <block id="38366116579199b8bf119ce514ba9f64" category="list-text">*复制目标*：选择目标系统和 SVM。或者，选择将添加到复制卷名称的目标聚合或聚合以及前缀或后缀。</block>
   <block id="e55e33fb51399237a97d05cee7b9666a" category="list-text">*复制策略*：选择现有的复制策略或创建一个。</block>
   <block id="d95cbe59cace91277e059a544fd1205f" category="admonition">要创建自定义策略，请参阅<block ref="d9904d3bd7927987056edc09c02007e9" category="inline-link-macro-rx"></block>。</block>
   <block id="4664a31b832c67aff8eca0b294275b24" category="list-text">*备份到对象*：如果您选择了*备份*，请设置以下选项：</block>
@@ -2602,7 +2594,6 @@
   <block id="1a9240d843443385061b2272dcfbfff0" category="admonition">如果要在激活快照之前创建自定义策略，则可以使用 System Manager 或ONTAP CLI<block ref="21daf815c4decbf3cba733c88297587b" prefix=" " category="inline-code"></block>命令。参考<block ref="ec3ed4692ea8e2ea03ef1cb28143229e" category="inline-link-rx"></block>。</block>
   <block id="ee885caa95dc922f4f4ba9860f7342f6" category="admonition">要使用备份和恢复创建自定义策略，请参阅<block ref="d9904d3bd7927987056edc09c02007e9" category="inline-link-macro-rx"></block>。</block>
   <block id="18fca8639648ce6584848958e6930ab7" category="list-text">*复制*：如果选择了*复制*，请设置以下选项：</block>
-  <block id="a561f9f7d6518cf18c51a3dd5f3463f7" category="list-text">*复制目标*：选择目标系统和 SVM。或者，选择目标聚合（或FlexGroup卷的聚合）以及将添加到复制卷名称的前缀或后缀。</block>
   <block id="f7a5b18ef1b37d992674325263d195c7" category="list-text">*提供商*：选择* ONTAP S3*。</block>
   <block id="cb982feddc979c2188ec92e5523339cc" category="list-text">*提供商设置*：输入 S3 服务器 FQDN 详细信息、端口以及用户的访问密钥和密钥。</block>
   <block id="dcbc25cc465b9549adcce973442d2b9b" category="paragraph">访问密钥和密钥用于您创建的用户，以授予ONTAP集群对 S3 存储桶的访问权限。</block>
@@ -3983,7 +3974,6 @@
   <block id="68601916ccf016a3cbb9b91a847005f5" category="paragraph">您可以将ONTAP数据从位于二级系统（复制卷）或对象存储（备份文件）中的备份文件还原到以下系统。快照保存在源系统上，并且只能还原到同一系统。</block>
   <block id="2b3e9f7492129e1cad66eb9ef0df47d2" category="paragraph">*位置* 列显示备份文件（快照）是*本地*（源系统上的快照）、*辅助*（辅助ONTAP系统上的复制卷）还是*对象存储*（对象存储中的备份文件）。选择您想要恢复的文件。</block>
   <block id="8ba8feef9dc91a81337c3e1c3f636d2e" category="admonition">目前，您只能从对象存储中的备份文件恢复文件夹或单个文件。目前不支持从本地快照或位于辅助系统（复制卷）中的备份文件恢复文件和文件夹。</block>
-  <block id="0b7639e600f1d3ff92ed788a9be2c0dd" category="list-text">必须在 SVM 上激活 SnapDiff RPC 服务器。当您在系统上启用索引时，控制台会自动执行此操作。（SnapDiff 是一种能够快速识别快照之间文件和目录差异的技术。）</block>
   <block id="dff115c532ece3121746427a98f68318" category="list-text">在“过滤依据”区域中，选择过滤条件。例如，您可以选择数据所在的系统和文件类型，例如 .JPEG 文件。或者，如果您只想在对象存储中的可用快照或备份文件中搜索结果，则可以选择备份位置类型。</block>
   <block id="4fbc8584021c60a153dbf213f698df58" category="paragraph">请注意，搜索结果会识别包含您搜索文件的本地卷快照和远程复制卷。您可以选择从云备份文件、快照或复制卷中恢复。</block>
   <block id="8cb59bcb28ab4d28eff3f32b41c1619f" category="paragraph">您首先需要挂载一个单独的卷来存放目录文件。这样可以防止因保存快照的文件过大而导致数据丢失。并非每个集群都需要这样做；您可以从环境中的任何集群挂载任何一个卷。如果不这样做，索引可能无法正常工作。</block>
@@ -4015,7 +4005,6 @@
   <block id="14e2c3c5d70d421449af52fed7355245" category="list-text">使用来自多个 Hyper-V 主机的虚拟机创建资源组</block>
   <block id="c224c03fd1f5cab444913dab60a8d013" category="list-text">*主机注册*：通过输入主机的 FQDN 或 IP 地址、凭据、控制台代理和端口号来添加新的 Hyper-V 主机。如果控制台代理无法解析 FQDN，则改用 IP 地址。对于 FCI 集群，请输入 FCI 集群管理 IP 地址。</block>
   <block id="6d397139779cf4483cf1c4693e7f6cfc" category="paragraph">如果您创建自己的存储桶，则应使用存储桶名称“netapp-backup”。如果需要使用自定义名称，请编辑<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block>为现有 CVO 添加 IAMRole，并将以下 JSON 块添加到 S3 权限中<block ref="2af6fd9ec72aee193ee7ffe09638e08f" prefix=" " category="inline-code"></block>大批。您需要包括<block ref="87307b2ef4c880d061c68a6a4277d9a9" prefix=" " category="inline-code"></block>并分配与存储桶关联的所有必要权限。</block>
-  <block id="a9069e9a58042b9bc7056398756845ee" category="paragraph">使用NetApp Backup and Recovery，通过浏览和恢复功能恢复ONTAP数据。恢复之前，请记下源卷名称、源系统和 SVM 以及备份文件日期。您可以从快照、复制卷或存储在对象存储中的备份恢复ONTAP数据。</block>
   <block id="05347845672273f3cffd76e4077cdb51" category="paragraph">恢复功能取决于您的ONTAP版本：</block>
   <block id="a03a5900281bf25c93cb811180bba191" category="list-text">*文件夹：* 使用ONTAP 9.13.0 或更高版本，您可以恢复包含所有文件和子文件夹的文件夹；使用早期版本，您只能恢复文件夹中的文件。</block>
   <block id="781858cefae9b60efaca9b16a3878de8" category="list-text">*归档存储：*从归档存储恢复（ ONTAP 9.10.1 或更高版本可用）速度较慢，并且可能会产生额外费用。</block>
@@ -5497,11 +5486,8 @@
   <block id="59f5ce8a3e5f9160e855499a4f229823" category="paragraph-title">用于保护 VMware 工作负载的基于角色的访问控制 (RBAC) 要求</block>
   <block id="1f3be67622d50eb9ea62feda9571af13" category="list-title">Hyper-V 主机的硬件要求</block>
   <block id="b263d5ca79e3126d53a51eb3fd03ecac" category="list-title">NetApp ONTAP 配置要求</block>
-  <block id="5d5680a7be3d76408ed6363c1640e7fc" category="doc">使用 NetApp Backup and Recovery 将 Cloud Volumes ONTAP 数据备份到 S3 兼容存储</block>
-  <block id="2e7a981f8c415a4fe96294fd71792a0b" category="paragraph">完成 NetApp Backup and Recovery 中的几个步骤，开始将卷数据从 Cloud Volumes ONTAP 系统备份到 S3。</block>
   <block id="9336086de56f2232c24135493cbf6bda" category="paragraph">在开始将卷备份到 S3 兼容存储之前，请阅读以下要求，以确保您具有受支持的配置。</block>
   <block id="b7d0815f0ec0cd041cfc786c3cfad8b3" category="list-text">需要最低 ONTAP 版本 9.17.1。</block>
-  <block id="75f4d0076c7eca9a1d297d2060c6cb45" category="list-text">您可以在激活向导中选择自己的客户管理密钥进行数据加密，而不是使用默认的 S3 加密密钥。在这种情况下，您需要已设置加密托管密钥<block ref="bfab1fe336406f519c233add80b595e0" category="inline-link-rx"></block>。</block>
   <block id="9e3bfb50997093a7d84dc23aa0af7c64" category="section-title">支持的操作</block>
   <block id="9a6bb04c2b277b55faab469f2d04692b" category="paragraph">以下是备份到 S3 兼容存储时支持的操作：</block>
   <block id="1588002f4465aee8a1e35fc95dbebabd" category="list-text">将崩溃一致性和应用一致性快照从本地 ONTAP 备份到第三方 S3 兼容对象存储</block>
@@ -5520,8 +5506,6 @@
   <block id="0d73a47a2cdaa77e5fe1479284fcc8ba" category="list-text">*性能无法保证*：NetApp 产品对 S3 API 延迟和 IOPS 敏感。第三方对象存储必须提供 AWS S3 等效延迟和 IOPS，以实现可比性能。NetApp 不对对象存储性能进行故障排除。</block>
   <block id="4ac196401fdad84265362b1b0e047ea0" category="list-text">*对数据损坏或丢失不承担任何责任*：NetApp 对第三方 S3 对象存储问题导致的数据丢失或服务停机不承担任何责任。</block>
   <block id="f8e460b636103f574efa0d2b39500fdc" category="list-text">*有限功能支持*：第三方 S3 兼容目标支持的功能集是本机目标（AWS S3、Azure Blob、GCP、ONTAP S3、StorageGRID）可用功能的子集。</block>
-  <block id="9c8180fab30cdf8105c99bb565100576" category="list-text">当您的 Cloud Volumes ONTAP 系统运行 ONTAP 9.12.1 或更高版本的软件时，为该系统提供权限的 IAM 角色必须包含一组新的 S3 兼容权限，专门用于最新的 NetApp Backup and Recovery<block ref="7599ab7904564916c5665aaaf7f92943" category="inline-link-rx"></block>。</block>
-  <block id="13ca93dfb9b89bc63ebd2a7dcdb6b677" category="paragraph">如果备份的 S3 兼容目标在 *Systems* 页面上作为集群存在，则可以将集群拖动到 S3 兼容系统上以启动设置向导。</block>
   <block id="47d7a1c349dd710c7b70de2cc5f8bef1" category="admonition">Wasabi 目前是唯一符合条件的 S3 兼容对象存储提供商。其他 S3 兼容的提供商尚未通过验证。</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="811a794fc3af22bb5e0566f56adc0406" category="list-text">S3 兼容存储</block>
@@ -5566,7 +5550,6 @@
   <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="section-title">更多信息</block>
   <block id="0714572f5e60fbb935fc53015369f585" category="list-text"><block ref="0714572f5e60fbb935fc53015369f585" category="inline-link-rx"></block></block>
   <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">2026 年 6 月 08 日</block>
-  <block id="83600b516c30dfc55e0311442c5d9002" category="sidebar">将 Cloud Volumes ONTAP 备份到 S3 兼容存储</block>
   <block id="3a6182405315948a2b482f267396231c" category="admonition">对"本地 ONTAP 系统"的引用包括 FAS、AFF 和 ONTAP Select 系统。</block>
   <block id="248bbbcb51ef3ddd3bd9dc8e6ef8b5a1" category="list-text">*Trident Protect 26.06*：此版本包括 Trident Protect 26.06。</block>
   <block id="a322829a7429e3dce13d41945775197c" category="list-text">*在还原期间跳过应用程序创建*：现在，您可以在还原操作期间跳过自动创建应用程序自定义资源对象。这减少了应用程序清单中不必要的条目。</block>
@@ -5631,7 +5614,6 @@
   <block id="81bdc0623ea533b24d0e11cb1d26ba25" category="list-text">对于使用 SMB 共享存储虚拟机数据的 Hyper-V 部署，请确保在 ONTAP 系统上启用连续可用性共享属性。有关说明，请参阅<block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block>。</block>
   <block id="09e4a6980ec8e49e9c338d71a078b029" category="paragraph">如果您有来自市场的年度合同，则所有 NetApp Backup and Recovery 消耗都将从该合同中扣除。</block>
   <block id="fe336167ccf46f9fb348006254d0f3ee" category="list-text">输入集群名称并选择要与集群一起使用的控制台代理。</block>
-  <block id="59ff3234d92baf85ab9719aa478962eb" category="paragraph">*增强的多存储桶支持*：从 ONTAP 9.19.1 及更高版本开始，您现在可以跨不同云提供商使用每个系统最多 100 个存储桶来保护系统中的卷。</block>
   <block id="c1ec49703505f57531225059c7c36779" category="paragraph">*必需的 NetApp Console 角色*备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解 <block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>。<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
   <block id="6dd3c7c1ba8e65da85c3e2fe08fa8a94" category="paragraph">*必需的 NetApp Console 角色*备份和恢复超级管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>……<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
   <block id="48581c2684fab807e94bda181c201389" category="paragraph">*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复还原管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
@@ -5649,4 +5631,26 @@
   <block id="e5b682be117d99f07d8f1223cbe827ea" category="paragraph">*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
   <block id="6077c15fad6f07f1de9a676f2c04e33a" category="paragraph">*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复还原管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
   <block id="de2e4685966d24481dfab35c95ad44dc" category="section-title">2026年7月13日</block>
+  <block id="66591c0e71be05bd24e1869944b92db6" category="doc">增强对所有工作负载的多存储桶支持</block>
+  <block id="fca26b0431792befd32dc54e69c74dc4" category="paragraph">在此 Backup and Recovery 版本中，您现在可以跨不同云提供商，为每个系统最多使用 100 个存储桶来保护系统中的工作负载。</block>
+  <block id="9bf2c1ebc9be74ae2e995a0a4dab1fec" category="paragraph">要了解有关 NetApp Backup and Recovery 的详细信息，请参阅<block ref="a026c5bec08ff7bb5b963e48c0daa63e" category="inline-link-rx"></block>。</block>
+  <block id="d29362a340bc3ab282b7ab00a7a252e8" category="paragraph">SnapCenter 没有将存储集群或存储 VM 映射到资源所在主机的功能，但 NetApp Backup and Recovery 有。在 NetApp Backup and Recovery 预览版本中，本地 ONTAP 集群或存储 VM 将不会映射到主机。此外，NetApp Console 不支持存储 VM。</block>
+  <block id="528479df4d34d5d63a688250da8bc886" category="list-text">当从源或目标获取备份时，SVM-DR 和卷备份与恢复完全独立地工作。唯一的限制是 SVM-DR 不会复制 SnapMirror 云关系。在灾难恢复方案中，当存储虚拟机在辅助位置联机时，您必须手动更新 SnapMirror 云关系。</block>
+  <block id="40fa5b4c3e42391728efc3c4f6c26f09" category="list-text">要显示其他列（系统、存储虚拟机、用户名、工作负载、策略名称、快照标签），请选择加号。</block>
+  <block id="ba92b1a20870ba2e4e62480d0f546f50" category="list-text">只有在首先选择了系统的情况下，才能搜索特定存储 VM 中的数据。</block>
+  <block id="e3474dde8545c53e3274ed9c9b64005c" category="paragraph">还原作业显示备份目标提供程序（Amazon Web Services、Microsoft Azure、Google Cloud、本地）、S3 存储桶名称、存储 VM 名称、源卷名称、目标卷、快照标签、已恢复对象计数、文件名、文件大小、上次修改日期和完整文件路径等详细信息。</block>
+  <block id="f9740f6d9a7b17271d0bd9c950beb364" category="paragraph">您可以选择将克隆拆分为独立克隆或长期克隆。向导将显示作为存储虚拟机一部分的聚合列表、其大小以及克隆卷所在的位置。NetApp Backup and Recovery 还指示是否有足够的空间来拆分克隆。克隆拆分后，克隆将成为独立的数据库以进行保护。</block>
+  <block id="f8a8c54321528bdfeaace1c0344da0e3" category="list-text">跨不同云提供商在每个系统中使用超过 6 个存储桶（最多支持 100 个存储桶）需要 ONTAP 9.19.1 或更高版本。</block>
+  <block id="5f215f7c34f6e7e676381bc568270c08" category="list-text">*复制目标*：选择目标系统和存储虚拟机。可选择目标聚合（或 FlexGroup 卷的聚合）以及将添加到复制卷名称的前缀或后缀。</block>
+  <block id="84894d14ff1ffc8ca882274f258dab82" category="doc">使用 NetApp Backup and Recovery 将本地 ONTAP 数据备份到 S3 兼容存储</block>
+  <block id="b4e544c2a798b61cb8be540d9a98bdd7" category="paragraph">完成 NetApp Backup and Recovery 中的几个步骤，开始从主要本地 ONTAP 系统备份卷数据。您可以将备份发送到辅助 ONTAP 存储系统（复制的卷）或发送到与 S3 兼容的存储系统上的存储桶，或两者兼而有之。</block>
+  <block id="c311735fe85134dfe51a4a6cdafb11de" category="paragraph">将数据备份到 S3 兼容存储时，必须在您的本地或云端提供 Console 代理。您需要安装新的 Console 代理，或确保当前选择的 Console 代理位于这些位置之一。本地 Console 代理可以安装在有或没有互联网访问的站点中。</block>
+  <block id="5fde041a1aeca3ef763d357a8d17b51c" category="list-text">通过端口 443 到 S3 兼容服务器的 HTTPS 连接</block>
+  <block id="1d7082d9ae189f004a6b8cc9231126d2" category="paragraph">当您在标准 SaaS 环境中使用 NetApp Backup and Recovery 时，NetApp Backup and Recovery 配置数据将备份到云中。当您在没有互联网访问的站点中使用 NetApp Backup and Recovery 时，NetApp Backup and Recovery 配置数据将备份到存储备份的 S3 兼容存储区。</block>
+  <block id="ca97e74b4b30d744f09e1f3ab3ea2335" category="admonition">将文件备份到 S3 兼容存储时，不支持 PAYGO 许可。</block>
+  <block id="5f4ed6aee4f9190d719afb22dbc9b46f" category="list-text">ONTAP 集群通过用户指定的端口从集群间 LIF 向 S3 兼容服务器发起 HTTPS 连接，以执行备份和还原操作。端口可在备份设置期间进行配置。</block>
+  <block id="844fc7abbe7e8885979a95956cae4413" category="list-text">*复制目标*：选择目标系统和存储 VM。可选择目标聚合（或 FlexGroup 卷的聚合）以及将添加到复制卷名称的前缀或后缀。</block>
+  <block id="77b3f26262e74232411c4a9845e78dd4" category="paragraph">使用 NetApp Backup and Recovery，通过“浏览并恢复”来恢复 ONTAP 数据。在恢复之前，请记录源卷名称、源系统和 Storage VM 以及备份文件日期。您可以从 Snapshot、复制的卷或存储在对象存储中的备份中恢复 ONTAP 数据。</block>
+  <block id="ddba76f3680bcef2d5a8170c73d395e7" category="list-text">必须在存储 VM 上激活 SnapDiff RPC Server。在系统上启用索引时，Console 会自动执行此操作。（SnapDiff 是一种可快速识别快照之间文件和目录差异的技术。）</block>
+  <block id="e6932ee3628baaf132027b16f688c205" category="sidebar">将本地 ONTAP 备份到 S3 兼容存储</block>
 </blocks>

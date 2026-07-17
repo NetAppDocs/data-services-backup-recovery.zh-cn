@@ -1,14 +1,12 @@
-= ONTAP Volumes 工作负载增强
+= 增强对所有工作负载的多存储桶支持
 :allow-uri-read: 
 
 
 
 
-[[ontap-volumes-workloads-enhancements]]
-=== ONTAP Volumes 工作负载增强
+[[enhanced-multi-bucket-support-for-all-workloads]]
+=== 增强对所有工作负载的多存储桶支持
 
-在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：
+在此 Backup and Recovery 版本中，您现在可以跨不同云提供商，为每个系统最多使用 100 个存储桶来保护系统中的工作负载。
 
-*增强的多存储桶支持*：从 ONTAP 9.19.1 及更高版本开始，您现在可以跨不同云提供商使用每个系统最多 100 个存储桶来保护系统中的卷。
-
-要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["保护 ONTAP 卷工作负载概述"]。
+要了解有关 NetApp Backup and Recovery 的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["了解NetApp Backup and Recovery"]。

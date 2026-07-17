@@ -14,7 +14,7 @@ summary: 使用 NetApp Backup and Recovery，通过浏览和还原功能还原 O
 
 
 [role="lead"]
-使用NetApp Backup and Recovery，通过浏览和恢复功能恢复ONTAP数据。恢复之前，请记下源卷名称、源系统和 SVM 以及备份文件日期。您可以从快照、复制卷或存储在对象存储中的备份恢复ONTAP数据。
+使用 NetApp Backup and Recovery，通过“浏览并恢复”来恢复 ONTAP 数据。在恢复之前，请记录源卷名称、源系统和 Storage VM 以及备份文件日期。您可以从 Snapshot、复制的卷或存储在对象存储中的备份中恢复 ONTAP 数据。
 
 恢复功能取决于您的ONTAP版本：
 
