@@ -1846,7 +1846,6 @@
   <block id="6106f73de41b0409a6e5dd18d2f2baf3" category="list-text">Hyper-V 主机上的NetApp Hyper-V 插件至少需要 1GB RAM</block>
   <block id="6736478116770d132993185ee55b6baf" category="list-text">Hyper-V 主机上插件的最低安装和日志空间为 5GB</block>
   <block id="523f5e6af5276c06e274c9d76b2d4467" category="admonition">确保在 Hyper-V 主机上为日志文件夹分配足够的磁盘空间并定期监控其使用情况。所需空间取决于备份和数据保护操作发生的频率。如果空间不足，则不会生成日志。</block>
-  <block id="1498907a7069094c1a1b679e2a53087a" category="list-text">主ONTAP系统（ONTAP 9.14.1 或更高版本）</block>
   <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">ONTAP 文档</block>
   <block id="f6e9a28cc6109da66451b7ed0caaea35" category="list-text">对于ONTAP S3，控制台代理可以部署在您的场所（有或没有互联网访问）或云提供商环境中</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律声明</block>
@@ -5640,7 +5639,6 @@
   <block id="ba92b1a20870ba2e4e62480d0f546f50" category="list-text">只有在首先选择了系统的情况下，才能搜索特定存储 VM 中的数据。</block>
   <block id="e3474dde8545c53e3274ed9c9b64005c" category="paragraph">还原作业显示备份目标提供程序（Amazon Web Services、Microsoft Azure、Google Cloud、本地）、S3 存储桶名称、存储 VM 名称、源卷名称、目标卷、快照标签、已恢复对象计数、文件名、文件大小、上次修改日期和完整文件路径等详细信息。</block>
   <block id="f9740f6d9a7b17271d0bd9c950beb364" category="paragraph">您可以选择将克隆拆分为独立克隆或长期克隆。向导将显示作为存储虚拟机一部分的聚合列表、其大小以及克隆卷所在的位置。NetApp Backup and Recovery 还指示是否有足够的空间来拆分克隆。克隆拆分后，克隆将成为独立的数据库以进行保护。</block>
-  <block id="f8a8c54321528bdfeaace1c0344da0e3" category="list-text">跨不同云提供商在每个系统中使用超过 6 个存储桶（最多支持 100 个存储桶）需要 ONTAP 9.19.1 或更高版本。</block>
   <block id="5f215f7c34f6e7e676381bc568270c08" category="list-text">*复制目标*：选择目标系统和存储虚拟机。可选择目标聚合（或 FlexGroup 卷的聚合）以及将添加到复制卷名称的前缀或后缀。</block>
   <block id="84894d14ff1ffc8ca882274f258dab82" category="doc">使用 NetApp Backup and Recovery 将本地 ONTAP 数据备份到 S3 兼容存储</block>
   <block id="b4e544c2a798b61cb8be540d9a98bdd7" category="paragraph">完成 NetApp Backup and Recovery 中的几个步骤，开始从主要本地 ONTAP 系统备份卷数据。您可以将备份发送到辅助 ONTAP 存储系统（复制的卷）或发送到与 S3 兼容的存储系统上的存储桶，或两者兼而有之。</block>
@@ -5653,4 +5651,7 @@
   <block id="77b3f26262e74232411c4a9845e78dd4" category="paragraph">使用 NetApp Backup and Recovery，通过“浏览并恢复”来恢复 ONTAP 数据。在恢复之前，请记录源卷名称、源系统和 Storage VM 以及备份文件日期。您可以从 Snapshot、复制的卷或存储在对象存储中的备份中恢复 ONTAP 数据。</block>
   <block id="ddba76f3680bcef2d5a8170c73d395e7" category="list-text">必须在存储 VM 上激活 SnapDiff RPC Server。在系统上启用索引时，Console 会自动执行此操作。（SnapDiff 是一种可快速识别快照之间文件和目录差异的技术。）</block>
   <block id="e6932ee3628baaf132027b16f688c205" category="sidebar">将本地 ONTAP 备份到 S3 兼容存储</block>
+  <block id="4ad36f854b6d4d49c94081fec1b29de2" category="list-text">要跨不同云提供商支持每个系统超过 6 个存储桶（最多 100 个存储桶），需要 ONTAP 9.19.1 或更高版本。</block>
+  <block id="59ebd83b4c20d2b24ac46c96525c37fc" category="list-text">ONTAP 9.13.1 或更高版本（需要 ONTAP 9.19.1 或更高版本才能支持跨不同云提供商的每个系统超过 6 个存储桶；最多 100 个存储桶）</block>
+  <block id="6a0d2c5dd8e27d910d6ff2158f8d5520" category="list-text">主 ONTAP 系统（ONTAP 9.14.1 或更高版本 - 需要 ONTAP 9.19.1 或更高版本才能支持跨不同云提供商每个系统超过 6 个存储桶；最多 100 个存储桶）</block>
 </blocks>
