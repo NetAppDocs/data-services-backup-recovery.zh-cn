@@ -5285,7 +5285,6 @@
   <block id="57c9526981addf2ea70c6ad409673cb5" category="list-text">（可选）要删除会话，请打开会话的"操作"菜单 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>，然后选择 *Delete*。</block>
   <block id="970e7dbe358429eacf37bb0e37943138" category="list-text">从对象存储备份还原（仅恢复到原始位置）</block>
   <block id="4b59b9c80f0f0e40294e53eb75b4e004" category="list-text">还原到原始位置（从主存储、辅助存储和对象存储）</block>
-  <block id="a6f964fecafa0484fc07f1b47496f82c" category="list-text">还原到备用位置（从主存储和二级存储）</block>
   <block id="bff6f5877ada2718589866425ae83e38" category="doc">在 NetApp Backup and Recovery 中创建和管理 Hyper-V 备份策略</block>
   <block id="7c54de5e880bd010125642ffb949ccad" category="paragraph">在 NetApp Backup and Recovery 中，创建自己的 Hyper-V 备份策略，以管理备份频率、备份执行时间以及保留的备份文件数。</block>
   <block id="110202b139c8c8a25346f036c902b4c8" category="list-text">编辑策略</block>
@@ -5436,7 +5435,6 @@
   <block id="860b17c21dae4758109cd6109bb92be4" category="list-text">*将文件和文件夹还原到来宾 VM 改进*：您现在可以将文件和文件夹从主存储或二级存储上的快照还原到来宾 Windows VM。CIFS 和 SAN VM 现在支持此功能。</block>
   <block id="3e96e50a62c2cc112989ccd5d4d264aa" category="list-text">在灾难恢复 (DR) 配置中还原文件和文件夹：故障切换后，为 DR 配置的存储 VM 上的卷将保留处于中断状态的预先存在的 SnapMirror 关系。由于目标卷已经存在关系，ONTAP 会阻止尝试还原创建临时 SnapMirror RST 关系的文件或文件夹。</block>
   <block id="d98b87c41bd7151a94b3271b45bd340f" category="paragraph">将文件和文件夹从主存储或二级存储上的 Hyper-V VM 备份还原到 Windows 来宾 VM。</block>
-  <block id="7438f70a76f855b704ba892f9c003542" category="list-text">不支持从存储在对象存储中的备份还原文件和文件夹。</block>
   <block id="7d3d3c20273081b66e3ecec1f0d07f51" category="list-text">选择要从中恢复的主存储或二级存储上的快照，然后选择 *下一步*。</block>
   <block id="3808991f408e2ffd90ae953886ec1e79" category="doc">NetApp Backup and Recovery 要求</block>
   <block id="44b68849dd3e2689fb41242f736a140f" category="paragraph">在开始使用 NetApp Backup and Recovery 之前，请确保您的 NetApp Console 和操作环境满足以下要求。</block>
@@ -5654,4 +5652,6 @@
   <block id="4ad36f854b6d4d49c94081fec1b29de2" category="list-text">要跨不同云提供商支持每个系统超过 6 个存储桶（最多 100 个存储桶），需要 ONTAP 9.19.1 或更高版本。</block>
   <block id="59ebd83b4c20d2b24ac46c96525c37fc" category="list-text">ONTAP 9.13.1 或更高版本（需要 ONTAP 9.19.1 或更高版本才能支持跨不同云提供商的每个系统超过 6 个存储桶；最多 100 个存储桶）</block>
   <block id="6a0d2c5dd8e27d910d6ff2158f8d5520" category="list-text">主 ONTAP 系统（ONTAP 9.14.1 或更高版本 - 需要 ONTAP 9.19.1 或更高版本才能支持跨不同云提供商每个系统超过 6 个存储桶；最多 100 个存储桶）</block>
+  <block id="d2bf4d042aabc15b9ccde353c782a6f2" category="list-text">使用 Microsoft Windows Server 2025 时，不支持保护存储在 SAN 存储中的第 2 代虚拟机。</block>
+  <block id="b2d5ba8de92c18cbb9c45e01ad3f5509" category="list-text">还原到备用位置（从主、辅助和对象存储）</block>
 </blocks>
