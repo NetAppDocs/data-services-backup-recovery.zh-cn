@@ -5629,7 +5629,6 @@
   <block id="6077c15fad6f07f1de9a676f2c04e33a" category="paragraph">*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复还原管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
   <block id="de2e4685966d24481dfab35c95ad44dc" category="section-title">2026年7月13日</block>
   <block id="66591c0e71be05bd24e1869944b92db6" category="doc">增强对所有工作负载的多存储桶支持</block>
-  <block id="fca26b0431792befd32dc54e69c74dc4" category="paragraph">在此 Backup and Recovery 版本中，您现在可以跨不同云提供商，为每个系统最多使用 100 个存储桶来保护系统中的工作负载。</block>
   <block id="9bf2c1ebc9be74ae2e995a0a4dab1fec" category="paragraph">要了解有关 NetApp Backup and Recovery 的详细信息，请参阅<block ref="a026c5bec08ff7bb5b963e48c0daa63e" category="inline-link-rx"></block>。</block>
   <block id="d29362a340bc3ab282b7ab00a7a252e8" category="paragraph">SnapCenter 没有将存储集群或存储 VM 映射到资源所在主机的功能，但 NetApp Backup and Recovery 有。在 NetApp Backup and Recovery 预览版本中，本地 ONTAP 集群或存储 VM 将不会映射到主机。此外，NetApp Console 不支持存储 VM。</block>
   <block id="528479df4d34d5d63a688250da8bc886" category="list-text">当从源或目标获取备份时，SVM-DR 和卷备份与恢复完全独立地工作。唯一的限制是 SVM-DR 不会复制 SnapMirror 云关系。在灾难恢复方案中，当存储虚拟机在辅助位置联机时，您必须手动更新 SnapMirror 云关系。</block>
@@ -5654,4 +5653,5 @@
   <block id="6a0d2c5dd8e27d910d6ff2158f8d5520" category="list-text">主 ONTAP 系统（ONTAP 9.14.1 或更高版本 - 需要 ONTAP 9.19.1 或更高版本才能支持跨不同云提供商每个系统超过 6 个存储桶；最多 100 个存储桶）</block>
   <block id="d2bf4d042aabc15b9ccde353c782a6f2" category="list-text">使用 Microsoft Windows Server 2025 时，不支持保护存储在 SAN 存储中的第 2 代虚拟机。</block>
   <block id="b2d5ba8de92c18cbb9c45e01ad3f5509" category="list-text">还原到备用位置（从主、辅助和对象存储）</block>
+  <block id="62ff0d9db122207756fd73342a3eb3ad" category="paragraph">NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 个存储桶来保护系统中的工作负载。ONTAP 9.19.1 或更高版本需要支持每个系统超过 6 个存储桶。</block>
 </blocks>
