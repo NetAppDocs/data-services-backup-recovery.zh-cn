@@ -26,18 +26,6 @@
 
 
 
-[[oracle-database-workloads-enhancements]]
-=== Oracle Database 工作负载增强
-
-在此版本中，Oracle 数据库工作负载引入了以下增强功能：
-
-* *可插拔数据库(PDB)还原和克隆*：Backup and Recovery for NetApp Console 服务现在支持还原和克隆可插拔数据库。
-
-
-要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
-
-
-
 [[kubernetes-workloads-enhancements]]
 === Kubernetes 工作负载增强功能
 

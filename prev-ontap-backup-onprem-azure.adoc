@@ -95,7 +95,7 @@ image:diagram_cloud_backup_onprem_azure_private.png["该图显示了NetApp Backu
 要使用NetApp Backup and Recovery搜索和还原功能，您需要在控制台代理的角色中拥有特定权限，以便它可以访问 Azure Synapse 工作区和数据湖存储帐户。请参阅下面的权限，如果需要修改策略，请按照以下步骤操作。
 
 .开始之前
-您必须向您的订阅注册 Azure Synapse Analytics 资源提供程序（称为“Microsoft.Synapse”）。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["了解如何为您的订阅注册此资源提供程序"^] 。您必须是订阅*所有者*或*贡献者*才能注册资源提供者。
+您必须在订阅中注册 Azure Synapse Analytics 资源提供程序（称为"Microsoft.Synapse"） https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["了解如何为您的订阅注册此资源提供程序"^]。您必须是订阅 *Owner* 或 *Contributor* 才能注册资源提供商。
 
 .步骤
 . 确定分配给控制台代理虚拟机的角色：

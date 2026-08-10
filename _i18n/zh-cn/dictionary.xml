@@ -2029,7 +2029,6 @@
   <block id="dd67539e70d93b9889e0cb5a77274b0b" category="paragraph">要使用NetApp Backup and Recovery搜索和还原功能，您需要在控制台代理的角色中拥有特定权限，以便它可以访问 Azure Synapse 工作区和数据湖存储帐户。请参阅下面的权限，如果需要修改策略，请按照以下步骤操作。</block>
   <block id="bf49a2af93184828c602f30985ab7b3e" category="list-title">开始之前</block>
   <block id="ad21a85e531f324768ed107500147c11" category="inline-link">了解如何为您的订阅注册此资源提供程序</block>
-  <block id="8e735e680b7368147fd11864544dafdc" category="list-text">您必须向您的订阅注册 Azure Synapse Analytics 资源提供程序（称为“Microsoft.Synapse”）。<block ref="66e7a06283e2f9b1945c2e3b539d5c17" category="inline-link-rx"></block> 。您必须是订阅*所有者*或*贡献者*才能注册资源提供者。</block>
   <block id="31dc01c9493f1634e02a0b09bd5b59bd" category="list-text">必须打开端口 1433 才能实现控制台代理和 Azure Synapse SQL 服务之间的通信。</block>
   <block id="caf1eee1629cb07ebbce66130fb04f94" category="list-text">确定分配给控制台代理虚拟机的角色：</block>
   <block id="dd7dc066cb6a0b619ef397e8b37b57c3" category="list-text">在 Azure 门户中，打开虚拟机服务。</block>
@@ -5645,7 +5644,6 @@
   <block id="ce2f56e5c9015b28eb92d0581ad9a718" category="list-text">*90 天的作业保留*：Backup and Recovery 现在会在 Job Monitor 中保留作业信息 90 天。</block>
   <block id="1a83c2d5d73015e6e971eff46d37e9d8" category="list-text">*还原到备用位置支持（适用于 SAN VM）*：现在，您可以将基于 SAN 的 VM 备份还原到备用位置。</block>
   <block id="b7bfbf5f47aa4163507ae71ed18f8b9f" category="list-text">*Multiple backup delete support*：您现在可以一次删除多个备份。</block>
-  <block id="7ac62e0d250037c318f5fcf102e2e700" category="list-text">*可插拔数据库(PDB)还原和克隆*：Backup and Recovery for NetApp Console 服务现在支持还原和克隆可插拔数据库。</block>
   <block id="c67660fa166ae58260874bbf6f9c5e4a" category="list-text">*预览对气隙资源的支持*：如果在 NetApp Console 本地部署中运行 NetApp Backup and Recovery，您可以发现、保护和还原气隙 Kubernetes 资源。此功能在此版本中处于预览状态。</block>
   <block id="d1c241263c19a21db56b6d9aaeb83ca1" category="paragraph">在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：</block>
   <block id="a33b2a8cf6a943c4ae96728143fee277" category="list-text">*将还原作业优先于备份*：现在，在还原虚拟机或文件时，您可以将还原作业优先于备份作业。</block>
@@ -5805,4 +5803,5 @@
   <block id="718879a57c5479ddc9d8c13719835aa2" category="list-text">如果手动运行<block ref="547d17b0589ba1ba53549f8ddb830b62" prefix=" " category="inline-code"></block>然后尝试重新安装，PV 将以相同的名称安装，并导致命名冲突。</block>
   <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">2026年8月10日</block>
   <block id="874b4474de89858c50d77a501e5764e2" category="sidebar">提高 NetApp Console 本地部署的卷搜索和还原性能</block>
+  <block id="4d92224f9798401488621039f9e4cfa9" category="list-text">您必须在订阅中注册 Azure Synapse Analytics 资源提供程序（称为"Microsoft.Synapse"）<block ref="c0f87c4b35b6d93246175aae02f70afd" category="inline-link-rx"></block>。您必须是订阅 *Owner* 或 *Contributor* 才能注册资源提供商。</block>
 </blocks>
