@@ -27,9 +27,14 @@ NetApp Backup and Recovery使用身份和访问管理来控制每个用户可以
 要添加控制台代理，您必须具有备份和恢复超级管理员角色。
 
 .步骤
-. 打开 Web 浏览器并转到 https://console.netapp.com/["NetApp Console"^]。
+. 执行以下操作之一：
++
+** 如果使用的是 NetApp Console，请打开 Web 浏览器并转到 https://console.netapp.com/["NetApp Console"^]。
+** 如果使用的是 NetApp Console 本地部署，请打开 Web 浏览器并转到本地 Console 部署的 Web UI 的 IP 地址。
 +
 出现NetApp Console登录页面。
+
+
 
 . 登录控制台。
 . 从控制台左侧导航中，选择*保护*>*备份和恢复*。

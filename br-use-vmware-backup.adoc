@@ -32,7 +32,7 @@ summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。
 
 .步骤
 . 从备份和恢复菜单中，选择*库存*。
-. 选择一个工作负载来查看保护详细信息。
+. 选择 VMware 工作负载。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
 . 选择 *Protection Groups*、*Datastores*、*Virtual machines* 或 *Tags* 菜单标题。
 . 选择要备份的保护组、数据存储库、虚拟机或标记的资源。
@@ -43,4 +43,39 @@ NOTE: 应用于备份的策略与分配给保护组、数据存储、虚拟机�
 
 . 选择计划层级。
 . 选择*立即备份*。
+
+
+
+
+[[delete-backups]]
+== 删除备份
+
+您可以删除不再需要的本地备份，以释放存储空间或满足数据保留要求。
+
+.步骤
+. 登录到 NetApp Backup and Recovery，然后从主屏幕中选择 VMware 工作负载磁贴。
++
+此时将显示 VMware 清单页面。
+
+. 选择*虚拟机*标题。
+. 在虚拟机列表中，选择虚拟机并选择操作图标 image:../media/icon-action.png["操作选项"] > *查看保护详细信息*。
+. 选择时间范围以显示相关快照。
+. 删除一个或多个快照：
++
+[role="tabbed-block"]
+====
+.删除单个Snapshot
+--
+.. 从列表中选择要删除的快照，然后选择操作图标 image:../media/icon-action.png["操作选项"] > *删除本地快照*。
+
+
+--
+.删除多个快照
+--
+.. 选中要删除的每个快照左侧的复选框。
+.. 选择*删除所选内容*。
+
+
+--
+====
 

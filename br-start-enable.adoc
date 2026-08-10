@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: br-start-enable.html 
+keywords: backup, Backup and Recovery, enable backup, Console, service, local deployment 
+summary: 在 NetApp Console 或 NetApp Console 本地部署的系统上启用备份和恢复。 
+---
+= 启用备份和恢复以保护卷
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您需要在 NetApp Console 或 NetApp Console 本地部署中为存储系统启用 NetApp Backup and Recovery，然后才能保护 ONTAP 卷工作负载。您可以在添加系统时或稍后在系统上启用 Backup and Recovery。
+
+
+
+[[enable-backup-and-recovery-in-netapp-console]]
+== 在 NetApp Console 中启用备份和恢复
+
+在 NetApp Console 中启用备份和恢复服务。
+
+.步骤
+. 选择 *Volumes* 菜单。
+. 在卷保护概述页面中，选择*备份设置*。
+. 确定要激活备份的系统，然后选择*激活备份*按钮。
+. 选择“下一步”。
+. 选择要保护的源卷，然后选择*下一步*。
+. 在"定义备份策略"页面中，选择备份架构，然后为本地快照、复制卷和备份文件定义策略和其他详细信息。请参阅您在此系统中激活的初始卷的备份选项的详细信息。然后选择 *Next*。
+. （可选）选择让 Backup and Recovery 自动修复不匹配的备份、快照和复制标签。
+. 检查此卷的备份设置，然后选择*激活备份*。
+. 您保护的卷将显示在"Volumes"概述页面中。
+
+
+
+
+[[enable-backup-and-recovery-in-netapp-console-local-deployment]]
+== 在 NetApp Console 本地部署中启用备份和恢复
+
+在 NetApp Console 本地部署中启用备份和恢复服务。
+
+.开始之前
+确保您已获得 NetApp Backup and Recovery 的许可证。请参阅  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#obtain-a-license-file["获取许可证"^] 以了解更多信息。
+
+.步骤
+. 在 NetApp Console 菜单中，选择 *存储 > 队列*。
+. 如有需要，请选择 *Add fleet* 以添加车队详细信息。
+. 选择 *Administration > Licenses*。
+. 选择*添加许可证*以添加备份和恢复许可证。有关添加许可证的更多信息，请参阅 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#add-a-license["添加许可证"^]。
+. 选择 *Storage* > *Fleets*，然后打开 *Systems* 菜单。
+. 选择*添加*以添加系统，输入系统详细信息，然后通过选择*添加*保存新系统。
+. 选择一个系统并选择一个集群。在页面右侧的信息面板中，选择备份和恢复服务的*启用*按钮。
+. 选择*备份卷*。
+. 选择“下一步”。
+. 选择要保护的源卷，然后选择*下一步*。
+. 在"定义备份策略"页面中，选择备份架构，然后为本地快照、复制卷和备份文件定义策略和其他详细信息。请参阅您在此系统中激活的初始卷的备份选项的详细信息。然后选择 *Next*。
+. （可选）选择让 Backup and Recovery 自动修复不匹配的备份、快照和复制标签。
+. 检查此卷的备份设置，然后选择*激活备份*。
+. 您保护的卷将显示在"Volumes"概述页面中。
+

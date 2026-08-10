@@ -609,15 +609,9 @@
   <block id="dfbbf83657db8e9ef8d6ee3a468873c2" category="doc">探索NetApp Backup and Recovery中的 Kubernetes 工作负载</block>
   <block id="d1b560b331735fdf9cef92794cc2cff2" category="paragraph">NetApp Backup and Recovery需要在保护 Kubernetes 工作负载之前发现它们。</block>
   <block id="f0338e38e7978ec30d1f5eb9b845e843" category="section-title">发现 Kubernetes 工作负载</block>
-  <block id="a74bdf5d9abca25c000c1902f13999c8" category="paragraph">在备份和恢复清单中，发现您环境中的 Kubernetes 工作负载。添加工作负载会将 Kubernetes 集群添加到NetApp Backup and Recovery。然后，您可以添加应用程序并保护集群资源。</block>
   <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">执行以下操作之一：</block>
   <block id="6226950d1b144f972ce9b5d3caea9b42" category="list-text">如果您已经发现 Kubernetes 工作负载，请在NetApp Backup and Recovery中选择 *Inventory* &gt; *Workloads*，然后选择 *Discover resources*。</block>
   <block id="e7c444e4a1d2f156d71a907145c8a598" category="list-text">选择 *Kubernetes* 工作负载类型。</block>
-  <block id="39b0136210d9abd099b81781cc0a17db" category="list-text">按照出现的命令行说明进行操作：</block>
-  <block id="ed6eabebedff09350cdabab556887c62" category="list-text">创建 Kubernetes 机密</block>
-  <block id="6c27e11d1144953d7877449d5adc966d" category="list-text">添加 Helm 存储库</block>
-  <block id="efa5307bfad4cbe53b6ae3c88baa522e" category="paragraph">这些步骤确保NetApp Backup and Recovery可以与集群交互。</block>
-  <block id="9bac5e7d53677c1fdcf7d275fd58ed60" category="list-text">完成这些步骤后，选择*发现*。</block>
   <block id="6b3946603d5588826f1cd3f2695b8542" category="paragraph">该集群已添加到清单中。</block>
   <block id="95f06f6ac101b19d86ae2a17fb3eb848" category="list-text">在关联的 Kubernetes 工作负载中选择“查看”以查看该工作负载的应用程序、集群和命名空间列表。</block>
   <block id="b0719c20a836424f725e51c9b181748d" category="paragraph">按照以下步骤查看NetApp Backup and Recovery仪表板。</block>
@@ -688,7 +682,6 @@
   <block id="b7dfb6860d9af743a7d3f0fe2adfde3d" category="list-text">*跳过可选的预安装检查*：选中此框可跳过可选的预安装检查。例如，如果您知道内存或空间考虑因素将在不久的将来发生变化，并且您想立即安装插件，那么您可能想要这样做。</block>
   <block id="2a9ab4f690bade887dade42f4a0f412b" category="inline-link">NetApp Console部署模式</block>
   <block id="02a0978d1df3ca052a64d05249709cc3" category="summary">您可以通过从云提供商处购买按使用量付费或年度市场订阅来获得NetApp Backup and Recovery 的许可，或者通过从NetApp购买自带许可证来获得许可。需要有效的许可证才能在系统上激活NetApp Backup and Recovery 、创建生产数据的备份以及将备份数据还原到生产系统。</block>
-  <block id="d44c500b8ff5c565a7d3b02d14def6a3" category="paragraph">您可以通过从云提供商处购买按使用量付费 (PAYGO) 或年度市场订阅 * NetApp Intelligent Services* 来获得NetApp Backup and Recovery许可，或者通过从NetApp购买自带许可 (BYOL)。需要有效的许可证才能在系统上激活NetApp Backup and Recovery 、创建生产数据的备份以及将备份数据还原到生产系统。</block>
   <block id="80186f1230af2267e2c2e4d2ab8c030e" category="paragraph">在您继续阅读之前，请注意以下几点：</block>
   <block id="0afafddaf42e76b83acff428b8613a7e" category="list-text">NetApp Backup and Recovery自带许可证 (BYOL) 是一种浮动许可证，您可以在与NetApp Console组织或帐户关联的所有系统中使用它。因此，如果您现有的 BYOL 许可证具有足够的备份容量，则无需购买另一个 BYOL 许可证。</block>
   <block id="98ed4c44ab8a3c8a5b08f8e91a585c40" category="list-text">如果您使用 BYOL 许可证，建议您也订阅 PAYGO 订阅。如果您备份的数据超出了 BYOL 许可证允许的范围，或者许可证期限已过期，则备份将通过您的即用即付订阅继续进行 - 不会中断服务。</block>
@@ -721,7 +714,6 @@
   <block id="7744fc20060f2753538eb1cbe03db4f0" category="paragraph">使用这些链接从您的云提供商市场订阅NetApp Backup and Recovery ：</block>
   <block id="14c403304e8650321be08c9edd75c486" category="inline-link">前往NetApp Intelligent Services市场了解定价详情</block>
   <block id="782af9afc0728a9389fd837476a88107" category="inline-link">前往NetApp Intelligent Services市场了解定价详情</block>
-  <block id="66145e361f72b54aa011f59d543dfb08" category="section-title">使用年度合同</block>
   <block id="e8081693b5a02447f0b48df91b9f65d8" category="paragraph">通过购买年度合同每年支付NetApp Backup and Recovery的费用。期限分为 1 年、2 年或 3 年。</block>
   <block id="2351127acb653fd60dafc73c8efcb79d" category="inline-link">AWS Marketplace 页面</block>
   <block id="dda622e647d2d5d64503c046c508cc10" category="paragraph">当您使用 AWS 时，有两种年度合同可供选择<block ref="85c21eb306ec4bcbda7252ca6117fc5c" category="inline-link-rx"></block>对于Cloud Volumes ONTAP和本地ONTAP系统：</block>
@@ -754,7 +746,6 @@
   <block id="ae5c737a541e095839e199ea2ab82f0f" category="paragraph">要登录NetApp Console，您可以使用您的NetApp支持站点凭据，也可以使用您的电子邮件和密码注册NetApp Console登录。<block ref="3546779ff62edcb806e94b283f4a603a" category="inline-link-rx"></block> 。</block>
   <block id="03169a1f1f9d0a03d15fd58f20cbb63e" category="paragraph">要添加控制台代理，您必须具有备份和恢复超级管理员角色。</block>
   <block id="3c031b939f6ec312ee601d021e7a6644" category="inline-link">NetApp Console</block>
-  <block id="6a65fb509b9c682f9df5eb122484e2f7" category="list-text">打开 Web 浏览器并转到<block ref="d6205946f936217747639e85e1340e8f" category="inline-link-rx"></block>。</block>
   <block id="0daac1b9cd4c3a240bf2f6b44ba178a1" category="paragraph">出现NetApp Console登录页面。</block>
   <block id="4a43cddfeeabba4570c14c252dec0bd1" category="list-text">登录控制台。</block>
   <block id="4d2b18ba50dc1294ccb141fdc1041417" category="inline-link">NetApp Console标准模式入门</block>
@@ -3775,7 +3766,6 @@
   <block id="b4ae20208d5c757b694d673276341786" category="paragraph">恢复数据库以保护您的数据。</block>
   <block id="3f6fab6bedfff19150a3d6ab054b0391" category="paragraph">您现在可以备份您的 Microsoft SQL Server 实例和数据库，以立即保护您的数据。</block>
   <block id="2b2261b532e949e52edc443eb38fcb1c" category="admonition">您可能需要向云提供商支付额外费用才能访问备份文件。</block>
-  <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">在“恢复”页面（搜索和恢复）中，您可以通过使用过滤器搜索快照来恢复资源，即使您不记得它的确切名称、位置或最后已知日期。</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">如果还原操作未完成，请等到作业监视器显示“失败”后再重试还原操作。</block>
   <block id="51e153ee1aa6cdb4ca7796e926180b53" category="admonition">要切换到NetApp Backup and Recovery工作负载，请参阅<block ref="e56b09183f5489111204017fecace77e" category="inline-link-macro-rx"></block>。</block>
   <block id="2f52181b09a7c053aed22699e227b9db" category="paragraph">当您在 SaaS 环境中使用NetApp Backup and Recovery，并在云提供商或您自己的互联网连接主机上部署控制台代理时，系统会备份并保护云中所有重要的配置数据。如果您遇到控制台代理问题，请创建一个新的控制台代理并添加您的系统。备份详细信息将自动恢复。</block>
@@ -3918,7 +3908,6 @@
   <block id="d04d7ffd1d421df13a11259032d9191e" category="paragraph">借助NetApp Backup and Recovery，您可以通过更改备份计划、启用/禁用卷备份、暂停备份、删除备份、强制删除备份等方式管理Cloud Volumes ONTAP和本地ONTAP系统的备份。这包括所有类型的备份，包括快照、复制卷和对象存储中的备份文件。您还可以取消注册NetApp Backup and Recovery。</block>
   <block id="294441075d63ebaf575b2bea27e26a8b" category="paragraph">您可以在卷备份仪表板中查看当前正在备份的所有卷的列表。这包括所有类型的备份，包括快照、复制卷和对象存储中的备份文件。您还可以查看系统中当前未备份的卷。</block>
   <block id="16733ccec61246c84b6ccea8b096ea96" category="list-text">查看“现有保护”列中保护选项的状态。这 3 个图标分别代表“本地快照”、“复制卷”和“对象存储中的备份”。</block>
-  <block id="41164544ff8c92dec6c6202f3c48b888" category="list-text">在“定义备份策略”页面中，选择备份架构，然后定义本地快照、复制卷和备份文件的策略和其他详细信息。查看您在此系统中激活的初始卷的备份选项的详细信息。然后选择“下一步”。</block>
   <block id="6c93c0ee904d580923385784899b59a3" category="paragraph">您可以更改分配给已分配策略的现有卷的备份策略。您可以更改本地快照、复制卷和备份文件的策略。您想要应用于卷的任何新快照、复制或备份策略都必须已经存在。</block>
   <block id="257aa7f9d15bc46fa7c45edeac5b1ab7" category="list-text">在“编辑备份策略”页面中，对本地快照、复制卷和备份文件的现有备份策略进行更改，然后选择“下一步”。</block>
   <block id="96f9f5071945e75714c9ffbe54f80851" category="list-text">在出现的备份页面中，对本地快照、复制卷或备份文件的现有备份策略进行更改，然后选择“保存”。</block>
@@ -4295,7 +4284,6 @@
   <block id="5a3443bdabcca33a88f837ed431e4140" category="list-text">*导出现有快照*：如果此系统中存在与您刚刚为此系统选择的备份计划标签（例如，每日、每周等）匹配的卷的本地快照，则会显示此附加提示。选中此框，即可将所有历史快照复制到对象存储作为备份文件，以确保您的卷得到最全面的保护。</block>
   <block id="fd5c6f657b9b82dc2fc86f506dacc05d" category="list-text">（可选）选中该复选框可“自动修复本地快照、复制和备份中不匹配的标签”。这将创建与快照、复制和备份策略中的标签相匹配的标签的快照。</block>
   <block id="a85910c6eeb75a045489c2b16a61b922" category="paragraph">当该备份类型激活时，相应的图标会亮起；当该备份类型未激活时，图标会变为灰色。您可以将鼠标悬停在每个图标上，查看正在使用的备份策略以及每种备份类型的其他相关信息。</block>
-  <block id="ff171d855d9a99655f572a9bb5b1628f" category="list-text">在“卷”选项卡中，找到要激活备份的卷，然后选择“操作”菜单。 <block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block> 在行尾，选择“激活 3-2-1 保护”。</block>
   <block id="1ae9b0331f20d420feb95df3c5f492ec" category="list-text">从“卷”菜单中，找到要修改策略设置的卷，然后选择“操作”菜单。 <block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block> 在行尾，选择“编辑备份策略”。</block>
   <block id="7a8eafe0820d78646db0118a296f0af3" category="paragraph">当启用备份的卷超过五个时， NetApp Backup and Recovery一次只会初始化五个卷。当这些完成后，它会以 5 个为一组继续进行，直到所有卷都初始化完毕。</block>
   <block id="a3836fe1cde887edc4dd8114527d3364" category="paragraph">您可以创建卷的临时快照或备份到对象存储。您无法创建临时复制卷。</block>
@@ -4416,7 +4404,6 @@
   <block id="3f21300a12c48d2767fb3e5b7f83112b" category="doc">适用于 Oracle 数据库工作负载的 NetApp Backup and Recovery 的已知限制</block>
   <block id="92342f1ac80ff519b37da9a3148cbbd9" category="summary">为提高安全性，请配置 NetApp Backup and Recovery 中特定角色的访问权限。</block>
   <block id="42481383ace46d9a4716cce3ab760979" category="doc">在 NetApp Backup and Recovery 中设置基于角色的访问控制</block>
-  <block id="c43786d5855026fcdf77809fb14618c9" category="paragraph">若要提高安全性并控制资源访问，请为 NetApp Backup and Recovery 配置基于角色的访问。NetApp Console 支持某些 Backup and Recovery 工作负载的基于角色的访问控制 (RBAC)。您可以为这些工作负载指定特定的管理员或查看者角色。在支持项目级关联之前，具有 Backup and Recovery 角色的所有用户仍可访问尚未支持基于角色的访问控制的其他工作负载。</block>
   <block id="0095575f49738915ec4332a4cab3f770" category="paragraph">按照下面的步骤控制对组织中资源的访问。在 NetApp Console 菜单的*管理 &gt; 身份和访问*页面中进行更改。</block>
   <block id="4ce081445a8183fac4f9d6fc6a51691e" category="admonition">这些步骤假设您在 Console 中被分配了组织管理员角色。</block>
   <block id="c9b674f0a38b83f43d155669dc9e1dae" category="list-text">创建身份和访问项目结构。</block>
@@ -4438,8 +4425,6 @@
   <block id="509c51772921c8ab860f75456880683f" category="list-text"><block ref="a16a606232229e0e62a5010aaabec2ae" category="inline-xref-macro-rx"></block> 在备份作业之前和之后运行脚本。（仅限 Kubernetes 工作负载）</block>
   <block id="1d74d204f5274b499e41d2e0238b7bdd" category="inline-link-macro">创建新的保护策略</block>
   <block id="c7a4eea6d62999931e3442bac0f23c29" category="paragraph">当您发现当前受 Trident Protect 保护的群集时，在发现过程中将禁用与 Trident Protect 一起使用的任何备份计划（Trident Protect 备份计划与 Backup and Recovery 不兼容）。要保护群集的应用程序，<block ref="f0814d3538b9ea88d5e27855ca8d3a8e" category="inline-link-macro-rx"></block>或将应用程序与现有策略关联。然后，如果需要，您可以删除 Trident Protect 备份计划。</block>
-  <block id="a44ad7bb8f2123fa1919c8eb91adac29" category="list-text">创建 Trident Protect 命名空间</block>
-  <block id="75457b35c4c6b70a7664a43e080563ca" category="list-text">安装或升级 Trident Protect 和 Trident Protect 连接器</block>
   <block id="dff3994b6daee1be81638e1c4964af92" category="doc">在 NetApp Backup and Recovery 中发现 Oracle 数据库工作负载</block>
   <block id="e242e6f8581d6d11d04b2c80d7a16519" category="inline-link-macro">发现 Oracle Database 工作负载</block>
   <block id="ec9157f5af288c671e8006da3677d9c3" category="list-text">对于 Oracle Database 工作负载，请参阅 <block ref="c9b387ac576fa007292bb17c9c97e163" category="inline-link-macro-rx"></block>。</block>
@@ -4635,7 +4620,6 @@
   <block id="dbeedec7ca35d125dd2a7ee8355c41f5" category="section-title">一般可用性 (GA) 中支持的 VMware 工作负载</block>
   <block id="1fe60033089958dd8dab2fc11925056d" category="section-title">超出许可证容量</block>
   <block id="73b5f5184f0b378b50b42a6e8ceb743c" category="paragraph">超过许可容量会触发 PAYGO 费率；如果没有 PAYGO 订阅，您将无法创建新的备份，尽管现有备份在没有服务保证的情况下仍可恢复。请务必在许可证过期之前续订许可证；过期的许可证会阻止新的备份并中断服务。</block>
-  <block id="d5339ec2460f6dc04a037cc1e0c21e2c" category="list-text">PowerShell 7.4.13</block>
   <block id="5a9e2fbc6e8b2849a76465cd1a86c575" category="doc">一般可用性 (GA) 中支持的 KVM 工作负载</block>
   <block id="2c4d488d266d9d0655ce2e1451e05b2d" category="paragraph">Kubernetes 工作负载支持现已在 NetApp Backup and Recovery 中普遍可用（GA）。本次发布的 Kubernetes 工作负载还引入了以下增强功能：</block>
   <block id="2329c3692bdf2d2f098db291ec4e9427" category="paragraph">*报告支持*：您现在可以为受 NetApp Backup and Recovery 保护的 Kubernetes 集群和应用程序生成保护活动报告。</block>
@@ -5238,8 +5222,6 @@
   <block id="0fde83b735dcda0bbb69a0e90ce0981f" category="list-text">（可选）根据需要添加更多资源转换。</block>
   <block id="90f8ed9c2f4259835c05c9de87feb364" category="list-text">完成后，选择 *Restore*。</block>
   <block id="a1ff2aac5244b20dc12ea8c0b87d23d5" category="list-text">主 ONTAP 系统（不支持 ASA r2 系统）</block>
-  <block id="573f06d1963120e22aae7292a8177d4b" category="list-text">NetApp Trident 25.02 或更高版本</block>
-  <block id="c625623a3b3c56ebd1c8d5915f2e3a96" category="list-text">NetApp Trident Protect 26.05 或更高版本（在发现期间安装在 Kubernetes 集群上）</block>
   <block id="9b6a034e6854c5f27feb3ac185829f8d" category="inline-link">Trident Protect</block>
   <block id="d02c2883bbfa212e02daa2b45bd11760" category="list-text">Kubernetes 集群 - 支持的 Kubernetes 发行版和版本包括 <block ref="f56ec4bb79bf67d191baea2a353be3ab" category="inline-link-rx"></block> 支持的发行版和版本。</block>
   <block id="2966006d3447f3363606a7ddf7d88713" category="section-title">2026 年 5 月 05 日</block>
@@ -5391,7 +5373,6 @@
   <block id="aefd2cbeb423f608e4e14dc18e7cda38" category="section-title">查看活动的 VMDK 装载会话</block>
   <block id="a2c3693f6f1b657d3365bb6121bebfc1" category="paragraph">还原文件或文件夹时查看活动的来宾会话。这将显示当前与开放会话连接的 VMDK。</block>
   <block id="29760f5766da0c4d6a0ac770b454e9d0" category="paragraph">此时将显示打开的 VMDK 装载会话列表。您可以查看关联的备份、源 VM、装载路径和其他信息。</block>
-  <block id="e77e2a03d88f40058869e1cc3d680930" category="list-text">ASP.NET Core Runtime 8.0.24 托管捆绑包（以及所有后续的 8.0.x 修补程序）</block>
   <block id="9e75b63d575b523917aa9e47b41b52fb" category="list-text">Oracle AI Database 26ai</block>
   <block id="f9fe5abdb3368e0236fd36a21bb8f840" category="cell">8.0.24 Hosting Bundle（以及所有后续的 8.0.x 补丁）</block>
   <block id="9b70df306d1f1719fd9d70e02911394c" category="section-title">2026 年 5 月 11 日</block>
@@ -5438,8 +5419,6 @@
   <block id="7d3d3c20273081b66e3ecec1f0d07f51" category="list-text">选择要从中恢复的主存储或二级存储上的快照，然后选择 *下一步*。</block>
   <block id="3808991f408e2ffd90ae953886ec1e79" category="doc">NetApp Backup and Recovery 要求</block>
   <block id="44b68849dd3e2689fb41242f736a140f" category="paragraph">在开始使用 NetApp Backup and Recovery 之前，请确保您的 NetApp Console 和操作环境满足以下要求。</block>
-  <block id="b4d91981598471b84bcf3da4e96f7970" category="section-title">准备 NetApp Console</block>
-  <block id="64450efd5ca18cf6cebe654b9c7c05f3" category="paragraph">您可以通过 NetApp Console 访问 NetApp Backup and Recovery。要准备 Console 以进行 Backup and Recovery，您必须：</block>
   <block id="37326d6fc2dae8eb70c8e5c6290c961a" category="list-text">添加 Console 代理</block>
   <block id="f7738f6711f0ef1fb3f5a4464e7fcfb4" category="list-text">至少添加一个存储系统</block>
   <block id="5fc19bba732118fb6de20131945d3a1f" category="list-text">配置 Console 组织和用户角色</block>
@@ -5448,8 +5427,6 @@
   <block id="4422b0b5b9637937564bf621f2610c7a" category="paragraph">要了解有关 NetApp Console 的更多信息，请参阅<block ref="26a35b83e5712f1703b96c54f1ac11b8" category="inline-link-rx"></block>。</block>
   <block id="a859e03fa525c25dee858dad62f9aec0" category="section-title">完成初始 NetApp Console 设置</block>
   <block id="d1a0bf528dab9557b3add986fac96df8" category="paragraph">如果您尚未完成 NetApp Console 的初始设置，请完成此操作。</block>
-  <block id="91edb8869565e8b84d0bb89e65038d3a" category="inline-link">NetApp Console (SaaS 应用程序) 入门工作流程</block>
-  <block id="19de064230f9802ad2a46adc704c00c1" category="paragraph"><block ref="19de064230f9802ad2a46adc704c00c1" category="inline-link-rx"></block></block>
   <block id="4cdcdd6cc684e8847f57a8c461306706" category="section-title">部署 Console 代理</block>
   <block id="41f59680b33ea7227eb6c7e09010d262" category="paragraph">Console 代理是您在网络中安装的轻量级软件组件，用于将存储基础架构连接到 NetApp Console。它实现了高级存储编排、数据服务和安全的云集成。</block>
   <block id="413f5c2acfdfdb1a561ffc22afe211b9" category="paragraph"><block ref="4818e913b60896a6e56bad9a383343fa" category="inline-link-rx"></block> <block ref="e0b8910c1bc5f58f6e1bc7ed243fa39c" category="inline-link-rx"></block></block>
@@ -5458,9 +5435,7 @@
   <block id="d1b29fc7b35be872f620d5d931e8766c" category="inline-link">在 NetApp Console 中发现本地 ONTAP 集群</block>
   <block id="7a9a5755110e2914f0ad288a141356cb" category="paragraph"><block ref="7a9a5755110e2914f0ad288a141356cb" category="inline-link-rx"></block></block>
   <block id="e17c2185b4352c73f48a1a8e84f1a8ed" category="section-title">配置组织和用户角色</block>
-  <block id="9104b82e5e7be42a60370d0e13b27403" category="paragraph">了解组织、项目和用户角色，然后为用户配置执行其任务所需的适当权限。</block>
   <block id="692fa8c1472b3f5b389ae8b229a03338" category="inline-link">向 NetApp Console 组织添加用户</block>
-  <block id="6a66c8d307ddd017849b5680e53c609c" category="paragraph">有关使用组织和项目控制资源访问的信息，请参阅<block ref="04f37aa952e829e9448a7d043a30911e" category="inline-link-rx"></block>。</block>
   <block id="1ce75b5926383de539d27e838bd74b8a" category="paragraph">有关在 NetApp Backup and Recovery 中执行操作所需的角色和权限的详细信息，请参阅<block ref="04b01782baab49091268802b7f1423cb" category="inline-link-rx"></block>。</block>
   <block id="6bb058e639cecc8051a99e8892400bd8" category="section-title">对象存储备份的要求</block>
   <block id="fbb5639a46ec6a30ce9e9021778a91a2" category="paragraph">要将对象存储用作备份目标，需要具有 AWS S3、Google Cloud Storage、Microsoft Azure Blob、StorageGRID 或 ONTAP 的帐户并配置适当的访问权限。</block>
@@ -5560,7 +5535,6 @@
   <block id="d7b53b986ac236d7156eb62ccb254f74" category="list-text">要恢复单个持久卷声明，请选择*持久卷声明*选项卡。</block>
   <block id="dbdc850e2c6c701a4218daf5d558b642" category="paragraph">Backup and Recovery 列出了恢复点中的所有永久卷声明。您可以选择要在还原操作中包含的永久卷声明。</block>
   <block id="15957f5a10d7c37b0a0a1daa1c46013a" category="section-title">2026 年 6 月 15 日</block>
-  <block id="eb985c23c2b4157b8059d99e50538799" category="paragraph">有关 NetApp Console 要求，请参阅 <block ref="a1e048c2b33797bd5e09f13ddaff6fff" category="inline-xref-macro-rx"></block>。</block>
   <block id="11cb5552207ff0aa19a1682353b76f93" category="list-text">*保护组现在使用主机时区计划*：保护组现在使用 Hyper-V 主机的时区。在引入主机时区调度之前创建的保护组继续使用其先前配置的时间（通常为 UTC）。要更新这些保护组以使用 Hyper-V 主机时区，必须重新创建计划。有关详细信息，请参见<block ref="d7b709a60ba856948f2de1f387e47906" category="inline-link-rx"></block>。</block>
   <block id="327e5e3e392a7cf832926cb52870097c" category="list-text">*保护组现在使用主机时区计划*：保护组现在使用托管 VMware vCenter Server 的时区。在引入主机时区计划之前创建的保护组继续在其先前配置的时区（通常为 UTC）上运行。要使用 vCenter 时区，必须重新创建计划。请参阅<block ref="5181f9a713551c0880da1b785cb2e8f3" category="inline-link-rx"></block>以获取更多信息。</block>
   <block id="d041f642a2d3785a0e94ba8db99dbb87" category="list-text">请注意，对于 Hyper-V 工作负载，计划备份时间以管理主机的时区进行解释。有关详细信息，请参见 <block ref="6abbe22a47895e202e8193141aa3411e" category="inline-link-macro-rx"></block>。</block>
@@ -5654,4 +5628,181 @@
   <block id="d2bf4d042aabc15b9ccde353c782a6f2" category="list-text">使用 Microsoft Windows Server 2025 时，不支持保护存储在 SAN 存储中的第 2 代虚拟机。</block>
   <block id="b2d5ba8de92c18cbb9c45e01ad3f5509" category="list-text">还原到备用位置（从主、辅助和对象存储）</block>
   <block id="62ff0d9db122207756fd73342a3eb3ad" category="paragraph">NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 个存储桶来保护系统中的工作负载。ONTAP 9.19.1 或更高版本需要支持每个系统超过 6 个存储桶。</block>
+  <block id="a804a09090ab946ea48120427df5be47" category="paragraph">如果要在无法通过标准 DNS 访问数据库主机的气隙环境中使用 NetApp Console 本地部署，则必须临时修改内部 RKE2 CoreDNS 配置。这允许 Pod 将特定主机名解析为集群中的 IP 地址，类似于在节点上向 <block ref="ad942c725cd0cae65ca4c63717ec464c" prefix=" " category="inline-code"></block> 添加条目。</block>
+  <block id="d38c5698c3f0a0cc565d84f0583ddbe8" category="admonition">在进行更改之前，请检查现有的 CoreDNS 配置，以避免覆盖任何现有的自定义设置。使用 RKE2 清单应用此更改，确保由 RKE2 操作符和运行时统一管理此更改。</block>
+  <block id="0d1c49b7f34131be8c6ddbc862cc359d" category="list-text">在可能的情况下，将 HelmChartConfig 文件置于变更控制之下。</block>
+  <block id="feb789eaa0d039f7e4fc241b5a35b268" category="list-text">使用清晰的文件名，以便 CoreDNS 覆盖的目的显而易见。</block>
+  <block id="1c675544711def39976f57e2f6b7e39d" category="list-text">如果预期的 DNS 记录在 Corefile 中不可见，请检查 RKE2 服务器日志并确认清单文件语法。</block>
+  <block id="d36d322fa13411cc64a12177b6ad51ce" category="list-text">检查现有 CoreDNS 配置，以确保未覆盖现有更改：</block>
+  <block id="f4edd834d634c666190d7b67f0c12622" category="list-text">复制以下命令块并编辑<block ref="10e11b33e0776f6cd4b1e675accff1f5" prefix=" " category="inline-code"></block>区域以添加静态 DNS 记录。这将在 RKE2 清单文件夹中创建一个 HelmChartConfig YAML 文件，RKE2 会自动应用该文件以覆盖 CoreDNS 配置：</block>
+  <block id="b893a4548c6b5490f347a2312c465362" category="list-text">验证 CoreDNS 是否已接受更改：</block>
+  <block id="ad5eadc57f2e0ed4fdd17752bad0fe52" category="paragraph">如果几分钟后无法看到更改，请重新启动 CoreDNS 部署，然后再次验证 Corefile：</block>
+  <block id="9e04101c187aa923054a894c988f5aeb" category="list-text">如果需要在发现数据库主机后删除条目，请执行以下操作：</block>
+  <block id="606b05130da19f4457434aa58ba985b8" category="list-text">从清单文件夹中删除 HelmChartConfig 文件。</block>
+  <block id="5b25c5946d94965af8af242970d2aee2" category="list-text">重新启动 CoreDNS 部署：</block>
+  <block id="64c0705ecd150a07e521638d5157a4ec" category="doc">常规 NetApp Backup and Recovery 增强功能</block>
+  <block id="7700d007f970d2c042d61e3551aa039e" category="list-text">*支持 NetApp Console 本地部署*：此版本的 NetApp Backup and Recovery 支持处于预览状态的 NetApp Console 本地部署。</block>
+  <block id="ce2f56e5c9015b28eb92d0581ad9a718" category="list-text">*90 天的作业保留*：Backup and Recovery 现在会在 Job Monitor 中保留作业信息 90 天。</block>
+  <block id="1a83c2d5d73015e6e971eff46d37e9d8" category="list-text">*还原到备用位置支持（适用于 SAN VM）*：现在，您可以将基于 SAN 的 VM 备份还原到备用位置。</block>
+  <block id="b7bfbf5f47aa4163507ae71ed18f8b9f" category="list-text">*Multiple backup delete support*：您现在可以一次删除多个备份。</block>
+  <block id="7ac62e0d250037c318f5fcf102e2e700" category="list-text">*可插拔数据库(PDB)还原和克隆*：Backup and Recovery for NetApp Console 服务现在支持还原和克隆可插拔数据库。</block>
+  <block id="c67660fa166ae58260874bbf6f9c5e4a" category="list-text">*预览对气隙资源的支持*：如果在 NetApp Console 本地部署中运行 NetApp Backup and Recovery，您可以发现、保护和还原气隙 Kubernetes 资源。此功能在此版本中处于预览状态。</block>
+  <block id="d1c241263c19a21db56b6d9aaeb83ca1" category="paragraph">在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：</block>
+  <block id="a33b2a8cf6a943c4ae96728143fee277" category="list-text">*将还原作业优先于备份*：现在，在还原虚拟机或文件时，您可以将还原作业优先于备份作业。</block>
+  <block id="3c8fad259371a43b707a7a3c64b147f6" category="list-text">*在不激活 Backup and Recovery 的情况下发现 ONTAP 系统和卷*：您现在可以在不激活 Backup and Recovery 的情况下发现系统和卷。</block>
+  <block id="2c6cc6886b730f35083997c1321dcc78" category="list-text">在适用于 NetApp Console 本地部署的 Backup and Recovery 预览版本中，仅 ONTAP S3 和 StorageGRID 目标支持备份到对象存储。此预览版本不支持备份归档。</block>
+  <block id="5c09edc1ed9afb140af2607f91da29e1" category="section-title">NetApp Console 本地部署限制的 Backup and Recovery 预览版</block>
+  <block id="100ccba98eb51c65bd8c14443e1fd850" category="paragraph">若要提高安全性并控制资源访问，请为 NetApp Backup and Recovery 配置基于角色的访问。NetApp Console 支持某些 Backup and Recovery 工作负载的基于角色的访问控制 (RBAC)。您可以为这些工作负载指定特定的管理员或查看者角色。其他尚未支持基于角色的访问控制的工作负载仍然可供具有 Backup and Recovery 角色的所有用户访问，直到支持项目级或群组级关联为止。</block>
+  <block id="32e1c572f7e144c1646e5a596a5a1451" category="admonition">NetApp Console 使用项目来组织文件夹中的资源，而 NetApp Console 本地部署将项目称为舰队。</block>
+  <block id="4adee4f45a74219d1cd07ce797df9f99" category="paragraph">在备份和恢复清单中，发现环境中的 Kubernetes 工作负载。添加工作负载会将 Kubernetes 集群添加到 NetApp Backup and Recovery。然后，您可以添加应用程序并保护集群资源。您可以选择使用 NetApp Console 本地部署来发现气隙本地 Kubernetes 资源。</block>
+  <block id="32fd98562c6a156ac87022787c83fd6e" category="paragraph">备份和恢复提供根据所选安装类型而变化的说明。如果使用 NetApp Console 本地部署，则可以选择相应说明，以发现没有外部网络连接的气隙资源。</block>
+  <block id="c9f1fbd3541e041c7aefce17e569d706" category="list-text">请选择一种安装类型，以查看在 Kubernetes 集群上安装 Trident Protect 的说明：</block>
+  <block id="eb91a7499802a37e3cd48fa310c15a57" category="list-text">选择*已连接*以发现具有外部网络连接的集群。</block>
+  <block id="42549739c293d276ceebe73a196959c7" category="list-text">选择 *Air-gapped* 以发现没有外部网络连接的集群。</block>
+  <block id="c81c81c33dcdd7c4d24b501795cfae12" category="open-title">已连接发现</block>
+  <block id="b2e76d956d1446ebd1dc9cf7262e7a73" category="list-text">按照 Backup and Recovery 中显示的命令行说明进行操作。这些步骤可确保 Backup and Recovery 能够与集群进行交互。</block>
+  <block id="2b7add97385bfd3948413e32d55ea9b3" category="open-title">气隙发现</block>
+  <block id="8e073c87439fbb7907d40a3b2b4f20db" category="list-text">输入您的私有 Docker 容器注册表的 URL。此注册表用于在安装过程中下载 Trident Protect 和 Trident Protect Connector 映像。</block>
+  <block id="b40fdc2f50180e3dc294592258666241" category="list-text">如果专用容器注册表需要身份验证，请使用以下方法之一配置注册表凭据：</block>
+  <block id="9a7eca7534aaacf48a2e6ab580310efb" category="list-text">*节点级身份验证*：在每个节点的容器运行时中配置注册表凭据。配置完成后，所有 Pod 都可以拉取镜像，而无需额外的 Helm 设置。</block>
+  <block id="ccf6fbb85e170dcc8a339f853dd9ecd1" category="list-text">*Kubernetes image pull secret*：在<block ref="9a82c7a4099124e5bfaa83e7c5997bd4" prefix=" " category="inline-code"></block>命名空间中创建 Kubernetes image pull secret，然后在 Trident Protect 安装说明中的 Helm 升级步骤中引用它：</block>
+  <block id="e83c36aded47a82f3a80094d5e40c8ec" category="list-text">按照 Backup and Recovery 中显示的命令行说明，在 Helm 步骤中添加映像拉取密钥信息（如果需要）。这些步骤确保 Backup and Recovery 可以与集群交互。</block>
+  <block id="b369100bdd2bca7404427091ea1773f0" category="list-text">完成 Trident Protect 安装步骤后，选择 *Discover*。</block>
+  <block id="b5f7c930c601cdb6867c5fa448e058de" category="list-text">选择 Kubernetes workload tile。</block>
+  <block id="3157af79837d704f357cbe0fb5ca681e" category="section-title">在 NetApp Console 本地部署中为气隙主机发现配置 DNS</block>
+  <block id="9130f3e76360b4e0b50d62c02b73f297" category="summary">在 NetApp Console 或 NetApp Console 本地部署的系统上启用备份和恢复。</block>
+  <block id="3b1f21f533f4569ccdb069a224c3fc8b" category="doc">启用备份和恢复以保护卷</block>
+  <block id="fce3336a53277a34c72eaf26ae68eb3c" category="paragraph">您需要在 NetApp Console 或 NetApp Console 本地部署中为存储系统启用 NetApp Backup and Recovery，然后才能保护 ONTAP 卷工作负载。您可以在添加系统时或稍后在系统上启用 Backup and Recovery。</block>
+  <block id="64c73d6afa3e4d25eb2bf5b546c3dcf2" category="section-title">在 NetApp Console 中启用备份和恢复</block>
+  <block id="cb120e5cd2b396558aacbb18f19389be" category="paragraph">在 NetApp Console 中启用备份和恢复服务。</block>
+  <block id="bd449026fb2b3bf3a1ff4cb4c323ddee" category="list-text">选择 *Volumes* 菜单。</block>
+  <block id="afa0bb87d54f156e627003dfa34823a6" category="list-text">在卷保护概述页面中，选择*备份设置*。</block>
+  <block id="204a48efa1a8f290d2951f016919ea7c" category="list-text">确定要激活备份的系统，然后选择*激活备份*按钮。</block>
+  <block id="247ff6666bd29c91fd85627e96b3510b" category="list-text">选择要保护的源卷，然后选择*下一步*。</block>
+  <block id="05339b07e52d64122e9141dc4c7ce142" category="list-text">在"定义备份策略"页面中，选择备份架构，然后为本地快照、复制卷和备份文件定义策略和其他详细信息。请参阅您在此系统中激活的初始卷的备份选项的详细信息。然后选择 *Next*。</block>
+  <block id="99fc855c46d2e6f60c45d31a733d59a3" category="list-text">（可选）选择让 Backup and Recovery 自动修复不匹配的备份、快照和复制标签。</block>
+  <block id="9f3d5403b8dc8b2031f6b4fc3737cd37" category="list-text">您保护的卷将显示在"Volumes"概述页面中。</block>
+  <block id="4b064ddd7a02084e346fa166ed7bb6cb" category="section-title">在 NetApp Console 本地部署中启用备份和恢复</block>
+  <block id="14f23530841dd1cfad164a8e134f88ea" category="paragraph">在 NetApp Console 本地部署中启用备份和恢复服务。</block>
+  <block id="388e989dd77f81541d749ac165d92200" category="inline-link">获取许可证</block>
+  <block id="eb3ebbfc3ab12363d471b8aec28b7d88" category="paragraph">确保您已获得 NetApp Backup and Recovery 的许可证。请参阅 <block ref="f655a90fa3a25d2cdc287fbda8576bbe" category="inline-link-rx"></block> 以了解更多信息。</block>
+  <block id="3f8f1a22fc87e0c9826e6b21c5a926be" category="list-text">在 NetApp Console 菜单中，选择 *存储 &gt; 队列*。</block>
+  <block id="21b2098e073151f4bd9c33b9ffefa2aa" category="list-text">如有需要，请选择 *Add fleet* 以添加车队详细信息。</block>
+  <block id="c2dab7efe42335c34a0f152ae2750987" category="list-text">选择 *Administration &gt; Licenses*。</block>
+  <block id="ec01ce5d7a75843507cddc0f1e980f6a" category="inline-link">添加许可证</block>
+  <block id="27012ade26486f85495fbb2267fed618" category="list-text">选择*添加许可证*以添加备份和恢复许可证。有关添加许可证的更多信息，请参阅<block ref="e9f7bfb753a05c7d1690a9e4e7b2ce56" category="inline-link-rx"></block>。</block>
+  <block id="5e62bf511aa053fcc08329f483488665" category="list-text">选择 *Storage* &gt; *Fleets*，然后打开 *Systems* 菜单。</block>
+  <block id="3b173fe4c1bd68bf7dd8db9c524dc8a7" category="list-text">选择*添加*以添加系统，输入系统详细信息，然后通过选择*添加*保存新系统。</block>
+  <block id="07c87e1a7ad1cef370fca4fd17f11406" category="list-text">选择一个系统并选择一个集群。在页面右侧的信息面板中，选择备份和恢复服务的*启用*按钮。</block>
+  <block id="650a46b766c48de5003178d3c64c3e35" category="list-text">选择*备份卷*。</block>
+  <block id="c02715a613f1d27ea0d77a20a3d25376" category="paragraph">根据您使用的是 NetApp Console 还是 NetApp Console（本地部署），您可以通过从云提供商处购买按需付费（PAYGO）或 *NetApp Intelligent Services* 的年度市场订阅，或从 NetApp 购买自带许可证（BYOL）来获得 NetApp Backup and Recovery 许可证。需要有效的许可证才能在系统上激活 NetApp Backup and Recovery、创建生产数据的备份以及将备份数据恢复到生产系统。</block>
+  <block id="d63e296034547bf26cb0cadf2f6380a7" category="list-text">如果您使用的是带有 NetApp Console 的 Backup and Recovery，则可以订阅按需付费 (PAYGO) 许可证或购买自带许可证 (BYOL) 许可证。</block>
+  <block id="4f423dab0b2a066d43aa7c2770125156" category="list-text">如果使用带有 NetApp Console 本地部署的 Backup and Recovery，则只能购买自带许可证 (BYOL) 许可证。</block>
+  <block id="c25cac16b9617f72907c0630edc1b01c" category="paragraph">设置 NetApp Backup and Recovery 的许可。</block>
+  <block id="1ee6f4a6521039e0ae82dbbbba308a27" category="section-title">使用带有 Marketplace 或 BYOL 许可证的年度合同</block>
+  <block id="f553546046684a79a8a9f772a3ba1d69" category="section-title">设置 NetApp Backup and Recovery 本地部署的许可</block>
+  <block id="81f4d3c9ac626f319c4045d07dc88068" category="paragraph">为 NetApp Console 的本地版本设置许可。</block>
+  <block id="e686efc70811cf9c1330fb2efbfde349" category="paragraph">您可以使用 NetApp Console 本地部署来管理 BYOL 许可证。您可以从 Console 添加新许可证、更新现有许可证和查看许可证状态。</block>
+  <block id="703de1576e07d34f2860aa3e1da40baf" category="list-text">如果使用的是 NetApp Console，请打开 Web 浏览器并转到<block ref="d6205946f936217747639e85e1340e8f" category="inline-link-rx"></block>。</block>
+  <block id="5cb1f0001bf54c75c97113f354e00531" category="list-text">如果使用的是 NetApp Console 本地部署，请打开 Web 浏览器并转到本地 Console 部署的 Web UI 的 IP 地址。</block>
+  <block id="7c55093665daac77f8dd76430cb75dfa" category="inline-link">在 NetApp Console 本地部署中配置警报的通知规则</block>
+  <block id="f9bee688793a428e0d9f7ec70aa5e128" category="paragraph"><block ref="d002346fd3a4e505164eb1f97ce43042" category="inline-link-rx"></block>。</block>
+  <block id="8a694efe640190f66766a628dd36f07a" category="list-text">选择 VMware 工作负载。</block>
+  <block id="56fa99412e731bf74dfe0e92bfc1a799" category="paragraph">您可以删除不再需要的本地备份，以释放存储空间或满足数据保留要求。</block>
+  <block id="4ba79ff2175b296fa6e60a343f55f890" category="list-text">登录到 NetApp Backup and Recovery，然后从主屏幕中选择 VMware 工作负载磁贴。</block>
+  <block id="384972b6673da7b24e3d0b2560f6a88f" category="paragraph">此时将显示 VMware 清单页面。</block>
+  <block id="13e9141fa63d8f037f1f9d57eb55d7cd" category="list-text">选择*虚拟机*标题。</block>
+  <block id="e4fa3a00894276c9b73f4a5fbea2b8b6" category="list-text">在虚拟机列表中，选择虚拟机并选择操作图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *查看保护详细信息*。</block>
+  <block id="48c896058bf313b7b8c3e5d0d059d0b5" category="list-text">选择时间范围以显示相关快照。</block>
+  <block id="1f6e5768c369e513177719a55ddb10b9" category="list-text">删除一个或多个快照：</block>
+  <block id="621aa8040403a0524dc805bb41b10d5c" category="open-title">删除单个Snapshot</block>
+  <block id="df9690d930ba43ffe814d178e0dc946f" category="list-text">从列表中选择要删除的快照，然后选择操作图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *删除本地快照*。</block>
+  <block id="3c6317f4ac9a23c959a2cb8d8e0ac466" category="open-title">删除多个快照</block>
+  <block id="d8fb1204bc24f18b837d45773c94ad3f" category="list-text">选中要删除的每个快照左侧的复选框。</block>
+  <block id="52930d2f80d2c62aee1edf1f424cca24" category="list-text">选择*删除所选内容*。</block>
+  <block id="e73ac3f158df9b045a6b3779d75dd829" category="section-title">准备使用 NetApp Backup and Recovery</block>
+  <block id="bb5b370bd7de303eeaf48da0ac823498" category="paragraph">您可以通过 NetApp Console 访问 NetApp Backup and Recovery。执行这些任务以准备用于 Backup and Recovery 的 Console，具体取决于您使用的是 NetApp Console 还是 NetApp Console 本地部署。</block>
+  <block id="a13a878a01fe30a9dc231ed21ce14d86" category="section-title">准备在 NetApp Console 上使用 Backup and Recovery</block>
+  <block id="9e781c93fe77a834e50a700943322044" category="paragraph">要准备用于备份和恢复的 NetApp Console，您必须：</block>
+  <block id="f6f6e076664f3fcf9fd5ac3712c1c4e3" category="list-text">完成初始设置</block>
+  <block id="e114d8cf5b97d8a06057760568b034cd" category="list-text">启用备份和恢复</block>
+  <block id="0b1338766341d9e4efb068789c59087a" category="inline-link">NetApp Console 入门工作流</block>
+  <block id="2b5a20633ae8165987b5d83e836bded7" category="paragraph"><block ref="2b5a20633ae8165987b5d83e836bded7" category="inline-link-rx"></block></block>
+  <block id="63cfc085cd8deb50d0fe4aee5d0e650a" category="paragraph">您可以在添加系统时或稍后在系统上启用备份和恢复。</block>
+  <block id="044b5c77027bf301184b5e0ade8798d5" category="inline-link-macro">为系统启用备份和恢复</block>
+  <block id="67cb34703319339892e803e99681624a" category="paragraph"><block ref="b42fc317c2ac82fa1e68e771a5aef85a" category="inline-link-macro-rx"></block>。</block>
+  <block id="f5ad467a98dc6a5895620ec9cfd7929a" category="paragraph">了解组织、项目、队列和用户角色，然后为用户配置执行任务所需的适当权限。</block>
+  <block id="d501e17169facc1a138d3fc8e9175373" category="paragraph">有关控制资源访问的信息，请参见<block ref="04f37aa952e829e9448a7d043a30911e" category="inline-link-rx"></block>。</block>
+  <block id="232ad6d71a356fe268501304d4498151" category="section-title">准备在 NetApp Console 本地部署上使用备份和恢复</block>
+  <block id="0ba77f30bb461b885a18b790dc1c7fed" category="paragraph">要准备在 NetApp Console 本地部署上使用 NetApp Backup and Recovery，您必须：</block>
+  <block id="5fb18472c65b22e6aed72da32e038aec" category="list-text">完成初始 NetApp Console 本地部署设置</block>
+  <block id="1a990df39107b1e639f4fd55a4b39ac5" category="list-text">注册预览版注册</block>
+  <block id="568f1f6b8bbc4b5eee65743da6e30afb" category="list-text">授予用户对资源的访问权限</block>
+  <block id="5d65636e37c16188531efc5248b04ea4" category="paragraph">您需要 NetApp Console 本地部署中的组织管理员或超级管理员角色才能完成此准备工作。</block>
+  <block id="ac2d7625e323010740bb75ef56225b3d" category="inline-link">了解 NetApp Console 本地部署</block>
+  <block id="c62e20f5538087472dc438eb3f0eeca6" category="paragraph">要了解有关 NetApp Console 本地部署的详细信息，请参阅<block ref="327be2ef9e4468a98c588ef8c879bec6" category="inline-link-rx"></block>。</block>
+  <block id="df25e49020c58ef73da6befa0eb72dd2" category="paragraph">如果您尚未完成 NetApp Console 本地部署的初始设置，请完成初始设置。完成初始设置包括添加数据服务（包括 Backup and Recovery）的许可证。</block>
+  <block id="6c67e4958bd3ecc4ebc2486fe40c9fb6" category="inline-link">开始使用 NetApp Console 本地部署</block>
+  <block id="2c6df80c002181573883566420c83445" category="paragraph"><block ref="2c6df80c002181573883566420c83445" category="inline-link-rx"></block></block>
+  <block id="33dff0ff51e9773f32a9999496de90ea" category="section-title">注册 NetApp Backup and Recovery 预览版注册</block>
+  <block id="1081e691742befdfc0131302b893d29c" category="paragraph">注册 NetApp Console 本地部署的 NetApp Backup and Recovery 预览：</block>
+  <block id="29baeb7c31a3e708d97805f86fcb505a" category="inline-link">填写预览登记表</block>
+  <block id="4d405e082b9036b99ea8ef4d4c6b3cae" category="paragraph"><block ref="570de0e604bd7f8002cc6704e0146ea7" category="inline-link-rx"></block></block>
+  <block id="a3b49aeb70a4060b1c36c4a694debc5c" category="inline-link">在 NetApp Console 本地部署中添加存储</block>
+  <block id="de0f709d7b0812e121e9fa6bdb8b87b3" category="paragraph"><block ref="de0f709d7b0812e121e9fa6bdb8b87b3" category="inline-link-rx"></block></block>
+  <block id="5867ad8a560196a64df2278876df70c2" category="paragraph"><block ref="fd61760e9709a64e2426151a909b6045" category="inline-link-macro-rx"></block>。</block>
+  <block id="83524f1d1d58a585ea5008790d8e85cf" category="paragraph">了解身份和访问管理，然后使用执行任务所需的适当权限配置用户。</block>
+  <block id="acb0fa18e6cbdd062b1c342d22b5d7e9" category="inline-link">开始使用 NetApp Console 本地部署中的身份和访问权限</block>
+  <block id="951c1419bc6678a290628918eb471078" category="paragraph">有关身份和访问权限的信息，请参见<block ref="ea5b8c83a53307fc473cf87abf76dc05" category="inline-link-rx"></block>。</block>
+  <block id="614c9b8c0079226ae2c76caf00bdc9d7" category="list-text">ASP.NET Core Runtime 10.0.10 Hosting Bundle</block>
+  <block id="2c03c04d013cd18a2b08ffdaa3807fc6" category="list-text">PowerShell 7.6.4</block>
+  <block id="3b93068d4eec990f1969b952fef82849" category="list-text">NetApp Trident 25.06 至 26.02.1</block>
+  <block id="c6ee0c0b0d79479e99725d43f4f2b0f8" category="list-text">NetApp Trident Protect 26.06（在发现期间安装在 Kubernetes 集群上）</block>
+  <block id="0ac549660d0a9677d9f22785c2d2c924" category="paragraph">有关说明，请参阅 <block ref="2f1950f09c9a71aa668e32b381c98250" category="inline-link-macro-rx"></block>。</block>
+  <block id="e75b3a902ee99b25571be4a98b084a31" category="summary">在不激活 NetApp Backup and Recovery 的情况下发现系统和卷。</block>
+  <block id="bf768851617c703a4014233f58b31de3" category="doc">无需激活即可发现 ONTAP 系统和卷</block>
+  <block id="2887d4ffc35ab6898bed2a982c5423a2" category="paragraph">您可以在激活卷的备份和恢复时或激活 NetApp Backup and Recovery 之前发现系统和卷。如果您在未激活的情况下发现卷，则在为其激活 Backup and Recovery 之前无法保护卷。</block>
+  <block id="c05c8d19188da81641764e4d99fba036" category="list-text">转到*保护 &gt; 备份和恢复*。</block>
+  <block id="aade6a4ecb73182997804e0dc7dbdb4b" category="list-text">选择 *Volumes* 图块。</block>
+  <block id="cd443e02f5cbebd87795406cf9cb796d" category="paragraph">此时将显示 Volumes 控制面板。</block>
+  <block id="6d2d3f5b63dfbdd66641a095c0ad211b" category="list-text">选择 *Discover systems*。</block>
+  <block id="860cf33608268fe2d5a3ed1713fe9107" category="list-text">在列表中，选择要发现其卷的所有系统。</block>
+  <block id="f256471c6761fa054c01bf424427f283" category="paragraph">发现过程开始。可在作业监视器中查看发现的状态和结果。</block>
+  <block id="8bfcbad5f6e35a5fb200847e49a3e066" category="summary">提高 NetApp Console 本地部署环境中的目录索引性能。</block>
+  <block id="1b8e826b73c0743e53c07bcd60fec634" category="doc">使用 NetApp Console 本地部署时提高卷搜索和还原的性能</block>
+  <block id="626ff7e0402d85582fdc0561907b9fe6" category="paragraph">将目录索引存储从集群的默认存储类迁移到 ONTAP 支持的 NFS 共享，以显著提高 NetApp Console 本地部署的目录性能。索引目录用于搜索和还原功能。虽然目录可与默认存储配合使用，但使用 ONTAP 支持的 NFS 可为搜索和还原提供可衡量的性能改进。</block>
+  <block id="adb346c6a3b4c2c621493a5c3df68916" category="paragraph">在开始之前，请确保您具有下列各项：</block>
+  <block id="86f1b6285159d589785ea087767c5ad1" category="list-text">集群中配置的 ONTAP NFS StorageClass，以及 ONTAP 系统上足够的容量。</block>
+  <block id="5bd55eb44ebdfd90229d8601c0ee18b7" category="list-text">具有获取、创建、应用、执行、修补、扩展和删除资源权限的集群管理员凭据。</block>
+  <block id="2d6416018a758bac07ba133aba8edfbe" category="list-text">源 PVC 中数据的已验证备份（在迁移之前拍摄快照或将其复制到其他位置）。</block>
+  <block id="60ada73ffb582db867e106e713a19b22" category="floating-title">缩减工作节点数量</block>
+  <block id="2fbb9ae01a9a1d1d00f103cebbc113ba" category="paragraph">列出工作线程部署，并将每个副本数缩减为零。</block>
+  <block id="4f15c81d8d6f0d7c242aa5a7caaacaeb" category="list-text">列出所有目录工作线程部署：</block>
+  <block id="e525caa32927c48e8f475f147ed69285" category="list-text">将每个工作线程部署缩小到零个副本：</block>
+  <block id="94308a11171ffd5f25d06ce5924aaf34" category="list-text">确认没有剩余的 worker pod：</block>
+  <block id="e48416869ee325cb8ec14ca6aa79059a" category="floating-title">在 NetApp Console 本地部署上挂载 ONTAP 卷并从 Pod 中复制</block>
+  <block id="38a39e1403e6d98341c4add54dcf2c53" category="list-text">在部署 NetApp Console 本地部署 OVA 时创建的虚拟机本地挂载点上挂载 ONTAP NFS 导出。</block>
+  <block id="b767a193f4efe7e250ea2b6743324418" category="list-text">将数据从正在运行的协调器 Pod 复制到 ONTAP 挂载中，不使用中间目录。协调器必须仍在运行。</block>
+  <block id="0d3fdcf062c36d66c6074134cb8fedb3" category="admonition">将内容复制到卷根目录中，而不是子目录中。ONTAP 卷是新的<block ref="98c39705410022b33dadad6bd4b4e449" prefix=" " category="inline-code"></block>目录。数据必须位于卷根目录，以便应用程序在相同的路径上找到它（例如 /opt/netapp/cbs/catalog/shared/cbs/&lt;DATASET_NAME&gt;/……）。以下命令中的 tar 命令格式将目录内容（包括隐藏文件）流式传输到挂载根目录，避免嵌套<block ref="9e81e7b963c71363e2fb3eefcfecfc0e" prefix=" " category="inline-code"></block>文件夹。</block>
+  <block id="12d8a9b322a08784194798a9d8f80277" category="list-text">在 NetApp Console 本地部署的本地挂载点上挂载 ONTAP NFS 导出。请使用您稍后将在 pv.yaml 中使用的相同服务器/路径：</block>
+  <block id="8ed7d227f3bbb6ffea13ffbfc6c368b5" category="list-text">将 Pod 的共享卷复制到 ONTAP 挂载位置：</block>
+  <block id="3db51ef8f1296af2a14290a2c745a8ad" category="list-text">设置所有权以匹配 Pod 标识：</block>
+  <block id="e213fca4007bf319dd8a71f9e597dfbd" category="list-text">验证数据是否已复制到卷根目录（您应该直接在挂载下看到"cbs"文件夹，而不是嵌套的"shared/"）：</block>
+  <block id="e8498c948b994ff098aaa8e52531da7e" category="list-text">验证副本，然后卸载（Pod 稍后将通过 PVC 挂载它）：</block>
+  <block id="558bd5dc4964f474c8391676490b6f25" category="list-text">缩减协调器的规模。例如：</block>
+  <block id="9609c99c56c51052acb8aed3f8f46c04" category="floating-title">删除旧的PVC和PV</block>
+  <block id="5fd4a320b36fd6fc70d429b0bc8335a3" category="list-text">捕获有关绑定 PV 的信息，然后删除旧的 PVC 和 PV：</block>
+  <block id="5919fc794547c38fbe49ed0dcc8fbd54" category="floating-title">创建静态 ONTAP PV 和 PVC</block>
+  <block id="2a07b5cff72e4d597937f878e0b4d76b" category="list-text">创建以下 PV 和 PVC yaml 对象：</block>
+  <block id="d3124d17f5a064210152a2174f3da379" category="paragraph">*<block ref="2b7a31ccb2b33fdd062e9e3f10e075d5" prefix="*" category="inline-code"></block>**</block>
+  <block id="bf6a3296a98dd303ceb6ada20b938af0" category="paragraph">*<block ref="88bf8ee4d993e535425148da6a64c1c2" prefix="*" category="inline-code"></block>**</block>
+  <block id="d22a94b0231cd881dea01a8d9bb97cf4" category="list-text">应用 yaml 对象，首先应用 PV，然后应用 PVC（必须存在 PV 才能绑定到 PVC 的标签选择器）。然后验证 PVC 声明是否已绑定：</block>
+  <block id="5828c7ac9e00c56c881334dd15e14acd" category="list-text">将协调器扩展到 1 个副本：</block>
+  <block id="6d8037d122cd0d4fd1490aa574dee37f" category="list-text">如果您手动缩减了 worker，但它们未被自动销毁，请手动将其扩展回来（这可能不是必需的，因为 worker 通常会自动配置）：</block>
+  <block id="9a19304cff6834a89aa2e5a2fcc7b323" category="list-text">验证挂载和数据状态。确保数据存在并归用户和组 10001:10001 所有：</block>
+  <block id="aafe04b5477e90484ecb5a97ab35b2e5" category="list-text">*回收策略<block ref="afece4245269582cb2f1009d4fb52047" prefix=" " category="inline-code"></block>：* 删除 PVC 不会擦除 ONTAP 数据；如果您重新配置，必须手动清理已释放的 PV。</block>
+  <block id="0ca13922f073b075ebe35843a4741a65" category="list-text">*保持 Helm 同步：* 由于 PVC 通常由图表渲染，未来的<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block>可能会尝试重新创建或修改它。要保留此手动 ONTAP PVC，请将图表指向相同的值<block ref="da653f0609e1ee5bf4ad3210bbae68f7" prefix="(" category="inline-code"></block>，匹配大小/访问模式）或从版本中排除共享 PVC。</block>
+  <block id="718879a57c5479ddc9d8c13719835aa2" category="list-text">如果手动运行<block ref="547d17b0589ba1ba53549f8ddb830b62" prefix=" " category="inline-code"></block>然后尝试重新安装，PV 将以相同的名称安装，并导致命名冲突。</block>
+  <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">2026年8月10日</block>
+  <block id="874b4474de89858c50d77a501e5764e2" category="sidebar">提高 NetApp Console 本地部署的卷搜索和还原性能</block>
 </blocks>

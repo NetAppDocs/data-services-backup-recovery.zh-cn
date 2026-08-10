@@ -229,7 +229,7 @@ image:diagram_search_restore_vol_file.png["该图显示了使用“搜索和还�
 ** `volume name` 这是集群上用于存储目录文件的卷。
 ** `/opt/application/netapp/cbs` 这是它安装的路径。
 +
-[source, console]
+[source, shell]
 ----
 mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
 ----
@@ -237,7 +237,7 @@ mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
 示例：
 
 +
-[source, console]
+[source, shell]
 ----
 mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
 ----

@@ -25,6 +25,7 @@ summary: 此版本的NetApp Backup and Recovery具有以下已知限制。
 
 不支持以下操作：
 
+* 在适用于 NetApp Console 本地部署的 Backup and Recovery 预览版本中，仅 ONTAP S3 和 StorageGRID 目标支持备份到对象存储。此预览版本不支持备份归档。
 * 克隆、挂载或卸载虚拟机
 * 保护存储在 SAN 上的虚拟机
 * 保护应用程序

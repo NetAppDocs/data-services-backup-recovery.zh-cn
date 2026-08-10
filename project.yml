@@ -2,7 +2,7 @@
 settings:
   name: NetApp Backup and Recovery
   release_notes_autogen:
-    release_notes_repo: console-relnotes
+    release_notes_repo: console-local-relnotes, console-relnotes
   internal:
     pdf_enabled: true
   prod:
@@ -60,8 +60,14 @@ sidebar:
       entries:
       - title: 保护ONTAP卷工作负载概述
         url: "/prev-ontap-protect-overview.html"
+      - title: 启用备份和恢复以保护卷
+        url: "/br-start-enable.html"
+      - title: 提高 NetApp Console 本地部署的卷搜索和还原性能
+        url: "/prev-ontap-protect-migrate-pvc.html"
       - title: 规划ONTAP卷的保护之旅
         url: "/prev-ontap-protect-journey.html"
+      - title: 无需激活即可发现 ONTAP 系统和卷
+        url: "/prev-ontap-discover-no-activate.html"
       - title: 管理ONTAP卷的策略
         url: "/prev-ontap-policy-manage.html"
       - title: ONTAP卷的备份到对象策略选项

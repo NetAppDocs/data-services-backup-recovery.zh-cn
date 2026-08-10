@@ -55,6 +55,7 @@ FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相
 [[backup-to-object-limitations-for-ontap-volumes]]
 == ONTAP卷的备份到对象限制
 
+* 在适用于 NetApp Console 本地部署的 Backup and Recovery 预览版本中，仅 ONTAP S3 和 StorageGRID 目标支持备份到对象存储。此预览版本不支持备份归档。
 * 备份数据时， NetApp Backup and Recovery将不会维护NetApp卷加密 (NVE)。这意味着 NVE 卷上的加密数据将在数据传输到目标时被解密，并且加密将无法维持。
 +
 有关这些加密类型的说明，请参阅https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["配置NetApp卷加密概述"^]。

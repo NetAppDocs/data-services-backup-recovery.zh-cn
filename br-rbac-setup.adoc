@@ -12,7 +12,10 @@ summary: 为提高安全性，请配置 NetApp Backup and Recovery 中特定角�
 
 
 [role="lead"]
-若要提高安全性并控制资源访问，请为 NetApp Backup and Recovery 配置基于角色的访问。NetApp Console 支持某些 Backup and Recovery 工作负载的基于角色的访问控制 (RBAC)。您可以为这些工作负载指定特定的管理员或查看者角色。在支持项目级关联之前，具有 Backup and Recovery 角色的所有用户仍可访问尚未支持基于角色的访问控制的其他工作负载。
+若要提高安全性并控制资源访问，请为 NetApp Backup and Recovery 配置基于角色的访问。NetApp Console 支持某些 Backup and Recovery 工作负载的基于角色的访问控制 (RBAC)。您可以为这些工作负载指定特定的管理员或查看者角色。其他尚未支持基于角色的访问控制的工作负载仍然可供具有 Backup and Recovery 角色的所有用户访问，直到支持项目级或群组级关联为止。
+
+
+NOTE: NetApp Console 使用项目来组织文件夹中的资源，而 NetApp Console 本地部署将项目称为舰队。
 
 按照下面的步骤控制对组织中资源的访问。在 NetApp Console 菜单的*管理 > 身份和访问*页面中进行更改。
 

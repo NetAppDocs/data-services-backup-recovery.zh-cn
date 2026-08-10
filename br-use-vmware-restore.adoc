@@ -52,8 +52,6 @@ image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的�
 * 从对象存储还原备份时，您可以将数据还原到原始系统或本地ONTAP系统。
 
 
-在“恢复”页面（搜索和恢复）中，您可以通过使用过滤器搜索快照来恢复资源，即使您不记得它的确切名称、位置或最后已知日期。
-
 
 
 [[restore-workload-data-from-the-restore-option-search-restore]]

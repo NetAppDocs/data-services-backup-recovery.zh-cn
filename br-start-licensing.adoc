@@ -14,10 +14,12 @@ summary: 您可以通过从云提供商处购买按使用量付费或年度市�
 
 
 [role="lead"]
-您可以通过从云提供商处购买按使用量付费 (PAYGO) 或年度市场订阅 * NetApp Intelligent Services* 来获得NetApp Backup and Recovery许可，或者通过从NetApp购买自带许可 (BYOL)。需要有效的许可证才能在系统上激活NetApp Backup and Recovery 、创建生产数据的备份以及将备份数据还原到生产系统。
+根据您使用的是 NetApp Console 还是 NetApp Console（本地部署），您可以通过从云提供商处购买按需付费（PAYGO）或 *NetApp Intelligent Services* 的年度市场订阅，或从 NetApp 购买自带许可证（BYOL）来获得 NetApp Backup and Recovery 许可证。需要有效的许可证才能在系统上激活 NetApp Backup and Recovery、创建生产数据的备份以及将备份数据恢复到生产系统。
 
 在您继续阅读之前，请注意以下几点：
 
+* 如果您使用的是带有 NetApp Console 的 Backup and Recovery，则可以订阅按需付费 (PAYGO) 许可证或购买自带许可证 (BYOL) 许可证。
+* 如果使用带有 NetApp Console 本地部署的 Backup and Recovery，则只能购买自带许可证 (BYOL) 许可证。
 * NetApp Backup and Recovery自带许可证 (BYOL) 是一种浮动许可证，您可以在与NetApp Console组织或帐户关联的所有系统中使用它。因此，如果您现有的 BYOL 许可证具有足够的备份容量，则无需购买另一个 BYOL 许可证。
 * 如果您使用 BYOL 许可证，建议您也订阅 PAYGO 订阅。如果您备份的数据超出了 BYOL 许可证允许的范围，或者许可证期限已过期，则备份将通过您的即用即付订阅继续进行 - 不会中断服务。
 * 将本地ONTAP数据备份到StorageGRID时，您需要 BYOL 许可证，但云提供商存储空间无需付费。
@@ -27,8 +29,15 @@ link:concept-backup-to-cloud.html["了解有关使用NetApp Backup and Recovery 
 
 
 
+[[set-up-licensing-for-netapp-backup-and-recovery]]
+== 设置NetApp Backup and Recovery 的许可
+
+设置 NetApp Backup and Recovery 的许可。
+
+
+
 [[30-day-free-trial]]
-== 30天免费试用
+=== 30天免费试用
 
 如果您在云提供商的市场中注册按使用量付费订阅 * NetApp Intelligent Services*，则可以获得NetApp Backup and Recovery 30 天免费试用。免费试用从您订阅市场列表时开始。请注意，如果您在部署Cloud Volumes ONTAP系统时支付市场订阅费用，然后在 10 天后开始NetApp Backup and Recovery免费试用，那么您将有 20 天的剩余时间来使用免费试用版。
 
@@ -36,8 +45,7 @@ link:concept-backup-to-cloud.html["了解有关使用NetApp Backup and Recovery 
 
 
 
-[[end-the-free-trial]]
-=== 结束免费试用
+==== 结束免费试用
 
 如果您想在免费试用结束后继续使用NetApp Backup and Recovery ，则必须设置付费订阅。您可以从NetApp Console界面导航到计费部分并选择适合您需求的订阅计划来执行此操作。如果您不想继续使用NetApp Backup and Recovery，您可以结束免费试用。
 
@@ -54,7 +62,7 @@ link:concept-backup-to-cloud.html["了解有关使用NetApp Backup and Recovery 
 
 
 [[use-a-netapp-backup-and-recovery-paygo-subscription]]
-== 使用NetApp Backup and Recovery PAYGO 订阅
+=== 使用NetApp Backup and Recovery PAYGO 订阅
 
 对于即用即付，您将在单个订阅中按小时向云提供商支付对象存储成本和NetApp备份许可成本。即使您有免费试用版或自带许可证 (BYOL)，也应该在 Marketplace 中订阅 * NetApp Intelligent Services*：
 
@@ -84,8 +92,8 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 
 
 
-[[use-an-annual-contract]]
-== 使用年度合同
+[[use-an-annual-contract-with-marketplace-or-byol-licenses]]
+=== 使用带有 Marketplace 或 BYOL 许可证的年度合同
 
 通过购买年度合同每年支付NetApp Backup and Recovery的费用。期限分为 1 年、2 年或 3 年。
 
@@ -128,7 +136,7 @@ NetApp向您提供专属优惠后，您可以在激活NetApp Backup and Recovery
 
 
 [[use-a-netapp-backup-and-recovery-byol-license]]
-== 使用NetApp Backup and RecoveryBYOL 许可证
+=== 使用NetApp Backup and RecoveryBYOL 许可证
 
 NetApp提供的自带许可证的有效期为 1 年、2 年或 3 年。您只需为您保护的数据付费，该费用根据正在备份的源ONTAP卷的逻辑使用容量（任何效率之前）计算。此容量也称为前端兆字节 (FETB)。
 
@@ -139,6 +147,30 @@ BYOL NetApp Backup and Recovery许可证是一种浮动许可证，其总容量�
 或者，如果您拥有未分配的基于节点的Cloud Volumes ONTAP许可证但不会使用，则可以将其转换为具有相同美元等值和相同到期日期的NetApp Backup and Recovery许可证。 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["点击此处了解详情"^] 。
 
 您可以使用NetApp Console来管理 BYOL 许可证。您可以从控制台添加新许可证、更新现有许可证以及查看许可证状态。
+
+https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["了解如何添加许可证"^]。
+
+
+
+[[set-up-licensing-for-for-netapp-backup-and-recovery-local-deployment]]
+== 设置 NetApp Backup and Recovery 本地部署的许可
+
+为 NetApp Console 的本地版本设置许可。
+
+
+
+[[use-a-netapp-backup-and-recovery-byol-license]]
+=== 使用NetApp Backup and RecoveryBYOL 许可证
+
+NetApp提供的自带许可证的有效期为 1 年、2 年或 3 年。您只需为您保护的数据付费，该费用根据正在备份的源ONTAP卷的逻辑使用容量（任何效率之前）计算。此容量也称为前端兆字节 (FETB)。
+
+BYOL NetApp Backup and Recovery许可证是一种浮动许可证，其总容量在与您的NetApp Console组织或帐户关联的所有系统之间共享。对于ONTAP系统，您可以通过运行 CLI 命令粗略估计所需的容量 `volume show -fields logical-used-by-afs`对于您计划备份的卷。
+
+如果您没有NetApp Backup and Recovery BYOL 许可证，请单击控制台右下角的聊天图标购买。
+
+或者，如果您拥有未分配的基于节点的Cloud Volumes ONTAP许可证但不会使用，则可以将其转换为具有相同美元等值和相同到期日期的NetApp Backup and Recovery许可证。 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["点击此处了解详情"^] 。
+
+您可以使用 NetApp Console 本地部署来管理 BYOL 许可证。您可以从 Console 添加新许可证、更新现有许可证和查看许可证状态。
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["了解如何添加许可证"^]。
 

@@ -247,6 +247,8 @@ NOTE: 从ONTAP 9.13.0 开始，所有警报都会出现在Cloud Volumes ONTAP和
 
 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["了解如何发送备份和恢复作业的警报电子邮件"^]。
 
+https://docs.netapp.com/us-en/console-local/task-alert-rules-manage.html["在 NetApp Console 本地部署中配置警报的通知规则"^]。
+
 .步骤
 . 从控制台菜单中，选择（image:icon_bell.png["通知铃"] ）。
 . 查看通知。

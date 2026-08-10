@@ -18,5 +18,6 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 
 在 NetApp Backup and Recovery 中 Oracle 数据库工作负载的预览版本不支持以下操作：
 
+* 在适用于 NetApp Console 本地部署的 Backup and Recovery 预览版本中，仅 ONTAP S3 和 StorageGRID 目标支持备份到对象存储。此预览版本不支持备份归档。
 * 离线备份
 

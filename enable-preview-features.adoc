@@ -47,13 +47,13 @@ summary: 启用 NetApp Backup and Recovery 的预览和隐藏功能。
 . 使用 SSH 登录到 Console 代理。
 . 更改为 root 用户：
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . 在 Docker 中查找 Backup and Recovery 卷：
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -67,7 +67,7 @@ local service-manager-2_cloudmanager_cbs_volume
 ----
 . 查找卷的挂载点：
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -81,7 +81,7 @@ docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoin
 ----
 . 更改到 docker 卷配置目录，该目录位于 mountpoint 目录中。例如：
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
 ----
@@ -106,7 +106,7 @@ cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_c
 
 . 重新启动 Backup and Recovery 容器：
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs
 ----
@@ -132,13 +132,13 @@ NOTE: 要禁用预览功能，请按照相同的步骤操作，但将功能标�
 . 使用 SSH 登录到 Console 代理。
 . 更改为 root 用户：
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . 在 Docker 中查找 Backup and Recovery 卷：
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -152,7 +152,7 @@ local service-manager-2_cloudmanager_cbs_volume
 ----
 . 查找卷的挂载点：
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -166,7 +166,7 @@ docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoin
 ----
 . 更改到 docker 卷配置目录，该目录位于 mountpoint 目录中。例如：
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
@@ -183,7 +183,7 @@ cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_c
 ----
 . 重新启动 Backup and Recovery 索引编录容器：
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs_catalog
 ----

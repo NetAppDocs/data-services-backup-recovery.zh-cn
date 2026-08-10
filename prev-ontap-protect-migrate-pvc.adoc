@@ -1,0 +1,209 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-protect-migrate-pvc.html 
+keywords: migrate, pvc, nfs, storage, performance, persistence 
+summary: 提高 NetApp Console 本地部署环境中的目录索引性能。 
+---
+= 使用 NetApp Console 本地部署时提高卷搜索和还原的性能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+将目录索引存储从集群的默认存储类迁移到 ONTAP 支持的 NFS 共享，以显著提高 NetApp Console 本地部署的目录性能。索引目录用于搜索和还原功能。虽然目录可与默认存储配合使用，但使用 ONTAP 支持的 NFS 可为搜索和还原提供可衡量的性能改进。
+
+.开始之前
+在开始之前，请确保您具有下列各项：
+
+* 集群中配置的 ONTAP NFS StorageClass，以及 ONTAP 系统上足够的容量。
+* 具有获取、创建、应用、执行、修补、扩展和删除资源权限的集群管理员凭据。
+* 源 PVC 中数据的已验证备份（在迁移之前拍摄快照或将其复制到其他位置）。
+
+
+[discrete]
+===== 缩减工作节点数量
+
+列出工作线程部署，并将每个副本数缩减为零。
+
+. 列出所有目录工作线程部署：
++
+[source, shell]
+----
+kubectl get deploy -n cbs -o name | grep '/cloudmanager-cbs-catalog-worker-'
+----
+. 将每个工作线程部署缩小到零个副本：
++
+[source, shell]
+----
+for d in $(kubectl get deploy -n cbs -o name | grep '/cloudmanager-cbs-catalog-worker-'); do
+  kubectl scale "$d" --replicas=0 -n cbs
+done
+----
+. 确认没有剩余的 worker pod：
++
+[source, shell]
+----
+kubectl get pods -n cbs | grep cloudmanager-cbs-catalog-worker- || echo "no worker pods running"
+----
+
+
+[discrete]
+===== 在 NetApp Console 本地部署上挂载 ONTAP 卷并从 Pod 中复制
+
+. 在部署 NetApp Console 本地部署 OVA 时创建的虚拟机本地挂载点上挂载 ONTAP NFS 导出。
+. 将数据从正在运行的协调器 Pod 复制到 ONTAP 挂载中，不使用中间目录。协调器必须仍在运行。
++
+
+NOTE: 将内容复制到卷根目录中，而不是子目录中。ONTAP 卷是新的 `/opt/netapp/cbs/catalog/shared`目录。数据必须位于卷根目录，以便应用程序在相同的路径上找到它（例如 /opt/netapp/cbs/catalog/shared/cbs/<DATASET_NAME>/……）。以下命令中的 tar 命令格式将目录内容（包括隐藏文件）流式传输到挂载根目录，避免嵌套 `shared`文件夹。
+
+. 在 NetApp Console 本地部署的本地挂载点上挂载 ONTAP NFS 导出。请使用您稍后将在 pv.yaml 中使用的相同服务器/路径：
++
+[source, shell]
+----
+sudo mkdir -p /mnt/ontap_nfs_vol
+sudo mount -t nfs 10.x.x.x:/my_nfs_vol /mnt/ontap_nfs_vol   # ONTAP SVM data LIF IP : junction path
+----
+. 将 Pod 的共享卷复制到 ONTAP 挂载位置：
++
+[source, shell]
+----
+POD=$(kubectl get pod -n cbs -l app=cloudmanager-cbs-catalog -o jsonpath='{.items[0].metadata.name}')
+kubectl exec -n cbs "$POD" -- tar cf - -C /opt/netapp/cbs/catalog/shared . \
+  | sudo tar xf - -C /mnt/ontap_nfs_vol
+----
+. 设置所有权以匹配 Pod 标识：
++
+[source, shell]
+----
+sudo chown -R 10001:10001 /mnt/ontap_nfs_vol
+----
+. 验证数据是否已复制到卷根目录（您应该直接在挂载下看到"cbs"文件夹，而不是嵌套的"shared/"）：
++
+[source, shell]
+----
+ls -la /mnt/ontap_nfs_vol
+----
+. 验证副本，然后卸载（Pod 稍后将通过 PVC 挂载它）：
++
+[source, shell]
+----
+sudo umount /mnt/ontap_nfs_vol
+----
+. 缩减协调器的规模。例如：
++
+[source, shell]
+----
+kubectl scale deployment cloudmanager-cbs-catalog --replicas=0 -n cbs
+kubectl rollout status deployment/cloudmanager-cbs-catalog -n cbs
+----
+
+
+[discrete]
+===== 删除旧的PVC和PV
+
+. 捕获有关绑定 PV 的信息，然后删除旧的 PVC 和 PV：
++
+[source, shell]
+----
+PV=$(kubectl get pvc cloudmanager-cbs-catalog-shared-pvc -n cbs -o jsonpath='{.spec.volumeName}')
+kubectl delete pvc cloudmanager-cbs-catalog-shared-pvc -n cbs
+kubectl delete pv "$PV"
+----
+
+
+[discrete]
+===== 创建静态 ONTAP PV 和 PVC
+
+. 创建以下 PV 和 PVC yaml 对象：
++
+**`pv.yaml`**
+
++
+[source, yaml]
+----
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ontap-manual-pv
+  labels:
+    volume: ontap-nfs-share # Used by the PVC selector to find this exact volume
+spec:
+  capacity:
+    storage: 50Gi # Match or remain under the actual ONTAP volume size
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany # Allows multiple Pods to share the NFS mount
+  persistentVolumeReclaimPolicy: Retain # Retains ONTAP data if the PVC is deleted
+  storageClassName: "" # Leave blank for manual/static provisioning
+  nfs:
+    server: 10.x.x.x # Replace with your ONTAP SVM data LIF IP address
+    path: /my_nfs_vol # Replace with your ONTAP junction path
+----
++
+**`pvc.yaml`**
+
++
+[source, yaml]
+----
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: cloudmanager-cbs-catalog-shared-pvc
+  annotations:
+    "helm.sh/resource-policy": keep
+spec:
+  accessModes:
+    - ReadWriteMany # Must match the PV's access mode
+  resources:
+    requests:
+      storage: 50Gi # Must be <= the PV capacity (50Gi)
+  storageClassName: "" # Explicitly matches the empty StorageClass on the PV
+  selector:
+    matchLabels:
+      volume: ontap-nfs-share # Forces binding to the specific PV above
+----
+. 应用 yaml 对象，首先应用 PV，然后应用 PVC（必须存在 PV 才能绑定到 PVC 的标签选择器）。然后验证 PVC 声明是否已绑定：
++
+[source, shell]
+----
+kubectl apply -f pv.yaml
+kubectl apply -f pvc.yaml -n cbs
+kubectl get pvc cloudmanager-cbs-catalog-shared-pvc -n cbs   # expect STATUS: Bound
+----
+. 将协调器扩展到 1 个副本：
++
+[source, shell]
+----
+kubectl scale deployment cloudmanager-cbs-catalog --replicas=1 -n cbs
+kubectl rollout status deployment/cloudmanager-cbs-catalog -n cbs
+----
+. 如果您手动缩减了 worker，但它们未被自动销毁，请手动将其扩展回来（这可能不是必需的，因为 worker 通常会自动配置）：
++
+[source, shell]
+----
+for d in $(kubectl get deploy -n cbs -o name | grep '/cloudmanager-cbs-catalog-worker-'); do
+  kubectl scale "$d" --replicas=1 -n cbs
+done
+----
+. 验证挂载和数据状态。确保数据存在并归用户和组 10001:10001 所有：
++
+[source, shell]
+----
+POD=$(kubectl get pod -n cbs -l app=cloudmanager-cbs-catalog -o jsonpath='{.items[0].metadata.name}')
+kubectl exec -n cbs "$POD" -- mount | grep /opt/netapp/cbs/catalog/shared
+kubectl exec -n cbs "$POD" -- ls -la /opt/netapp/cbs/catalog/shared
+----
+
+
+[NOTE]
+====
+* *回收策略 `Retain`：* 删除 PVC 不会擦除 ONTAP 数据；如果您重新配置，必须手动清理已释放的 PV。
+* *保持 Helm 同步：* 由于 PVC 通常由图表渲染，未来的 `helm upgrade`可能会尝试重新创建或修改它。要保留此手动 ONTAP PVC，请将图表指向相同的值(`storageClass: ""`，匹配大小/访问模式）或从版本中排除共享 PVC。
+* 如果手动运行 `helm uninstall`然后尝试重新安装，PV 将以相同的名称安装，并导致命名冲突。
+
+
+====

@@ -23,6 +23,7 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 
 NetApp Backup and Recovery 中的 Hyper-V 工作负载不支持以下操作：
 
+* 在适用于 NetApp Console 本地部署的 Backup and Recovery 预览版本中，仅 ONTAP S3 和 StorageGRID 目标支持备份到对象存储。此预览版本不支持备份归档。
 * 使用 Microsoft Windows Server 2025 时，不支持保护存储在 SAN 存储中的第 2 代虚拟机。
 * 使用来自多个 Hyper-V 主机的虚拟机创建资源组
 * 跨磁盘（跨多个 CIFS 共享）

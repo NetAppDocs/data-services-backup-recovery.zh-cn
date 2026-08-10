@@ -20,7 +20,7 @@ RESTORE_SKIP_NAMESPACE_ANNOTATIONS
 ----
 在恢复或故障切换之前，以防止覆盖特定的目标命名空间注释。例如：
 
-[source, console]
+[source, shell]
 ----
 helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-protect \
   --set-string restoreSkipNamespaceAnnotations="{<annotation_key_to_skip_1>,<annotation_key_to_skip_2>}" \
