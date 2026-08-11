@@ -19,7 +19,7 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 
 
 [[backup-and-recovery-preview-for-netapp-console-local-deployment-limitation]]
-=== NetApp Console 本地部署限制的 Backup and Recovery 预览版
+== NetApp Console 本地部署限制的 Backup and Recovery 预览版
 
 在适用于 NetApp Console 本地部署的 Backup and Recovery 预览版本中，仅 ONTAP S3 和 StorageGRID 目标支持备份到对象存储。此预览版本不支持备份归档。
 

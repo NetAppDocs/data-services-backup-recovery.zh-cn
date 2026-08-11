@@ -3267,11 +3267,9 @@
   <block id="e57e5c06a7f562addb87315f013677ab" category="inline-link-macro">详细了解如何从 Google 存档存储中恢复</block>
   <block id="e429a3dcdf9ca5d36834b72490aae784" category="admonition">将数据从 Azure 档案存储还原到StorageGRID系统时不支持高优先级。</block>
   <block id="598e51a2b37024d5f553af642c739db8" category="section-title">浏览并恢复支持的系统和对象存储提供商</block>
-  <block id="bc6bfb0b14fd7cced8ee62c645d8aa17" category="paragraph">*注意：*您可以从任何类型的备份文件恢复卷，但目前只能从对象存储中的备份文件恢复文件夹或单个文件。</block>
   <block id="4392d15c8884c7cc66b17ff794eb41d2" category="cell">*来自对象存储（备份）*</block>
   <block id="a4e7ccecf7c1ff2d3e2de88d9f7559d4" category="cell">*来自主（快照）*</block>
   <block id="c1ad4111606308626e152e2bc5089a8b" category="cell">*来自辅助系统（复制）*</block>
-  <block id="f6bc09197fbc5599ccf48032f3ead672" category="cell">到本地ONTAP系统</block>
   <block id="56a66e1fc15e989f40186eb5d1841f59" category="paragraph">对于浏览和恢复，控制台代理可以安装在以下位置：</block>
   <block id="26b66b8e6541c0f2e46ee638955dab17" category="list-text">对于 Amazon S3，控制台代理可以部署在 AWS 或您的场所</block>
   <block id="ead25fef0ccdffb4daf4bbf7bcb1dfb5" category="list-text">对于 Azure Blob，控制台代理可以部署在 Azure 中或您的本地</block>
@@ -5804,4 +5802,6 @@
   <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">2026年8月10日</block>
   <block id="874b4474de89858c50d77a501e5764e2" category="sidebar">提高 NetApp Console 本地部署的卷搜索和还原性能</block>
   <block id="4d92224f9798401488621039f9e4cfa9" category="list-text">您必须在订阅中注册 Azure Synapse Analytics 资源提供程序（称为"Microsoft.Synapse"）<block ref="c0f87c4b35b6d93246175aae02f70afd" category="inline-link-rx"></block>。您必须是订阅 *Owner* 或 *Contributor* 才能注册资源提供商。</block>
+  <block id="309ab91ccf975daed364d3636f21792a" category="paragraph">您可以将驻留在辅助系统（复制卷）或对象存储（备份文件）中的备份文件中的 ONTAP 数据还原到以下系统。</block>
+  <block id="e9a171dcb6f5a1441f086b12be8cbc6b" category="cell">S3 兼容对象存储</block>
 </blocks>
