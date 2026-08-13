@@ -86,7 +86,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 使用这些链接从您的云提供商市场订阅NetApp Backup and Recovery ：
 
 * AWS： https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["前往NetApp Intelligent Services市场了解定价详情"^] 。
-* Azure： https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["前往NetApp Intelligent Services市场了解定价详情"^] 。
+* Azure： https://marketplace.microsoft.com/en-us/product/netapp.cloud-manager?tab=Overview["前往NetApp Intelligent Services市场了解定价详情"^]。
 * Google Cloud： https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["前往NetApp Intelligent Services市场了解定价详情"^] 。
 
 
@@ -114,7 +114,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 
 
 
-使用 Azure 时，有两份年度合同可供选择 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp["Azure 市场页面"^]对于Cloud Volumes ONTAP和本地ONTAP系统：
+使用 Azure 时，可从 https://marketplace.microsoft.com/en-us/product/netapp.netapp-bluexp["Azure 市场页面"^]为 Cloud Volumes ONTAP 和本地 ONTAP 系统获得两份年度合同：
 
 * “云备份”计划使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
 +

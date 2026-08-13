@@ -720,7 +720,6 @@
   <block id="5f0364e373bcb99c02ad1b8359683908" category="inline-link">Cloud Volumes ONTAP许可主题</block>
   <block id="8bf40ad9f866315020ec4fdd4f65701a" category="paragraph">查看<block ref="efcb71a951fd69a7db06309cdcce3842" category="inline-link-rx"></block>了解有关此许可选项的更多信息。</block>
   <block id="bd0202b4a5e368ede75c41822527f8dd" category="inline-link">Azure 市场页面</block>
-  <block id="ba52c601f575024f72fb5f7ac8154b76" category="paragraph">使用 Azure 时，有两份年度合同可供选择<block ref="d5a65c1c4876b0fa6968c9e08ffea7e8" category="inline-link-rx"></block>对于Cloud Volumes ONTAP和本地ONTAP系统：</block>
   <block id="f201c550f444b5128aeb063bf930d1e2" category="inline-link">将订阅与您的 Azure 凭据关联</block>
   <block id="bb2a4ab21c5ccf409e44b59faacde869" category="paragraph">如果您想使用此选项，请从 Marketplace 页面设置您的订阅，然后<block ref="ee52880e3726e54668f91a4b65aa4b29" category="inline-link-rx"></block>。请注意，您还需要使用此年度合同订阅来支付您的Cloud Volumes ONTAP系统的费用，因为您只能在控制台中为您的 Azure 凭据分配一个有效订阅。</block>
   <block id="78cb5753f269296b8cbe81558d864e4f" category="paragraph">当您使用 GCP 时，请联系您的NetApp销售代表购买年度合同。该合同在 Google Cloud Marketplace 中以私人优惠形式提供。</block>
@@ -2433,7 +2432,6 @@
   <block id="69dbfb140f0641649e386e4fa6eb9ccc" category="paragraph">您需要验证 Azure 和控制台的许可证要求：</block>
   <block id="2170d0e9ec0577e343eec3fd2bc324d7" category="list-text">在为集群激活NetApp Backup and Recovery之前，您需要订阅 Azure 提供的即用即付 (PAYGO) 控制台市场，或者从NetApp购买并激活NetApp Backup and Recovery BYOL 许可证。这些许可证适用于您的帐户，可以在多个系统中使用。</block>
   <block id="99502accd75b1c001f0d4173b25e6554" category="inline-link">Azure 市场提供的NetApp Console</block>
-  <block id="a140b0fdf404992274b76a850ba3cc4b" category="list-text">对于NetApp Backup and Recovery PAYGO 许可，您需要订阅<block ref="3300cb29b93693465495dcf855aee89b" category="inline-link-rx"></block>。  NetApp Backup and Recovery的计费通过此订阅完成。</block>
   <block id="38b11d9697757c33227037f48357f555" category="list-text">对于NetApp Backup and RecoveryBYOL 许可，您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。<block ref="706a4c6b2a498be3949e082e6d4f63b6" category="inline-link-macro-rx"></block>。</block>
   <block id="39476a4d8825e098719d72ca18619ed8" category="list-text">您需要对用于存储备份的对象存储空间进行 Azure 订阅。</block>
   <block id="a2dc9a4fb704e8ca875a1a77d909ba7d" category="paragraph">您可以在所有区域（包括 Azure 政府区域）中创建从本地系统到 Azure Blob 的备份。您在设置服务时指定存储备份的区域。</block>
@@ -3834,7 +3832,6 @@
   <block id="8caf5a345895253ff6b6c49a438599d4" category="list-text">请确保显示的卷与原始环境中的卷相同。</block>
   <block id="432f26fda10ddec4232e210d763f233e" category="paragraph">NetApp Backup and Recovery评估 Microsoft SQL Server 应用程序。该服务评估现有保护级别，包括当前的备份保护策略、快照以及备份和恢复选项。</block>
   <block id="f0b87199311bf1c15f240b666518084c" category="list-text">AWS：<block ref="e5469c6686b5a2c86b78502f7ea8c335" category="inline-link-rx"></block> 。</block>
-  <block id="6d641e087ca9cbb2e0778a492ac1066a" category="list-text">Azure：<block ref="211ed702bd160a1aa192248c846136e5" category="inline-link-rx"></block> 。</block>
   <block id="80720981863bfe0c9cc6702701d24f18" category="list-text">Google Cloud：<block ref="5aa99f120ab43d5669622268ca1e3fd1" category="inline-link-rx"></block> 。</block>
   <block id="35521e84b87db7ff299e3d292854a426" category="paragraph">使用NetApp Backup and Recovery从快照、复制到辅助存储的工作负载备份或存储在对象存储中的备份恢复 Hyper-V 工作负载。</block>
   <block id="c71707f07223923dbaab7d7f94cf956b" category="paragraph">使用NetApp Backup and Recovery从快照、复制到辅助存储的保护组备份或存储在对象存储中的备份恢复 KVM 虚拟机。</block>
@@ -5809,4 +5806,7 @@
   <block id="04a5a856cc6b493eb99f477d96256257" category="sidebar">还原 VMware 来宾文件和文件夹</block>
   <block id="bd0ebd8b773f57bb68702549777a23ef" category="sidebar">通过 NetApp Backup and Recovery 支持的 Azure 存档存储层</block>
   <block id="8ee4602516c339cfb06e6c5907f4f918" category="sidebar">通过 NetApp Backup and Recovery 支持的 Google Cloud 存档存储层</block>
+  <block id="053401f3d9ace97002dd341287d9ebb1" category="list-text">Azure：<block ref="f4515f843bc62e0cde60bea0de056fd5" category="inline-link-rx"></block>。</block>
+  <block id="a76ddbef42127fde7d9134d4314bebdd" category="paragraph">使用 Azure 时，可从<block ref="25abf8f644a5c025c626f91c32f89a15" category="inline-link-rx"></block>为 Cloud Volumes ONTAP 和本地 ONTAP 系统获得两份年度合同：</block>
+  <block id="55226b5c9d4512e179f5677e92c03e76" category="list-text">对于 NetApp Backup and Recovery PAYGO 许可，您需要订阅<block ref="404638c3cd4ff4f928bcc623b020a5df" category="inline-link-rx"></block>。NetApp Backup and Recovery 的计费通过此订阅完成。</block>
 </blocks>

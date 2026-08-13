@@ -173,7 +173,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 
 * 在为集群激活NetApp Backup and Recovery之前，您需要订阅 Azure 提供的即用即付 (PAYGO) 控制台市场，或者从NetApp购买并激活NetApp Backup and Recovery BYOL 许可证。这些许可证适用于您的帐户，可以在多个系统中使用。
 +
-** 对于NetApp Backup and Recovery PAYGO 许可，您需要订阅 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure 市场提供的NetApp Console"^]。  NetApp Backup and Recovery的计费通过此订阅完成。
+** 对于 NetApp Backup and Recovery PAYGO 许可，您需要订阅 https://marketplace.microsoft.com/en-us/product/netapp.cloud-manager?tab=Overview["Azure 市场提供的NetApp Console"^]。NetApp Backup and Recovery 的计费通过此订阅完成。
 ** 对于NetApp Backup and RecoveryBYOL 许可，您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。link:br-start-licensing.html["了解如何管理您的 BYOL 许可证"]。
 
 
