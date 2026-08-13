@@ -4,7 +4,7 @@ permalink: br-start-enable.html
 keywords: backup, Backup and Recovery, enable backup, Console, service, local deployment 
 summary: 在 NetApp Console 或 NetApp Console 本地部署的系统上启用备份和恢复。 
 ---
-= 启用备份和恢复以保护卷
+= 启用 NetApp Backup and Recovery 以保护卷
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

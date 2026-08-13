@@ -4,7 +4,7 @@ permalink: prev-ontap-discover-no-activate.html
 keywords: activate, backup and recovery, volumes, back up, discover 
 summary: 在不激活 NetApp Backup and Recovery 的情况下发现系统和卷。 
 ---
-= 无需激活即可发现 ONTAP 系统和卷
+= 在 NetApp Backup and Recovery 中无需激活即可发现 ONTAP 系统和卷
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

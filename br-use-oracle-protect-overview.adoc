@@ -4,7 +4,7 @@ permalink: br-use-oracle-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: 您可以保护从本地ONTAP系统到 Amazon Web Services、Microsoft Azure、Google Cloud Platform 和StorageGRID 的Oracle 虚拟机，确保您的数据受到保护。 
 ---
-= 保护 Oracle 数据库工作负载概述
+= 了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

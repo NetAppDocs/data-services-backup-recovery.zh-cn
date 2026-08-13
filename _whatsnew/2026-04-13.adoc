@@ -40,7 +40,7 @@
 * *SAN 支持（预览）*：Backup and Recovery 现在支持保护存储在 SAN 存储上的 Hyper-V VM。
 
 
-有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载概述"]。
+有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["使用 NetApp Backup and Recovery 的 Hyper-V 保护工作流"]。
 
 
 
@@ -53,7 +53,7 @@
 * *还原到备用位置（预览）*：您现在可以将 KVM VM 还原到备用目标。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-restore.html["使用NetApp Backup and Recovery还原 KVM 虚拟机"]。
 
 
-有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
+要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
 
 

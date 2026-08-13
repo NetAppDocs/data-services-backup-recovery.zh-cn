@@ -14,7 +14,7 @@
 * *将文件和文件夹还原到来宾虚拟机*：现在，您可以将文件和文件夹从主存储上的快照还原到来宾 Windows 虚拟机。只有 CIFS 虚拟机才支持此功能。
 
 
-有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载概述"]。
+有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["使用 NetApp Backup and Recovery 的 Hyper-V 保护工作流"]。
 
 
 
@@ -25,7 +25,7 @@
 
 *还原到备用位置*：您现在可以将 KVM VM 还原到备用目标（此功能现已正式发布）。
 
-有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
+要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
 
 
@@ -38,7 +38,7 @@
 * *备份验证支持*：您现在可以配置备份策略以自动验证 Oracle 数据库备份的完整性。
 
 
-要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
 
 
 

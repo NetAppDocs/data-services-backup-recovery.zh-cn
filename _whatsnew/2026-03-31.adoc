@@ -13,4 +13,4 @@
 * *RMAN 目录支持*：您现在可以将 Backup and Recovery 配置为在 RMAN 恢复目录中存储保护元数据，从而在目标控制文件丢失时提供冗余和长期保留。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-configure-oracle-database.html["配置 Oracle 数据库"]。
 
 
-要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。

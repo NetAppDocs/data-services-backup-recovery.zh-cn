@@ -16,11 +16,11 @@ sidebar:
     url: "/index.html"
   - title: 发行说明
     entries:
-    - title: 什么是新的
+    - title: NetApp 备份和恢复中的新增功能
       url: "/whats-new.html"
     - title: ONTAP卷工作负载的已知限制
       url: "/br-reference-limitations.html"
-    - title: Microsoft SQL Server 工作负载的已知限制
+    - title: SQL Server 工作负载的已知限制
       url: "/br-limitations.html"
     - title: VMware 工作负载的已知限制
       url: "/br-limitations-vmware.html"
@@ -34,85 +34,85 @@ sidebar:
     entries:
     - title: 了解NetApp Backup and Recovery
       url: "/concept-backup-to-cloud.html"
-    - title: NetApp Backup and Recovery的先决条件
+    - title: NetApp Backup and Recovery 要求
       url: "/concept-start-prereq.html"
-    - title: 设置NetApp Backup and Recovery 的许可
+    - title: 设置许可
       url: "/br-start-licensing.html"
-    - title: 为ONTAP和StorageGRID设置安全证书
+    - title: 设置安全证书
       url: "/task-setup-ca-certificates.html"
     - title: 在使用NetApp Backup and Recovery之前设置备份目标
       url: "/br-start-setup.html"
-    - title: 发现备份目标
+    - title: 发现异地备份目标
       url: "/br-start-discover-backup-targets.html"
     - title: 切换到不同的NetApp Backup and Recovery工作负载
       url: "/br-start-switch-ui.html"
-    - title: 配置NetApp Backup and Recovery常规设置
+    - title: 配置NetApp Backup and Recovery设置
       url: "/br-start-configure.html"
-    - title: 在 NetApp Backup and Recovery 中设置基于角色的访问控制
+    - title: 设置基于角色的访问控制
       url: "/br-rbac-setup.html"
   - title: 使用NetApp Backup and Recovery
     entries:
     - title: 登录NetApp Backup and Recovery
       url: "/br-start-login.html"
-    - title: 在仪表板中查看保护健康状况
+    - title: 在NetApp Backup and Recovery仪表板上查看保护健康状况
       url: "/br-use-dashboard.html"
     - title: 保护ONTAP卷工作负载
       entries:
-      - title: 保护ONTAP卷工作负载概述
+      - title: 了解适用于 ONTAP 卷的 NetApp Backup and Recovery
         url: "/prev-ontap-protect-overview.html"
-      - title: 启用备份和恢复以保护卷
+      - title: 启用 NetApp Backup and Recovery 以保护卷
         url: "/br-start-enable.html"
-      - title: 提高 NetApp Console 本地部署的卷搜索和还原性能
+      - title: 提高 NetApp Backup and Recovery 本地部署中的搜索和还原性能
         url: "/prev-ontap-protect-migrate-pvc.html"
-      - title: 规划ONTAP卷的保护之旅
+      - title: NetApp Backup and Recovery 中的保护旅程规划选项
         url: "/prev-ontap-protect-journey.html"
       - title: 无需激活即可发现 ONTAP 系统和卷
         url: "/prev-ontap-discover-no-activate.html"
-      - title: 管理ONTAP卷的策略
+      - title: 管理 ONTAP 卷的备份策略
         url: "/prev-ontap-policy-manage.html"
-      - title: ONTAP卷的备份到对象策略选项
+      - title: ONTAP 卷备份到对象策略选项
         url: "/prev-ontap-policy-object-options.html"
-      - title: 管理备份到对象策略高级设置选项
+      - title: 管理备份到对象存储选项
         url: "/prev-ontap-policy-object-advanced-settings.html"
-      - title: 将Cloud Volumes ONTAP备份到 Amazon S3
+      - title: 将Cloud Volumes ONTAP数据备份到 Amazon S3
         url: "/prev-ontap-backup-cvo-aws.html"
-      - title: 将Cloud Volumes ONTAP备份到 Azure Blob
+      - title: 将 Cloud Volumes ONTAP 数据备份到 Azure Blob 存储
         url: "/prev-ontap-backup-cvo-azure.html"
-      - title: 将Cloud Volumes ONTAP备份到 Google Cloud
+      - title: 将 Cloud Volumes ONTAP 数据备份到 Google Cloud Storage
         url: "/prev-ontap-backup-cvo-gcp.html"
-      - title: 将本地ONTAP备份到 Amazon S3
+      - title: 将本地ONTAP数据备份到 Amazon S3
         url: "/prev-ontap-backup-onprem-aws.html"
-      - title: 将本地ONTAP备份到 Azure Blob
+      - title: 将本地 ONTAP 数据备份到 Azure Blob 存储
         url: "/prev-ontap-backup-onprem-azure.html"
-      - title: 将本地ONTAP备份到 Google Cloud
+      - title: 将本地 ONTAP 数据备份到 Google Cloud Storage
         url: "/prev-ontap-backup-onprem-gcp.html"
-      - title: 将本地ONTAP备份到ONTAP S3
+      - title: 将本地ONTAP数据备份到ONTAP S3
         url: "/prev-ontap-backup-onprem-ontaps3.html"
-      - title: 将本地 ONTAP 备份到 S3 兼容存储
+      - title: 将本地 ONTAP 数据备份到兼容 S3 的存储
         url: "/prev-ontap-backup-onprem-s3-compatible.html"
-      - title: 将本地ONTAP备份到StorageGRID
+      - title: 将本地ONTAP数据备份到StorageGRID
         url: "/prev-ontap-backup-onprem-storagegrid.html"
-      - title: 使用SnapMirror将卷迁移到 Cloud Resync
+      - title: 使用 SnapMirror 将 ONTAP 卷迁移到云重新同步
         url: "/prev-ontap-migrate-resync.html"
-      - title: 管理ONTAP备份
+      - title: 管理 ONTAP 系统的备份
         url: "/prev-ontap-backup-manage.html"
       - title: 从ONTAP备份还原
         entries:
-        - title: 恢复概述
+        - title: ONTAP 数据还原选项
           url: "/prev-ontap-restore.html"
-        - title: 使用搜索和恢复功能从ONTAP备份恢复
+        - title: 使用搜索和还原功能还原 ONTAP 数据
           url: "/prev-ontap-restore-search.html"
-        - title: 使用“浏览和恢复”功能从ONTAP备份恢复数据
+        - title: 使用浏览和还原功能还原 ONTAP 数据
           url: "/prev-ontap-restore-browse.html"
     - title: 保护 Microsoft SQL Server 工作负载
       entries:
-      - title: 保护 Microsoft SQL Server 工作负载概述
+      - title: Microsoft SQL Server 在 NetApp Backup and Recovery 中的保护工作流
         url: "/br-use-mssql-protect-overview.html"
-      - title: 如果从SnapCenter导入，则配置其他项目
+      - title: SnapCenter 导入 NetApp Backup and Recovery 的先决条件
         url: "/concept-start-prereq-snapcenter-import.html"
       - title: 发现 Microsoft SQL Server 工作负载
         url: "/br-start-discover.html"
-      - title: 创建和管理 Microsoft SQL Server 工作负载备份策略
+      - title: 创建和管理 Microsoft SQL Server 备份策略
         url: "/br-use-policies-mssql-create.html"
       - title: 备份 Microsoft SQL Server 工作负载
         url: "/br-use-mssql-backup.html"
@@ -128,13 +128,13 @@ sidebar:
         url: "/br-use-reports.html"
     - title: 保护 VMware 工作负载
       entries:
-      - title: 保护 VMware 工作负载概述
+      - title: VMware 保护工作流
         url: "/br-use-vmware-protect-overview.html"
       - title: 发现 VMware 工作负载
         url: "/br-use-vmware-discovery.html"
-      - title: 为 VMware 工作负载创建和管理保护组
+      - title: 管理 VMware 保护组
         url: "/br-use-vmware-protection-groups.html"
-      - title: 创建和管理 VMware 工作负载备份策略
+      - title: 管理 VMware 备份策略
         url: "/br-use-policies-vmware-create.html"
       - title: 备份 VMware 工作负载
         url: "/br-use-vmware-backup.html"
@@ -142,15 +142,15 @@ sidebar:
         url: "/br-use-vmware-clone.html"
       - title: 恢复 VMware 工作负载
         entries:
-        - title: 恢复 VMware 虚拟机
+        - title: 恢复 VMware 工作负载
           url: "/br-use-vmware-restore.html"
-        - title: 还原 VMware 虚拟磁盘
+        - title: 从备份还原 VMware 虚拟磁盘
           url: "/br-use-vmware-restore-vmdks-from-backups.html"
         - title: 还原 VMware 文件和文件夹
           entries:
-          - title: 工作流程、先决条件和限制
+          - title: VMware 来宾文件还原要求
             url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
-          - title: 从 VMDK 还原 VMware 文件和文件夹
+          - title: 还原 VMware 来宾文件和文件夹
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: 文件和文件夹恢复故障排除
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
@@ -246,23 +246,23 @@ sidebar:
       url: "/reference-restart-backup.html"
     - title: 启用预览和隐藏功能
       url: "/enable-preview-features.html"
-  - title: 使用 REST API 实现自动化
+  - title: 使用NetApp Backup and RecoveryREST API 实现自动化
     url: "/br-api-backup-restore.html"
   - title: 参考
     entries:
-    - title: 审核的备份和恢复操作
+    - title: 审核 NetApp Backup and Recovery 操作
       url: "/reference-audit-actions.html"
-    - title: SnapCenter中的策略与NetApp Backup and Recovery的策略比较
+    - title: SnapCenter中的策略与NetApp Backup and Recovery中的策略比较
       url: "/reference-policy-differences-snapcenter.html"
-    - title: NetApp Backup and Recovery角色和权限
+    - title: NetApp Backup and Recovery IAM 角色
       url: "/reference-roles.html"
-    - title: 在暗站中恢复NetApp Backup and Recovery数据
+    - title: 在暗站中恢复NetApp Backup and Recovery配置数据
       url: "/reference-backup-cbs-db-in-dark-site.html"
-    - title: 支持的 AWS 存档存储层
+    - title: NetApp Backup and Recovery支持的 AWS 存档存储层
       url: "/prev-reference-aws-archive-storage-tiers.html"
-    - title: 支持的 Azure 存档存储层
+    - title: 通过 NetApp Backup and Recovery 支持的 Azure 存档存储层
       url: "/prev-reference-azure-archive-storage-tiers.html"
-    - title: 支持的 Google Cloud 归档存储层
+    - title: 通过 NetApp Backup and Recovery 支持的 Google Cloud 存档存储层
       url: "/prev-reference-gcp-archive-storage-tiers.html"
   - title: 法律声明
     url: "/legal-notices.html"

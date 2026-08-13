@@ -4,7 +4,7 @@ permalink: br-use-kubernetes-reports.html
 keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: 为 Kubernetes 工作负载创建保护报告，以查看保护状态和详细信息，包括成功和失败的备份计数、备份类型、集群健康状况信息等。 
 ---
-= 在 NetApp Backup and Recovery 中创建和管理 Kubernetes 工作负载的保护报告
+= 在 NetApp Backup and Recovery 中管理 Kubernetes 保护报告
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

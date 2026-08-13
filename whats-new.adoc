@@ -137,7 +137,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 * *保护组现在使用主机时区计划*：保护组现在使用 Hyper-V 主机的时区。在引入主机时区调度之前创建的保护组继续使用其先前配置的时间（通常为 UTC）。要更新这些保护组以使用 Hyper-V 主机时区，必须重新创建计划。有关详细信息，请参见 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protection-groups.html["为 Hyper-V 工作负载创建和管理保护组"]。
 
 
-有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载概述"]。
+有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["使用 NetApp Backup and Recovery 的 Hyper-V 保护工作流"]。
 
 
 
@@ -170,7 +170,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 * *将文件和文件夹还原到来宾虚拟机*：现在，您可以将文件和文件夹从主存储上的快照还原到来宾 Windows 虚拟机。只有 CIFS 虚拟机才支持此功能。
 
 
-有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载概述"]。
+有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["使用 NetApp Backup and Recovery 的 Hyper-V 保护工作流"]。
 
 
 
@@ -181,7 +181,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 *还原到备用位置*：您现在可以将 KVM VM 还原到备用目标（此功能现已正式发布）。
 
-有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
+要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
 
 
@@ -194,7 +194,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 * *备份验证支持*：您现在可以配置备份策略以自动验证 Oracle 数据库备份的完整性。
 
 
-要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
 
 
 
@@ -308,7 +308,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 * *SAN 支持（预览）*：Backup and Recovery 现在支持保护存储在 SAN 存储上的 Hyper-V VM。
 
 
-有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载概述"]。
+有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["使用 NetApp Backup and Recovery 的 Hyper-V 保护工作流"]。
 
 
 
@@ -321,7 +321,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 * *还原到备用位置（预览）*：您现在可以将 KVM VM 还原到备用目标。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-restore.html["使用NetApp Backup and Recovery还原 KVM 虚拟机"]。
 
 
-有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
+要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
 
 
@@ -358,7 +358,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 * *RMAN 目录支持*：您现在可以将 Backup and Recovery 配置为在 RMAN 恢复目录中存储保护元数据，从而在目标控制文件丢失时提供冗余和长期保留。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-configure-oracle-database.html["配置 Oracle 数据库"]。
 
 
-要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
 
 
 
@@ -430,7 +430,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 KVM 工作负载支持现已在 NetApp Backup and Recovery 中正式提供（GA）。
 
-有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
+要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
 
 
@@ -505,7 +505,7 @@ VMware 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (G
 
 
 
-要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
 
 
 
@@ -562,7 +562,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restor
 
 KVM 工作负载预览现在保护由 Apache CloudStack 管理的 KVM 主机和虚拟机。
 
-有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
+要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
 
 
@@ -626,7 +626,7 @@ NetApp Console建立在增强和重组的BlueXP基础之上，可在企业级内
 * 搜索和恢复虚拟机备份
 
 
-有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["保护 Hyper-V 工作负载概述"]。
+有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["使用 NetApp Backup and Recovery 的 Hyper-V 保护工作流"]。
 
 
 
@@ -643,7 +643,7 @@ NetApp Console建立在增强和重组的BlueXP基础之上，可在企业级内
 * 备份和恢复基于 KVM 的虚拟机和虚拟机数据的指导流程
 
 
-有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["保护 KVM 工作负载概述"]。
+要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
 
 
@@ -704,7 +704,7 @@ VMware 工作负载预览版引入了以下增强功能：
 * Oracle 仪表板支持
 
 
-要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["保护 Oracle 数据库工作负载概述"]。
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
 
 
 

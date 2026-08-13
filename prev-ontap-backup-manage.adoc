@@ -49,7 +49,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 
 如果您在首次启用NetApp Backup and Recovery时仅在系统中的某些卷上激活了备份，则可以稍后在其他卷上激活备份。
 
-有关说明，请参阅 link:br-start-enable.html["启用备份和恢复以保护卷"^]。
+有关说明，请参阅 link:br-start-enable.html["启用 NetApp Backup and Recovery 以保护卷"^]。
 
 
 

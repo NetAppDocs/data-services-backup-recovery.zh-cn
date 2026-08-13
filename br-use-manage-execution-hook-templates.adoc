@@ -4,7 +4,7 @@ permalink: br-use-manage-execution-hook-templates.html
 keywords: hooks, execution hooks, exec hooks, hook, execution, script, postscript, prescript, post, pre, run, backup, snapshot, freeze 
 summary: NetApp Backup and Recovery使您能够管理执行挂钩，以便在应用程序保护操作之前或之后采取行动。 
 ---
-= 管理适用于 Kubernetes 工作负载的NetApp Backup and Recovery执行挂钩模板
+= 在 NetApp Backup and Recovery 中管理 Kubernetes 执行挂钩模板
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

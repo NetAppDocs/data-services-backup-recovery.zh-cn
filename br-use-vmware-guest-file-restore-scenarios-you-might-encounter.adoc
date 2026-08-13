@@ -4,7 +4,7 @@ permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html
 keywords:  
 summary: 尝试恢复客户机文件时，您可能会遇到客户机文件恢复会话为空白、客户机文件恢复附加磁盘操作失败或客户机文件恢复会话停止后备份未分离的情况。 
 ---
-= 访客文件恢复故障排除
+= 在 NetApp Backup and Recovery 中进行来宾文件还原故障排除
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

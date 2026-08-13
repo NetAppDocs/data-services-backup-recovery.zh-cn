@@ -4,7 +4,7 @@ permalink: br-use-modify-resources-kubernetes-cr.html
 keywords: Resource modify, transform, restore, Kubernetes, custom resource, Backup and Recovery, NetApp, transformation, transformations, resource, resource transformations, modify 
 summary: 在 NetApp Backup and Recovery 中的还原操作期间修改资源。 
 ---
-= 使用自定义资源还原资源时修改资源
+= 在还原期间修改 Kubernetes 资源（NetApp Backup and Recovery）
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
