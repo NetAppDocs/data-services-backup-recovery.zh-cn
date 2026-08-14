@@ -57,7 +57,7 @@ NOTE: 将数据从 Azure 档案存储还原到StorageGRID系统时不支持高�
 
  a| 
 * 本地ONTAP系统
-* Cloud Volumes ONTAP
+* AWS 中的Cloud Volumes ONTAP
 
 
 
@@ -72,7 +72,7 @@ NOTE: 将数据从 Azure 档案存储还原到StorageGRID系统时不支持高�
 
  a| 
 * 本地ONTAP系统
-* Cloud Volumes ONTAP
+* Azure 中的Cloud Volumes ONTAP
 
 
 
@@ -87,7 +87,7 @@ NOTE: 将数据从 Azure 档案存储还原到StorageGRID系统时不支持高�
 
  a| 
 * 本地ONTAP系统
-* Cloud Volumes ONTAP
+* Google 的Cloud Volumes ONTAP
 
 
 
