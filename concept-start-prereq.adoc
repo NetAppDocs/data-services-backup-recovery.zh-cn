@@ -409,8 +409,8 @@ NOTE: 要跨不同云提供商支持每个系统超过 6 个存储桶（最多 1
 NOTE: NetApp 强烈建议为用于 Kubernetes 工作负载的 Console 代理分配静态 IP 地址，以避免代理 IP 地址更改时出现问题。
 
 * 主 ONTAP 系统（不支持 ASA r2 系统）
-* NetApp Trident 25.06 至 26.02.1
-* NetApp Trident Protect 26.06（在发现期间安装在 Kubernetes 集群上）
+* NetApp Trident 25.06 至 26.06
+* NetApp Trident Protect 26.08 或更高版本（在发现期间安装在 Kubernetes 集群上）
 * Kubernetes 集群 - 支持的 Kubernetes 发行版和版本包括  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["Trident Protect"] 支持的发行版和版本。
 +
 ** 确保 TCP 端口 443 在 Kubernetes 集群、Trident Protect Connector 和 Trident Protect 代理之间的出站方向上未过滤。

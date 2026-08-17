@@ -1463,10 +1463,6 @@
   <block id="3ce2a491ae98ac2e9d6b23907b1dcd27" category="list-text">*将备份从对象存储分层到档案存储*：如果您选择将备份分层到档案存储（例如，AWS Glacier），请选择层选项和存档天数。</block>
   <block id="a4ddb079e754d05f977f299ecb91e78e" category="list-text">*备份目标*：选择已注册的对象存储目标。确保目标在您的备份环境中可访问。</block>
   <block id="749ef9bfd50fd41baeffea89c1ed7056" category="list-text">*提供商*：选择* StorageGRID*。</block>
-  <block id="40f2be2919d2f491fc533133b0784afb" category="section-title">在策略中配置高级设置</block>
-  <block id="5a0e602c662c4aadb0e187c46db2f1be" category="list-text">在“*策略 &gt; 高级*”设置部分中，选择“*选择高级操作*”菜单，从高级设置列表中进行选择。</block>
-  <block id="e9dbaabb96bed2c8d241fb55527037d6" category="list-text">启用您想要查看或更改的任何设置，然后选择*接受*。</block>
-  <block id="13c1455885d16af64f1bb96c4e48680a" category="list-text">提供以下信息：</block>
   <block id="ebc38593846bd56262189cdea41159c0" category="admonition">如果快照频率设置为 1 小时，则最大延迟以及重试次数不应超过 45 分钟。</block>
   <block id="febcf1de845ae5c111f7fe2fdf9a0023" category="list-text">*勒索软件扫描*：选择是否要在每个存储桶上启用勒索软件扫描。这需要对对象存储进行 DataLock 锁定。输入扫描频率（以天为单位）。此选项适用于 AWS 和 Microsoft Azure 对象存储。请注意，此选项可能会产生额外费用，具体取决于云提供商。</block>
   <block id="5c9b86ff3ed09d60fd7e04707b95622a" category="paragraph">此外，配置以下选项：</block>
@@ -5189,7 +5185,6 @@
   <block id="f7b0b716a4d4de499a271912b85547c3" category="list-text">*在备份后清除归档日志*：如果启用了日志备份，则可以选择启用此功能以限制 Backup and Recovery 保留 Oracle 归档日志的时间。您可以选择保留期以及 Backup and Recovery 应删除归档日志的位置。</block>
   <block id="588a429e835850f3df8205535e7b98e2" category="list-text">*Provider*：选择托管 Kubernetes 应用程序资源的存储提供商，并输入凭据以向提供商进行身份验证。</block>
   <block id="5f635536567962115552d73c6587c483" category="list-text">*启用完整性扫描*：选择是否要在对象存储上启用完整性扫描（快照锁定）。这确保了备份的有效性和可恢复性。完整性扫描频率默认设置为 7 天。要防止备份被修改或删除，请选择*完整性扫描*选项。扫描仅在最新快照上进行。您可以在最新快照上启用或禁用完整性扫描。</block>
-  <block id="c0801323bf0a74b01c384bdda3518dd5" category="paragraph">您可以选择在策略中配置高级设置。您可以将这些选项用于所有备份架构和存储目标。可用的高级选项取决于您在页面顶部选择的工作负载，因此此处描述的某些选项可能不适用于所有工作负载。</block>
   <block id="6a4ad7a285f68160638ebf2d62693e0b" category="list-text">*VM 设置*：</block>
   <block id="3000cf6903596d6eddfc672177a67f40" category="list-text">*启用应用程序一致性快照*：启用此选项可创建应用程序一致性快照。这需要在虚拟机上同时运行 Hyper-V Integration Services 和 VSS。如果其中一个服务未运行，则会进行崩溃一致性备份。请注意，启用应用程序一致性可能会增加备份时间和存储使用量。此外，虚拟机的来宾内存（RAM）未包含在应用程序一致性快照中。</block>
   <block id="250dc6eb1ac44efaa2d588f670d05490" category="list-text">*备份重试*：要在失败或中断时重试作业，请选择*失败时启用作业重试*。输入快照和备份作业重试的最大次数以及重试时间间隔。重试次数必须小于 10。</block>
@@ -5656,8 +5651,6 @@
   <block id="951c1419bc6678a290628918eb471078" category="paragraph">有关身份和访问权限的信息，请参见<block ref="ea5b8c83a53307fc473cf87abf76dc05" category="inline-link-rx"></block>。</block>
   <block id="614c9b8c0079226ae2c76caf00bdc9d7" category="list-text">ASP.NET Core Runtime 10.0.10 Hosting Bundle</block>
   <block id="2c03c04d013cd18a2b08ffdaa3807fc6" category="list-text">PowerShell 7.6.4</block>
-  <block id="3b93068d4eec990f1969b952fef82849" category="list-text">NetApp Trident 25.06 至 26.02.1</block>
-  <block id="c6ee0c0b0d79479e99725d43f4f2b0f8" category="list-text">NetApp Trident Protect 26.06（在发现期间安装在 Kubernetes 集群上）</block>
   <block id="e75b3a902ee99b25571be4a98b084a31" category="summary">在不激活 NetApp Backup and Recovery 的情况下发现系统和卷。</block>
   <block id="bf768851617c703a4014233f58b31de3" category="doc">无需激活即可发现 ONTAP 系统和卷</block>
   <block id="2887d4ffc35ab6898bed2a982c5423a2" category="paragraph">您可以在激活卷的备份和恢复时或激活 NetApp Backup and Recovery 之前发现系统和卷。如果您在未激活的情况下发现卷，则在为其激活 Backup and Recovery 之前无法保护卷。</block>
@@ -5832,4 +5825,34 @@
   <block id="c7b95907073ba49194dd07ae01b56f96" category="list-text">在*目标存储*部分（仅在从对象存储还原时可见）：</block>
   <block id="f771ab6fc3300e0b07bde061e3f606f7" category="list-text">*更改默认存储位置*：如果源存储位置无法访问或已满，则启用此选项可将对象存储备份还原到其他位置。选择其他要使用的集群、Storage VM 或聚合。</block>
   <block id="7c3780c8bbc09e634d77ec9249acfb5c" category="section-title">2026年8月17日</block>
+  <block id="6319d2a187c14a056a2451e457680ac9" category="section-title">将 Kubernetes 集群重新连接到控制台代理</block>
+  <block id="57f5244800d20c454a8ae6a99f0c2690" category="paragraph">如果控制台代理的 IP 地址发生变化（例如，重启后），则 Kubernetes 集群将失去与代理的连接，您需要重新连接。</block>
+  <block id="5be36b04c01bb2ce7d5c47828c04d62f" category="list-text">选择一个断开连接的 Kubernetes 集群，然后选择操作图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *修改集群* &gt; *重新连接集群*。</block>
+  <block id="375ee855bb819796d52335f7855a9da5" category="list-text">在"重新连接集群"对话框中，复制命令行指令并在集群上运行它们。</block>
+  <block id="ba2444c182512882ef30cd6d790a989d" category="paragraph">命令完成后，您的集群将自动重新连接。</block>
+  <block id="4a553bf9ebe9a32a6743c78be912cfbc" category="list-text">选择*Close*。</block>
+  <block id="145531d0ec6b6e87e457833c515d18eb" category="section-title">将 Kubernetes 集群迁移到新的 Console 代理</block>
+  <block id="1b486f8a72df0cfb12154c0df2fd8aeb" category="paragraph">如果 Console 代理被删除或不可用，请将使用它的任何集群迁移到新代理，以避免中断应用程序保护。</block>
+  <block id="71a73d38aa411b8cf3ac97aaed6598a9" category="inline-link">部署新的控制台代理。</block>
+  <block id="33a9e40bf5b5a104de590c6bff396f18" category="list-text"><block ref="33a9e40bf5b5a104de590c6bff396f18" category="inline-link-rx"></block></block>
+  <block id="d9242f3eedaff2dd2340291d99231a47" category="inline-link-macro">编辑此策略</block>
+  <block id="fa3b348cc9530bb5ac015d82e4e040e1" category="list-text">选择要用于新控制台代理的保护策略<block ref="76486ada0fcb46ea61a3a5b5982e0538" category="inline-link-macro-rx"></block>，并将保护策略与新控制台代理关联。</block>
+  <block id="c4c6fed90845c12d98d007fabe47faee" category="list-text">选择一个断开连接的 Kubernetes 集群，然后选择操作图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *修改集群* &gt; *管理代理*。</block>
+  <block id="015618238817546f4ea79a394e3efe47" category="list-text">从列表中选择一个新的控制台代理。</block>
+  <block id="3d792ac4e0cb4d4880f9939229e42792" category="list-text">查看代理信息，以确保新的控制台代理可以访问此集群上受保护应用程序使用的系统、备份目标和辅助目标。</block>
+  <block id="ee0747c1045ece83b008c6a99da98042" category="list-text">复制每个部分的命令行说明，并在集群上运行命令。</block>
+  <block id="3f4860c454843e96c570a7a7e08c6fc5" category="paragraph">这将重新创建 Kubernetes 密钥，将 Trident Protect 重定向到新的控制台代理，并重新加载设置。完成运行命令后，集群将使用新的控制台代理。</block>
+  <block id="507751f4ca984ea347c86a3935fe5f62" category="list-text">也可以在此策略中配置高级设置。</block>
+  <block id="5cac079a880c4090fb111d3d7dc5ac2f" category="list-text">完成后，选择 *Create*。</block>
+  <block id="a05902bc3173c2d2f35fa06f3fc2b475" category="list-text">编辑完成后，选择*完成*。</block>
+  <block id="83cb560a6d582d4380d5e101891dd816" category="list-text">在确认对话框中，键入策略名称以确认更改。</block>
+  <block id="28039d0c99b854c578ceb6eafae747f0" category="paragraph">保存更改会影响受此策略保护的所有应用程序。</block>
+  <block id="db4719fc900debc3b840d973bdd5da13" category="list-text">选择*完成*以确认。</block>
+  <block id="51f2e38f4d3b411fb5624e01d4b82ac9" category="list-text">*备份重试*：要在出现故障或中断时重试作业一定次数，请展开 *备份重试* 部分，并输入快照和备份作业重试的最大次数以及重试时间间隔。</block>
+  <block id="684680301d935dbb141d7b78ed7ac836" category="list-text">*部分成功*：启用此选项可允许备份操作成功完成，即使备份和恢复无法备份所有资源。</block>
+  <block id="3f0ce7e1f58d47249ae783e782637dbe" category="list-text">*VM configuration*：选择所需的备份一致性类型：</block>
+  <block id="159c9eb77d7689e3c9929376462e4e72" category="list-text">*崩溃一致性备份*：选择此选项可在拍摄快照或备份之前跳过虚拟机冻结。快照或备份将保持崩溃一致性，这意味着不会捕获快照或备份时的系统内存。</block>
+  <block id="e2b89730d92fc1a6537f9f1a6d260320" category="list-text">*VM 一致备份*：选择此选项可在拍摄快照或备份之前冻结 VM。这会捕获完整的 VM 状态（包括内存），以提供 VM 一致的保护。（可选）在*一次最大 VM 数*中，指定 Backup and Recovery 可以同时冻结和备份多少个 VM。如果启用*冻结所有 VM* 选项，Backup and Recovery 会同时冻结所有 VM，启动备份，然后在所有备份操作完成后解冻所有 VM。</block>
+  <block id="39fb697df37b9cc018d60de1a0ca0c05" category="list-text">NetApp Trident 25.06 至 26.06</block>
+  <block id="b1e4f0956582086a73a58e751c8e6b5d" category="list-text">NetApp Trident Protect 26.08 或更高版本（在发现期间安装在 Kubernetes 集群上）</block>
 </blocks>

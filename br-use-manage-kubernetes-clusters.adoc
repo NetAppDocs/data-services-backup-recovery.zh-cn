@@ -68,3 +68,44 @@ NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现
 
 
 
+
+
+
+[[reconnect-a-kubernetes-cluster-to-a-console-agent]]
+== 将 Kubernetes 集群重新连接到控制台代理
+
+如果控制台代理的 IP 地址发生变化（例如，重启后），则 Kubernetes 集群将失去与代理的连接，您需要重新连接。
+
+.步骤
+. 在NetApp Backup and Recovery中，选择 *Inventory* > *Clusters*。
+. 选择一个断开连接的 Kubernetes 集群，然后选择操作图标 image:../media/icon-action.png["操作选项"] > *修改集群* > *重新连接集群*。
+. 在"重新连接集群"对话框中，复制命令行指令并在集群上运行它们。
++
+命令完成后，您的集群将自动重新连接。
+
+. 选择*Close*。
+
+
+
+
+[[migrate-a-kubernetes-cluster-to-a-new-console-agent]]
+== 将 Kubernetes 集群迁移到新的 Console 代理
+
+如果 Console 代理被删除或不可用，请将使用它的任何集群迁移到新代理，以避免中断应用程序保护。
+
+.开始之前
+* https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["部署新的控制台代理。"^]
+* 选择要用于新控制台代理的保护策略link:br-use-policies-kubernetes-create.html#edit-a-policy["编辑此策略"^]，并将保护策略与新控制台代理关联。
+
+
+.步骤
+. 在NetApp Backup and Recovery中，选择 *Inventory* > *Clusters*。
+. 选择一个断开连接的 Kubernetes 集群，然后选择操作图标 image:../media/icon-action.png["操作选项"] > *修改集群* > *管理代理*。
+. 从列表中选择一个新的控制台代理。
+. 查看代理信息，以确保新的控制台代理可以访问此集群上受保护应用程序使用的系统、备份目标和辅助目标。
+. 复制每个部分的命令行说明，并在集群上运行命令。
++
+这将重新创建 Kubernetes 密钥，将 Trident Protect 重定向到新的控制台代理，并重新加载设置。完成运行命令后，集群将使用新的控制台代理。
+
+. 选择*Close*。
+
