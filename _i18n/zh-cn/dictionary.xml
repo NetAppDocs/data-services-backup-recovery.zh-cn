@@ -4860,7 +4860,6 @@
   <block id="a1f316919d6ee6dc4555dd8c215dd639" category="list-text">对于跨虚拟机还原（还原到其他 Linux 虚拟机），SSH 必须在目标虚拟机上运行。</block>
   <block id="0904d2f230fc0f0277b7da11a64a4fdb" category="list-text">不能在不同操作系统的来宾之间还原文件或文件夹（还原到不同的 VM 时，目标 OS 类型必须与源 OS 类型相同）。</block>
   <block id="dbbb5df4d99995be20065b232a8370ff" category="list-text">*目标存储*部分（仅在从对象存储还原时可见）：</block>
-  <block id="60dda7eb5d8d89865794c9953a4b00ab" category="list-text">*更改默认存储位置*：启用此选项可在源存储位置无法访问或已满时将对象存储备份还原到其他存储 VM。选择要使用的其他集群、存储 VM 或聚合。</block>
   <block id="b07f4d391521e556166d0e8a85f249d6" category="admonition">NetApp 强烈建议为用于 Kubernetes 工作负载的 Console 代理分配静态 IP 地址，以避免代理 IP 地址更改时出现问题。</block>
   <block id="1873f6028647ed72cee9a7bccf68c491" category="summary">使用 NetApp Backup and Recovery，通过浏览和还原功能还原 ONTAP 数据。</block>
   <block id="9b0b495cd3a28a2977dbab61bc1cbce8" category="summary">您可以使用 Search and Restore 从 ONTAP 备份文件中恢复卷、文件夹或文件。</block>
@@ -5180,7 +5179,6 @@
   <block id="f21c672ce008bffc75e9cebaa985c8b8" category="paragraph">此时将显示打开的虚拟磁盘装入会话列表。</block>
   <block id="da51d3c21777acf76b87932de6839d64" category="list-text">（可选）要使用会话将文件和文件夹还原到来宾 VM，请打开会话的操作菜单 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>，然后选择*还原文件和文件夹*。</block>
   <block id="57c9526981addf2ea70c6ad409673cb5" category="list-text">（可选）要删除会话，请打开会话的"操作"菜单 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>，然后选择 *Delete*。</block>
-  <block id="970e7dbe358429eacf37bb0e37943138" category="list-text">从对象存储备份还原（仅恢复到原始位置）</block>
   <block id="4b59b9c80f0f0e40294e53eb75b4e004" category="list-text">还原到原始位置（从主存储、辅助存储和对象存储）</block>
   <block id="bff6f5877ada2718589866425ae83e38" category="doc">在 NetApp Backup and Recovery 中创建和管理 Hyper-V 备份策略</block>
   <block id="7c54de5e880bd010125642ffb949ccad" category="paragraph">在 NetApp Backup and Recovery 中，创建自己的 Hyper-V 备份策略，以管理备份频率、备份执行时间以及保留的备份文件数。</block>
@@ -5816,4 +5814,22 @@
   <block id="e925e590a02502efcacb9c27366f2977" category="list-text">创建和修改备份策略，包括数据库、虚拟机和 Kubernetes 工作负载的应用程序一致性备份策略。</block>
   <block id="bd0fc1d90d95f8259fbb2a77c47166c8" category="list-text">使用新的 Backup and Recovery 功能和增强功能。</block>
   <block id="f724a122832f4cd3fdfc151421f7e241" category="list-text">继续获得 NetApp 技术支持。</block>
+  <block id="d649bc1632422c59f70f207f44b9bd46" category="paragraph">在此版本中，Hyper-V 工作负载引入了以下增强功能：</block>
+  <block id="f24ced363c199d867c90ec2cb7734252" category="paragraph">*将对象存储备份还原到备用位置*：您现在可以将 Hyper-V 虚拟机、文件和文件夹从对象存储还原到备用存储位置。</block>
+  <block id="9836134eb11f1353834ea33101d25681" category="inline-link">了解如何使用 NetApp Backup and Recovery 保护 Hyper-V 工作负载</block>
+  <block id="02b4e2b0b1ffdd4b0919e2e3430f47a2" category="paragraph">有关保护 Hyper-V 工作负载的详细信息，请参阅<block ref="ff9e4811de6c06d1343d50a5a2fb4ef4" category="inline-link-rx"></block>。</block>
+  <block id="d7a71b14f458c01c992ae6ab1d9419fb" category="list-text">*Trident Protect 26.08*：此版本包括 Trident Protect 26.08。</block>
+  <block id="a246bba4bc1bf6be5dbc5f0eef6fa916" category="list-text">*备份重试*：您现在可以启用备份重试，并将重试次数和重试间隔配置为 Kubernetes 保护策略中的高级设置。</block>
+  <block id="af4a914ceb04d24e26988f7034d17a6a" category="list-text">*部分备份成功*：您现在可以在 Kubernetes 保护策略中配置高级设置，以便在个别资源出现故障时继续备份，从而允许备份作业以部分成功的状态完成。即使某些资源在备份操作期间失败，您也可以还原已备份的资源。</block>
+  <block id="51d0bd2fc2cb031a5bd97ec4521df850" category="list-text">*崩溃一致性和虚拟机一致性备份*：Backup and Recovery for NetApp Console 服务现在支持配置保护策略，以创建崩溃一致性或虚拟机一致性备份或快照。您还可以自定义在保护操作期间执行虚拟机冻结的方式。</block>
+  <block id="f1aeeb7adfac5302d8957879854e8855" category="list-text">*Reconnect Kubernetes cluster upon Console agent IP change*：Backup and Recovery for NetApp Console 服务现在支持在代理的 IP 地址发生变化时，将集群重新连接到其 Console 代理。</block>
+  <block id="137aac5acf6a89b5f2b8d01617331ec5" category="list-text">*将集群迁移到新的 Console 代理*：Backup and Recovery for NetApp Console 服务现在支持在原始代理失败或被删除时将集群迁移到新的 Console 代理，从而确保应用保护不中断。</block>
+  <block id="5bac8342d3d15811fd4569a62898855c" category="inline-link">了解如何通过 NetApp Backup and Recovery 保护 Kubernetes 工作负载</block>
+  <block id="9768ac88d7eeb5d6d2192e590de89bb4" category="paragraph">要了解有关保护 Kubernetes 工作负载的详细信息，请参阅<block ref="1288e5e7d4fc4b4cb3f5e18b91f79147" category="inline-link-rx"></block>。</block>
+  <block id="c85cd7cc7711f70f8bc51d35495063e2" category="section-title">Oracle Database 工作负载增强</block>
+  <block id="26d43fe933dfc83c3004371ec611ca0f" category="list-text">*Pluggable Database (PDB) restore*：您现在可以还原单个可插拔数据库 (PDB) 和 PDB 表空间，包括时间点恢复。</block>
+  <block id="ba1d750ea9570e1e14902f85cdd21fbd" category="list-text">*Pluggable Database (PDB) clone*：您现在可以将单个 PDB 克隆到现有的目标容器数据库 (CDB) 中，并且可以选择在克隆完整的容器数据库时排除 PDB。</block>
+  <block id="c7b95907073ba49194dd07ae01b56f96" category="list-text">在*目标存储*部分（仅在从对象存储还原时可见）：</block>
+  <block id="f771ab6fc3300e0b07bde061e3f606f7" category="list-text">*更改默认存储位置*：如果源存储位置无法访问或已满，则启用此选项可将对象存储备份还原到其他位置。选择其他要使用的集群、Storage VM 或聚合。</block>
+  <block id="7c3780c8bbc09e634d77ec9249acfb5c" category="section-title">2026年8月17日</block>
 </blocks>
