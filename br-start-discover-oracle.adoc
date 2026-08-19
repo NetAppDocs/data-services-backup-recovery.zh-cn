@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-oracle.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle 
-summary: NetApp Backup and Recovery需要首先发现工作负载，以便您保护它们。 
+summary: NetApp Backup and Recovery 必须首先发现工作负载，然后才能保护它们。 
 ---
 = 在 NetApp Backup and Recovery 中发现 Oracle 数据库工作负载
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: NetApp Backup and Recovery需要首先发现工作负载，以便您保
 
 
 [role="lead"]
-发现 Oracle 数据库使 NetApp Backup and Recovery 能够通过创建和恢复备份和快照来保护它们。
+在 NetApp Backup and Recovery 中发现 Oracle 数据库工作负载，以便使用备份和快照保护它们。
 
-*所需的控制台角色* 备份和恢复超级管理员。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*必需的 NetApp Console 角色*备份和恢复超级管理员。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 
 
@@ -130,10 +130,10 @@ kubectl -n kube-system rollout restart deploy/rke2-coredns-rke2-coredns
 [[add-an-oracle-database-host-and-discover-resources]]
 == 添加 Oracle 数据库主机并发现资源
 
-添加 Oracle 主机信息并让NetApp Backup and Recovery发现工作负载。在每个控制台代理中，选择您想要发现工作负载的系统。
+添加 Oracle 数据库主机信息，让 NetApp Backup and Recovery 发现工作负载。对于每个 Console 代理，选择要发现的系统。
 
 .步骤
-. 从NetApp Console菜单中，选择“保护”>“备份和恢复”。
+. 在 NetApp Console 菜单中，选择*保护* > *备份和恢复*。
 . 在“工作负载”下，选择“Oracle”磁贴。
 . 选择*发现资源*。
 . 为 *Workload type* 字段选择 *Oracle*。
@@ -145,10 +145,10 @@ kubectl -n kube-system rollout restart deploy/rke2-coredns-rke2-coredns
 .. 选择*完成*。
 
 
-. *主机注册*：添加新的 Oracle 数据库主机。在 *主机 FQDN 或 IP 地址* 字段中，输入主机的 FQDN 或 IP 地址 - 对于集群数据库，您可以输入集群中任何节点的 FQDN 或 IP。然后提供凭据、Console 代理和端口号。
+. *主机注册*：添加新的 Oracle 数据库主机。在*主机 FQDN 或 IP 地址*字段中，输入主机的 FQDN 或 IP 地址。对于集群数据库，您可以输入集群中任何节点的 FQDN 或 IP 地址。然后提供凭据、Console 代理和端口号。
 . （可选）如果为非 root 用户选择凭据，请执行以下操作：
 +
-.. 有关如何将您选择的非根用户添加到 Oracle 数据库主机上的 sudoers 文件的说明，请选择*配置 sudoers*。
+.. 有关将所选非 root 用户添加到 Oracle 数据库主机上的 sudoers 文件的说明，请选择 *Configure sudoers*。
 .. 按照对话框中的说明进行操作，完成后启用复选框，然后选择 *Done*。
 
 
@@ -159,7 +159,7 @@ kubectl -n kube-system rollout restart deploy/rke2-coredns-rke2-coredns
 +
 [NOTE]
 ====
-Backup and Recovery 通过 SSH 连接到每个主机以自动安装插件。当以下任一情况适用时，启用*使用手动安装*：
+NetApp Backup and Recovery 通过 SSH 连接到每个主机以自动安装插件。当以下任一情况适用时，启用*使用手动安装*：
 
 *** 一个或多个主机未运行 SSH 服务。
 *** 任何主机都已具有 NetApp 插件（包括仅部分群集成员具有该插件）。
@@ -174,20 +174,20 @@ Backup and Recovery 通过 SSH 连接到每个主机以自动安装插件。当�
 . 选择*发现*。
 +
 
-TIP: 添加资源可能需要几分钟的时间。要查看进度，请在 Inventory 页面底部的状态对话框中选择 *Track progress*，或从左侧菜单中选择 *Monitoring*。
+TIP: 添加资源可能需要几分钟的时间。要查看进度，请在库存页面底部的状态对话框中选择 *Track progress*，或从左侧导航栏中选择 *Monitoring*。
 
 
 
 .结果
-Oracle 数据库工作负载显示在"清单"页面上的工作负载列表中。
+Oracle 数据库工作负载显示在"清单"页面的工作负载列表中。
 
 
 
 [[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == 继续访问NetApp Backup and Recovery仪表板
 
-. 从NetApp Console菜单中，选择 *保护* > *备份和恢复*。
-. 选择一个工作负载图块（例如，Microsoft SQL Server）。
+. 在 NetApp Console 菜单中，选择*保护* > *备份和恢复*。
+. 选择一个工作负载磁贴（例如，Oracle 数据库）。
 . 从备份和恢复菜单中，选择*仪表板*。
-. 审查数据保护的健康状况。处于危险中或受保护的工作负载的数量会根据新发现、受保护和备份的工作负载而增加。
+. 查看数据保护的运行状况。根据新发现、受保护和备份的工作负载，高风险或受保护工作负载的数量会增加。
 

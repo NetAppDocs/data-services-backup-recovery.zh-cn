@@ -14,7 +14,7 @@ summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。
 
 
 [role="lead"]
-使用NetApp Backup and Recovery从快照、复制到辅助存储的工作负载备份或存储在对象存储中的备份恢复 VMware 工作负载。
+使用 NetApp Backup and Recovery 从快照、辅助存储上的复制备份或对象存储中的备份恢复 VMware 工作负载。
 
 .从这些位置恢复
 您可以从不同的起始位置恢复工作负载：
@@ -39,8 +39,8 @@ TIP: 您可能需要向云提供商支付额外费用才能访问备份文件。
 
 
 
-[[how-restoring-workloads-works]]
-== 恢复工作负载的工作原理
+[[how-vmware-workload-restore-works]]
+== VMware 工作负载恢复的工作原理
 
 恢复工作负载时，会发生以下情况：
 
@@ -57,7 +57,7 @@ image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的�
 [[restore-workload-data-from-the-restore-option-search-restore]]
 == 从恢复选项恢复工作负载数据（搜索和恢复）
 
-使用恢复选项恢复 VMware 工作负载。您可以按名称或使用过滤器来搜索快照。
+使用还原选项还原 VMware 工作负载。您可以按名称或使用过滤器搜索快照。
 
 *必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复还原管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
@@ -102,7 +102,7 @@ image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的�
 ====
 .恢复到原始位置
 --
-恢复到原始位置时，您无法更改目标 vCenter、ESXi 主机、数据存储或虚拟机的名称。恢复操作会覆盖原始虚拟机。
+恢复到原始位置时，无法更改目标 vCenter、ESXi 主机、数据存储区或 VM 的名称。还原操作将覆盖原始 VM。
 
 . 选择“原始位置”窗格。
 . 从下列选项中进行选择：
@@ -137,7 +137,7 @@ image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的�
 *** *ESXi 主机*：选择要将快照还原到的主机。
 *** *网络*：选择要将快照还原到的网络。
 *** *数据存储*：从下拉列表中，选择要将快照还原到的数据存储的名称。
-*** *虚拟机名称*：输入要将快照还原到的虚拟机的名称。如果名称与数据存储中已存在的虚拟机匹配，备份和恢复功能会通过附加当前时间戳来使名称唯一。
+*** *虚拟机名称*：输入要恢复快照的虚拟机的名称。如果名称与数据存储区中已存在的虚拟机匹配，则 NetApp Backup and Recovery 会通过附加当前时间戳使名称唯一。
 
 
 ** *目标存储*部分（仅在从对象存储还原时可见）：

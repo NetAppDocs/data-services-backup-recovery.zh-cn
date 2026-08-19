@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery使您能够发现和管理 Kubernetes 集群
 
 
 [role="lead"]
-NetApp Backup and Recovery使您能够发现和管理 Kubernetes 集群，以便您可以保护集群托管的资源。
+发现和管理 Kubernetes 集群以保护其托管资源。
 
 .所需的NetApp Console角色
 组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
@@ -31,9 +31,9 @@ NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现
 
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory* > *Clusters*。
-. 在集群列表中，选择要编辑的集群并选择相关的操作菜单。
+. 在集群列表中，选择要编辑的集群，然后选择关联的"操作"菜单。
 . 选择*编辑集群*。
-. 对集群名称进行任何必要的更改。集群名称需要与您在发现过程中使用 Helm 命令的名称相匹配。
+. 对集群名称进行任何必要的更改。集群名称必须与您在发现过程中使用 Helm 命令时所用的名称一致。
 . 选择*完成*。
 
 
@@ -46,7 +46,7 @@ NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现
 
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory* > *Clusters*。
-. 在集群列表中，选择要编辑的集群并选择相关的操作菜单。
+. 在群集列表中，选择要删除的群集，然后选择关联的"操作"菜单。
 . 选择*删除集群*。
 . 查看确认对话框中的信息，然后选择*删除*。
 
@@ -74,12 +74,12 @@ NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现
 [[reconnect-a-kubernetes-cluster-to-a-console-agent]]
 == 将 Kubernetes 集群重新连接到控制台代理
 
-如果控制台代理的 IP 地址发生变化（例如，重启后），则 Kubernetes 集群将失去与代理的连接，您需要重新连接。
+如果 Console 代理的 IP 地址发生变化（例如，重新启动后），Kubernetes 集群将失去与代理的连接，您需要重新连接。
 
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory* > *Clusters*。
 . 选择一个断开连接的 Kubernetes 集群，然后选择操作图标 image:../media/icon-action.png["操作选项"] > *修改集群* > *重新连接集群*。
-. 在"重新连接集群"对话框中，复制命令行指令并在集群上运行它们。
+. 在"重新连接集群"对话框中，复制命令行说明并在集群上运行它们。
 +
 命令完成后，您的集群将自动重新连接。
 
@@ -95,7 +95,7 @@ NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现
 
 .开始之前
 * https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["部署新的控制台代理。"^]
-* 选择要用于新控制台代理的保护策略link:br-use-policies-kubernetes-create.html#edit-a-policy["编辑此策略"^]，并将保护策略与新控制台代理关联。
+* 选择要用于新 Console 代理的保护策略link:br-use-policies-kubernetes-create.html#edit-a-policy["编辑此策略"^]，并将保护策略与新 Console 代理关联。
 
 
 .步骤

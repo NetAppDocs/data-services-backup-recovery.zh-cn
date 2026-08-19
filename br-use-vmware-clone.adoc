@@ -14,7 +14,7 @@ summary: 使用 NetApp Backup and Recovery 克隆您的 VMware 虚拟机工作�
 
 
 [role="lead"]
-使用 NetApp Backup and Recovery 从主快照或二级快照创建 VMware 虚拟机的可写克隆。使用虚拟机克隆，您可以创建和管理虚拟机以进行测试、集成和培训，而不会影响生产数据。
+使用 NetApp Backup and Recovery 从主快照或二级快照创建 VMware 虚拟机的可写克隆。您可以创建和管理克隆的虚拟机，以进行测试、集成和培训，而不会影响生产数据。
 
 *所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 

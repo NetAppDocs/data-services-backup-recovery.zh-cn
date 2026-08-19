@@ -14,11 +14,9 @@ summary: NetApp Backup and Recovery中的SnapMirror到云重新同步功能简�
 
 
 [role="lead"]
-NetApp Backup and Recovery中的SnapMirror到云重新同步功能简化了NetApp环境中卷迁移期间的数据保护和连续性。当使用SnapMirror逻辑复制 (LRSE) 将卷从一个本地NetApp部署迁移到另一个部署，或迁移到基于云的解决方案（例如Cloud Volumes ONTAP）时， SnapMirror到 Cloud Resync 可确保现有的云备份保持完整并可正常运行。
+在使用 SnapMirror 逻辑复制 (LRSE) 迁移卷后，在 NetApp Backup and Recovery 中使用 SnapMirror to Cloud Resync，以保持现有云备份可用。此功能允许备份在无需重新基线的情况下继续进行，并从 ONTAP 9.16.1 开始提供。
 
-此功能无需重新建立基线，即可在迁移后继续备份。此功能在工作负载迁移场景中很有价值，支持 FlexVols 和 FlexGroups，并且从ONTAP版本 9.16.1 开始可用。
-
-SnapMirror到 Cloud Resync 可跨环境保持备份连续性，从而更容易在混合云和多云环境中管理数据。
+SnapMirror to Cloud Resync 支持 FlexVol 和 FlexGroup 迁移，并帮助您在混合云和多云环境中保持备份连续性。
 
 
 NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
@@ -46,7 +44,7 @@ NOTE: 目前不支持使用 SVM-Migrate、SVM-DR 或 Head Swap 方法迁移后�
 
 以下是一个例子：
 
-假设您有一个名为 Vol1a 的本地卷。该卷有三个快照：S1、S2 和 S3。这些快照是还原点。  Vol1 使用SnapMirror to Cloud (SM-C) 备份到云端，但对象存储中只有 S1 和 S2。
+假设您有一个名为 Vol1a 的本地卷。此卷有三个快照：S1、S2 和 S3。这些快照是还原点。Vol1a 使用 SnapMirror to Cloud (SM-C) 备份到云，但只有 S1 和 S2 在对象存储中。
 
 现在，您想要将 Vol1 迁移到另一个ONTAP集群。为此，您需要创建与名为 Vol1b 的新云卷的SnapMirror逻辑复制 (LRSE) 关系。这会将所有三个快照（S1、S2 和 S3）从 Vol1a 传输到 Vol1b。
 
@@ -168,7 +166,7 @@ NOTE: 应该使用卷实例 UUID，而不是卷 ID。卷实例 UUID 是一个唯
 NetApp Backup and Recovery 验证所选用于重新同步的每个卷是否与对象存储共享一个通用快照。具体来说，存储在对象存储中的最新快照也必须存在于新克隆卷的本地快照中。此检查确保卷已准备好进行 SnapMirror 到云端重新同步操作。
 
 . 查看验证结果，包括新的源卷名称和每个卷的重新同步状态。
-. 检查卷的资格。系统检查卷是否符合重新同步的资格。如果卷不合格，则表示未建立通用快照条件。
+. 检查卷的资格。系统检查卷是否符合重新同步的资格。如果卷不符合条件，则表示不符合通用快照条件。
 +
 
 IMPORTANT: 为了确保卷仍然符合SnapMirror到 Cloud Resync 操作的条件，请在迁移前阶段删除任何SnapMirror关系之前，为每个卷拍摄最终快照。这保留了数据的最新状态。

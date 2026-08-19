@@ -14,7 +14,7 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 
 
 [role="lead"]
-此处列出了与此版本不兼容或不能很好地兼容的平台、设备或功能。仔细阅读这些限制。
+查看 NetApp Backup and Recovery 中 Hyper-V 工作负载的当前限制和不支持的操作。
 
 
 
@@ -26,6 +26,6 @@ NetApp Backup and Recovery 中的 Hyper-V 工作负载不支持以下操作：
 * 在适用于 NetApp Console 本地部署的 Backup and Recovery 预览版本中，仅 ONTAP S3 和 StorageGRID 目标支持备份到对象存储。此预览版本不支持备份归档。
 * 使用 Microsoft Windows Server 2025 时，不支持保护存储在 SAN 存储中的第 2 代虚拟机。
 * 使用来自多个 Hyper-V 主机的虚拟机创建资源组
-* 跨磁盘（跨多个 CIFS 共享）
+* 跨多个 CIFS 共享使用生成磁盘
 * 即使 Hyper-V 中的“处理器兼容性”设置正确，也无法在 CPU 厂商不同的系统之间（例如 Intel 和 AMD 或反之）还原虚拟机或虚拟机数据。此设置仅支持同一厂商不同代产品之间的兼容性（例如，Intel 到 Intel 或 AMD 到 AMD）。
 

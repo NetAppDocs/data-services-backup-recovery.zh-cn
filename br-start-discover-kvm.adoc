@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery需要首先发现工作负载，以便您保
 
 
 [role="lead"]
-NetApp Backup and Recovery需要先发现 KVM 主机和虚拟机，然后才能对其进行保护。必须先使用 Apache CloudStack 等管理平台管理您的 KVM 主机和虚拟机，然后才能将其添加到备份和恢复中。
+在 NetApp Backup and Recovery 中发现 KVM 主机和虚拟机，以便您可以使用保护策略来保护它们。在发现之前，您的 KVM 环境必须由 Apache CloudStack 等管理平台进行管理。
 
 *所需的控制台角色* 备份和恢复超级管理员。了解详情link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -26,10 +26,10 @@ NetApp Backup and Recovery需要先发现 KVM 主机和虚拟机，然后才能�
 添加管理平台和 KVM 主机信息，让NetApp Backup and Recovery发现工作负载。
 
 .步骤
-. 从NetApp Console菜单中，选择“保护”>“备份和恢复”。
+. 从NetApp Console菜单中，选择 *保护* > *备份和恢复*。
 . 在“工作负载”下，选择“KVM”磁贴。
 +
-如果您是第一次登录备份和恢复，并且在控制台中有一个系统但没有发现任何资源，则会显示“欢迎使用新的NetApp备份和恢复”页面，其中包含“发现资源”选项。
+如果这是您第一次登录 NetApp Backup and Recovery，并且您已在 Console 中拥有一个系统，但没有已发现的资源，则会显示"Welcome to the new NetApp Backup and Recovery"页面，其中包含 *Discover resources* 选项。
 
 . 选择*发现资源*。
 . 输入以下信息：
@@ -39,7 +39,7 @@ NetApp Backup and Recovery需要先发现 KVM 主机和虚拟机，然后才能�
 +
 ... 输入以下信息：
 +
-**** *管理平台 IP 地址或 FQDN*：输入管理平台的 IP 地址或完全限定域名。
+**** *管理平台 IP 地址或 FQDN*：输入管理平台的 IP 地址或 FQDN。
 **** *API密钥*：输入用于验证API请求的API密钥。
 **** *密钥*：输入用于验证 API 请求的密钥。
 **** *端口*：输入备份和恢复与管理平台之间通信所用的端口。
@@ -77,7 +77,7 @@ KVM 工作负载显示在“库存”页面的工作负载列表中。
 
 .步骤
 . 从NetApp Console菜单中，选择 *保护* > *备份和恢复*。
-. 选择一个工作负载图块（例如，Microsoft SQL Server）。
+. 选择 KVM 工作负载图块。
 . 从备份和恢复菜单中，选择*仪表板*。
 . 审查数据保护的健康状况。处于危险中或受保护的工作负载的数量会根据新发现、受保护和备份的工作负载而增加。
 

@@ -14,7 +14,7 @@ summary: 通过验证操作环境、控制台代理和控制台帐户的准备�
 
 
 [role="lead"]
-如果您要将资源从 Microsoft SQL Server 的SnapCenter插件服务导入NetApp Backup and Recovery，则需要配置更多项目。
+在将资源从 SnapCenter Plug-in for Microsoft SQL Server 导入 NetApp Backup and Recovery 之前，请确保您的环境满足这些附加要求。
 
 
 
@@ -25,10 +25,10 @@ summary: 通过验证操作环境、控制台代理和控制台帐户的准备�
 
 
 
-[[ensure-host-requirements-to-install-the-snapcenter-plug-in]]
-== 确保安装SnapCenter插件的主机要求
+[[ensure-host-requirements-for-the-snapcenter-plug-in]]
+== 确保满足 SnapCenter 插件的主机要求
 
-要从适用于 Microsoft SQL Server 的SnapCenter插件导入资源，请确保满足安装适用于 Microsoft SQL Server 的SnapCenter插件的主机要求。
+要从 SnapCenter Plug-in for Microsoft SQL Server 导入资源，请确保满足安装 SnapCenter Plug-in for Microsoft SQL Server 的主机要求。
 
 专门检查SnapCenter要求link:concept-start-prereq.html["NetApp Backup and Recovery前提条件"]。
 
@@ -97,10 +97,10 @@ summary: 通过验证操作环境、控制台代理和控制台帐户的准备�
 . 支持以下值。对于此场景，将值设置为 `1`：
 +
 ** `0`（默认）：启用 UAC 远程限制。本地帐户在远程访问时已过滤令牌。
-** `1`：UAC 远程限制已禁用。本地帐户绕过令牌过滤并在远程访问时拥有完全的管理权限。
+** `1`：已禁用 UAC 远程限制。本地帐户绕过令牌筛选，在远程访问时具有完全管理权限。
 
 
-. 单击“*确定*”。
+. 选择 *OK*。
 . 关闭注册表编辑器。
 . 重新启动SnapCenter Windows 主机。
 
@@ -127,7 +127,7 @@ CAUTION: 以提升的权限运行 PowerShell 命令可能会影响系统设置�
 .步骤
 . 在SnapCenter Windows 主机上打开具有管理权限的 PowerShell 窗口：
 +
-.. 单击“*开始*”菜单。
+.. 选择*开始*菜单。
 .. 搜索 *PowerShell 7* 或 *Windows Powershell*。
 .. 右键单击该选项并选择*以管理员身份运行*。
 
@@ -143,7 +143,7 @@ TIP: Windows 7 及更高版本默认包含 PowerShell。
 ----
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy" -Value 1 -Type DWord
 ----
-. 验证当前值是否设置为“1” `LocalAccountTokenFilterPolicy``通过运行：
+. 运行以下命令，验证当前值是否在 `LocalAccountTokenFilterPolicy`中设置为"1"：
 +
 [listing]
 ----

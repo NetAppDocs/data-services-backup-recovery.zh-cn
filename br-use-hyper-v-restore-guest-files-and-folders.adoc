@@ -4,7 +4,7 @@ permalink: br-use-hyper-v-restore-guest-files-and-folders.html
 keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
 summary: 您可以将一个或多个文件或文件夹从 Hyper-V VM 快照还原到 Windows 来宾 VM。 
 ---
-= 使用 NetApp Backup and Recovery 从 Hyper-V VM 备份还原文件和文件夹
+= 使用 NetApp Backup and Recovery 还原 Hyper-V 来宾文件和文件夹
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以将一个或多个文件或文件夹从 Hyper-V VM 快照还�
 
 
 [role="lead"]
-将文件和文件夹从主存储或二级存储上的 Hyper-V VM 备份还原到 Windows 来宾 VM。
+将文件和文件夹从主存储或二级存储上的 Hyper-V VM 备份还原到原始 Windows 来宾 VM。
 
 
 
@@ -47,7 +47,7 @@ summary: 您可以将一个或多个文件或文件夹从 Hyper-V VM 快照还�
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *恢复*。
 . 从页面右上角的工作负载列表中选择 *Hyper-V*。
-. 在虚拟机列表中，为包含要还原的文件或文件夹的虚拟机选择 *Restore* 操作。
+. 在虚拟机列表中，为包含要还原的文件或文件夹的虚拟机选择*还原*操作。
 . 选择 *Files and folders*。
 . 在*从快照还原*页面上，执行以下操作：
 +
@@ -59,14 +59,14 @@ summary: 您可以将一个或多个文件或文件夹从 Hyper-V VM 快照还�
 . 在 _Guest virtual machine details_ 页面上，执行以下操作：
 +
 .. 在 *Guest virtual machine details* 部分，通过选择 *Original virtual machine* 将虚拟磁盘附加到原始 VM。
-.. （可选）在 *来宾虚拟机凭据* 部分，如果您尚未存储源虚拟磁盘和目标 VM 的凭据，请选择 *添加凭据*，输入 Windows 凭据信息，然后选择 *添加*。
+.. （可选）在 *Guest virtual machine credentials* 部分中，如果尚未存储源虚拟机和目标虚拟机的凭据，请选择 *Add credentials*，输入 Windows 凭据信息，然后选择 *Add*。
 .. 从列表中选择要使用的虚拟机凭据。
 .. 选择“下一步”。
 +
 NetApp Backup and Recovery 将虚拟磁盘连接到原始虚拟机，并显示所有文件和文件夹，包括隐藏的文件和文件夹。它为每个分区（包括系统保留的分区）分配一个驱动器号。
 
 +
-您可以使用文件浏览器窗格附近的放大镜（搜索）图标来搜索文件和文件夹。不支持模式匹配，但您可以根据名称或扩展名的子集搜索文件或文件夹。
+您可以使用文件浏览器窗格附近的搜索图标来搜索文件和文件夹。不支持模式匹配，但您可以根据名称或扩展名的子集搜索文件或文件夹。
 
 
 
@@ -81,7 +81,7 @@ NetApp Backup and Recovery 将虚拟磁盘连接到原始虚拟机，并显示�
 
 . 在 _Guest file restore - destination_ 页面上，执行以下操作：
 +
-.. 在"还原到路径"部分，输入要还原选定文件的目标 VM 和文件系统位置的 UNC 路径：
+.. 在 *Restore to path* 部分中，输入要还原选定文件的目标 VM 和文件系统位置的 UNC 路径：
 +
 *** IPv4 路径示例： `\\10.60.136.65\c$`
 *** IPv6 路径示例： `\\fd20-8b1e-b255-832e--61.ipv6-literal.net\C\restore`
@@ -92,7 +92,7 @@ NetApp Backup and Recovery 将虚拟磁盘连接到原始虚拟机，并显示�
 +
 如果存在同名文件，您可以选择覆盖或跳过它们。
 
-. 在"Post-restore-options"部分，您可以选择在还原完成后通过启用 *Disconnect guest session after the restore completes* 设置来断开来宾会话。这会分离虚拟磁盘并卸载数据存储库。这意味着在执行任何其他文件和文件夹还原操作之前，您需要重新连接来宾会话。
+. 在*还原后选项*部分，您可以通过启用*还原完成后断开访客会话*设置，选择在还原完成后断开访客会话。这会分离虚拟磁盘并卸载数据存储库。这意味着在执行任何其他文件和文件夹还原操作之前，您需要重新连接访客会话。
 . 选择*恢复*。
 +
 您可以在“作业监控”页面上查看恢复进度。
@@ -111,7 +111,7 @@ NetApp Backup and Recovery 将虚拟磁盘连接到原始虚拟机，并显示�
 . 从页面右上角的工作负载列表中选择 *Hyper-V*。
 . 选择 *Live disk mount sessions* 菜单。
 +
-此时将显示打开的虚拟磁盘装入会话列表。
+此时将显示打开的虚拟磁盘装载会话列表。
 
 . （可选）要使用会话将文件和文件夹还原到来宾 VM，请打开会话的操作菜单 image:../media/icon-action.png["操作选项"]，然后选择*还原文件和文件夹*。
 . （可选）要删除会话，请打开会话的"操作"菜单 image:../media/icon-action.png["操作选项"]，然后选择 *Delete*。

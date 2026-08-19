@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-start-setup.html 
 keywords: backup, back up, restore, recovery, aws, azure 
-summary: 在使用NetApp Backup and Recovery之前，请执行几个步骤来设置备份目标。 
+summary: 准备异地位置（如 StorageGRID、AWS 或 Azure），并配置所需的权限，以便将其用作备份目标。 
 ---
-= 在使用NetApp Backup and Recovery之前设置备份目标
+= 设置备份目标
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: 在使用NetApp Backup and Recovery之前，请执行几个步骤来设
 
 
 [role="lead"]
-在使用NetApp Backup and Recovery之前，请执行几个步骤来设置备份目标。
+准备异地位置（如 StorageGRID、AWS 或 Azure），并配置所需的权限，以便将其用作备份目标。
 
 在开始之前，请查看link:concept-start-prereq.html["前提条件"]以确保您的环境已准备就绪。
 
@@ -25,32 +25,32 @@ summary: 在使用NetApp Backup and Recovery之前，请执行几个步骤来设
 
 * NetAppStorageGRID。
 +
-参考 https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover-storagegrid.html["了解StorageGRID"^]。
+请参阅 https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover-storagegrid.html["了解StorageGRID"^]。
 
 +
-参考 https://docs.netapp.com/us-en/storagegrid/index.html["StorageGRID文档"^]有关StorageGRID的详细信息。
+有关 StorageGRID 的详细信息，请参见 https://docs.netapp.com/us-en/storagegrid/index.html["StorageGRID文档"^]。
 
-* 亚马逊网络服务。参考 https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Amazon S3 文档"^]。
+* Amazon Web Services。请参阅 https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Amazon S3 文档"^]。
 +
 执行以下操作以准备将 AWS 作为备份目标：
 
 +
 ** 在 AWS 中设置一个帐户。
 ** 在 AWS 中配置 S3 权限，列于下一部分。
-** 有关在控制台中管理 AWS 存储的详细信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/task-viewing-amazon-s3.html["管理您的 Amazon S3 存储桶"^]。
+** 有关在控制台中管理 AWS 存储的详细信息，请参见 https://docs.netapp.com/us-en/console-setup-admin/task-viewing-amazon-s3.html["管理您的 Amazon S3 存储桶"^]。
 
 
 * 微软 Azure。
 +
-** 参考 https://docs.netapp.com/us-en/storage-management-azure-netapp-files/index.html["Azure NetApp Files文档"^]。
+** 请参阅 https://docs.netapp.com/us-en/storage-management-blob-storage/index.html["Azure Blob storage 文档"^]。
 ** 在 Azure 中设置一个帐户。
 ** 配置 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions.html["Azure 权限"^]在 Azure 中。
-** 有关在控制台中管理 Azure 存储的详细信息，请参阅 https://docs.netapp.com/us-en/storage-management-blob-storage/task-view-azure-blob-storage.html["管理 Azure 存储帐户"^]。
+** 有关在控制台中管理 Azure 存储的详细信息，请参见 https://docs.netapp.com/us-en/storage-management-blob-storage/task-view-azure-blob-storage.html["管理 Azure 存储帐户"^]。
 
 
 
 
-在备份目标本身中配置选项后，您稍后会将其配置为NetApp Backup and Recovery中的备份目标。有关如何在NetApp Backup and Recovery中配置备份目标的详细信息，请参阅link:br-start-discover-backup-targets.html["发现备份目标"]。
+在备份目标本身中配置选项后，您稍后将在 NetApp Backup and Recovery 中将其配置为备份目标。有关如何在 NetApp Backup and Recovery 中配置备份目标的详细信息，请参见 link:br-start-discover-backup-targets.html["发现备份目标"]。
 
 
 
@@ -71,7 +71,7 @@ NOTE: 在 AWS 中国区域创建备份时，您需要将 IAM 策略中所有_Res
 
 . 当您激活该服务时，备份向导将提示您输入访问密钥和密钥。这些凭证被传递到ONTAP集群，以便ONTAP可以将数据备份和恢复到 S3 存储桶。为此，您需要创建具有以下权限的 IAM 用户。
 +
-请参阅 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS 文档：创建角色以将权限委托给 IAM 用户"^]。
+请参见 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS 文档：创建角色以将权限委托给 IAM 用户"^]。
 
 +
 [%collapsible]

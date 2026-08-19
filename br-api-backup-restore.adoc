@@ -4,7 +4,7 @@ permalink: br-api-backup-restore.html
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis 
 summary: 可通过 Web UI 使用的NetApp Backup and Recovery功能也可通过 RESTful API 使用。 
 ---
-= 使用NetApp Backup and RecoveryREST API 实现自动化
+= 使用 REST API 自动执行 NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,20 +14,20 @@ summary: 可通过 Web UI 使用的NetApp Backup and Recovery功能也可通过 
 
 
 [role="lead"]
-可通过 Web UI 使用的NetApp Backup and Recovery功能也可通过备份和恢复 REST API 使用。
+使用 NetApp Backup and Recovery REST API 自动执行 Web UI 中可用的备份和还原任务。
 
-NetApp Backup and Recovery中定义了十类端点：
+NetApp Backup and Recovery 定义了十个端点类别：
 
-* `backup`- 管理云和本地资源的备份操作，并检索备份数据的详细信息
-* `catalog`- 根据查询管理文件的索引目录搜索（搜索和恢复）
+* `backup` - 管理云和本地资源的备份操作，并检索备份数据详细信息
+* `catalog` - 根据查询管理对文件的索引目录搜索（搜索和还原）
 * `cloud`- 从NetApp Console检索有关各种云提供商资源的信息
-* `job`- 管理NetApp Console数据库上的作业详细信息条目
-* `license`- 从NetApp Console检索系统的许可证有效性
+* `job` - 管理 NetApp Console 数据库中的作业详细信息条目
+* `license` - 从 NetApp Console 检索系统许可证状态
 * `ransomware scan`- 对特定备份文件启动勒索软件扫描
 * `restore`- 使您能够执行卷、文件和文件夹级别的还原操作
 * `sfr`- 从备份文件中检索文件以进行单文件级恢复操作（浏览和恢复）
-* `storagegrid`- 检索有关StorageGRID服务器的详细信息，并使您能够发现StorageGRID服务器
-* `system`- 管理备份策略，并配置与系统关联的目标对象存储
+* `storagegrid` - 检索有关 StorageGRID 服务器的详细信息，并使您能够发现 StorageGRID 服务器
+* `system` - 管理备份策略并配置与系统关联的目标对象存储
 
 
 
@@ -42,17 +42,17 @@ NetApp Backup and Recovery中定义了十类端点：
 [[getting-started]]
 == 入门
 
-要开始使用NetApp Backup and RecoveryAPI，您需要获取用户令牌、 NetApp Console帐户 ID 和控制台代理 ID。
+要开始使用 NetApp Backup and Recovery API，请获取用户令牌、NetApp Console 帐户 ID 和 Console 代理 ID。
 
-进行 API 调用时，您将在授权标头中添加用户令牌，并在 x-agent-id 标头中添加控制台代理 ID。您应该在 API 中使用NetApp Console帐户 ID。
+进行 API 调用时，请在  `Authorization` 标头中包含用户令牌，并在  `x-agent-id` 标头中包含 Console 代理 ID。在 API 请求中包含 NetApp Console 帐户 ID。
 
 
-NOTE: 如果您使用服务帐户，则应该使用服务访问令牌而不是用户令牌。“client_id”的值（“Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC”）是固定值，无法更改。在这种情况下，请按照此处的说明进行操作： https://docs.netapp.com/us-en/console-automation/platform/create_service_token.html["创建服务访问令牌"^] 。
+NOTE: 如果使用服务帐户，请使用服务访问令牌而不是用户令牌。（ `client_id` (`Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC`）的值是固定的，无法更改。在此情况下，请按照以下说明操作： https://docs.netapp.com/us-en/console-automation/platform/create_service_token.html["创建服务访问令牌"^]。
 
 .步骤
 . 从 NetApp Console 网站获取用户令牌。
 +
-确保通过以下链接生成刷新令牌：https://services.cloud.netapp.com/refresh-token。刷新令牌是用于生成用户令牌的字母数字字符串。
+通过以下链接生成刷新令牌：https://services.cloud.netapp.com/refresh-token/。刷新令牌是用于生成用户令牌的字母数字字符串。
 
 +
 [source, shell]
@@ -67,7 +67,7 @@ curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/tok
 ----
 +
 
-NOTE: NetApp Console网站上的用户令牌有一个到期日期。API 响应包含一个“expires_in”字段，用于说明令牌何时过期。要刷新令牌，您需要再次调用此 API。
+NOTE: NetApp Console 网站的用户令牌过期。API 响应包括一个 `expires_in`字段，用于指示令牌何时过期。要刷新令牌，请再次调用此 API。
 
 . 获取您的NetApp Console帐户 ID。
 +
@@ -80,7 +80,7 @@ Header:
 -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR
 ----
 +
-此 API 将返回如下响应。您可以通过解析 *[0].[ accountPublicId]* 的输出来检索帐户 ID。
+此 API 返回如下所示的响应。从 *[0].[accountPublicId]* 检索帐户 ID。
 
 +
 [source, json]
@@ -96,7 +96,7 @@ Header:
   "userRole": "Role-1"
 }
 ----
-. 获取包含控制台代理 ID 的 x-agent-id。
+. 获取 `x-agent-id`标头值，其中包含 Console 代理 ID。
 +
 [source, console]
 ----
@@ -108,7 +108,7 @@ Header:
   -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5…………
 ----
 +
-您可以通过解析 *occm.[0].[agent].[agentId]* 的输出来从响应中检索代理 ID。
+通过解析 *occm.[0].[agent].[agentId]* 从响应中检索代理 ID。
 
 
 
@@ -117,7 +117,7 @@ Header:
 [[example-using-the-apis]]
 == 使用 API 的示例
 
-以下示例显示了在 Azure 云中的 East-US-2 区域中，在具有新策略的系统上激活NetApp Backup and Recovery 的API 调用，该策略设置了每日、每小时和每周标签，并将存档天数设置为 180 天。请注意，这仅启用系统上的备份，但不会备份任何卷。
+以下示例显示了使用新策略在系统上激活 NetApp Backup and Recovery 的 API 调用。该策略在 East US 2 Azure 区域具有每日、每小时和每周标签，并在 180 天后进行归档。此请求在系统上启用备份，但不会备份任何卷。
 
 .API 请求
 您会看到我们使用NetApp Console帐户 ID `account-DpTFcxN3` 、控制台代理 ID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`和用户令牌 `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g`在此命令中。
@@ -156,14 +156,14 @@ curl --location --request POST 'https://api.bluexp.netapp.com/account/account-Dp
     }
   }
 ----
-.响应是一个您可以监控的作业 ID：
+.响应包括可以监控的作业 ID：
 [source, json]
 ----
 {
  "job-id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a"
 }
 ----
-.监控响应：
+.监控作业状态：
 [source, shell]
 ----
 curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v1/job/1b34b6f6-8f43-40fb-9a52-485b0dfe893a' \
@@ -187,7 +187,7 @@ curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpT
   ]
 }
 ----
-.监视直到“状态”为“完成”：
+.监控，直至<code>状态</code>为<code>COMPLETED</code>：
 [source, json]
 ----
 {

@@ -14,7 +14,7 @@ summary: 已知限制标识了该产品的此版本不支持的功能，或者�
 
 
 [role="lead"]
-此处列出了与此版本不兼容或不能很好地兼容的平台、设备或功能。仔细阅读这些限制。
+在使用 NetApp Backup and Recovery 备份 ONTAP 卷之前，请查看这些限制。
 
 * NetApp Backup and Recovery可以将Cloud Volumes ONTAP备份到 AWS 中国区域（包括北京和宁夏）的对象存储；但是，您可能需要先手动修改身份和访问策略。
 +
@@ -35,9 +35,9 @@ summary: 已知限制标识了该产品的此版本不支持的功能，或者�
 [[replication-limitations-for-ontap-volumes]]
 == ONTAP卷的复制限制
 
-* 您一次只能选择一个FlexGroup卷进行复制。您需要为每个FlexGroup卷单独激活备份。
+* 您一次只能选择一个 FlexGroup 卷进行复制。您需要为每个 FlexGroup 卷分别激活备份。
 +
-FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相同的备份策略。
+FlexVol 卷没有这样的限制：您可以选择系统中的所有 FlexVol 卷并分配相同的备份策略。
 
 * 支持以下功能 https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"]，但在使用NetApp Backup and Recovery的复制功能时则不然：
 +
@@ -64,11 +64,11 @@ FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相
 * 当您创建或编辑备份策略但未向该策略分配任何卷时，保留的备份数量最多可以为 1018。将卷分配给策略后，您可以编辑该策略以创建最多 4000 个备份。
 * 备份数据保护 (DP) 卷时：
 +
-** 与SnapMirror标签的关系 `app_consistent`和 `all_source_snapshot`不会备份到云端。
-** 如果您在SnapMirror目标卷上创建快照的本地副本（无论使用何种SnapMirror标签），这些快照都不会作为备份移动到云端。此时，您需要为源 DP 卷创建一个带有所需标签的 Snapshot 策略，以便NetApp Backup and Recovery对其进行备份。
+** 具有 SnapMirror 标签 `app_consistent`和 `all_source_snapshot`的关系将不会备份到云。
+** 如果您在 SnapMirror 目标卷上创建 Snapshot 的本地副本（无论使用何种 SnapMirror 标签），这些 Snapshot 都不会作为备份移动到云中。您必须在源 DP 卷上创建具有所需标签的 Snapshot 策略，以便 NetApp Backup and Recovery 可以对其进行备份。
 
 
-* FlexGroup卷备份无法移动到档案存储。
+* FlexGroup 卷备份无法移动到归档存储。
 * 如果集群运行的是ONTAP 9.13.1 或更高版本， FlexGroup卷备份可以使用 DataLock 和勒索软件保护。
 * SVM-DR 卷备份受以下限制支持：
 +
@@ -79,14 +79,14 @@ FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相
 
 * MetroCluster支持：
 +
-** 当您使用ONTAP 9.12.1 GA 或更高版本时，连接到主系统时支持备份。整个备份配置被传输到辅助系统，以便切换后自动继续备份到云端。您不需要在辅助系统上设置备份（事实上，您被禁止这样做）。
+** 当您使用 ONTAP 9.12.1 GA 或更高版本时，连接到主系统时支持备份。整个备份配置将传输到辅助系统，以便在切换后自动继续备份到云。您无需在辅助系统上设置备份（实际上，系统会限制您执行此操作）。
 ** 当您使用ONTAP 9.12.0 及更早版本时，仅支持从ONTAP辅助系统进行备份。
 ** 从 ONTAP 9.18.1 开始，FlexGroup 卷备份在 MetroCluster 配置中受支持。
 
 
-* 数据保护卷不支持使用“*立即备份*”按钮进行临时卷备份。
+* 数据保护卷不支持使用*立即备份*按钮进行临时卷备份。
 * 不支持 SM-BC 配置。
-* ONTAP不支持从单个卷到多个对象存储的SnapMirror关系扇出；因此， NetApp Backup and Recovery不支持此配置。
+* ONTAP 不支持从单个卷到多个对象存储的 SnapMirror 关系扇出；因此，NetApp Backup and Recovery 不支持此配置。
 * 目前，Amazon S3、Google Cloud Platform (GCP)、Azure 和 StorageGRID 上的对象存储支持 WORM/合规模式。这被称为 DataLock 功能，必须使用 NetApp Backup and Recovery 设置进行管理，而不是使用云提供商界面。
 
 
@@ -100,7 +100,7 @@ FlexVol卷没有限制 - 您可以选择系统中的所有FlexVol卷并分配相
 * 不支持从本地快照还原文件夹。
 * 在灾难恢复 (DR) 配置中还原文件和文件夹：故障切换后，为 DR 配置的存储 VM 上的卷将保留处于中断状态的预先存在的 SnapMirror 关系。由于目标卷已经存在关系，ONTAP 会阻止尝试还原创建临时 SnapMirror RST 关系的文件或文件夹。
 * 浏览和恢复一次最多可以恢复 100 个单独的文件。
-* 搜索和恢复一次可以恢复 1 个文件。
+* 搜索和还原一次可以还原一个文件。
 * 使用ONTAP 9.13.0 或更高版本时，“浏览和还原”和“搜索和还原”可以还原文件夹及其内的所有文件和子文件夹。
 +
 使用高于 9.11.1 但低于 9.13.0 的ONTAP版本时，还原操作只能还原选定的文件夹及其中的文件，而不会还原子文件夹或子文件夹中的文件。

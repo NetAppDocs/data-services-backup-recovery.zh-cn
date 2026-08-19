@@ -14,7 +14,7 @@ summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。
 
 
 [role="lead"]
-完成NetApp Backup and Recovery中的几个步骤，开始将卷数据从本地ONTAP系统备份到二级存储系统和 Amazon S3 云存储。
+在 NetApp Backup and Recovery 中，可以将卷数据从本地 ONTAP 系统备份到二级存储系统和 Amazon S3。使用此页面可准备您的环境并激活备份。
 
 
 NOTE: “本地ONTAP系统”包括FAS、 AFF和ONTAP Select系统。
@@ -425,9 +425,9 @@ Please enter Certificate: Press <Enter> when done
 === 启动向导
 
 .步骤
-. 使用以下方式之一访问激活备份和恢复向导：
+. 使用以下方法之一访问"激活备份和恢复"向导：
 +
-** 从控制台*系统*页面中，选择系统，然后选择右侧面板中备份和恢复旁边的*启用>备份卷*。
+** 在 Console *Systems* 页面中，选择系统，然后选择右侧面板中 Backup and Recovery 旁边的 *Enable > Backup Volumes*。
 +
 如果备份的 Amazon S3 目标作为系统存在于控制台*系统*页面上，则可以将ONTAP集群拖到 Amazon S3 对象存储上。
 
@@ -435,7 +435,7 @@ Please enter Certificate: Press <Enter> when done
 
 
 +
-向导的介绍页面显示保护选项，包括本地快照、复制和备份。如果您在此步骤中选择了第二个选项，则会出现“定义备份策略”页面，其中选择一个卷。
+向导的"简介"页面显示保护选项，包括本地快照、复制和备份。如果在此步骤中执行了第二个选项，则会显示"定义备份策略"页面，其中选择了一个卷。
 
 . 继续以下选项：
 +
@@ -502,7 +502,7 @@ NOTE: 如果您选择的卷具有与您在此步骤中选择的策略不同的�
 
 . *架构*：如果您选择复制和备份，请选择以下信息流之一：
 +
-** *级联*：信息从主存储流向辅助存储，再流向对象存储，再从辅助存储流向对象存储。
+** *级联*：信息从主存储流向辅助存储，然后从辅助存储流向对象存储。
 ** *扇出*：信息从主存储流向辅助存储，再从主存储流向对象存储。
 +
 有关这些架构的详细信息，请参阅link:prev-ontap-protect-journey.html["规划您的保护之旅"]。
@@ -519,7 +519,7 @@ TIP: 要在激活快照之前创建自定义策略，请参阅link:br-use-polici
 ** 输入策略的名称。
 ** 选择最多五个时间表，通常频率不同。
 +
-*** 对于备份到对象策略，请设置 Datalock 和 Ransomware 保护设置。有关 Datalock 和 Ransomware 保护的详细信息，请参阅 link:prev-ontap-policy-object-options.html["备份到对象策略设置"]。
+*** 对于备份到对象策略，请设置 DataLock 和勒索软件防护设置。有关 DataLock 和勒索软件防护的详细信息，请参阅 link:prev-ontap-policy-object-options.html["备份到对象策略设置"]。
 
 
 ** 选择“*创建*”。
@@ -613,9 +613,9 @@ S3 存储桶在您输入的 S3 访问密钥和密钥指示的服务帐户中创�
 [[show-the-api-commands]]
 === 显示 API 命令
 
-您可能想要显示并选择性地复制激活备份和恢复向导中使用的 API 命令。您可能希望这样做以便在未来的系统中自动激活备份。
+您可能需要显示并（可选）复制"激活备份和恢复"向导中使用的 API 命令。您可能需要这样做，以便在未来的系统中自动激活备份。
 
 .步骤
-. 从激活备份和恢复向导中，选择*查看 API 请求*。
+. 从激活备份和恢复向导中，选择 *View API request*。
 . 要将命令复制到剪贴板，请选择*复制*图标。
 

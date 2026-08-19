@@ -14,7 +14,7 @@ NOTE: 本文档作为技术预览提供。对于此预览版产品， NetApp保�
 
 此版本的NetApp Backup and Recovery Preview 2025 包括以下更新。
 
-* 重新设计的用户界面为管理备份和恢复任务提供了更直观的体验。
+* 重新设计的用户界面，为管理备份和恢复任务提供更直观的体验。
 * 预览版使您能够备份和恢复 Microsoft SQL Server 数据库。（未来版本将添加对其他工作负载的支持。）
 * 此版本集成了SnapCenter功能，使您能够通过NetApp Backup and Recovery用户界面使用 3-2-1 数据保护策略来管理和保护您的SnapCenter资源。
 * 此版本使您能够将SnapCenter工作负载导入NetApp Backup and Recovery。

@@ -4,7 +4,7 @@ permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html
 keywords:  
 summary: 尝试恢复客户机文件时，您可能会遇到客户机文件恢复会话为空白、客户机文件恢复附加磁盘操作失败或客户机文件恢复会话停止后备份未分离的情况。 
 ---
-= 在 NetApp Backup and Recovery 中进行来宾文件还原故障排除
+= 对 NetApp Backup and Recovery 中的 VMware 来宾文件还原进行故障排除
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 尝试恢复客户机文件时，您可能会遇到客户机文件恢�
 
 
 [role="lead"]
-尝试恢复访客文件时，您可能会遇到以下任一情况。
+如果在还原来宾文件时遇到问题，请使用这些场景来识别并解决此问题。
 
 
 
@@ -30,11 +30,11 @@ summary: 尝试恢复客户机文件时，您可能会遇到客户机文件恢�
 [[guest-file-restore-attach-disk-operation-fails]]
 == 来宾文件恢复附加磁盘操作失败
 
-当您启动客户机文件还原操作时会出现此问题，但即使 VMware 工具正在运行且客户机操作系统凭据正确，连接磁盘操作也会失败。如果发生这种情况，将返回以下错误：
+当您启动来宾文件还原操作时，即使 VMware Tools 正在运行且来宾操作系统凭据正确，附加磁盘操作也会失败，此时会出现此问题。如果发生这种情况，将返回以下错误：
 
 `Error while validating guest credentials, failed to access guest system using specified credentials: Verify VMware Tools is running properly on the system and that the account used is an Administrator account. Error is SystemError vix error codes = (3016, 0).`
 
-要解决此问题，请在客户机操作系统上重新启动 VMware Tools Windows 服务，然后重试客户机文件还原操作。
+若要更正此问题，请在来宾操作系统上重新启动 VMware Tools Windows 服务，然后重试来宾文件还原操作。
 
 
 

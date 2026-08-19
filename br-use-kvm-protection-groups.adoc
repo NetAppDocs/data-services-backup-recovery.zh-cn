@@ -14,15 +14,15 @@ summary: 在NetApp Backup and Recovery中创建和管理 KVM 工作负载的保�
 
 
 [role="lead"]
-创建保护组来管理一组 KVM 资源的备份操作。保护组是您想要一起保护的资源（例如虚拟机和存储池）的逻辑分组。您需要创建一个保护组来备份KVM虚拟机或存储池。
+创建和管理保护组，以便可以一起备份相关的 KVM 虚拟机和存储池。
 
-您可以执行与保护组相关的以下任务：
+您可以使用保护组执行以下操作：
 
-* 创建保护组。
-* 查看保护详情。
+* 创建保护组
+* 查看保护详细信息
 * 立即备份保护组。看link:br-use-kvm-backup.html["立即备份 KVM 工作负载"]。
-* 编辑保护组。
-* 删除保护组。
+* 编辑保护组
+* 删除保护组
 
 
 
@@ -30,7 +30,7 @@ summary: 在NetApp Backup and Recovery中创建和管理 KVM 工作负载的保�
 [[create-a-protection-group]]
 == 创建保护组
 
-将您想要保护的虚拟机和存储池分组到保护组中。
+将要保护的虚拟机和存储池分组到一个保护组中。
 
 *所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -44,12 +44,12 @@ summary: 在NetApp Backup and Recovery中创建和管理 KVM 工作负载的保�
 . 选择一个主机以列出该主机上的可用 VM。要包括来自所有已发现主机的 VM，请在主机列表中选择 *All*。
 . 选择要包含在保护组中的单个 VM，或选择 *All* 以将列表中的所有 VM 包含在内。
 +
-您选择的虚拟机将显示在*已添加的虚拟机*区域中。您可以从列表中删除单个虚拟机，也可以完全清空列表。您可以将来自多个 KVM 主机的虚拟机添加到列表中。
+您选择的虚拟机将显示在*已添加的虚拟机*区域中。您可以删除单个虚拟机或清除列表。您可以从多个 KVM 主机添加虚拟机。
 
 . 选择“下一步”。
 . 选择要应用于保护组的保护策略，或通过选择 *Create new policy* 来创建新策略。
 +
-有关创建备份策略的更多信息，请参阅link:br-use-policies-create.html["创建和管理策略"]。
+有关详细信息，请参见 link:br-use-policies-create.html["创建和管理策略"]。
 
 . 选择“下一步”。
 . 检查配置。

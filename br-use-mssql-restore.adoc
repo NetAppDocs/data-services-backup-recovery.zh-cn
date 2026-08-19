@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: br-use-mssql-restore.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, on-premises, applications, virtual machines, backup and recovery 
 summary: 从快照、复制到辅助存储的工作负载备份或存储在对象存储中的备份恢复数据库工作负载。 
 ---
 = 使用NetApp Backup and Recovery恢复 Microsoft SQL Server 工作负载
@@ -14,34 +14,34 @@ summary: 从快照、复制到辅助存储的工作负载备份或存储在对�
 
 
 [role="lead"]
-使用NetApp Backup and Recovery恢复 Microsoft SQL Server 工作负载。使用快照、复制到辅助存储的备份或对象存储中的备份。将工作负载恢复到原始系统、具有相同云帐户的不同系统或本地ONTAP系统。
+从快照、复制到二级存储的备份或对象存储中的备份还原 Microsoft SQL Server 工作负载。选择原始系统、其他系统或本地 ONTAP 系统作为目标。
 
-.从这些位置恢复
-您可以从不同的起始位置恢复工作负载：
+.还原源
+您可以从下列位置还原工作负载：
 
-* 从主要位置还原
-* 从复制的资源还原
-* 从对象存储备份恢复
+* 主要位置
+* 已复制资源
+* 对象存储备份
 
 
-.恢复到这些点
-您可以将数据还原到最新快照或以下点：
+.还原点
+可以通过以下方式还原数据：
 
-* 从快照还原
-* 如果您知道文件名、位置和最后有效日期，则还原到特定时间点
-* 恢复到最新备份
+* 从快照
+* 到已知文件名、位置和最后有效日期的特定时间点
+* 到最新备份
 
 
 .从对象存储中恢复的注意事项
-如果您在对象存储中选择一个备份文件，并且该备份的勒索软件保护处于活动状态（如果您在备份策略中启用了 Datalock 和勒索软件保护），则在还原数据之前，系统会提示您对备份文件运行其他完整性检查。我们建议您执行扫描。
+如果您在对象存储中选择一个备份文件，并且该备份的勒索软件保护处于活动状态（如果您在备份策略中启用了 DataLock 和勒索软件保护），则在还原数据之前，系统会提示您对备份文件运行其他完整性检查。我们建议您执行扫描。
 
 
 TIP: 您需要向云提供商支付额外费用才能访问备份文件。
 
 
 
-[[how-restoring-workloads-works]]
-== 恢复工作负载的工作原理
+[[how-workload-restoration-works]]
+== 工作负载还原的工作原理
 
 恢复工作负载时，会发生以下情况：
 
@@ -68,10 +68,10 @@ image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的�
 
 
 
-[[restore-workload-data-from-the-restore-option]]
-== 从“恢复”选项恢复工作负载数据
+[[restore-workload-data-from-the-restore-page]]
+== 从还原页面还原工作负载数据
 
-使用恢复选项恢复数据库工作负载。
+使用"还原"页面可还原数据库工作负载。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *恢复*。
@@ -97,7 +97,7 @@ image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的�
 . 选择要恢复的快照。
 . 选择“下一步”。
 +
-接下来您将看到目的地选项。
+此时将显示目标选项。
 
 . 在目的地详情页面中，输入以下信息：
 +
@@ -106,15 +106,16 @@ image:diagram_browse_restore_volume-unified.png["显示恢复资源的流程的�
 +
 *** *恢复时覆盖同名数据库*：恢复时，保留原始数据库名称。
 *** *保留 SQL 数据库复制设置*：恢复操作后保留 SQL 数据库的复制设置。
-*** *恢复前创建事务日志备份*：在恢复操作之前创建事务日志备份。***  *如果还原前的事务日志备份失败，则退出还原*：如果事务日志备份失败，则停止还原操作。
+*** *恢复前创建事务日志备份*：在恢复操作之前创建事务日志备份。
+*** *如果还原前的事务日志备份失败，则退出还原*：如果事务日志备份失败，则停止还原操作。
 *** *Prescript*：输入应在恢复操作之前运行的脚本的完整路径、脚本所需的任何参数以及等待脚本完成的时间。
 
 
 ** *恢复后选项*：
 +
-*** *可操作*，但无法恢复其他事务日志。应用事务日志备份后，数据库将恢复在线状态。
-*** *不可操作*，但可用于恢复额外的事务日志。在还原事务日志备份的同时，在还原操作后将数据库维持在非操作状态。此选项对于恢复额外的事务日志很有用。
-*** *只读模式*，可用于恢复额外的事务日志。以只读模式恢复数据库并应用事务日志备份。
+*** *Operational*：应用事务日志备份后，使数据库联机。无法还原其他事务日志。
+*** *Non-operational*：保持数据库不可用，以便您可以还原其他事务日志。
+*** *只读模式*：以只读模式还原数据库，并允许您还原其他事务日志。
 *** *后记*：输入恢复操作后应运行的脚本的完整路径以及脚本所采用的任何参数。
 
 
@@ -134,7 +135,7 @@ NetApp Backup and Recovery使用日志和最新的快照来创建数据的时间
 . 选择“下一步”。
 . 在“还原到特定时间点”页面中，输入以下信息：
 +
-** *数据恢复的日期和时间*：输入您要恢复的数据的确切日期和时间。此日期和时间来自 Microsoft SQL Server 数据库主机。
+** *数据还原的日期和时间*：输入要还原的数据的确切日期和时间。此日期和时间来自 Microsoft SQL Server 数据库主机。
 
 
 . 选择*搜索*。
@@ -152,9 +153,9 @@ NetApp Backup and Recovery使用日志和最新的快照来创建数据的时间
 
 ** *恢复后选项*：
 +
-*** *可操作*，但无法恢复其他事务日志。应用事务日志备份后，数据库将恢复在线状态。
-*** *不可操作*，但可用于恢复额外的事务日志。在还原事务日志备份的同时，在还原操作后将数据库维持在非操作状态。此选项对于恢复额外的事务日志很有用。
-*** *只读模式*，可用于恢复额外的事务日志。以只读模式恢复数据库并应用事务日志备份。
+*** *Operational*：应用事务日志备份后，使数据库联机。无法还原其他事务日志。
+*** *Non-operational*：保持数据库不可用，以便您可以还原其他事务日志。
+*** *只读模式*：以只读模式还原数据库，并允许您还原其他事务日志。
 *** *后记*：输入恢复操作后应运行的脚本的完整路径以及脚本所采用的任何参数。
 
 
@@ -168,13 +169,13 @@ NetApp Backup and Recovery使用日志和最新的快照来创建数据的时间
 [[restore-to-the-latest-backup]]
 === 恢复到最新备份
 
-此选项使用最新的完整备份和日志备份将数据恢复到最后的良好状态。系统扫描从上次快照到现在的日志。该过程跟踪变化和活动以恢复数据的最新和最准确的版本。
+此选项使用最新的完整备份和日志备份将数据恢复到最后的正常状态。NetApp Backup and Recovery 扫描从上一个快照到当前的日志，以恢复最新的可用数据版本。
 
 . 继续从恢复选项页面，选择*恢复到最新备份*。
 +
 NetApp Backup and Recovery向您显示可用于恢复操作的快照。
 
-. 在恢复到最新状态页面中，选择本地、二级存储或对象存储的快照位置。
+. 在*还原到最新状态*页面上，选择快照位置：本地存储、辅助存储或对象存储。
 . 选择“下一步”。
 . 在目的地详情页面中，输入以下信息：
 +
@@ -190,9 +191,9 @@ NetApp Backup and Recovery向您显示可用于恢复操作的快照。
 
 ** *恢复后选项*：
 +
-*** *可操作*，但无法恢复其他事务日志。应用事务日志备份后，数据库将恢复在线状态。
-*** *不可操作*，但可用于恢复额外的事务日志。在还原事务日志备份的同时，在还原操作后将数据库维持在非操作状态。此选项对于恢复额外的事务日志很有用。
-*** *只读模式*，可用于恢复额外的事务日志。以只读模式恢复数据库并应用事务日志备份。
+*** *Operational*：应用事务日志备份后，使数据库联机。无法还原其他事务日志。
+*** *Non-operational*：保持数据库不可用，以便您可以还原其他事务日志。
+*** *只读模式*：以只读模式还原数据库，并允许您还原其他事务日志。
 *** *后记*：输入恢复操作后应运行的脚本的完整路径以及脚本所采用的任何参数。
 
 
@@ -203,10 +204,10 @@ NetApp Backup and Recovery向您显示可用于恢复操作的快照。
 
 
 
-[[restore-workload-data-from-the-inventory-option]]
-== 从 Inventory 选项恢复工作负载数据
+[[restore-workload-data-from-the-inventory-page]]
+== 从 Inventory 页面还原工作负载数据
 
-从库存页面恢复数据库工作负载。使用 Inventory 选项，您只能恢复数据库，而不能恢复实例。
+使用"清单"页面还原数据库工作负载。您可以从此页面还原数据库，但不能还原实例。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -224,5 +225,5 @@ NetApp Backup and Recovery向您显示可用于恢复操作的快照。
 ** 恢复到最新备份
 
 
-. 继续执行与“恢复”页面中的恢复选项相同的步骤
+. 从还原页面完成选定还原选项的步骤。
 

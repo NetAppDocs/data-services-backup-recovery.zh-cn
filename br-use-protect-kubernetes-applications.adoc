@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery使您能够管理工作负载主机信息、
 
 
 [role="lead"]
-NetApp Backup and Recovery 使您能够通过 Web UI 或应用自定义资源文件来添加 Kubernetes 应用程序。应用程序可以基于命名空间，由标准 Kubernetes 资源组成，也可以基于 VM，由一个或多个虚拟机组成。
+使用 NetApp Backup and Recovery Web UI 或自定义资源文件添加 Kubernetes 应用程序以进行保护。您可以添加使用标准 Kubernetes 资源的基于命名空间的应用程序，也可以添加使用一个或多个虚拟机的基于虚拟机的应用程序。
 
 .所需的NetApp Console角色
 组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
@@ -24,7 +24,7 @@ NetApp Backup and Recovery 使您能够通过 Web UI 或应用自定义资源文
 [[add-and-protect-a-new-kubernetes-application]]
 == 添加并保护新的 Kubernetes 应用程序
 
-保护 Kubernetes 应用程序的第一步是在 NetApp Backup and Recovery 中创建一个应用程序。创建应用程序时，您可以使 Backup and Recovery 了解 Kubernetes 集群上正在运行的应用程序。
+要保护 Kubernetes 应用程序，请先在 NetApp Backup and Recovery 中创建应用程序。当您创建应用程序时，NetApp Backup and Recovery 将识别 Kubernetes 集群上正在运行的应用程序。
 
 .开始之前
 在添加和保护 Kubernetes 应用程序之前，您需要link:br-start-discover.html["发现 Kubernetes 工作负载"]。
@@ -83,7 +83,7 @@ NOTE: Backup and Recovery 不存储搜索参数或结果；这些参数用于搜
 . 通过选择命名空间并可选地包括标签选择器，查找要添加到应用程序的虚拟机。
 +
 
-NOTE: 如果从列表中选择 VM，则应用程序定义为静态—稍后不会将新 VM 添加到应用程序（您需要编辑应用程序以添加和保护它们）。如果使用标签选择器，则无法选择单个 VM 或编辑生成的列表，但后来与选择器匹配的任何 VM 都会自动包括在内并受到保护。
+NOTE: 如果从列表中选择虚拟机，则应用程序定义为静态——稍后不会将新虚拟机添加到应用程序（您需要编辑应用程序以添加和保护它们）。如果使用标签选择器，则无法选择单个虚拟机或编辑生成的列表，但后来与选择器匹配的任何虚拟机都会自动包含在内并受到保护。
 
 +
 所选虚拟机将显示在右侧的列表中。
@@ -95,7 +95,7 @@ NOTE: 如果从列表中选择 VM，则应用程序定义为静态—稍后不�
 
 
 .结果
-应用程序已创建并出现在 Kubernetes 清单的 *应用程序* 选项卡中的应用程序列表中。  NetApp Console根据您的设置启用对应用程序的保护，并且您可以在备份和恢复的*监控*区域中监控进度。
+应用程序已创建，并显示在 Kubernetes 清单的*应用程序*选项卡中的应用程序列表中。NetApp Backup and Recovery 可根据您的设置为应用程序提供保护，您可以在*监控*区域中监控进度。
 
 --
 .添加基于命名空间的应用程序 (CR)

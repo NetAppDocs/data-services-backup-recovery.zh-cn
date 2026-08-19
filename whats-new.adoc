@@ -14,7 +14,7 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 
 [role="lead"]
-了解NetApp Backup and Recovery的新功能。
+了解 NetApp Backup and Recovery 中的新功能、增强功能和修复。
 
 
 
@@ -807,7 +807,7 @@ link:br-use-vmware-protect-overview.html["了解有关使用NetApp Backup and Re
 [[microsoft-sql-server-workload-supported-in-general-availability-ga]]
 === 通用可用性 (GA) 中支持 Microsoft SQL Server 工作负载
 
-Microsoft SQL Server 工作负载支持现已在NetApp Backup and Recovery中正式推出 (GA)。在ONTAP、 Cloud Volumes ONTAP和Amazon FSx for NetApp ONTAP存储上使用 MSSQL 环境的组织现在可以利用这项新的备份和恢复服务来保护他们的数据。
+Microsoft SQL Server 工作负载支持现已在 NetApp Backup and Recovery 中正式发布 (GA)。在 ONTAP、Cloud Volumes ONTAP 和 Amazon FSx for NetApp ONTAP 存储上使用 MSSQL 环境的组织现在可以利用这项新的 Backup and Recovery 服务来保护其数据。
 
 与之前的预览版本相比，此版本对 Microsoft SQL Server 工作负载支持进行了以下增强：
 
@@ -1066,7 +1066,7 @@ NetApp Backup and Recovery现在将其支持扩展到第三方对象存储，主
 
 ==== 开始使用 Wasabi
 
-要开始使用第三方存储作为对象存储，您必须在控制台代理中启用一个标志。然后，您可以输入第三方对象存储的连接详细信息并将其集成到备份和恢复工作流程中。
+若要开始将第三方存储用作对象存储，必须在 Console 代理中启用标记。然后，您可以输入第三方对象存储的连接详细信息，并将其集成到 Backup and Recovery 工作流中。
 
 .步骤
 . 通过 SSH 进入您的连接器。
@@ -1218,7 +1218,7 @@ NOTE: 本文档作为技术预览提供。对于此预览版产品， NetApp保�
 
 此版本的NetApp Backup and Recovery Preview 2025 包括以下更新。
 
-* 重新设计的用户界面为管理备份和恢复任务提供了更直观的体验。
+* 重新设计的用户界面，为管理备份和恢复任务提供更直观的体验。
 * 预览版使您能够备份和恢复 Microsoft SQL Server 数据库。（未来版本将添加对其他工作负载的支持。）
 * 此版本集成了SnapCenter功能，使您能够通过NetApp Backup and Recovery用户界面使用 3-2-1 数据保护策略来管理和保护您的SnapCenter资源。
 * 此版本使您能够将SnapCenter工作负载导入NetApp Backup and Recovery。

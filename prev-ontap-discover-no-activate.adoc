@@ -4,7 +4,7 @@ permalink: prev-ontap-discover-no-activate.html
 keywords: activate, backup and recovery, volumes, back up, discover 
 summary: 在不激活 NetApp Backup and Recovery 的情况下发现系统和卷。 
 ---
-= 在 NetApp Backup and Recovery 中无需激活即可发现 ONTAP 系统和卷
+= 在不激活 NetApp Backup and Recovery 的情况下发现 ONTAP 系统和卷
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 在不激活 NetApp Backup and Recovery 的情况下发现系统和卷�
 
 
 [role="lead"]
-您可以在激活卷的备份和恢复时或激活 NetApp Backup and Recovery 之前发现系统和卷。如果您在未激活的情况下发现卷，则在为其激活 Backup and Recovery 之前无法保护卷。
+在激活 NetApp Backup and Recovery 之前，发现 ONTAP 系统和卷。发现后，您可以查看卷，但在激活 Backup and Recovery 之前无法保护它们。
 
 .步骤
 . 转到*保护 > 备份和恢复*。

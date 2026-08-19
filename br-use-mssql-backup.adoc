@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-mssql-backup.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: 将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure 和StorageGRID ，以确保您的数据受到保护。 
+keywords: backing up, back up, backup, cloud volumes ontap, aws, azure, storagegrid, back up volumes, cloud backup, on-premises ontap, onprem, applications, backup and recovery 
+summary: 将本地 ONTAP 系统上的 Microsoft SQL Server 应用程序数据备份到 Amazon Web Services、Microsoft Azure 和 StorageGRID，以确保您的数据受到保护。 
 ---
 = 使用NetApp Backup and RecoveryMicrosoft SQL Server 工作负载
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: 将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份�
 
 
 [role="lead"]
-将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份到 Amazon Web Services、Microsoft Azure 或StorageGRID。系统会自动创建备份并将其存储在您的云帐户的对象存储中以保护数据。
+将 Microsoft SQL Server 工作负载从本地 ONTAP 系统备份到 Amazon Web Services、Microsoft Azure 或 StorageGRID。
 
-* 要按计划备份工作负载，请创建管理备份和恢复操作的策略。看link:br-use-policies-create.html["创建策略"]以获取说明。
+* 创建策略以按计划备份工作负载并管理备份和还原操作。有关说明，请参阅 link:br-use-policies-create.html["创建策略"]。
 * 在开始备份之前配置已发现主机的日志目录。
-* 立即备份工作负载（立即创建按需备份）。
+* 创建按需备份以立即备份工作负载。
 
 
 
@@ -44,7 +44,7 @@ summary: 将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份�
 
 设置已发现主机的活动日志路径，以便在备份工作负载之前跟踪操作状态。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员或备份和恢复还原管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员或备份和恢复还原管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -53,7 +53,7 @@ summary: 将 Microsoft SQL Server 应用程序数据从本地ONTAP系统备份�
 . 选择主机。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *配置日志目录*。
 . 输入主机路径或浏览主机或节点列表以找到要存储主机日志的位置。
-. 选择您想要存储日志的那些。
+. 选择要存储日志的主机或节点。
 +
 
 NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障转移群集实例或独立实例。
@@ -68,7 +68,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 创建保护组来管理多个工作负载的备份和还原操作。保护组是工作负载的逻辑分组。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -81,7 +81,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 . 选择“下一步”。
 . 选择要应用于保护组的*备份策略*。
 +
-如果要创建策略，请选择*创建新策略*并按照提示创建策略。看link:br-use-policies-create.html["创建策略"]了解更多信息。
+如果要创建策略，请选择*创建新策略*，然后按照提示操作。有关详细信息，请参见 link:br-use-policies-create.html["创建策略"]。
 
 . 选择“下一步”。
 . 检查配置。
@@ -95,13 +95,13 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 在对系统进行更改之前运行按需备份，以确保您的数据受到保护。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
-. 从菜单中选择*库存*。
+. 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择一个工作负载来查看保护详细信息。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
-. 选择“*保护组*”、“*实例*”或“*数据库*”选项卡。
+. 选择*保护组*、*实例*或*数据库*选项卡。
 . 选择要备份的实例或数据库。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *立即备份*。
 . 选择要应用于备份的策略。
@@ -116,13 +116,13 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 暂停计划以在维护或故障排除期间暂时停止备份。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择一个工作负载来查看保护详细信息。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
-. 选择“*保护组*”、“*实例*”或“*数据库*”选项卡。
+. 选择*保护组*、*实例*或*数据库*选项卡。
 . 选择要暂停的保护组、实例或数据库。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *暂停*。
 
@@ -134,7 +134,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 删除保护组会删除该保护组以及所有相关的备份计划。如果不再需要某个保护组，您可能需要将其删除。
 
-*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -151,13 +151,13 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 如果您不再想要备份某个工作负载，或者想要停止在NetApp Backup and Recovery中管理该工作负载，则可以从该工作负载中删除保护。
 
-*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择一个工作负载来查看保护详细信息。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
-. 选择“*保护组*”、“*实例*”或“*数据库*”选项卡。
+. 选择*保护组*、*实例*或*数据库*选项卡。
 . 选择保护组、实例或数据库。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *移除保护*。
 . 在“删除保护”对话框中，选择是否要保留备份和元数据或删除它们。

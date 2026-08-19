@@ -14,9 +14,9 @@ summary: 完成几个步骤来配置NetApp Backup and Recovery。
 
 
 [role="lead"]
-设置NetApp Console后，配置备份和恢复设置。添加主机资源的凭据、导入SnapCenter资源、配置日志目录以及设置 VMware vCenter 设置。在备份或恢复数据之前完成这些步骤。
+配置备份和恢复设置以添加工作负载的凭据、与现有基础架构集成并准备备份和还原操作。
 
-* <<为主机资源添加凭据>> 适用于任何 Windows、Microsoft SQL Server、Oracle Database 或 Linux 主机，NetApp Backup and Recovery 需要对其进行身份验证。这包括在还原文件或文件夹时使用的来宾操作系统凭据。
+* <<为主机资源添加凭据>> 适用于 Windows、Microsoft SQL Server、Oracle 数据库和 Linux 主机的凭据，NetApp Backup and Recovery 需要对这些主机进行身份验证。这包括还原文件或文件夹时使用的来宾操作系统凭据。
 * <<维护 VMware vCenter 设置>>。
 * <<导入和管理SnapCenter主机资源>>。（仅限 Microsoft SQL Server 工作负载）
 * <<添加 KVM 管理平台>>。（仅限 KVM 工作负载）
@@ -49,13 +49,13 @@ summary: 完成几个步骤来配置NetApp Backup and Recovery。
 . 从NetApp Backup and Recovery菜单中，选择 *设置*。
 . 选择“*凭证*”的向下箭头。
 . 选择*添加新凭证*。
-. 请输入登录凭证信息。根据您选择的身份验证模式，会显示不同的字段。将鼠标悬停在信息 *i* 图标上，可查看有关字段的更多信息。
+. 输入凭据的信息。根据您选择的身份验证模式，会显示不同的字段。将鼠标悬停在信息 *i* 图标上，了解有关字段的更多信息。
 +
 ** *凭证名称*：输入凭证的名称。
 ** *身份验证模式*：选择 *Windows*、*Microsoft SQL*、*Oracle Database* 或 *Linux*。
 +
 
-TIP: 对于 Microsoft SQL Server 工作负载，您需要输入 Windows 和 Microsoft SQL Server 的凭据，因此您需要添加两组凭据。
+TIP: 对于 Microsoft SQL Server 工作负载，必须同时输入 Windows 和 Microsoft SQL Server 的凭据，需要两组凭据。
 
 +
 [role="tabbed-block"]
@@ -138,7 +138,7 @@ TIP: 对于 Microsoft SQL Server 工作负载，您需要输入 Windows 和 Micr
 [[maintain-vmware-vcenter-settings]]
 == 维护 VMware vCenter 设置
 
-提供 VMware vCenter 凭据来发现要备份的工作负载。如果您没有凭据，请创建具有访问和管理 VMware vCenter Server 工作负载的权限的凭据。
+提供 VMware vCenter Server 凭据以发现要备份的工作负载。如果没有凭据，请创建具有访问和管理 VMware vCenter Server 工作负载权限的凭据。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *设置*。
@@ -146,7 +146,7 @@ TIP: 对于 Microsoft SQL Server 工作负载，您需要输入 Windows 和 Micr
 . 选择“添加 vCenter”。
 . 输入 VMware vCenter Server 信息。
 +
-** *vCenter FQDN 或 IP 地址*：输入 VMware vCenter Server 的 FQDN 名称或 IP 地址。
+** *vCenter FQDN 或 IP 地址*：输入 VMware vCenter Server 的 FQDN 或 IP 地址。
 ** *用户名*和*密码*：输入 VMware vCenter Server 的用户名和密码。
 ** *端口*：输入 VMware vCenter Server 的端口号。
 ** *协议*：选择*HTTP*或*HTTPS*。
@@ -247,7 +247,7 @@ NOTE: 如果 SnapCenter 服务器已注册，您可以更新现有的注册详�
 [[add-a-kvm-management-platform]]
 == 添加 KVM 管理平台
 
-如果您使用 Apache CloudStack 管理平台来管理 KVM 资源，则需要将其与NetApp Backup and Recovery集成，以便 Backup and Recovery 可以发现和保护受管 KVM 主机和虚拟机。
+如果您使用 Apache CloudStack 管理平台来管理 KVM 资源，请将其与 NetApp Backup and Recovery 集成，以便 Backup and Recovery 可以发现和保护托管的 KVM 主机和虚拟机。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *设置*。
@@ -255,7 +255,7 @@ NOTE: 如果 SnapCenter 服务器已注册，您可以更新现有的注册详�
 . 选择“添加管理平台凭证”。
 . 输入以下信息：
 +
-** *管理平台 IP 地址或 FQDN*：输入管理平台的 IP 地址或完全限定域名。
+** *管理平台 IP 地址或 FQDN*：输入管理平台的 IP 地址或 FQDN。
 ** *API密钥*：输入用于验证API请求的API密钥。
 ** *密钥*：输入用于验证 API 请求的密钥。
 ** *端口*：输入备份和恢复与管理平台之间通信所用的端口。
@@ -270,7 +270,7 @@ NOTE: 如果 SnapCenter 服务器已注册，您可以更新现有的注册详�
 [[configure-log-directories-in-snapshots-for-windows-hosts]]
 == 在 Windows 主机的快照中配置日志目录
 
-在为 Windows 主机创建策略之前，您应该为 Windows 主机配置快照中的日志目录。日志目录用于存储备份过程中生成的日志。
+在为 Windows 主机创建策略之前，请在快照中配置日志目录，以存储备份过程中生成的日志。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -310,18 +310,18 @@ NOTE: 此处创建的模板仅在保护 Kubernetes 工作负载时可用。
 [[create-a-resource-transformation-template]]
 == 创建资源转换模板
 
-创建资源转换模板，以便在还原资源时存储对资源进行的常见转换。
+创建资源转换模板以存储在还原操作期间应用于资源的常见转换。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *设置*。
-. 选择向下箭头以展开 *Resource modifer template* 部分。
+. 选择向下箭头以展开*资源转换模板*部分。
 . 选择 *Create template*。
 . 输入资源转换模板的名称。
 . （可选）输入模板说明。
 . 描述目标资源：
 +
 .. 输入资源类型（例如 Pod 或 Deployment）。此字段为必填项。
-.. （可选）输入资源组、版本、名称。
+.. （可选）输入资源组、版本和名称。
 
 
 . 构建操作：

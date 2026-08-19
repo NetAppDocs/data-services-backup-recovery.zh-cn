@@ -14,14 +14,14 @@ summary: NetApp Backup and Recovery支持两种 S3 存档存储类和大多数�
 
 
 [role="lead"]
-NetApp Backup and Recovery支持两种 S3 存档存储类和大多数区域。
+使用此信息为 NetApp Backup and Recovery 备份选择 AWS S3 存档层。您还可以查看已存档备份的恢复成本和检索时间。
 
 
 
 [[supported-s3-archival-storage-classes-for-netapp-backup-and-recovery]]
 == NetApp Backup and Recovery支持的 S3 归档存储类
 
-最初创建备份文件时，它们存储在 S3 _Standard_ 存储中。此层针对存储不经常访问的数据进行了优化；但也允许您立即访问它。  30 天后，备份将转换为 S3_标准-不频繁访问_存储类以节省成本。
+最初创建备份文件时，它们存储在 S3 _Standard_ 存储中。此层针对存储不常访问的数据进行了优化，但仍允许即时访问。30 天后，备份将转换为 S3 _Standard-Infrequent Access_ 存储类以节省成本。
 
 如果您的源集群运行的是ONTAP 9.10.1 或更高版本，您可以选择在一定天数（通常超过 30 天）后将备份分层到 _S3 Glacier_ 或 _S3 Glacier Deep Archive_ 存储，以进一步优化成本。您可以将其设置为“0”或 1-999 天。如果将其设置为“0”天，则以后不能将其更改为1-999天。
 

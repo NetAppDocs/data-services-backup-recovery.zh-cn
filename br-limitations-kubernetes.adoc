@@ -14,12 +14,12 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 
 
 [role="lead"]
-此处列出了与此版本不兼容或不能很好地兼容的平台、设备或功能。仔细阅读这些限制。
+查看 NetApp Backup and Recovery 中 Kubernetes 工作负载的当前限制和解决方法。
 
 
 
-[[backup-and-recovery-preview-for-netapp-console-local-deployment-limitation]]
-== NetApp Console 本地部署限制的 Backup and Recovery 预览版
+[[limitation-in-the-backup-and-recovery-preview-for-netapp-console-local-deployment]]
+== NetApp Console 本地部署的 Backup and Recovery 预览版限制
 
 在适用于 NetApp Console 本地部署的 Backup and Recovery 预览版本中，仅 ONTAP S3 和 StorageGRID 目标支持备份到对象存储。此预览版本不支持备份归档。
 
@@ -28,15 +28,15 @@ summary: 在您的环境中使用 Backup and Recovery 之前，请查看这些 N
 [[changing-the-protection-policy-for-an-application]]
 == 更改应用程序的保护策略
 
-当您将应用程序的关联保护策略更改为使用不同的存储桶或辅助复制目标时，保护策略可能会失败。
+如果将应用程序的保护策略更改为使用其他存储区或辅助复制目标，则保护可能会失败。
 
-*解决方法*：删除并重新添加应用程序。
+*解决方法*：删除应用程序并重新添加。
 
 
 
 [[3-2-1-protection-policy-configuration-limitation]]
 == 3-2-1 保护策略配置限制
 
-在创建 3-2-1 保护策略时，如果在复制到辅助存储的同时不执行对象存储备份，则保护策略会在保护应用程序时挂起。
+如果创建 3-2-1 保护策略，将对象存储备份与复制到辅助存储分开安排，则保护可能会挂起。
 
-*解决方法*：删除并重新添加应用程序，并使用不同的保护策略对其进行保护。
+*Workaround*：删除应用程序并重新添加，然后使用不同的保护策略对其进行保护。

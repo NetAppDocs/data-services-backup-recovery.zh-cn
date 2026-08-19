@@ -14,16 +14,16 @@ summary: NetApp Backup and Recovery支持一个 Google 归档存储类和大多�
 
 
 [role="lead"]
-NetApp Backup and Recovery支持一个 Google 归档存储类和大多数区域。
+使用此信息了解 NetApp Backup and Recovery 支持的 Google Cloud Storage 存档层。您还可以查看已存档备份的恢复成本和检索时间。
 
 
 
 [[supported-google-archival-storage-classes-for-netapp-backup-and-recovery]]
 == NetApp Backup and Recovery支持的 Google 归档存储类
 
-最初创建备份文件时，它们存储在_标准_存储中。此层针对存储不经常访问的数据进行了优化；但也允许您立即访问它。
+最初创建备份文件时，它们存储在 _Standard_ 存储中。此层针对存储不常访问的数据进行了优化，但仍允许即时访问。
 
-如果您的本地集群使用的是ONTAP 9.12.1 或更高版本，您可以选择在一定天数（通常超过 30 天）后将旧备份分层到NetApp Backup and RecoveryUI 中的“_Archive_”存储中，以进一步优化成本。此层中的数据将需要更高的检索成本，因此您需要考虑可能需要多久从这些存档的备份文件中恢复数据。请参阅此页面上有关从档案存储恢复数据的部分。
+如果您的本地集群使用的是 ONTAP 9.12.1 或更高版本，则可以选择在一定天数（通常超过 30 天）后在 NetApp Backup and Recovery UI 中将较旧的备份分层到 _Archive_ 存储，以进一步优化成本。此层中的数据需要更高的检索成本，因此您需要考虑从这些已存档备份文件还原数据的频率。请参阅本页有关从存档存储还原数据的部分。
 
 请注意，当您使用此类生命周期规则配置NetApp Backup and Recovery时，在 Google 帐户中设置存储桶时不得配置任何生命周期规则。
 

@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery使您能够恢复已通过保护策略保护
 
 
 [role="lead"]
-NetApp Backup and Recovery使您能够恢复已通过保护策略保护的应用程序。要恢复应用程序，应用程序需要至少有一个可用的恢复点。恢复点由本地快照或对象存储备份（或两者）组成。您可以使用本地、辅助或对象存储存档来恢复应用程序。
+在 NetApp Backup and Recovery 中还原受保护策略保护的应用程序。要还原应用程序，至少需要一个还原点，其中可以包括本地快照、对象存储备份或两者。您可以从本地、辅助或对象存储副本还原。
 
 
 
@@ -57,7 +57,7 @@ Backup and Recovery 超级管理员或 Backup and Recovery 还原管理员。lin
 
 . 选择要使用的还原点的 *Restore* 按钮。
 +
-还原数据向导开始，并显示 _常规设置_ 页面。
+还原数据向导打开，并显示_常规设置_页面。
 
 . 选择要从中还原的源位置。
 . 从*Cluster*列表中选择目标集群。
@@ -89,7 +89,7 @@ Backup and Recovery 超级管理员或 Backup and Recovery 还原管理员。lin
 --
 .基于特定命名空间的应用资源
 --
-.. 选择 *Selective resources* 并选择是根据规则还是根据命名空间筛选所选资源。
+.. 选择*选择性资源*并选择是使用规则筛选资源还是手动选择资源。
 +
 [cols="1,1"]
 |===
@@ -152,7 +152,7 @@ Backup and Recovery 列出了恢复点中的所有永久卷声明。您可以选
 
 . 展开 *Destination settings* 部分，然后选择恢复到默认存储类、其他存储类，或者如果要恢复到其他集群，则将存储类映射到目标集群。
 . 如果选择还原到其他存储类，请选择与每个源存储类匹配的目标存储类。
-. 或者，如果您要还原使用 Trident Protect 创建的备份或快照，请查看 AppVault 用作还原操作存储桶的详细信息。如果您的环境或 AppVault 状态发生变化，请选择 *Sync App Vault* 以刷新详细信息。
+. 或者，如果您要还原使用 Trident Protect 创建的备份或快照，请查看用作还原操作存储桶的 AppVault 的详细信息。如果您的环境发生变化或 AppVault 状态发生变化，请选择 *Sync App Vault* 以刷新详细信息。
 +
 
 NOTE: 如果需要在 Kubernetes 集群上创建 AppVault 以便还原使用 Trident Protect 创建的备份或快照，请参阅 https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["使用 Trident Protect AppVault 对象管理存储桶"]。

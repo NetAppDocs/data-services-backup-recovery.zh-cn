@@ -14,14 +14,14 @@ summary: NetApp Backup and Recovery支持一个 Azure 存档访问层和大多�
 
 
 [role="lead"]
-NetApp Backup and Recovery支持一个 Azure 存档访问层和大多数区域。
+使用此信息了解 NetApp Backup and Recovery 支持的 Azure 存档层。您还可以查看已存档备份的恢复成本和检索时间。
 
 
 
 [[supported-azure-blob-access-tiers-for-netapp-backup-and-recovery]]
 == NetApp Backup and Recovery支持的 Azure Blob 访问层
 
-最初创建备份文件时，它们存储在_Cool_访问层中。此层针对存储不经常访问的数据进行了优化；但在需要时可以立即访问。
+最初创建备份文件时，它们将存储在 _Cool_ 访问层中。此层针对存储不常访问的数据进行了优化，但可以在需要时立即访问。
 
 如果您的源集群运行的是ONTAP 9.10.1 或更高版本，您可以选择在一定天数（通常超过 30 天）后将备份从“Cool_”存储分层到“Azure Archive_”存储，以进一步优化成本。此层中的数据在需要时无法立即访问，并且需要更高的检索成本，因此您需要考虑可能需要多久从这些存档的备份文件中恢复数据。请参阅此页面上有关从档案存储恢复数据的部分。
 
@@ -49,7 +49,7 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["了�
 
 
 
-NOTE: 将数据从 Azure 还原到StorageGRID系统时不支持高优先级。
+NOTE: 将数据从 Azure 还原到 StorageGRID 系统时，不支持高优先级。
 
 恢复 Azure 存档中存档的数据需要多长时间？:: 恢复时间由两部分组成：
 +

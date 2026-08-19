@@ -14,7 +14,7 @@ summary: 通过从云提供商处购买按需付费或年度市场订阅，或�
 
 
 [role="lead"]
-根据您使用的是 NetApp Console 还是 NetApp Console（本地部署），您可以通过从云提供商处购买按需付费（PAYGO）或 *NetApp Intelligent Services* 的年度市场订阅，或从 NetApp 购买自带许可证（BYOL）来获得 NetApp Backup and Recovery 许可证。需要有效的许可证才能在系统上激活 NetApp Backup and Recovery、创建生产数据的备份以及将备份数据恢复到生产系统。
+使用市场订阅或来自 NetApp 的自带许可证 (BYOL)，在 NetApp Console 或 NetApp Console 本地部署中设置 NetApp Backup and Recovery 的许可。需要有效的许可证才能激活服务、创建备份以及将数据还原到生产系统。
 
 有关许可证工作原理的一些注意事项：
 
@@ -22,15 +22,15 @@ summary: 通过从云提供商处购买按需付费或年度市场订阅，或�
 * 如果使用带有 NetApp Console 本地部署的 Backup and Recovery，则只能购买自带许可证 (BYOL) 许可证。
 * NetApp Backup and Recovery自带许可证 (BYOL) 是一种浮动许可证，您可以在与NetApp Console组织或帐户关联的所有系统中使用它。因此，如果您现有的 BYOL 许可证具有足够的备份容量，则无需购买另一个 BYOL 许可证。
 * 如果您在 NetApp Console 中使用 BYOL 许可证，建议您也订阅 PAYGO 订阅。如果您备份的数据超过 BYOL 许可证允许的数据量，或者许可证期限已过期，则备份将通过按需付费 (PAYGO) 订阅继续进行，不会中断服务。
-* 将本地ONTAP数据备份到StorageGRID时，您需要 BYOL 许可证，但云提供商存储空间无需付费。
+* 将本地 ONTAP 数据备份到 StorageGRID 时，您需要 BYOL 许可证，但无需支付云提供商存储空间费用。
 
 
 link:concept-backup-to-cloud.html["了解有关使用NetApp Backup and Recovery 的成本的更多信息。"]
 
 
 
-[[set-up-licensing-for-netapp-backup-and-recovery]]
-== 设置NetApp Backup and Recovery 的许可
+[[licensing-options-for-netapp-backup-and-recovery]]
+== NetApp Backup and Recovery 的许可选项
 
 您有三种 NetApp Backup and Recovery 许可选项：
 
@@ -68,11 +68,11 @@ NetApp提供的自带许可证的有效期为 1 年、2 年或 3 年。您只需
 
 BYOL NetApp Backup and Recovery许可证是一种浮动许可证，其总容量在与您的NetApp Console组织或帐户关联的所有系统之间共享。对于ONTAP系统，您可以通过运行 CLI 命令粗略估计所需的容量 `volume show -fields logical-used-by-afs`对于您计划备份的卷。
 
-如果您没有NetApp Backup and Recovery BYOL 许可证，请单击控制台右下角的聊天图标购买。
+如果您没有 NetApp Backup and Recovery BYOL 许可证，请选择 Console 右下角的聊天图标进行购买。
 
 或者，如果您拥有未分配的基于节点的Cloud Volumes ONTAP许可证但不会使用，则可以将其转换为具有相同美元等值和相同到期日期的NetApp Backup and Recovery许可证。 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["点击此处了解详情"^] 。
 
-您可以使用 NetApp Console 或 Console 本地部署来管理 BYOL 许可证。您可以从 Console 添加新许可证、更新现有许可证和查看许可证状态。
+您可以使用 NetApp Console 或 NetApp Console 本地部署来管理 BYOL 许可证。您可以从控制台添加新许可证、更新现有许可证和查看许可证状态。
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["了解如何添加许可证"^]。
 
@@ -124,7 +124,7 @@ NetApp向您提供专属优惠后，您可以在激活NetApp Backup and Recovery
 [[use-a-netapp-backup-and-recovery-paygo-subscription-applies-to-netapp-console-only]]
 === 使用 NetApp Backup and Recovery PAYGO 订阅（仅适用于 NetApp Console）
 
-对于即用即付，您将在单个订阅中按小时向云提供商支付对象存储成本和NetApp备份许可成本。即使您有免费试用版或自带许可证 (BYOL)，也应该在 Marketplace 中订阅 * NetApp Intelligent Services*：
+对于按需付费，您可以在单个订阅中按小时向云提供商支付对象存储成本和 NetApp 备份许可成本。即使您拥有免费试用版或自带许可证 (BYOL)，也应在 Marketplace 中订阅 *NetApp Intelligent Services*：
 
 * 订阅可确保免费试用结束后服务不会中断。试用期结束后，我们将根据您备份的数据量按小时向您收费。
 * 如果您备份的数据超出了 BYOL 许可证允许的范围，则数据备份和恢复操作将通过即用即付订阅继续进行。例如，如果您拥有 10 TiB BYOL 许可证，则超过 10 TiB 的所有容量都将通过 PAYGO 订阅收费。
@@ -137,7 +137,7 @@ NetApp Backup and Recovery有几种 PAYGO 计划：
 * “云备份”包使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
 * “CVO Professional” 软件包使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括使用许可证对Cloud Volumes ONTAP系统进行无限制备份（备份容量不计入许可容量）。此选项不允许您备份本地ONTAP数据。
 +
-请注意，此选项还需要备份和恢复 PAYGO 订阅，但符合条件的Cloud Volumes ONTAP系统不会产生任何费用。
+此选项还需要订阅 Backup and Recovery PAYGO，但符合条件的 Cloud Volumes ONTAP 系统不会产生费用。
 
 
 
@@ -155,7 +155,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 [[exceeding-license-capacity]]
 == 超出许可证容量
 
-超过许可容量会触发 PAYGO 费率；如果没有 PAYGO 订阅，您将无法创建新的备份，尽管现有备份在没有服务保证的情况下仍可恢复。请务必在许可证过期之前续订许可证；过期的许可证会阻止新的备份并中断服务。
+超过许可容量会触发 PAYGO 费率。没有 PAYGO 订阅，您无法创建新的备份，但仍可在没有服务保证的情况下恢复现有备份。请在许可证到期前续订许可证，因为过期的许可证会阻止新备份的创建并中断服务。
 
 
 

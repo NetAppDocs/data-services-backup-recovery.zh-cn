@@ -14,9 +14,9 @@ summary: NetApp Console 审核支持的备份和恢复操作的参考。
 
 
 [role="lead"]
-NetApp Console 审核页面记录用户在 Backup and Recovery 中执行的以下操作，作为其审核功能的一部分。有关如何查看和筛选审核事件的详细信息，请参阅 Console 文档中的 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["从"审核"页面审核用户活动"^]。
+使用此参考资料查看 NetApp Console 在"审核"页面上记录的 NetApp Backup and Recovery 操作。有关查看和筛选审计事件的详细信息，请参见 NetApp Console 文档中的 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["从"审核"页面审核用户活动"^]。
 
-对于每个已审核的操作，Console 都会记录服务名称、代理、资源、用户和操作状态。
+对于每个已审核的操作，NetApp Console 都会记录服务名称、代理、资源、用户和操作状态。
 
 .审核的备份和恢复操作
 * 从备份还原卷或文件

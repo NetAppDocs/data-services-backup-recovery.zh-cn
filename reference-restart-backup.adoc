@@ -14,12 +14,12 @@ summary: 在某些情况下，您可能需要重新启动NetApp Backup and Recov
 
 
 [role="lead"]
-在某些情况下，您可能需要重新启动NetApp Backup and Recovery。
+当需要恢复服务或应用更改时，可以从 Console 代理主机重新启动 NetApp Backup and Recovery。使用与部署类型和容器运行时匹配的命令。
 
 控制台代理包括NetApp Backup and Recovery功能。
 
 .步骤
-. 连接到控制台代理正在运行的 Linux 系统。
+. 连接到运行 Console 代理的 Linux 系统。
 +
 [cols="25,50"]
 |===

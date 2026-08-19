@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery需要首先发现数据，以便您使用该
 
 
 [role="lead"]
-此处列出了与此版本不兼容或不能很好地兼容的平台、设备或功能。仔细阅读这些限制。
+在使用 NetApp Backup and Recovery 处理 SQL Server 工作负载之前，请查看这些限制。
 
 
 
@@ -71,7 +71,7 @@ Windows 集群名称不能包含下划线 (_) 字符。
 [[resources-with-multiple-policies-using-the-same-schedule-tier-not-supported]]
 === 不支持使用相同计划层的多个策略的资源
 
-您不能为资源分配使用相同计划层级（例如，每小时、每天、每周等）的多个策略。  NetApp Backup and Recovery不会从SnapCenter导入这些资源。
+不能将使用相同计划层（例如，按小时、按天或按周）的多个策略分配给资源。NetApp Backup and Recovery 不会从 SnapCenter 导入这些资源。
 
 *解决方法*：仅将使用相同计划层的一项策略附加到资源。
 
@@ -89,9 +89,9 @@ Windows 集群名称不能包含下划线 (_) 字符。
 [[both-daily-and-monthly-policies-attached-to-one-resource-not-supported]]
 === 不支持将每日和每月策略附加到同一个资源
 
-如果SnapCenter策略以天和月为间隔重复，则NetApp Backup and Recovery将不会导入该策略。
+如果 SnapCenter 策略在天和月间隔内重复，NetApp Backup and Recovery 将不会导入该策略。
 
-例如，您不能将每日策略（少于或等于 7 天或大于 7 天）附加到资源，也不能将每月策略附加到同一资源。
+例如，您不能将每日策略（间隔为 7 天或更短，或超过 7 天）附加到资源，也不能将每月策略附加到同一资源。
 
 *解决方法*：使用以每日或每月为间隔的策略，但不能同时使用两者。
 
@@ -100,7 +100,7 @@ Windows 集群名称不能包含下划线 (_) 字符。
 [[on-demand-backup-policies-not-migrated]]
 === 按需备份策略未迁移
 
-NetApp Backup and Recovery不会从SnapCenter导入按需备份策略。
+NetApp Backup and Recovery 不会从 SnapCenter 导入按需备份策略。
 
 
 
@@ -116,7 +116,7 @@ NetApp Backup and Recovery不会从SnapCenter导入仅日志备份策略。如�
 [[host-mapping]]
 === 主机映射
 
-SnapCenter 没有将存储集群或存储 VM 映射到资源所在主机的功能，但 NetApp Backup and Recovery 有。在 NetApp Backup and Recovery 预览版本中，本地 ONTAP 集群或存储 VM 将不会映射到主机。此外，NetApp Console 不支持存储 VM。
+SnapCenter 不会将资源的存储集群或存储 VM 映射到主机，但 NetApp Backup and Recovery 会。在 NetApp Backup and Recovery 预览版本中，本地 ONTAP 集群或存储 VM 将不会映射到主机。此外，NetApp Console 不支持存储 VM。
 
 *解决方法*：在从SnapCenter导入资源之前，请在NetApp Backup and Recovery中为在本地SnapCenter中注册的所有本地ONTAP存储系统创建一个系统。然后，将该集群的资源从SnapCenter导入NetApp Backup and Recovery。
 

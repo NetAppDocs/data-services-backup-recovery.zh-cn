@@ -14,7 +14,7 @@ summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。
 
 
 [role="lead"]
-NetApp Backup and Recovery使您能够为本地ONTAP和Cloud Volumes ONTAP系统创建具有各种设置的备份策略。
+在 NetApp Backup and Recovery 中使用备份到对象策略，为您的本地 ONTAP 和 Cloud Volumes ONTAP 系统定义计划、保留、DataLock、勒索软件保护和归档设置。
 
 
 NOTE: 这些策略设置仅与备份到对象存储相关。这些设置都不会影响您的快照或复制策略。
@@ -59,7 +59,7 @@ NetApp Backup and Recovery使您能够为每个系统（集群）创建具有唯
 
 NetApp Backup and Recovery为您的卷备份提供 DataLock 和勒索软件保护支持。这些功能使您能够锁定备份文件并对其进行扫描以检测备份文件上可能存在的勒索软件。这是一个可选设置，当您想为集群的卷备份提供额外保护时，可以在备份策略中定义它。
 
-这两项功能都可以保护您的备份文件，以便在备份遭到勒索软件攻击时，您始终拥有有效的备份文件来恢复数据。在备份需要锁定和保留一段时间的情况下，满足某些监管要求也很有帮助。启用 *Datalock and Ransomware protection* 选项后，作为 NetApp Backup and Recovery 激活的一部分配置的云存储桶将启用对象锁定和对象版本控制。
+这两项功能都可以保护您的备份文件，从而确保在您的备份遭遇勒索软件攻击时，您始终拥有一个有效的备份文件来恢复数据。这也有助于满足某些监管要求，即需要将备份锁定并保留一段时间。启用 *DataLock and Ransomware protection* 选项后，作为 NetApp Backup and Recovery 激活的一部分而配置的云存储桶将启用对象锁定和对象版本控制。
 
 此功能不为您的源卷提供保护；仅为这些源卷的备份提供保护。使用一些 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP提供的反勒索软件保护"^]保护您的源卷。
 
@@ -125,7 +125,7 @@ DataLock 保留设置将覆盖备份策略中的策略保留设置。这可能�
 
 您可以在创建策略时启用 DataLock 和勒索软件保护。创建策略后，您无法启用、修改或禁用此功能。
 
-. 创建策略时，展开 *Datalock 和 Ransomware 防护* 部分。
+. 创建策略时，展开 *DataLock 和勒索软件防护* 部分。
 . 选择下列选项之一：
 +
 ** *无*：已禁用 DataLock 保护和勒索软件保护。
@@ -181,7 +181,7 @@ DataLock 保留设置将覆盖备份策略中的策略保留设置。这可能�
 | Azure 中的Cloud Volumes ONTAP | Azure Blob 
 
 
-| Google Cloud 中的Cloud Volumes ONTAP | Google Cloud 
+| Google Cloud 中的Cloud Volumes ONTAP | Google Cloud Storage 
 
 
 | 本地ONTAP系统 | Amazon S3 Azure Blob Google Cloud NetApp StorageGRID 
@@ -334,7 +334,7 @@ NOTE: Microsoft Azure 使用锁定和解锁模式。
 [[archival-storage-options]]
 == 档案存储选项
 
-使用 AWS、Azure 或 Google 云存储时，您可以在一定天数后将较旧的备份文件移动到较便宜的存档存储类或访问层。您还可以选择立即将备份文件发送到档案存储，而无需写入标准云存储。只需输入 *0* 作为“几天后存档”即可将备份文件直接发送到档案存储。对于很少需要访问云备份数据的用户或正在替换磁带备份解决方案的用户来说，这尤其有用。
+使用 AWS、Azure 或 Google Cloud Storage 时，您可以在一定天数后将较旧的备份文件移至成本较低的归档存储类或访问层。您还可以选择立即将备份文件发送到归档存储，而无需写入标准云存储。只需输入 *0* 作为"Archive After Days"，即可将备份文件直接发送到归档存储。这对于很少需要从云备份访问数据的用户或正在替换磁带备份解决方案的用户尤其有用。
 
 存档层中的数据在需要时无法立即访问，并且需要更高的检索成本，因此在决定存档备份文件之前，您需要考虑需要多久从备份文件中恢复一次数据。
 

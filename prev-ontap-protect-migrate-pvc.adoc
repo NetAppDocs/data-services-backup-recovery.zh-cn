@@ -4,7 +4,7 @@ permalink: prev-ontap-protect-migrate-pvc.html
 keywords: migrate, pvc, nfs, storage, performance, persistence 
 summary: 提高 NetApp Console 本地部署环境中的目录索引性能。 
 ---
-= 提高 NetApp Backup and Recovery 本地部署中的搜索和还原性能
+= 将搜索和还原目录存储迁移到 ONTAP NFS
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 提高 NetApp Console 本地部署环境中的目录索引性能。
 
 
 [role="lead"]
-将目录索引存储从集群的默认存储类迁移到 ONTAP 支持的 NFS 共享，以显著提高 NetApp Console 本地部署的目录性能。索引目录用于搜索和还原功能。虽然目录可与默认存储配合使用，但使用 ONTAP 支持的 NFS 可为搜索和还原提供可衡量的性能改进。
+要提高 NetApp Console 本地部署中的搜索和还原性能，请将目录索引存储从集群的默认存储类迁移到 ONTAP 支持的 NFS 共享。目录索引支持搜索和还原，而 ONTAP 支持的 NFS 可以提供可衡量的性能改进。
 
 .开始之前
 在开始之前，请确保您具有下列各项：
@@ -52,7 +52,7 @@ kubectl get pods -n cbs | grep cloudmanager-cbs-catalog-worker- || echo "no work
 
 
 [discrete]
-===== 在 NetApp Console 本地部署上挂载 ONTAP 卷并从 Pod 中复制
+===== 在 NetApp Console 本地部署上挂载 ONTAP 卷并从 Pod 复制数据
 
 . 在部署 NetApp Console 本地部署 OVA 时创建的虚拟机本地挂载点上挂载 ONTAP NFS 导出。
 . 将数据从正在运行的协调器 Pod 复制到 ONTAP 挂载中，不使用中间目录。协调器必须仍在运行。
@@ -118,7 +118,7 @@ kubectl delete pv "$PV"
 [discrete]
 ===== 创建静态 ONTAP PV 和 PVC
 
-. 创建以下 PV 和 PVC yaml 对象：
+. 创建以下 PV 和 PVC YAML 对象：
 +
 **`pv.yaml`**
 
@@ -166,7 +166,7 @@ spec:
     matchLabels:
       volume: ontap-nfs-share # Forces binding to the specific PV above
 ----
-. 应用 yaml 对象，首先应用 PV，然后应用 PVC（必须存在 PV 才能绑定到 PVC 的标签选择器）。然后验证 PVC 声明是否已绑定：
+. 先应用 PV，然后再应用 PVC，以此应用 YAML 对象（PV 必须存在，PVC 的标签选择器才能绑定到该对象）。然后验证 PVC 声明是否已绑定：
 +
 [source, shell]
 ----

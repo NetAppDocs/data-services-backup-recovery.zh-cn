@@ -4,7 +4,7 @@ permalink: br-use-oracle-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: 您可以保护从本地ONTAP系统到 Amazon Web Services、Microsoft Azure、Google Cloud Platform 和StorageGRID 的Oracle 虚拟机，确保您的数据受到保护。 
 ---
-= 了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载
+= 使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以保护从本地ONTAP系统到 Amazon Web Services、Microsoft 
 
 
 [role="lead"]
-使用 NetApp Backup and Recovery 保护 Oracle 数据库和日志。获取快速、节省空间、故障一致和数据库一致的备份和恢复。将 Oracle Database 工作负载备份到 AWS S3、NetApp StorageGRID、Azure Blob Storage 或 ONTAP S3。将备份还原到本地 Oracle 主机。
+使用 NetApp Backup and Recovery，通过快速、节省空间、崩溃一致和数据库一致的备份和还原来保护 Oracle 数据库工作负载和日志。您可以将工作负载备份到 AWS S3、StorageGRID、Azure Blob 或 ONTAP S3，并将备份还原到本地 Oracle 主机。
 
 使用NetApp Backup and Recovery实施 3-2-1 保护策略，其中您在 2 个不同的存储系统上拥有 3 个源数据副本，并在云中拥有 1 个副本。3-2-1 方法的优点包括：
 

@@ -14,11 +14,11 @@ summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。
 
 
 [role="lead"]
-将 VMware VM 和数据存储区从本地ONTAP系统备份到 Amazon Web Services、 Azure NetApp Files或StorageGRID，以确保您的数据受到保护。备份会自动生成并存储在您的公共或私有云帐户的对象存储中。
+将 VMware 虚拟机和数据存储区从本地 ONTAP 系统备份到 Amazon Web Services、Azure NetApp Files 或 StorageGRID，以帮助保护您的数据。备份将自动生成并存储在公共或私有云帐户的对象存储中。
 
 * 若要按计划备份工作负载，请创建管理备份和还原操作的策略。有关说明，请参阅 link:br-use-policies-create.html["创建保护策略"]。
 * 创建保护组以管理一组资源的备份和还原操作。有关更多信息，请参见 link:br-use-vmware-protection-groups.html["创建和管理保护组"]。
-* 立即备份工作负载（立即创建按需备份）。
+* 立即创建按需备份，备份工作负载。
 
 
 
@@ -31,7 +31,7 @@ summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。
 *必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
-. 从备份和恢复菜单中，选择*库存*。
+. 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择 VMware 工作负载。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
 . 选择 *Protection Groups*、*Datastores*、*Virtual machines* 或 *Tags* 菜单标题。

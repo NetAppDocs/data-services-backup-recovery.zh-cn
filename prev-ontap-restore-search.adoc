@@ -14,7 +14,7 @@ summary: 您可以使用 Search and Restore 从 ONTAP 备份文件中恢复卷�
 
 
 [role="lead"]
-您可以使用 Search and Restore 从 ONTAP 备份文件中恢复卷、文件夹或文件。Search and Restore 使您能够跨所有备份（包括本地快照、已复制卷和对象存储）进行搜索，而无需确切的系统、卷或文件名。
+当您不知道确切的系统、卷或文件名时，可以使用"搜索和还原"从 ONTAP 备份中恢复卷、文件夹或文件。您可以搜索本地快照、已复制卷和对象存储备份。
 
 从本地快照或复制卷恢复通常比从对象存储恢复更快、更便宜。
 
@@ -46,7 +46,7 @@ link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案�
 
 
 ====
-在开始之前，您应该对要还原的卷或文件的名称或位置有所了解。
+在开始之前，应了解要还原的卷或文件的名称或位置。
 
 
 
@@ -74,21 +74,21 @@ link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案�
 | Google Cloud Storage | Google 本地ONTAP系统中的Cloud Volumes ONTAP | Google 本地ONTAP系统中的Cloud Volumes ONTAP 
 
 
-| NetAppStorageGRID | 本地ONTAP系统Cloud Volumes ONTAP | 本地ONTAP系统 
+| StorageGRID | 本地ONTAP系统Cloud Volumes ONTAP | 本地ONTAP系统 
 
 
 | ONTAP S3 | 本地ONTAP系统Cloud Volumes ONTAP | 本地ONTAP系统 
 |===
 对于搜索和还原，控制台代理可以安装在以下位置：
 
-* 对于 Amazon S3，控制台代理可以部署在 AWS 或您的场所
-* 对于 Azure Blob，控制台代理可以部署在 Azure 中或您的本地
+* 对于Amazon S3，可以在AWS或本地部署Console代理
+* 对于 Azure Blob，可以在 Azure 中或本地部署 Console 代理
 * 对于 Google Cloud Storage，控制台代理必须部署在您的 Google Cloud Platform VPC 中
-* 对于StorageGRID，控制台代理必须部署在您的场所；无论是否有互联网访问
-* 对于ONTAP S3，控制台代理可以部署在您的场所（有或没有互联网访问）或云提供商环境中
+* 对于 StorageGRID，必须在本地部署 Console 代理，无论是否接入互联网
+* 对于 ONTAP S3，Console 代理可以部署在内部（有或没有互联网访问）或云提供商环境中
 
 
-请注意，“本地ONTAP系统”包括FAS、 AFF和ONTAP Select系统。
+请注意，对"本地 ONTAP 系统"的引用包括 FAS、AFF 和 ONTAP Select 系统。
 
 
 
@@ -166,7 +166,7 @@ link:prev-reference-aws-archive-storage-tiers.html["了解有关从 AWS 档案�
 [[search-restore-process]]
 == 搜索和恢复过程
 
-这个过程如下：
+流程的工作原理如下：
 
 . 在使用搜索和还原之前，您需要在要从中还原卷数据的每个源系统上启用“索引”。这使得索引目录可以跟踪每个卷的备份文件。
 +
@@ -211,7 +211,7 @@ image:diagram_search_restore_vol_file.png["该图显示了使用“搜索和还�
 .为系统启用索引的步骤：
 如果您的系统已启用索引，请转到下一部分来恢复您的数据。
 
-您首先需要挂载一个单独的卷来存放目录文件。这样可以防止因保存快照的文件过大而导致数据丢失。并非每个集群都需要这样做；您可以从环境中的任何集群挂载任何一个卷。如果不这样做，索引可能无法正常工作。
+首先，装载一个单独的卷以保存目录文件。这有助于在快照目录文件过大时防止数据丢失。这不是每个集群都需要的；您可以从环境中的任何集群装载任意一个卷。如果不这样做，索引可能无法正常工作。
 
 对于装订体积，请参考以下尺寸指南：
 
@@ -223,7 +223,7 @@ image:diagram_search_restore_vol_file.png["该图显示了使用“搜索和还�
 
 
 [[mount-volume-steps]]
-.挂载卷以重新索引目录的步骤
+.为目录重新编制索引而挂载卷的步骤
 . 将卷挂载到 `/opt/application/netapp/cbs` 输入以下命令，其中：
 +
 ** `volume name` 这是集群上用于存储目录文件的卷。
@@ -269,21 +269,20 @@ mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
 
 .步骤
 . 从控制台菜单中，选择*保护>备份和恢复*。
-. 选择“*恢复*”选项卡，将显示“恢复仪表板”。
-. 从“搜索和恢复”部分，选择“搜索和恢复”。
+. 选择 *Restore* 选项卡以显示 Restore Dashboard。
 . 从“搜索和恢复”部分，选择“搜索和恢复”。
 . 从“搜索和还原”页面：
 +
 .. 在“搜索栏”中，输入完整或部分卷名、文件夹名或文件名。
 .. 选择资源类型：*卷*、*文件*、*文件夹*或*全部*。
-.. 在“过滤依据”区域中，选择过滤条件。例如，您可以选择数据所在的系统和文件类型，例如 .JPEG 文件。或者，如果您只想在对象存储中的可用快照或备份文件中搜索结果，则可以选择备份位置类型。
+.. 在_筛选条件_区域中，选择筛选条件。例如，您可以选择数据所在的系统和文件类型，例如 .JPEG 文件。如果要仅在对象存储中的可用快照或备份文件中进行搜索，也可以选择备份位置类型。
 
 
 . 选择*搜索*，搜索结果区域将显示所有具有与您的搜索相匹配的文件、文件夹或卷的资源。
 . 找到包含您要恢复的数据的资源，然后选择“查看所有备份”以显示包含匹配卷、文件夹或文件的所有备份文件。
 . 找到您想要用于恢复数据的备份文件并选择*恢复*。
 +
-请注意，搜索结果会识别包含您搜索文件的本地卷快照和远程复制卷。您可以选择从云备份文件、快照或复制卷中恢复。
+请注意，结果会识别包含搜索中文件的本地卷快照和远程复制卷。您可以选择从云备份文件、快照或复制的卷中恢复。
 
 . 选择要恢复卷、文件夹或文件的目标位置，然后选择*恢复*。
 +

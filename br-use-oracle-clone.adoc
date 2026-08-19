@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: br-use-oracle-clone.html 
-keywords: clone, clone application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
+keywords: clone, clone application data, Amazon Web Services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
 summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载。 
 ---
 = 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载
@@ -14,7 +14,7 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 
 
 [role="lead"]
-使用 NetApp Backup and Recovery 创建 Oracle 数据库的可写克隆，从本地 ONTAP 系统到主存储或二级存储。管理克隆的生命周期，以便根据计划定期刷新它们。
+使用 NetApp Backup and Recovery 从主存储或二级存储上的本地 ONTAP 系统创建 Oracle 数据库工作负载的可写克隆。您还可以安排克隆刷新以满足您的要求。
 
 *所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -36,7 +36,7 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 . 在 *选择还原点* 页面的 *克隆来源* 部分，选择 *现有快照*。
 . 从列表中选择一个现有快照（还原点）用作克隆的基础，然后选择 *Next*。
 +
-如果快照存储在多个位置，则会显示 *Select snapshot location*。
+如果快照存储在多个位置，则会显示*选择快照位置*页面。
 
 . 选择要使用的快照位置，然后选择 *Next*。
 . 在 *高级选项* 页面上，执行以下操作：
@@ -54,7 +54,7 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 [[schedule-a-clone-of-an-oracle-database]]
 == 计划克隆 Oracle 数据库
 
-安排即时克隆创建和克隆的持续刷新。这将创建数据库的最新克隆。如果要根据您选择的计划从数据库的最新状态持续刷新克隆，请使用此方法。
+创建即时克隆并安排定期刷新，使其与最新的数据库状态保持一致。
 
 .步骤
 . 从NetApp Console菜单中，选择“保护”>“备份和恢复”。
@@ -70,7 +70,7 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 . 在 *高级选项* 页面上，执行以下操作：
 +
 .. 要自定义克隆的数据库设置，请启用 *自定义目标数据库参数* 选项。如果您以前保存过规范文件，则通过此选项可以上传规范文件以自定义克隆的数据库设置。您还可以下载反映其当前设置的数据库的默认规范文件。
-.. 在 *Clone refresh schedule* 部分，选择刷新克隆的时间和频率。刷新克隆将重新创建即时快照，并使用新克隆覆盖现有克隆。
+.. 在 *Clone refresh schedule* 部分，选择刷新克隆的时间和频率。刷新将更新即时快照，并使用新副本覆盖现有克隆。
 .. 在 *Prescripts and postscripts* 部分中，启用 *Prescript* 和 *Postscript* 选项之一或两者，以在克隆操作开始之前或完成之后执行脚本。对于每个选项，输入完整的脚本路径和任何必需的参数。
 
 
@@ -82,11 +82,9 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 [[split-a-clone]]
 == 分裂克隆
 
-您可以拆分 Oracle Database 工作负载的克隆。拆分克隆会从克隆创建新的备份。您可以使用新备份还原数据库。
+可以拆分 Oracle 数据库工作负载的克隆，以创建独立或长期副本。拆分克隆会从克隆创建可用于保护和还原操作的新备份。
 
-您可以选择将克隆拆分为独立克隆或长期克隆。向导将显示作为存储虚拟机一部分的聚合列表、其大小以及克隆卷所在的位置。NetApp Backup and Recovery 还指示是否有足够的空间来拆分克隆。克隆拆分后，克隆将成为独立的数据库以进行保护。
-
-克隆作业不会被删除，可以再次重复用于其他克隆。
+拆分操作显示作为存储虚拟机一部分的聚合、其大小以及克隆卷驻留的位置。NetApp Backup and Recovery 指示是否有足够的空间来完成拆分。拆分后，克隆将变得独立。原始克隆作业仍可用于将来的操作。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *克隆*。
@@ -101,15 +99,13 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 [[delete-a-clone]]
 == 删除克隆
 
-您可以删除 Oracle Database 工作负载的克隆。当您删除克隆时，它将从对象存储中删除，从而释放存储空间。
-
-如果策略保护克隆，则克隆及其作业都会被删除。
+删除 Oracle 数据库工作负载的克隆以释放存储空间。如果策略保护克隆，则克隆及其关联的作业都将被删除。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *克隆*。
 . 选择一个克隆。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *删除克隆*。
-. 在克隆删除确认对话框中，查看删除详细信息。
+. 在删除克隆确认对话框中，查看删除详细信息。
 +
 .. 要从SnapCenter中删除克隆的资源，即使克隆或其存储不可访问，也请选择“强制删除”。
 .. 选择*删除*。

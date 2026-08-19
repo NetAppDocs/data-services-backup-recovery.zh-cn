@@ -14,11 +14,11 @@ summary: NetApp Backup and Recovery是一种数据服务，可为您的所有ONT
 
 
 [role="lead"]
-NetApp Backup and Recovery是一种数据服务，可为您的所有ONTAP工作负载（包括卷、数据库、虚拟机和 Kubernetes 工作负载）提供高效、安全且经济高效的数据保护。
+使用此概述可了解 NetApp Backup and Recovery 如何保护您的 ONTAP 工作负载，它支持哪些工作负载和备份目标，以及许可和成本的工作原理。
 
 工作负载是系统内资源的逻辑分组，作为一个单位管理，用于保护、治理、检测和恢复。在 Backup and Recovery 中，工作负载是您保护的单位。其含义取决于数据源：对于 Kubernetes，工作负载是一个应用程序，对于 VM 环境，它是一个虚拟机，对于数据库环境，它是一个数据库。
 
-所有 ONTAP 系统都内置了对备份和恢复的支持，因此无需额外的硬件或媒体网关。这使得备份操作简单且具有成本效益。NetApp Console 简化了任何备份策略的实施，包括全方位的 3-2-1 备份变体，而无需多个资源管理员或专业人员。
+所有 ONTAP 系统都内置了对备份和恢复的支持，因此无需额外的硬件或媒体网关。这使得备份操作简单且经济高效。NetApp Console 简化了任何备份策略的实施，包括全方位的 3-2-1 备份变体，无需多个资源管理员或专业人员。
 
 
 
@@ -244,7 +244,7 @@ NOTE: 还支持从主存储到对象存储，而不仅仅是从二级存储到�
 备份副本存储在NetApp Console在您的云帐户中创建的对象存储中。每个集群或系统都有一个对象存储，控制台按如下方式命名该对象存储： `netapp-backup-clusteruuid` 。请确保不要删除此对象存储。
 
 * 在 AWS 中， NetApp Console可以实现以下功能： https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 阻止公共访问功能"^]在 S3 铲斗上。
-* 在 Azure 中， NetApp Console使用包含 Blob 容器存储帐户的新建或现有资源组。 https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["阻止公众访问您的 Blob 数据"]默认情况下。
+* 在 Azure 中，NetApp Console 使用具有 Blob 容器存储帐户的新资源组或现有资源组。Console https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["阻止公众访问您的 Blob 数据"]（默认情况下）。
 * 在StorageGRID中，控制台使用现有的存储帐户作为对象存储桶。
 * 在ONTAP S3 中，控制台使用 S3 存储桶的现有用户帐户。
 
@@ -260,8 +260,8 @@ NOTE: 还支持从主存储到对象存储，而不仅仅是从二级存储到�
 
 
 
-[[terms-that-might-help-you-with-netapp-backup-and-recovery]]
-== 可能对您使用NetApp Backup and Recovery有帮助的术语
+[[terms-for-netapp-backup-and-recovery]]
+== NetApp 备份和恢复条款
 
 了解一些与保护相关的术语可能会对您有所帮助。
 

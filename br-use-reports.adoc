@@ -12,7 +12,7 @@ summary: 在NetApp Backup and Recovery中，创建报告以查看备份状态，
 
 
 [role="lead"]
-在NetApp Backup and Recovery中，创建 Microsoft SQL Server 工作负载的报告，以查看备份状态和详细信息，包括成功和失败的备份计数、备份类型、存储系统和时间戳。
+在 NetApp Backup and Recovery 中为 Microsoft SQL Server 工作负载创建报告，以查看备份状态和详细信息，包括成功和失败备份的计数、备份类型、存储系统和时间戳。
 
 
 
@@ -22,7 +22,7 @@ summary: 在NetApp Backup and Recovery中，创建报告以查看备份状态，
 *必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
-. 从NetApp Backup and Recovery菜单中，选择 *报告* 选项。
+. 在 NetApp Backup and Recovery 菜单中，选择*报告*。
 . 选择*创建报告*。
 . 输入报告范围详细信息：
 +
@@ -32,9 +32,9 @@ summary: 在NetApp Backup and Recovery中，创建报告以查看备份状态，
 ** *选择内容*：选择报告是否包含所有备份的摘要或每个备份的详细信息。  （如果您选择“按帐户”）
 
 
-. 输入报告范围：选择您是否希望报告包含过去一天、过去 7 天、过去 30 天、上个季度或去年的数据。
-. 输入报告发送详情：如果您希望通过电子邮件发送报告，请选中*通过电子邮件发送报告*。输入您想要接收报告的电子邮件地址。
+. 输入报告范围：选择是否希望报告包含过去一天、过去 7 天、过去 30 天、上一季度或去年的数据。
+. 输入报告发送详细信息：如果要通过电子邮件发送报告，请选择 *Send report using email*。输入要将报告发送到的电子邮件地址。
 +
-在设置页面配置电子邮件通知。有关配置电子邮件通知的详细信息，请参阅link:br-start-configure.html["配置设置"]。
+在"设置"页面上配置电子邮件通知。有关配置电子邮件通知的详细信息，请参见link:br-start-configure.html["配置设置"]。
 
 

@@ -14,7 +14,7 @@ summary: 在NetApp Backup and Recovery中创建和管理 VMware 工作负载的�
 
 
 [role="lead"]
-创建保护组来管理一组工作负载的备份和还原操作。保护组是您想要一起保护的资源（例如虚拟机和数据存储区）的逻辑分组。
+创建保护组以管理一组工作负载的备份和还原操作。保护组是希望共同保护的资源（如虚拟机和数据存储库）的逻辑分组。
 
 您可以执行与保护组相关的以下任务：
 
@@ -32,7 +32,7 @@ summary: 在NetApp Backup and Recovery中创建和管理 VMware 工作负载的�
 
 选择要添加到保护组的资源时，可以按数据存储区、虚拟机或 vSphere 标记对其进行组织。
 
-基于标记的保护（使用 vSphere 标记）简化了 Backup and Recovery 中保护组的管理。
+使用 vSphere 标记的基于标记的保护简化了 NetApp Backup and Recovery 中的保护组管理。
 
 使用基于标签的保护有一些优势：
 
@@ -56,7 +56,7 @@ summary: 在NetApp Backup and Recovery中创建和管理 VMware 工作负载的�
 .开始之前
 * 确保您的环境正在使用受支持的 VMware vSphere 版本。
 * 在创建基于标签的保护组时，请确保要保护的虚拟机和数据存储已经在vCenter中关联了一个或多个vSphere标签。
-* 请注意，对于 VMware 工作负载，计划备份时间以管理主机的时区来解释。有关详细信息，请参见 link:br-use-policies-vmware-create.html["在 NetApp Backup and Recovery 中创建和管理 VMware 备份策略"]。
+* 对于 VMware 工作负载，计划备份时间使用管理主机的时区。有关详细信息，请参见 link:br-use-policies-vmware-create.html["在 NetApp Backup and Recovery 中创建和管理 VMware 备份策略"]。
 
 
 .步骤
@@ -172,7 +172,7 @@ NOTE: 只有在修改保护组名称、添加或删除虚拟机、更改分配�
 [[delete-a-protection-group]]
 == 删除保护组
 
-删除保护组时，也会删除该组以及该组的所有备份计划。如果不再需要某个保护组，请将其删除。
+删除保护组时，将删除该组及其所有备份计划。如果不再需要保护组，请将其删除。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。

@@ -14,13 +14,13 @@ summary: 在 NetApp Backup and Recovery 中为 Oracle Database 工作负载创�
 
 
 [role="lead"]
-创建保护组来管理一组 Oracle 数据库资源的备份操作。保护组是您想要一起保护的资源（例如数据库）的逻辑分组。您需要创建一个保护组来备份 Oracle 数据库。
+创建保护组以管理 Oracle 数据库资源的备份操作。保护组是希望共同保护的资源（如数据库）的逻辑分组。
 
 您可以执行与保护组相关的以下任务：
 
 * 创建保护组。
 * 查看保护详情。
-* 立即备份保护组。请参阅 link:br-use-kvm-backup.html["立即备份 Oracle Database 工作负载"]。
+* 立即备份保护组。请参阅link:br-use-oracle-backup.html["立即备份 Oracle Database 工作负载"]。
 * 删除保护组。
 
 
@@ -29,7 +29,7 @@ summary: 在 NetApp Backup and Recovery 中为 Oracle Database 工作负载创�
 [[create-a-protection-group]]
 == 创建保护组
 
-将您想要保护的虚拟机和存储池分组到保护组中。
+将要共同保护的 Oracle 数据库资源分组到保护组中。
 
 *所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -40,7 +40,7 @@ summary: 在 NetApp Backup and Recovery 中为 Oracle Database 工作负载创�
 . 选择*保护组*选项卡。
 . 选择*创建保护组*。
 . 为保护组提供一个名称。
-. 选择要包含在保护组中的虚拟机或存储池。
+. 选择要包含在保护组中的数据库。
 . 选择“下一步”。
 . 选择要应用于保护组的*备份策略*。
 +

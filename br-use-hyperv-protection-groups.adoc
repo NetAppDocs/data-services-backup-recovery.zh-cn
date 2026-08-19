@@ -14,12 +14,12 @@ summary: 在NetApp Backup and Recovery中创建和管理 Hyper-V 工作负载的
 
 
 [role="lead"]
-创建保护组来管理一组虚拟机的备份操作。保护组是您想要一起保护的资源（例如虚拟机）的逻辑分组。
+创建保护组以共同保护相关 Hyper-V 虚拟机，并在 NetApp Backup and Recovery 中管理其备份操作。
 
 您可以执行与保护组相关的以下任务：
 
 * 创建保护组。
-* 查看保护详情。
+* 查看保护组详细信息。
 * 立即备份保护组。看link:br-use-hyperv-backup.html["立即备份 Hyper-V 工作负载"]。
 * 删除保护组。
 
@@ -29,7 +29,7 @@ summary: 在NetApp Backup and Recovery中创建和管理 Hyper-V 工作负载的
 [[create-a-protection-group]]
 == 创建保护组
 
-将您想要保护的工作负载分组到一个保护组中。创建保护组来一起备份和恢复工作负载。
+将要共同保护的工作负载分组到保护组中。创建保护组以同时备份和还原这些工作负载。
 
 *所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
 
@@ -39,11 +39,11 @@ summary: 在NetApp Backup and Recovery中创建和管理 Hyper-V 工作负载的
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
-. 选择一个工作负载来查看保护详细信息。
+. 选择工作负载以查看其保护详细信息。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
-. 选择“保护组”菜单。
+. 选择*保护组*选项卡。
 . 选择*创建保护组*。
-. 为保护组提供一个名称。
+. 输入保护组的名称。
 . 选择要包含在保护组中的虚拟机。
 . 选择“下一步”。
 . 选择要应用于保护组的*备份策略*。
@@ -81,7 +81,7 @@ summary: 在NetApp Backup and Recovery中创建和管理 Hyper-V 工作负载的
 计划备份使用创建保护组的计划时记录的 Hyper-V 主机的时区。如果更改主机的时区，现有保护组将继续按其原始时区（通常为 UTC）运行，直到您更新其计划。
 
 
-NOTE: 只有在修改保护组名称、添加或删除虚拟机、更改分配的策略或更新前/后脚本时，才会重新创建计划。不做任何更改而保存将不会更新计划。此计划更新是每个保护组的一次性操作，不会立即启动备份。
+NOTE: 只有在修改保护组名称、添加或删除虚拟机、更改分配的策略或更新前/后脚本时，才会重新创建计划。保存而不进行任何更改将不会更新计划。此一次性计划更新不会立即启动备份。
 
 .步骤
 . 刷新 Hyper-V 主机，以便检索其当前时区。
@@ -97,7 +97,7 @@ NOTE: 只有在修改保护组名称、添加或删除虚拟机、更改分配�
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
-. 选择一个工作负载来查看保护详细信息。
+. 选择工作负载以查看其保护详细信息。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
 . 选择*保护组*选项卡。
 . 选择要删除的保护组。

@@ -4,7 +4,7 @@ permalink: prev-ontap-policy-object-advanced-settings.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。 
 ---
-= 在 NetApp Backup and Recovery 中管理备份到对象存储的选项
+= 在 NetApp Backup and Recovery 中管理备份到对象的高级设置
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。
 
 
 [role="lead"]
-您可以使用“高级设置”页面更改在为每个ONTAP系统激活NetApp Backup and Recovery时设置的集群级别、备份到对象存储设置。您还可以修改一些作为“默认”备份设置的设置。这包括更改备份到对象存储的传输速率、是否将历史快照导出为备份文件，以及启用或禁用系统的勒索软件扫描。
+激活 NetApp Backup and Recovery 后，使用"高级设置"页面可更改每个 ONTAP 系统的集群级备份到对象存储设置。您可以调整带宽、历史快照导出、年度快照删除和勒索软件扫描设置。
 
 
 NOTE: 这些设置仅适用于备份到对象存储。这些设置都不会影响您的快照或复制设置。
@@ -59,7 +59,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 
 .步骤
 . 从*Volumes*选项卡中，选择*Backup Settings*。
-. 在“备份设置”页面中，单击 image:icon-actions-horizontal.gif["更多图标"] 在系统中，选择“配置高级设置 > 系统设置”。
+. 在_备份设置页面_中，选择 image:icon-actions-horizontal.gif["更多图标"] 以配置系统，然后选择*配置高级设置 > 系统设置*。
 . 在高级设置页面中，展开*最大传输速率*部分。
 . 选择 1 到 1,000 Mbps 之间的值作为最大传输速率。
 . 选择*Limited*单选按钮并输入可使用的最大带宽，或选择*Unlimited*表示没有限制。
@@ -79,7 +79,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 
 .步骤
 . 从*Volumes*选项卡中，选择*Backup Settings*。
-. 在“备份设置”页面中，单击 image:icon-actions-horizontal.gif["更多图标"] 在系统中，选择“配置高级设置 > 系统设置”。
+. 在_备份设置页面_中，选择 image:icon-actions-horizontal.gif["更多图标"] 以配置系统，然后选择*配置高级设置 > 系统设置*。
 . 在“高级设置”页面中，展开“导出现有快照副本”部分。
 . 选择是否要导出现有快照。
 . 选择*应用*。
@@ -94,7 +94,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 
 .步骤
 . 从*Volumes*选项卡中，选择*Backup Settings*。
-. 在“备份设置”页面中，单击 image:icon-actions-horizontal.gif["更多图标"] 在系统中，选择“配置高级设置 > 系统设置”。
+. 在_备份设置页面_中，选择 image:icon-actions-horizontal.gif["更多图标"] 以配置系统，然后选择*配置高级设置 > 系统设置*。
 . 在高级设置页面中，展开*年度快照删除*部分。
 . 选择“*禁用*”以在源系统上保留年度快照。
 . 选择*应用*。
@@ -105,11 +105,11 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 [[enable-or-disable-ransomware-scans]]
 == 启用或禁用勒索软件扫描
 
-默认情况下启用勒索软件防护扫描。扫描频率的默认设置为 7 天。扫描仅发生在最新的快照上。
+默认情况下，勒索软件防护扫描处于启用状态。默认情况下，扫描每 7 天运行一次。扫描仅在最新快照上进行。
 
-有关 Datalock 和勒索软件防护选项的详细信息，请参阅 link:prev-ontap-policy-object-options.html["Datalock 和勒索软件防护选项"]。
+要了解有关 DataLock 和勒索软件防护选项的详细信息，请参阅 link:prev-ontap-policy-object-options.html["DataLock 和勒索软件保护选项"]。
 
-您可以将该计划更改为几天或几周，或者禁用它，以节省成本。
+您可以将该计划更改为几天或几周，也可以禁用该计划以节省费用。
 
 
 TIP: 根据云提供商的不同，启用勒索软件扫描将产生额外费用。
@@ -127,7 +127,7 @@ TIP: 根据云提供商的不同，启用勒索软件扫描将产生额外费用
 
 .步骤
 . 从*Volumes*选项卡中，选择*Backup Settings*。
-. 在“备份设置”页面中，单击 image:icon-actions-horizontal.gif["更多图标"] 在系统中，选择“配置高级设置 > 系统设置”。
+. 在_备份设置页面_中，选择 image:icon-actions-horizontal.gif["更多图标"] 以配置系统，然后选择*配置高级设置 > 系统设置*。
 . 在出现的页面中，展开“*勒索软件扫描*”部分。
 . 启用或禁用*勒索软件扫描*。
 . 选择*计划勒索软件扫描*。
@@ -145,7 +145,7 @@ TIP: 根据云提供商的不同，启用勒索软件扫描将产生额外费用
 
 .步骤
 . 从*Volumes*选项卡中，选择*Backup Settings*。
-. 在“备份设置”页面中，单击 image:icon-actions-horizontal.gif["更多图标"] 在系统中，选择“配置高级设置 > 提供商设置”。
+. 在_备份设置页面_中，选择 image:icon-actions-horizontal.gif["更多图标"] 以进行系统设置，然后选择*配置高级设置 > 提供程序设置*。
 . 在出现的页面顶部，选择需要更改设置的存储桶。
 . 展开“勒索软件扫描”部分。
 . 启用或禁用*勒索软件扫描*。

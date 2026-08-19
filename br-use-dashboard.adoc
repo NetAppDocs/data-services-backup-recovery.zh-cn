@@ -4,7 +4,7 @@ permalink: br-use-dashboard.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
 summary: 监控工作负载的健康状况可确保您了解工作负载保护的问题并可以采取措施解决这些问题。查看备份和恢复的状态并对NetApp Backup and Recovery仪表板上出现的任何警报做出响应。您可以查看保护摘要、恢复摘要、系统摘要等。 
 ---
-= 在NetApp Backup and Recovery仪表板上查看保护健康状况
+= 在 Backup and Recovery 仪表板上查看保护运行状况
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,12 +14,12 @@ summary: 监控工作负载的健康状况可确保您了解工作负载保护�
 
 
 [role="lead"]
-监控工作负载的健康状况可确保您了解工作负载保护的问题并可以采取措施解决这些问题。在NetApp Backup and Recovery仪表板上查看备份和恢复的状态。您可以查看系统摘要、保护摘要、作业摘要、恢复摘要等。
+监控工作负载的运行状况，以识别保护问题并响应警报。查看备份和还原的状态，并查看 NetApp Backup and Recovery 仪表板上的系统、保护、作业和还原摘要。
 
 *必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
-. 从NetApp Console菜单中，选择 *保护* > *备份和恢复*。
+. 在 NetApp Console 菜单中，选择*保护* > *备份和恢复*。
 . 选择一个工作负载图块（例如，Microsoft SQL Server）。
 . 从备份和恢复菜单中，选择*仪表板*。
 +
@@ -59,8 +59,8 @@ TIP: 受保护的数据库是已分配备份策略的数据库。不受保护的
 在作业摘要中查看已完成、正在运行或失败的作业总数。
 
 .步骤
-. 对于每个作业分布，更改过滤器以根据天数显示失败、正在运行和完成的摘要，例如过去 30 天、过去 7 天、过去 24 小时或过去 1 年。
-. 通过选择“查看作业监控”来查看失败、正在运行和已完成作业的详细信息。
+. 对于每个作业分配，更改筛选器以根据天数显示失败、正在运行和已完成作业的摘要，例如，过去 30 天、过去 7 天、过去 24 小时或过去一年。
+. 选择*查看作业监控*，查看失败、正在运行和已完成作业的详细信息。
 
 
 
@@ -68,7 +68,7 @@ TIP: 受保护的数据库是已分配备份策略的数据库。不受保护的
 [[view-the-restore-summary]]
 == 查看还原摘要
 
-查看还原摘要中的以下信息：
+查看还原摘要中的下列信息：
 
 * 执行的恢复作业总数
 * 已恢复的总容量

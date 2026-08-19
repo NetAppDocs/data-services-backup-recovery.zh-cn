@@ -14,7 +14,7 @@ summary: 使用 NetApp Backup and Recovery 保护您的 Oracle Database 工作�
 
 
 [role="lead"]
-如果需要在受控状态下访问数据库以执行恢复操作，则可能需要装载 Oracle Database 恢复点。当需要在 RMAN 恢复目录中存储备份和恢复操作元数据，但未启用自动编录元数据的选项时，请手动编录恢复点。
+当您需要访问处于受控状态的数据库以进行恢复操作时，请挂载 Oracle 数据库恢复点。如果已禁用自动编录，则可以在 RMAN 恢复目录中手动编录恢复点元数据。
 
 
 
@@ -73,7 +73,7 @@ summary: 使用 NetApp Backup and Recovery 保护您的 Oracle Database 工作�
 
 
 [[catalog-an-oracle-database-recovery-point]]
-== 为 Oracle 数据库恢复点编制目录
+== 对 Oracle 数据库恢复点进行编目
 
 需要保留恢复点的备份和恢复操作元数据时，手动编录恢复点。元数据根据您为数据库选择的 *配置 RMAN 目录* 设置进行存储（默认情况下在目标控制文件中）。如果在关联的保护策略中禁用了自动编目，则只需手动编目。
 

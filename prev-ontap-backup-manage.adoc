@@ -14,7 +14,7 @@ summary: 借助NetApp Backup and Recovery，您可以通过更改备份计划、
 
 
 [role="lead"]
-借助NetApp Backup and Recovery，您可以通过更改备份计划、启用/禁用卷备份、暂停备份、删除备份、强制删除备份等方式管理Cloud Volumes ONTAP和本地ONTAP系统的备份。这包括所有类型的备份，包括快照、复制卷和对象存储中的备份文件。您还可以取消注册NetApp Backup and Recovery。
+使用 NetApp Backup and Recovery 管理 Cloud Volumes ONTAP 和本地 ONTAP 系统的快照、复制和对象存储备份。您可以更改计划、启用或禁用卷备份、暂停备份、删除备份以及取消注册服务。
 
 
 CAUTION: 请勿直接在存储系统或云提供商环境中管理或更改备份文件。这可能会损坏文件并导致不受支持的配置。
@@ -36,7 +36,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 +
 要显示其他列（聚合、安全样式（Windows 或 UNIX）、快照策略、复制策略和备份策略），请选择加号。
 
-. 查看“现有保护”列中保护选项的状态。这 3 个图标分别代表“本地快照”、“复制卷”和“对象存储中的备份”。
+. 查看"现有保护"列中保护选项的状态。这三个图标代表"本地快照"、"已复制卷"和"对象存储中的备份"。
 +
 当该备份类型激活时，相应的图标会亮起；当该备份类型未激活时，图标会变为灰色。您可以将鼠标悬停在每个图标上，查看正在使用的备份策略以及每种备份类型的其他相关信息。
 
@@ -67,7 +67,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 . 从“卷”菜单中，找到要修改策略设置的卷，然后选择“操作”菜单。 image:icon-action.png["操作图标"] 在行尾，选择“编辑备份策略”。
 . 在“编辑备份策略”页面中，对本地快照、复制卷和备份文件的现有备份策略进行更改，然后选择“下一步”。
 +
-如果在激活此群集的 NetApp Backup and Recovery 时，在初始备份策略中为云备份启用了_数据锁和勒索软件保护_，则只能看到已配置 DataLock 的其他策略。如果您在激活 NetApp Backup and Recovery 时没有启用_数据锁和勒索软件保护_，您只会看到其他未配置 DataLock 的云备份策略。
+如果您在为此集群激活 NetApp Backup and Recovery 时，在初始备份策略中为云备份启用了 _DataLock 和勒索软件保护_，则您将只能看到其他配置了 DataLock 的策略。如果您在激活 NetApp Backup and Recovery 时未启用 _DataLock 和勒索软件保护_，则您将只能看到其他未配置 DataLock 的云备份策略。
 
 . 检查此卷的备份设置，然后选择*激活备份*。
 
@@ -91,7 +91,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 .步骤
 . 从“*卷*”选项卡中，按卷所在的系统进行过滤。
 . 选择您想要管理备份设置的所有卷。
-. 根据您要配置的备份操作类型，单击批量操作菜单中的按钮：
+. 根据您要配置的备份操作类型，选择批量操作菜单中的按钮：
 +
 [cols="50,30"]
 |===
@@ -111,7 +111,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 |===
 . 在出现的备份页面中，对本地快照、复制卷或备份文件的现有备份策略进行更改，然后选择“保存”。
 +
-如果在激活此群集的 NetApp Backup and Recovery 时，在初始备份策略中为云备份启用了_数据锁和勒索软件保护_，则只能看到已配置 DataLock 的其他策略。如果您在激活 NetApp Backup and Recovery 时没有启用_数据锁和勒索软件保护_，您只会看到其他未配置 DataLock 的云备份策略。
+如果您在为此集群激活 NetApp Backup and Recovery 时，在初始备份策略中为云备份启用了 _DataLock 和勒索软件保护_，则您将只能看到其他配置了 DataLock 的策略。如果您在激活 NetApp Backup and Recovery 时未启用 _DataLock 和勒索软件保护_，则您将只能看到其他未配置 DataLock 的云备份策略。
 
 
 
@@ -126,7 +126,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 
 备份名称包含时间戳，以便您可以从其他计划备份中识别出您的按需备份。
 
-如果在激活此集群的 NetApp Backup and Recovery 时启用了_Datalock 和 Ransomware 保护_，则按需备份也将配置 DataLock，保留期为 30 天。临时备份不支持勒索软件扫描。link:prev-ontap-policy-object-options.html["了解有关 DataLock 和勒索软件保护的更多信息"^]。
+如果在激活此集群的 NetApp Backup and Recovery 时启用了 _DataLock 和勒索软件保护_，则按需备份也将配置 DataLock，保留期为 30 天。临时备份不支持勒索软件扫描。link:prev-ontap-policy-object-options.html["了解有关 DataLock 和勒索软件保护的更多信息"^]。
 
 当您创建临时备份时，会在源卷上创建快照。由于此快照不是正常快照计划的一部分，因此它不会旋转。备份完成后，您可能希望从源卷中手动删除此快照。这将允许释放与此快照相关的块。快照名称将以 `cbs-snapshot-adhoc-`。 https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["了解如何使用ONTAP CLI 删除快照"^] 。
 
@@ -161,7 +161,7 @@ NOTE: 数据保护卷不支持按需卷备份。
 
 当创建目标文件备份时以及恢复备份文件中的数据时， NetApp Backup and Recovery会扫描您的备份文件以查找勒索软件攻击的证据。您还可以随时运行按需扫描，以验证对象存储中特定备份文件的可用性。如果您在特定卷上遇到勒索软件问题并且想要验证该卷的备份不受影响，这将很有用。
 
-仅当卷备份是从运行 ONTAP 9.11.1 或更高版本的系统创建的，并且您在备份到对象策略中启用了_数据锁和勒索软件保护_时，此功能才可用。
+仅当卷备份是从运行 ONTAP 9.11.1 或更高版本的系统创建的，且在备份到对象策略中启用了 _DataLock 和勒索软件保护_ 时，此功能才可用。
 
 .步骤
 . 从“卷”选项卡中选择image:icon-actions-horizontal.gif["操作图标"]对于源卷并选择*查看卷详细信息*。
@@ -169,7 +169,7 @@ NOTE: 数据保护卷不支持按需卷备份。
 将显示该卷的详细信息。
 
 . 选择*备份*以查看对象存储中的备份文件列表。
-. 选择image:icon-actions-horizontal.gif["操作图标"]对于您想要扫描勒索软件的卷备份文件，然后单击*扫描勒索软件*。
+. 选择要扫描勒索软件的卷备份文件对应的 image:icon-actions-horizontal.gif["操作图标"]，然后选择 *扫描勒索软件*。
 +
 勒索软件防护列显示扫描正在进行中。
 
@@ -228,7 +228,7 @@ NOTE: 数据保护卷不支持按需卷备份。
 
 [NOTE]
 ====
-* 如果在为此群集激活 NetApp Backup and Recovery 时在初始策略中启用了_数据锁和勒索软件保护_，则必须使用相同的 DataLock 设置（治理或合规性）配置您编辑的任何策略。如果您在激活 NetApp Backup and Recovery 时没有启用_数据锁和勒索软件保护_，则您现在无法启用 DataLock。
+* 如果在为此集群激活 NetApp Backup and Recovery 时在初始策略中启用了 _DataLock and Ransomware protection_，则您编辑的任何策略都必须配置相同的 DataLock 设置（治理或合规性）。如果在激活 NetApp Backup and Recovery 时未启用 _DataLock and Ransomware protection_，则现在无法启用 DataLock。
 * 在 AWS 上创建备份时，如果您在激活NetApp Backup and Recovery时在第一个备份策略中选择了 _S3 Glacier_ 或 _S3 Glacier Deep Archive_，则该层将是编辑备份策略时唯一可用的存档层。如果您在第一个备份策略中未选择存档层，那么在编辑策略时，_S3 Glacier_ 将是您唯一的存档选项。
 
 
@@ -260,7 +260,7 @@ link:prev-reference-aws-archive-storage-tiers.html["了解有关使用 AWS 档�
 
 [NOTE]
 ====
-* 如果在为此群集激活 NetApp Backup and Recovery 时在初始策略中启用了_数据锁和勒索软件保护_，则必须使用相同的 DataLock 设置（治理或合规性）配置您创建的任何其他策略。如果您在激活 NetApp Backup and Recovery 时未启用_数据锁和勒索软件保护_，则无法创建使用 DataLock 的新策略。
+* 如果在为此集群激活 NetApp Backup and Recovery 时在初始策略中启用了 _DataLock and Ransomware protection_，则您创建的任何其他策略都必须配置相同的 DataLock 设置（Governance 或 Compliance）。如果在激活 NetApp Backup and Recovery 时未启用 _DataLock and Ransomware protection_，则无法创建使用 DataLock 的新策略。
 * 在 AWS 上创建备份时，如果您在激活NetApp Backup and Recovery时在第一个备份策略中选择了 _S3 Glacier_ 或 _S3 Glacier Deep Archive_，则该层将是该集群未来备份策略可用的唯一存档层。如果您在第一个备份策略中未选择存档层，那么_S3 Glacier_ 将是您未来策略的唯一存档选项。
 
 
@@ -326,7 +326,7 @@ CAUTION: 请谨慎使用此选项，并且仅在极端清理需要时使用。�
 NOTE: 删除备份关系后，无法删除单个卷备份文件。在删除卷的备份关系之前，请先删除卷的备份文件。
 
 .步骤
-. 从 *Volumes* 菜单中，单击源卷的 image:icon-actions-horizontal.gif["更多图标"]，然后选择 *Manage backups > View backup*。
+. 在*卷*菜单中，为源卷选择 image:icon-actions-horizontal.gif["更多图标"]，然后选择*管理备份 > 查看备份*。
 +
 显示所有备份文件的列表。
 
