@@ -31,7 +31,7 @@ summary: 在 NetApp Backup and Recovery 中为 Oracle Database 工作负载创�
 
 将要共同保护的 Oracle 数据库资源分组到保护组中。
 
-*所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。

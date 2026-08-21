@@ -16,8 +16,9 @@ summary: NetApp Backup and Recovery使您能够管理工作负载主机信息、
 [role="lead"]
 使用 NetApp Backup and Recovery Web UI 或自定义资源文件添加 Kubernetes 应用程序以进行保护。您可以添加使用标准 Kubernetes 资源的基于命名空间的应用程序，也可以添加使用一个或多个虚拟机的基于虚拟机的应用程序。
 
-.所需的NetApp Console角色
-组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*所需 NetApp Console 角色*
+
+Backup and Recovery 超级管理员或 Backup and Recovery 备份管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 
 

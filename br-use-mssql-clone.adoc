@@ -24,7 +24,7 @@ summary: 克隆 Microsoft SQL Server 应用程序数据，用于开发、测试�
 
 您可以创建、刷新、拆分和删除克隆。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复克隆管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 
 

@@ -29,7 +29,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 
 NetApp Backup and Recovery使您能够为每个系统（集群）创建具有唯一计划的多个备份策略。您可以为具有不同恢复点目标 (RPO) 的卷分配不同的备份策略。
 
-每个备份策略都提供了一个“标签和保留”部分，您可以将其应用于备份文件。请注意，应用于卷的 Snapshot 策略必须是NetApp Backup and Recovery识别的策略之一，否则将不会创建备份文件。
+每个备份策略都为_Labels & Retention_提供了一个部分，您可以将其应用于备份文件。请注意，应用于卷的快照策略必须为 NetApp Backup and Recovery 所识别的策略之一，否则将不会创建备份文件。
 
 该计划分为两部分：标签和保留值：
 

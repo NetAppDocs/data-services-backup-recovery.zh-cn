@@ -128,7 +128,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 
 如果在激活此集群的 NetApp Backup and Recovery 时启用了 _DataLock 和勒索软件保护_，则按需备份也将配置 DataLock，保留期为 30 天。临时备份不支持勒索软件扫描。link:prev-ontap-policy-object-options.html["了解有关 DataLock 和勒索软件保护的更多信息"^]。
 
-当您创建临时备份时，会在源卷上创建快照。由于此快照不是正常快照计划的一部分，因此它不会旋转。备份完成后，您可能希望从源卷中手动删除此快照。这将允许释放与此快照相关的块。快照名称将以 `cbs-snapshot-adhoc-`。 https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["了解如何使用ONTAP CLI 删除快照"^] 。
+创建临时备份时，将在源卷上创建一个快照。由于此快照不是正常快照计划的一部分，因此不会自动轮换删除。备份完成后，您可能需要从源卷中手动删除此快照。这将释放与此快照相关的块。快照名称将以 `cbs-snapshot-adhoc-`开头。 https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["请参阅如何使用 ONTAP CLI 删除快照"^]。
 
 
 NOTE: 数据保护卷不支持按需卷备份。

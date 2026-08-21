@@ -23,7 +23,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 
 要了解提供的默认备份策略，请参阅link:prev-ontap-protect-journey.html["规划您的保护之旅"]。
 
-NetApp Backup and Recovery提供三种类型的ONTAP数据备份：快照、复制和对象存储备份。根据您使用的架构和备份类型，它们的策略位于不同的位置：
+NetApp Backup and Recovery 提供三种类型的 ONTAP 数据备份：快照、复制和备份到对象存储。根据您使用的架构和备份类型，其策略驻留在不同的位置：
 
 [cols="25,25,25,25"]
 |===
@@ -85,7 +85,7 @@ TIP: 使用系统管理器时，选择*异步*作为复制策略的策略类型�
 +
 出现“策略管理”页面。
 
-. 在策略管理页面中，选择*创建策略* > *创建 Snapshot 策略*。
+. 在策略管理页面中，选择*创建策略* > *创建快照策略*。
 . 指定策略名称。
 . 选择一个或多个快照计划。您最多可以拥有 5 个标签。或者，创建一个时间表。
 . 如果您选择创建时间表：
@@ -206,4 +206,4 @@ NOTE: 复制和备份策略的过程相同。
 
 有关使用 System Manager 或ONTAP CLI 创建策略的说明，请参阅以下内容：
 
-https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["使用 System Manager 创建 Snapshot 策略"^] https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["使用ONTAP CLI 创建 Snapshot 策略"^] https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["使用 System Manager 创建复制策略"^] https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["使用ONTAP CLI 创建复制策略"^] https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["使用 System Manager 创建对象存储策略的备份"^] https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["使用ONTAP CLI 创建对象存储策略备份"^]
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["使用 System Manager 创建快照策略"^] https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["使用 ONTAP CLI 创建快照策略"^] https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["使用 System Manager 创建复制策略"^] https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["使用ONTAP CLI 创建复制策略"^] https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["使用 System Manager 创建对象存储策略的备份"^] https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["使用ONTAP CLI 创建对象存储策略备份"^]

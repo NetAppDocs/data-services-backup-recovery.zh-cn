@@ -49,7 +49,7 @@ summary: 在 NetApp Backup and Recovery 中管理 Microsoft SQL Server 主机、
 
 管理主机信息，确保正确的主机受到保护。根据需要查看、编辑和删除主机信息。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员或备份和恢复克隆管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* Backup and Recovery 超级管理员、Backup and Recovery 备份管理员、Backup and Recovery 恢复管理员或 Backup and Recovery 克隆管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 * 配置日志目录。有关详细信息，请参见 link:br-start-setup.html["配置NetApp Backup and Recovery设置"]。
 * 暂停时间表
@@ -69,7 +69,7 @@ TIP: 要管理主机，请在主机列中查找"未托管"状态。NetApp Backup
 
 在NetApp Backup and Recovery中管理主机后， SnapCenter不再管理这些主机上的资源。
 
-*需要 NetApp Console 角色* 存储查看器或备份和恢复超级管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从菜单中选择*库存*。
@@ -145,7 +145,7 @@ TIP: 要管理主机，请在主机列中查找"未托管"状态。NetApp Backup
 * 立即备份
 
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 
 
@@ -255,7 +255,7 @@ TIP: 要管理主机，请在主机列中查找"未托管"状态。NetApp Backup
 
 您可以更改策略、创建新策略、设置时间表和设置保留设置。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -275,7 +275,7 @@ TIP: 要管理主机，请在主机列中查找"未托管"状态。NetApp Backup
 
 需要恢复数据时还原数据库。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复还原管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -295,7 +295,7 @@ TIP: 要管理主机，请在主机列中查找"未托管"状态。NetApp Backup
 
 您可以更改策略、创建新策略、设置时间表和设置保留设置。
 
-*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -315,7 +315,7 @@ TIP: 要管理主机，请在主机列中查找"未托管"状态。NetApp Backup
 
 您现在可以备份您的 Microsoft SQL Server 实例和数据库，以立即保护您的数据。
 
-*所需的NetApp Console角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。

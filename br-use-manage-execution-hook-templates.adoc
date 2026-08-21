@@ -25,8 +25,9 @@ NetApp Backup and Recovery 会在数据保护期间冻结和解冻应用程序�
 
 
 ====
-.所需的NetApp Console角色
-组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*所需 NetApp Console 角色*
+
+Backup and Recovery super admin、Backup and Recovery backup admin 或 Backup and Recovery restore admin。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^].
 
 
 

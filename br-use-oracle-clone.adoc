@@ -16,7 +16,7 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 [role="lead"]
 使用 NetApp Backup and Recovery 从主存储或二级存储上的本地 ONTAP 系统创建 Oracle 数据库工作负载的可写克隆。您还可以安排克隆刷新以满足您的要求。
 
-*所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复克隆管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 
 
@@ -31,6 +31,15 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 . 选择 *Clone*。
 . 选择*创建新克隆*。
 . 在 *Database source* 部分，从列表中选择源主机和数据库。
++
+.. 如果源数据库是容器数据库 (CDB)，请在*克隆类型*部分中选择以下选项之一：
++
+*** *Complete database clone*：克隆整个容器数据库，包括所有 PDB。
+*** *PDB clone*：将特定 PDB 从容器数据库备份克隆到现有目标容器数据库。
+
+
+
+
 . 在 *Database target* 部分，从列表中选择目标主机和数据库。目标主机和数据库可以与源主机和数据库不同。
 . 选择“下一步”。
 . 在 *选择还原点* 页面的 *克隆来源* 部分，选择 *现有快照*。
@@ -41,8 +50,9 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 . 选择要使用的快照位置，然后选择 *Next*。
 . 在 *高级选项* 页面上，执行以下操作：
 +
-.. 如果以前保存过规范文件，则可以上传该文件以自定义克隆的数据库设置。您还可以下载数据库快照的默认规范文件。
-.. 在 *Recovery scope* 部分，选择如何限制恢复内容以创建克隆，并为您选择的选项输入所需的信息。选择 *None* 会恢复所有数据。
+.. （可选）如果要克隆完整的多租户数据库，请在*完成数据库克隆设置*中，选择一个或多个要从克隆中排除的 PDB（PDB$SEED 始终排除）。克隆单个租户数据库时，不会显示此部分。
+.. 如果您以前保存过规范文件，则可以启用*自定义目标数据库参数*选项来上传并自定义克隆的数据库设置。您还可以下载数据库快照的默认规范文件。
+.. 在*恢复范围*部分，选择使用归档日志恢复克隆的选项，并输入任何必需的详细信息。选择*无*跳过恢复（克隆是从快照创建的，而不应用归档日志的更改）。*无*不适用于 PDB 克隆。
 .. 在 *Prescripts and postscripts* 部分中，启用 *Prescript* 和 *Postscript* 选项之一或两者，以在克隆操作开始之前或完成之后执行脚本。对于每个选项，输入完整的脚本路径和任何必需的参数。
 
 
@@ -55,6 +65,9 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 == 计划克隆 Oracle 数据库
 
 创建即时克隆并安排定期刷新，使其与最新的数据库状态保持一致。
+
+
+NOTE: 创建具有刷新计划的即时快照和克隆仅适用于完整的数据库克隆。它不适用于 PDB 克隆。
 
 .步骤
 . 从NetApp Console菜单中，选择“保护”>“备份和恢复”。

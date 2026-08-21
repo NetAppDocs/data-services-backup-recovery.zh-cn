@@ -51,7 +51,7 @@ summary: 在NetApp Backup and Recovery中创建和管理 VMware 工作负载的�
 
 创建保护组以组织要一起备份和还原的资源。
 
-*所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .开始之前
 * 确保您的环境正在使用受支持的 VMware vSphere 版本。

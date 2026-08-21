@@ -28,7 +28,7 @@ summary: 将本地 ONTAP 系统上的 Microsoft SQL Server 应用程序数据备
 
 在开始备份之前，请查看工作负载的保护状态。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员或备份和恢复查看器角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* Backup and Recovery 超级管理员、Backup and Recovery 备份管理员、Backup and Recovery 恢复管理员、Backup and Recovery 克隆管理员或 Backup and Recovery 查看器角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -44,7 +44,7 @@ summary: 将本地 ONTAP 系统上的 Microsoft SQL Server 应用程序数据备
 
 设置已发现主机的活动日志路径，以便在备份工作负载之前跟踪操作状态。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员、备份和恢复备份管理员或备份和恢复还原管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员、备份和恢复备份管理员或备份和恢复还原管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色。了解 link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -68,7 +68,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 创建保护组来管理多个工作负载的备份和还原操作。保护组是工作负载的逻辑分组。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解 link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -95,7 +95,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 在对系统进行更改之前运行按需备份，以确保您的数据受到保护。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -116,7 +116,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 暂停计划以在维护或故障排除期间暂时停止备份。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解 link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -134,7 +134,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 删除保护组会删除该保护组以及所有相关的备份计划。如果不再需要某个保护组，您可能需要将其删除。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解 link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
@@ -151,7 +151,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 
 如果您不再想要备份某个工作负载，或者想要停止在NetApp Backup and Recovery中管理该工作负载，则可以从该工作负载中删除保护。
 
-*必需的 NetApp Console 角色* 存储查看器、备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解 link:reference-roles.html["备份和恢复角色和权限"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。

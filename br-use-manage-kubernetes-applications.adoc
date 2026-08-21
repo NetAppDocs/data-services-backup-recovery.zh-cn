@@ -16,8 +16,9 @@ summary: 在 NetApp Backup and Recovery 中管理 Kubernetes 应用程序和相�
 [role="lead"]
 取消保护或删除 Kubernetes 应用程序，并在需要时删除还原点。
 
-.所需的NetApp Console角色
-组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*所需 NetApp Console 角色*
+
+Backup and Recovery 超级管理员或 Backup and Recovery 备份管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 
 

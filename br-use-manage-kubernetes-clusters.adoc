@@ -16,9 +16,6 @@ summary: NetApp Backup and Recovery使您能够发现和管理 Kubernetes 集群
 [role="lead"]
 发现和管理 Kubernetes 集群以保护其托管资源。
 
-.所需的NetApp Console角色
-组织管理员或SnapCenter管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"] 。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
-
 
 NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现 Kubernetes 工作负载"]。
 
@@ -28,6 +25,10 @@ NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现
 == 编辑 Kubernetes 集群信息
 
 如果需要更改集群名称，您可以编辑集群。
+
+*所需 NetApp Console 角色*
+
+Backup and Recovery 超级管理员或 Backup and Recovery 备份管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory* > *Clusters*。
@@ -44,6 +45,10 @@ NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现
 
 要停止保护 Kubernetes 集群，请禁用保护并删除相关应用程序，然后从NetApp Backup and Recovery中删除该集群。  NetApp Backup and Recovery不会删除集群或其资源；它只会从NetApp Console清单中删除集群。
 
+*所需 NetApp Console 角色*
+
+备份和恢复超级管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^].
+
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory* > *Clusters*。
 . 在群集列表中，选择要删除的群集，然后选择关联的"操作"菜单。
@@ -57,6 +62,10 @@ NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现
 == 升级 Trident Protect
 
 对于运行 Trident Protect 26.05 或更高版本的 Kubernetes 集群，您可以直接从 NetApp Backup and Recovery 中升级 Trident Protect。仅当有更新版本可用时，才会显示升级选项。
+
+*所需 NetApp Console 角色*
+
+备份和恢复超级管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^].
 
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory* > *Clusters*。
@@ -76,6 +85,10 @@ NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现
 
 如果 Console 代理的 IP 地址发生变化（例如，重新启动后），Kubernetes 集群将失去与代理的连接，您需要重新连接。
 
+*所需 NetApp Console 角色*
+
+备份和恢复超级管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^].
+
 .步骤
 . 在NetApp Backup and Recovery中，选择 *Inventory* > *Clusters*。
 . 选择一个断开连接的 Kubernetes 集群，然后选择操作图标 image:../media/icon-action.png["操作选项"] > *修改集群* > *重新连接集群*。
@@ -92,6 +105,10 @@ NOTE: 要发现 Kubernetes 集群，请参阅link:br-start-discover.html["发现
 == 将 Kubernetes 集群迁移到新的 Console 代理
 
 如果 Console 代理被删除或不可用，请将使用它的任何集群迁移到新代理，以避免中断应用程序保护。
+
+*所需 NetApp Console 角色*
+
+备份和恢复超级管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^].
 
 .开始之前
 * https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["部署新的控制台代理。"^]

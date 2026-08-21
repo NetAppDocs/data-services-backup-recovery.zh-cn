@@ -28,7 +28,7 @@ summary: 使用NetApp备份和恢复保护您的 Hyper-V 工作负载。
 
 在进行系统更改之前，请使用按需备份来保护您的数据。
 
-*所需的控制台角色* 备份和恢复超级管理员或备份和恢复备份管理员角色。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^] 。
+*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复备份管理员角色 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
 
 .步骤
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
