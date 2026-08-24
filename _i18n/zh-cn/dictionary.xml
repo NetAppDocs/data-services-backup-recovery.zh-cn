@@ -2846,7 +2846,6 @@
   <block id="5d8a63e586bb4dfbba4ae7d992161e1c" category="admonition">如果您系统上的ONTAP版本低于 9.13.1，并且备份文件已配置 DataLock 和勒索软件，则您无法恢复文件夹或文件。在这种情况下，您可以从备份文件恢复整个卷，然后访问所需的文件。</block>
   <block id="6570e12596b3149578b487431c923c26" category="section-title">使用“浏览和还原”还原卷</block>
   <block id="0dd2b1cb1df813100b87a26410a861c2" category="paragraph">当您从备份文件恢复卷时， NetApp Backup and Recovery会使用备份中的数据创建一个_新_卷。使用对象存储备份时，您可以将数据还原到原始系统中的卷、与源系统位于同一云帐户的其他系统或本地ONTAP系统。</block>
-  <block id="c1b52fe790511b9298f4b5f6a53599f4" category="paragraph">将云备份还原到使用ONTAP 9.13.0 或更高版本的Cloud Volumes ONTAP系统或运行ONTAP 9.14.1 的本地ONTAP系统时，您可以选择执行_快速还原_操作。快速恢复非常适合需要尽快提供对卷的访问的灾难恢复情况。快速还原将备份文件中的元数据还原到卷，而不是还原整个备份文件。不建议对性能或延迟敏感的应用程序使用快速恢复，并且不支持归档存储中的备份。</block>
   <block id="8e602d0d71734b6cf234a5890bf1241a" category="paragraph">从复制卷还原时，您可以将卷还原到原始系统或Cloud Volumes ONTAP或本地ONTAP系统。</block>
   <block id="9336df9a96bed9adb0f67170b2dad2b3" category="inline-image-macro">该图显示了使用浏览和还原执行卷还原操作的流程。</block>
   <block id="38aad7ac8bd6898064d142472e3e7624" category="paragraph"><block ref="7d27a3070fb1dce60f7cb72cb7d60b55" category="inline-image-macro-rx" type="image"></block></block>
@@ -2865,7 +2864,6 @@
   <block id="f88c0e05820f08ba199e29b639f011b8" category="list-text">选择“*下一步*”来选择是否执行正常还原或快速还原过程：</block>
   <block id="2618b905cdc9e04055a7d6a5328eebfb" category="list-text">*正常还原*：在需要高性能的卷上使用正常还原。还原过程完成之前，卷将不可用。</block>
   <block id="64063115b259542737cce343064e3233" category="list-text">*快速恢复*：恢复的卷和数据将立即可用。请勿在需要高性能的卷上使用此功能，因为在快速恢复过程中，访问数据的速度可能比平时慢。</block>
-  <block id="6eee547bc01439c26e38a61dd8989c57" category="list-text">选择“*恢复*”，您将返回到恢复仪表板，以便查看恢复操作的进度。</block>
   <block id="4276310eb89ef8fcf7b98a74fece59a4" category="paragraph">NetApp Backup and Recovery根据您选择的备份创建一个新卷。</block>
   <block id="db4e4a49003b7dd44bc5766a32164bcb" category="paragraph">请注意，从驻留在档案存储中的备份文件恢复卷可能需要几分钟或几小时，具体取决于档案层和恢复优先级。您可以选择“作业监控”选项卡来查看恢复进度。</block>
   <block id="310dbba96c4cb79d0f5f822051257fc8" category="section-title">使用“浏览和还原”还原文件夹和文件</block>
@@ -5441,7 +5439,6 @@
   <block id="9e7b2b1d8b0a463be272aa82baedba1c" category="list-text"><block ref="db0f6f37ebeb6ea09489124345af2a45" prefix="" category="inline-code"></block>（可选）：API 组（例如，<block ref="9a6dd283c3de653fbca500f9721f634f" prefix=" " category="inline-code"></block>、<block ref="1349047320cfd1ac557e762506024413" prefix=" " category="inline-code"></block>）——省略核心资源</block>
   <block id="f7281027f1afedf6f7157acbff7d7570" category="paragraph">使用该<block ref="9dde360102c103867bd2f45872f1129c" prefix=" " category="inline-code"></block>操作替换指定路径下资源中的现有值。JSON Pointer 路径必须已存在。以下示例更改 Route 对象的主机名：</block>
   <block id="e2c49b50023b8581ad0e0c1590477c2c" category="paragraph">监视快照、复制、备份和还原作业。配置电子邮件通知并使用 Console Timeline 来调查活动。</block>
-  <block id="5aab39a051334c1f3071545a180c86a8" category="paragraph">NetApp Backup and Recovery 将作业信息保留 15 天，然后将其删除并从作业监视器中移除。</block>
   <block id="dfb648ab8bdcaffa1f10f59b16fbdbe6" category="list-text">要显示其他列（系统、存储虚拟机、用户名、工作负载、策略名称、快照标签），请选择加号。</block>
   <block id="f961d5780137e52b38d60d0076cfad03" category="paragraph">可以使用多个筛选器（例如策略、快照标签、操作类型（保护、还原、保留或其他）和保护类型（本地快照、复制或备份到云））来筛选作业监视页面上的操作。</block>
   <block id="5fe43d3e42037473a1d9dcda6cb5135c" category="paragraph">使用此面板可输入任何资源的自由文本搜索；例如，"volume 1"或"application 3"。您还可以根据下拉菜单中的项目筛选作业列表。</block>
@@ -5957,4 +5954,8 @@
   <block id="ebdcd90fa368ddf5616f4eacd06110a8" category="list-text">*PDBs or PDB tablespaces*：恢复后以读写模式打开可插拔数据库。</block>
   <block id="e05364f3d78ebbf253882396f17dda00" category="list-text">*非 CDB 表空间*：恢复后使表空间联机。</block>
   <block id="ee1ada4dd46ef0156c7c521a2fe33302" category="list-text">在 *Prescripts and postscripts* 部分中，执行以下操作：</block>
+  <block id="a85c5f2691ea6f5dc194ee9983c85c49" category="paragraph">NetApp Backup and Recovery 将作业信息保留 90 天，然后将其删除并从作业监视器中移除。</block>
+  <block id="02164fcf87ac25e7b1e8147e2943b53e" category="paragraph">当使用 ONTAP 9.13.0 或更高版本将云备份还原到 Cloud Volumes ONTAP 系统，或还原到运行 ONTAP 9.14.1 的内部部署 ONTAP 系统时，您可以选择执行_快速还原_操作。快速还原非常适合需要尽快提供卷访问权限的灾难恢复情况。快速还原会将元数据从备份文件还原到卷，而不是还原整个备份文件。对于性能或延迟敏感的应用程序，不建议使用快速还原，并且存档存储中的备份不支持快速还原。</block>
+  <block id="a73fb6eabf726bf5ee3f07c45ffe0012" category="list-text">（可选）启用 *Prioritize this restore over existing job queue* 以赋予此还原操作更高的优先级。启用后，其他正在运行的作业可能会暂停或延迟，以便此还原操作继续进行。</block>
+  <block id="5f02d8d1cae515b7bc981f8e3a14acc4" category="paragraph">您将返回"还原控制面板"，以便查看还原操作的进度。</block>
 </blocks>
