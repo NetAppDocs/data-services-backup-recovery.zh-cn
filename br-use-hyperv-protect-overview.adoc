@@ -14,7 +14,7 @@ summary: 您可以保护 Hyper-V 虚拟机，从本地ONTAP系统到主存储和
 
 
 [role="lead"]
-使用 NetApp Backup and Recovery 备份和还原托管在 CIFS 共享上的独立 Hyper-V VM、FCI 集群实例和 SCVMM 预配的 VM。
+使用 NetApp Backup and Recovery 备份和还原托管在 CIFS 共享上的独立 Hyper-V VM、故障转移群集实例和 SCVMM 预配的 VM。
 
 您可以将 Hyper-V 工作负载备份到 Amazon S3 或 StorageGRID，并将其还原到本地 Hyper-V 主机。
 

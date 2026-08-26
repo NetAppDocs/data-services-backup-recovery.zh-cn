@@ -460,7 +460,7 @@ NOTE: NetApp 强烈建议为用于 Kubernetes 工作负载的 Console 代理分�
 
 |===
 .Hyper-V 主机的硬件要求
-* 支持独立主机和 FCI 集群主机
+* 支持独立主机和故障转移群集配置
 * Hyper-V 主机上的NetApp Hyper-V 插件至少需要 1GB RAM
 * Hyper-V 主机上插件的最低安装和日志空间为 5GB
 +

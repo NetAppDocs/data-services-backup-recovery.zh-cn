@@ -44,6 +44,9 @@ image:diagram_cloud_backup_onprem_aws_public.png["该图显示了NetApp Backup a
 image:diagram_cloud_backup_onprem_aws_private.png["该图表显示了NetApp Backup and Recovery如何通过私有连接与集群上的卷以及备份文件所在的 AWS S3 存储进行通信。"]
 
 
+NOTE: 如果使用专用 VPC 端点进行备份或还原数据传输，则会优先于任何已配置的代理连接。
+
+
 
 [[prepare-your-console-agent]]
 == 准备控制台代理

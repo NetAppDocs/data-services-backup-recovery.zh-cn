@@ -293,7 +293,7 @@ mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
 如果您选择本地ONTAP系统，并且尚未配置与对象存储的集群连接，系统将提示您输入其他信息：
 
 +
-*** 从 Amazon S3 还原时，选择ONTAP集群中目标卷所在的 IP 空间，输入您创建的用户的访问密钥和密钥，以授予ONTAP集群对 S3 存储桶的访问权限，并可选择选择私有 VPC 端点以进行安全数据传输。link:prev-ontap-backup-onprem-aws.html["查看有关这些要求的详细信息"]。
+*** 从 Amazon S3 还原时，请选择目标卷所在的 ONTAP 集群中的 IPspace，输入您创建的用于授予 ONTAP 集群访问 S3 存储桶权限的用户的访问密钥和密钥，并可选择用于安全数据传输的私有 VPC 端点。如果使用私有 VPC 端点，则它会优先于任何已配置的代理连接。link:prev-ontap-backup-onprem-aws.html["查看有关这些要求的详细信息"]。
 *** 从 Azure Blob 还原时，选择目标卷所在的ONTAP集群中的 IP 空间，并通过选择 VNet 和子网来选择用于安全数据传输的私有端点。link:prev-ontap-backup-onprem-azure.html["查看有关这些要求的详细信息"]。
 *** 从 Google Cloud Storage 恢复时，选择目标卷所在的ONTAP集群中的 IP 空间，以及用于访问对象存储的访问密钥和密钥。link:prev-ontap-backup-onprem-gcp.html["查看有关这些要求的详细信息"]。
 *** 从StorageGRID还原时，输入StorageGRID服务器的 FQDN 和ONTAP应用于与StorageGRID进行 HTTPS 通信的端口，输入访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。link:prev-ontap-backup-onprem-storagegrid.html["查看有关这些要求的详细信息"]。

@@ -1504,7 +1504,6 @@
   <block id="35efe147e51e11d3e82b92163214c36a" category="paragraph">您需要特定的要求来发现 Kubernetes 资源并保护您的 Kubernetes 应用程序。</block>
   <block id="e33a9836e18ab4c7f01ac49f666c4e33" category="section-title">保护 Hyper-V 工作负载的要求</block>
   <block id="7e75f7658d8e69b52e07a066a4510af5" category="paragraph">确保您的 Hyper-V 实例满足发现和保护虚拟机的特定要求。</block>
-  <block id="e8ab74a683c73fd7edd0ea5adc16b2b6" category="list-text">支持独立主机和 FCI 集群主机</block>
   <block id="6106f73de41b0409a6e5dd18d2f2baf3" category="list-text">Hyper-V 主机上的NetApp Hyper-V 插件至少需要 1GB RAM</block>
   <block id="6736478116770d132993185ee55b6baf" category="list-text">Hyper-V 主机上插件的最低安装和日志空间为 5GB</block>
   <block id="523f5e6af5276c06e274c9d76b2d4467" category="admonition">确保在 Hyper-V 主机上为日志文件夹分配足够的磁盘空间并定期监控其使用情况。所需空间取决于备份和数据保护操作发生的频率。如果空间不足，则不会生成日志。</block>
@@ -2853,7 +2852,6 @@
   <block id="7eccde2a14cd84f78dde1af09cf04af9" category="list-text">在“选择源”页面中，导航到要恢复的卷的备份文件。选择具有要恢复的日期/时间戳的*系统*、*卷*和*备份*文件。</block>
   <block id="ec4f513ca338429ab9e381b2d0283d04" category="list-text">在“选择目标”页面中，选择要恢复卷的*系统*。</block>
   <block id="4f77ec7cb4d938e815d515d86daf431e" category="list-text">从对象存储还原备份文件时，如果您选择本地ONTAP系统并且尚未配置与对象存储的集群连接，系统将提示您输入其他信息：</block>
-  <block id="8e494bd03a27f49a3a42559fa89f035a" category="list-text">从 Amazon S3 还原时，选择ONTAP集群中目标卷所在的 IP 空间，输入您创建的用户的访问密钥和密钥，以授予ONTAP集群对 S3 存储桶的访问权限，并可选择选择私有 VPC 端点以进行安全数据传输。</block>
   <block id="51610f62d18ca7d65b1b6ede56b0ec28" category="list-text">从 Azure Blob 还原时，选择目标卷所在的ONTAP集群中的 IP 空间，选择用于访问对象存储的 Azure 订阅，并通过选择 VNet 和子网来选择用于安全数据传输的私有端点。</block>
   <block id="8e4c50ba47b740ee23a3b8d84d794692" category="list-text">从 Google Cloud Storage 还原时，选择 Google Cloud 项目以及访问密钥和密钥来访问对象存储、存储备份的区域以及目标卷所在的ONTAP集群中的 IP 空间。</block>
   <block id="7af0d0a640485c14ebea27a93041e711" category="list-text">从StorageGRID还原时，输入StorageGRID服务器的 FQDN 和ONTAP应用于与StorageGRID进行 HTTPS 通信的端口，选择访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。</block>
@@ -2963,7 +2961,6 @@
   <block id="b91fa3318d0603136bd7864720ebff00" category="list-text">对于文件，您可以恢复到原始位置，也可以选择备用位置；包括系统、卷和文件夹。选择原始位置时，您可以选择覆盖源文件或创建新文件。</block>
   <block id="428717688bc831d4b76987ab81a8cda9" category="paragraph">如果您选择本地ONTAP系统，并且尚未配置与对象存储的集群连接，系统将提示您输入其他信息：</block>
   <block id="149fb738a290d4d7e242bb7a559fed06" category="inline-link-macro">查看有关这些要求的详细信息</block>
-  <block id="83e331088b3da3e2f5bbe9b400dc12c8" category="list-text">从 Amazon S3 还原时，选择ONTAP集群中目标卷所在的 IP 空间，输入您创建的用户的访问密钥和密钥，以授予ONTAP集群对 S3 存储桶的访问权限，并可选择选择私有 VPC 端点以进行安全数据传输。<block ref="f17b430f3a657465dd612b247a0f776f" category="inline-link-macro-rx"></block>。</block>
   <block id="a89d2d40f70bfc28a07321ed33550cb2" category="list-text">从 Azure Blob 还原时，选择目标卷所在的ONTAP集群中的 IP 空间，并通过选择 VNet 和子网来选择用于安全数据传输的私有端点。<block ref="f738627e711b1dd12952ed94dbe95969" category="inline-link-macro-rx"></block>。</block>
   <block id="dd93e25b0389c6530d40ab857139a7dd" category="list-text">从 Google Cloud Storage 恢复时，选择目标卷所在的ONTAP集群中的 IP 空间，以及用于访问对象存储的访问密钥和密钥。<block ref="1ed2c3c577c844ea86381aba67dcaebe" category="inline-link-macro-rx"></block>。</block>
   <block id="9bf1efb65c01a771dea1888483386d2f" category="list-text">从StorageGRID还原时，输入StorageGRID服务器的 FQDN 和ONTAP应用于与StorageGRID进行 HTTPS 通信的端口，输入访问对象存储所需的访问密钥和密钥，以及目标卷所在的ONTAP集群中的 IP 空间。<block ref="0a6f49c57b3530476d46e42054d8abbf" category="inline-link-macro-rx"></block>。</block>
@@ -3401,7 +3398,6 @@
   <block id="3e2ef02026c97d7e5a6f8783f142b8ca" category="list-text">资源费用：根据存储使用情况而定。更多信息，请参阅<block ref="fb7e1562747222c6aa716c91aa0ab813" category="inline-link-rx"></block>。</block>
   <block id="b341302252cb59acb02da2074d4fe6c4" category="list-text">*服务费用*： NetApp Backup and Recovery费用。但是，如果源卷位于使用 CVO 专业计划的存储系统中，则NetApp Backup and Recovery是免费提供的。</block>
   <block id="40d372f97e4d897da51bc1fa5978329b" category="paragraph">当您使用 Google Cloud Platform 时，请向NetApp申请私有报价，并在 Google Cloud Marketplace 激活时选择您的套餐。</block>
-  <block id="c224c03fd1f5cab444913dab60a8d013" category="list-text">*主机注册*：通过输入主机的 FQDN 或 IP 地址、凭据、控制台代理和端口号来添加新的 Hyper-V 主机。如果控制台代理无法解析 FQDN，则改用 IP 地址。对于 FCI 集群，请输入 FCI 集群管理 IP 地址。</block>
   <block id="6d397139779cf4483cf1c4693e7f6cfc" category="paragraph">如果您创建自己的存储桶，则应使用存储桶名称“netapp-backup”。如果需要使用自定义名称，请编辑<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block>为现有 CVO 添加 IAMRole，并将以下 JSON 块添加到 S3 权限中<block ref="2af6fd9ec72aee193ee7ffe09638e08f" prefix=" " category="inline-code"></block>大批。您需要包括<block ref="87307b2ef4c880d061c68a6a4277d9a9" prefix=" " category="inline-code"></block>并分配与存储桶关联的所有必要权限。</block>
   <block id="05347845672273f3cffd76e4077cdb51" category="paragraph">恢复功能取决于您的ONTAP版本：</block>
   <block id="a03a5900281bf25c93cb811180bba191" category="list-text">*文件夹：* 使用ONTAP 9.13.0 或更高版本，您可以恢复包含所有文件和子文件夹的文件夹；使用早期版本，您只能恢复文件夹中的文件。</block>
@@ -5299,7 +5295,6 @@
   <block id="6c7f786a585215a0972dba032e54e883" category="list-text">选择*保护组*、*数据存储区*或*虚拟机*选项卡。</block>
   <block id="d112fdc953015b9428df6fb4b0d292e2" category="list-text">选择要备份的保护组或虚拟机。</block>
   <block id="95be69974cb6ceeee9b82d51d01ea71b" category="doc">通过 NetApp Backup and Recovery 保护 Hyper-V 工作负载</block>
-  <block id="889075d391c376e8e93346a67a144591" category="paragraph">使用 NetApp Backup and Recovery 备份和还原托管在 CIFS 共享上的独立 Hyper-V VM、FCI 集群实例和 SCVMM 预配的 VM。</block>
   <block id="2ffb298144dea264e23cf17896e69764" category="paragraph">您可以将 Hyper-V 工作负载备份到 Amazon S3 或 StorageGRID，并将其还原到本地 Hyper-V 主机。</block>
   <block id="b13b14d77e25c739cf89bc679587947b" category="paragraph">使用 NetApp Backup and Recovery 实施 3-2-1 保护策略，在 2 个不同的存储系统上保留 3 个源数据副本，并在云中保留 1 个副本。3-2-1 方法的优势包括：</block>
   <block id="1d7d9d286a1119ddef4be36aa4acd70a" category="list-text">现场副本可帮助您快速还原数据，如果现场副本受损，您可以使用非现场副本。</block>
@@ -5958,4 +5953,10 @@
   <block id="02164fcf87ac25e7b1e8147e2943b53e" category="paragraph">当使用 ONTAP 9.13.0 或更高版本将云备份还原到 Cloud Volumes ONTAP 系统，或还原到运行 ONTAP 9.14.1 的内部部署 ONTAP 系统时，您可以选择执行_快速还原_操作。快速还原非常适合需要尽快提供卷访问权限的灾难恢复情况。快速还原会将元数据从备份文件还原到卷，而不是还原整个备份文件。对于性能或延迟敏感的应用程序，不建议使用快速还原，并且存档存储中的备份不支持快速还原。</block>
   <block id="a73fb6eabf726bf5ee3f07c45ffe0012" category="list-text">（可选）启用 *Prioritize this restore over existing job queue* 以赋予此还原操作更高的优先级。启用后，其他正在运行的作业可能会暂停或延迟，以便此还原操作继续进行。</block>
   <block id="5f02d8d1cae515b7bc981f8e3a14acc4" category="paragraph">您将返回"还原控制面板"，以便查看还原操作的进度。</block>
+  <block id="0cf2d9f20f0932bf7e81cfd6634a5ced" category="list-text">*主机注册*：通过输入主机的 FQDN 或 IP 地址、凭据、Console agent 和端口号来添加新的 Hyper-V 主机。如果 Console agent 无法解析 FQDN，请改用 IP 地址。对于故障转移集群，请输入集群管理 IP 地址。</block>
+  <block id="5d2f99cd43d814823b35af3f0ece474e" category="paragraph">使用 NetApp Backup and Recovery 备份和还原托管在 CIFS 共享上的独立 Hyper-V VM、故障转移群集实例和 SCVMM 预配的 VM。</block>
+  <block id="ae9414d83e17965302547068ba4057f3" category="list-text">支持独立主机和故障转移群集配置</block>
+  <block id="1ee017b4f9f2424d881f97ae99e7a740" category="admonition">如果使用专用 VPC 端点进行备份或还原数据传输，则会优先于任何已配置的代理连接。</block>
+  <block id="e9595cd472d344aa937e119b35d5ad88" category="list-text">从 Amazon S3 还原时，请选择目标卷所在的 ONTAP 集群中的 IP 空间，输入您创建的用户的访问密钥和机密密钥，以授予 ONTAP 集群对 S3 存储桶的访问权限，并可选择用于安全数据传输的私有 VPC 端点。如果使用专用 VPC 端点，则它会优先于任何已配置的代理连接。</block>
+  <block id="abefb361c80a6971ec2a25acc5be3b04" category="list-text">从 Amazon S3 还原时，请选择目标卷所在的 ONTAP 集群中的 IPspace，输入您创建的用于授予 ONTAP 集群访问 S3 存储桶权限的用户的访问密钥和密钥，并可选择用于安全数据传输的私有 VPC 端点。如果使用私有 VPC 端点，则它会优先于任何已配置的代理连接。<block ref="f17b430f3a657465dd612b247a0f776f" category="inline-link-macro-rx"></block>。</block>
 </blocks>

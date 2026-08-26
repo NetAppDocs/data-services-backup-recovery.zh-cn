@@ -34,6 +34,9 @@ image:diagram_cloud_backup_cvo_aws.png["该图显示了NetApp Backup and Recover
 
 VPC 网关端点必须已经存在于您的 VPC 中。 https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html["了解有关网关端点的更多信息"^] 。
 
+
+NOTE: 如果使用专用 VPC 端点进行备份或还原数据传输，则会优先于任何已配置的代理连接。
+
 支持的 ONTAP 版本:: 最低版本为ONTAP 9.8；建议使用ONTAP 9.8P13 及更高版本。
 使用客户管理的密钥进行数据加密所需的信息:: 您可以在激活向导中选择自己的客户管理密钥进行数据加密，而不是使用默认的 Amazon S3 加密密钥。在这种情况下，您需要设置加密管理密钥。 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["了解如何使用您自己的密钥"^] 。
 
