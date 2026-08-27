@@ -25,6 +25,9 @@ summary: NetApp Backup and Recovery需要首先发现工作负载，以便您保
 
 添加管理平台和 KVM 主机信息，让NetApp Backup and Recovery发现工作负载。
 
+
+NOTE: 将存储系统添加到 NetApp Console 后，请等待几分钟，然后再发现资源。在添加存储系统后立即发现资源可能会导致发现失败。
+
 .步骤
 . 从NetApp Console菜单中，选择 *保护* > *备份和恢复*。
 . 在“工作负载”下，选择“KVM”磁贴。

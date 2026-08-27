@@ -5959,4 +5959,5 @@
   <block id="1ee017b4f9f2424d881f97ae99e7a740" category="admonition">如果使用专用 VPC 端点进行备份或还原数据传输，则会优先于任何已配置的代理连接。</block>
   <block id="e9595cd472d344aa937e119b35d5ad88" category="list-text">从 Amazon S3 还原时，请选择目标卷所在的 ONTAP 集群中的 IP 空间，输入您创建的用户的访问密钥和机密密钥，以授予 ONTAP 集群对 S3 存储桶的访问权限，并可选择用于安全数据传输的私有 VPC 端点。如果使用专用 VPC 端点，则它会优先于任何已配置的代理连接。</block>
   <block id="abefb361c80a6971ec2a25acc5be3b04" category="list-text">从 Amazon S3 还原时，请选择目标卷所在的 ONTAP 集群中的 IPspace，输入您创建的用于授予 ONTAP 集群访问 S3 存储桶权限的用户的访问密钥和密钥，并可选择用于安全数据传输的私有 VPC 端点。如果使用私有 VPC 端点，则它会优先于任何已配置的代理连接。<block ref="f17b430f3a657465dd612b247a0f776f" category="inline-link-macro-rx"></block>。</block>
+  <block id="bc2daf193cd172b36617e5109a2ade38" category="admonition">将存储系统添加到 NetApp Console 后，请等待几分钟，然后再发现资源。在添加存储系统后立即发现资源可能会导致发现失败。</block>
 </blocks>

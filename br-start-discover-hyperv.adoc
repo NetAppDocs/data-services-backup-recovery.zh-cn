@@ -26,6 +26,9 @@ summary: NetApp Backup and Recovery必须先发现 Hyper-V 虚拟机，然后您
 添加 Hyper-V 主机信息以启用 NetApp Backup and Recovery 发现虚拟机。在每个 Console 代理中，选择要在其中发现资源的系统。
 
 
+NOTE: 将存储系统添加到 NetApp Console 后，请等待几分钟，然后再发现资源。在添加存储系统后立即发现资源可能会导致发现失败。
+
+
 NOTE: 当您添加 Hyper-V 主机并发现资源时， NetApp Backup and Recovery会在 Hyper-V 主机上安装NetApp Hyper-V 插件和NetApp SnapCenter Windows FileSystem 插件，以帮助管理和保护虚拟机。
 
 .步骤
