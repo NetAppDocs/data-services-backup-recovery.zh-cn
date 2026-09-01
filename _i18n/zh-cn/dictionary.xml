@@ -5627,7 +5627,6 @@
   <block id="e90dd1da7e3beb4b00ec4d71a841c82a" category="paragraph">使用来宾文件还原从 Windows 或 Linux 来宾操作系统上的虚拟机磁盘 (VMDK) 还原文件或文件夹。</block>
   <block id="7d11f0d164b3c2f24ac6ebba24d776fd" category="section-title">来宾文件还原工作流</block>
   <block id="132ce8102afdf85562e35cc5b0159f1e" category="paragraph">来宾文件还原包括以下步骤：</block>
-  <block id="fa48228aaf71277e6bc2d05f062b62bb" category="list-text">必须安装并运行 VMware Tools。</block>
   <block id="b7617062b51a8726ceb7fc1cef74fb14" category="paragraph">NetApp Backup and Recovery 使用来自 VMware Tools 的信息来建立与 VMware 来宾操作系统的连接。</block>
   <block id="b3e82e6ed4e9c1fea48b8efb84514fc0" category="list-text">附加的虚拟磁盘必须位于 NetApp Backup and Recovery 备份中。</block>
   <block id="7882721ef3524a68e1e9dab8597db0a1" category="list-text">对于具有非英语字符名称的文件，您必须在目录中将其还原，而不是将其还原为单个文件。</block>
@@ -5960,4 +5959,6 @@
   <block id="e9595cd472d344aa937e119b35d5ad88" category="list-text">从 Amazon S3 还原时，请选择目标卷所在的 ONTAP 集群中的 IP 空间，输入您创建的用户的访问密钥和机密密钥，以授予 ONTAP 集群对 S3 存储桶的访问权限，并可选择用于安全数据传输的私有 VPC 端点。如果使用专用 VPC 端点，则它会优先于任何已配置的代理连接。</block>
   <block id="abefb361c80a6971ec2a25acc5be3b04" category="list-text">从 Amazon S3 还原时，请选择目标卷所在的 ONTAP 集群中的 IPspace，输入您创建的用于授予 ONTAP 集群访问 S3 存储桶权限的用户的访问密钥和密钥，并可选择用于安全数据传输的私有 VPC 端点。如果使用私有 VPC 端点，则它会优先于任何已配置的代理连接。<block ref="f17b430f3a657465dd612b247a0f776f" category="inline-link-macro-rx"></block>。</block>
   <block id="bc2daf193cd172b36617e5109a2ade38" category="admonition">将存储系统添加到 NetApp Console 后，请等待几分钟，然后再发现资源。在添加存储系统后立即发现资源可能会导致发现失败。</block>
+  <block id="47e1adf864d09fb0e60489239284fdcf" category="list-text">VMware ESXi 服务器上的端口 443 (HTTPS) 必须处于打开状态，才能进行双向通信。</block>
+  <block id="b8b48a359182777f9c1858fe64bd41cf" category="list-text">必须在来宾操作系统上安装并运行 VMware Tools。</block>
 </blocks>

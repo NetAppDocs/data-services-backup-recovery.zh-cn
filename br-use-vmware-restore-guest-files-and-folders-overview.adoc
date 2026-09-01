@@ -48,7 +48,8 @@ summary: '您可以从 Windows 客户操作系统上的虚拟机磁盘 (VMDK) �
 
 在从 VMDK 还原文件或文件夹之前，请查看所有要求。
 
-* 必须安装并运行 VMware Tools。
+* VMware ESXi 服务器上的端口 443 (HTTPS) 必须处于打开状态，才能进行双向通信。
+* 必须在来宾操作系统上安装并运行 VMware Tools。
 +
 NetApp Backup and Recovery 使用来自 VMware Tools 的信息来建立与 VMware 来宾操作系统的连接。
 
