@@ -4782,17 +4782,13 @@
   <block id="d2bf4d042aabc15b9ccde353c782a6f2" category="list-text">使用 Microsoft Windows Server 2025 时，不支持保护存储在 SAN 存储中的第 2 代虚拟机。</block>
   <block id="b2d5ba8de92c18cbb9c45e01ad3f5509" category="list-text">还原到备用位置（从主、辅助和对象存储）</block>
   <block id="62ff0d9db122207756fd73342a3eb3ad" category="paragraph">NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 个存储桶来保护系统中的工作负载。ONTAP 9.19.1 或更高版本需要支持每个系统超过 6 个存储桶。</block>
-  <block id="a804a09090ab946ea48120427df5be47" category="paragraph">如果要在无法通过标准 DNS 访问数据库主机的气隙环境中使用 NetApp Console 本地部署，则必须临时修改内部 RKE2 CoreDNS 配置。这允许 Pod 将特定主机名解析为集群中的 IP 地址，类似于在节点上向 <block ref="ad942c725cd0cae65ca4c63717ec464c" prefix=" " category="inline-code"></block> 添加条目。</block>
-  <block id="d38c5698c3f0a0cc565d84f0583ddbe8" category="admonition">在进行更改之前，请检查现有的 CoreDNS 配置，以避免覆盖任何现有的自定义设置。使用 RKE2 清单应用此更改，确保由 RKE2 操作符和运行时统一管理此更改。</block>
   <block id="0d1c49b7f34131be8c6ddbc862cc359d" category="list-text">在可能的情况下，将 HelmChartConfig 文件置于变更控制之下。</block>
   <block id="feb789eaa0d039f7e4fc241b5a35b268" category="list-text">使用清晰的文件名，以便 CoreDNS 覆盖的目的显而易见。</block>
   <block id="1c675544711def39976f57e2f6b7e39d" category="list-text">如果预期的 DNS 记录在 Corefile 中不可见，请检查 RKE2 服务器日志并确认清单文件语法。</block>
   <block id="d36d322fa13411cc64a12177b6ad51ce" category="list-text">检查现有 CoreDNS 配置，以确保未覆盖现有更改：</block>
-  <block id="f4edd834d634c666190d7b67f0c12622" category="list-text">复制以下命令块并编辑<block ref="10e11b33e0776f6cd4b1e675accff1f5" prefix=" " category="inline-code"></block>区域以添加静态 DNS 记录。这将在 RKE2 清单文件夹中创建一个 HelmChartConfig YAML 文件，RKE2 会自动应用该文件以覆盖 CoreDNS 配置：</block>
   <block id="b893a4548c6b5490f347a2312c465362" category="list-text">验证 CoreDNS 是否已接受更改：</block>
   <block id="ad5eadc57f2e0ed4fdd17752bad0fe52" category="paragraph">如果几分钟后无法看到更改，请重新启动 CoreDNS 部署，然后再次验证 Corefile：</block>
   <block id="9e04101c187aa923054a894c988f5aeb" category="list-text">如果需要在发现数据库主机后删除条目，请执行以下操作：</block>
-  <block id="606b05130da19f4457434aa58ba985b8" category="list-text">从清单文件夹中删除 HelmChartConfig 文件。</block>
   <block id="5b25c5946d94965af8af242970d2aee2" category="list-text">重新启动 CoreDNS 部署：</block>
   <block id="64c0705ecd150a07e521638d5157a4ec" category="doc">常规 NetApp Backup and Recovery 增强功能</block>
   <block id="7700d007f970d2c042d61e3551aa039e" category="list-text">*支持 NetApp Console 本地部署*：此版本的 NetApp Backup and Recovery 支持处于预览状态的 NetApp Console 本地部署。</block>
@@ -5961,4 +5957,27 @@
   <block id="bc2daf193cd172b36617e5109a2ade38" category="admonition">将存储系统添加到 NetApp Console 后，请等待几分钟，然后再发现资源。在添加存储系统后立即发现资源可能会导致发现失败。</block>
   <block id="47e1adf864d09fb0e60489239284fdcf" category="list-text">VMware ESXi 服务器上的端口 443 (HTTPS) 必须处于打开状态，才能进行双向通信。</block>
   <block id="b8b48a359182777f9c1858fe64bd41cf" category="list-text">必须在来宾操作系统上安装并运行 VMware Tools。</block>
+  <block id="30683bd981424213f9f341084dacc328" category="paragraph">如果要在无法通过标准 DNS 访问数据库主机的空气隔离环境中使用 NetApp Console 本地部署，则需要临时修改内部 RKE2 CoreDNS 配置。这使 Pod 能够将特定主机名解析为集群中的 IP 地址，类似于在节点上向<block ref="ad942c725cd0cae65ca4c63717ec464c" prefix=" " category="inline-code"></block>添加条目。</block>
+  <block id="68916b141cb1549e4306b1426107693e" category="admonition">在进行更改之前，请检查现有的 CoreDNS 配置和现有的<block ref="821b85d65c91bb0224e76904b78ee646" prefix=" " category="inline-code"></block> HelmChartConfig，以避免覆盖任何现有的自定义配置。在大多数 NetApp Console 本地部署节点上，此文件已存在并已包含资源请求。如果文件已存在，请勿重新创建；而是仅将<block ref="d2c09282f70bae1fe87ea34edd824858" prefix=" " category="inline-code"></block>块附加到现有的<block ref="f15029ddf2ec349489f6a578bf8ff002" prefix=" " category="inline-code"></block>中。请使用 RKE2 清单应用此更改，以便 RKE2 操作员和运行时继续对其进行统一管理。</block>
+  <block id="c83678dcc36ba7a58a3d2e313cdc5cb2" category="list-text">确认 HelmChartConfig 文件是否存在：</block>
+  <block id="7cbf1254454bfb83ecf45d67569bb210" category="open-title">如果文件存在</block>
+  <block id="dd8b91d84403e7c4c2df5612c3deb788" category="list-text">运行以下脚本，将<block ref="d2c09282f70bae1fe87ea34edd824858" prefix=" " category="inline-code"></block> 块追加到现有 HelmChartConfig 文件：</block>
+  <block id="df5298d33ab8b68cf08a5d8265ae6e02" category="list-text">验证 HelmChartConfig 文件的唯一更改是否是添加了<block ref="d2c09282f70bae1fe87ea34edd824858" prefix=" " category="inline-code"></block>块。</block>
+  <block id="a405e148dd89c6d878f7202bd0acac46" category="open-title">如果文件不存在</block>
+  <block id="f545e4267a4d131a69797e4afd537a05" category="list-text">编辑以下脚本的<block ref="10e11b33e0776f6cd4b1e675accff1f5" prefix=" " category="inline-code"></block>区域并添加静态 DNS 记录。这将在 RKE2 清单文件夹中创建一个 HelmChartConfig YAML 文件，RKE2 会自动应用该文件以覆盖 CoreDNS 配置：</block>
+  <block id="1c0fab9d442597478403d8226e5a2d16" category="list-text">复制并运行脚本。</block>
+  <block id="e56134bb955e879714d813d368a791ce" category="open-title">如果附加到现有文件</block>
+  <block id="492165cbd490b6e6832804b381c9e69e" category="list-text">还原已备份的文件或仅从文件中删除<block ref="d2c09282f70bae1fe87ea34edd824858" prefix=" " category="inline-code"></block>块：</block>
+  <block id="7d20cae7d54370385d0972a25df82057" category="paragraph">请勿删除此文件，因为它包含现有的 RKE2 资源优化。</block>
+  <block id="86c39cd0104d9ef70cce9b5b29ee92f1" category="list-text">还原文件后，删除主机条目。过时的条目可能会导致主机发现和定时备份问题。</block>
+  <block id="cbfe0ed3153804b7d4fc2498c31941a1" category="open-title">如果创建了新文件</block>
+  <block id="0e5396fa21718b76cbd3c1a11136c9dc" category="list-text">从清单文件夹中删除 HelmChartConfig 文件：</block>
+  <block id="251aaa9a6d6dee8d3e892c83b282de62" category="list-text">删除文件后，删除主机条目。过时的条目可能会导致主机发现和定时备份问题。</block>
+  <block id="9fb67925a7099f4959311f91b028441f" category="section-title">管理可用性组信息</block>
+  <block id="e5e0bae15d01ae8a68af97e8ee4181d1" category="paragraph">管理可用性组信息以保护资源、编辑保护设置并运行备份：</block>
+  <block id="984cf8529e178e40665ddc1a3284488c" category="section-title">保护可用性组</block>
+  <block id="b49fedaec38028e3cfd9d84a3c135474" category="paragraph">将策略分配给可用性组以管理资源保护的计划和保留。</block>
+  <block id="f4c9691991fd542b1f48cc8fcbdef656" category="list-text">选择 *Availability groups* 选项卡。</block>
+  <block id="65fa180bca046084f17003e06ddb0b9f" category="list-text">选择可用性组。</block>
+  <block id="129dd3dd8cd4324317ed888dd78c8d3e" category="list-text">选择*Protection groups*、*Availability groups*、*Instances*或*Databases*选项卡。</block>
 </blocks>

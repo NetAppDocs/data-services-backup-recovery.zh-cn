@@ -101,7 +101,7 @@ NOTE: 显示的字段根据所选的部署模型而有所不同，例如故障�
 . 从NetApp Backup and Recovery菜单中，选择 *Inventory*。
 . 选择一个工作负载来查看保护详细信息。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *查看详情*。
-. 选择*保护组*、*实例*或*数据库*选项卡。
+. 选择*Protection groups*、*Availability groups*、*Instances*或*Databases*选项卡。
 . 选择要备份的实例或数据库。
 . 选择“操作”图标image:../media/icon-action.png["操作选项"]> *立即备份*。
 . 选择要应用于备份的策略。
