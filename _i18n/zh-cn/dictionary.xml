@@ -5980,4 +5980,5 @@
   <block id="f4c9691991fd542b1f48cc8fcbdef656" category="list-text">选择 *Availability groups* 选项卡。</block>
   <block id="65fa180bca046084f17003e06ddb0b9f" category="list-text">选择可用性组。</block>
   <block id="129dd3dd8cd4324317ed888dd78c8d3e" category="list-text">选择*Protection groups*、*Availability groups*、*Instances*或*Databases*选项卡。</block>
+  <block id="6c2c266ca065311d4804d34cd534ac61" category="paragraph">从归档存储还原卷或文件可能需要额外的时间。在备份和恢复根据所选优先级重试还原期间，该作业在作业监视器中保持*进行中*状态。在*作业监视器*中监控还原；在所有重试尝试完成后，当作业达到最终状态（如*已完成*或*失败*）时，还原即告完成。除非作业最终失败，否则请勿启动另一次还原。</block>
 </blocks>
