@@ -35,6 +35,9 @@ summary: 启用 NetApp Backup and Recovery 的预览和隐藏功能。
 
 
 | `"prioritize-restore": true` | 在 Backup and Recovery Web UI 中的还原工作流期间，使 *优先还原而非现有作业队列* 选项可选。在还原工作流期间选择此选项时，还原操作优先于其他排队的作业，因此即使在队列繁忙时也会运行。 
+
+
+| `"data-transfer-report": true` | 在适用于卷的 NetApp Backup and Recovery 的报告选项卡下启用每日备份数据传输报告。该报告提供跨环境的每日备份和复制数据传输活动信息。 
 |===
 
 

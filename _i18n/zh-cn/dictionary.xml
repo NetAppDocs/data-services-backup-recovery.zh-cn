@@ -1258,8 +1258,6 @@
   <block id="de00c1e27be1485dd099e4cd2aaa554d" category="section-title">删除备份</block>
   <block id="d1980609675dd3ea40abaebd4a0989d8" category="doc">使用NetApp Backup and RecoveryVMware 工作负载</block>
   <block id="f1e9f00ae199ca6520d1d2e98102cd84" category="doc">使用NetApp Backup and Recovery发现 VMware 工作负载</block>
-  <block id="dcd2ed119bd25caa1d2e5fbbadd0e260" category="section-title">发现 VMware 工作负载并选择性地导入SnapCenter资源</block>
-  <block id="20224d78d1f591aa6ed092cd19c23642" category="paragraph">您可以将 VMware NFS 和 VMFS 数据存储库和虚拟机从其内部部署的SnapCenter Plug-in for VMware vSphere到NetApp Backup and Recovery库存中。</block>
   <block id="02bff5613eedf1bcc6846345d0b55fbd" category="admonition">此版本的NetApp Backup and Recovery仅支持 VMware vCenter，并且无法发现vVols或vVols上的 VM。</block>
   <block id="fee320715a193861e4f6dc2068899465" category="paragraph">在导入过程中， NetApp Backup and Recovery执行以下任务：</block>
   <block id="bd8db3845afb35c10e4abfbdf5709291" category="list-text">启用对 vCenter 服务器的安全 SSH 访问。</block>
@@ -1268,35 +1266,21 @@
   <block id="f3cd1cfa60b70ab3833f6ec373ec8327" category="list-text">配置数据库访问。</block>
   <block id="ed39d64277006cf603e473c457526c25" category="list-text">发现 VMware vCenter、数据存储区和虚拟机。</block>
   <block id="9ebd805e73003051d15b45a35a4e54e5" category="list-text">显示在NetApp Backup and Recovery清单页面中发现的资源。</block>
-  <block id="48f6d5cbb866129c890c2677a75d46eb" category="list-text">如果您已经拥有SnapCenter Plug-in for VMware vSphere，请使用NetApp Backup and Recovery UI 将SnapCenter资源导入NetApp Backup and Recovery 。</block>
-  <block id="b758229c4311907d27297d6e3812db06" category="admonition">如果您已有SnapCenter插件，请确保在从SnapCenter导入之前已满足先决条件。例如，您应该先在NetApp Console中为所有本地SnapCenter集群存储创建系统，然后再从SnapCenter导入。看<block ref="29f325191bf25e28eb924274ef794dd1" category="inline-link-macro-rx"></block>。</block>
   <block id="36b36cfb3f6fc12df63c864d8e7b40a1" category="list-text">如果您还没有SnapCenter插件，您仍然可以通过手动添加 vCenter 并执行发现来发现系统中的工作负载。</block>
-  <block id="e3ee523018b6799a0939043eefc9098c" category="section-title">如果尚未安装SnapCenter插件，请添加 vCenter 并发现资源</block>
   <block id="7248204ed2d72c7c934127b7789c6157" category="list-text">*工作负载类型*：选择*VMware*。</block>
-  <block id="8d2f5acbe9ae8a7ad87b9b825c0e5f29" category="list-text">*vCenter 设置*：添加新的 vCenter。要添加新的 vCenter，请输入 vCenter FQDN 或 IP 地址、用户名、密码、端口和协议。</block>
-  <block id="1b7ab9fadabd410c692af601b6da1bd2" category="list-text">*主机注册*：VMware 不需要。</block>
-  <block id="448e3bbdf47805516f7b529afcbedb47" category="section-title">如果已安装SnapCenter插件，请将适用于 VMware 资源的SnapCenter插件导入NetApp Backup and Recovery</block>
-  <block id="d7df5d5a7771d8964d3ad312a019f2a7" category="list-text">在发现期间，选择一个选项从SnapCenter插件导入资源。</block>
   <block id="d0a37c5f3a756f70f149387e5e024455" category="list-text">发现后，从“清单”页面中选择一个选项来导入SnapCenter插件资源。</block>
-  <block id="72512ee3dbbd33b6b0e82862f004f7b4" category="list-text">发现后，从“设置”菜单中选择一个选项来导入SnapCenter插件资源。有关详细信息，请参阅<block ref="97d5ee4c1307bc47ebfffa62683db47d" category="inline-link-macro-rx"></block>。VMware 不支持此功能。</block>
   <block id="e68d5688d8ed4428f4698c24ecebe981" category="paragraph">本节描述了一个由两部分组成的过程：</block>
   <block id="c6f071c40c15c848457f973025ccd0a6" category="list-text">从SnapCenter插件导入 vCenter 元数据。导入的 vCenter 资源尚未由NetApp Backup and Recovery管理。</block>
-  <block id="cf47887931a3e51685acecf1df31898e" category="list-text">在NetApp Backup and Recovery中启动选定 vCenter、VM 和数据存储库的管理。启动管理后， NetApp Backup and Recovery会在 Inventory 页面上将 vCenter 标记为“Managed”，并且能够备份和恢复您导入的资源。在NetApp Backup and Recovery中启动管理后，您将不再在SnapCenter插件中管理这些资源。</block>
   <block id="53624320c75e524d23062b211afde11a" category="section-title">从SnapCenter插件导入 vCenter 元数据</block>
   <block id="a0db4035e526ed9a7d3ab3f54948a1a1" category="paragraph">第一步是从SnapCenter插件导入 vCenter 元数据。此时，资源尚未由NetApp Backup and Recovery管理。</block>
   <block id="d15a40324af88049d2add38cd8f56009" category="admonition">从SnapCenter插件导入 vCenter 元数据后， NetApp Backup and Recovery不会自动接管保护管理。为此，您必须明确选择在NetApp Backup and Recovery中管理导入的资源。这可确保您已准备好通过NetApp Backup and Recovery备份这些资源。</block>
-  <block id="4fa4bcc2a1f0d681fb390d96f9891a59" category="list-text">在“导入自”字段中，选择“* SnapCenter Plug-in for VMware*”。</block>
   <block id="45ff731338448b957095de0f0c3fcd1f" category="list-text">输入*VMware vCenter 凭据*：</block>
   <block id="87015fc1c283283c06b5b6f139ba1403" category="list-text">*vCenter IP/主机名*：输入要导入NetApp Backup and Recovery 的vCenter 的 FQDN 或 IP 地址。</block>
   <block id="83232179998a0e4df8a7fec8b01b073d" category="list-text">*vCenter 端口号*：输入 vCenter 的端口号。</block>
   <block id="bf44275a582b218f2c18fd73a1b49f7d" category="list-text">*vCenter 用户名* 和 *密码*：输入 vCenter 的用户名和密码。</block>
-  <block id="0e262289f889681dd134476e46394c9b" category="list-text">*连接器*：选择 vCenter 的控制台代理。</block>
-  <block id="f8ccd2c36b2459b541ae637dac832e19" category="list-text">输入* SnapCenter插件主机凭据*：</block>
-  <block id="60b1a925906e7fb4348924a6fdd9149b" category="list-text">*添加新凭据*：如果您没有现有的SnapCenter插件主机凭据，则可以添加新凭据。输入凭证名称、身份验证模式、用户名和密码。</block>
   <block id="7c2e72fe3815fa111632e0f221695e03" category="list-text">选择“*导入*”来验证您的条目并注册SnapCenter插件。</block>
   <block id="17ffe2e72fe7b5b93cc83ba3b6aa34c1" category="paragraph">库存页面显示 vCenter 在NetApp Backup and Recovery中处于未管理状态，直到您明确选择管理它。</block>
   <block id="25c0a491dae6caf57d57d941f0eb08d9" category="section-title">管理从SnapCenter插件导入的资源</block>
-  <block id="4513150785c046bfbcd37a0b9dcb7a35" category="list-text">选中“您想继续迁移吗？”复选框并选择*迁移*。</block>
   <block id="13be03aaa1d065e4e2a3d1cb64d9f254" category="paragraph">清单页面显示新管理的 vCenter 资源。</block>
   <block id="eb2d112b017e683992cc9b9b338c90a1" category="paragraph">您可以使用NetApp Backup and Recovery执行与 VMware 工作负载相关的以下任务：</block>
   <block id="4c90ef6c5dc037251bf65afdeeb1ee6c" category="list-text"><block ref="4c90ef6c5dc037251bf65afdeeb1ee6c" category="inline-link-macro-rx"></block></block>
@@ -3587,12 +3571,7 @@
   <block id="24e30755a36f1f0fbf2585a3d6fcea00" category="list-text">在“工作负载”下，选择“KVM”磁贴。</block>
   <block id="99c78c9137cee80ce48d764854f4f37d" category="paragraph">如果您是第一次登录备份和恢复，并且在控制台中有一个系统但没有发现任何资源，则会显示“欢迎使用新的NetApp备份和恢复”页面，其中包含“发现资源”选项。</block>
   <block id="72caa651e04c375669fa47d6d7c97bd8" category="list-text">如果您尚未将管理平台与备份和恢复功能集成，请选择“添加管理平台”。</block>
-  <block id="e48c46f67dcc12e71756d8f1484fd1e5" category="list-text">*KVM 设置*：通过输入以下信息添加新的 KVM 主机：</block>
   <block id="1379fbf6716203ac9b069e9dcb1b630e" category="list-text">*KVM FQDN 或 IP 地址*：输入主机的 FQDN 或 IP 地址。</block>
-  <block id="a3b2bf747985ecc6d947647708117a50" category="list-text">*凭据*：输入 KVM 主机的用户名和密码。</block>
-  <block id="9bf19b226e98ad82718a06ed1be0ccff" category="list-text">*控制台代理*：选择用于备份和恢复与 KVM 主机之间通信的控制台代理。</block>
-  <block id="255d844db697f34dcf46b6abb2370218" category="list-text">*端口号*：输入备份和恢复与 KVM 主机之间通信所用的端口。</block>
-  <block id="cba87e6c48ee4064103429e66f87d737" category="list-text">*管理平台*：如果 KVM 主机是受管理的，并且您已将管理平台添加到备份和恢复中，请从列表中选择管理平台。</block>
   <block id="1ab61c2a203a782ffd6293f052fa3198" category="list-text">在“工作负载”下，选择“Oracle”磁贴。</block>
   <block id="7f924709b4be1415b21d2f13de8768fc" category="section-title">编辑保护组</block>
   <block id="d866b8b94a3e8b940c5c063a7cf79472" category="paragraph">编辑保护组以更改其名称或设置。如果保护组中的资源发生了变化，您可能需要编辑该保护组。</block>
@@ -5169,7 +5148,6 @@
   <block id="d15ce5f7b11589a195af27e9552d666f" category="paragraph">在 NetApp Backup and Recovery 中发现 Hyper-V 虚拟机，以便使用保护策略对其进行保护。</block>
   <block id="b2d7b24c3bf71ab6e29740c4642ffafe" category="paragraph">添加 Hyper-V 主机信息以启用 NetApp Backup and Recovery 发现虚拟机。在每个 Console 代理中，选择要在其中发现资源的系统。</block>
   <block id="b7f882b06eddf2dfd9de57436d956c2c" category="list-text">在 NetApp Console 菜单中，选择*保护* &gt; *备份和恢复*。</block>
-  <block id="c4aea5e44a79c8aa4bb534878de9f3a0" category="paragraph">如果这是您第一次登录 NetApp Backup and Recovery，并且您已在 Console 中拥有一个系统，但尚未发现资源，则会显示"Welcome to the new NetApp Backup and Recovery"登录页面，其中包含 *Discover resources* 选项。</block>
   <block id="f449ed9853e04fc0b05aaa0a461c94c1" category="list-text">选择 Hyper-V 工作负载磁贴。</block>
   <block id="c8c0b636c4dc30cad0d464be2b47090d" category="paragraph">在 NetApp Backup and Recovery 中发现 Kubernetes 集群及其工作负载，以便您可以通过保护策略对其进行保护。</block>
   <block id="6604e60d4f1c2e3c6bc9c63d2ee97067" category="paragraph">在备份和恢复清单中，发现环境中的 Kubernetes 集群和工作负载。添加集群使您能够在 NetApp Backup and Recovery 中注册集群，并发现其应用程序和资源以进行保护。您可以选择使用 NetApp Console 本地部署来发现气隙本地 Kubernetes 资源。</block>
@@ -5177,7 +5155,6 @@
   <block id="b5db886dbc4143a50071b971de05c3b6" category="paragraph">备份和恢复提供根据所选安装类型而变化的说明。如果使用 NetApp Console 本地部署，则可以选择相应说明来发现没有外部网络连接的气隙资源。</block>
   <block id="992e1a79c40146226d531b2d54202029" category="paragraph">按照以下步骤查看 NetApp Backup and Recovery 仪表板并验证已发现的资源。</block>
   <block id="d25cc2a23f6d490aa6ca66c1fc0a6982" category="paragraph">在 NetApp Backup and Recovery 中发现 KVM 主机和虚拟机，以便您可以使用保护策略来保护它们。在发现之前，您的 KVM 环境必须由 Apache CloudStack 等管理平台进行管理。</block>
-  <block id="64d1830b55112fb89c5efe473a488759" category="paragraph">如果这是您第一次登录 NetApp Backup and Recovery，并且您已在 Console 中拥有一个系统，但没有已发现的资源，则会显示"Welcome to the new NetApp Backup and Recovery"页面，其中包含 *Discover resources* 选项。</block>
   <block id="d6a34cddcbce1ef6f28243118f9d171b" category="list-text">选择 KVM 工作负载图块。</block>
   <block id="e3720b1dee4abe1712504428b0c4eee1" category="summary">NetApp Backup and Recovery 必须首先发现工作负载，然后才能保护它们。</block>
   <block id="27f6c9f669ba02aa92df4193fd4d3367" category="paragraph">在 NetApp Backup and Recovery 中发现 Oracle 数据库工作负载，以便使用备份和快照保护它们。</block>
@@ -5591,9 +5568,6 @@
   <block id="3dd3ba4b63229b475a20f7cd9addb146" category="paragraph">将 VMware 虚拟机和数据存储区从本地 ONTAP 系统备份到 Amazon Web Services、Azure NetApp Files 或 StorageGRID，以帮助保护您的数据。备份将自动生成并存储在公共或私有云帐户的对象存储中。</block>
   <block id="39e8552d644f5836bb606e9f024f8213" category="list-text">立即创建按需备份，备份工作负载。</block>
   <block id="67815c5b8fc21f4677397c47a093cc04" category="paragraph">使用 NetApp Backup and Recovery 从主快照或二级快照创建 VMware 虚拟机的可写克隆。您可以创建和管理克隆的虚拟机，以进行测试、集成和培训，而不会影响生产数据。</block>
-  <block id="0235c606522ad40f43092e88c70da6f4" category="paragraph">在保护运行在 ONTAP 系统上的 VMware 数据存储和虚拟机之前，您需要在 NetApp Backup and Recovery 中发现它们。如果您已经安装了 SnapCenter Plug-in for VMware vSphere，还可以导入其备份数据和策略。</block>
-  <block id="df1070d1677eb4e0f80ad6ffbd180001" category="paragraph">如果您尚未安装 SnapCenter Plug-in for VMware，请添加 vCenter 信息，以便 NetApp Backup and Recovery 可以发现工作负载。在每个 Console 代理中，选择要发现工作负载的系统。</block>
-  <block id="f0edd8cd666348783317b3a12c204778" category="paragraph">如果您已经安装了适用于 VMware 的 SnapCenter 插件，请使用以下步骤将 SnapCenter 插件资源导入到 NetApp Backup and Recovery 中。Console 从插件中发现 ESXi 主机、数据存储区、虚拟机和计划，因此您无需重新创建该信息。</block>
   <block id="79f1b2505db34bcc40686f104f76593a" category="admonition">如果 SnapCenter 插件已注册，您可以更新现有的注册详细信息。</block>
   <block id="2a1d91f94990e0b54f21a4a5400e5f85" category="paragraph">从 SnapCenter Plug-in for VMware 导入 vCenter 元数据后，请在 NetApp Backup and Recovery 中管理这些资源。选择管理这些资源后，NetApp Backup and Recovery 即可备份和恢复您导入的资源。在 NetApp Backup and Recovery 中启动管理后，您将不再在 SnapCenter Plug-in 中管理这些资源。</block>
   <block id="974ab6deb29dd728f277f1b504bbbd65" category="paragraph">选择管理资源后，NetApp Backup and Recovery 会从 SnapCenter Plug-in for VMware 导入资源、VM 和策略。资源组、策略和快照将从该插件迁移，并在 NetApp Backup and Recovery 中进行管理。</block>
@@ -5947,7 +5921,6 @@
   <block id="02164fcf87ac25e7b1e8147e2943b53e" category="paragraph">当使用 ONTAP 9.13.0 或更高版本将云备份还原到 Cloud Volumes ONTAP 系统，或还原到运行 ONTAP 9.14.1 的内部部署 ONTAP 系统时，您可以选择执行_快速还原_操作。快速还原非常适合需要尽快提供卷访问权限的灾难恢复情况。快速还原会将元数据从备份文件还原到卷，而不是还原整个备份文件。对于性能或延迟敏感的应用程序，不建议使用快速还原，并且存档存储中的备份不支持快速还原。</block>
   <block id="a73fb6eabf726bf5ee3f07c45ffe0012" category="list-text">（可选）启用 *Prioritize this restore over existing job queue* 以赋予此还原操作更高的优先级。启用后，其他正在运行的作业可能会暂停或延迟，以便此还原操作继续进行。</block>
   <block id="5f02d8d1cae515b7bc981f8e3a14acc4" category="paragraph">您将返回"还原控制面板"，以便查看还原操作的进度。</block>
-  <block id="0cf2d9f20f0932bf7e81cfd6634a5ced" category="list-text">*主机注册*：通过输入主机的 FQDN 或 IP 地址、凭据、Console agent 和端口号来添加新的 Hyper-V 主机。如果 Console agent 无法解析 FQDN，请改用 IP 地址。对于故障转移集群，请输入集群管理 IP 地址。</block>
   <block id="5d2f99cd43d814823b35af3f0ece474e" category="paragraph">使用 NetApp Backup and Recovery 备份和还原托管在 CIFS 共享上的独立 Hyper-V VM、故障转移群集实例和 SCVMM 预配的 VM。</block>
   <block id="ae9414d83e17965302547068ba4057f3" category="list-text">支持独立主机和故障转移群集配置</block>
   <block id="1ee017b4f9f2424d881f97ae99e7a740" category="admonition">如果使用专用 VPC 端点进行备份或还原数据传输，则会优先于任何已配置的代理连接。</block>
@@ -5981,4 +5954,57 @@
   <block id="129dd3dd8cd4324317ed888dd78c8d3e" category="list-text">选择*Protection groups*、*Availability groups*、*Instances*或*Databases*选项卡。</block>
   <block id="6c2c266ca065311d4804d34cd534ac61" category="paragraph">从归档存储还原卷或文件可能需要额外的时间。在备份和恢复根据所选优先级重试还原期间，该作业在作业监视器中保持*进行中*状态。在*作业监视器*中监控还原；在所有重试尝试完成后，当作业达到最终状态（如*已完成*或*失败*）时，还原即告完成。除非作业最终失败，否则请勿启动另一次还原。</block>
   <block id="534cf708a73e1e3ff80e4b70322d78d6" category="paragraph"><block ref="534cf708a73e1e3ff80e4b70322d78d6" category="inline-link-rx"></block></block>
+  <block id="6c302dca9120d9212ecda9d1ad1f74c9" category="paragraph">在此版本中，KVM、Hyper-V 和 VMware 工作负载引入了以下增强功能：</block>
+  <block id="0898522d58ded515e98cbdbeae0b2894" category="paragraph">*虚拟机主机发现期间的凭据选择*：现在，在注册 KVM、Hyper-V 或 VMware 主机时，您可以使用已添加到 Backup and Recovery 中的凭据。</block>
+  <block id="51b1f28526e9e7dfdb39548a8b5d4ac0" category="paragraph">*虚拟机跨磁盘保护*：对于 CIFS 配置，Backup and Recovery 现在支持保护组中连接到每个虚拟机的每个磁盘。这包括分布在多个 ONTAP 卷或 ONTAP 存储系统（跨磁盘）上的文件，以及仅限于单个位置的文件。</block>
+  <block id="1e62d1b5255654e86ebb8b223345252a" category="section-title">ONTAP Volumes 工作负载增强</block>
+  <block id="705eb27960b89edebb2b2269e939009b" category="paragraph">在此版本中，ONTAP Volumes 工作负载引入了以下预览增强功能：</block>
+  <block id="921187f214ef75f0b99f59d69af64c46" category="paragraph">*每日备份数据传输报告*：NetApp Backup and Recovery for Volumes 现在在"报告"选项卡下提供每日备份数据传输报告，让您可以查看整个环境中的每日备份和复制数据传输活动。您可以生成完整帐户或选定存储系统的报告，按日期范围和保护类型进行筛选，并以 CSV 格式下载结果。</block>
+  <block id="6ca40fed8a7133003ac7b662160a7e13" category="paragraph">要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅<block ref="2a59f28eae334d4c500755e30c1cf84e" category="inline-link-rx"></block>。</block>
+  <block id="6670366d68c7a8ab46f10d0e7683eeb5" category="list-text">*Hyper-V 设置*：执行以下操作：</block>
+  <block id="da0e1eca92a9eb1111443e96b8196d3a" category="list-text">通过输入主机的 FQDN 或 IP 地址并选择 Console 代理和凭据，添加新的 Hyper-V 主机。如果 Console 代理无法解析 FQDN，请改用 IP 地址。对于故障转移集群，请输入集群管理 IP 地址。</block>
+  <block id="fabdd9e2388c21b1d1588e5f54160735" category="list-text">*高级设置*：（可选）输入 NetApp Hyper-V 插件的安装路径。</block>
+  <block id="c3b6f25d711d6680de1b5933b93726d7" category="list-text">*KVM settings*：执行以下操作：</block>
+  <block id="893154d2bbfb66474661f9a0545a1144" category="list-text">如果您尚未为此 KVM 主机存储凭据，请选择 *添加凭据*。</block>
+  <block id="d6c9f02ce1679400431070286136d97d" category="list-text">通过输入以下信息添加新的 KVM 主机：</block>
+  <block id="8b215f293605af71d0430a32a7e80999" category="list-text">*代理*：选择用于 Backup and Recovery 与 KVM 主机之间通信的 Console 代理。</block>
+  <block id="a9c837a95e737168ee3ce1e980c47216" category="list-text">*凭据*：为 KVM 主机选择存储的凭据。</block>
+  <block id="d41a581fc85315dff70aff8313ea3257" category="list-text">*高级设置*：（可选）输入与 KVM 主机通信的端口，并从列表中选择主机的管理平台。</block>
+  <block id="6ba9f255707f8a2103b20486c4949029" category="list-text">选择跨区磁盘的行为。目前，支持*始终包括所有跨区磁盘*。</block>
+  <block id="f3a516904e0ccca6ef2462dfb7ce6d13" category="admonition">对于 CIFS 配置，Backup and Recovery 会自动保护连接到保护组中每个虚拟机的每个磁盘。这包括分布在多个 ONTAP 卷或 ONTAP 存储系统上的文件（跨越磁盘）和限于单个位置的文件（非跨越磁盘）。对于 SAN 配置，所有非跨越磁盘都将包含在保护组中。</block>
+  <block id="eb66f05eb35d497da0a423fd13838c97" category="paragraph">也可以选择*创建新策略*以创建新的保护策略。选择策略时，会显示策略详细信息。</block>
+  <block id="c2a9493df2887bffbf4d321961143b50" category="paragraph">在保护 ONTAP 系统上运行的 VMware 数据存储区和虚拟机之前，您需要在 NetApp Backup and Recovery 中发现它们。您还可以从 SnapCenter 导入备份数据和策略。</block>
+  <block id="56ed800e3e95a86a0d288e29e284d3d6" category="section-title">发现 VMware 工作负载并导入 SnapCenter 插件资源（可选）</block>
+  <block id="e8b6f1046eb45e0d7c556fe91f209ff5" category="paragraph">如果使用本地 SnapCenter Plug-in for VMware vSphere，则可以将 VMware 数据存储区和资源虚拟机导入 NetApp Backup and Recovery。</block>
+  <block id="cb84b0bbbd691a54a50154950c0e836d" category="admonition">NetApp Backup and Recovery 仅支持 VMware vCenter，不会发现 vVols 或 vVols 上的虚拟机。</block>
+  <block id="2be89f2d64b748bc3ddbd4eda10bc1c4" category="list-text">如果您已经拥有 SnapCenter 或 SnapCenter Plug-in for VMware vSphere，请使用 NetApp Backup and Recovery UI 将 SnapCenter 资源导入到 NetApp Backup and Recovery 中。</block>
+  <block id="59f63937cd6da6ec7cfb13fb8668ed43" category="admonition">如果您已经拥有 SnapCenter Plug-in，请确保在从 SnapCenter 导入之前已满足前提条件。例如，在从 SnapCenter 导入之前，您应首先在 NetApp Console 中为所有本地 SnapCenter 集群存储创建系统。请参见 <block ref="29f325191bf25e28eb924274ef794dd1" category="inline-link-macro-rx"></block>。要直接从 SnapCenter 主机导入数据，请参阅 <block ref="ee998d05cd5af30cbe5fb785a79b4f67" category="inline-link-macro-rx"></block>。</block>
+  <block id="9fa2560b9a95740336ffcc8454846563" category="section-title">如果不使用 SnapCenter 插件，请添加 vCenter 并发现资源</block>
+  <block id="4845b75256c82f5f32280991198ad08e" category="paragraph">如果您没有安装适用于 VMware 的 SnapCenter 插件，请添加 vCenter 信息，以便 NetApp Backup and Recovery 可以发现工作负载。在每个 Console 代理中，选择要在其中发现工作负载的系统。</block>
+  <block id="18246d81fb68cd2343a12805d2791031" category="list-text">*vCenter 设置*：执行以下操作：</block>
+  <block id="6719804654c600651d2cad23ec96bd88" category="list-text">如果您尚未为此 vCenter 服务器存储凭据，请选择*添加凭据*。</block>
+  <block id="4ba860007747821205fc10f3946288e4" category="list-text">选择要与此 vCenter 一起使用的控制台代理。</block>
+  <block id="2e0a4ddd33096232c5d4c768a8314cd9" category="list-text">输入帐户的域、用户名和密码。</block>
+  <block id="06ddb25ccec51579cae2ff34e996f429" category="list-text">请输入 vCenter FQDN 或 IP 地址，选择一个控制台代理，然后选择用于向 vCenter 进行身份验证的凭据。</block>
+  <block id="877a5658dfd839a5b12966f868d9de69" category="list-text">*高级设置*：（可选）输入用于与 vCenter 通信的端口，并启用自签名证书的使用。不建议在生产环境中使用自签名证书。</block>
+  <block id="d732956918570635dce1b2dd5dac6327" category="section-title">将 SnapCenter Plug-in for VMware 资源导入 NetApp Backup and Recovery</block>
+  <block id="9dec481cd8405cdbd8356bddea37a828" category="paragraph">将资源从适用于 VMware 的 NetApp SnapCenter 插件导入 NetApp Backup and Recovery。在导入期间，Console 将发现您的 ESXi 主机、数据存储区、虚拟机和计划，因此您无需手动重新创建它们。</block>
+  <block id="eaaa8108cf51c6d618f2e2a4a0d4279b" category="list-text">在发现过程中，选择从 SnapCenter 插件导入资源的选项。</block>
+  <block id="987a4493afe0cd7f8a796c3201ef8369" category="list-text">发现后，从"设置"菜单中选择一个选项以导入 SnapCenter 插件资源。有关详细信息，请参见<block ref="97d5ee4c1307bc47ebfffa62683db47d" category="inline-link-macro-rx"></block>。</block>
+  <block id="8505a079b03207a95c1bee8a5bb91488" category="list-text">在 NetApp Backup and Recovery 中启动对选定 vCenters、VM 和数据存储的管理。启动管理后，NetApp Backup and Recovery 会在“清单”页面上将 vCenter 标记为“已管理”，并能够备份和恢复您导入的资源。在 NetApp Backup and Recovery 中启动管理后，您将不再使用 SnapCenter Plug-in for VMware vSphere 管理这些资源。</block>
+  <block id="376ec8b3e51e6597fb939c31a3fe0e59" category="list-text">选择*设置*。</block>
+  <block id="dde557737b6adddb3b5ac63ab390444f" category="list-text">选择 *Import from SnapCenter &gt; Import from SnapCenter*。</block>
+  <block id="0b1c2288e02f81a5abc6efc0ad82c503" category="list-text">在 Import from 字段中，选择 *SnapCenter Plug-in for VMware (SCV)*。</block>
+  <block id="a9cd412f9615bdc45608d80d697cbdf9" category="list-text">输入 *SnapCenter Plug-in for VMware host credentials*：</block>
+  <block id="a0bfb2f62b787250e030fdf21138a6fd" category="list-text">*IP 地址*：输入 SnapCenter Plug-in for VMware vSphere 的 IP 地址。</block>
+  <block id="a74ddb6f976bda860df11538fe8899ce" category="list-text">*端口号*：输入插件的端口号。</block>
+  <block id="17dd94ceb07f426452a46f98fc5f7178" category="list-text">*用户名*和*密码*：输入您在 OVA 部署期间创建的用户名和密码。</block>
+  <block id="a446374c4c4c3fc2ce33e7d1111ab1b9" category="list-text">*SSH 密码*：如果启用了 SSH，请输入 root 用户的 SSH 密码。</block>
+  <block id="5950f420ea00b053ec6dda54548967ec" category="list-text">*代理*：选择与插件一起使用的 Console 代理。</block>
+  <block id="89e0000dd56bdf10ae2847acdff0e6dd" category="list-text">*添加新凭据*：如果您没有现有 vCenter 凭据，则可以添加新凭据。输入以下信息：</block>
+  <block id="0af523844bb81bb0f65da936b7af72a6" category="list-text">*Credentials name*：输入此新凭据集的名称。</block>
+  <block id="92e781ed9b2cbb1d2bb902abf023729d" category="list-text">选中"是否要继续迁移?"复选框，然后选择*Manage*。</block>
+  <block id="8ec423cb544f5a4931b35174a601686c" category="cell"><block ref="a1eba06bd1db60b0b7acd47a98fdd405" prefix="" category="inline-code"></block></block>
+  <block id="def96a092a0c6947fcdadafb96edb659" category="cell">在适用于卷的 NetApp Backup and Recovery 的报告选项卡下启用每日备份数据传输报告。该报告提供跨环境的每日备份和复制数据传输活动信息。</block>
+  <block id="9d26347bf9049c082d482aa87b79d702" category="section-title">2026年9月16日</block>
 </blocks>
