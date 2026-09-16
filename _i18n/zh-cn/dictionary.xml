@@ -4876,7 +4876,6 @@
   <block id="29baeb7c31a3e708d97805f86fcb505a" category="inline-link">填写预览登记表</block>
   <block id="4d405e082b9036b99ea8ef4d4c6b3cae" category="paragraph"><block ref="570de0e604bd7f8002cc6704e0146ea7" category="inline-link-rx"></block></block>
   <block id="a3b49aeb70a4060b1c36c4a694debc5c" category="inline-link">在 NetApp Console 本地部署中添加存储</block>
-  <block id="de0f709d7b0812e121e9fa6bdb8b87b3" category="paragraph"><block ref="de0f709d7b0812e121e9fa6bdb8b87b3" category="inline-link-rx"></block></block>
   <block id="5867ad8a560196a64df2278876df70c2" category="paragraph"><block ref="fd61760e9709a64e2426151a909b6045" category="inline-link-macro-rx"></block>。</block>
   <block id="83524f1d1d58a585ea5008790d8e85cf" category="paragraph">了解身份和访问管理，然后使用执行任务所需的适当权限配置用户。</block>
   <block id="acb0fa18e6cbdd062b1c342d22b5d7e9" category="inline-link">开始使用 NetApp Console 本地部署中的身份和访问权限</block>
@@ -5981,4 +5980,5 @@
   <block id="65fa180bca046084f17003e06ddb0b9f" category="list-text">选择可用性组。</block>
   <block id="129dd3dd8cd4324317ed888dd78c8d3e" category="list-text">选择*Protection groups*、*Availability groups*、*Instances*或*Databases*选项卡。</block>
   <block id="6c2c266ca065311d4804d34cd534ac61" category="paragraph">从归档存储还原卷或文件可能需要额外的时间。在备份和恢复根据所选优先级重试还原期间，该作业在作业监视器中保持*进行中*状态。在*作业监视器*中监控还原；在所有重试尝试完成后，当作业达到最终状态（如*已完成*或*失败*）时，还原即告完成。除非作业最终失败，否则请勿启动另一次还原。</block>
+  <block id="534cf708a73e1e3ff80e4b70322d78d6" category="paragraph"><block ref="534cf708a73e1e3ff80e4b70322d78d6" category="inline-link-rx"></block></block>
 </blocks>
