@@ -3160,20 +3160,7 @@
   <block id="956f7db1760826e0d78fce0504e6bc36" category="paragraph">ONTAP和StorageGRID的配置文件</block>
   <block id="6787850a4ea9b3a4dba07fdb711fb596" category="summary">了解NetApp Backup and Recovery的新功能。</block>
   <block id="441af08fd33d210b079342896edf5070" category="doc">NetApp Backup and Recovery的新功能</block>
-  <block id="a41dd7aa7d921f9f0881a705d3679e6c" category="section-title">2025年10月6日</block>
   <block id="b3f4950f8261377915f43d28700ec58c" category="paragraph">此NetApp Backup and Recovery版本包括以下更新。</block>
-  <block id="0428e48e7f58929099e52febd0558232" category="section-title">2025年8月25日</block>
-  <block id="d341f0c47f4b7ad5cc1b4c9bb210cfda" category="section-title">2025年8月12日</block>
-  <block id="67c66b3b8df7b2dee0354dd9f9fcec17" category="section-title">2025年7月28日</block>
-  <block id="f2673d4a3fe0162a501d43f5168ae950" category="section-title">2025年7月14日</block>
-  <block id="791d05d0e9072626d0316ef0a7cf21bc" category="section-title">2025年6月9日</block>
-  <block id="71df7d09aaee8e6796df0c3d10989fbd" category="section-title">2025年5月13日</block>
-  <block id="801c0fa0d304ca22d8afec06189bcf93" category="section-title">2025年4月16日</block>
-  <block id="499d067ffbbd553e23809aa38aa67bfa" category="section-title">2025年3月17日</block>
-  <block id="09d7c2dac047caa965175fead07159aa" category="section-title">2025年2月21日</block>
-  <block id="6cdd743b39af79062eb92fec70569354" category="section-title">2025年2月13日</block>
-  <block id="008c6d012aabba0e44e2b94f8259635c" category="section-title">2024年11月22日</block>
-  <block id="5fcc5d3ffc4bbbcf6d018ab4a9639205" category="section-title">2024年9月27日</block>
   <block id="bef219d35a4468480b0ce759221cdceb" category="sidebar">NetApp Backup and Recovery文档</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">开始使用</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">什么是新的</block>
@@ -3434,7 +3421,6 @@
   <block id="fd6f2a9c82421585e9dfe5f8820c97c0" category="list-text">*vCenter FQDN 或 IP 地址*：选择要还原快照的 vCenter 服务器。</block>
   <block id="a239cc572a24441f1bb1a7abc259ccab" category="list-text">*ESXi 主机*：选择要将快照还原到的主机。</block>
   <block id="c2942751152cd0449e1de7861200bde4" category="list-text">*网络*：选择要将快照还原到的网络。</block>
-  <block id="2727f68982ff25e8b3c57e026120561d" category="section-title">2025年12月8日</block>
   <block id="14a4fd4957d1a547c2b4ccadbaed0a90" category="inline-link-macro">了解更多关于使用NetApp Backup and Recovery恢复 VMware 虚拟机的信息</block>
   <block id="6dc955af209317a9d714156228721ed4" category="paragraph"><block ref="dd7466c8c4dbfb4163f16106a1d7f80c" category="inline-link-macro-rx"></block>。</block>
   <block id="01f07264521662850e2d8465c322c978" category="inline-link-macro">了解更多关于使用NetApp Backup and Recovery恢复 VMware 虚拟磁盘的信息</block>
@@ -3648,7 +3634,6 @@
   <block id="b49e83f9693b48c2788f78f6c47d5a38" category="paragraph">您可以通过提供商设置页面在提供商级别启用或禁用勒索软件扫描。页面上的设置与您在页面顶部选择的存储桶相关。</block>
   <block id="ac960be8ab0dada73edd8073df004280" category="list-text">在出现的页面顶部，选择需要更改设置的存储桶。</block>
   <block id="9255ea030351a8ee8402a7708baf0223" category="list-text">展开“勒索软件扫描”部分。</block>
-  <block id="194a29c3464a05de3c32434145c0b5d6" category="section-title">2026年1月19日</block>
   <block id="b2c5a3b35bd8f72bf653aa42e54cc06c" category="list-text">Windows 客户操作系统必须运行 Windows Server 2008 R2 或更高版本。</block>
   <block id="367aa9be05b109b226ffbefe3981ac88" category="list-text">如果恢复加密的文件或文件夹，则不会保留加密属性。</block>
   <block id="34454c78e4e96cfe4c311b8ba072f6cd" category="list-text">您无法将文件或文件夹还原到加密文件夹。</block>
@@ -3751,8 +3736,6 @@
   <block id="0e8d553f80f80eac9e99c265bf9f4d72" category="list-text">将用户添加到项目。</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="section-title">相关信息</block>
   <block id="728d17e7146dcd6218a24c46a1de8943" category="inline-link-macro">了解 NetApp Console 身份和访问管理</block>
-  <block id="d612358528f4a89a703f161a8c3e4a9e" category="list-text"><block ref="22de56c086dedbed6837db4613efda62" category="inline-link-macro-rx"></block>。</block>
-  <block id="aedba1ff218d6d25f9aefebf5dfdff4f" category="list-text"><block ref="8432e361253dad22d74ca5fd3ad3c136" category="inline-link-macro-rx"></block>。</block>
   <block id="509c51772921c8ab860f75456880683f" category="list-text"><block ref="a16a606232229e0e62a5010aaabec2ae" category="inline-xref-macro-rx"></block> 在备份作业之前和之后运行脚本。（仅限 Kubernetes 工作负载）</block>
   <block id="1d74d204f5274b499e41d2e0238b7bdd" category="inline-link-macro">创建新的保护策略</block>
   <block id="dff3994b6daee1be81638e1c4964af92" category="doc">在 NetApp Backup and Recovery 中发现 Oracle 数据库工作负载</block>
@@ -3911,7 +3894,6 @@
   <block id="4a6440cf633ba5f9e68b3e722f3a2bdd" category="paragraph">对于 Kubernetes 工作负载，将根据所有永久卷的总大小向您收费。</block>
   <block id="ac48592f4b6ad81597a3d86209bce635" category="section-title">保护 Oracle Database 工作负载的要求</block>
   <block id="5254dbe16e57a413455e2c5f7d5e70a1" category="list-text">确保 TCP 端口 443 在 Kubernetes 集群、Trident Protect Connector 和 Trident Protect 代理之间的出站方向上未过滤。</block>
-  <block id="c9d872b23d54864ab58551a55106a3db" category="section-title">2026 年 2 月 09 日</block>
   <block id="e45770f83b5d2c438c00dea64c505ce7" category="sidebar">Oracle 数据库工作负载的已知限制</block>
   <block id="c33d3729ba9e6e1c1dd6ccc4b6c7f949" category="sidebar">保护 Oracle Database 工作负载（预览）</block>
   <block id="1e6021824e75d382885d2bb2e945f719" category="sidebar">使用自定义资源恢复 Kubernetes 应用程序</block>
@@ -3947,7 +3929,6 @@
   <block id="7e6254a3c499887f0d500958fc6584ed" category="paragraph">如果需要在不删除和重新创建保护组的情况下更改该保护组的详细信息，请编辑该保护组。</block>
   <block id="78fa67c28bf09a9555618080f725243c" category="list-text">对保护组中的常规详细信息和 VM 进行任何必要的更改。</block>
   <block id="3573adc4fce66bc7bb13c8f35b9d7e90" category="list-text">如果需要，请更改与保护组关联的策略。</block>
-  <block id="8b3c75a910501c009c7e86f190f1825d" category="section-title">2026 年 2 月 23 日</block>
   <block id="175ddb68a640ea3daeb84c25a2402e6f" category="sidebar">创建和管理保护报告</block>
   <block id="1d30989467a5dda6a77c2158034a190b" category="paragraph">KVM 工作负载支持现已在 NetApp Backup and Recovery 中正式提供（GA）。</block>
   <block id="403eb7104337d3b7cb0c9cbd6a28b588" category="section-title">一般可用性 (GA) 中支持的 Kubernetes 工作负载</block>
@@ -4007,7 +3988,6 @@
   <block id="9e2d6035ec7a18aa99db06aab17683c8" category="list-text">ONTAP 9.13.1 或更高版本</block>
   <block id="84926f15fa96e5fbcf319691a6c909e3" category="list-text">运行 9.13.1 或更高版本的 Amazon FSx for NetApp ONTAP 存储系统</block>
   <block id="d683472bc4b099b7787d3a9d8df4673e" category="admonition">如果选择 *自带存储桶*，请确保创建作为备份目标的容器与 Azure 存储帐户同名。</block>
-  <block id="df4bdd45174b09881add6730bdfaf045" category="section-title">2026 年 3 月 09 日</block>
   <block id="e0ec2dc076093e707f6f4a129c330a5e" category="paragraph">在此版本中，VMware 工作负载引入了以下增强功能：</block>
   <block id="c951c234678bc7ac8d60ec274364552c" category="paragraph">*每个计划层的虚拟机一致性支持*：现在，在为 VMware 工作负载配置保护策略时，您可以为特定计划层启用虚拟机一致性和应用程序一致性备份。支持年度、月度和周度层。</block>
   <block id="9b97b7bd5e0a87be7bf218224ada83cf" category="cell">需求</block>
@@ -4047,7 +4027,6 @@
   <block id="d213948679817ac06e8c20f73a6d5e50" category="list-text">TCP 8144（NetApp Plugin for Hyper-V）</block>
   <block id="eb24ddd0422049219f581858a9ae2714" category="list-text">TCP 8145（NetApp Plugin for Windows）</block>
   <block id="72edcbdd4436f32d101a83a36dd2d1db" category="list-text">运行 *ls* 命令以确保已创建文件夹"catalogdb1"并包含子文件夹<block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>、<block ref="b17be6650251f2e6c7d4e90209beb4e0" prefix=" " category="inline-code"></block>和<block ref="695633290d050f31cec0c9d4bd4a57fe" prefix=" " category="inline-code"></block>。</block>
-  <block id="69b1a964078d5301a2aa9822cb2304f2" category="section-title">2026 年 3 月 16 日</block>
   <block id="5896522d63454009d1844a27f9e16972" category="cell">7.4.13 或更高版本</block>
   <block id="0fd3e1f73fc71151c33e67909039dd88" category="paragraph">在此版本中，Oracle 数据库工作负载引入了以下增强功能：</block>
   <block id="b77d45fa1e71e6bf913df1f7680aa70c" category="list-text">*群集主机支持*：您现在可以发现和保护使用 Oracle Automatic Storage Management (ASM) 并使用 VMDK 在 VMFS 文件系统上部署的 Oracle Real Application Clusters (RAC) 数据库。有关详细信息，请参阅<block ref="d0dab0542f96585a18cc2e536da75fd6" category="inline-link-rx"></block>。</block>
@@ -4086,7 +4065,6 @@
   <block id="019fba30868c655ee8cc940ae99cd3cd" category="inline-link">NetApp Console 中的备份和恢复角色</block>
   <block id="80afdb34bdd1565998c40515197f31b9" category="paragraph">有关 Backup and Recovery 角色的详细信息，请参阅<block ref="6de1818932cff795152c5395660d33a2" category="inline-link-rx"></block>。</block>
   <block id="40462b3520e204c56d496704b2197731" category="list-text">基于 ASM 的 RAC（VMFS 上的 VMDK）</block>
-  <block id="d8fdc2681cdec613a02ac551c44a6e8c" category="section-title">2026 年 3 月 31 日</block>
   <block id="e2ff2fbe928113326186485b8655d712" category="sidebar">装载、卸载和编目恢复点</block>
   <block id="db1da6f84847ade23be98a17bc4b5b1e" category="paragraph">在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：</block>
   <block id="a83b3bb31eda1beff171bab61e67aa23" category="paragraph">*支持 NetApp MetroCluster 主动/主动配置*：NetApp Backup and Recovery for Volumes 工作负载现在支持 MetroCluster 主动-主动配置。</block>
@@ -4192,7 +4170,6 @@
   <block id="1873f6028647ed72cee9a7bccf68c491" category="summary">使用 NetApp Backup and Recovery，通过浏览和还原功能还原 ONTAP 数据。</block>
   <block id="9b0b495cd3a28a2977dbab61bc1cbce8" category="summary">您可以使用 Search and Restore 从 ONTAP 备份文件中恢复卷、文件夹或文件。</block>
   <block id="13805175d1bc9d9656654bec32406f98" category="admonition">Backup and Recovery 不会为创建时间戳与同一卷的另一个快照完全匹配的任何快照编制索引。</block>
-  <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">2026 年 4 月 13 日</block>
   <block id="462fcd2b84c5fc16f3d89522a2068baa" category="sidebar">文件和文件夹恢复故障排除</block>
   <block id="12dc36f8332118bd4fe7f1b4633c0a17" category="list-text">*还原文件和文件夹时支持代理 VM* - 当您不希望将虚拟磁盘附加到原始 VM 时，现在可以使用代理 VM 从虚拟磁盘还原文件和文件夹。有关详细信息，请参阅<block ref="d14b743b42535a5def60386aae0617f3" category="inline-link-rx"></block>。</block>
   <block id="ddd4881e88c799f792de41fafe0a11d7" category="list-text">*递归文件和文件夹搜索* - 您现在可以搜索整个虚拟磁盘以查找特定文件或文件夹。有关详细信息，请参阅<block ref="d14b743b42535a5def60386aae0617f3" category="inline-link-rx"></block>。</block>
@@ -4239,7 +4216,6 @@
   <block id="c7ac12b44e81f24dcab5d6e8675df0a1" category="paragraph">在此版本中，VMware 工作负载引入了以下增强功能：</block>
   <block id="4f06e500210ecec059ecf486106df9e6" category="list-text">*ASA r2 SAN 支持*：VMware 工作负载现在支持保护由 NetApp ASA r2 SAN 专用环境托管的 VMFS 数据存储上的 VM。</block>
   <block id="fe6a65d4e5dee2ab8e25b78186c2fa25" category="list-text">ASA r2 仅限 SAN 系统（需要 ONTAP 9.17.1 或更高版本）</block>
-  <block id="6dba6d956d3e495df0c0575cd1b23218" category="section-title">2026 年 4 月 20 日</block>
   <block id="15c76b732e7da21111f18374ed2e9ae6" category="list-text">*metadata.annotations.protect.trident.netapp.io/skip-vm-freeze*：（_Optional_）此注释仅适用于从虚拟机定义的应用程序，例如在 KubeVirt 环境中，在快照之前会发生文件系统冻结。指定此应用程序是否可以在快照期间写入文件系统。如果设置为 true，应用程序将忽略全局设置，并且可以在快照期间写入文件系统。如果设置为 false，应用程序将忽略全局设置，并在快照期间冻结文件系统。如果指定，但应用程序在应用程序定义中没有虚拟机，则忽略注释。如果未指定，则应用程序遵循<block ref="3047941e3fa7c2760a995edc5fae820b" category="inline-link-rx"></block>。</block>
   <block id="238d7a2bebc2cf898422ec1dbda4a73b" category="paragraph">工作负载是系统内资源的逻辑分组，作为一个单位管理，用于保护、治理、检测和恢复。在 Backup and Recovery 中，工作负载是您保护的单位。其含义取决于数据源：对于 Kubernetes，工作负载是一个应用程序，对于 VM 环境，它是一个虚拟机，对于数据库环境，它是一个数据库。</block>
   <block id="eb0aff97ddec7b6894c0ea9cc7a6b66c" category="list-text">在 Google Cloud 中，将部署一个新的存储桶，并在帐户/项目级别配置<block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block>。</block>
@@ -4423,7 +4399,6 @@
   <block id="a1ff2aac5244b20dc12ea8c0b87d23d5" category="list-text">主 ONTAP 系统（不支持 ASA r2 系统）</block>
   <block id="9b6a034e6854c5f27feb3ac185829f8d" category="inline-link">Trident Protect</block>
   <block id="d02c2883bbfa212e02daa2b45bd11760" category="list-text">Kubernetes 集群 - 支持的 Kubernetes 发行版和版本包括 <block ref="f56ec4bb79bf67d191baea2a353be3ab" category="inline-link-rx"></block> 支持的发行版和版本。</block>
-  <block id="2966006d3447f3363606a7ddf7d88713" category="section-title">2026 年 5 月 05 日</block>
   <block id="bfddb9cc303489a14cbf9520a59e6d1b" category="sidebar">在还原操作期间使用自定义资源修改资源</block>
   <block id="dd95d3f26c14232d5637a6e4d3472711" category="paragraph">对于运行 Trident Protect 26.05 或更高版本的 Kubernetes 集群，您可以直接从 NetApp Backup and Recovery 中升级 Trident Protect。仅当有更新版本可用时，才会显示升级选项。</block>
   <block id="2177f4b8385663763a55092409fcf96d" category="list-text">*保护 SAN 存储上的 VM*：您现在可以保护 SAN 对象存储上的 VM。</block>
@@ -4543,7 +4518,6 @@
   <block id="29760f5766da0c4d6a0ac770b454e9d0" category="paragraph">此时将显示打开的 VMDK 装载会话列表。您可以查看关联的备份、源 VM、装载路径和其他信息。</block>
   <block id="9e75b63d575b523917aa9e47b41b52fb" category="list-text">Oracle AI Database 26ai</block>
   <block id="f9fe5abdb3368e0236fd36a21bb8f840" category="cell">8.0.24 Hosting Bundle（以及所有后续的 8.0.x 补丁）</block>
-  <block id="9b70df306d1f1719fd9d70e02911394c" category="section-title">2026 年 5 月 11 日</block>
   <block id="5b94860a42a3f19b0fba83e9b7d762f3" category="sidebar">克隆 VMware 工作负载</block>
   <block id="beb76bddbaec1f03042fdde3ce87a100" category="sidebar">创建和管理 KVM 工作负载备份策略</block>
   <block id="d4989fe657e38f56766b05260a139da1" category="sidebar">创建和管理 Hyper-V 工作负载备份策略</block>
@@ -4678,7 +4652,6 @@
   <block id="796522f5baf9f759608770ab7ad25640" category="list-text">修改系统中的全景保护</block>
   <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="section-title">更多信息</block>
   <block id="0714572f5e60fbb935fc53015369f585" category="list-text"><block ref="0714572f5e60fbb935fc53015369f585" category="inline-link-rx"></block></block>
-  <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">2026 年 6 月 08 日</block>
   <block id="248bbbcb51ef3ddd3bd9dc8e6ef8b5a1" category="list-text">*Trident Protect 26.06*：此版本包括 Trident Protect 26.06。</block>
   <block id="a322829a7429e3dce13d41945775197c" category="list-text">*在还原期间跳过应用程序创建*：现在，您可以在还原操作期间跳过自动创建应用程序自定义资源对象。这减少了应用程序清单中不必要的条目。</block>
   <block id="b6e7f9bbbf3d504dc4f264292161745a" category="list-text">*还原虚拟机永久卷声明*：现在，在还原基于虚拟机的应用程序时，您可以还原单个永久卷声明，而无需还原整个虚拟机，从而在特定磁盘或卷受损坏或数据丢失影响时加快恢复速度。</block>
@@ -4690,7 +4663,6 @@
   <block id="928e9cbce0c62c73be1d4bd0799f3a7a" category="list-text">要恢复整个虚拟机，请选择*虚拟机*选项卡。</block>
   <block id="d7b53b986ac236d7156eb62ccb254f74" category="list-text">要恢复单个持久卷声明，请选择*持久卷声明*选项卡。</block>
   <block id="dbdc850e2c6c701a4218daf5d558b642" category="paragraph">Backup and Recovery 列出了恢复点中的所有永久卷声明。您可以选择要在还原操作中包含的永久卷声明。</block>
-  <block id="15957f5a10d7c37b0a0a1daa1c46013a" category="section-title">2026 年 6 月 15 日</block>
   <block id="11cb5552207ff0aa19a1682353b76f93" category="list-text">*保护组现在使用主机时区计划*：保护组现在使用 Hyper-V 主机的时区。在引入主机时区调度之前创建的保护组继续使用其先前配置的时间（通常为 UTC）。要更新这些保护组以使用 Hyper-V 主机时区，必须重新创建计划。有关详细信息，请参见<block ref="d7b709a60ba856948f2de1f387e47906" category="inline-link-rx"></block>。</block>
   <block id="327e5e3e392a7cf832926cb52870097c" category="list-text">*保护组现在使用主机时区计划*：保护组现在使用托管 VMware vCenter Server 的时区。在引入主机时区计划之前创建的保护组继续在其先前配置的时区（通常为 UTC）上运行。要使用 vCenter 时区，必须重新创建计划。请参阅<block ref="5181f9a713551c0880da1b785cb2e8f3" category="inline-link-rx"></block>以获取更多信息。</block>
   <block id="2c1cd28b4c922c58abcbcf35e3928c82" category="paragraph">编辑保护组向导将引导您完成保护组中的设置。</block>
@@ -4740,7 +4712,6 @@
   <block id="6dd3c7c1ba8e65da85c3e2fe08fa8a94" category="paragraph">*必需的 NetApp Console 角色*备份和恢复超级管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>……<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
   <block id="44371de0a029c248f1a90987cb1f4534" category="paragraph">*必需的 NetApp Console 角色*备份和恢复超级管理员、备份和恢复备份管理员或备份和恢复还原管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解 <block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>。<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
   <block id="52d42f2d4b51510352e6a5d5264a2324" category="paragraph">*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复还原管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。<block ref="0f393d0ed3fe42bcd53eff5ef49bfe77" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
-  <block id="de2e4685966d24481dfab35c95ad44dc" category="section-title">2026年7月13日</block>
   <block id="66591c0e71be05bd24e1869944b92db6" category="doc">增强对所有工作负载的多存储桶支持</block>
   <block id="9bf2c1ebc9be74ae2e995a0a4dab1fec" category="paragraph">要了解有关 NetApp Backup and Recovery 的详细信息，请参阅<block ref="a026c5bec08ff7bb5b963e48c0daa63e" category="inline-link-rx"></block>。</block>
   <block id="528479df4d34d5d63a688250da8bc886" category="list-text">当从源或目标获取备份时，SVM-DR 和卷备份与恢复完全独立地工作。唯一的限制是 SVM-DR 不会复制 SnapMirror 云关系。在灾难恢复方案中，当存储虚拟机在辅助位置联机时，您必须手动更新 SnapMirror 云关系。</block>
@@ -4782,8 +4753,6 @@
   <block id="5c09edc1ed9afb140af2607f91da29e1" category="section-title">NetApp Console 本地部署限制的 Backup and Recovery 预览版</block>
   <block id="32e1c572f7e144c1646e5a596a5a1451" category="admonition">NetApp Console 使用项目来组织文件夹中的资源，而 NetApp Console 本地部署将项目称为舰队。</block>
   <block id="c9f1fbd3541e041c7aefce17e569d706" category="list-text">请选择一种安装类型，以查看在 Kubernetes 集群上安装 Trident Protect 的说明：</block>
-  <block id="eb91a7499802a37e3cd48fa310c15a57" category="list-text">选择*已连接*以发现具有外部网络连接的集群。</block>
-  <block id="42549739c293d276ceebe73a196959c7" category="list-text">选择 *Air-gapped* 以发现没有外部网络连接的集群。</block>
   <block id="c81c81c33dcdd7c4d24b501795cfae12" category="open-title">已连接发现</block>
   <block id="b2e76d956d1446ebd1dc9cf7262e7a73" category="list-text">按照 Backup and Recovery 中显示的命令行说明进行操作。这些步骤可确保 Backup and Recovery 能够与集群进行交互。</block>
   <block id="2b7add97385bfd3948413e32d55ea9b3" category="open-title">气隙发现</block>
@@ -4899,7 +4868,6 @@
   <block id="aafe04b5477e90484ecb5a97ab35b2e5" category="list-text">*回收策略<block ref="afece4245269582cb2f1009d4fb52047" prefix=" " category="inline-code"></block>：* 删除 PVC 不会擦除 ONTAP 数据；如果您重新配置，必须手动清理已释放的 PV。</block>
   <block id="0ca13922f073b075ebe35843a4741a65" category="list-text">*保持 Helm 同步：* 由于 PVC 通常由图表渲染，未来的<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block>可能会尝试重新创建或修改它。要保留此手动 ONTAP PVC，请将图表指向相同的值<block ref="da653f0609e1ee5bf4ad3210bbae68f7" prefix="(" category="inline-code"></block>，匹配大小/访问模式）或从版本中排除共享 PVC。</block>
   <block id="718879a57c5479ddc9d8c13719835aa2" category="list-text">如果手动运行<block ref="547d17b0589ba1ba53549f8ddb830b62" prefix=" " category="inline-code"></block>然后尝试重新安装，PV 将以相同的名称安装，并导致命名冲突。</block>
-  <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">2026年8月10日</block>
   <block id="4d92224f9798401488621039f9e4cfa9" category="list-text">您必须在订阅中注册 Azure Synapse Analytics 资源提供程序（称为"Microsoft.Synapse"）<block ref="c0f87c4b35b6d93246175aae02f70afd" category="inline-link-rx"></block>。您必须是订阅 *Owner* 或 *Contributor* 才能注册资源提供商。</block>
   <block id="309ab91ccf975daed364d3636f21792a" category="paragraph">您可以将驻留在辅助系统（复制卷）或对象存储（备份文件）中的备份文件中的 ONTAP 数据还原到以下系统。</block>
   <block id="e9a171dcb6f5a1441f086b12be8cbc6b" category="cell">S3 兼容对象存储</block>
@@ -5013,7 +4981,6 @@
   <block id="26d43fe933dfc83c3004371ec611ca0f" category="list-text">*Pluggable Database (PDB) restore*：您现在可以还原单个可插拔数据库 (PDB) 和 PDB 表空间，包括时间点恢复。</block>
   <block id="ba1d750ea9570e1e14902f85cdd21fbd" category="list-text">*Pluggable Database (PDB) clone*：您现在可以将单个 PDB 克隆到现有的目标容器数据库 (CDB) 中，并且可以选择在克隆完整的容器数据库时排除 PDB。</block>
   <block id="f771ab6fc3300e0b07bde061e3f606f7" category="list-text">*更改默认存储位置*：如果源存储位置无法访问或已满，则启用此选项可将对象存储备份还原到其他位置。选择其他要使用的集群、Storage VM 或聚合。</block>
-  <block id="7c3780c8bbc09e634d77ec9249acfb5c" category="section-title">2026年8月17日</block>
   <block id="6319d2a187c14a056a2451e457680ac9" category="section-title">将 Kubernetes 集群重新连接到控制台代理</block>
   <block id="ba2444c182512882ef30cd6d790a989d" category="paragraph">命令完成后，您的集群将自动重新连接。</block>
   <block id="4a553bf9ebe9a32a6743c78be912cfbc" category="list-text">选择*Close*。</block>
@@ -5096,7 +5063,6 @@
   <block id="dcaa1fd2ba2b942a77e609b9816f21a0" category="paragraph">作为组织管理员，设置工作负载所在的文件夹和项目结构。</block>
   <block id="d3a956cbe0bf78268d257899952f08c7" category="list-text">*Organization admin* 和 *Backup and Recovery super admin*：具有这些角色的用户可以查看组织中的所有资源，并可以发现 Backup and Recovery 工作负载并将其分配给项目（例如，美国东部或美国西部）。</block>
   <block id="57b7754010d1d0d98e95e4196832fff4" category="list-text">*文件夹或项目管理员*和 *Backup and Recovery super admin*：具有这些角色的用户只能查看其分配的文件夹或项目中的资源，但可以发现 Backup and Recovery 工作负载并将其分配给该项目。</block>
-  <block id="af37ef011f9bdec40c83d72a69ed1d79" category="paragraph">组织管理员或文件夹或项目管理员发现可用的工作负载，并选择适当的项目（例如美国东部或美国西部）。每个工作负载都会自动与选定项目关联。</block>
   <block id="3b4277556de7d3613194280e020b6065" category="paragraph">组织管理员或文件夹或项目管理员将 NetApp Console 用户添加到具有工作负载的项目。根据用户的访问需求，为其分配组织查看者角色和 Backup and Recovery 角色。具有适当 Backup and Recovery 角色的用户会自动获得对这些项目中新工作负载的访问权限。</block>
   <block id="88fc0613362536e4ff2a625c2d60a42f" category="paragraph">在使用 NetApp Backup and Recovery 备份 ONTAP 卷之前，请查看这些限制。</block>
   <block id="d04c100aa8e9be0aa91497c899b0ae70" category="list-text">您一次只能选择一个 FlexGroup 卷进行复制。您需要为每个 FlexGroup 卷分别激活备份。</block>
@@ -6006,5 +5972,202 @@
   <block id="92e781ed9b2cbb1d2bb902abf023729d" category="list-text">选中"是否要继续迁移?"复选框，然后选择*Manage*。</block>
   <block id="8ec423cb544f5a4931b35174a601686c" category="cell"><block ref="a1eba06bd1db60b0b7acd47a98fdd405" prefix="" category="inline-code"></block></block>
   <block id="def96a092a0c6947fcdadafb96edb659" category="cell">在适用于卷的 NetApp Backup and Recovery 的报告选项卡下启用每日备份数据传输报告。该报告提供跨环境的每日备份和复制数据传输活动信息。</block>
-  <block id="9d26347bf9049c082d482aa87b79d702" category="section-title">2026年9月16日</block>
+  <block id="200e15de6a3939fa4dda17a8836f5233" category="list-text">*Trident Protect 26.09*：此版本包括 Trident Protect 26.09。</block>
+  <block id="6e2d39e3670c746bf336eaad2e07b214" category="list-text">*集群和命名空间粒度的基于角色的访问控制*：在 Kubernetes 集群发现期间，您可以通过选择要与新集群关联的项目或文件夹来控制对资源的访问。您还可以注册特定命名空间以进行访问控制。这可以在集群或命名空间级别实现更精细的访问控制。</block>
+  <block id="bc9e0a0c6dd42dbca705164e269a3b81" category="list-text">*Restore files and folders*：现在，您可以从基于 Kubernetes VM 的应用程序备份中还原或下载特定的文件和文件夹。</block>
+  <block id="0eae5eefe564ecf4ccbc3e8d5990e3e5" category="list-text">*其他备份和恢复角色*：为用户分配他们需要的特定 Backup and Recovery 角色，例如 Backup and Recovery viewer 或 Backup and Recovery clone admin。这些角色允许用户执行日常任务，例如查看资源、保护工作负载、克隆和还原。将 Backup and Recovery 角色与平台级角色分开分配。有关详细信息，请参阅 <block ref="8432e361253dad22d74ca5fd3ad3c136" category="inline-link-macro-rx"></block>。</block>
+  <block id="495d694fb4e6c9ffefefeddb8fb2c749" category="paragraph">组织管理员或文件夹或项目管理员发现可用的工作负载，并选择适当的项目（例如 US East 或 US West）。每个工作负载都会自动与所选项目相关联。对于 Kubernetes 集群，您可以选择在发现期间与集群关联的文件夹或项目。</block>
+  <block id="22de56c086dedbed6837db4613efda62" category="list-text"><block ref="22de56c086dedbed6837db4613efda62" category="inline-link-macro-rx"></block></block>
+  <block id="8432e361253dad22d74ca5fd3ad3c136" category="list-text"><block ref="8432e361253dad22d74ca5fd3ad3c136" category="inline-link-macro-rx"></block></block>
+  <block id="a0ed7f6901b0fa563476381ac02c5fdd" category="inline-link-macro">NetApp Backup and Recovery 角色和权限</block>
+  <block id="efd1ef2dfea85f5a31d9e2fc1f131047" category="list-text"><block ref="efd1ef2dfea85f5a31d9e2fc1f131047" category="inline-link-macro-rx"></block></block>
+  <block id="bdf340f843cf54500673f62df22d5070" category="list-text"><block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block></block>
+  <block id="2f182ee5a43e6c6dc214ef81f7251184" category="inline-link-macro">管理对 Kubernetes 资源的访问</block>
+  <block id="37e6dfa5777dc09bb4c2e4c7884016ff" category="list-text"><block ref="37e6dfa5777dc09bb4c2e4c7884016ff" category="inline-link-macro-rx"></block></block>
+  <block id="93271e162b88d172b5cadb4ddf29fb49" category="list-text">（可选）选择一个文件夹或项目，以确定访问控制应用于此集群的位置。如果未选择文件夹或项目，则会在组织级别添加集群 IAM 资源：</block>
+  <block id="fc5ed78b10a812d83248bfff2b8e881f" category="list-text">*Folder*：选择此选项可控制用户对文件夹级别群集资源的访问，并从列表中选择一个文件夹。</block>
+  <block id="e3323a98b50075a63b8655e49ac72e7d" category="inline-link-macro">管理 Kubernetes 资源访问</block>
+  <block id="93c529af699a439fc0e5e8e70977c821" category="admonition">如果 Kubernetes 集群或命名空间与文件夹关联，则用户还需要在右上角的项目选择器中所选项目的 *Backup and Recovery viewer* 角色。此项目级访问权限使用户能够打开 Backup and Recovery 主页。在文件夹级别分配的角色（例如，Backup and Recovery backup admin）确定用户进入工作负载页面后可以执行的操作，但不会自行授予对该页面的访问权限。请参见 <block ref="17af126829c2ac673dadbf66b3ca81a6" category="inline-link-macro-rx"></block> 以了解更多信息。</block>
+  <block id="425c5e1d5b2a1b7c6406da748e0a6cf5" category="list-text">*Project*：选择此选项可在项目级别控制用户对集群资源的访问，并从列表中选择一个项目。</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="inline-link">了解更多</block>
+  <block id="e7f0b09d872c9908a498674ac7069792" category="paragraph"><block ref="6db86c27b2838fd430440b019c90138a" category="inline-link-rx"></block> 关于 NetApp Console 中的组织组件。</block>
+  <block id="3609af7d9defc496224366e3fef50789" category="list-text">选择 *Generate installation commands*。</block>
+  <block id="78efce191e6d9562ad72513dce59ca51" category="list-text">选择*已连接*以发现具有外部网络连接的集群。这些说明是针对已连接集群量身定制的。</block>
+  <block id="bbac6cce69b1bb1012f5da735a289d03" category="list-text">选择 *Air-gapped* 以发现没有外部网络连接的集群。这些说明专为气隙（离线）集群定制。</block>
+  <block id="580142060a9954ae5488debb677bc46e" category="summary">通过使用 NetApp Console 文件夹、项目和角色，管理对 NetApp Backup and Recovery 中 Kubernetes 资源的访问。</block>
+  <block id="c827795d71aa34830a11baeba937e5bd" category="paragraph">在集群或资源级别管理对 NetApp Backup and Recovery 中 Kubernetes 资源的访问。您可以通过在 NetApp Console 发现期间将集群与文件夹或项目相关联，以及为用户分配适当的角色来管理对集群资源的访问。通过将命名空间注册为与项目或文件夹关联的 IAM 资源，在命名空间级别管理资源访问。</block>
+  <block id="23d13b19980c443939926faded845a53" category="paragraph">有关将集群与 IAM 文件夹或项目关联的信息，请参阅 <block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block>。</block>
+  <block id="54ad8aa702898857aedb0facda67c135" category="paragraph">Backup and Recovery 命名空间级别的 Kubernetes 资源访问由您在注册命名空间进行访问控制时与命名空间关联的文件夹或项目控制。命名空间与文件夹或项目关联后，具有该作用域相应 NetApp Console 和 Backup and Recovery 角色的用户可以访问命名空间及其受保护资源。</block>
+  <block id="195ea40d5634fc17d345a5c892092f0a" category="section-title">备份和恢复角色及其对 Kubernetes 工作负载的权限说明</block>
+  <block id="ed7ea849689893305cae598cea7265e7" category="paragraph">对于与文件夹或项目关联的 Kubernetes 集群或命名空间，用户在该文件夹或项目上拥有的特定 Backup and Recovery 角色决定了他们可以执行的操作。有关 Backup and Recovery 角色的详细信息，请参阅<block ref="f55b71b751fe717510c56a41e984b079" category="inline-link-rx"></block>。</block>
+  <block id="f2bb6a30654091f1cba2e566189f690d" category="admonition">备份和恢复克隆管理员角色不与 Kubernetes 工作负载一起使用。</block>
+  <block id="bbbabdbe1b262f75d99d62880b953be1" category="cell">角色</block>
+  <block id="da42cf0edba62f56e81875e924e3c78b" category="cell">视图访问范围</block>
+  <block id="0c2e18b9972ed183d88593947ef05e5d" category="cell">允许的操作</block>
+  <block id="8f009cd92a4b6da25ea7b3059639fe4e" category="cell">备份和恢复超级管理员</block>
+  <block id="13550537e1382adb038faef7c546f48b" category="cell">范围内的集群、命名空间和应用程序的完整视图</block>
+  <block id="dec28c4000e843c2269cc3e88feff4fb" category="cell">查看、创建应用程序、保护（创建/删除保护）和还原</block>
+  <block id="d6ff081a3e1c30875e7fb24ab7e4e15a" category="cell">备份和恢复查看器</block>
+  <block id="8c4280136a75abd6cab33d28ba6cd02e" category="cell">仅查看作用域中的集群和命名空间</block>
+  <block id="c02259ce9dbed60671eab40b82cd017f" category="cell">仅供查看。无法创建、保护或还原。</block>
+  <block id="90d523cb757563efcd84dc6425dc9d01" category="cell">备份和恢复备份管理员</block>
+  <block id="44faaab3311362e460e8f4f957efcff2" category="cell">查看、创建应用程序和保护（创建/删除保护）。无法还原。</block>
+  <block id="fc4fa889144fd4052061a4a8d6410db8" category="cell">备份和恢复还原管理员</block>
+  <block id="e7fd15009ee3d846574ee3db8bab25d4" category="cell">仅查看和还原。无法创建应用程序或保护策略。</block>
+  <block id="7c057dbf95ea8c30b85e23f24e2cae7e" category="section-title">将 Kubernetes 命名空间与文件夹或项目关联</block>
+  <block id="e72dfde96c3cd9e509553b2bd6223890" category="paragraph">将命名空间与文件夹或项目关联，以便访问控制应用于该范围。</block>
+  <block id="e8ff62b3b55b9f1a1ac704c07d3819d9" category="list-text">在*工作负载*下，选择* Kubernetes *磁贴。</block>
+  <block id="7ba042fbdea83050c1ec05d56a3eb90c" category="list-text">在清单中，选择*命名空间*菜单。</block>
+  <block id="1e4952567f1c733fa2cde586eb2e29d1" category="list-text">选择要注册访问控制的一个或多个命名空间，并为每个命名空间启用复选框。</block>
+  <block id="933b95131eccb242da896691f1704454" category="list-text">选择 *Register for access control*。</block>
+  <block id="de21d2954640c941c854adbc9fbff238" category="list-text">（可选）选择一个文件夹或项目，以确定访问控制应用于此命名空间的位置。如果未选择文件夹或项目，则会注册命名空间 IAM 资源，但不会将其添加到文件夹或项目：</block>
+  <block id="249f4d8ef2e3c21088f2d692337852eb" category="list-text">*Folder*：选择此选项可控制用户对文件夹级别命名空间资源的访问，并从列表中选择一个文件夹。</block>
+  <block id="85cfe295441a118228c5947473d95cd9" category="admonition">如果 Kubernetes 集群或命名空间与文件夹关联，则用户还需要在右上角的项目选择器中所选项目的 *Backup and Recovery viewer* 角色。此项目级访问权限使用户能够打开 Backup and Recovery 主页。在文件夹级别分配的角色（例如，Backup and Recovery backup admin）决定用户进入工作负载页面后可以执行的操作，但不会自行授予对该页面的访问权限。</block>
+  <block id="c10b0a35d64b39232e2eeaf3e67390e7" category="list-text">*Project*：选择此选项可在项目级别控制用户对命名空间资源的访问，然后从列表中选择一个项目。</block>
+  <block id="b5249314aff5fae6b6de54ce7f13f16b" category="list-text">选择*注册*。</block>
+  <block id="8ba2cf9862af3d92cf32305f886b2a4d" category="list-text"><block ref="8ba2cf9862af3d92cf32305f886b2a4d" category="inline-link-macro-rx"></block></block>
+  <block id="8bed02d5d9878aee332f623205c5d526" category="paragraph">*必需的 NetApp Console 角色* 您需要以下两项：</block>
+  <block id="5a137dfd8e1002c02d75cf78c7aa5004" category="list-text">*组织管理员*</block>
+  <block id="44ea26f6d09ae5df5d4b40424b104dda" category="list-text">*Backup and Recovery super admin* 或 *Backup and Recovery backup admin*</block>
+  <block id="1e25ae0f49fd67602c09646617bac353" category="paragraph">如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>。<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
+  <block id="bb0b10b46d2d778edc1cd56c518291cf" category="summary">NetApp Backup and Recovery 使您能够还原和下载从基于 VM 的应用程序备份的文件和文件夹。</block>
+  <block id="3565d4d1aca4f00bfcdd5927155b9ab5" category="doc">使用 NetApp Backup and Recovery 还原或下载基于虚拟机的应用程序文件和文件夹</block>
+  <block id="43042deb7bbe6eb1432003dbad65d967" category="paragraph">恢复或下载从基于虚拟机的 Kubernetes 应用程序备份的文件和文件夹。要还原或下载文件和文件夹，至少需要一个还原点，并且虚拟机需要具有受支持文件系统的分区。当前只能从本地快照还原和下载。</block>
+  <block id="f0d9ff2e6b6e458d25ea0fb82e886006" category="paragraph">支持的来宾操作系统和版本包括：</block>
+  <block id="f560c4bab47e3fdd6e055c8ba851a71f" category="list-text">*Windows*：Windows Server 2022、Windows 10、Windows 11</block>
+  <block id="c7aeeda1cb860e0f676db638dff62917" category="list-text">*Linux*：Ubuntu 22.04、Red Hat Enterprise Linux 9、Fedora 39、CentOS Stream 9、openSUSE Leap 15.6</block>
+  <block id="1bd2fe9357af291c015aa5f7c5ff33b1" category="paragraph">支持的文件系统包括：</block>
+  <block id="039fbd3033a21713f2e0fdc4e762b9bc" category="list-text">BTRFS</block>
+  <block id="92a6de4a80c0d4ea27945f030eea0767" category="list-text">exFAT</block>
+  <block id="40d1d2ce03569076bd0dc1e0ff90aa4c" category="list-text">ext4</block>
+  <block id="bead6bebc11dade4ccad97fa037b72a6" category="list-text">NTFS</block>
+  <block id="dd14e072799a4190c8a23c13403384ec" category="list-text">XFS</block>
+  <block id="3968d706c9a7376c6798c03d5eafb0c8" category="section-title">从基于 VM 的应用程序还原 VM 文件和文件夹</block>
+  <block id="4f2f6eed39a927db2b88247ef1e430bc" category="paragraph">当需要将特定文件或文件夹恢复到基于 VM 的应用程序时，无需还原整个应用程序，即可从还原点还原基于 VM 的文件和文件夹。默认情况下，现有文件将被覆盖。</block>
+  <block id="57b8b19e52facf1ccf9ef783350502d7" category="paragraph">从基于 VM 的应用程序还原文件和文件夹之前，请验证目标 VM 是否满足以下要求：</block>
+  <block id="c3cbcce12a0f0ed95ac831fb6555681f" category="list-text">目标虚拟机正在运行，并具有 IP 地址。</block>
+  <block id="481de9febfadbe43e61b978e28e168f8" category="list-text">用户可以写入还原目标。</block>
+  <block id="c43c413b2c2b397d7c270282a0275743" category="list-text">SSH已启用并使用密码身份验证（不支持仅密钥登录）。验证是否在 Linux 目标主机上启用了 SSH 服务，以及是否在 Windows 目标主机上安装并启用了 OpenSSH 服务器。</block>
+  <block id="4b5a2317f0618353c11a3f1ffa2558f9" category="list-text">选择还原点的*操作*<block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block>图标，然后打开*还原文件和文件夹*菜单。</block>
+  <block id="1e9b86df7abd756ebde066966464cc8a" category="list-text">选择要从中还原的源位置（目前仅支持快照）。</block>
+  <block id="fdc1ff6c8204cf3811b65cf31bb3bc6c" category="list-text">从恢复点选择一个虚拟机以浏览其文件和文件夹。</block>
+  <block id="505df9e186c271a92e85fd3d6664493a" category="paragraph">此时将显示文件浏览器。</block>
+  <block id="f888c9293d5d87423215636a82372b54" category="list-text">浏览文件和文件夹列表，并选择要还原的文件和文件夹。</block>
+  <block id="41e3c8f4d6f35779b3a79a982bf16ef3" category="paragraph">打开分区以浏览其文件和文件夹。当您通过启用其复选框选择要还原的文件或文件夹时，它将被添加到右侧的"选定"列表中。</block>
+  <block id="ca5b787bb136dc29684273092f1bbc27" category="list-text">选择*Transfer to VM*传输模式。</block>
+  <block id="1ba7f008d075bf6aa27569b75c5ab37d" category="list-text">选择目标设置：</block>
+  <block id="eed0acc0218be52c2110afdd12787f0b" category="list-text">*还原到原始虚拟机*：启用此选项可还原到原始虚拟机。</block>
+  <block id="70ab6cc7b7b30b521f74eada18aace98" category="list-text">*Restore to the same path as in the backup*：启用此选项可还原到备份中使用的相同路径。</block>
+  <block id="c0fcfd13a4ff3eef9148c32d72ac73e6" category="list-text">*备用路径*：要还原到其他路径，请启用此选项并输入首选路径。</block>
+  <block id="10cc1a393c57ba15ce5d59b0b3f1e0e8" category="list-text">*还原到备用虚拟机*：启用此选项可还原到集群中的其他虚拟机。从列表中选择一个 VM，然后输入已还原文件或文件夹的目标路径。</block>
+  <block id="4704941d18680c0d32b98127b5d88c7d" category="list-text">在*来宾虚拟机凭据*部分中，为来宾虚拟机选择凭据。</block>
+  <block id="e85022e94ffa373d60fbaf26f3c57666" category="paragraph">如果您尚未为此来宾虚拟机添加凭据，请选择*添加凭据*为来宾虚拟机添加新凭据。添加来宾虚拟机凭据后，新凭据将显示在凭据列表中，您可以选择它。这些凭据对于来宾虚拟机是唯一的，可供使用相同 Console 代理的任何集群重复使用。</block>
+  <block id="f1909125ce64e521e79a7641e08d48da" category="list-text">查看并确认文件或文件夹还原设置。</block>
+  <block id="c02a4bdfcdc2131aa377528a4398d159" category="section-title">下载 Kubernetes 虚拟机文件和文件夹</block>
+  <block id="34ebb5a598f281203301675be0be5a48" category="paragraph">当您不想将文件和文件夹还原到基于 VM 的应用程序，而是希望将它们保存到本地计算机时，请从还原点下载文件和文件夹。下载的文件和文件夹将保存为单个 .tar 存档。下载文件和文件夹不需要来宾虚拟机的凭据。</block>
+  <block id="a97b14e84f3ae0b7a96c76cbee068fd0" category="list-text">选择要下载的源位置（此时仅支持快照）。</block>
+  <block id="9f1402b737c560a2a6c99f05f3c47879" category="list-text">浏览文件和文件夹列表，并选择要下载的文件和文件夹。</block>
+  <block id="2dc5e815ee060155a84b67a09dcf7fa6" category="paragraph">打开分区以浏览其文件和文件夹。当您通过启用其复选框选择要下载的文件或文件夹时，它将被添加到右侧的"选定"列表中。</block>
+  <block id="78088a4541d653c86a72059b62c6efb2" category="list-text">选择*下载文件*传输模式。</block>
+  <block id="ec893dccc7ac6d8784a958bfecf4c77c" category="list-text">查看并确认文件或文件夹下载设置。</block>
+  <block id="7f23c16aa83f6a964740b81d87655f97" category="paragraph">您的 Web 浏览器处理下载；将 .tar 存档保存到本地计算机。</block>
+  <block id="90ca43420c8056d84e6e779edc155a8e" category="list-text">要从基于 VM 的应用程序还原文件和文件夹，需要 SSH。验证是否在 Linux 目标主机上启用了 SSH 服务，以及是否在 Windows 目标主机上安装并启用了 OpenSSH 服务器。</block>
+  <block id="d4184d6f2694971a164a302498e466fd" category="paragraph">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD == 2026 年 9 月 16 日</block>
+  <block id="70a78291e1631b6cde41e3ade59523c8" category="paragraph">== 2026年9月21日</block>
+  <block id="a407b07e11f8594de68b112c2830fda6" category="paragraph">=== Kubernetes 工作负载增强功能 在本版本中，Kubernetes 工作负载引入了以下增强功能：</block>
+  <block id="89b0b0973ed7d73d233126a750ddfd6b" category="paragraph">要了解有关保护 Kubernetes 工作负载的详细信息，请参阅<block ref="1288e5e7d4fc4b4cb3f5e18b91f79147" category="inline-link-rx"></block>。&gt;&gt;&gt;&gt;&gt;&gt;&gt; 13d089e3cffcfba837d21c436e1c43e2f3068e74</block>
+  <block id="8c728109c4958c7277d43ffe29c8ef0a" category="paragraph">== 2026年8月17日</block>
+  <block id="6d069869f2c6037ee8457ac4c7624330" category="paragraph">=== Hyper-V 工作负载增强功能在此版本中，Hyper-V 工作负载引入了以下增强功能：</block>
+  <block id="c3c5707bca281a527a83cf55e71d695a" category="paragraph">=== Oracle Database 工作负载增强 在此版本中，Oracle Database 工作负载引入了以下增强功能：</block>
+  <block id="b54e959e87bb5698a736e59d6f5a002d" category="paragraph">== 2026年8月10日</block>
+  <block id="f287b5654466c3abdeb336ac00d4d8f1" category="paragraph">=== 常规 NetApp Backup and Recovery 增强功能</block>
+  <block id="a82be18251af529c0b49e572ccfd11f9" category="paragraph">=== VMware 工作负载增强功能在此版本中，VMware 工作负载引入了以下增强功能：</block>
+  <block id="ac971325f67b7b3a698cbc8351dcde0b" category="paragraph">=== ONTAP Volumes 工作负载增强功能 在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：</block>
+  <block id="d09d785bf301546672ec03c2b0c11bfa" category="paragraph">== 2026年7月13日</block>
+  <block id="53f516dbc86d14a7304ee1e88bd3b704" category="paragraph">=== 增强了对所有工作负载的多存储桶支持 NetApp Backup and Recovery 现在支持跨不同云提供商保护系统中多达 100 个存储桶的工作负载。需要 ONTAP 9.19.1 或更高版本才能支持每个系统超过 6 个存储桶。</block>
+  <block id="6c6621b112cd44e3f19750e5a39791d9" category="paragraph">== 2026年6月15日</block>
+  <block id="40b307f05c7032c9f85e40d510400893" category="paragraph">== 2026 年 6 月 8 日</block>
+  <block id="f8ec275b7730fc2e595ba65b1c058574" category="paragraph">=== ONTAP Volumes 工作负载增强功能 在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：</block>
+  <block id="4ec67842f40ea54ea5b438a562453cf1" category="paragraph">=== Hyper-V 工作负载增强在此版本中，Hyper-V 工作负载引入了以下增强功能：</block>
+  <block id="dce1d5e7ae21e20ee89f0b1f101c9427" category="paragraph">=== VMware 工作负载增强功能在此版本中，VMware 工作负载引入了以下增强功能：</block>
+  <block id="b1a3c2a41bb4bb53c561a85ae0cf1248" category="paragraph">== 2026年5月11日</block>
+  <block id="6f53909f8036ed38d1032aa4b3944e9e" category="paragraph">=== KVM 工作负载增强功能 在此版本中，KVM 工作负载引入了以下增强功能：</block>
+  <block id="ccc91e40b552042057b233583604db54" category="paragraph">=== Oracle Database 工作负载增强功能 在此版本中，Oracle Database 工作负载引入了以下增强功能：</block>
+  <block id="17be7a4c323a9fc3fab615c02397fd9f" category="paragraph">== 2026年5月5日</block>
+  <block id="f16933ec3d316d5e96a1236163dfb36d" category="paragraph">== 2026 年 4 月 20 日</block>
+  <block id="b72d8649b2b356cbe5babbf6579add93" category="paragraph">== 2026年4月13日</block>
+  <block id="9126c21d90c9d7085f75c4d7f247aab6" category="paragraph">=== Kubernetes 工作负载增强在此版本中，Kubernetes 工作负载引入了以下保护策略增强功能：</block>
+  <block id="7e78fd6a69cbbc1247db21cd6c8e13e5" category="paragraph">=== KVM 工作负载增强功能 在此版本中，KVM 工作负载引入了以下增强功能：</block>
+  <block id="f337e8ca08eaa583042989c10ca7899d" category="paragraph">== 2026年3月31日</block>
+  <block id="0815409b15848adeffaa0d8a922efd2f" category="paragraph">=== Oracle Database 工作负载增强功能 在此版本中，Oracle Database 工作负载引入了以下增强功能：</block>
+  <block id="4ae8b6ebbea1364ad8203f39139a37d8" category="paragraph">== 2026 年 3 月 16 日</block>
+  <block id="51bb72becbf87859f54a607272e1a89b" category="paragraph">== 2026年3月9日</block>
+  <block id="67c4fddfe3106e9875c00dbee11011c7" category="paragraph">=== ONTAP Volumes 工作负载增强功能 在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：</block>
+  <block id="cfb83f51d6065f322a228e358fc2f05c" category="paragraph">=== VMware 工作负载增强功能 在此版本中，VMware 工作负载引入了以下增强功能：</block>
+  <block id="fba7dd747540d75dba48cab698c23888" category="paragraph">== 2026年2月23日</block>
+  <block id="ec22006b7033685da69327f9cacc8d52" category="paragraph">=== 正式发布 (GA) 中支持的 KVM 工作负载 KVM 工作负载支持现已在 NetApp Backup and Recovery 中正式发布 (GA)。</block>
+  <block id="c5722c71a913190d380bf04e7a6ed4c8" category="paragraph">=== 正式发布 (GA) 版本中支持的 Kubernetes 工作负载 Kubernetes 工作负载支持现已在 NetApp Backup and Recovery 中正式发布 (GA)。此版本的 Kubernetes 工作负载还引入了以下增强功能：</block>
+  <block id="af3efc79adefb74a231f94f276e2ba5a" category="paragraph">== 2026 年 2 月 9 日</block>
+  <block id="216eef97ecaa45079d18b2d34115bf4f" category="paragraph">=== Microsoft Hyper-V 工作负载在正式发布 (GA) 版本中受支持 Microsoft Hyper-V 工作负载支持现已在 NetApp Backup and Recovery 中正式发布 (GA)。</block>
+  <block id="11e010e32e419136b508c8eef8c92091" category="paragraph">=== 一般可用性 (GA) 中支持的 VMware 工作负载 VMware 工作负载支持现已在 NetApp Backup and Recovery 中正式发布 (GA)。</block>
+  <block id="8dd0df63c0a95649c686776beb799237" category="paragraph">=== Kubernetes 工作负载增强此版本的 Kubernetes 工作负载引入了以下增强功能：</block>
+  <block id="9cc5423dda6fd5f38f97ac0bdeff0f58" category="paragraph">=== Oracle Database 工作负载增强功能此版本的 Oracle Database 工作负载引入了以下增强功能：</block>
+  <block id="2d659e9a280c65c8deb8cc284fe3e14b" category="paragraph">== 2026年1月19日</block>
+  <block id="6fe165085cb2c3700be8e33e42e78a4a" category="paragraph">=== ONTAP 卷工作负载增强功能 此版本的 ONTAP 卷工作负载引入了以下增强功能：</block>
+  <block id="31297f3613c2e7b4115c474b28b1bff4" category="paragraph">=== VMware 工作负载增强此版本的 VMware 工作负载引入了以下增强功能：</block>
+  <block id="cd89288e9d9f0858cc62aea350694825" category="paragraph">=== Hyper-V 工作负载预览增强功能此版本的 Hyper-V 工作负载引入了以下增强功能：</block>
+  <block id="17587842376df599ec875a3e9d797fdb" category="paragraph">=== KVM 工作负载预览增强功能</block>
+  <block id="6e9768faae23340967eb21cf6919a719" category="paragraph">== 2025 年 12 月 8 日</block>
+  <block id="a67d7f93f01478c246c7ca4cf3e556f8" category="paragraph">VMware 工作负载预览增强功能 VMware 工作负载预览版本引入了以下增强功能：</block>
+  <block id="c39569cae750214b7a10df9d4fc733c8" category="paragraph">== 2025年10月6日</block>
+  <block id="442a41c8c8e85223fb05ea3c47074d13" category="paragraph">=== BlueXP 备份和恢复现已更名为 NetApp Backup and Recovery</block>
+  <block id="803d3c219b80ad02de97580ab3a0aa72" category="paragraph">=== BlueXP 现已更名为 NetApp Console</block>
+  <block id="9c1f0b5f236d9f3bfe8051ad4f458d03" category="paragraph">=== 作为私密预览的 Hyper-V 工作负载支持</block>
+  <block id="6ed94356caa3f2763b710210e9cc58e0" category="paragraph">=== KVM 工作负载支持作为私有预览</block>
+  <block id="a1c0d1219a2e15147d875bb6a67849c4" category="paragraph">=== Kubernetes 预览增强功能 Kubernetes 工作负载的预览版本引入了以下增强功能：</block>
+  <block id="a618eb256af85c299727bbfbd2b6522d" category="paragraph">=== VMware 预览增强功能 VMware 工作负载的预览版本引入了以下增强功能：</block>
+  <block id="f5cdc7264c2c276ec322a71e23b24df2" category="paragraph">=== Oracle Database 工作负载支持作为私有预览</block>
+  <block id="b474bc0b0a63b4bbc898ae1fe117f1ba" category="paragraph">=== ONTAP 卷工作负载增强此版本的 ONTAP 卷工作负载引入了以下增强功能：</block>
+  <block id="d637bd8fac0a994563b26e03c7073dca" category="paragraph">== 2025年8月25日</block>
+  <block id="ada048348a523ff085b1b54571c32450" category="paragraph">=== 支持在预览中保护 VMware 工作负载</block>
+  <block id="dcda6e92dec31087dfd18abb09cd8a8b" category="paragraph">=== AWS、Azure 和 GCP 的高性能索引已正式发布</block>
+  <block id="473aeee1269d3ae3a032ccecc98b140a" category="paragraph">== 2025年8月12日</block>
+  <block id="25a29f850eda37d86174a804209256e7" category="paragraph">=== Microsoft SQL Server 工作负载支持已正式发布 (GA)</block>
+  <block id="19e2d12956734eb717874b0c2525f1c7" category="paragraph">=== ONTAP 卷工作负载增强</block>
+  <block id="80762cca91d062aa19d9ba117f7bcb02" category="paragraph">== 2025年7月28日</block>
+  <block id="b35d6e4fcd3ada17b29bd076e8712792" category="paragraph">=== Kubernetes 工作负载支持（预览版）</block>
+  <block id="0795a0a6340a6317bcf372e5b47219ff" category="paragraph">== 2025年7月14日</block>
+  <block id="22789abec35e37054d455eb8859c6d1a" category="paragraph">=== 增强的 ONTAP 卷仪表板</block>
+  <block id="f28686752015d1a89012da407bfdf2d9" category="paragraph">=== Microsoft SQL Server 工作负载支持作为公共技术预览</block>
+  <block id="922f0a9687942be7fb7e984a6cc141e9" category="paragraph">== 2025 年 6 月 9 日</block>
+  <block id="a172b36c5c5acfe05abd9a21e1ab4eb8" category="paragraph">=== 索引目录支持更新 2025 年 2 月，我们推出了更新的索引功能（Indexed Catalog v2），您可以在搜索和还原数据的方法中使用。上一版本显著改善了本地环境中的数据索引性能。在此版本中，索引目录现在可用于 Amazon Web Services、Microsoft Azure 和 Google Cloud Platform (GCP) 环境。</block>
+  <block id="92735fea630fde61126769d266fe2cce" category="paragraph">=== Azure 专用链接端点和服务端点</block>
+  <block id="28a95f34107e73fb05adcb4edd7a11f4" category="paragraph">=== 支持 ONTAP S3 上的 SnapMirror to Cloud 重新同步</block>
+  <block id="6cc3d130f68a0ffb5aaf8589cce54a9f" category="paragraph">=== 为 StorageGRID 自带存储桶</block>
+  <block id="a9b1fae739f7787ee78ddd66bdcf424d" category="paragraph">== 2025年5月13日</block>
+  <block id="b14f61a5b0ebc487f0fd465e2c49e32e" category="paragraph">=== SnapMirror to Cloud 重新同步以进行卷迁移</block>
+  <block id="b8236f82b43383e75b5279f12c6f169f" category="paragraph">=== 支持第三方 MinIO 对象存储（预览）</block>
+  <block id="ace15ffb1c420f4e688c4d753c91abc2" category="paragraph">== 2025年4月16日</block>
+  <block id="0070d3e95ff1aae8d3ffc352f20de8de" category="paragraph">=== UI 改进</block>
+  <block id="bdb4578e43eced02c733a769b0983420" category="paragraph">=== Enhanced Volume Dashboard（预览）</block>
+  <block id="5815b41fc4b0b5fc6628f93e7610da48" category="paragraph">=== 支持第三方 Wasabi 对象存储（预览）</block>
+  <block id="8db98b381aa8810a494943784a20424c" category="paragraph">==== 开始使用 Wasabi</block>
+  <block id="bd3ba1c2e4596f28a9cd1ca91aedd3b4" category="paragraph">==== 预览模式限制</block>
+  <block id="452567068925868042d7a22e17ca9307" category="paragraph">== 2025 年 3 月 17 日</block>
+  <block id="0cb3dbd97c09eff0ce8678fb64b0f0a2" category="paragraph">=== SMB 快照浏览</block>
+  <block id="01498e8e7a0ef73ed93903ae97697e76" category="paragraph">=== AWS GovCloud 环境更新</block>
+  <block id="97ce2736e4c8bd5731515aa43edd75cb" category="paragraph">=== 备份策略保留限制</block>
+  <block id="7c58d26e0365b4a83e4f1d9c7e4ccc46" category="paragraph">=== SnapMirror Cloud 重新同步</block>
+  <block id="bfaeb1fd694cc75589ab779429dcc4ff" category="paragraph">== 2025年2月21日</block>
+  <block id="9c585448431d433a9610826f9f851c10" category="paragraph">=== 高性能索引</block>
+  <block id="6010004be43684b47a6d391957d245a8" category="paragraph">=== 全局搜索性能改进</block>
+  <block id="aa58847eb73583c7e7eb13db78ec9fb7" category="paragraph">== 2025年2月13日</block>
+  <block id="08b91ed20ac84659f4ba722f1d440782" category="paragraph">=== NetApp Backup and Recovery 预览版本</block>
+  <block id="43c88f32a9f03a6d424d2ab921e0bd52" category="paragraph">== 2024年11月22日</block>
+  <block id="c53ce5def215e3c47008afa5fc69244c" category="paragraph">=== SnapLock Compliance 和 SnapLock Enterprise 保护模式</block>
+  <block id="b86cd1f26c5daf16ef31b85dc0ee88fd" category="paragraph">=== 在卷页面上为搜索和还原过程编制索引在可以使用搜索和还原之前，需要在要从中还原卷数据的每个源系统上启用"索引"。这使索引目录能够跟踪每个卷的备份文件。"卷"页面现在显示索引状态：</block>
+  <block id="79a2e1e9f6f67a669beec92e025f60e3" category="paragraph">== 2024年9月27日</block>
+  <block id="40df578728b85125ad87761e419299c8" category="paragraph">=== 在具有浏览和还原功能的 RHEL 8 或 9 上支持 Podman NetApp Backup and Recovery 现在支持使用 Podman 引擎在 Red Hat Enterprise Linux (RHEL) 版本 8 和 9 上还原文件和文件夹。这适用于 NetApp Backup and Recovery 浏览和还原方法。</block>
+  <block id="58d5a4dc289b7f40dd73921b8409511a" category="paragraph">=== 更快的目录索引改进了搜索和还原此版本包括一个改进的目录索引，可以更快地完成基线索引。更快的索引使您能够更快地使用搜索和还原功能。</block>
+  <block id="b551b4701a9ff2b5829b492b9fb53e09" category="sidebar">从基于 VM 的应用程序还原或下载文件和文件夹</block>
 </blocks>

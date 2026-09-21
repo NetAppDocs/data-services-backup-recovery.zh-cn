@@ -1,0 +1,17 @@
+= Kubernetes 工作负载增强功能
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes 工作负载增强功能
+
+在此版本中，Kubernetes 工作负载引入了以下增强功能：
+
+* *Trident Protect 26.09*：此版本包括 Trident Protect 26.09。
+* *集群和命名空间粒度的基于角色的访问控制*：在 Kubernetes 集群发现期间，您可以通过选择要与新集群关联的项目或文件夹来控制对资源的访问。您还可以注册特定命名空间以进行访问控制。这可以在集群或命名空间级别实现更精细的访问控制。
+* *Restore files and folders*：现在，您可以从基于 Kubernetes VM 的应用程序备份中还原或下载特定的文件和文件夹。
+
+
+要了解有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["了解如何通过 NetApp Backup and Recovery 保护 Kubernetes 工作负载"]。

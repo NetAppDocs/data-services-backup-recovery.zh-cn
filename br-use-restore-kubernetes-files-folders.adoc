@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: br-use-restore-kubernetes-files-folders.html 
+keywords: backing up, restoring, back up, backup, file, folder, files and folders, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: NetApp Backup and Recovery 使您能够还原和下载从基于 VM 的应用程序备份的文件和文件夹。 
+---
+= 使用 NetApp Backup and Recovery 还原或下载基于虚拟机的应用程序文件和文件夹
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+恢复或下载从基于虚拟机的 Kubernetes 应用程序备份的文件和文件夹。要还原或下载文件和文件夹，至少需要一个还原点，并且虚拟机需要具有受支持文件系统的分区。当前只能从本地快照还原和下载。
+
+支持的来宾操作系统和版本包括：
+
+* *Windows*：Windows Server 2022、Windows 10、Windows 11
+* *Linux*：Ubuntu 22.04、Red Hat Enterprise Linux 9、Fedora 39、CentOS Stream 9、openSUSE Leap 15.6
+
+
+支持的文件系统包括：
+
+* BTRFS
+* exFAT
+* ext4
+* NTFS
+* XFS
+
+
+*所需 NetApp Console 角色*
+
+Backup and Recovery 超级管理员或 Backup and Recovery 还原管理员。link:reference-roles.html["了解NetApp Backup and Recovery访问角色"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^].
+
+
+
+[[restore-vm-files-and-folders-from-a-vm-based-application]]
+== 从基于 VM 的应用程序还原 VM 文件和文件夹
+
+当需要将特定文件或文件夹恢复到基于 VM 的应用程序时，无需还原整个应用程序，即可从还原点还原基于 VM 的文件和文件夹。默认情况下，现有文件将被覆盖。
+
+.开始之前
+从基于 VM 的应用程序还原文件和文件夹之前，请验证目标 VM 是否满足以下要求：
+
+* 目标虚拟机正在运行，并具有 IP 地址。
+* 用户可以写入还原目标。
+* SSH已启用并使用密码身份验证（不支持仅密钥登录）。验证是否在 Linux 目标主机上启用了 SSH 服务，以及是否在 Windows 目标主机上安装并启用了 OpenSSH 服务器。
+
+
+.步骤
+. 在 NetApp Backup and Recovery 菜单中，选择*恢复*。
+. 从列表中选择一个 Kubernetes 应用程序，并为该应用程序选择*查看和恢复*。
++
+出现还原点列表。
+
+. 选择还原点的*操作*image:icon-action.png["操作图标"]图标，然后打开*还原文件和文件夹*菜单。
+. 选择要从中还原的源位置（目前仅支持快照）。
+. 从恢复点选择一个虚拟机以浏览其文件和文件夹。
+. 选择“下一步”。
++
+此时将显示文件浏览器。
+
+. 浏览文件和文件夹列表，并选择要还原的文件和文件夹。
++
+打开分区以浏览其文件和文件夹。当您通过启用其复选框选择要还原的文件或文件夹时，它将被添加到右侧的"选定"列表中。
+
+. 完成后，选择 *下一步* 。
+. 选择*Transfer to VM*传输模式。
+. 选择目标设置：
++
+** *还原到原始虚拟机*：启用此选项可还原到原始虚拟机。
++
+*** *Restore to the same path as in the backup*：启用此选项可还原到备份中使用的相同路径。
+*** *备用路径*：要还原到其他路径，请启用此选项并输入首选路径。
+
+
+** *还原到备用虚拟机*：启用此选项可还原到集群中的其他虚拟机。从列表中选择一个 VM，然后输入已还原文件或文件夹的目标路径。
+
+
+. 在*来宾虚拟机凭据*部分中，为来宾虚拟机选择凭据。
++
+如果您尚未为此来宾虚拟机添加凭据，请选择*添加凭据*为来宾虚拟机添加新凭据。添加来宾虚拟机凭据后，新凭据将显示在凭据列表中，您可以选择它。这些凭据对于来宾虚拟机是唯一的，可供使用相同 Console 代理的任何集群重复使用。
+
+. 选择“下一步”。
+. 查看并确认文件或文件夹还原设置。
+. 选择*恢复*。
+
+
+
+
+[[download-kubernetes-vm-files-and-folders]]
+== 下载 Kubernetes 虚拟机文件和文件夹
+
+当您不想将文件和文件夹还原到基于 VM 的应用程序，而是希望将它们保存到本地计算机时，请从还原点下载文件和文件夹。下载的文件和文件夹将保存为单个 .tar 存档。下载文件和文件夹不需要来宾虚拟机的凭据。
+
+.步骤
+. 在 NetApp Backup and Recovery 菜单中，选择*恢复*。
+. 从列表中选择一个 Kubernetes 应用程序，并为该应用程序选择*查看和恢复*。
++
+出现还原点列表。
+
+. 选择还原点的*操作*image:icon-action.png["操作图标"]图标，然后打开*还原文件和文件夹*菜单。
+. 选择要下载的源位置（此时仅支持快照）。
+. 从恢复点选择一个虚拟机以浏览其文件和文件夹。
+. 选择“下一步”。
++
+此时将显示文件浏览器。
+
+. 浏览文件和文件夹列表，并选择要下载的文件和文件夹。
++
+打开分区以浏览其文件和文件夹。当您通过启用其复选框选择要下载的文件或文件夹时，它将被添加到右侧的"选定"列表中。
+
+. 完成后，选择 *下一步* 。
+. 选择*下载文件*传输模式。
+. 选择“下一步”。
+. 查看并确认文件或文件夹下载设置。
+. 选择*恢复*。
++
+您的 Web 浏览器处理下载；将 .tar 存档保存到本地计算机。
+
+

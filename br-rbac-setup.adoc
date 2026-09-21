@@ -36,6 +36,7 @@ NOTE: 这些步骤假设您在 NetApp Console 中被分配了组织管理员角�
 +
 *** *Organization admin* 和 *Backup and Recovery super admin*：具有这些角色的用户可以查看组织中的所有资源，并可以发现 Backup and Recovery 工作负载并将其分配给项目（例如，美国东部或美国西部）。
 *** *文件夹或项目管理员*和 *Backup and Recovery super admin*：具有这些角色的用户只能查看其分配的文件夹或项目中的资源，但可以发现 Backup and Recovery 工作负载并将其分配给该项目。
+*** *其他备份和恢复角色*：为用户分配他们需要的特定 Backup and Recovery 角色，例如 Backup and Recovery viewer 或 Backup and Recovery clone admin。这些角色允许用户执行日常任务，例如查看资源、保护工作负载、克隆和还原。将 Backup and Recovery 角色与平台级角色分开分配。有关详细信息，请参阅 link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["NetApp Console中的NetApp Backup and Recovery角色"^]。
 
 
 .. 备选方案：
@@ -46,7 +47,7 @@ NOTE: 这些步骤假设您在 NetApp Console 中被分配了组织管理员角�
 
 . 在 Backup and Recovery 中发现工作负载。
 +
-组织管理员或文件夹或项目管理员发现可用的工作负载，并选择适当的项目（例如美国东部或美国西部）。每个工作负载都会自动与选定项目关联。
+组织管理员或文件夹或项目管理员发现可用的工作负载，并选择适当的项目（例如 US East 或 US West）。每个工作负载都会自动与所选项目相关联。对于 Kubernetes 集群，您可以选择在发现期间与集群关联的文件夹或项目。
 
 . 将用户添加到项目。
 +
@@ -59,6 +60,9 @@ NOTE: 这些步骤假设您在 NetApp Console 中被分配了组织管理员角�
 [[related-information]]
 == 相关信息
 
-* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["了解 NetApp Console 身份和访问管理"^]。
-* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["NetApp Console中的NetApp Backup and Recovery角色"^]。
+* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["了解 NetApp Console 身份和访问管理"^]
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["NetApp Console中的NetApp Backup and Recovery角色"^]
+* link:reference-roles.html["NetApp Backup and Recovery 角色和权限"]
+* link:br-start-discover-kubernetes.html["发现 Kubernetes 工作负载"]
+* link:br-use-manage-kubernetes-access-control.html["管理对 Kubernetes 资源的访问"]
 

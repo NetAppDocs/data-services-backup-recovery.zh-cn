@@ -39,13 +39,27 @@ summary: NetApp Backup and Recovery需要首先发现工作负载，以便您使
 
 . 选择 *Kubernetes* 工作负载类型。
 . 输入集群名称并选择要与集群一起使用的控制台代理。
+. （可选）选择一个文件夹或项目，以确定访问控制应用于此集群的位置。如果未选择文件夹或项目，则会在组织级别添加集群 IAM 资源：
++
+** *Folder*：选择此选项可控制用户对文件夹级别群集资源的访问，并从列表中选择一个文件夹。
++
+
+NOTE: 如果 Kubernetes 集群或命名空间与文件夹关联，则用户还需要在右上角的项目选择器中所选项目的 *Backup and Recovery viewer* 角色。此项目级访问权限使用户能够打开 Backup and Recovery 主页。在文件夹级别分配的角色（例如，Backup and Recovery backup admin）确定用户进入工作负载页面后可以执行的操作，但不会自行授予对该页面的访问权限。请参见 link:br-use-manage-kubernetes-access-control.html["管理 Kubernetes 资源访问"] 以了解更多信息。
+
+** *Project*：选择此选项可在项目级别控制用户对集群资源的访问，并从列表中选择一个项目。
++
+https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html#netapp-console-organizational-components["了解更多"^] 关于 NetApp Console 中的组织组件。
+
+
+
+. 选择 *Generate installation commands*。
 +
 备份和恢复提供根据所选安装类型而变化的说明。如果使用 NetApp Console 本地部署，则可以选择相应说明来发现没有外部网络连接的气隙资源。
 
 . 请选择一种安装类型，以查看在 Kubernetes 集群上安装 Trident Protect 的说明：
 +
-** 选择*已连接*以发现具有外部网络连接的集群。
-** 选择 *Air-gapped* 以发现没有外部网络连接的集群。
+** 选择*已连接*以发现具有外部网络连接的集群。这些说明是针对已连接集群量身定制的。
+** 选择 *Air-gapped* 以发现没有外部网络连接的集群。这些说明专为气隙（离线）集群定制。
 +
 [role="tabbed-block"]
 ====

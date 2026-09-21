@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-kubernetes-access-control.html 
+keywords: backup, back up, restore, recovery, kubernetes, k8s, access control, rbac, iam, folder, project 
+summary: 通过使用 NetApp Console 文件夹、项目和角色，管理对 NetApp Backup and Recovery 中 Kubernetes 资源的访问。 
+---
+= 管理 Kubernetes 资源访问
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在集群或资源级别管理对 NetApp Backup and Recovery 中 Kubernetes 资源的访问。您可以通过在 NetApp Console 发现期间将集群与文件夹或项目相关联，以及为用户分配适当的角色来管理对集群资源的访问。通过将命名空间注册为与项目或文件夹关联的 IAM 资源，在命名空间级别管理资源访问。
+
+有关将集群与 IAM 文件夹或项目关联的信息，请参阅 link:br-start-discover-kubernetes.html["发现 Kubernetes 工作负载"]。
+
+Backup and Recovery 命名空间级别的 Kubernetes 资源访问由您在注册命名空间进行访问控制时与命名空间关联的文件夹或项目控制。命名空间与文件夹或项目关联后，具有该作用域相应 NetApp Console 和 Backup and Recovery 角色的用户可以访问命名空间及其受保护资源。
+
+
+
+[[backup-and-recovery-roles-and-what-they-allow-with-kubernetes-workloads]]
+== 备份和恢复角色及其对 Kubernetes 工作负载的权限说明
+
+对于与文件夹或项目关联的 Kubernetes 集群或命名空间，用户在该文件夹或项目上拥有的特定 Backup and Recovery 角色决定了他们可以执行的操作。有关 Backup and Recovery 角色的详细信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["NetApp Console 中的备份和恢复角色"^]。
+
+
+NOTE: 备份和恢复克隆管理员角色不与 Kubernetes 工作负载一起使用。
+
+[cols="1,2,2"]
+|===
+| 角色 | 视图访问范围 | 允许的操作 
+
+
+| 备份和恢复超级管理员 | 范围内的集群、命名空间和应用程序的完整视图 | 查看、创建应用程序、保护（创建/删除保护）和还原 
+
+
+| 备份和恢复查看器 | 仅查看作用域中的集群和命名空间 | 仅供查看。无法创建、保护或还原。 
+
+
+| 备份和恢复备份管理员 | 范围内的集群、命名空间和应用程序的完整视图 | 查看、创建应用程序和保护（创建/删除保护）。无法还原。 
+
+
+| 备份和恢复还原管理员 | 范围内的集群、命名空间和应用程序的完整视图 | 仅查看和还原。无法创建应用程序或保护策略。 
+|===
+
+
+[[associate-a-kubernetes-namespace-with-a-folder-or-project]]
+== 将 Kubernetes 命名空间与文件夹或项目关联
+
+将命名空间与文件夹或项目关联，以便访问控制应用于该范围。
+
+*必需的 NetApp Console 角色*备份和恢复超级管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解link:reference-roles.html["备份和恢复角色和权限"]…… https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服务的NetApp Console访问角色"^]。
+
+.步骤
+. 从NetApp Console菜单中，选择 *保护* > *备份和恢复*。
+. 在*工作负载*下，选择* Kubernetes *磁贴。
+. 在清单中，选择*命名空间*菜单。
+. 选择要注册访问控制的一个或多个命名空间，并为每个命名空间启用复选框。
+. 选择 *Register for access control*。
+. （可选）选择一个文件夹或项目，以确定访问控制应用于此命名空间的位置。如果未选择文件夹或项目，则会注册命名空间 IAM 资源，但不会将其添加到文件夹或项目：
++
+** *Folder*：选择此选项可控制用户对文件夹级别命名空间资源的访问，并从列表中选择一个文件夹。
++
+
+NOTE: 如果 Kubernetes 集群或命名空间与文件夹关联，则用户还需要在右上角的项目选择器中所选项目的 *Backup and Recovery viewer* 角色。此项目级访问权限使用户能够打开 Backup and Recovery 主页。在文件夹级别分配的角色（例如，Backup and Recovery backup admin）决定用户进入工作负载页面后可以执行的操作，但不会自行授予对该页面的访问权限。
+
+** *Project*：选择此选项可在项目级别控制用户对命名空间资源的访问，然后从列表中选择一个项目。
++
+https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html#netapp-console-organizational-components["了解更多"^] 关于 NetApp Console 中的组织组件。
+
+
+
+. 选择*注册*。
+
+
+
+
+[[related-information]]
+== 相关信息
+
+* link:br-start-discover-kubernetes.html["发现 Kubernetes 工作负载"]
+* link:br-rbac-setup.html["在 NetApp Backup and Recovery 中设置基于角色的访问控制"]
+* link:reference-roles.html["NetApp Backup and Recovery 角色和权限"]
+

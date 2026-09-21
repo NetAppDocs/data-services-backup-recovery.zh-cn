@@ -16,10 +16,7 @@ summary: 了解NetApp Backup and Recovery的新功能。
 [role="lead"]
 了解 NetApp Backup and Recovery 中的新功能、增强功能和修复。
 
-
-
-[[16-september-2026]]
-== 2026年9月16日
+<<<<<<< HEAD == 2026 年 9 月 16 日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
@@ -64,30 +61,32 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
 
+[]
+====
+== 2026年9月21日
+
+此NetApp Backup and Recovery版本包括以下更新。
+
+=== Kubernetes 工作负载增强功能 在本版本中，Kubernetes 工作负载引入了以下增强功能：
+
+* *Trident Protect 26.09*：此版本包括 Trident Protect 26.09。
+* *集群和命名空间粒度的基于角色的访问控制*：在 Kubernetes 集群发现期间，您可以通过选择要与新集群关联的项目或文件夹来控制对资源的访问。您还可以注册特定命名空间以进行访问控制。这可以在集群或命名空间级别实现更精细的访问控制。
+* *Restore files and folders*：现在，您可以从基于 Kubernetes VM 的应用程序备份中还原或下载特定的文件和文件夹。
 
 
-[[17-august-2026]]
+要了解有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["了解如何通过 NetApp Backup and Recovery 保护 Kubernetes 工作负载"]。>>>>>>> 13d089e3cffcfba837d21c436e1c43e2f3068e74
+
 == 2026年8月17日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[hyper-v-workloads-enhancements]]
-=== Hyper-V 工作负载增强功能
-
-在此版本中，Hyper-V 工作负载引入了以下增强功能：
+=== Hyper-V 工作负载增强功能在此版本中，Hyper-V 工作负载引入了以下增强功能：
 
 *将对象存储备份还原到备用位置*：您现在可以将 Hyper-V 虚拟机、文件和文件夹从对象存储还原到备用存储位置。
 
 有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Hyper-V 工作负载"]。
 
-
-
-[[kubernetes-workloads-enhancements]]
-=== Kubernetes 工作负载增强功能
-
-在此版本中，Kubernetes 工作负载引入了以下增强功能：
+=== Kubernetes 工作负载增强功能 在本版本中，Kubernetes 工作负载引入了以下增强功能：
 
 * *Trident Protect 26.08*：此版本包括 Trident Protect 26.08。
 * *备份重试*：您现在可以启用备份重试，并将重试次数和重试间隔配置为 Kubernetes 保护策略中的高级设置。
@@ -99,12 +98,7 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 要了解有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["了解如何通过 NetApp Backup and Recovery 保护 Kubernetes 工作负载"]。
 
-
-
-[[oracle-database-workloads-enhancement]]
-=== Oracle Database 工作负载增强
-
-在此版本中，Oracle 数据库工作负载引入了以下增强功能：
+=== Oracle Database 工作负载增强 在此版本中，Oracle Database 工作负载引入了以下增强功能：
 
 * *Pluggable Database (PDB) restore*：您现在可以还原单个可插拔数据库 (PDB) 和 PDB 表空间，包括时间点恢复。
 * *Pluggable Database (PDB) clone*：您现在可以将单个 PDB 克隆到现有的目标容器数据库 (CDB) 中，并且可以选择在克隆完整的容器数据库时排除 PDB。
@@ -112,28 +106,17 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
 
-
-
-[[10-august-2026]]
 == 2026年8月10日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[general-netapp-backup-and-recovery-enhancements]]
 === 常规 NetApp Backup and Recovery 增强功能
 
 * *支持 NetApp Console 本地部署*：此版本的 NetApp Backup and Recovery 支持处于预览状态的 NetApp Console 本地部署。
 * *90 天的作业保留*：Backup and Recovery 现在会在 Job Monitor 中保留作业信息 90 天。
 
 
-
-
-[[vmware-workloads-enhancements]]
-=== VMware 工作负载增强功能
-
-在此版本中，VMware 工作负载引入了以下增强功能：
+=== VMware 工作负载增强功能在此版本中，VMware 工作负载引入了以下增强功能：
 
 * *还原到备用位置支持（适用于 SAN VM）*：现在，您可以将基于 SAN 的 VM 备份还原到备用位置。
 * *Multiple backup delete support*：您现在可以一次删除多个备份。
@@ -141,24 +124,14 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。
 
-
-
-[[kubernetes-workloads-enhancements]]
-=== Kubernetes 工作负载增强功能
-
-在此版本中，Kubernetes 工作负载引入了以下增强功能：
+=== Kubernetes 工作负载增强功能 在本版本中，Kubernetes 工作负载引入了以下增强功能：
 
 * *预览对气隙资源的支持*：如果在 NetApp Console 本地部署中运行 NetApp Backup and Recovery，您可以发现、保护和还原气隙 Kubernetes 资源。此功能在此版本中处于预览状态。
 
 
 有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
 
-
-
-[[ontap-volumes-workloads-enhancements]]
-=== ONTAP Volumes 工作负载增强
-
-在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：
+=== ONTAP Volumes 工作负载增强功能 在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：
 
 * *将还原作业优先于备份*：现在，在还原虚拟机或文件时，您可以将还原作业优先于备份作业。
 * *在不激活 Backup and Recovery 的情况下发现 ONTAP 系统和卷*：您现在可以在不激活 Backup and Recovery 的情况下发现系统和卷。
@@ -166,35 +139,19 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["保护 ONTAP 卷工作负载概述"]。
 
-
-
-[[13-july-2026]]
 == 2026年7月13日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[enhanced-multi-bucket-support-for-all-workloads]]
-=== 增强对所有工作负载的多存储桶支持
-
-NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 个存储桶来保护系统中的工作负载。ONTAP 9.19.1 或更高版本需要支持每个系统超过 6 个存储桶。
+=== 增强了对所有工作负载的多存储桶支持 NetApp Backup and Recovery 现在支持跨不同云提供商保护系统中多达 100 个存储桶的工作负载。需要 ONTAP 9.19.1 或更高版本才能支持每个系统超过 6 个存储桶。
 
 要了解有关 NetApp Backup and Recovery 的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["了解NetApp Backup and Recovery"]。
 
-
-
-[[15-june-2026]]
-== 2026 年 6 月 15 日
+== 2026年6月15日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[kubernetes-workloads-enhancements]]
-=== Kubernetes 工作负载增强功能
-
-在此版本中，Kubernetes 工作负载引入了以下增强功能：
+=== Kubernetes 工作负载增强功能 在本版本中，Kubernetes 工作负载引入了以下增强功能：
 
 * *Trident Protect 26.06*：此版本包括 Trident Protect 26.06。
 * *在还原期间跳过应用程序创建*：现在，您可以在还原操作期间跳过自动创建应用程序自定义资源对象。这减少了应用程序清单中不必要的条目。
@@ -204,30 +161,17 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
 
-
-
-[[08-june-2026]]
-== 2026 年 6 月 08 日
+== 2026 年 6 月 8 日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[ontap-volumes-workloads-enhancements]]
-=== ONTAP Volumes 工作负载增强
-
-在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：
+=== ONTAP Volumes 工作负载增强功能 在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：
 
 *支持 S3 兼容云存储*：卷工作负载的 NetApp Backup and Recovery 现在支持备份到 S3 兼容云存储。
 
 要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["保护 ONTAP 卷工作负载概述"]。
 
-
-
-[[hyper-v-workloads-enhancements]]
-=== Hyper-V 工作负载增强功能
-
-在此版本中，Hyper-V 工作负载引入了以下增强功能：
+=== Hyper-V 工作负载增强在此版本中，Hyper-V 工作负载引入了以下增强功能：
 
 * *将文件和文件夹还原到来宾 VM 改进*：您现在可以将文件和文件夹从主存储或二级存储上的快照还原到来宾 Windows VM。CIFS 和 SAN VM 现在支持此功能。
 * *保护组现在使用主机时区计划*：保护组现在使用 Hyper-V 主机的时区。在引入主机时区调度之前创建的保护组继续使用其先前配置的时间（通常为 UTC）。要更新这些保护组以使用 Hyper-V 主机时区，必须重新创建计划。有关详细信息，请参见 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protection-groups.html["为 Hyper-V 工作负载创建和管理保护组"]。
@@ -235,31 +179,18 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["使用 NetApp Backup and Recovery 的 Hyper-V 保护工作流"]。
 
-
-
-[[vmware-workloads-enhancements]]
-=== VMware 工作负载增强功能
-
-在此版本中，VMware 工作负载引入了以下增强功能：
+=== VMware 工作负载增强功能在此版本中，VMware 工作负载引入了以下增强功能：
 
 * *保护组现在使用主机时区计划*：保护组现在使用托管 VMware vCenter Server 的时区。在引入主机时区计划之前创建的保护组继续在其先前配置的时区（通常为 UTC）上运行。要使用 vCenter 时区，必须重新创建计划。请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protection-groups.html["为 VMware 工作负载创建和管理保护组"]以获取更多信息。
 
 
 有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。
 
-
-
-[[11-may-2026]]
-== 2026 年 5 月 11 日
+== 2026年5月11日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[hyper-v-workloads-enhancements]]
-=== Hyper-V 工作负载增强功能
-
-在此版本中，Hyper-V 工作负载引入了以下增强功能：
+=== Hyper-V 工作负载增强在此版本中，Hyper-V 工作负载引入了以下增强功能：
 
 * *保护 SAN 存储上的 VM*：您现在可以保护 SAN 对象存储上的 VM。
 * *还原到备用位置增强功能*：现在，您可以从 SAN 存储上的 VM 的主要位置和次要位置还原到备用位置。
@@ -268,23 +199,13 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["使用 NetApp Backup and Recovery 的 Hyper-V 保护工作流"]。
 
-
-
-[[kvm-workloads-enhancements]]
-=== KVM 工作负载增强
-
-在此版本中，KVM 工作负载引入了以下增强功能：
+=== KVM 工作负载增强功能 在此版本中，KVM 工作负载引入了以下增强功能：
 
 *还原到备用位置*：您现在可以将 KVM VM 还原到备用目标（此功能现已正式发布）。
 
 要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
-
-
-[[oracle-database-workloads-enhancements]]
-=== Oracle Database 工作负载增强
-
-在此版本中，Oracle 数据库工作负载引入了以下增强功能：
+=== Oracle Database 工作负载增强功能 在此版本中，Oracle Database 工作负载引入了以下增强功能：
 
 * *Oracle AI Database 26ai 支持*：Backup and Recovery 现在支持 Oracle AI Database 26ai。
 * *备份验证支持*：您现在可以配置备份策略以自动验证 Oracle 数据库备份的完整性。
@@ -292,12 +213,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
 
-
-
-[[vmware-workloads-enhancements]]
-=== VMware 工作负载增强功能
-
-在此版本中，VMware 工作负载引入了以下增强功能：
+=== VMware 工作负载增强功能在此版本中，VMware 工作负载引入了以下增强功能：
 
 * *保护组的跨数据存储支持*：现在，您可以在保护其虚拟磁盘跨越多个数据存储的虚拟机时选择保护组的行为。
 * *克隆支持*：现在可以从主存储和二级存储创建虚拟机快照的克隆。
@@ -305,12 +221,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。
 
-
-
-[[kubernetes-workloads-enhancements]]
-=== Kubernetes 工作负载增强功能
-
-在此版本中，Kubernetes 工作负载引入了以下增强功能：
+=== Kubernetes 工作负载增强功能 在本版本中，Kubernetes 工作负载引入了以下增强功能：
 
 * *Trident Protect 26.05.1*：此版本包括 Trident Protect 26.05.1。
 * *基于 VM 的应用程序的就地还原*：您现在可以将基于 VM 的应用程序还原到原始命名空间和原始集群。
@@ -318,19 +229,11 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
 
-
-
-[[05-may-2026]]
-== 2026 年 5 月 05 日
+== 2026年5月5日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[kubernetes-workloads-enhancements]]
-=== Kubernetes 工作负载增强功能
-
-在此版本中，Kubernetes 工作负载引入了以下增强功能：
+=== Kubernetes 工作负载增强功能 在本版本中，Kubernetes 工作负载引入了以下增强功能：
 
 * *Trident Protect 26.05*：此版本包括 Trident Protect 26.05。
 * *从 Backup and Recovery 升级 Trident Protect*：如果您的 Kubernetes 集群正在运行 Trident Protect 26.05 或更高版本，您现在可以直接从 Backup and Recovery 升级 Trident Protect。
@@ -341,48 +244,27 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
 
-
-
-[[20-april-2026]]
 == 2026 年 4 月 20 日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[vmware-workloads-enhancements]]
-=== VMware 工作负载增强功能
-
-在此版本中，VMware 工作负载引入了以下增强功能：
+=== VMware 工作负载增强功能在此版本中，VMware 工作负载引入了以下增强功能：
 
 *ASA r2 SAN 支持*：VMware 工作负载现在支持保护由 NetApp ASA r2 SAN 专用环境托管的 VMFS 数据存储上的 VM。
 
 有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。
 
-
-
-[[13-april-2026]]
-== 2026 年 4 月 13 日
+== 2026年4月13日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[ontap-volumes-workloads-enhancements]]
-=== ONTAP Volumes 工作负载增强
-
-在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：
+=== ONTAP Volumes 工作负载增强功能 在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：
 
 *支持 NetApp MetroCluster 主动/主动配置*：NetApp Backup and Recovery for Volumes 工作负载现在支持 MetroCluster 主动-主动配置。
 
 要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["保护 ONTAP 卷工作负载概述"]。
 
-
-
-[[kubernetes-workloads-enhancements]]
-=== Kubernetes 工作负载增强功能
-
-在此版本中，Kubernetes 工作负载引入了以下保护策略增强功能：
+=== Kubernetes 工作负载增强在此版本中，Kubernetes 工作负载引入了以下保护策略增强功能：
 
 * *编辑保护策略*：如果需要更改 Kubernetes 工作负载保护策略，您现在可以对其进行编辑。
 * *磁盘到磁盘支持*：您现在可以使用磁盘到磁盘备份架构配置 Kubernetes 保护策略。
@@ -393,12 +275,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
 
-
-
-[[hyper-v-workloads-enhancements]]
-=== Hyper-V 工作负载增强功能
-
-在此版本中，Hyper-V 工作负载引入了以下增强功能：
+=== Hyper-V 工作负载增强在此版本中，Hyper-V 工作负载引入了以下增强功能：
 
 * *改进的作业处理*：NetApp Backup and Recovery 现在可以更有效地同时处理多个作业。
 * *SAN 支持（预览）*：Backup and Recovery 现在支持保护存储在 SAN 存储上的 Hyper-V VM。
@@ -406,12 +283,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["使用 NetApp Backup and Recovery 的 Hyper-V 保护工作流"]。
 
-
-
-[[kvm-workloads-enhancements]]
-=== KVM 工作负载增强
-
-在此版本中，KVM 工作负载引入了以下增强功能：
+=== KVM 工作负载增强功能 在此版本中，KVM 工作负载引入了以下增强功能：
 
 * *改进的作业处理*：NetApp Backup and Recovery 现在可以更有效地同时处理多个作业。
 * *还原到备用位置（预览）*：您现在可以将 KVM VM 还原到备用目标。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-restore.html["使用NetApp Backup and Recovery还原 KVM 虚拟机"]。
@@ -419,12 +291,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
-
-
-[[vmware-workloads-enhancements]]
-=== VMware 工作负载增强功能
-
-在此版本中，VMware 工作负载引入了以下增强功能：
+=== VMware 工作负载增强功能在此版本中，VMware 工作负载引入了以下增强功能：
 
 * *基于标记的保护*：VMware 工作负载的备份和恢复现在支持对存储在 NFS 和 VMFS 卷上的虚拟机的基于标记的保护，使您能够从 vCenter 标记而不是从单个虚拟机或数据存储构建保护组。当您在 vCenter 中标记虚拟机和数据存储时，备份和恢复会自动发现并将其包含在未来的备份中，而无需任何手动组维护。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protection-groups.html["创建和管理保护组"]。
 * *还原到备用存储系统*：即使原始（主）存储系统完全不可用，您现在也可以将虚拟机还原到备用存储系统。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore.html["恢复 VMware 工作负载"]。
@@ -436,19 +303,11 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。
 
-
-
-[[31-march-2026]]
-== 2026 年 3 月 31 日
+== 2026年3月31日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[oracle-database-workloads-enhancements]]
-=== Oracle Database 工作负载增强
-
-在此版本中，Oracle 数据库工作负载引入了以下增强功能：
+=== Oracle Database 工作负载增强功能 在此版本中，Oracle Database 工作负载引入了以下增强功能：
 
 * *群集主机支持*：您现在可以发现和保护使用 Oracle Automatic Storage Management (ASM) 并使用 VMDK 在 VMFS 文件系统上部署的 Oracle Real Application Clusters (RAC) 数据库。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-discover-oracle.html["发现 Oracle Database 工作负载"]。
 * *RMAN 目录支持*：您现在可以将 Backup and Recovery 配置为在 RMAN 恢复目录中存储保护元数据，从而在目标控制文件丢失时提供冗余和长期保留。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-configure-oracle-database.html["配置 Oracle 数据库"]。
@@ -456,37 +315,21 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
 
-
-
-[[16-march-2026]]
 == 2026 年 3 月 16 日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[vmware-workloads-enhancements]]
-=== VMware 工作负载增强功能
-
-在此版本中，VMware 工作负载引入了以下增强功能：
+=== VMware 工作负载增强功能在此版本中，VMware 工作负载引入了以下增强功能：
 
 *每个计划层的虚拟机一致性支持*：现在，在为 VMware 工作负载配置保护策略时，您可以为特定计划层启用虚拟机一致性和应用程序一致性备份。支持年度、月度和周度层。
 
 有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。
 
-
-
-[[09-march-2026]]
-== 2026 年 3 月 09 日
+== 2026年3月9日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[ontap-volumes-workloads-enhancements]]
-=== ONTAP Volumes 工作负载增强
-
-在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：
+=== ONTAP Volumes 工作负载增强功能 在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：
 
 * *还原到源位置*：您现在可以将文件从本地快照和复制快照还原到源位置以及备用位置。
 * *每小时卷发现*：Dashboard 现在可以更快地发现和刷新新卷。
@@ -498,12 +341,7 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 要了解有关保护 ONTAP Volume 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["保护 ONTAP Volume 工作负载概述"]。
 
-
-
-[[vmware-workloads-enhancements]]
-=== VMware 工作负载增强功能
-
-在此版本中，VMware 工作负载引入了以下增强功能：
+=== VMware 工作负载增强功能 在此版本中，VMware 工作负载引入了以下增强功能：
 
 * *从对象存储还原访客数据*：您现在可以从对象存储还原访客文件和文件夹。
 * *VMFS/NFS 快速还原*：现在可以在还原到备用位置时启用快速还原选项。启用后，将仅从对象存储中检索 VM 元数据（文件、LUN 和命名空间），从而使卷的可用性快于完全恢复。
@@ -512,60 +350,29 @@ NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 
 
 有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。
 
-
-
-[[23-february-2026]]
-== 2026 年 2 月 23 日
+== 2026年2月23日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[kvm-workloads-supported-in-general-availability-ga]]
-=== 一般可用性 (GA) 中支持的 KVM 工作负载
-
-KVM 工作负载支持现已在 NetApp Backup and Recovery 中正式提供（GA）。
+=== 正式发布 (GA) 中支持的 KVM 工作负载 KVM 工作负载支持现已在 NetApp Backup and Recovery 中正式发布 (GA)。
 
 要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
-
-
-[[kubernetes-workloads-supported-in-general-availability-ga]]
-=== 一般可用性 (GA) 中支持的 Kubernetes 工作负载
-
-Kubernetes 工作负载支持现已在 NetApp Backup and Recovery 中普遍可用（GA）。本次发布的 Kubernetes 工作负载还引入了以下增强功能：
+=== 正式发布 (GA) 版本中支持的 Kubernetes 工作负载 Kubernetes 工作负载支持现已在 NetApp Backup and Recovery 中正式发布 (GA)。此版本的 Kubernetes 工作负载还引入了以下增强功能：
 
 *报告支持*：您现在可以为受 NetApp Backup and Recovery 保护的 Kubernetes 集群和应用程序生成保护活动报告。
 
 有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
 
-
-
-[[09-february-2026]]
-== 2026 年 2 月 09 日
+== 2026 年 2 月 9 日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
+=== Microsoft Hyper-V 工作负载在正式发布 (GA) 版本中受支持 Microsoft Hyper-V 工作负载支持现已在 NetApp Backup and Recovery 中正式发布 (GA)。
 
+=== 一般可用性 (GA) 中支持的 VMware 工作负载 VMware 工作负载支持现已在 NetApp Backup and Recovery 中正式发布 (GA)。
 
-[[microsoft-hyper-v-workloads-supported-in-general-availability-ga]]
-=== 一般可用性 (GA) 中支持的 Microsoft Hyper-V 工作负载
-
-Microsoft Hyper-V 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (GA)。
-
-
-
-[[vmware-workloads-supported-in-general-availability-ga]]
-=== 一般可用性 (GA) 中支持的 VMware 工作负载
-
-VMware 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (GA)。
-
-
-
-[[kubernetes-workloads-enhancements]]
-=== Kubernetes 工作负载增强功能
-
-此版本的 Kubernetes 工作负载引入了以下增强功能：
+=== Kubernetes 工作负载增强此版本的 Kubernetes 工作负载引入了以下增强功能：
 
 * *CR 工作流程支持*：现在，您可以使用 CR 以及 Backup and Recovery Web UI 执行常见的保护任务。
 * *集群迁移*：现在，您可以将使用 Trident Protect 保护的现有 Kubernetes 集群添加到 Backup and Recovery。
@@ -576,12 +383,7 @@ VMware 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (G
 
 有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
 
-
-
-[[oracle-database-workloads-enhancements]]
-=== Oracle Database 工作负载增强
-
-此版本的 Oracle Database 工作负载引入了以下增强功能：
+=== Oracle Database 工作负载增强功能此版本的 Oracle Database 工作负载引入了以下增强功能：
 
 * *非 root 用户支持*：非 root 用户现在可以执行备份、还原和克隆操作，从而提高安全性和合规性。
 * *克隆支持*：现在使用 ASM 库 v2 在主 NAS、辅助 NAS、SAN 和 ASM 环境中支持克隆功能，从而实现协调的保护工作流程。
@@ -603,30 +405,17 @@ VMware 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (G
 
 要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
 
-
-
-[[19-january-2026]]
 == 2026年1月19日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[ontap-volume-workloads-enhancements]]
-=== ONTAP卷工作负载增强
-
-此版本的ONTAP卷工作负载引入了以下增强功能：
+=== ONTAP 卷工作负载增强功能 此版本的 ONTAP 卷工作负载引入了以下增强功能：
 
 *支持多个存储桶*：（私有预览）从ONTAP 9.17.1 及更高版本开始，您现在可以保护系统中的卷，每个系统最多可跨不同的云提供商使用 6 个存储桶。
 
 link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html["了解更多关于使用NetApp Backup and Recovery备份ONTAP卷数据的信息"]。
 
-
-
-[[vmware-workloads-enhancements]]
-=== VMware 工作负载增强功能
-
-此版本的 VMware 工作负载引入了以下增强功能：
+=== VMware 工作负载增强此版本的 VMware 工作负载引入了以下增强功能：
 
 * VMware 工作负载支持现已在 NetApp Backup and Recovery 中正式提供 (GA)。
 * 您现在可以恢复客户操作系统文件和文件夹。
@@ -634,12 +423,7 @@ link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-back
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore-guest-files-and-folders-overview.html["了解更多关于恢复访客文件和文件夹的信息"]。
 
-
-
-[[hyper-v-workloads-preview-enhancements]]
-=== Hyper-V 工作负载预览增强功能
-
-此版本的 Hyper-V 工作负载引入了以下增强功能：
+=== Hyper-V 工作负载预览增强功能此版本的 Hyper-V 工作负载引入了以下增强功能：
 
 * 现在，您可以将 Hyper-V VM 备份和快照还原到备用位置。使用此功能可以管理不同 Hyper-V 主机上的 VM 版本。
 * NetApp Backup and Recovery 现在支持由 System Center Virtual Machine Manager (SCVMM) 调配并托管在 CIFS 共享上的 Hyper-V 虚拟机。
@@ -651,28 +435,17 @@ NOTE: 仅在此版本中，您无法使用“操作”菜单中的“升级”�
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restore.html["了解更多关于使用NetApp Backup and Recovery恢复 Hyper-V 虚拟机的信息"]。
 
-
-
-[[kvm-workloads-preview-enhancements]]
-=== KVM工作负载预览增强功能
+=== KVM 工作负载预览增强功能
 
 KVM 工作负载预览现在保护由 Apache CloudStack 管理的 KVM 主机和虚拟机。
 
 要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
-
-
-[[08-december-2025]]
-== 2025年12月8日
+== 2025 年 12 月 8 日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[vmware-workloads-preview-enhancements]]
-=== VMware 工作负载预览增强功能
-
-VMware 工作负载预览版引入了以下增强功能：
+VMware 工作负载预览增强功能 VMware 工作负载预览版本引入了以下增强功能：
 
 * 现在您可以将备份和快照恢复到备用位置。如果您想要管理不同 VMware vCenter 部署、VMware ESXi 主机或 VMware 数据存储上的虚拟机版本，这将非常有用。
 
@@ -684,33 +457,21 @@ link:br-use-vmware-restore.html["了解更多关于使用NetApp Backup and Recov
 
 link:br-use-vmware-restore-vmdks-from-backups.html["了解更多关于使用NetApp Backup and Recovery恢复 VMware 虚拟磁盘的信息"]。
 
-
-
-[[06-october-2025]]
 == 2025年10月6日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[bluexp-backup-and-recovery-is-now-netapp-backup-and-recovery]]
-=== BlueXP backup and recovery现已更名NetApp Backup and Recovery
+=== BlueXP 备份和恢复现已更名为 NetApp Backup and Recovery
 
 BlueXP backup and recovery已重命名为NetApp Backup and Recovery。
 
-
-
-[[bluexp-is-now-netapp-console]]
-=== BlueXP现在是NetApp Console
+=== BlueXP 现已更名为 NetApp Console
 
 NetApp Console建立在增强和重组的BlueXP基础之上，可在企业级内部和云环境中集中管理NetApp存储和NetApp Data Services，提供实时洞察、更快的工作流程以及高度安全且合规的简化管理。
 
 有关更改的详细信息，请参阅link:https://docs.netapp.com/us-en/console-relnotes/index.html["NetApp Console发行说明。"]
 
-
-
-[[hyper-v-workload-support-as-a-private-preview]]
-=== Hyper-V 工作负载支持作为私人预览版
+=== 作为私密预览的 Hyper-V 工作负载支持
 
 此版本的 NetApp Backup and Recovery 支持发现和管理 Hyper-V 工作负载：
 
@@ -724,10 +485,7 @@ NetApp Console建立在增强和重组的BlueXP基础之上，可在企业级内
 
 有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["使用 NetApp Backup and Recovery 的 Hyper-V 保护工作流"]。
 
-
-
-[[kvm-workload-support-as-a-private-preview]]
-=== KVM 工作负载支持作为私人预览
+=== KVM 工作负载支持作为私有预览
 
 此版本的 NetApp Backup and Recovery 支持发现和管理 KVM 工作负载：
 
@@ -741,12 +499,7 @@ NetApp Console建立在增强和重组的BlueXP基础之上，可在企业级内
 
 要了解有关保护 KVM 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 KVM 工作负载"]。
 
-
-
-[[kubernetes-preview-enhancements]]
-=== Kubernetes 预览增强功能
-
-Kubernetes 工作负载的预览版引入了以下增强功能：
+=== Kubernetes 预览增强功能 Kubernetes 工作负载的预览版本引入了以下增强功能：
 
 * 3-2-1 扇出备份架构支持
 * 支持ONTAP S3 作为备份目标
@@ -765,12 +518,7 @@ Kubernetes 工作负载的预览版引入了以下增强功能：
 
 有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
 
-
-
-[[vmware-preview-enhancements]]
-=== VMware 预览增强功能
-
-VMware 工作负载预览版引入了以下增强功能：
+=== VMware 预览增强功能 VMware 工作负载的预览版本引入了以下增强功能：
 
 * 支持从对象存储恢复
 * NetApp Console仪表板现在显示 VMware 工作负载状态信息
@@ -783,10 +531,7 @@ VMware 工作负载预览版引入了以下增强功能：
 
 有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["保护 VMware 工作负载概述"]。
 
-
-
-[[oracle-database-workload-support-as-a-private-preview]]
-=== Oracle 数据库工作负载支持作为私人预览
+=== Oracle Database 工作负载支持作为私有预览
 
 此版本的NetApp Backup and Recovery引入了对发现和管理 Oracle 数据库工作负载的支持：
 
@@ -802,26 +547,15 @@ VMware 工作负载预览版引入了以下增强功能：
 
 要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
 
-
-
-[[ontap-volume-workload-enhancements]]
-=== ONTAP卷工作负载增强功能
-
-此版本的ONTAP卷工作负载引入了以下增强功能：
+=== ONTAP 卷工作负载增强此版本的 ONTAP 卷工作负载引入了以下增强功能：
 
 从ONTAP 9.17.1 及更新版本开始，DataLock 现已受 Google Cloud Platform 支持。这补充了 Amazon AWS、Microsoft Azure 和NetApp StorageGRID现有的 DataLock 支持。
 
-
-
-[[25-august-2025]]
 == 2025年8月25日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[support-for-protecting-vmware-workloads-in-preview]]
-=== 支持在预览版中保护 VMware 工作负载
+=== 支持在预览中保护 VMware 工作负载
 
 此版本增加了对保护 VMware 工作负载的预览支持。将 VMware VM 和数据存储区从本地ONTAP系统备份到 Amazon Web Services 和StorageGRID。
 
@@ -830,10 +564,7 @@ NOTE: 有关保护 VMware 工作负载的文档以技术预览的形式提供。
 
 link:br-use-vmware-protect-overview.html["了解有关使用NetApp Backup and Recovery保护 VMware 工作负载的更多信息"]。
 
-
-
-[[high-performance-indexing-for-aws-azure-and-gcp-is-generally-available]]
-=== AWS、Azure 和 GCP 的高性能索引现已正式发布
+=== AWS、Azure 和 GCP 的高性能索引已正式发布
 
 2025 年 2 月，我们宣布推出针对 AWS、Azure 和 GCP 的高性能索引 (Indexed Catalog v2) 预览版。此功能现已普遍可用（GA）。2025 年 6 月，我们默认向所有新客户提供该服务。通过此版本，所有客户都可以获得支持。高性能索引提高了受对象存储保护的工作负载的备份和恢复操作的性能。
 
@@ -843,17 +574,11 @@ link:br-use-vmware-protect-overview.html["了解有关使用NetApp Backup and Re
 * 如果您是现有客户，您可以转到 UI 的“恢复”部分来启用重新索引。
 
 
-
-
-[[12-august-2025]]
 == 2025年8月12日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[microsoft-sql-server-workload-supported-in-general-availability-ga]]
-=== 通用可用性 (GA) 中支持 Microsoft SQL Server 工作负载
+=== Microsoft SQL Server 工作负载支持已正式发布 (GA)
 
 Microsoft SQL Server 工作负载支持现已在 NetApp Backup and Recovery 中正式发布 (GA)。在 ONTAP、Cloud Volumes ONTAP 和 Amazon FSx for NetApp ONTAP 存储上使用 MSSQL 环境的组织现在可以利用这项新的 Backup and Recovery 服务来保护其数据。
 
@@ -891,10 +616,7 @@ image:../media/screen-br-dashboard3.png["NetApp Backup and Recovery仪表板"]
 
 
 
-
-
-[[ontap-volume-workload-enhancements]]
-=== ONTAP卷工作负载增强功能
+=== ONTAP 卷工作负载增强
 
 * * ONTAP卷的多文件夹恢复*：到目前为止，您可以通过浏览和恢复功能一次恢复一个文件夹或多个文件。NetApp Backup and Recovery现在提供使用浏览和恢复功能一次选择多个文件夹的功能。
 * *查看和管理已删除卷的备份*： NetApp Backup and Recovery仪表板现在提供显示和管理从ONTAP中删除的卷的选项。通过此功能，您可以查看和删除ONTAP中不再存在的卷的备份。
@@ -906,17 +628,11 @@ CAUTION: 请谨慎使用此选项，并且仅在极端清理需要时使用。�
 
 参考 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["保护ONTAP工作负载"]。
 
-
-
-[[28-july-2025]]
 == 2025年7月28日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[kubernetes-workload-support-as-a-preview]]
-=== Kubernetes 工作负载支持预览版
+=== Kubernetes 工作负载支持（预览版）
 
 此版本的 NetApp Backup and Recovery 引入了对发现和管理 Kubernetes 工作负载的支持：
 
@@ -931,17 +647,11 @@ CAUTION: 请谨慎使用此选项，并且仅在极端清理需要时使用。�
 
 有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载概述"]。
 
-
-
-[[14-july-2025]]
 == 2025年7月14日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[enhanced-ontap-volume-dashboard]]
-=== 增强型ONTAP卷仪表板
+=== 增强的 ONTAP 卷仪表板
 
 2025 年 4 月，我们推出了增强型ONTAP卷仪表板的预览版，它速度更快、效率更高。
 
@@ -951,9 +661,6 @@ CAUTION: 请谨慎使用此选项，并且仅在极端清理需要时使用。�
 
 有关详细信息，请参阅link:br-use-dashboard.html["在仪表板中查看保护健康状况"]。
 
-
-
-[[microsoft-sql-server-workload-support-as-a-public-technology-preview]]
 === Microsoft SQL Server 工作负载支持作为公共技术预览
 
 此版本的NetApp Backup and Recovery提供了更新的用户界面，使您能够使用NetApp Backup and Recovery中熟悉的 3-2-1 保护策略来管理 Microsoft SQL Server 工作负载。使用此新版本，您可以将这些工作负载备份到主存储，将其复制到辅助存储，然后将其备份到云对象存储。
@@ -977,19 +684,11 @@ NOTE: 本文档旨在介绍如何保护 Microsoft SQL Server 工作负载，目�
 
 有关保护 Microsoft SQL Server 工作负载的详细信息，请参阅link:br-use-mssql-protect-overview.html["保护 Microsoft SQL Server 工作负载概述"]。
 
-
-
-[[09-june-2025]]
-== 2025年6月9日
+== 2025 年 6 月 9 日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[indexed-catalog-support-updates]]
-=== 索引目录支持更新
-
-2025 年 2 月，我们推出了更新的索引功能（索引目录 v2），您可以在“搜索和还原”数据恢复方法中使用该功能。以前的版本显著提高了本地环境中的数据索引性能。在此版本中，索引目录现在可用于 Amazon Web Services、Microsoft Azure 和 Google Cloud Platform (GCP) 环境。
+=== 索引目录支持更新 2025 年 2 月，我们推出了更新的索引功能（Indexed Catalog v2），您可以在搜索和还原数据的方法中使用。上一版本显著改善了本地环境中的数据索引性能。在此版本中，索引目录现在可用于 Amazon Web Services、Microsoft Azure 和 Google Cloud Platform (GCP) 环境。
 
 如果您是新客户，则所有新环境均默认启用 Indexed Catalog v2。如果您是现有客户，您可以重新索引您的环境以利用 Indexed Catalog v2。
 
@@ -1000,10 +699,7 @@ NOTE: 本文档旨在介绍如何保护 Microsoft SQL Server 工作负载，目�
 
 更多信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["启用搜索和还原索引"]。
 
-
-
-[[azure-private-link-endpoints-and-service-endpoints]]
-=== Azure 专用链接终结点和服务终结点
+=== Azure 专用链接端点和服务端点
 
 通常， NetApp Backup and Recovery会与云提供商建立一个私有端点来处理保护任务。此版本引入了一个可选设置，可让您启用或禁用NetApp Backup and Recovery自动创建私有端点。如果您想要更好地控制私有端点创建过程，这可能对您有用。
 
@@ -1011,33 +707,21 @@ NOTE: 本文档旨在介绍如何保护 Microsoft SQL Server 工作负载，目�
 
 如果禁用此设置，则必须手动创建私有端点以使NetApp Backup and Recovery正常运行。如果没有适当的连接，您可能无法成功执行备份和恢复任务。
 
-
-
-[[support-for-snapmirror-to-cloud-resync-on-ontap-s3]]
-=== ONTAP S3 上支持SnapMirror到云重新同步
+=== 支持 ONTAP S3 上的 SnapMirror to Cloud 重新同步
 
 上一版本引入了对 SnapMirror 到云重新同步（SM-C Resync）的支持。该功能简化了 NetApp 环境中卷迁移期间的数据保护。此版本增加了对 ONTAP S3 以及 Wasabi 和 MinIO 等其他 S3 兼容提供商的 SM-C Resync 支持。
 
-
-
-[[bring-your-own-bucket-for-storagegrid]]
-=== 为StorageGRID带来您自己的存储桶
+=== 为 StorageGRID 自带存储桶
 
 当您在对象存储中为工作环境创建备份文件时，默认情况下， NetApp Backup and Recovery会为您配置的对象存储帐户中的备份文件创建容器（存储桶或存储帐户）。以前，您可以覆盖此功能并为 Amazon S3、Azure Blob Storage 和 Google Cloud Storage 指定您自己的容器。通过此版本，您现在可以携带自己的StorageGRID对象存储容器。
 
 看 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html["创建您自己的对象存储容器"]。
 
-
-
-[[13-may-2025]]
 == 2025年5月13日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[snapmirror-to-cloud-resync-for-volume-migrations]]
-=== SnapMirror到 Cloud Resync 用于卷迁移
+=== SnapMirror to Cloud 重新同步以进行卷迁移
 
 SnapMirror到 Cloud Resync 功能简化了NetApp环境中卷迁移期间的数据保护和连续性。当使用SnapMirror逻辑复制 (LRSE) 将卷从一个本地NetApp部署迁移到另一个部署，或迁移到基于云的解决方案（例如Cloud Volumes ONTAP）时， SnapMirror到 Cloud Resync 可确保现有的云备份保持完整并可正常运行。
 
@@ -1047,9 +731,6 @@ SnapMirror到 Cloud Resync 功能简化了NetApp环境中卷迁移期间的数�
 
 有关如何执行重新同步操作的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-migrate-resync.html["使用SnapMirror将卷迁移到 Cloud Resync"]。
 
-
-
-[[support-for-third-party-minio-object-store-preview]]
 === 支持第三方 MinIO 对象存储（预览）
 
 NetApp Backup and Recovery现在将其支持扩展到第三方对象存储，主要关注 MinIO。此新预览功能使您能够利用任何与 S3 兼容的对象存储来满足您的备份和恢复需求。
@@ -1075,17 +756,11 @@ IMPORTANT: 此功能不应在生产中使用。
 
 要开始使用此预览功能，您必须在 Console 代理上启用标记。然后，您可以通过在备份部分中选择*第三方兼容*对象存储，在保护工作流程中输入 MinIO 第三方对象存储的连接详细信息。
 
-
-
-[[16-april-2025]]
 == 2025年4月16日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[ui-improvements]]
-=== UI改进
+=== UI 改进
 
 此版本通过简化界面来增强您的体验：
 
@@ -1096,21 +771,13 @@ IMPORTANT: 此功能不应在生产中使用。
 * 在工作环境激活过程中，对话框会显示加载图标以提供反馈，直到发现过程完成，从而增强系统操作的透明度和信心。
 
 
-
-
-[[enhanced-volume-dashboard-preview]]
-=== 增强型音量仪表板（预览版）
+=== Enhanced Volume Dashboard（预览）
 
 音量仪表板现在可在 10 秒内加载，提供更快、更高效的界面。此预览版可供部分客户使用，让他们可以提前了解这些改进。
 
-
-
-[[support-for-third-party-wasabi-object-store-preview]]
-=== 支持第三方 Wasabi 对象存储（预览版）
+=== 支持第三方 Wasabi 对象存储（预览）
 
 NetApp Backup and Recovery现在将其支持扩展到第三方对象存储，主要关注 Wasabi。此新的预览功能使您可以利用任何与 S3 兼容的对象存储来满足您的备份和恢复需求。
-
-
 
 ==== 开始使用 Wasabi
 
@@ -1139,8 +806,6 @@ vi default.json
 .结果
 容器再次打开后，打开NetApp Backup and RecoveryUI。当您启动备份或编辑备份策略时，您将看到新的提供商“S3 Compatible”与 AWS、Microsoft Azure、Google Cloud、 StorageGRID和ONTAP S3 等其他备份提供商一起列出。
 
-
-
 ==== 预览模式限制
 
 虽然此功能处于预览状态，但请考虑以下限制：
@@ -1155,51 +820,30 @@ vi default.json
 
 在此预览期间，我们鼓励您在推出完整功能之前探索此新功能并提供有关与第三方对象存储集成的反馈。
 
-
-
-[[17-march-2025]]
-== 2025年3月17日
+== 2025 年 3 月 17 日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[smb-snapshot-browsing]]
-=== SMB快照浏览
+=== SMB 快照浏览
 
 此NetApp Backup and Recovery更新解决了阻止客户在 SMB 环境中浏览本地快照的问题。
 
-
-
-[[aws-govcloud-environment-update]]
 === AWS GovCloud 环境更新
 
 此NetApp Backup and Recovery更新修复了由于 TLS 证书错误导致 UI 无法连接到 AWS GovCloud 环境的问题。通过使用控制台代理主机名而不是 IP 地址解决了该问题。
 
-
-
-[[backup-policy-retention-limits]]
 === 备份策略保留限制
 
 以前， NetApp Backup and Recovery UI 将备份限制为 999 份，而 CLI 允许更多。现在，您最多可以将 4,000 个卷附加到备份策略，并包含未附加到备份策略的 1,018 个卷。此更新包括防止超出这些限制的额外验证。
 
-
-
-[[snapmirror-cloud-resync]]
-=== SnapMirror云重新同步
+=== SnapMirror Cloud 重新同步
 
 此更新可确保在删除SnapMirror关系后，无法从NetApp Backup and Recovery启动不受支持的ONTAP版本的SnapMirror Cloud 重新同步。
 
-
-
-[[21-february-2025]]
 == 2025年2月21日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[high-performance-indexing]]
 === 高性能索引
 
 NetApp Backup and Recovery引入了更新的索引功能，使源系统上的数据索引更加高效。新的索引功能包括 UI 的更新、数据恢复搜索和恢复方法性能的改进、全局搜索功能的升级以及更好的可扩展性。
@@ -1234,9 +878,6 @@ NetApp Backup and Recovery引入了更新的索引功能，使源系统上的数
 * 基线索引的最长时间少于 7 天。实际时间将根据您的环境而有所不同。
 
 
-
-
-[[global-search-performance-improvements]]
 === 全局搜索性能改进
 
 此版本还包括对全局搜索性能的增强。您现在将看到进度指示器和更详细的搜索结果，包括文件数量和搜索所花费的时间。专用的搜索和索引容器可确保全局搜索在五分钟内完成。
@@ -1247,17 +888,11 @@ NetApp Backup and Recovery引入了更新的索引功能，使源系统上的数
 * 新的索引功能仅适用于 FlexVols 上的快照，而不适用于 FlexGroups 上的快照。
 
 
-
-
-[[13-february-2025]]
 == 2025年2月13日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[netapp-backup-and-recovery-preview-release]]
-=== NetApp Backup and Recovery预览版
+=== NetApp Backup and Recovery 预览版本
 
 NetApp Backup and Recovery的此预览版提供了更新的用户界面，使您能够使用NetApp Backup and Recovery中熟悉的 3-2-1 保护策略来管理 Microsoft SQL Server 工作负载。使用此新版本，您可以将这些工作负载备份到主存储，将其复制到辅助存储，然后将其备份到云对象存储。
 
@@ -1272,28 +907,17 @@ NOTE: 本文档作为技术预览提供。对于此预览版产品， NetApp保�
 * 此版本使您能够将SnapCenter工作负载导入NetApp Backup and Recovery。
 
 
-
-
-[[22-november-2024]]
 == 2024年11月22日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[snaplock-compliance-and-snaplock-enterprise-protection-modes]]
-=== SnapLock Compliance和SnapLock Enterprise保护模式
+=== SnapLock Compliance 和 SnapLock Enterprise 保护模式
 
 NetApp Backup and Recovery 现在可以备份使用 SnapLock Compliance 或 SnapLock Enterprise 保护模式配置的本地 FlexVol 和 FlexGroup 卷。您的集群必须运行 ONTAP 9.14 或更高版本才能获得此支持。自 ONTAP 9.11.1 起，已支持在 SnapLock Enterprise 模式下备份 FlexVol 卷。早期的 ONTAP 版本不支持备份受 SnapLock 保护的卷。
 
 请参见  https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["了解NetApp Backup and Recovery"] 中支持的卷的完整列表。
 
-
-
-[[indexing-for-search-restore-process-on-volumes-page]]
-=== 在卷页面上为搜索和恢复过程建立索引
-
-在使用搜索和还原之前，您需要在要从中还原卷数据的每个源系统上启用“索引”。这使得索引目录能够跟踪每个卷的备份文件。卷页面现在显示索引状态：
+=== 在卷页面上为搜索和还原过程编制索引在可以使用搜索和还原之前，需要在要从中还原卷数据的每个源系统上启用"索引"。这使索引目录能够跟踪每个卷的备份文件。"卷"页面现在显示索引状态：
 
 * 已编入索引：卷已编入索引。
 * 进行中：正在进行索引。
@@ -1303,29 +927,18 @@ NetApp Backup and Recovery 现在可以备份使用 SnapLock Compliance 或 Snap
 * 未启用：未为此源启用索引。
 
 
-
-
-[[27-september-2024]]
 == 2024年9月27日
 
 此NetApp Backup and Recovery版本包括以下更新。
 
-
-
-[[podman-support-on-rhel-8-or-9-with-browse-and-restore]]
-=== RHEL 8 或 9 上的 Podman 支持浏览和恢复
-
-NetApp Backup and Recovery现在支持使用 Podman 引擎在 Red Hat Enterprise Linux (RHEL) 版本 8 和 9 上进行文件和文件夹恢复。这适用于NetApp Backup and Recovery浏览和还原方法。
+=== 在具有浏览和还原功能的 RHEL 8 或 9 上支持 Podman NetApp Backup and Recovery 现在支持使用 Podman 引擎在 Red Hat Enterprise Linux (RHEL) 版本 8 和 9 上还原文件和文件夹。这适用于 NetApp Backup and Recovery 浏览和还原方法。
 
 Console 代理版本 3.9.40 支持某些 Red Hat Enterprise Linux 8 和 9 版本，用于在 RHEL 主机上手动安装 Console 代理，以及 https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["主机要求"^]中列出的操作系统。这些较新的 RHEL 版本需要 Podman 引擎而不是 Docker 引擎。以前，使用 Podman 引擎时，NetApp Backup and Recovery 有两个限制；这些限制已被删除。
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["了解有关从备份文件恢复ONTAP数据的更多信息"]。
 
-
-
-[[faster-catalog-indexing-improves-search-and-restore]]
-=== 更快的目录索引改进了搜索和恢复
-
-此版本包含改进的目录索引，可以更快地完成基线索引。更快的索引使您能够更快地使用搜索和恢复功能。
+=== 更快的目录索引改进了搜索和还原此版本包括一个改进的目录索引，可以更快地完成基线索引。更快的索引使您能够更快地使用搜索和还原功能。
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["了解有关从备份文件恢复ONTAP数据的更多信息"]。
+
+====

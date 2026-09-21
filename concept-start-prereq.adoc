@@ -416,6 +416,7 @@ NOTE: NetApp 强烈建议为用于 Kubernetes 工作负载的 Console 代理分�
 ** 确保 TCP 端口 443 在 Kubernetes 集群、Trident Protect Connector 和 Trident Protect 代理之间的出站方向上未过滤。
 
 
+* 要从基于 VM 的应用程序还原文件和文件夹，需要 SSH。验证是否在 Linux 目标主机上启用了 SSH 服务，以及是否在 Windows 目标主机上安装并启用了 OpenSSH 服务器。
 
 
 
