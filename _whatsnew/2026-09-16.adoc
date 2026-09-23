@@ -4,17 +4,17 @@
 
 
 
-[[general-netapp-backup-and-recovery-enhancements]]
+[[general-netapp-backup-and-recovery-enhancement]]
 === 常规 NetApp Backup and Recovery 增强功能
 
 在此版本中，KVM、Hyper-V 和 VMware 工作负载引入了以下增强功能：
 
-*虚拟机主机发现期间的凭据选择*：现在，在注册 KVM、Hyper-V 或 VMware 主机时，您可以使用已添加到 Backup and Recovery 中的凭据。
+*在虚拟机主机发现期间进行凭据选择* ：现在，当您发现 KVM、Hyper-V 或 VMware 主机时，您可以使用已添加到 Backup and Recovery 中的凭据。
 
 
 
-[[hyper-v-workloads-enhancements]]
-=== Hyper-V 工作负载增强功能
+[[hyper-v-workloads-enhancement]]
+=== Hyper-V 工作负载增强
 
 在此版本中，Hyper-V 工作负载引入了以下增强功能：
 

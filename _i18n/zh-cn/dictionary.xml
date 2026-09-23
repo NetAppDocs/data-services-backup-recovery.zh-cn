@@ -5921,7 +5921,6 @@
   <block id="6c2c266ca065311d4804d34cd534ac61" category="paragraph">从归档存储还原卷或文件可能需要额外的时间。在备份和恢复根据所选优先级重试还原期间，该作业在作业监视器中保持*进行中*状态。在*作业监视器*中监控还原；在所有重试尝试完成后，当作业达到最终状态（如*已完成*或*失败*）时，还原即告完成。除非作业最终失败，否则请勿启动另一次还原。</block>
   <block id="534cf708a73e1e3ff80e4b70322d78d6" category="paragraph"><block ref="534cf708a73e1e3ff80e4b70322d78d6" category="inline-link-rx"></block></block>
   <block id="6c302dca9120d9212ecda9d1ad1f74c9" category="paragraph">在此版本中，KVM、Hyper-V 和 VMware 工作负载引入了以下增强功能：</block>
-  <block id="0898522d58ded515e98cbdbeae0b2894" category="paragraph">*虚拟机主机发现期间的凭据选择*：现在，在注册 KVM、Hyper-V 或 VMware 主机时，您可以使用已添加到 Backup and Recovery 中的凭据。</block>
   <block id="51b1f28526e9e7dfdb39548a8b5d4ac0" category="paragraph">*虚拟机跨磁盘保护*：对于 CIFS 配置，Backup and Recovery 现在支持保护组中连接到每个虚拟机的每个磁盘。这包括分布在多个 ONTAP 卷或 ONTAP 存储系统（跨磁盘）上的文件，以及仅限于单个位置的文件。</block>
   <block id="1e62d1b5255654e86ebb8b223345252a" category="section-title">ONTAP Volumes 工作负载增强</block>
   <block id="705eb27960b89edebb2b2269e939009b" category="paragraph">在此版本中，ONTAP Volumes 工作负载引入了以下预览增强功能：</block>
@@ -6104,4 +6103,7 @@
   <block id="6cdd743b39af79062eb92fec70569354" category="section-title">2025 年 2 月 13 日</block>
   <block id="008c6d012aabba0e44e2b94f8259635c" category="section-title">2024年11月22日</block>
   <block id="5fcc5d3ffc4bbbcf6d018ab4a9639205" category="section-title">2024年9月27日</block>
+  <block id="1f5228fb8e4d751814a84ea17a1c4929" category="doc">常规 NetApp Backup and Recovery 增强功能</block>
+  <block id="36d329847d8e5ae441cfdb0f4e5f6e2f" category="paragraph">*在虚拟机主机发现期间进行凭据选择* ：现在，当您发现 KVM、Hyper-V 或 VMware 主机时，您可以使用已添加到 Backup and Recovery 中的凭据。</block>
+  <block id="ffe23fba63447ec89bcdd7bc0c48257f" category="section-title">Hyper-V 工作负载增强</block>
 </blocks>
