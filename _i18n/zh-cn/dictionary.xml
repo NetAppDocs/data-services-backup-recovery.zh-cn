@@ -4747,7 +4747,6 @@
   <block id="b7bfbf5f47aa4163507ae71ed18f8b9f" category="list-text">*Multiple backup delete support*：您现在可以一次删除多个备份。</block>
   <block id="c67660fa166ae58260874bbf6f9c5e4a" category="list-text">*预览对气隙资源的支持*：如果在 NetApp Console 本地部署中运行 NetApp Backup and Recovery，您可以发现、保护和还原气隙 Kubernetes 资源。此功能在此版本中处于预览状态。</block>
   <block id="d1c241263c19a21db56b6d9aaeb83ca1" category="paragraph">在此版本中，ONTAP Volumes 工作负载引入了以下增强功能：</block>
-  <block id="a33b2a8cf6a943c4ae96728143fee277" category="list-text">*将还原作业优先于备份*：现在，在还原虚拟机或文件时，您可以将还原作业优先于备份作业。</block>
   <block id="3c8fad259371a43b707a7a3c64b147f6" category="list-text">*在不激活 Backup and Recovery 的情况下发现 ONTAP 系统和卷*：您现在可以在不激活 Backup and Recovery 的情况下发现系统和卷。</block>
   <block id="2c6cc6886b730f35083997c1321dcc78" category="list-text">在适用于 NetApp Console 本地部署的 Backup and Recovery 预览版本中，仅 ONTAP S3 和 StorageGRID 目标支持备份到对象存储。此预览版本不支持备份归档。</block>
   <block id="5c09edc1ed9afb140af2607f91da29e1" category="section-title">NetApp Console 本地部署限制的 Backup and Recovery 预览版</block>
@@ -6106,4 +6105,5 @@
   <block id="1f5228fb8e4d751814a84ea17a1c4929" category="doc">常规 NetApp Backup and Recovery 增强功能</block>
   <block id="36d329847d8e5ae441cfdb0f4e5f6e2f" category="paragraph">*在虚拟机主机发现期间进行凭据选择* ：现在，当您发现 KVM、Hyper-V 或 VMware 主机时，您可以使用已添加到 Backup and Recovery 中的凭据。</block>
   <block id="ffe23fba63447ec89bcdd7bc0c48257f" category="section-title">Hyper-V 工作负载增强</block>
+  <block id="8dbaebd91b282de2115c0933e53cc8b1" category="list-text">*将还原作业优先于备份*：现在，在还原卷、文件或文件夹时，您可以将还原作业优先于备份作业。</block>
 </blocks>
