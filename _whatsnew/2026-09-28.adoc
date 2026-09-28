@@ -1,0 +1,25 @@
+= 常规 NetApp Backup and Recovery 增强功能
+:allow-uri-read: 
+
+
+
+
+[[general-netapp-backup-and-recovery-enhancement]]
+=== 常规 NetApp Backup and Recovery 增强功能
+
+在此版本中，KVM、Hyper-V 和 VMware 工作负载引入了以下增强功能：
+
+*控制台基于角色的访问控制 (RBAC) 支持*：Hyper-V、KVM 和 VMware 工作负载现在支持 NetApp Console 框架的 RBAC，使您能够管理对单个 Hyper-V、KVM 或 VMware 主机的访问。
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["详细了解在 NetApp Backup and Recovery 中使用 RBAC"]。
+
+
+
+[[vmware-workloads-enhancements]]
+=== VMware 工作负载增强功能
+
+在此版本中，VMware 工作负载引入了以下增强功能：
+
+*Google Cloud NetApp Volumes Flex Unified 支持*：适用于 VMware 工作负载的 NetApp Backup and Recovery 现在支持 Google Cloud NetApp Volumes 的 Flex Unified 服务级别。Flex Unified 仅在 ONTAP 模式下受支持。
+
+要了解有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["通过 NetApp Backup and Recovery 保护 VMware 工作负载"]。

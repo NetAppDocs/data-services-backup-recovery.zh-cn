@@ -277,8 +277,9 @@ NOTE: 不支持保护存储在 NetApp 存储上设置的直通磁盘或 VHD/VHDX
 
 | 已连接存储  a| 
 * ONTAP 9.13.1 或更高版本（需要 ONTAP 9.19.1 或更高版本才能支持跨不同云提供商的每个系统超过 6 个存储桶；最多 100 个存储桶）
-* 运行 9.13.1 或更高版本的 Amazon FSx for NetApp ONTAP 存储系统
 * ASA r2 仅限 SAN 系统（需要 ONTAP 9.17.1 或更高版本）
+* 运行 9.13.1 或更高版本的 Amazon FSx for NetApp ONTAP 存储系统
+* Google Cloud NetApp Volumes （ONTAP 模式和 Flex Unified 服务级别）
 
 
 |===

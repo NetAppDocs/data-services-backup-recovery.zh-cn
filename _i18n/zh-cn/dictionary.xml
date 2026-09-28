@@ -5971,7 +5971,6 @@
   <block id="8ec423cb544f5a4931b35174a601686c" category="cell"><block ref="a1eba06bd1db60b0b7acd47a98fdd405" prefix="" category="inline-code"></block></block>
   <block id="def96a092a0c6947fcdadafb96edb659" category="cell">在适用于卷的 NetApp Backup and Recovery 的报告选项卡下启用每日备份数据传输报告。该报告提供跨环境的每日备份和复制数据传输活动信息。</block>
   <block id="200e15de6a3939fa4dda17a8836f5233" category="list-text">*Trident Protect 26.09*：此版本包括 Trident Protect 26.09。</block>
-  <block id="6e2d39e3670c746bf336eaad2e07b214" category="list-text">*集群和命名空间粒度的基于角色的访问控制*：在 Kubernetes 集群发现期间，您可以通过选择要与新集群关联的项目或文件夹来控制对资源的访问。您还可以注册特定命名空间以进行访问控制。这可以在集群或命名空间级别实现更精细的访问控制。</block>
   <block id="bc9e0a0c6dd42dbca705164e269a3b81" category="list-text">*Restore files and folders*：现在，您可以从基于 Kubernetes VM 的应用程序备份中还原或下载特定的文件和文件夹。</block>
   <block id="0eae5eefe564ecf4ccbc3e8d5990e3e5" category="list-text">*其他备份和恢复角色*：为用户分配他们需要的特定 Backup and Recovery 角色，例如 Backup and Recovery viewer 或 Backup and Recovery clone admin。这些角色允许用户执行日常任务，例如查看资源、保护工作负载、克隆和还原。将 Backup and Recovery 角色与平台级角色分开分配。有关详细信息，请参阅 <block ref="8432e361253dad22d74ca5fd3ad3c136" category="inline-link-macro-rx"></block>。</block>
   <block id="495d694fb4e6c9ffefefeddb8fb2c749" category="paragraph">组织管理员或文件夹或项目管理员发现可用的工作负载，并选择适当的项目（例如 US East 或 US West）。每个工作负载都会自动与所选项目相关联。对于 Kubernetes 集群，您可以选择在发现期间与集群关联的文件夹或项目。</block>
@@ -6106,4 +6105,13 @@
   <block id="36d329847d8e5ae441cfdb0f4e5f6e2f" category="paragraph">*在虚拟机主机发现期间进行凭据选择* ：现在，当您发现 KVM、Hyper-V 或 VMware 主机时，您可以使用已添加到 Backup and Recovery 中的凭据。</block>
   <block id="ffe23fba63447ec89bcdd7bc0c48257f" category="section-title">Hyper-V 工作负载增强</block>
   <block id="8dbaebd91b282de2115c0933e53cc8b1" category="list-text">*将还原作业优先于备份*：现在，在还原卷、文件或文件夹时，您可以将还原作业优先于备份作业。</block>
+  <block id="419cd2b7ee4c4a768ccdb742a76a6d51" category="paragraph">*改进对暗站点的支持*：暗站点的 NetApp Backup and Recovery 现在提供与 NetApp Backup and Recovery 相同的 ONTAP Volumes 数据保护功能。此增强功能包括更新的备份、还原和作业管理服务以及新的元数据数据库。在升级期间，将自动保留和迁移现有数据库数据。升级后，请查看审核日志以验证迁移是否成功完成。暗站点的 NetApp Backup and Recovery 仅支持 ONTAP Volumes 工作负载。</block>
+  <block id="fc56ab1b23274c05b12ad0c8dc80ef1c" category="list-text">*集群和命名空间粒度基于角色的访问控制（RBAC）*：在 Kubernetes 集群发现期间，您可以通过选择要与新集群关联的项目或文件夹来控制对资源的访问。您还可以注册用于访问控制的特定命名空间。这可以在集群或命名空间级别实现更精细的访问控制。</block>
+  <block id="f7afeeafbf15177ad50522c2abcfb502" category="paragraph">*控制台基于角色的访问控制 (RBAC) 支持*：Hyper-V、KVM 和 VMware 工作负载现在支持 NetApp Console 框架的 RBAC，使您能够管理对单个 Hyper-V、KVM 或 VMware 主机的访问。</block>
+  <block id="ba79eaf594c940e1fe41ef7be1d90de0" category="inline-link">详细了解在 NetApp Backup and Recovery 中使用 RBAC</block>
+  <block id="c0efbe51bb7620993fb42a308c6ad8b2" category="paragraph"><block ref="d7adec871f52434e6c062a1e94dd0f14" category="inline-link-rx"></block>。</block>
+  <block id="fd2c958c800e793ec18ea2546e033c24" category="paragraph">*Google Cloud NetApp Volumes Flex Unified 支持*：适用于 VMware 工作负载的 NetApp Backup and Recovery 现在支持 Google Cloud NetApp Volumes 的 Flex Unified 服务级别。Flex Unified 仅在 ONTAP 模式下受支持。</block>
+  <block id="af77598cf52235180b19bf359e518fc2" category="paragraph">要了解有关保护 VMware 工作负载的详细信息，请参阅<block ref="d7977b9c562cb95be37532b996678207" category="inline-link-rx"></block>。</block>
+  <block id="b97cd70ddadb686487dcde47c3a4791d" category="list-text">Google Cloud NetApp Volumes （ONTAP 模式和 Flex Unified 服务级别）</block>
+  <block id="e133e28734ec4222b7f45792925cee97" category="section-title">2026年9月28日</block>
 </blocks>

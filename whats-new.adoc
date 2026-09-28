@@ -18,10 +18,50 @@ summary: 了解NetApp Backup and Recovery的新功能。
 
 
 
+[[28-september-2026]]
+== 2026年9月28日
+
+此NetApp Backup and Recovery版本包括以下更新。
+
+
+
+[[general-netapp-backup-and-recovery-enhancement]]
+=== 常规 NetApp Backup and Recovery 增强功能
+
+在此版本中，KVM、Hyper-V 和 VMware 工作负载引入了以下增强功能：
+
+*控制台基于角色的访问控制 (RBAC) 支持*：Hyper-V、KVM 和 VMware 工作负载现在支持 NetApp Console 框架的 RBAC，使您能够管理对单个 Hyper-V、KVM 或 VMware 主机的访问。
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["详细了解在 NetApp Backup and Recovery 中使用 RBAC"]。
+
+
+
+[[vmware-workloads-enhancements]]
+=== VMware 工作负载增强功能
+
+在此版本中，VMware 工作负载引入了以下增强功能：
+
+*Google Cloud NetApp Volumes Flex Unified 支持*：适用于 VMware 工作负载的 NetApp Backup and Recovery 现在支持 Google Cloud NetApp Volumes 的 Flex Unified 服务级别。Flex Unified 仅在 ONTAP 模式下受支持。
+
+要了解有关保护 VMware 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["通过 NetApp Backup and Recovery 保护 VMware 工作负载"]。
+
+
+
 [[21-september-2026]]
 == 2026年9月21日
 
 此NetApp Backup and Recovery版本包括以下更新。
+
+
+
+[[ontap-volumes-workloads-enhancement]]
+=== ONTAP Volumes 工作负载增强
+
+在此版本中，ONTAP Volumes 工作负载引入了以下预览增强功能：
+
+*改进对暗站点的支持*：暗站点的 NetApp Backup and Recovery 现在提供与 NetApp Backup and Recovery 相同的 ONTAP Volumes 数据保护功能。此增强功能包括更新的备份、还原和作业管理服务以及新的元数据数据库。在升级期间，将自动保留和迁移现有数据库数据。升级后，请查看审核日志以验证迁移是否成功完成。暗站点的 NetApp Backup and Recovery 仅支持 ONTAP Volumes 工作负载。
+
+要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["了解使用 NetApp Backup and Recovery 的 ONTAP 卷保护"]。
 
 
 
@@ -31,7 +71,7 @@ summary: 了解NetApp Backup and Recovery的新功能。
 在此版本中，Kubernetes 工作负载引入了以下增强功能：
 
 * *Trident Protect 26.09*：此版本包括 Trident Protect 26.09。
-* *集群和命名空间粒度的基于角色的访问控制*：在 Kubernetes 集群发现期间，您可以通过选择要与新集群关联的项目或文件夹来控制对资源的访问。您还可以注册特定命名空间以进行访问控制。这可以在集群或命名空间级别实现更精细的访问控制。
+* *集群和命名空间粒度基于角色的访问控制（RBAC）*：在 Kubernetes 集群发现期间，您可以通过选择要与新集群关联的项目或文件夹来控制对资源的访问。您还可以注册用于访问控制的特定命名空间。这可以在集群或命名空间级别实现更精细的访问控制。
 * *Restore files and folders*：现在，您可以从基于 Kubernetes VM 的应用程序备份中还原或下载特定的文件和文件夹。
 
 
