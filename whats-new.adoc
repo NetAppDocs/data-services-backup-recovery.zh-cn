@@ -54,12 +54,16 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["
 
 
 
-[[ontap-volumes-workloads-enhancement]]
+[[ontap-volumes-workloads-enhancements]]
 === ONTAP Volumes 工作负载增强
 
 在此版本中，ONTAP Volumes 工作负载引入了以下预览增强功能：
 
-*改进对暗站点的支持*：暗站点的 NetApp Backup and Recovery 现在提供与 NetApp Backup and Recovery 相同的 ONTAP Volumes 数据保护功能。此增强功能包括更新的备份、还原和作业管理服务以及新的元数据数据库。在升级期间，将自动保留和迁移现有数据库数据。升级后，请查看审核日志以验证迁移是否成功完成。暗站点的 NetApp Backup and Recovery 仅支持 ONTAP Volumes 工作负载。
+* *改进对暗站点的支持*：暗站点的 NetApp Backup and Recovery 现在提供与 NetApp Backup and Recovery 相同的 ONTAP Volumes 数据保护功能。此增强功能包括更新的备份、还原和作业管理服务以及新的元数据数据库。在升级期间，将自动保留和迁移现有数据库数据。升级后，请查看审核日志以验证迁移是否成功完成。暗站点的 NetApp Backup and Recovery 仅支持 ONTAP Volumes 工作负载。
+* *取消卷还原作业*：您现在可以从作业监控页面取消正在进行的 ONTAP 卷还原作业，从而更轻松地管理长期运行或运行缓慢的作业。
+* *改进的卷索引状态报告*：ONTAP 卷仪表板现在通过为不符合索引条件的卷和快照副本引入 `Not Applicable`状态，更准确地报告索引状态。该 `Not Indexed`状态现在专用于等待索引的卷，卷详细信息现在显示每个快照的索引状态，并附有悬停文本说明卷或快照副本不会被索引的原因。
+* *NetApp AFX 支持*：您现在可以保护托管在 2 节点和 4 节点 NetApp AFX 集群上的卷。
+
 
 要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["了解使用 NetApp Backup and Recovery 的 ONTAP 卷保护"]。
 

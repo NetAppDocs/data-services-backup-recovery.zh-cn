@@ -3230,7 +3230,6 @@
   <block id="c06e8b3ad6c2a4bcf247b5b6ff031cbf" category="admonition">如果您已将ONTAP系统升级到 9.13.x，但在作业监视器中没有看到正在进行的计划备份操作，请重新启动NetApp Backup and Recovery。<block ref="bfa346a5b4e1ecd443201d95eab54eb4" category="inline-link-macro-rx"></block>。</block>
   <block id="2d7e91b503470d39f08e98b06f5d7864" category="paragraph">大多数过滤器都是不言自明的。通过“工作量”过滤器，您可以查看以下类别的作业：</block>
   <block id="9535df3e89123a36d140c06cf83471aa" category="paragraph">您可以在通知中心查看警报，并配置控制台以发送重要系统活动的电子邮件警报，即使您未登录。<block ref="a993635cface3018acf75d15a7289e44" category="inline-link-rx"></block> 。</block>
-  <block id="63369edef3fcbf27a13a1f4394250d9b" category="paragraph">默认情况下， NetApp Console组织和帐户管理员会收到所有“严重”和“建议”警报的电子邮件。默认情况下，系统不设置其他用户和收件人接收通知邮件。为NetApp云帐户中的任何控制台用户或需要了解备份和恢复活动的其他收件人配置电子邮件警报。</block>
   <block id="31aacaea95ea11818f2629af38fa3f2c" category="list-text">在开始备份之前配置已发现主机的日志目录。</block>
   <block id="6f74e6b5a59cfaab5656a1be6c164a0a" category="paragraph">在开始备份之前，请查看工作负载的保护状态。</block>
   <block id="457aa988b8eb5473cac5e0469be1df6a" category="paragraph">设置已发现主机的活动日志路径，以便在备份工作负载之前跟踪操作状态。</block>
@@ -5380,7 +5379,6 @@
   <block id="c327b2b7ac3704c9c322df3bca8aab7e" category="paragraph">在筛选或排序结果后，您可以将主作业监控页面的内容作为报告下载。NetApp Backup and Recovery 会生成并下载一个 CSV 文件，您可以根据需要查看并发送给其他组。CSV 文件最多包含 10,000 行数据。</block>
   <block id="714b7ef1018c44ef0c79e384540766a3" category="paragraph">监控保留（_backup lifecycle_）作业，以跟踪备份副本何时过期并支持审核。</block>
   <block id="ebb874a91308a9b8ae116acd0d55c0ce" category="paragraph">NetApp Console 通知中心跟踪您已启动的备份和还原作业的进度，以便您可以验证操作是否成功。</block>
-  <block id="d951db5806c5dd9d8ec3269b27d8752b" category="paragraph">您可以在 NetApp Console 时间轴中查看备份和还原操作的详细信息，以进行进一步调查。NetApp Console 时间轴提供每个事件的详细信息，无论是用户发起的还是系统发起的，并显示在 UI 中或通过 API 发起的操作。</block>
   <block id="84ecd721169d5c605dbcca8e4b87b0f6" category="inline-link">了解有关监控 NetApp Console 操作的信息</block>
   <block id="1b0decc1adcbaa0df14dd4b8aa07c062" category="paragraph"><block ref="f68769e6bd56c2c042f91d6dd3d25dda" category="inline-link-rx"></block>。</block>
   <block id="33dfb641cd4d6acea75347380756a630" category="summary">将本地 ONTAP 系统上的 Microsoft SQL Server 应用程序数据备份到 Amazon Web Services、Microsoft Azure 和 StorageGRID，以确保您的数据受到保护。</block>
@@ -6114,4 +6112,32 @@
   <block id="af77598cf52235180b19bf359e518fc2" category="paragraph">要了解有关保护 VMware 工作负载的详细信息，请参阅<block ref="d7977b9c562cb95be37532b996678207" category="inline-link-rx"></block>。</block>
   <block id="b97cd70ddadb686487dcde47c3a4791d" category="list-text">Google Cloud NetApp Volumes （ONTAP 模式和 Flex Unified 服务级别）</block>
   <block id="e133e28734ec4222b7f45792925cee97" category="section-title">2026年9月28日</block>
+  <block id="935253a377b19143ee00ca184dec844f" category="paragraph">在此版本中，ONTAP Volumes 工作负载引入了以下预览增强功能：</block>
+  <block id="cd4f576093d5ac341dfcb0aaa95386df" category="list-text">*取消卷还原作业*：您现在可以从作业监控页面取消正在进行的 ONTAP 卷还原作业，从而更轻松地管理长期运行或运行缓慢的作业。</block>
+  <block id="f280b51545cc9233bf1322ad4aa41fc1" category="list-text">*改进的卷索引状态报告*：ONTAP 卷仪表板现在通过为不符合索引条件的卷和快照副本引入<block ref="6136261711c49bf0e8e1dcb22a2c524f" prefix=" " category="inline-code"></block>状态，更准确地报告索引状态。该<block ref="838534d879f74e7af515a7de57e72b71" prefix=" " category="inline-code"></block>状态现在专用于等待索引的卷，卷详细信息现在显示每个快照的索引状态，并附有悬停文本说明卷或快照副本不会被索引的原因。</block>
+  <block id="0ab4a270a7306aa53a9216568b919ddc" category="list-text">*NetApp AFX 支持*：您现在可以保护托管在 2 节点和 4 节点 NetApp AFX 集群上的卷。</block>
+  <block id="84261bb42a8f4774a2a88f93ef2e7b97" category="paragraph">默认情况下，NetApp Console 组织和帐户管理员会收到所有"严重"和"建议"警报的电子邮件通知。除非您对其进行配置，否则其他用户和收件人不会收到通知电子邮件。为 NetApp Cloud Account 中的 Console 用户或需要监控备份和还原活动的其他收件人设置电子邮件警报。</block>
+  <block id="98e79c21e7c10597997314959fdd10d0" category="paragraph">使用控制台时间线调查备份和还原操作。它提供了每个事件的详细信息，包括该事件是由用户还是由系统发起，并显示在 UI 中或通过 API 执行的操作。</block>
+  <block id="40305b815eb9b5fb3a975d34be14698f" category="section-title">取消正在进行的作业</block>
+  <block id="c8dd83bac545851e691ee53c6bf71118" category="paragraph">某些备份和恢复工作负载支持取消正在进行的作业（如果该作业完成时间过长且尚未失败）。</block>
+  <block id="c137e799769a7454b6a1931c8d90a2bd" category="admonition">要取消 ONTAP 卷还原作业，请参阅 <block ref="96dd8a0343f48aea81970933eccfcd1d" category="inline-xref-macro-rx"></block>。</block>
+  <block id="354f26b8c487e6cf93a857c5b1295cef" category="list-text">（可选）展开*高级搜索和过滤*区域，并选择特定条件以缩小作业搜索结果的范围。</block>
+  <block id="b119d9b7e39888b824b9e76b1f3c1bb6" category="list-text">选择*搜索*以显示匹配的还原作业。</block>
+  <block id="30aba68ce2e20aad165f9dfea8e8da72" category="list-text">从列表中选择一个作业，选择操作菜单<block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block>，然后选择*取消*操作（操作标签因作业类型而异）。</block>
+  <block id="6c776a625685ac880249a673e78404e9" category="list-text">在确认对话框中，确认取消。</block>
+  <block id="2334788351c495c555cf1ec795d3a592" category="section-title">取消 ONTAP Volumes 还原作业</block>
+  <block id="1f6a2c06fc3eaf8246ba5bd164f21c2c" category="paragraph">如果 ONTAP Volumes 还原作业完成时间过长且未失败，请将其取消。</block>
+  <block id="5f0c099781d2652d095607a987a47110" category="paragraph">取消卷还原时，会回滚整个还原操作，以便不还原卷的任何部分。</block>
+  <block id="ee9f716edf70563519c906192c0b39e9" category="paragraph">在文件和文件夹还原期间，备份和恢复将分八批还原文件。如果在批处理正在执行时取消文件和文件夹还原，则还原将在下一批处理开始之前停止。已还原的任何文件和文件夹都将保留到位。</block>
+  <block id="89bb68d2ba06c8f5ec94311dc846a22f" category="paragraph">请注意您可以和不能取消的作业类型：</block>
+  <block id="6e00df6cf203194e9db62250dcd59b84" category="cell">您可以取消</block>
+  <block id="c56beeb0de548206540e2478336371ea" category="cell">您不能取消</block>
+  <block id="75d6ce34553a749b1d6a586f79d9f1f6" category="cell">从本地或云快照还原卷（FlexVol 和 FlexGroup）</block>
+  <block id="e62abda2edc633553c509cf9fbdfd763" category="cell">已排队的还原作业</block>
+  <block id="d4fecb1eeebc825130e17bc277c17bfb" category="cell">从云端还原文件和文件夹</block>
+  <block id="f6418296c6faecb259d5ebc86a7d65ca" category="cell">存档还原</block>
+  <block id="12ad3a859d20918ff344c7776abe3b50" category="cell">将文件和文件夹从本地快照还原到其他卷</block>
+  <block id="30144384865c9bc036707d99163c215c" category="cell">将文件和文件夹从本地快照还原到同一个卷</block>
+  <block id="b6a5b73bc90d7aa324c49f4f91a911c2" category="list-text">从列表中选择一个作业，选择操作菜单<block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block>，然后选择*取消还原*操作。</block>
+  <block id="67221d952a3dfa81a9eee1d6fc312266" category="list-text">在确认对话框中，选择*取消还原*。</block>
 </blocks>

@@ -241,7 +241,7 @@ NetApp Console 通知中心跟踪您已启动的备份和还原作业的进度�
 
 NOTE: 从ONTAP 9.13.0 开始，所有警报都会出现在Cloud Volumes ONTAP和本地ONTAP系统中。对于具有Cloud Volumes ONTAP 9.13.0 和本地ONTAP 的系统，仅出现与“恢复作业已完成，但有警告”相关的警报。
 
-默认情况下， NetApp Console组织和帐户管理员会收到所有“严重”和“建议”警报的电子邮件。默认情况下，系统不设置其他用户和收件人接收通知邮件。为NetApp云帐户中的任何控制台用户或需要了解备份和恢复活动的其他收件人配置电子邮件警报。
+默认情况下，NetApp Console 组织和帐户管理员会收到所有"严重"和"建议"警报的电子邮件通知。除非您对其进行配置，否则其他用户和收件人不会收到通知电子邮件。为 NetApp Cloud Account 中的 Console 用户或需要监控备份和还原活动的其他收件人设置电子邮件警报。
 
 要接收NetApp Backup and Recovery电子邮件警报，您需要在通知设置页面中选择通知严重性类型“严重”、“警告”和“错误”。
 
@@ -259,6 +259,59 @@ https://docs.netapp.com/us-en/console-local/task-alert-rules-manage.html["在 Ne
 [[review-operation-activity-in-console-timeline]]
 == 在控制台时间线中查看操作活动
 
-您可以在 NetApp Console 时间轴中查看备份和还原操作的详细信息，以进行进一步调查。NetApp Console 时间轴提供每个事件的详细信息，无论是用户发起的还是系统发起的，并显示在 UI 中或通过 API 发起的操作。
+使用控制台时间线调查备份和还原操作。它提供了每个事件的详细信息，包括该事件是由用户还是由系统发起，并显示在 UI 中或通过 API 执行的操作。
 
 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["了解有关监控 NetApp Console 操作的信息"^]。
+
+
+
+[[cancel-an-ongoing-job]]
+== 取消正在进行的作业
+
+某些备份和恢复工作负载支持取消正在进行的作业（如果该作业完成时间过长且尚未失败）。
+
+
+NOTE: 要取消 ONTAP 卷还原作业，请参阅 <<取消 ONTAP Volumes 还原作业>>。
+
+.步骤
+. 从NetApp Backup and Recovery菜单中，选择 *监控*。
+. （可选）展开*高级搜索和过滤*区域，并选择特定条件以缩小作业搜索结果的范围。
+. 选择*搜索*以显示匹配的还原作业。
+. 从列表中选择一个作业，选择操作菜单image:icon-action.png["操作图标"]，然后选择*取消*操作（操作标签因作业类型而异）。
+. 在确认对话框中，确认取消。
+
+
+
+
+[[cancel-an-ontap-volumes-restore-job]]
+== 取消 ONTAP Volumes 还原作业
+
+如果 ONTAP Volumes 还原作业完成时间过长且未失败，请将其取消。
+
+取消卷还原时，会回滚整个还原操作，以便不还原卷的任何部分。
+
+在文件和文件夹还原期间，备份和恢复将分八批还原文件。如果在批处理正在执行时取消文件和文件夹还原，则还原将在下一批处理开始之前停止。已还原的任何文件和文件夹都将保留到位。
+
+.关于此任务
+请注意您可以和不能取消的作业类型：
+
+[cols="1,1"]
+|===
+| 您可以取消 | 您不能取消 
+
+
+| 从本地或云快照还原卷（FlexVol 和 FlexGroup） | 已排队的还原作业 
+
+
+| 从云端还原文件和文件夹 | 存档还原 
+
+
+| 将文件和文件夹从本地快照还原到其他卷 | 将文件和文件夹从本地快照还原到同一个卷 
+|===
+.步骤
+. 从NetApp Backup and Recovery菜单中，选择 *监控*。
+. （可选）展开*高级搜索和过滤*区域，并选择特定条件以缩小作业搜索结果的范围。
+. 选择*搜索*以显示匹配的还原作业。
+. 从列表中选择一个作业，选择操作菜单image:icon-action.png["操作图标"]，然后选择*取消还原*操作。
+. 在确认对话框中，选择*取消还原*。
+
