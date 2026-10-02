@@ -155,14 +155,29 @@ link:br-start-enable.html#enable-backup-and-recovery-in-netapp-console-local-dep
 [[requirements-for-protecting-ontap-volume-workloads]]
 == 保护 ONTAP 卷工作负载的要求
 
-要对 ONTAP 卷工作负载使用 NetApp Backup and Recovery，需要满足以下主机系统、空间和大小调整先决条件。
+要对 ONTAP 卷工作负载使用 NetApp Backup and Recovery，您需要满足以下先决条件。
 
-* 需要 ONTAP 9.8 或更高版本。
-* ONTAP 9.12.1 或更高版本是 FlexGroup 卷保护的必要条件。有关详细信息，请参见 link:br-reference-limitations.html["NetApp Backup and Recovery for ONTAP卷的已知限制"]。
-* 备份或还原到与 S3 兼容的对象存储需要 ONTAP 9.17.1 或更高版本。
-* 要跨不同云提供商支持每个系统超过 6 个存储桶（最多 100 个存储桶），需要 ONTAP 9.19.1 或更高版本。
-* 本地 ONTAP 实例上必须已启用 ONTAP One 许可证。
+[cols="2,1"]
+|===
+| 功能 | 所需的 ONTAP 版本 
 
+
+| 保护ONTAP卷 | 9.8 或更高版本 
+
+
+| 保护 FlexGroup 卷（有关详细信息，请参见 link:br-reference-limitations.html["NetApp Backup and Recovery for ONTAP卷的已知限制"]） | 9.12.1 或更高版本 
+
+
+| 保护 Cloud Volumes ONTAP 时，对 Azure 存储桶使用 Microsoft Entra ID 身份验证 | 9.16.1 或更高版本 
+
+
+| 备份或还原到 S3 兼容的对象存储 | 9.17.1 或更高版本 
+
+
+| 在不同的云提供商中，每个系统使用 6 个以上的存储桶（最多 100 个） | 9.19.1 或更高版本 
+|===
+
+NOTE: 本地 ONTAP 实例上必须已启用 ONTAP One 许可证。
 
 有关受支持的功能、卷类型、备份和还原目标等信息，请参阅 link:prev-ontap-protect-overview.html["保护您的ONTAP卷数据"]。
 

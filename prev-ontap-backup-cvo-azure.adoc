@@ -32,7 +32,7 @@ NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-star
 
 image:diagram_cloud_backup_cvo_azure.png["该图显示了NetApp Backup and Recovery如何与源系统上的卷以及备份文件所在的目标存储进行通信。"]
 
-支持的 ONTAP 版本:: 最低版本为ONTAP 9.8；建议使用ONTAP 9.8P13 及更高版本。
+支持的 ONTAP 版本:: 最低要求为 ONTAP 9.8；建议使用 ONTAP 9.8P13 及更高版本。如果对 Azure 对象存储使用 Microsoft Entra ID 身份验证，则需要 ONTAP 9.16.1 或更高版本。
 支持的 Azure 区域:: 所有 Azure 区域（包括 Azure 政府区域）都支持NetApp Backup and Recovery。
 +
 --
@@ -52,6 +52,24 @@ image:diagram_cloud_backup_cvo_azure.png["该图显示了NetApp Backup and Recov
 对于NetApp Backup and RecoveryBYOL 许可，您需要NetApp提供的序列号，以便您在许可证的有效期和容量内使用该服务。link:br-start-licensing.html["了解如何管理您的 BYOL 许可证"]。当控制台代理和Cloud Volumes ONTAP系统部署在暗站（“私有模式”）时，您必须使用 BYOL 许可证。
 
 您还需要为备份所在的存储空间订阅 Azure。
+
+
+
+[[requirements-for-using-microsoft-entra-id-authentication-with-azure-object-stores]]
+[[anchor-entraid]]
+== 在 Azure 对象存储中使用 Microsoft Entra ID 身份验证的要求
+
+如果不想将存储帐户访问密钥用于 Azure 身份验证，则可以在创建 Azure 对象存储桶或编辑现有 Azure 存储桶配置时为 Azure 对象存储启用 Microsoft Entra ID 身份验证。此选项适用于运行 ONTAP 9.16.1 或更高版本的 Azure 系统中的 Cloud Volumes ONTAP。
+
+
+NOTE: 您可以为同一 Cloud Volumes ONTAP 系统中的不同对象存储配置使用不同的身份验证方法，但在将对象存储配置切换为使用 Microsoft Entra ID 后，您无法将其切换回使用存储帐户密钥。
+
+* 验证 Cloud Volumes ONTAP 系统上是否启用了“use-azure-msi-cvo”功能标志。有关详细信息，请参阅 link:enable-preview-features.html["启用预览功能"]。
+* 仅支持 Bring Your Own Bucket 备份策略选项。验证 Azure 存储帐户已存在，并且包含与该帐户同名的容器。
+* 在 Azure 存储帐户的 IAM 设置中，验证 `Storage Blob Data Contributor`角色是否同时分配给 Azure Agent 和 Cloud Volumes ONTAP 系统。如果使用 `Object lock`策略选项，还应在存储帐户上启用版本控制，并将 `Storage Blob Data Owner`角色分配给 Azure Agent 和 Cloud Volumes ONTAP 系统。
+
+
+如果您的环境满足这些要求，则在<<定义备份策略,定义备份策略>>时，可以在任何新的 Azure 对象存储分段中选择 `Entra ID`作为身份验证类型。您也可以从 ONTAP 卷的*备份设置*页面link:prev-ontap-policy-object-advanced-settings.html#switch-an-azure-object-store-configuration-to-microsoft-entra-id-authentication["为已配置的 Azure 存储区切换到 Entra ID"]。
 
 
 
@@ -146,8 +164,8 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 
 
 
-[[required-information-for-using-customer-managed-keys-for-data-encryption]]
-=== 使用客户管理的密钥进行数据加密所需的信息
+[[requirements-for-using-customer-managed-keys-for-data-encryption]]
+=== 使用客户托管密钥进行数据加密的要求
 
 您可以在激活向导中使用自己的客户管理密钥进行数据加密，而不是使用默认的 Microsoft 管理加密密钥。在这种情况下，您将需要有 Azure 订阅、Key Vault 名称和密钥。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["了解如何使用您自己的密钥"^] 。
 
@@ -321,7 +339,7 @@ NOTE: 如果您选择的卷具有与您在此步骤中选择的策略不同的�
 
 
 .步骤
-. 在“定义备份策略”页面中，选择以下一项或全部。默认情况下，所有三个都被选中：
+. 在 *定义备份策略* 页面中，选择以下一项或全部内容。默认情况下会选择所有三个选项：
 +
 ** *本地快照*：如果您正在执行复制或备份到对象存储，则必须创建本地快照。
 ** *复制*：在另一个ONTAP存储系统上创建复制卷。
@@ -370,25 +388,26 @@ TIP: 要在激活复制之前创建自定义策略，请参阅link:br-use-polici
 
 
 
-. *备份到对象*：如果您选择了*备份*，请设置以下选项：
+. *备份*：设置以下选项：
 +
+** *备份目标设置*：选择使用现有备份目标并从列表中选择一个，或选择配置新的备份目标。
 ** *提供商*：选择*Microsoft Azure*。
-** *提供商设置*：输入提供商详细信息。
+** *提供程序设置*：输入提供程序详细信息，例如存储区创建和身份验证选项：
 +
-输入存储备份的区域。这可能与Cloud Volumes ONTAP系统所在的区域不同。
-
+*** *创建新存储桶*：NetApp Backup and Recovery 在您的提供商环境中创建存储桶。
+*** *自带存储桶*：使用已创建的现有存储桶。
+*** *身份验证方法*：选择使用存储帐户访问密钥或 Microsoft Entra ID 向 Azure 进行身份验证。只有当您的环境满足 Entra ID <<anchor-entraid,要求>> 时，您才能选择 *Entra ID*。如果选择 *存储帐户访问密钥*，请选择以下选项：
 +
-创建一个新的存储帐户或选择一个现有的存储帐户。
-
-+
-输入用于存储备份的 Azure 订阅。这可能是与Cloud Volumes ONTAP系统所在的订阅不同的订阅。
-
-+
-创建自己的管理 Blob 容器的资源组，或者选择资源组类型和组。
-
+**** 选择用于存储备份的 Azure 订阅。这可以是与 Cloud Volumes ONTAP 系统所在位置不同的订阅。
+**** 选择存储备份的区域。这可能与Cloud Volumes ONTAP系统所在的区域不同。
+**** 创建自己的管理 Blob 容器的资源组，或者选择资源组类型和组。
 +
 
 TIP: 如果您想保护备份文件不被修改或删除，请确保创建存储帐户时启用了 30 天保留期的不可变存储。
+
+
+
+
 
 ** *加密密钥*：如果您创建了新的 Azure 存储帐户，请输入提供商提供给您的加密密钥信息。选择是否使用默认 Azure 加密密钥，或者从 Azure 帐户中选择您自己的客户管理密钥来管理数据加密。
 +
