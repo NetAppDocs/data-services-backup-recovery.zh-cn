@@ -40,14 +40,17 @@ summary: 启用 NetApp Backup and Recovery 的预览和隐藏功能。
 | `"data-transfer-report": true` | 在适用于卷的 NetApp Backup and Recovery 的报告选项卡下启用每日备份数据传输报告。该报告提供跨环境的每日备份和复制数据传输活动信息。 
 
 
-| `"use-azure-msi-cvo": true` | 启用对 Azure 对象存储使用 Microsoft Entra ID 托管标识身份验证的选项，而不使用存储帐户访问密钥。支持运行 ONTAP 9.16.1 或更高版本的 Azure 系统中的 Cloud Volumes ONTAP。有关详细信息，请参阅 link:prev-ontap-backup-cvo-azure.html["将 Cloud Volumes ONTAP 备份到 Azure Blob 存储"]。 
+| `"use-azure-msi-cvo": true` | 启用对 Azure 对象存储使用 Microsoft Entra ID 托管标识身份验证的选项，而不使用存储帐户访问密钥。支持在运行 ONTAP 9.16.1 或更高版本的 Azure 系统中的 Cloud Volumes ONTAP（Console 代理也必须驻留在 Azure 中）。有关详细信息，请参阅 link:prev-ontap-backup-cvo-azure.html#anchor-entraid["在 Azure 对象存储中使用 Microsoft Entra ID 身份验证的要求"]。 
 |===
 
 
 [[enable-preview-features]]
 == 启用预览功能
 
-启用预览功能标记选项以使用尚未正式推出的功能。在生产环境中谨慎使用预览功能。
+启用预览功能标记以使用尚未正式推出的功能。在生产环境中谨慎使用预览功能。
+
+
+NOTE: 这些示例假设您使用 Docker；如果使用 Podman，请运行等效的 Podman 命令。
 
 .步骤
 . 使用 SSH 登录到 Console agent。
@@ -131,8 +134,11 @@ NOTE: 要禁用预览功能，请按照相同的步骤操作，但将功能标�
 使用以下选项标志禁用特定卷或属于一个或多个存储 VM 的所有卷的索引：
 
 * `svms-not-to-index`：不应为其卷编制索引的存储 VM 的逗号分隔列表
-* `volumes-not-to-index`：不应编制索引的单个卷的逗号分隔列表
+* `volumes-not-to-index`：不应编制索引的卷的单个卷 ID 的逗号分隔列表
 
+
+
+NOTE: 这些示例假设您使用 Docker；如果使用 Podman，请运行等效的 Podman 命令。
 
 .步骤
 . 使用 SSH 登录到 Console agent。
@@ -176,14 +182,14 @@ docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoin
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
-. 创建一个名为 `production-customer.json`的文件，并自定义 Storage VM 和卷名以匹配您的环境：
+. 创建一个名为 `production-customer.json`的文件，并自定义 storage VM 名称和卷 ID 以匹配您的环境：
 +
 [source, json]
 ----
 {
   "indexing": {
-    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3",
-    "volumes-not-to-index": "volume_1,volume_2,volume_3"
+    "svms-not-to-index": "storage_vm_name_1,storage_vm_name_2,storage_vm_name_3",
+    "volumes-not-to-index": "volume_ID_1,volume_ID_2,volume_ID_3"
   }
 }
 ----

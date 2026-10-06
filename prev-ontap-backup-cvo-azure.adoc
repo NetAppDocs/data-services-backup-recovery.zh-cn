@@ -64,6 +64,7 @@ image:diagram_cloud_backup_cvo_azure.png["该图显示了NetApp Backup and Recov
 
 NOTE: 您可以为同一 Cloud Volumes ONTAP 系统中的不同对象存储配置使用不同的身份验证方法，但在将对象存储配置切换为使用 Microsoft Entra ID 后，您无法将其切换回使用存储帐户密钥。
 
+* Cloud Volumes ONTAP 系统和控制台代理都必须驻留在 Azure 中。
 * 验证 Cloud Volumes ONTAP 系统上是否启用了“use-azure-msi-cvo”功能标志。有关详细信息，请参阅 link:enable-preview-features.html["启用预览功能"]。
 * 仅支持 Bring Your Own Bucket 备份策略选项。验证 Azure 存储帐户已存在，并且包含与该帐户同名的容器。
 * 在 Azure 存储帐户的 IAM 设置中，验证 `Storage Blob Data Contributor`角色是否同时分配给 Azure Agent 和 Cloud Volumes ONTAP 系统。如果使用 `Object lock`策略选项，还应在存储帐户上启用版本控制，并将 `Storage Blob Data Owner`角色分配给 Azure Agent 和 Cloud Volumes ONTAP 系统。
