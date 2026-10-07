@@ -6174,4 +6174,5 @@
   <block id="2a3eb35eaa4bea08656e899dd4bc3c61" category="list-text"><block ref="2e56f3828d4fc676b207b81b442eafdd" prefix="" category="inline-code"></block>：不应编制索引的卷的单个卷 ID 的逗号分隔列表</block>
   <block id="3a273880b40ea51e4b60121d32145e13" category="list-text">创建一个名为<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block>的文件，并自定义 storage VM 名称和卷 ID 以匹配您的环境：</block>
   <block id="a940e8044fb83a96d0472abdc71d61e8" category="list-text">Cloud Volumes ONTAP 系统和控制台代理都必须驻留在 Azure 中。</block>
+  <block id="389c52d9a18d68d9dd6a3eb24bc88982" category="list-text">*Cloud Volumes ONTAP Azure Entra ID 支持*：如果不想使用存储帐户访问密钥进行 Azure 身份验证，现在可以对 Azure 对象存储桶配置使用 Microsoft Entra ID 身份验证。运行 ONTAP 9.16.1 或更高版本的 Azure 系统中的 Cloud Volumes ONTAP 支持此选项。</block>
 </blocks>
