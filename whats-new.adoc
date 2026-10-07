@@ -41,15 +41,14 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["
 
 在此版本中，ONTAP Volumes 工作负载引入了以下预览增强功能：
 
-* *Cloud Volumes ONTAP Azure Entra ID 支持*：如果不想使用存储帐户访问密钥进行 Azure 身份验证，现在可以对 Azure 对象存储桶配置使用 Microsoft Entra ID 身份验证。运行 ONTAP 9.16.1 或更高版本的 Azure 系统中的 Cloud Volumes ONTAP 支持此选项。
-
+*Cloud Volumes ONTAP Azure Entra ID 支持*：如果不想使用存储帐户访问密钥进行 Azure 身份验证，现在可以对 Azure 对象存储桶配置使用 Microsoft Entra ID 身份验证。运行 ONTAP 9.16.1 或更高版本的 Azure 系统中的 Cloud Volumes ONTAP 支持此选项。
 
 要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["了解使用 NetApp Backup and Recovery 的 ONTAP 卷保护"]。
 
 
 
-[[vmware-workloads-enhancements]]
-=== VMware 工作负载增强功能
+[[vmware-workloads-enhancement]]
+=== VMware 工作负载增强
 
 在此版本中，VMware 工作负载引入了以下增强功能：
 
