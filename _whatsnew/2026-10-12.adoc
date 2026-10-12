@@ -1,0 +1,38 @@
+= Hyper-V 工作负载增强功能
+:allow-uri-read: 
+
+
+
+
+[[hyper-v-workloads-enhancements]]
+=== Hyper-V 工作负载增强功能
+
+在此版本中，Hyper-V 工作负载引入了以下增强功能：
+
+* *NetApp MetroCluster 支持*：NetApp Backup and Recovery 现在使您能够保护由 NetApp MetroCluster 镜像的 Hyper-V 虚拟机。
+* *针对 SAN VM 的跨区磁盘保护*：对于 CIFS 和 SAN 配置，您现在可以保护连接到保护组中每个 VM 的每个磁盘。这包括分布在多个 ONTAP 卷或 ONTAP 存储系统（跨区磁盘）上的文件，以及仅限于单个位置的文件。
+
+
+有关保护 Hyper-V 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Hyper-V 工作负载"]。
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Oracle Database 工作负载增强
+
+在此版本中，Oracle 数据库工作负载引入了以下增强功能：
+
+*自动归档日志管理*：在数据库还原和克隆操作期间，NetApp Backup and Recovery 会自动发现并装载所需的归档日志，然后在操作完成后将其卸载。支持主、辅助和对象存储日志源。
+
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
+
+
+
+[[microsoft-sql-server-workloads-enhancement]]
+=== Microsoft SQL Server 工作负载增强
+
+在此版本中，Microsoft SQL Server 工作负载引入了以下增强功能：
+
+*许可变更*：使用磁盘到磁盘或磁盘到磁盘扇出架构的备份不再收费。收费仅适用于备份到对象存储，包括使用 3-2-1 或磁盘到对象存储架构的备份。
+
+要了解有关保护 Microsoft SQL Server 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-mssql-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Microsoft SQL Server 工作负载"]。

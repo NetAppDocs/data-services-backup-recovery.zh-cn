@@ -49,7 +49,7 @@ summary: 在NetApp Backup and Recovery中创建和管理 Hyper-V 工作负载的
 . 选择跨区磁盘的行为。目前，支持*始终包括所有跨区磁盘*。
 +
 
-NOTE: 对于 CIFS 配置，Backup and Recovery 会自动保护连接到保护组中每个虚拟机的每个磁盘。这包括分布在多个 ONTAP 卷或 ONTAP 存储系统上的文件（跨越磁盘）和限于单个位置的文件（非跨越磁盘）。对于 SAN 配置，所有非跨越磁盘都将包含在保护组中。
+NOTE: 对于 CIFS 和 SAN 配置，Backup and Recovery 会自动保护连接到保护组中每个 VM 的每个磁盘。这包括分布在多个 ONTAP 卷或 ONTAP 存储系统（跨越磁盘）上的文件，以及限制在单个位置的文件（非跨越磁盘）。
 
 . 选择“下一步”。
 . 选择要应用于保护组的保护策略。

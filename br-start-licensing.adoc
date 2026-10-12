@@ -18,6 +18,8 @@ summary: 通过从云提供商处购买按需付费或年度市场订阅，或�
 
 有关许可证工作原理的一些注意事项：
 
+* 保护 Microsoft SQL Server 工作负载时，仅对备份到对象存储收取费用（例如，使用 3-2-1 备份体系结构或磁盘到对象存储时）。
+* Oracle Database 工作负载不需要许可证，因为它处于预览发布状态。
 * 使用 ONTAP Volumes 工作负载时，可以在没有许可证的情况下发现和还原卷。但是，如果您需要保护（备份）卷，则需要购买许可证。
 * 如果使用带有 NetApp Console 本地部署的 Backup and Recovery，则只能购买自带许可证 (BYOL) 许可证。
 * NetApp Backup and Recovery自带许可证 (BYOL) 是一种浮动许可证，您可以在与NetApp Console组织或帐户关联的所有系统中使用它。因此，如果您现有的 BYOL 许可证具有足够的备份容量，则无需购买另一个 BYOL 许可证。
