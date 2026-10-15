@@ -3657,7 +3657,6 @@
   <block id="ea7f18044a9efb2ea47bdd370e5870f3" category="example-title">Trident Protect 24.10</block>
   <block id="98d3ce5c789124fc9207b48d4d1e8fc7" category="paragraph">Trident Protect 24.10 不会在数据保护操作期间自动确保 KubeVirt VM 文件系统的一致状态。如果要使用 Trident Protect 24.10 保护 KubeVirt VM 数据，则需要在数据保护操作之前手动为文件系统启用冻结/解冻功能。这可确保文件系统处于一致状态。</block>
   <block id="acb14ba5b70eb330a1d4de9c6b7a325d" category="inline-link-macro">配置虚拟化</block>
-  <block id="5ea5c247812e1dca5ff02ca853f05032" category="paragraph">您可以通过 <block ref="e0dd4c4b8aa16596df6c3f5cb36d3cdc" category="inline-link-macro-rx"></block> 配置 Trident Protect 24.10 来管理数据保护操作期间虚拟机文件系统的冻结和解冻，然后使用以下命令：</block>
   <block id="cedf2576eebff15fc6b30d5a7109eb6b" category="doc">还原和故障转移操作期间的命名空间注释和标签</block>
   <block id="20f40e0b9308901dac07ce8a8efb3350" category="inline-link-macro">OpenShift 安全上下文约束文档</block>
   <block id="59f713e31282fe744caf06335d891f9a" category="inline-link-macro">配置其他 Trident Protect helm 图表设置</block>
@@ -5359,7 +5358,6 @@
   <block id="e2c49b50023b8581ad0e0c1590477c2c" category="paragraph">监视快照、复制、备份和还原作业。配置电子邮件通知并使用 Console Timeline 来调查活动。</block>
   <block id="dfb648ab8bdcaffa1f10f59b16fbdbe6" category="list-text">要显示其他列（系统、存储虚拟机、用户名、工作负载、策略名称、快照标签），请选择加号。</block>
   <block id="f961d5780137e52b38d60d0076cfad03" category="paragraph">可以使用多个筛选器（例如策略、快照标签、操作类型（保护、还原、保留或其他）和保护类型（本地快照、复制或备份到云））来筛选作业监视页面上的操作。</block>
-  <block id="5fe43d3e42037473a1d9dcda6cb5135c" category="paragraph">使用此面板可输入任何资源的自由文本搜索；例如，"volume 1"或"application 3"。您还可以根据下拉菜单中的项目筛选作业列表。</block>
   <block id="69eff9fb541f852de7b410e50792716f" category="paragraph">您可以查看与特定已完成作业对应的详细信息。您可以以 JSON 格式导出特定作业的详细信息。</block>
   <block id="393c89f1515a0c516f0c06ada46600ef" category="paragraph">您可以查看详细信息，例如作业类型（计划或按需）、SnapMirror 备份类型（初始或定期）、开始和结束时间、持续时间、从系统到对象存储的传输数据量、平均传输速率、策略名称、启用的保留锁定、执行的勒索软件扫描、保护源详细信息和保护目标详细信息。</block>
   <block id="61f87e5c880646f5edd955f28644ca18" category="list-text">选择"操作"菜单<block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block>，然后选择"查看详细信息"。</block>
@@ -6191,4 +6189,8 @@
   <block id="004ae5ca2de3ea160e921da76ac388d7" category="list-text">如果多个数据库化身与搜索匹配，请选择具有正确化身的快照。</block>
   <block id="38eb0a9d79c02f31a9749c6e9e2b5e32" category="list-text">如果将 PDB 或表空间还原到特定时间点或 SCN，且归档日志不在配置的位置，请在 *指定外部归档日志文件位置* 字段中指定外部归档日志文件位置。输入以<block ref="6666cd76f96956469e7be39d750cc7d9" prefix=" " category="inline-code"></block>开头的文件系统路径或以<block ref="26b17225b626fb9238849fd60eabdf60" prefix=" " category="inline-code"></block>开头的 ASM 磁盘组。使用文本输入字段旁边的“加号”和“减号”按钮添加或删除位置。当您从无恢复的快照还原时，此字段不会出现。</block>
   <block id="e019cb225a4644922cdd06575b099710" category="section-title">2026年10月12日</block>
+  <block id="cd8c5a4fae99d9a57a4e12c8f43a8a84" category="paragraph">您可以通过 <block ref="7689e703f80621bc0155b88d35cddcc8" category="inline-link-macro-rx"></block> 配置 Trident Protect 24.10 来管理数据保护操作期间虚拟机文件系统的冻结和解冻，然后使用以下命令：</block>
+  <block id="54ea8878308d39d6d78a01f24a278aa1" category="list-text">*作业监视器自定义日期范围筛选*：您现在可以通过从作业监视器中的日历中选择自定义开始和结束日期来搜索过去 90 天的作业。</block>
+  <block id="61065205211a8d57175713e9b45b8198" category="paragraph">使用此面板输入任何资源的自由文本搜索；例如，“卷 1”或“应用程序 3”。您还可以根据下拉菜单中的项目筛选作业列表。您也可以搜索时间范围。</block>
+  <block id="9598a4f2b418f0c49368419070383673" category="paragraph">搜索时间范围时，选择*自定义范围*从日历中选择开始和结束日期。</block>
 </blocks>
