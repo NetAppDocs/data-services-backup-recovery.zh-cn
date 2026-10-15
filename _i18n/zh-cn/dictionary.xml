@@ -584,7 +584,6 @@
   <block id="afedbe20f6822f0dee210eea973a9560" category="list-text">*工作负载类型*：对于此版本，仅 Microsoft SQL Server 可用。</block>
   <block id="8ced46662b7c39f90c1b2041834e629b" category="list-text">*vCenter 设置*：选择现有的 vCenter 或添加新的 vCenter。要添加新的 vCenter，请输入 vCenter FQDN 或 IP 地址、用户名、密码、端口和协议。</block>
   <block id="757f6c0f45e5e6c857597da9d0a937d1" category="admonition">如果要输入 vCenter 信息，请输入 vCenter 设置和主机注册的信息。如果您在这里添加或输入了 vCenter 信息，接下来您还需要在高级设置中添加插件信息。</block>
-  <block id="2b6e241b6ca02934c3d70cbf729b2190" category="list-text">*主机注册*：选择*添加凭据*并输入包含您想要发现的工作负载的主机的信息。</block>
   <block id="9c4b59ad81bef49107c1a8eb04473a44" category="admonition">如果要添加独立服务器而不是 vCenter 服务器，则仅输入主机信息。</block>
   <block id="180f20972969fa31108736a33e1febee" category="list-text">继续高级设置。</block>
   <block id="4f95933eb191bec1d5fda6d14b048ae9" category="list-text">在发现工作负载资源页面中，输入以下信息。</block>
@@ -4714,7 +4713,6 @@
   <block id="4ad36f854b6d4d49c94081fec1b29de2" category="list-text">要跨不同云提供商支持每个系统超过 6 个存储桶（最多 100 个存储桶），需要 ONTAP 9.19.1 或更高版本。</block>
   <block id="59ebd83b4c20d2b24ac46c96525c37fc" category="list-text">ONTAP 9.13.1 或更高版本（需要 ONTAP 9.19.1 或更高版本才能支持跨不同云提供商的每个系统超过 6 个存储桶；最多 100 个存储桶）</block>
   <block id="6a0d2c5dd8e27d910d6ff2158f8d5520" category="list-text">主 ONTAP 系统（ONTAP 9.14.1 或更高版本 - 需要 ONTAP 9.19.1 或更高版本才能支持跨不同云提供商每个系统超过 6 个存储桶；最多 100 个存储桶）</block>
-  <block id="d2bf4d042aabc15b9ccde353c782a6f2" category="list-text">使用 Microsoft Windows Server 2025 时，不支持保护存储在 SAN 存储中的第 2 代虚拟机。</block>
   <block id="b2d5ba8de92c18cbb9c45e01ad3f5509" category="list-text">还原到备用位置（从主、辅助和对象存储）</block>
   <block id="62ff0d9db122207756fd73342a3eb3ad" category="paragraph">NetApp Backup and Recovery 现在支持使用跨不同云提供商的多达 100 个存储桶来保护系统中的工作负载。ONTAP 9.19.1 或更高版本需要支持每个系统超过 6 个存储桶。</block>
   <block id="0d1c49b7f34131be8c6ddbc862cc359d" category="list-text">在可能的情况下，将 HelmChartConfig 文件置于变更控制之下。</block>
@@ -5017,7 +5015,6 @@
   <block id="6dee314e5a8212befbbb5550bcd8c82f" category="paragraph">查看 NetApp Backup and Recovery 中 Hyper-V 工作负载的当前限制和不支持的操作。</block>
   <block id="2320ca4680a90af67c892bc394770545" category="paragraph">NetApp Backup and Recovery 中的 Hyper-V 工作负载不支持以下操作：</block>
   <block id="5ef97381ee778e6a2856d655b0f66fc2" category="list-text">使用来自多个 Hyper-V 主机的虚拟机创建资源组</block>
-  <block id="4b1cae8294562e32be20bab07c14f9bc" category="list-text">跨多个 CIFS 共享使用生成磁盘</block>
   <block id="38ac42adbbba8d3dccfd49459843843b" category="paragraph">查看 NetApp Backup and Recovery 中 Kubernetes 工作负载的当前限制和解决方法。</block>
   <block id="c5e627d3d20d62858bf75231e8a6b069" category="section-title">NetApp Console 本地部署的 Backup and Recovery 预览版限制</block>
   <block id="e5d90e82b6c24e7b1bf837dd1bcb3d30" category="paragraph">如果将应用程序的保护策略更改为使用其他存储区或辅助复制目标，则保护可能会失败。</block>
@@ -5130,9 +5127,7 @@
   <block id="ab01805ccfe371fe51580a961290e0c4" category="paragraph">如果您有 VMware 环境，则此步骤为可选步骤。</block>
   <block id="9b42846cd9771e997a08e3200d79e8e3" category="admonition">如果要输入 vCenter 信息，请输入 vCenter 设置和主机注册信息。如果您在此处添加或输入了 vCenter 信息，则还需要在接下来的高级设置中添加插件信息。</block>
   <block id="6e895abe8a9bc049bbd4b4acc199426d" category="section-title">在发现期间设置高级设置选项并安装插件</block>
-  <block id="b5c6b1b5218957aa87aa0f5da8f67efc" category="paragraph">使用高级设置，您可以在所有注册的服务器上手动安装插件代理。这使您能够将所有 SnapCenter 工作负载导入 NetApp Backup and Recovery，以便您可以在其中管理备份和还原。NetApp Backup and Recovery 显示安装插件所需的步骤。</block>
   <block id="05ec5e0d0ed90b0c5620cefe19c46d67" category="list-text">在"发现资源"页面中，选择右侧的向下箭头，继续进入"高级设置"。</block>
-  <block id="0a51d763335c94619b1bad74ea3fa23d" category="list-text">*输入插件端口号*：输入插件使用的端口号。</block>
   <block id="8cd0810025b90e56e30a8cd2c7647649" category="list-text">*安装路径*：输入将安装插件的路径。</block>
   <block id="9d0a0f1f3ed9f239f57d8c5056d68fae" category="list-text">如果要手动安装 SnapCenter 代理，请选择以下选项：</block>
   <block id="51b2f0bb496d4976f9362c52c90bc7cb" category="list-text">*Use manual installation*：选择此选项可手动安装插件。</block>
@@ -6193,4 +6188,25 @@
   <block id="54ea8878308d39d6d78a01f24a278aa1" category="list-text">*作业监视器自定义日期范围筛选*：您现在可以通过从作业监视器中的日历中选择自定义开始和结束日期来搜索过去 90 天的作业。</block>
   <block id="61065205211a8d57175713e9b45b8198" category="paragraph">使用此面板输入任何资源的自由文本搜索；例如，“卷 1”或“应用程序 3”。您还可以根据下拉菜单中的项目筛选作业列表。您也可以搜索时间范围。</block>
   <block id="9598a4f2b418f0c49368419070383673" category="paragraph">搜索时间范围时，选择*自定义范围*从日历中选择开始和结束日期。</block>
+  <block id="2b8abfeb97d865eaa0365ae5ea904375" category="list-text">*主机注册*：输入以下信息：</block>
+  <block id="2262ff21634c9674e4ff5f4c74bda8cd" category="list-text">主机 FQDN 或 IP 地址</block>
+  <block id="8c212cb55c136cbf08fbff8301a57f9e" category="list-text">主机用于与 Backup and Recovery 进行通信的控制台代理</block>
+  <block id="ffffc5b40a52bf8078bfaa777967b249" category="list-text">为主机存储的凭据</block>
+  <block id="ff35c388a5cbf8ae8f8807f67d1462b3" category="paragraph">如果您尚未将此主机的凭据添加到 NetApp Backup and Recovery，请选择*添加凭据*并输入主机的凭据信息。</block>
+  <block id="0984a9b22a15a2ae7667031dd00e4230" category="paragraph">通过高级设置，您可以在所有正在注册的服务器上手动安装适用于 Microsoft SQL Server 的 NetApp SnapCenter 插件。这样，您就可以将所有 SnapCenter 工作负载导入到 NetApp Backup and Recovery 中，以便在其中管理备份和还原。NetApp Backup and Recovery 会显示安装该插件所需的步骤。</block>
+  <block id="ca670126755dcd34f80e41c964315abf" category="list-text">*插件端口*：输入插件使用的端口号。</block>
+  <block id="2f613600ce95cea85557e892bb8ce093" category="section-title">Microsoft SQL Server 主机发现所需的权限</block>
+  <block id="d39410ece499dd7cb49c6305b59c92f2" category="paragraph">当您发现 SQL Server 主机时，NetApp Backup and Recovery 会在该主机上安装适用于 Microsoft SQL Server 的 NetApp SnapCenter 插件。您也可以选择手动安装此插件。如果您选择自动安装，则在发现期间提供的主机凭据必须具有以下成员资格和权限，以便 Backup and Recovery 可以安装该插件：</block>
+  <block id="bc6f4ea338b05255900e4b0506829f4c" category="list-text">Microsoft SQL Server 实例的<block ref="48a365b4ce1e322a55ae9017f3daf0c0" prefix=" " category="inline-code"></block>固定服务器级角色成员身份</block>
+  <block id="85e3de057dc6005479930eb6aa5b2f79" category="list-text">Windows 本地管理员组的成员身份</block>
+  <block id="2ff43e2a2d5b0aa3489389af408c838a" category="list-text">登录到主机的权限</block>
+  <block id="80d46fed65051869c8128d0c98118592" category="section-title">Oracle Database 主机发现所需的权限</block>
+  <block id="79358627f2feaa4d2338391a918789ac" category="paragraph">当您发现 Oracle 数据库主机时，NetApp Backup and Recovery 会使用基于密码的 SSH 在主机上安装 NetApp Oracle 数据库插件。您也可以选择手动安装此插件。您需要特定的权限才能安装插件。</block>
+  <block id="168489ecd7560d51be74b06b631df49c" category="section-title">使用自动插件安装时的要求</block>
+  <block id="41727149db11b5b52863b15d5def9886" category="paragraph">在发现期间提供的主机凭据必须具有下列权限，以便 Backup and Recovery 可以安装 NetApp Oracle 数据库插件：</block>
+  <block id="1da21a47453ca95a01bd9ec124a97558" category="list-text">Root 权限，或非 root 用户的 sudo 访问权限。要在主机发现期间授予 sudo 访问权限，请在 *Host registration* 部分选择非 root 凭据，然后选择 *Configure sudoers* 并按照说明操作。Root 凭据无需执行此步骤。</block>
+  <block id="8086df899fb70153c36c060c18be25c4" category="list-text">Java JVM 的执行权限。</block>
+  <block id="3e3321c0918c1d68c43253c427d52a85" category="section-title">手动安装插件的要求</block>
+  <block id="bd6c005addd81d8409ae4c84d588f53d" category="paragraph">如果手动安装插件，则用于安装的帐户必须具有下列权限：</block>
+  <block id="901e5d2cf1e185b371f3c54154d4da3c" category="list-text">非 root 用户的 root 权限或 sudo 权限。</block>
 </blocks>

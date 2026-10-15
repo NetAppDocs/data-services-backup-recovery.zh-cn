@@ -263,6 +263,18 @@ NOTE: 不支持保护存储在 NetApp 存储上设置的直通磁盘或 VHD/VHDX
 |===
 
 
+[[required-permissions-for-microsoft-sql-server-host-discovery]]
+=== Microsoft SQL Server 主机发现所需的权限
+
+当您发现 SQL Server 主机时，NetApp Backup and Recovery 会在该主机上安装适用于 Microsoft SQL Server 的 NetApp SnapCenter 插件。您也可以选择手动安装此插件。如果您选择自动安装，则在发现期间提供的主机凭据必须具有以下成员资格和权限，以便 Backup and Recovery 可以安装该插件：
+
+* Microsoft SQL Server 实例的 `sysadmin`固定服务器级角色成员身份
+* Windows 本地管理员组的成员身份
+* 登录到主机的权限
+
+
+
+
 [[requirements-for-protecting-vmware-workloads]]
 == 保护 VMware 工作负载的要求
 
@@ -411,6 +423,33 @@ NOTE: 要跨不同云提供商支持每个系统超过 6 个存储桶（最多 1
 
 
 |===
+
+
+[[required-permissions-for-oracle-database-host-discovery]]
+=== Oracle Database 主机发现所需的权限
+
+当您发现 Oracle 数据库主机时，NetApp Backup and Recovery 会使用基于密码的 SSH 在主机上安装 NetApp Oracle 数据库插件。您也可以选择手动安装此插件。您需要特定的权限才能安装插件。
+
+
+
+==== 使用自动插件安装时的要求
+
+在发现期间提供的主机凭据必须具有下列权限，以便 Backup and Recovery 可以安装 NetApp Oracle 数据库插件：
+
+* Root 权限，或非 root 用户的 sudo 访问权限。要在主机发现期间授予 sudo 访问权限，请在 *Host registration* 部分选择非 root 凭据，然后选择 *Configure sudoers* 并按照说明操作。Root 凭据无需执行此步骤。
+* Java JVM 的执行权限。
+
+
+
+
+==== 手动安装插件的要求
+
+如果手动安装插件，则用于安装的帐户必须具有下列权限：
+
+* 非 root 用户的 root 权限或 sudo 权限。
+* Java JVM 的执行权限。
+
+
 
 
 [[requirements-for-protecting-kubernetes-applications]]
