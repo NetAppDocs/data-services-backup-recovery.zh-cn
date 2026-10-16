@@ -4561,7 +4561,6 @@
   <block id="1ce75b5926383de539d27e838bd74b8a" category="paragraph">有关在 NetApp Backup and Recovery 中执行操作所需的角色和权限的详细信息，请参阅<block ref="04b01782baab49091268802b7f1423cb" category="inline-link-rx"></block>。</block>
   <block id="6bb058e639cecc8051a99e8892400bd8" category="section-title">对象存储备份的要求</block>
   <block id="fc0cba16e06b834a59ea2732ce15d74a" category="section-title">保护 ONTAP 卷工作负载的要求</block>
-  <block id="45b096193f4470968c1063df19d1c253" category="list-text">本地 ONTAP 实例上必须已启用 ONTAP One 许可证。</block>
   <block id="ddaa1c8bd07bda0816a8b44d87c10997" category="paragraph">有关受支持的功能、卷类型、备份和还原目标等信息，请参阅 <block ref="1d638e05920fe33426fac4dc6285a639" category="inline-link-macro-rx"></block>。</block>
   <block id="ba0f269b2bdb85161db3fe51338e6a7b" category="cell">数据库主机</block>
   <block id="bff50f1947dbec1e11bc66d60ca0b1d9" category="cell">支持的存储</block>
@@ -6209,4 +6208,8 @@
   <block id="3e3321c0918c1d68c43253c427d52a85" category="section-title">手动安装插件的要求</block>
   <block id="bd6c005addd81d8409ae4c84d588f53d" category="paragraph">如果手动安装插件，则用于安装的帐户必须具有下列权限：</block>
   <block id="901e5d2cf1e185b371f3c54154d4da3c" category="list-text">非 root 用户的 root 权限或 sudo 权限。</block>
+  <block id="061c095c759eb7e64dd46465f3c7a817" category="paragraph">在 Backup and Recovery 中发现 ONTAP 系统之前，请确保您具备以下条件：</block>
+  <block id="5df6bd1a45bdd2a4028f468e490de21e" category="list-text">请确保已在本地 ONTAP 实例上启用 ONTAP One 许可证。</block>
+  <block id="74fbbc0e09dfc08bd2ae9fa2fa257555" category="list-text">确保为用于发现 ONTAP 系统的 ONTAP 用户启用 AMQP 应用程序作为<block ref="dc647eb65e6711e155375218212b3964" prefix=" " category="inline-code"></block>登录方法。这使得计划的备份作业能够显示在 Job Monitor 中。有关用户管理说明，请参阅<block ref="08349f0e2e31cf6e59517a8789874b25" category="inline-link-rx"></block>。</block>
+  <block id="2a6990e4544c8a19dcf0e20cd83f5c68" category="paragraph">某些 ONTAP 功能需要特定的 ONTAP 版本：</block>
 </blocks>

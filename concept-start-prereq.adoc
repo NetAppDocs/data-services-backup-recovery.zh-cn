@@ -157,6 +157,14 @@ link:br-start-enable.html#enable-backup-and-recovery-in-netapp-console-local-dep
 
 要对 ONTAP 卷工作负载使用 NetApp Backup and Recovery，您需要满足以下先决条件。
 
+在 Backup and Recovery 中发现 ONTAP 系统之前，请确保您具备以下条件：
+
+* 请确保已在本地 ONTAP 实例上启用 ONTAP One 许可证。
+* 确保为用于发现 ONTAP 系统的 ONTAP 用户启用 AMQP 应用程序作为 `Password`登录方法。这使得计划的备份作业能够显示在 Job Monitor 中。有关用户管理说明，请参阅 https://docs.netapp.com/us-en/ontap/manage-users-groups-host-specific-task.html#manage-unix-users["ONTAP 文档"^]。
+
+
+某些 ONTAP 功能需要特定的 ONTAP 版本：
+
 [cols="2,1"]
 |===
 | 功能 | 所需的 ONTAP 版本 
@@ -176,9 +184,6 @@ link:br-start-enable.html#enable-backup-and-recovery-in-netapp-console-local-dep
 
 | 在不同的云提供商中，每个系统使用 6 个以上的存储桶（最多 100 个） | 9.19.1 或更高版本 
 |===
-
-NOTE: 本地 ONTAP 实例上必须已启用 ONTAP One 许可证。
-
 有关受支持的功能、卷类型、备份和还原目标等信息，请参阅 link:prev-ontap-protect-overview.html["保护您的ONTAP卷数据"]。
 
 
