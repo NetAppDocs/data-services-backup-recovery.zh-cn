@@ -5013,7 +5013,6 @@
   <block id="c234b1583acaea4fed0749d70c41d549" category="listing-title">监控，直至&lt;code&gt;状态&lt;/code&gt;为&lt;code&gt;COMPLETED&lt;/code&gt;：</block>
   <block id="6dee314e5a8212befbbb5550bcd8c82f" category="paragraph">查看 NetApp Backup and Recovery 中 Hyper-V 工作负载的当前限制和不支持的操作。</block>
   <block id="2320ca4680a90af67c892bc394770545" category="paragraph">NetApp Backup and Recovery 中的 Hyper-V 工作负载不支持以下操作：</block>
-  <block id="5ef97381ee778e6a2856d655b0f66fc2" category="list-text">使用来自多个 Hyper-V 主机的虚拟机创建资源组</block>
   <block id="38ac42adbbba8d3dccfd49459843843b" category="paragraph">查看 NetApp Backup and Recovery 中 Kubernetes 工作负载的当前限制和解决方法。</block>
   <block id="c5e627d3d20d62858bf75231e8a6b069" category="section-title">NetApp Console 本地部署的 Backup and Recovery 预览版限制</block>
   <block id="e5d90e82b6c24e7b1bf837dd1bcb3d30" category="paragraph">如果将应用程序的保护策略更改为使用其他存储区或辅助复制目标，则保护可能会失败。</block>
@@ -5110,7 +5109,6 @@
   <block id="0da8b01ff90ac6c56d271760e3cae180" category="list-text">有关将所选非 root 用户添加到 Oracle 数据库主机上的 sudoers 文件的说明，请选择 *Configure sudoers*。</block>
   <block id="91acd102eb682e81c6d3b35f15584ce9" category="paragraph">NetApp Backup and Recovery 通过 SSH 连接到每个主机以自动安装插件。当以下任一情况适用时，启用*使用手动安装*：</block>
   <block id="f4de6ef110c2809c2cea661247d6cb3b" category="admonition">添加资源可能需要几分钟的时间。要查看进度，请在库存页面底部的状态对话框中选择 *Track progress*，或从左侧导航栏中选择 *Monitoring*。</block>
-  <block id="f3436bbdd5970784a88deadec1e68fca" category="paragraph">Oracle 数据库工作负载显示在"清单"页面的工作负载列表中。</block>
   <block id="967daf4999f1b34597e41a06dcbebb8d" category="list-text">选择一个工作负载磁贴（例如，Oracle 数据库）。</block>
   <block id="f23a00db51eb125b74f1083a222aa335" category="list-text">查看数据保护的运行状况。根据新发现、受保护和备份的工作负载，高风险或受保护工作负载的数量会增加。</block>
   <block id="481bf56c7b5ff0737dc345dbd4230f02" category="paragraph">在 NetApp Backup and Recovery 中发现 Microsoft SQL Server 工作负载，以便可以保护和还原它们。如果已使用 SnapCenter，还可以导入现有备份数据和策略。</block>
@@ -6201,15 +6199,29 @@
   <block id="2ff43e2a2d5b0aa3489389af408c838a" category="list-text">登录到主机的权限</block>
   <block id="80d46fed65051869c8128d0c98118592" category="section-title">Oracle Database 主机发现所需的权限</block>
   <block id="79358627f2feaa4d2338391a918789ac" category="paragraph">当您发现 Oracle 数据库主机时，NetApp Backup and Recovery 会使用基于密码的 SSH 在主机上安装 NetApp Oracle 数据库插件。您也可以选择手动安装此插件。您需要特定的权限才能安装插件。</block>
-  <block id="168489ecd7560d51be74b06b631df49c" category="section-title">使用自动插件安装时的要求</block>
   <block id="41727149db11b5b52863b15d5def9886" category="paragraph">在发现期间提供的主机凭据必须具有下列权限，以便 Backup and Recovery 可以安装 NetApp Oracle 数据库插件：</block>
-  <block id="1da21a47453ca95a01bd9ec124a97558" category="list-text">Root 权限，或非 root 用户的 sudo 访问权限。要在主机发现期间授予 sudo 访问权限，请在 *Host registration* 部分选择非 root 凭据，然后选择 *Configure sudoers* 并按照说明操作。Root 凭据无需执行此步骤。</block>
   <block id="8086df899fb70153c36c060c18be25c4" category="list-text">Java JVM 的执行权限。</block>
-  <block id="3e3321c0918c1d68c43253c427d52a85" category="section-title">手动安装插件的要求</block>
-  <block id="bd6c005addd81d8409ae4c84d588f53d" category="paragraph">如果手动安装插件，则用于安装的帐户必须具有下列权限：</block>
-  <block id="901e5d2cf1e185b371f3c54154d4da3c" category="list-text">非 root 用户的 root 权限或 sudo 权限。</block>
   <block id="061c095c759eb7e64dd46465f3c7a817" category="paragraph">在 Backup and Recovery 中发现 ONTAP 系统之前，请确保您具备以下条件：</block>
   <block id="5df6bd1a45bdd2a4028f468e490de21e" category="list-text">请确保已在本地 ONTAP 实例上启用 ONTAP One 许可证。</block>
   <block id="74fbbc0e09dfc08bd2ae9fa2fa257555" category="list-text">确保为用于发现 ONTAP 系统的 ONTAP 用户启用 AMQP 应用程序作为<block ref="dc647eb65e6711e155375218212b3964" prefix=" " category="inline-code"></block>登录方法。这使得计划的备份作业能够显示在 Job Monitor 中。有关用户管理说明，请参阅<block ref="08349f0e2e31cf6e59517a8789874b25" category="inline-link-rx"></block>。</block>
   <block id="2a6990e4544c8a19dcf0e20cd83f5c68" category="paragraph">某些 ONTAP 功能需要特定的 ONTAP 版本：</block>
+  <block id="b81cecd98ea4b4f80df7b99bd8f7480e" category="paragraph">*Oracle Data Guard 支持*：NetApp Backup and Recovery 现在支持使用保护组来保护使用 Oracle Data Guard 实现高可用性的主数据库和备用数据库。</block>
+  <block id="a1f64a2f11ad0edebf465c430dceffb3" category="list-text">NetApp Backup and Recovery 当前不支持保护托管在 FlexGroup 卷上的 Hyper-V LUN。</block>
+  <block id="2ff849b2bfb227ca5861a726eac745c4" category="list-text">无法使用来自多个 Hyper-V 主机的虚拟机创建资源组。</block>
+  <block id="d4877862cff89c6cc177b4a6402a008d" category="paragraph">Oracle 数据库主机显示在“清单”页面的工作负载列表中。</block>
+  <block id="0b988f352bf3178a56bb9dbb7aa6f591" category="section-title">查看 Oracle 数据库清单</block>
+  <block id="13b17d82aa76831194bc5fedd9ef5155" category="paragraph">查看有关您在备份和恢复清单中发现的 Oracle 数据库资源的详细信息。</block>
+  <block id="ef09861f0e356e1256cc79b90af82a9c" category="list-text">要查看发现的 Oracle 数据库主机，请选择 *主机* 选项卡。</block>
+  <block id="acb5a0c1d6543fd64291bcd931b0212a" category="paragraph">您可以使用此视图查看详细信息，例如每个主机名、每个主机托管的数据库数量、部署模型（例如集群、Oracle Data Guard 或独立）以及其他信息。</block>
+  <block id="5ef22a9f4e63d5ea6dccdceaf60cc129" category="list-text">要查看为保护 Oracle 数据库资源而创建的保护组，请选择*保护组*选项卡。</block>
+  <block id="4636080fe3dd6af1a05f50e6b8612fcd" category="list-text">要查看每个 Oracle 数据库主机托管的数据库，请选择*数据库*选项卡。</block>
+  <block id="88b5a8e3aeecbee62ee44ae9949af352" category="paragraph">此视图显示详细信息，包括每个数据库是单个实例还是集群或高可用性配置的一部分。</block>
+  <block id="c567e32a931e50ea00e322c45bada4f9" category="list-text">选择要应用于保护组的*备份策略*。如果包含的数据库是 Oracle Data Guard 配置的一部分，请选择启用了 Data Guard 选项的备份策略。</block>
+  <block id="e07c044b43b8ab05fce956dd78928ec0" category="list-text">*Data Guard 设置*：选择是否要在策略中启用 Data Guard 设置，并在保护 Oracle Data Guard 部署中的数据库时选择是否备份主、辅助或主和辅助。您可以使用保护组来保护 Oracle Data Guard 部署中的数据库。</block>
+  <block id="debe14f2792fef47d8b9076e14c82cb3" category="section-title">插件安装要求</block>
+  <block id="3cf57a2a4d07542c89b05ad643bb219e" category="list-text">使用 SSH 登录主机的能力。</block>
+  <block id="1bcf5153145f75a86a1ad16ea9b03c7a" category="list-text">Root 权限，或非 root 用户的 sudo 访问权限。</block>
+  <block id="5b82c5e93eb556ac924b1e6909752359" category="list-text">要在主机发现期间授予 sudo 访问权限，请在*主机注册*部分中选择非 root 凭据，然后选择*配置 sudoers*并按照说明操作。root 凭据不需要此步骤。手动安装不需要此步骤。</block>
+  <block id="41550faf0c68179011d757996fd6d047" category="list-text">Oracle 数据库用户需要 <block ref="4811df2c83bee7ee3a883640cc4d80af" prefix="" category="inline-code"></block> 权限。</block>
+  <block id="5d3eb6919efa937c33d95e081b5ac2fc" category="section-title">2026年10月19日</block>
 </blocks>

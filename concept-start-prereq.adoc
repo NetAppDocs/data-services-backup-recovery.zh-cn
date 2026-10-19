@@ -437,22 +437,18 @@ NOTE: 要跨不同云提供商支持每个系统超过 6 个存储桶（最多 1
 
 
 
-==== 使用自动插件安装时的要求
+==== 插件安装要求
 
 在发现期间提供的主机凭据必须具有下列权限，以便 Backup and Recovery 可以安装 NetApp Oracle 数据库插件：
 
-* Root 权限，或非 root 用户的 sudo 访问权限。要在主机发现期间授予 sudo 访问权限，请在 *Host registration* 部分选择非 root 凭据，然后选择 *Configure sudoers* 并按照说明操作。Root 凭据无需执行此步骤。
+* 使用 SSH 登录主机的能力。
+* Root 权限，或非 root 用户的 sudo 访问权限。
++
+** 要在主机发现期间授予 sudo 访问权限，请在*主机注册*部分中选择非 root 凭据，然后选择*配置 sudoers*并按照说明操作。root 凭据不需要此步骤。手动安装不需要此步骤。
+
+
 * Java JVM 的执行权限。
-
-
-
-
-==== 手动安装插件的要求
-
-如果手动安装插件，则用于安装的帐户必须具有下列权限：
-
-* 非 root 用户的 root 权限或 sudo 权限。
-* Java JVM 的执行权限。
+* Oracle 数据库用户需要 `SYSDBA` 权限。
 
 
 

@@ -42,7 +42,7 @@ summary: 在 NetApp Backup and Recovery 中为 Oracle Database 工作负载创�
 . 为保护组提供一个名称。
 . 选择要包含在保护组中的数据库。
 . 选择“下一步”。
-. 选择要应用于保护组的*备份策略*。
+. 选择要应用于保护组的*备份策略*。如果包含的数据库是 Oracle Data Guard 配置的一部分，请选择启用了 Data Guard 选项的备份策略。
 +
 如果要创建策略，请选择*创建新策略*并按照提示创建策略。看link:br-use-policies-create.html["创建策略"]了解更多信息。
 
