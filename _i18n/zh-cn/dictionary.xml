@@ -6196,15 +6196,12 @@
   <block id="d2ebbd36608739936bb939c9de72a23a" category="paragraph">在本版本中，NetApp Backup and Recovery 为 Kubernetes 工作负载引入了以下增强功能：</block>
   <block id="cc7c8e0fe116e37f04e0ad62644d821b" category="list-text">*Trident Protect 26.10*：此版本包括 Trident Protect 26.10。</block>
   <block id="ca663f12e620da9687b7846a60e5d2e7" category="list-text">*ontap-nas-economy 和 ontap-san-economy 驱动程序支持*：您现在可以保护由 NetApp Trident<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驱动程序（Qtrees）和<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 驱动程序（LUNs）配置的持久卷声明（PVCs）。当您使用 economy 驱动程序保护 PVC 时，整个底层 FlexVol 或 LUN 都会受到保护。您可以从这些备份还原单个 PVC。</block>
-  <block id="d3ea67062b764fc121c2313921544714" category="list-text">*Kubernetes 感知警报*：NetApp Console 现在每个 Kubernetes 应用程序发送一次 Kubernetes 警报，而不是每个卷发送一次。</block>
   <block id="56763801785ca9815df36fb133a8847a" category="list-text">*卷组快照支持*：现在可以在定义 Kubernetes 应用程序时创建卷组。卷组使您能够以崩溃一致性集的形式为多个卷一起创建快照，从而确保组中所有卷的数据一致性。</block>
   <block id="1d458bfacd6d519628c6da6c1cb44452" category="list-text">*S3 兼容的对象存储支持*：您现在可以通过添加备份目标凭据和配置保护策略，将 Kubernetes 应用程序资源和数据备份到 S3 兼容的对象存储中。</block>
   <block id="c49afcf4c9d7fb7f9e3e56e33e3ed3a8" category="paragraph">在本版本中，NetApp Backup and Recovery 为 ONTAP 卷工作负载引入了以下增强功能：</block>
   <block id="c087f837ef797de43d9ebd1a7d125236" category="list-text">*保护报告*：NetApp Backup and Recovery 现在支持为 ONTAP 卷工作负载创建和下载扩展报告。</block>
-  <block id="b9ba826047adb428b13135e4a8370ce8" category="list-text">*选择在注销 ONTAP 系统时是否保留备份*：从 NetApp Backup and Recovery 注销 ONTAP 系统时，您现在可以选择放弃以前备份的数据或保留这些数据以便用于还原。NetApp Backup and Recovery 文档现在包含了在系统注销后还原所保留数据的说明。</block>
   <block id="147e4e035d3742c8a163c4282707c86d" category="inline-link">注销系统的备份和恢复</block>
   <block id="113ea0f6ada6e0a0faeef3e476b36daa" category="paragraph">有关更多详细信息，请参阅<block ref="d430b7e541ef6ef0ab6b72278c77300c" category="inline-link-rx"></block>。</block>
-  <block id="4218ebde887e47d99313814e89fca1dc" category="paragraph">在本版本中，在本版本中，NetApp Backup and Recovery 为 Oracle 数据库工作负载引入了以下增强功能：</block>
   <block id="d2a0591e201dfac56fdea850632dc8e3" category="paragraph">*还原到备用位置*：NetApp Backup and Recovery 现在支持将 Oracle 数据库还原到备用位置（不同的注册主机）。</block>
   <block id="497cd988427d83c8811290c97c318790" category="paragraph">在使用 NetApp Backup and Recovery 之前，请配置您的备份目标（Amazon Web Services （AWS） S3、ONTAP S3、S3 兼容的对象存储、Microsoft Azure Blob 存储、Google Cloud Storage 或 StorageGRID）。</block>
   <block id="512c8a19583567b0c60a6d4046e3fc9d" category="list-text">选择可用的备份目标类型之一：*AWS*、*Azure*、*StorageGRID*、*ONTAP S3*、*S3 兼容*或 *GCP*。</block>
@@ -6267,4 +6264,10 @@
   <block id="5b18e7c216c868ae1b7c4df44ba6df58" category="inline-link">snapmirror restore</block>
   <block id="399d4101cbf520dcec67f680dbf4ad81" category="list-text"><block ref="399d4101cbf520dcec67f680dbf4ad81" category="inline-link-rx"></block></block>
   <block id="b0609734250ba6ba4d0839963ce55146" category="section-title">2026年10月26日</block>
+  <block id="4a8e16ca8f9ac4cf8211bb73ba343c77" category="list-text">*Kubernetes 感知警报*：警报现在每个 Kubernetes 应用程序发送一次，而不是每个卷发送一次。</block>
+  <block id="63de886f7a210d9ff98f81faf2fdfe35" category="paragraph">要了解有关保护 Kubernetes 工作负载的详细信息，请参阅<block ref="9502c762ebba5ed034c7cd34473d06a9" category="inline-link-rx"></block>。</block>
+  <block id="5f26b02e379625a9c6c7ab3ff61f6ac2" category="list-text">*注销 ONTAP 系统时保留备份*：从 NetApp Backup and Recovery 注销 ONTAP 系统时，您现在可以选择丢弃以前备份的数据或保留这些数据以供恢复。NetApp Backup and Recovery 文档现在包含有关在系统注销后使用 ONTAP CLI 恢复保留数据的说明。</block>
+  <block id="6d572acb72c5f88a011bfcc18bed3f7c" category="paragraph">要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅<block ref="24d237f3bd3266db09db22a59e1e6ebf" category="inline-link-rx"></block>。</block>
+  <block id="f43f719a34848bc68a0e2e9868d020db" category="paragraph">在本版本中，NetApp Backup and Recovery 为 Oracle Database 工作负载引入了以下增强功能：</block>
+  <block id="98c9ad4f11120c6a90c4a25b439d1228" category="paragraph">要了解有关保护 Oracle Database 工作负载的详细信息，请参阅<block ref="ce12149fe5cc827258d1b858aab8e2cc" category="inline-link-rx"></block>。</block>
 </blocks>
