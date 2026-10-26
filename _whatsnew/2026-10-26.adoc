@@ -1,0 +1,45 @@
+= Kubernetes 工作负载增强功能
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes 工作负载增强功能
+
+在本版本中，NetApp Backup and Recovery 为 Kubernetes 工作负载引入了以下增强功能：
+
+* *Trident Protect 26.10*：此版本包括 Trident Protect 26.10。
+* *ontap-nas-economy 和 ontap-san-economy 驱动程序支持*：您现在可以保护由 NetApp Trident `ontap-nas-economy` 驱动程序（Qtrees）和 `ontap-san-economy` 驱动程序（LUNs）配置的持久卷声明（PVCs）。当您使用 economy 驱动程序保护 PVC 时，整个底层 FlexVol 或 LUN 都会受到保护。您可以从这些备份还原单个 PVC。
+* *Kubernetes 感知警报*：NetApp Console 现在每个 Kubernetes 应用程序发送一次 Kubernetes 警报，而不是每个卷发送一次。
+* *卷组快照支持*：现在可以在定义 Kubernetes 应用程序时创建卷组。卷组使您能够以崩溃一致性集的形式为多个卷一起创建快照，从而确保组中所有卷的数据一致性。
+* *S3 兼容的对象存储支持*：您现在可以通过添加备份目标凭据和配置保护策略，将 Kubernetes 应用程序资源和数据备份到 S3 兼容的对象存储中。
+
+
+要了解有关保护 Kubernetes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["了解如何通过 NetApp Backup and Recovery 保护 Kubernetes 工作负载"]。
+
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== ONTAP Volumes 工作负载增强
+
+在本版本中，NetApp Backup and Recovery 为 ONTAP 卷工作负载引入了以下增强功能：
+
+* *保护报告*：NetApp Backup and Recovery 现在支持为 ONTAP 卷工作负载创建和下载扩展报告。
+* *选择在注销 ONTAP 系统时是否保留备份*：从 NetApp Backup and Recovery 注销 ONTAP 系统时，您现在可以选择放弃以前备份的数据或保留这些数据以便用于还原。NetApp Backup and Recovery 文档现在包含了在系统注销后还原所保留数据的说明。
+
+
+有关更多详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html#unregister-netapp-backup-and-recovery-for-a-system["注销系统的备份和恢复"^]。
+
+要了解有关保护 ONTAP Volumes 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["了解使用 NetApp Backup and Recovery 的 ONTAP 卷保护"]。
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Oracle Database 工作负载增强
+
+在本版本中，在本版本中，NetApp Backup and Recovery 为 Oracle 数据库工作负载引入了以下增强功能：
+
+*还原到备用位置*：NetApp Backup and Recovery 现在支持将 Oracle 数据库还原到备用位置（不同的注册主机）。
+
+要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。

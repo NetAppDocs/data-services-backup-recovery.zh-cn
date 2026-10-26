@@ -506,15 +506,6 @@
   <block id="7db92dd7efdf06d451de19b3781f8e9c" category="list-text">*标签*：选择 S3 存储桶的标签。标签是可用于组织和管理 S3 资源的键值对。</block>
   <block id="2e0fcab1edb478e0ed60f14f18213876" category="list-text">*加密*：选择 S3 存储桶的加密类型。选项是 AWS S3 管理密钥或 AWS 密钥管理服务密钥。如果您选择 AWS Key Management Service 密钥，则必须提供密钥 ID。</block>
   <block id="041e82a49e6bf584cd99d83e1bafb066" category="list-text">*资源组*：选择 Azure 资源组的名称。</block>
-  <block id="ae35608efd65bb3b4a4c91d9eb59142d" category="list-text">*实例详情*：</block>
-  <block id="fc20d9e6ed90928d9ec3cbce5033eb69" category="list-text">*存储桶名称*：输入StorageGRID桶的名称。</block>
-  <block id="fb0a62ab3a9d8a07269344d7b23f7f5a" category="list-text">*区域*：输入存储桶的StorageGRID区域。</block>
-  <block id="b7fd04780555fe4dcbc36171fb2c2e75" category="list-text">*启用版本控制*：选择此选项可为StorageGRID桶启用版本控制。版本控制使您能够在存储桶中保留对象的多个版本，这对于备份和恢复目的很有用。</block>
-  <block id="dd72147c676f5569cdd5fff6ac028f32" category="list-text">*对象锁定*：选择此选项可为StorageGRID桶启用对象锁定。对象锁定可防止对象在指定的保留期内被删除或覆盖，从而提供额外的数据保护层。您只能在创建存储桶时启用此功能，并且以后无法将其关闭。</block>
-  <block id="6031dc56db006b45d651306df278faab" category="list-text">*容量*：输入StorageGRID桶的容量。这是存储桶中可以存储的最大数据量。</block>
-  <block id="c6321a7b8f7062e1faad1738a74c7b18" category="list-text">*容量*：输入ONTAP S3 存储桶的容量。这是存储桶中可以存储的最大数据量。</block>
-  <block id="12ea5f17a4629e89577f5d94a91cf1b0" category="list-text">*启用版本控制*：选择此选项可为ONTAP S3 存储桶启用版本控制。版本控制使您能够在存储桶中保留对象的多个版本，这对于备份和恢复目的很有用。</block>
-  <block id="121844aa2e3824e5ec649efe8e79f965" category="list-text">*对象锁定*：选择此选项可为ONTAP S3 存储桶启用对象锁定。对象锁定可防止对象在指定的保留期内被删除或覆盖，从而提供额外的数据保护层。您只能在创建存储桶时启用此功能，并且以后无法将其关闭。</block>
   <block id="b4f88e9494ba01afc4abc87164a307eb" category="section-title">更改备份目标的凭据</block>
   <block id="784e8d94d56b7cca4512442d67485233" category="paragraph">输入访问备份目标所需的凭据。</block>
   <block id="500085ef4daa2d41e99c68f5d7ced622" category="list-text">输入备份目标的新凭据。根据您选择的备份目标类型，信息会有所不同。</block>
@@ -1158,7 +1149,6 @@
   <block id="e9bde7b168cf5fbb3d9d5b297ca8bfb2" category="list-text">选择*从没有恢复的快照中恢复*。</block>
   <block id="f3d19f008b19feab896904cb50b1a321" category="list-text">*后记*：可选地，启用此选项并输入应在恢复操作后运行的脚本的完整路径以及该脚本所采用的任何参数。</block>
   <block id="b82be1f9be4e926901513f5106f48a87" category="summary">在NetApp Backup and Recovery中，创建您自己的策略来控制备份频率、备份时间以及保留的备份文件数量。</block>
-  <block id="e10aa0ad03a30aedbdc16bf5e8954db5" category="admonition">其中一些选项和配置部分并不适用于所有工作负载。</block>
   <block id="f32ce25b9d7e6b0f57abe3fec295f863" category="inline-link-macro">SnapCenter与NetApp Backup and Recovery之间的策略差异</block>
   <block id="5ccfa6adf604407ae2c4559222331c92" category="paragraph">如果从SnapCenter导入资源，您可能会发现SnapCenter中使用的策略与NetApp Backup and Recovery中使用的策略存在一些差异。看<block ref="323b251497d754074219cdf246ce74d7" category="inline-link-macro-rx"></block>。</block>
   <block id="bd47823121834a26ffa455589637515d" category="paragraph">您可以实现以下与政策相关的目标：</block>
@@ -1897,7 +1887,6 @@
   <block id="6520b079587db54a07f00ca17e5ebf3f" category="admonition">如果您计划删除具有备份的系统或集群，则必须在删除系统之前删除备份。当您删除系统时， NetApp Backup and Recovery不会自动删除备份，并且 UI 中当前不支持在删除系统后删除备份。您将继续为任何剩余的备份支付对象存储费用。</block>
   <block id="62fcab4349f4ca0402c709f1892d15bf" category="section-title">删除系统的所有备份文件</block>
   <block id="990222def8053839fd07dd4a3c81e9dc" category="inline-xref">如此处所述</block>
-  <block id="390711dbf9b1194e9b19351d96031550" category="paragraph">删除系统对象存储上的所有备份并不会禁用该系统中卷的未来备份。如果要停止创建系统中所有卷的备份，您可以停用备份<block ref="f79da60ab60aec0656411209a64eca6e" category="inline-xref-macro-rx"></block>。</block>
   <block id="29e9cf7ef22475594ad87c1e6e2499e4" category="list-text">选择<block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>对于要删除所有备份的系统，然后选择*删除所有备份*。</block>
   <block id="5eb0ad26e5b73df4b25640fc4cecc8b5" category="list-text">在确认对话框中，输入系统的名称。</block>
   <block id="b2efc38b6f353a6ab5275e1b97a3207b" category="list-text">选择“高级设置”。</block>
@@ -1918,21 +1907,9 @@
   <block id="1173c80b35af26bafcc4b74670bfa9c8" category="inline-link">从那里删除卷</block>
   <block id="8e219be71b8bc390ef2ad2ec3a99ccae" category="paragraph">您无法从NetApp Backup and Recovery用户界面删除源卷。但是，您可以打开控制台*系统*页面上的卷详细信息页面，然后<block ref="65a826e779230e29e5ca1795b6b89aba" category="inline-link-rx"></block>。</block>
   <block id="07351083dae4540a45ff30e023e217c2" category="list-text">从“卷”选项卡中选择<block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>对于源卷，然后选择*备份*&gt;*删除关系*。</block>
-  <block id="97966562c30303c0bc168db1ef4e82e6" category="section-title">停用系统的NetApp Backup and Recovery</block>
   <block id="8764d766d622ae40812776b15d742a79" category="inline-xref">删除备份</block>
   <block id="150316ac807c8abc9de05ff5720178a5" category="paragraph">请注意，除非您<block ref="f0fba6094ff5354e1300b0446d643e3c" category="inline-xref-macro-rx"></block>。</block>
-  <block id="a0fb50abe315f82d405a6dfa5e9af373" category="list-text">从“备份设置”页面中选择<block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>对于您想要禁用备份的系统，然后选择*停用备份*。</block>
-  <block id="ea2a76f4405b6e362502ec8a74d85774" category="list-text">在确认对话框中，选择*停用*。</block>
-  <block id="8f7dcbf976c2b6952c4600f157324198" category="admonition">当备份被禁用时，该系统会出现一个“激活备份”按钮。当您想要重新启用该系统的备份功能时，可以选择此按钮。</block>
   <block id="c7f20e0601efa026bf0dd9479de3f55e" category="section-title">取消注册系统的NetApp Backup and Recovery</block>
-  <block id="36d567455db793edde5264e68c28c75a" category="paragraph">如果您不再想使用备份功能并且不想再为该系统的备份付费，则可以取消注册NetApp Backup and Recovery 。通常，当您计划删除系统并想要取消备份服务时使用此功能。</block>
-  <block id="15c7aac94228eb0c1ad110f50335500c" category="paragraph">如果您想更改存储集群备份的目标对象存储，也可以使用此功能。取消注册系统的NetApp Backup and Recovery后，您可以使用新的云提供商信息为该集群启用NetApp Backup and Recovery 。</block>
-  <block id="28b9d28e040edb153420aaa034a386c1" category="paragraph">在取消注册NetApp Backup and Recovery之前，您必须按顺序执行以下步骤：</block>
-  <block id="39b3af400d3ca8b2d3d8dca4f75cd99e" category="list-text">停用系统的NetApp Backup and Recovery</block>
-  <block id="59aea9f6f5073dc62e11916d7a07492f" category="list-text">删除该系统的所有备份</block>
-  <block id="f7ae31ad4a6513f59e6103af4d0c2230" category="paragraph">这两个操作完成之前，取消注册选项不可用。</block>
-  <block id="1c87fb51fed9ca5989cc401564c7fcb2" category="list-text">从“备份设置”页面中选择<block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>对于您想要取消注册备份服务的系统，然后选择*取消注册*。</block>
-  <block id="7c89aa28480fddd6d4128cbe73ba1804" category="list-text">在确认对话框中，选择*取消注册*。</block>
   <block id="cb261d232a70015577ae3c5052a9ba56" category="doc">使用NetApp Backup and Recovery将本地ONTAP数据备份到 Amazon S3</block>
   <block id="0c0bf2caafe0a0bcf95f58c110265658" category="admonition">“本地ONTAP系统”包括FAS、 AFF和ONTAP Select系统。</block>
   <block id="e1e487d9ff52c7741cc25ee4b1ff06ea" category="section-title">识别连接方法</block>
@@ -4079,7 +4056,6 @@
   <block id="cab9c79c2324192af6049aa8cd78508d" category="list-text">*还原到备用存储系统*：即使原始（主）存储系统完全不可用，您现在也可以将虚拟机还原到备用存储系统。有关详细信息，请参阅<block ref="f3d02f39d5e1822fd83675aa2d7843de" category="inline-link-rx"></block>。</block>
   <block id="9486b4129634e76f84d1e52fbd1b3326" category="inline-link">还原文件和文件夹</block>
   <block id="19e7d45c6bedb302dc81dcad6024f1c3" category="list-text">*将文件还原到 Linux VM*：您现在可以将 VM 文件和文件夹还原到 Linux VM。有关详细信息，请参阅<block ref="d14b743b42535a5def60386aae0617f3" category="inline-link-rx"></block>。</block>
-  <block id="e75ea37e96b8396fc26e7835fb754851" category="list-text">从可用的备份目标类型中选择一种：*AWS*、*Azure*、*StorageGRID*、*ONTAP S3* 或 *GCP*。</block>
   <block id="c6ef992c54853d072b258e289ef08dd0" category="list-text">（仅适用于 AWS 和 Azure 备份目标）在 *选择凭据位置* 部分，选择凭据所在的位置，然后选择如何关联凭据。</block>
   <block id="3d138696a1e858f52942d736c24c1bd5" category="list-text">对于 GCP：</block>
   <block id="b2f385fda6ddca9e16bfe40b90994155" category="list-text">*凭据名称*：输入 Google Cloud 凭据名称。</block>
@@ -4088,7 +4064,6 @@
   <block id="b054d8e2a18fe4e350f13d024953aa8f" category="list-text">*存储桶名称*：输入 Google Cloud 存储桶的名称。</block>
   <block id="d4e12036c5885fe3db728e0ff90b2385" category="list-text">*GCP 项目*：选择 Google Cloud 项目的名称。</block>
   <block id="c4366421a636f973ac0a44746588f3f0" category="list-text">*存储桶区域*：为 Google Cloud 存储桶选择一个区域。</block>
-  <block id="7a39559ae62ff6325a41e1d2e21ae805" category="list-text">*对象锁定*：选择此选项可启用此存储桶中对象的保留期。在保留期有效期间，无法修改或删除对象，并且在期限到期之前不可变。如果为存储桶启用此选项，则无法将其关闭。</block>
   <block id="8e3ed50707ba6a187fccaa3ddd0a90cb" category="list-text">选择 *Original location* 窗格。当您还原到原始位置时，您可以通过展开 *Destination settings* 部分查看目标设置，但不能更改它们。</block>
   <block id="bd388205d06a997206a3077f6f06b20b" category="section-title">还原 KVM 虚拟机</block>
   <block id="bcc1225a04b96d25ceeaa1d2157718ae" category="list-text">在 *Post-restore options* 部分中，启用 *Restart virtual machine* 选项以在还原操作完成后重新启动 VM。</block>
@@ -4196,7 +4171,6 @@
   <block id="24a354b4e93e0d1659baa023a11ddcda" category="inline-xref">删除此卷的所有备份文件</block>
   <block id="6a9a9c5f060efdfcbe5e8180b067f48a" category="admonition">删除备份关系后，无法删除单个卷备份文件。但是，您可以<block ref="3808038aea69a954ce325a28d1d98875" category="inline-xref-macro-rx"></block>。</block>
   <block id="a251d9e6fa7397f3631b218bdece2a5c" category="admonition">删除备份关系后，无法删除单个卷备份文件。但是，可以<block ref="3808038aea69a954ce325a28d1d98875" category="inline-xref-macro-rx"></block>。如果需要删除卷的备份关系，请确保首先删除卷的备份，然后删除备份关系。</block>
-  <block id="015c04742dc48d5005ee2eea17467386" category="paragraph">停用系统的 NetApp Backup and Recovery 会暂停其所有卷的备份和还原，而不会删除现有备份。这使您能够在一段时间内暂停所有备份和还原活动，而无需从此系统注销备份服务。</block>
   <block id="ac702e35e5d377649ce818c63f8cb9d6" category="paragraph">使用注释<block ref="f49fa3f76b2a4fcdf04dff369d417d84" prefix=" " category="inline-code"></block>在备份和还原期间设置每个操作的数据移动器超时(秒)。它指定数据移动器在超时之前等待操作取得进展的时间。这对于检测和处理停滞的传输（例如，当网络问题阻止卷数据还原进度时）非常有用。</block>
   <block id="aaaf3fb2db80e20e6d50218f16d99f4f" category="paragraph">在还原和故障转移期间，将更新目标命名空间标签和注释以匹配源：源中的密钥将添加到目标密钥或覆盖目标密钥，而仅存在于目标中的密钥将保持不变。</block>
   <block id="a0c960e39999d3e07d43b18aadea4f7e" category="admonition">在 Red Hat OpenShift 中，命名空间注释很重要，因为它们确保还原的 Pod 收到正确的安全上下文约束和权限，使它们能够访问卷并在没有权限错误的情况下运行。有关详细信息，请参见 <block ref="842acfa178c0bbf09e368bf9db0716b8" category="inline-link-macro-rx"></block>。</block>
@@ -5072,7 +5046,6 @@
   <block id="0a7db0b8fe12008946ac8fe978e3d69e" category="list-text">选择向下箭头以展开*资源转换模板*部分。</block>
   <block id="9c517bfc321114ff54423e43965367b4" category="list-text">（可选）输入资源组、版本和名称。</block>
   <block id="523b43a20131df6f47ff988233d2eecd" category="paragraph">发现或手动添加异地备份目标，例如 AWS S3、Azure Blob Storage、Google Cloud Storage 或 StorageGRID，以便您可以将备份存储在主环境之外。</block>
-  <block id="d4db6d6e4928ad83f42d61e0861bc45d" category="paragraph">在使用 NetApp Backup and Recovery 之前，请先配置备份目标（Amazon Web Services (AWS) S3、Microsoft Azure Blob Storage、Google Cloud Storage 或 StorageGRID）。</block>
   <block id="23896f5c70301b948b1aa5b4b36cd20a" category="paragraph">提供访问存储帐户的凭据。NetApp Backup and Recovery 使用这些凭据来发现和验证对备份目标存储桶的访问。</block>
   <block id="83a41f03292d1a2eb5d1e5c3c3e82bdd" category="list-text">在 NetApp Backup and Recovery 菜单中，选择*备份目标*。</block>
   <block id="71e713e318f2ad1741f1abee4f606656" category="list-text">*访问密钥*：输入 AWS 访问密钥。</block>
@@ -5084,10 +5057,6 @@
   <block id="655cc3b0e95dc40ab8723703833d5cb3" category="list-text">*订阅*：选择 Azure 订阅的名称。</block>
   <block id="c1c1ad906518844255c02a6eb2fa8196" category="list-text">*存储帐户名*：输入 Azure Blob 存储帐户的名称。</block>
   <block id="f0f386af9d4c467951d13eabc4185ca7" category="list-text">*Azure region*：输入存储帐户的 Azure 区域。</block>
-  <block id="87d2d0ed9aedfdd167b4264a369336ba" category="list-text">*性能类型*：为 Azure Blob 存储帐户选择标准或高级的性能类型，指示所需的性能级别。</block>
-  <block id="29fbc2167fb971b5bdee4e572372b0a4" category="list-text">*加密*：选择 Azure Blob 存储帐户的加密类型。选项可以是 Microsoft 托管的密钥，也可以是客户托管的密钥。如果您选择客户托管的密钥，则必须提供密钥保管库名称和密钥名称。</block>
-  <block id="a59d53d7e7ab6a12c16a345297a65da7" category="list-text">*备份目标*：选择 StorageGRID 备份目标的名称。</block>
-  <block id="bdd4e66322e60cca57b3bd09ad13e871" category="list-text">*备份目标*：选择 ONTAP S3 备份目标的名称。</block>
   <block id="730acae7684dfbf79ddf6b1f05ea9f75" category="list-text">*存储桶名称*：输入 ONTAP S3 存储桶的名称。</block>
   <block id="6caed87fa2992f2b01dad7a3a9dc41eb" category="list-text">选择一个目标，然后在右侧选择*操作*<block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block>图标并选择*更改凭据*。</block>
   <block id="d15ce5f7b11589a195af27e9552d666f" category="paragraph">在 NetApp Backup and Recovery 中发现 Hyper-V 虚拟机，以便使用保护策略对其进行保护。</block>
@@ -6224,4 +6193,78 @@
   <block id="5b82c5e93eb556ac924b1e6909752359" category="list-text">要在主机发现期间授予 sudo 访问权限，请在*主机注册*部分中选择非 root 凭据，然后选择*配置 sudoers*并按照说明操作。root 凭据不需要此步骤。手动安装不需要此步骤。</block>
   <block id="41550faf0c68179011d757996fd6d047" category="list-text">Oracle 数据库用户需要 <block ref="4811df2c83bee7ee3a883640cc4d80af" prefix="" category="inline-code"></block> 权限。</block>
   <block id="5d3eb6919efa937c33d95e081b5ac2fc" category="section-title">2026年10月19日</block>
+  <block id="d2ebbd36608739936bb939c9de72a23a" category="paragraph">在本版本中，NetApp Backup and Recovery 为 Kubernetes 工作负载引入了以下增强功能：</block>
+  <block id="cc7c8e0fe116e37f04e0ad62644d821b" category="list-text">*Trident Protect 26.10*：此版本包括 Trident Protect 26.10。</block>
+  <block id="ca663f12e620da9687b7846a60e5d2e7" category="list-text">*ontap-nas-economy 和 ontap-san-economy 驱动程序支持*：您现在可以保护由 NetApp Trident<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驱动程序（Qtrees）和<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 驱动程序（LUNs）配置的持久卷声明（PVCs）。当您使用 economy 驱动程序保护 PVC 时，整个底层 FlexVol 或 LUN 都会受到保护。您可以从这些备份还原单个 PVC。</block>
+  <block id="d3ea67062b764fc121c2313921544714" category="list-text">*Kubernetes 感知警报*：NetApp Console 现在每个 Kubernetes 应用程序发送一次 Kubernetes 警报，而不是每个卷发送一次。</block>
+  <block id="56763801785ca9815df36fb133a8847a" category="list-text">*卷组快照支持*：现在可以在定义 Kubernetes 应用程序时创建卷组。卷组使您能够以崩溃一致性集的形式为多个卷一起创建快照，从而确保组中所有卷的数据一致性。</block>
+  <block id="1d458bfacd6d519628c6da6c1cb44452" category="list-text">*S3 兼容的对象存储支持*：您现在可以通过添加备份目标凭据和配置保护策略，将 Kubernetes 应用程序资源和数据备份到 S3 兼容的对象存储中。</block>
+  <block id="c49afcf4c9d7fb7f9e3e56e33e3ed3a8" category="paragraph">在本版本中，NetApp Backup and Recovery 为 ONTAP 卷工作负载引入了以下增强功能：</block>
+  <block id="c087f837ef797de43d9ebd1a7d125236" category="list-text">*保护报告*：NetApp Backup and Recovery 现在支持为 ONTAP 卷工作负载创建和下载扩展报告。</block>
+  <block id="b9ba826047adb428b13135e4a8370ce8" category="list-text">*选择在注销 ONTAP 系统时是否保留备份*：从 NetApp Backup and Recovery 注销 ONTAP 系统时，您现在可以选择放弃以前备份的数据或保留这些数据以便用于还原。NetApp Backup and Recovery 文档现在包含了在系统注销后还原所保留数据的说明。</block>
+  <block id="147e4e035d3742c8a163c4282707c86d" category="inline-link">注销系统的备份和恢复</block>
+  <block id="113ea0f6ada6e0a0faeef3e476b36daa" category="paragraph">有关更多详细信息，请参阅<block ref="d430b7e541ef6ef0ab6b72278c77300c" category="inline-link-rx"></block>。</block>
+  <block id="4218ebde887e47d99313814e89fca1dc" category="paragraph">在本版本中，在本版本中，NetApp Backup and Recovery 为 Oracle 数据库工作负载引入了以下增强功能：</block>
+  <block id="d2a0591e201dfac56fdea850632dc8e3" category="paragraph">*还原到备用位置*：NetApp Backup and Recovery 现在支持将 Oracle 数据库还原到备用位置（不同的注册主机）。</block>
+  <block id="497cd988427d83c8811290c97c318790" category="paragraph">在使用 NetApp Backup and Recovery 之前，请配置您的备份目标（Amazon Web Services （AWS） S3、ONTAP S3、S3 兼容的对象存储、Microsoft Azure Blob 存储、Google Cloud Storage 或 StorageGRID）。</block>
+  <block id="512c8a19583567b0c60a6d4046e3fc9d" category="list-text">选择可用的备份目标类型之一：*AWS*、*Azure*、*StorageGRID*、*ONTAP S3*、*S3 兼容*或 *GCP*。</block>
+  <block id="4828de8adc4e9d7efea3fb6a81a07cac" category="list-text">对于 S3 兼容：</block>
+  <block id="229cde11dc3a1e8e2c7d01739e81a8cc" category="list-text">*凭据名称*：输入与 S3 兼容的凭据名称。</block>
+  <block id="f5e327b49bbb21e98940f0e794efac25" category="list-text">*网关节点 FQDN*：输入 S3 兼容网关节点的 FQDN。</block>
+  <block id="4f4d1f557a30e4b8b6b0ad1b2f14fee9" category="list-text">*端口*：输入 S3 兼容的端口号。</block>
+  <block id="f40f98161e8527be6da60ccfc954e485" category="list-text">*访问密钥*：输入与 S3 兼容的访问密钥。</block>
+  <block id="544dcb1b29d755ccb0cd04844b0c85a8" category="list-text">*密钥*：输入与 S3 兼容的密钥。</block>
+  <block id="35ab23dfe4dfebb961a6643c98501af8" category="list-text">*GCP 项目*：输入您的 Google Cloud 项目的名称。</block>
+  <block id="faa21d68908d97d45895575e1ccfb06c" category="list-text">*实例详细信息*：添加以下信息：</block>
+  <block id="89942d61d62ce975085dbc1a223193cf" category="list-text">*对象锁定*：选择此选项可为存储桶启用对象锁定。对象锁定可防止对象在指定的保留期内被删除或覆盖，从而提供额外的数据保护层。只有在创建存储桶时才能启用此功能，并且以后无法将其关闭。</block>
+  <block id="603cc6c27a8469c81813bfebca168e93" category="list-text">*加密*：选择 Azure Blob Storage 帐户的加密类型。您可以选择 Microsoft 托管密钥或客户托管密钥。如果选择客户托管密钥，则必须同时提供加密密钥和加密 ID。</block>
+  <block id="1c8f409ecfd750e9ab731c44e8cf83b4" category="list-text">*凭据名称*：选择用于对此存储桶的备份目标进行身份验证的凭据。</block>
+  <block id="c193c9ebe64e85f3f8bffd1dae7b1b49" category="list-text">*存储桶名称*：输入新 StorageGRID 存储桶的名称。</block>
+  <block id="f6d09036b60b1acbf448ef32db03bec9" category="list-text">*对象锁定*：选择此选项可为存储桶启用对象锁定。对象锁定可防止对象在指定的保留期内被删除或覆盖，从而提供额外的数据保护层。只有在创建存储桶时才能启用此功能，并且以后无法关闭。</block>
+  <block id="ac2a1e88d9a3d9f15c0797a4a25eb69b" category="list-text">*存储桶名称*：输入新的 S3 兼容存储桶的名称。</block>
+  <block id="99fb4aae942ff1af2bfc554e10a731d2" category="admonition">如果您的应用程序使用通过 Qtree 进行分区的 FlexVol 卷，则保护应用程序即可保护属于该应用程序的任何 FlexVol 卷中的所有 Qtree。</block>
+  <block id="fb7cdb707e234b2e8272fc581163dfff" category="list-text">（可选）在 *卷组* 区域中，使用标签选择器定义卷组。每个逗号分隔标签中的资源将作为崩溃一致性集进行保护。</block>
+  <block id="6a59150c4b9633c51fe2d270250c6749" category="list-text">可选地，在*卷组*区域中，启用将所选 VM 的磁盘作为崩溃一致性卷组（每个 VM 一个卷组）一起保护的选项。</block>
+  <block id="fa316da11f02e062f57f24ae76cebc99" category="paragraph">删除系统对象存储上的所有备份不会禁用此系统中卷的未来备份。如果要停止创建系统中所有卷的备份，可以暂停备份 <block ref="627bc8b5a101988e015458f90d7fd491" category="inline-xref-macro-rx"></block>。</block>
+  <block id="cd2e1afe7aab66c663a0c7c824b8efe9" category="section-title">暂停系统的所有备份</block>
+  <block id="f910b8416a243dfc4c6b5c21357aa42a" category="paragraph">暂停系统的所有备份以暂停系统所有卷的备份活动，而不删除现有备份。暂停备份不会从此系统中注销备份服务。</block>
+  <block id="16e073461cf907aa3388d4dd6cc76b33" category="list-text">从_备份设置页面_中，为要暂停备份的系统选择 <block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>，然后选择*暂停所有备份*。</block>
+  <block id="45fce289f1a8c83302b5f4d872ce0be8" category="list-text">在确认对话框中，选择*暂停*。</block>
+  <block id="93922475d8b2d2f399fffc2f6502c7ff" category="paragraph">注销系统的 NetApp Backup and Recovery 会停止存储系统的未来备份，并将其从 NetApp Backup and Recovery 中删除。在此过程中，您可以选择保留或删除现有备份。</block>
+  <block id="b9acdfb3fe6814689f798ee5ba478262" category="inline-link-macro">使用 ONTAP 命令行界面还原 ONTAP 数据</block>
+  <block id="6b49e32c5370aa75037ea90ff889e18a" category="list-text">要还原现有备份，请参阅 <block ref="ca224e7fbcd3a58dec3d0008f9be881e" category="inline-link-macro-rx"></block>。</block>
+  <block id="55599fb6b927f75020d253ee0e5a1c92" category="list-text">选择*备份设置*。</block>
+  <block id="7a51161327000ec76e9bd8e138468625" category="list-text">在备份设置页面上，选择系统的 <block ref="3ca8d030cf9d4a36f5b783e677ebccee" category="inline-image-macro-rx" type="image"></block>，然后选择*注销备份*。</block>
+  <block id="ed09bad7864ec765b3bccff9b87f25fb" category="list-text">从下列选项中选择一项：</block>
+  <block id="4bc8fd684d21298394914dc8f59016a2" category="list-text">*停用备份*：停止将来的备份，删除对象存储备份关系，并将现有备份保留在对象存储中。系统注销后，您只能使用 ONTAP CLI 还原这些备份。</block>
+  <block id="ff65356755d54101e749f5bb8d6390a5" category="list-text">*停用和删除备份*：停止将来的备份，删除对象存储备份关系，并删除现有备份。（可选）如果您希望在步骤失败时继续操作，请选择*忽略停用/删除备份时的错误*。</block>
+  <block id="dfee6097752e7129482df13f43e0d016" category="list-text">在*输入系统名称以确认*中，输入系统名称。</block>
+  <block id="6f53822dc138caffe0db3d1b7228eb76" category="list-text">在*确认保护报告备份*下，确认您保存了所有需要的报告。</block>
+  <block id="0e99a50f987d33fb61f7174388ec5bf7" category="list-text">选择*确认并取消注册*。</block>
+  <block id="128b9b68bc952926898e9cb180142a2f" category="list-text">监视作业监视器中的操作，直至其完成。</block>
+  <block id="f34901277d832930a7715899d8aab192" category="admonition">取消注册系统不会更改 ONTAP 中系统的卷、快照配置或复制关系。</block>
+  <block id="c697b002591b1081640514a7d1737556" category="summary">在某些情况下，您可能需要使用 ONTAP CLI 来恢复 ONTAP 数据。</block>
+  <block id="f01e63e1a85b954f51ca4a6e068eb6b7" category="paragraph">您可能无法使用备份和恢复 Web UI 还原某些 ONTAP 数据。如果在注销系统后保留了备份，或者备份是通过不再存在的关系创建的，则可能会发生这种情况。无论是哪种情况，请使用 ONTAP CLI 还原备份。</block>
+  <block id="ec86bd3101749b0341e24ffb93a6a492" category="list-text">确保您具有对目标集群的 ONTAP CLI 的访问权限，并且您知道要还原的备份副本。</block>
+  <block id="75416dfe2ceb2c6cb8491b2cb515feb5" category="list-text">如果还原到不同的 ONTAP 集群，则该集群必须已具有对同一对象存储的访问权限。如果需要，请在还原之前在目标集群上配置对象存储。</block>
+  <block id="a54f62a8dcb41305536a5acf09464352" category="list-text">请注意，如果在注销系统之前创建了新的备份关系，NetApp Backup and Recovery 可能会在创建新备份后的长达一小时内继续显示旧快照。在该刷新窗口期间，基于 UI 的旧快照还原可能会失败。</block>
+  <block id="fdd4155863226ecb841ae09602e4c668" category="list-text">下载备份报告。</block>
+  <block id="29a4dbbef911b88bedf19bdfa84b4263" category="list-text">在报告中，找到要还原的卷，并找到所需备份副本的端点条目：</block>
+  <block id="e01874ecf753c8cb1de8f34c4dfb8d80" category="list-text">对于来自先前关系的较旧备份，请使用 *端点 UUID 历史记录* 值。</block>
+  <block id="645c3c66102fc66596a98bd5dc33b8ef" category="list-text">对于当前关系的备份，请使用 *端点 UUID* 值。</block>
+  <block id="8a73294528d93a1f59eecd121d51ff0d" category="paragraph">每个历史记录条目都使用此格式<block ref="55e85e3ccf753c88d658ef791c8f6cde" prefix=" " category="inline-code"></block>。记录要还原的备份的存储桶名称和端点 UUID。</block>
+  <block id="5fba4a68d61bc5f7f7e6554abf272e41" category="list-text">连接到 ONTAP 集群 CLI 并进入诊断模式：</block>
+  <block id="0da552512b372f563014f14813cf9885" category="list-text">创建目标数据保护（DP）卷：</block>
+  <block id="8f626d1139a53068fec0fdc5498c1ab6" category="list-text">列出可用于您记录的存储桶和终结点 UUID 的快照：</block>
+  <block id="9b8ba9c9dbbe51510f9dfbdab292ff32" category="admonition">此命令仅列出 ONTAP 针对该存储桶和端点跟踪的快照。它不列出手动移动到另一个存储桶的快照。</block>
+  <block id="8e2984dd6db099579064ed18ea316672" category="list-text">如果在创建备份后对象存储凭据发生更改，请在继续之前更新对象存储配置：</block>
+  <block id="85b4448e71f07ab48dbb54cf4df1d355" category="list-text">将所选快照从对象存储还原到目标 DP 卷：</block>
+  <block id="3770b537731b467947d113336d70a371" category="paragraph">有关此任务中 ONTAP 命令的详细信息，请参阅以下 ONTAP 文档：</block>
+  <block id="4784dd0ffa42c3d1b43b0afd079dfc17" category="inline-link">volume create</block>
+  <block id="0fa851dd782b19eb7cc49215ec058fa8" category="list-text"><block ref="0fa851dd782b19eb7cc49215ec058fa8" category="inline-link-rx"></block></block>
+  <block id="83360a1eaef3ed445d1e195bce123d01" category="inline-link">snapmirror object-store config modify</block>
+  <block id="64a789f9359deaaa5d68c54fd43daf3a" category="list-text"><block ref="64a789f9359deaaa5d68c54fd43daf3a" category="inline-link-rx"></block></block>
+  <block id="5b18e7c216c868ae1b7c4df44ba6df58" category="inline-link">snapmirror restore</block>
+  <block id="399d4101cbf520dcec67f680dbf4ad81" category="list-text"><block ref="399d4101cbf520dcec67f680dbf4ad81" category="inline-link-rx"></block></block>
+  <block id="b0609734250ba6ba4d0839963ce55146" category="section-title">2026年10月26日</block>
 </blocks>

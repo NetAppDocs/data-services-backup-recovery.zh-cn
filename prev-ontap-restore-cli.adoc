@@ -1,0 +1,84 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-restore-cli.html 
+keywords: CLI, ONTAP, restore, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery 
+summary: 在某些情况下，您可能需要使用 ONTAP CLI 来恢复 ONTAP 数据。 
+---
+= 使用 ONTAP 命令行界面还原 ONTAP 数据
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可能无法使用备份和恢复 Web UI 还原某些 ONTAP 数据。如果在注销系统后保留了备份，或者备份是通过不再存在的关系创建的，则可能会发生这种情况。无论是哪种情况，请使用 ONTAP CLI 还原备份。
+
+.开始之前
+* 确保您具有对目标集群的 ONTAP CLI 的访问权限，并且您知道要还原的备份副本。
+* 如果还原到不同的 ONTAP 集群，则该集群必须已具有对同一对象存储的访问权限。如果需要，请在还原之前在目标集群上配置对象存储。
+* 请注意，如果在注销系统之前创建了新的备份关系，NetApp Backup and Recovery 可能会在创建新备份后的长达一小时内继续显示旧快照。在该刷新窗口期间，基于 UI 的旧快照还原可能会失败。
+
+
+.步骤
+. 在 NetApp Backup and Recovery 菜单中，选择*报告*。
+. 下载备份报告。
+. 在报告中，找到要还原的卷，并找到所需备份副本的端点条目：
++
+** 对于来自先前关系的较旧备份，请使用 *端点 UUID 历史记录* 值。
+** 对于当前关系的备份，请使用 *端点 UUID* 值。
++
+每个历史记录条目都使用此格式 `<bucket_name>:<endpoint_uuid>`。记录要还原的备份的存储桶名称和端点 UUID。
+
+
+
+. 连接到 ONTAP 集群 CLI 并进入诊断模式：
++
+[source, shell]
+----
+set -privilege diagnostic
+----
+. 创建目标数据保护（DP）卷：
++
+[source, shell]
+----
+volume create -vserver <vserver_name> -volume <volume_name> -aggregate <aggr_name> -size <size> -type DP
+----
+. 列出可用于您记录的存储桶和终结点 UUID 的快照：
++
+[source, shell]
+----
+snapm object-store endpoint snapshot show -object-store-name <bucket_name> -endpoint-uuid <endpoint_uuid>
+----
++
+
+NOTE: 此命令仅列出 ONTAP 针对该存储桶和端点跟踪的快照。它不列出手动移动到另一个存储桶的快照。
+
+. 如果在创建备份后对象存储凭据发生更改，请在继续之前更新对象存储配置：
++
+[source, shell]
+----
+snapmirror object-store config show -object-store-name <object_store_name>
+snapmirror object-store config modify -object-store-name <object_store_name> -access-key <new_access_key> -secret-password <new_secret_password>
+----
+. 将所选快照从对象存储还原到目标 DP 卷：
++
+[source, shell]
+----
+snapmirror restore -destination-path <vserver>:<destination_volume> -source-path <bucket_name>:/objstore/<endpoint_uuid> -source-snapshot <snapshot_name> -source-endpoint-uuid <endpoint_uuid>
+----
+
+
+
+
+[[find-more-information]]
+== 查找更多信息
+
+有关此任务中 ONTAP 命令的详细信息，请参阅以下 ONTAP 文档：
+
+* https://docs.netapp.com/us-en/ontap-cli/volume-create.html["volume create"]
+* https://docs.netapp.com/us-en/ontap-cli/snapmirror-object-store-config-modify.html["snapmirror object-store config modify"]
+* https://docs.netapp.com/us-en/ontap-cli/snapmirror-restore.html["snapmirror restore"]
+

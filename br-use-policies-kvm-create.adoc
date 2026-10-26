@@ -14,9 +14,6 @@ summary: 在NetApp Backup and Recovery中，创建您自己的策略来控制备
 [role="lead"]
 使用 NetApp Backup and Recovery 创建控制备份频率、计划和保留的 KVM 备份策略。
 
-
-NOTE: 其中一些选项和配置部分并不适用于所有工作负载。
-
 如果从SnapCenter导入资源，您可能会发现SnapCenter中使用的策略与NetApp Backup and Recovery中使用的策略存在一些差异。看link:reference-policy-differences-snapcenter.html["SnapCenter与NetApp Backup and Recovery之间的策略差异"]。
 
 您可以实现以下与政策相关的目标：
