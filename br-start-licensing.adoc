@@ -14,13 +14,13 @@ summary: 通过从云提供商处购买按需付费或年度市场订阅，或�
 
 
 [role="lead"]
-使用市场订阅或来自 NetApp 的自带许可证 (BYOL)，在 NetApp Console 或 NetApp Console 本地部署中设置 NetApp Backup and Recovery 的许可。需要有效的许可证才能激活服务、创建备份以及将数据还原到生产系统。
+通过使用市场订阅或来自 NetApp 的自带许可证（BYOL），在 NetApp Console 或 NetApp Console 本地部署中为 NetApp Backup and Recovery 设置许可。要将工作负载保护到对象存储并从对象存储还原数据，需要有效的许可证。本地快照和复制到 ONTAP 辅助存储不需要许可证。
 
 有关许可证工作原理的一些注意事项：
 
-* 保护 Microsoft SQL Server 工作负载时，仅对备份到对象存储收取费用（例如，使用 3-2-1 备份体系结构或磁盘到对象存储时）。
+* 对于所有工作负载，仅向您收取对象存储保护费用（例如，使用 3-2-1 备份体系结构或磁盘到对象存储）。本地快照和到 ONTAP 辅助存储的复制是免费的。
 * Oracle Database 工作负载不需要许可证，因为它处于预览发布状态。
-* 使用 ONTAP Volumes 工作负载时，可以在没有许可证的情况下发现和还原卷。但是，如果您需要保护（备份）卷，则需要购买许可证。
+* 使用 ONTAP Volumes 工作负载时，可以在没有许可证的情况下发现和还原卷。但是，如果您需要将卷保护（备份）到对象存储，则需要购买许可证。
 * 如果使用带有 NetApp Console 本地部署的 Backup and Recovery，则只能购买自带许可证 (BYOL) 许可证。
 * NetApp Backup and Recovery自带许可证 (BYOL) 是一种浮动许可证，您可以在与NetApp Console组织或帐户关联的所有系统中使用它。因此，如果您现有的 BYOL 许可证具有足够的备份容量，则无需购买另一个 BYOL 许可证。
 * 如果您在 NetApp Console 中使用 BYOL 许可证，建议您也订阅 PAYGO 订阅。如果您备份的数据超过 BYOL 许可证允许的数据量，或者许可证期限已过期，则备份将通过按需付费 (PAYGO) 订阅继续进行，不会中断服务。
@@ -46,13 +46,13 @@ link:concept-backup-to-cloud.html["了解有关使用NetApp Backup and Recovery 
 [[30-day-free-trial]]
 === 30天免费试用
 
-30 天的 NetApp Backup and Recovery 免费试用适用于除 ONTAP Volumes 工作负载之外的所有未许可工作负载。您可以在开始使用工作负载时（在发现其资源之前）启动试用。启动试用后，其状态和已用容量将显示在 NetApp Backup and Recovery 主页的 *免费试用* 下。
+除 ONTAP Volumes 工作负载外，所有未经许可的工作负载均可免费试用 30 天 NetApp Backup and Recovery。您可以在开始使用工作负载时，在发现其资源之前开始试用。开始试用后，其状态和已用容量将显示在 NetApp Backup and Recovery 主页上的 *免费试用* 下。只有受保护到对象存储的容量才计入试用。受本地快照或复制到 ONTAP 辅助存储保护的容量不计算在内。
 
 
 
 ==== 结束免费试用
 
-您可以随时从登录 NetApp Backup and Recovery 时显示的主页结束工作负载的免费试用。如果要在免费试用期结束后继续使用 NetApp Backup and Recovery，则必须在 NetApp Console 界面的 *Licenses and subscriptions* 部分设置付费订阅。如果您不想继续使用 NetApp Backup and Recovery，可以在不订阅付费套餐的情况下结束免费试用。您可以 link:prev-ontap-backup-manage.html["从系统中取消注册NetApp Backup and Recovery"] 在试用期结束前完成，我们不会向您收取费用。
+您可以随时从登录 NetApp Backup and Recovery 时显示的主页结束工作负载的免费试用。如果要在免费试用期结束后继续将工作负载保护到对象存储，则必须在 NetApp Console 界面的 *Licenses and subscriptions* 部分中设置付费订阅。不使用对象存储的保护（例如本地快照和到 ONTAP 辅助存储的复制）将继续工作，并且可以在没有付费订阅的情况下进行管理。如果不想继续将工作负载保护到对象存储，则无需订阅付费套餐即可结束免费试用。您可以在试用期结束前 link:prev-ontap-backup-manage.html["从系统中取消注册NetApp Backup and Recovery"]，并且不会向您收取费用。
 
 .步骤
 . 从 NetApp Backup and Recovery 主页中，在 *免费试用* 下选择要结束的免费试用。
@@ -66,13 +66,11 @@ link:concept-backup-to-cloud.html["了解有关使用NetApp Backup and Recovery 
 [[use-a-byol-license]]
 === 使用 BYOL 许可证
 
-NetApp提供的自带许可证的有效期为 1 年、2 年或 3 年。您只需为您保护的数据付费，该费用根据正在备份的源ONTAP卷的逻辑使用容量（任何效率之前）计算。此容量也称为前端兆字节 (FETB)。
+来自 NetApp 的自带许可证提供 1 年、2 年或 3 年的期限。您只需为保护到对象存储的数据付费，该费用根据正在备份到对象存储的源工作负载的逻辑已用容量（在应用任何效率_之前_）计算。对于 ONTAP 卷，此容量也称为前端 TB （FETB）。仅通过本地快照或复制到 ONTAP 辅助存储进行保护的数据不会计入您的许可容量。
 
-BYOL NetApp Backup and Recovery许可证是一种浮动许可证，其总容量在与您的NetApp Console组织或帐户关联的所有系统之间共享。对于ONTAP系统，您可以通过运行 CLI 命令粗略估计所需的容量 `volume show -fields logical-used-by-afs`对于您计划备份的卷。
+BYOL NetApp Backup and Recovery 许可证是一个浮动许可证，其中总容量在与您的 NetApp Console 组织或帐户关联的所有系统之间共享。对于 ONTAP 卷，您可以通过对计划备份到对象存储的卷运行 CLI 命令 `volume show -fields logical-used-by-afs`来粗略估计所需的容量。
 
-如果您没有 NetApp Backup and Recovery BYOL 许可证，请选择 Console 右下角的聊天图标进行购买。
-
-或者，如果您拥有未分配的基于节点的Cloud Volumes ONTAP许可证但不会使用，则可以将其转换为具有相同美元等值和相同到期日期的NetApp Backup and Recovery许可证。 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["点击此处了解详情"^] 。
+如果您没有 NetApp Backup and Recovery BYOL 许可证，请联系您的 NetApp 销售代表购买。
 
 您可以使用 NetApp Console 或 NetApp Console 本地部署来管理 BYOL 许可证。您可以从控制台添加新许可证、更新现有许可证和查看许可证状态。
 
@@ -80,46 +78,31 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 
 
 
-[[use-a-marketplace-license-applies-to-netapp-console-only]]
-=== 使用平台许可证（仅适用于 NetApp Console）
+[[use-an-annual-marketplace-subscription-applies-to-netapp-console-only]]
+=== 使用年度市场订阅（仅适用于 NetApp Console）
 
-通过购买年度合同每年支付NetApp Backup and Recovery的费用。期限分为 1 年、2 年或 3 年。
+您可以通过购买年度合同每年支付 NetApp Backup and Recovery 费用，该合同有多种期限选项可供选择。
 
-如果您有来自市场的年度合同，则所有 NetApp Backup and Recovery 消耗都将从该合同中扣除。
+根据来自市场的年度合同，用于保护对象存储的所有 NetApp Backup and Recovery 消耗都将根据该合同收取费用。
 
-当您使用 AWS 时，有两种年度合同可供选择 https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["AWS Marketplace 页面"^]对于Cloud Volumes ONTAP和本地ONTAP系统：
+关于年度市场合同选项，请注意以下几点：
 
-* “云备份”计划使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
+* 年度合约可在每个市场以私有优惠的形式提供。
+* 年度合同使您能够同时备份 Cloud Volumes ONTAP 数据和本地 ONTAP 数据。
+* 您可以从 marketplace 页面注册年度合同。从 Marketplace 页面设置您的订阅，然后将该订阅与您的 https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["AWS"^]、 https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html#subscribe["Azure"^]或 GCP 凭据关联。请注意，您还需要使用此年度合同订阅为 Cloud Volumes ONTAP 系统付费，因为您只能在控制台中将一个有效订阅分配给您的 AWS 凭据。
+* 如果您购买“CVO Professional”套餐，它将包含已获许可的 Cloud Volumes ONTAP 系统的无限备份，并且这些备份不计入许可容量。此套餐不支持备份本地 ONTAP 数据或通过 Freemium 或 Essentials 软件包获得许可的 Cloud Volumes ONTAP 系统；仅支持通过 Professional 软件包获得许可的 Cloud Volumes ONTAP 系统。
 +
-如果您想使用此选项，请从 Marketplace 页面设置您的订阅，然后 https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["将订阅与您的 AWS 凭证关联"^]。请注意，您还需要使用此年度合同订阅来支付您的Cloud Volumes ONTAP系统的费用，因为您只能在控制台中为您的 AWS 凭证分配一个有效订阅。
-
-* “CVO Professional”计划使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括使用许可证对Cloud Volumes ONTAP系统进行无限制备份（备份容量不计入许可容量）。此选项不允许您备份本地ONTAP数据。
-+
-查看 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP许可主题"^]了解有关此许可选项的更多信息。
-
-+
-如果您想使用此选项，可以在创建Cloud Volumes ONTAP系统时设置年度合同，控制台会提示您订阅 AWS Marketplace。
+请参阅 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP许可主题"^]以了解有关此许可选项的更多信息。
 
 
 
-使用 Azure 时，可从 https://marketplace.microsoft.com/en-us/product/netapp.netapp-bluexp["Azure 市场页面"^]为 Cloud Volumes ONTAP 和本地 ONTAP 系统获得两份年度合同：
+当您使用 AWS 或 Azure 时，请使用这些链接订阅 NetApp Backup and Recovery 的年度市场订阅：
 
-* “云备份”计划使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
-+
-如果您想使用此选项，请从 Marketplace 页面设置您的订阅，然后 https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html#subscribe["将订阅与您的 Azure 凭据关联"^]。请注意，您还需要使用此年度合同订阅来支付您的Cloud Volumes ONTAP系统的费用，因为您只能在控制台中为您的 Azure 凭据分配一个有效订阅。
-
-* “CVO Professional”计划使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括使用许可证对Cloud Volumes ONTAP系统进行无限制备份（备份容量不计入许可容量）。此选项不允许您备份本地ONTAP数据。
-+
-查看 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP许可主题"^]了解有关此许可选项的更多信息。
-
-+
-如果您想使用此选项，可以在创建Cloud Volumes ONTAP系统时设置年度合同，控制台会提示您订阅 Azure Marketplace。
+* AWS： https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["前往NetApp Intelligent Services市场了解定价详情"^]。
+* Azure： https://marketplace.microsoft.com/en-us/product/netapp.netapp-bluexp["前往NetApp Intelligent Services市场了解定价详情"^]。
 
 
-
-当您使用 GCP 时，请联系您的NetApp销售代表购买年度合同。该合同在 Google Cloud Marketplace 中以私人优惠形式提供。
-
-NetApp向您提供专属优惠后，您可以在激活NetApp Backup and Recovery时通过 Google Cloud Marketplace 订阅并选择年度计划。
+使用 GCP 时，请联系您的 NetApp 销售代表购买年度合同。
 
 
 
@@ -128,27 +111,28 @@ NetApp向您提供专属优惠后，您可以在激活NetApp Backup and Recovery
 
 对于按需付费，您可以在单个订阅中按小时向云提供商支付对象存储成本和 NetApp 备份许可成本。即使您拥有免费试用版或自带许可证 (BYOL)，也应在 Marketplace 中订阅 *NetApp Intelligent Services*：
 
-* 订阅可确保免费试用结束后服务不会中断。试用期结束后，我们将根据您备份的数据量按小时向您收费。
+* 订阅可确保在免费试用期结束后不会中断服务。试用期结束后，系统将根据您备份到对象存储的数据量按小时向您收费。
 * 如果您备份的数据超出了 BYOL 许可证允许的范围，则数据备份和恢复操作将通过即用即付订阅继续进行。例如，如果您拥有 10 TiB BYOL 许可证，则超过 10 TiB 的所有容量都将通过 PAYGO 订阅收费。
 
 
 在免费试用期间或未超出 BYOL 许可证的情况下，您无需支付即用即付订阅费用。
 
-NetApp Backup and Recovery有几种 PAYGO 计划：
-
-* “云备份”包使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
-* “CVO Professional” 软件包使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括使用许可证对Cloud Volumes ONTAP系统进行无限制备份（备份容量不计入许可容量）。此选项不允许您备份本地ONTAP数据。
-+
-此选项还需要订阅 Backup and Recovery PAYGO，但符合条件的 Cloud Volumes ONTAP 系统不会产生费用。
-
-
-
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["了解有关这些基于容量的许可证包的更多信息"]。
 
-使用这些链接从您的云提供商市场订阅NetApp Backup and Recovery ：
+请注意以下有关 PAYGO 平台合约选项的信息：
 
-* AWS： https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["前往NetApp Intelligent Services市场了解定价详情"^] 。
-* Azure： https://marketplace.microsoft.com/en-us/product/netapp.cloud-manager?tab=Overview["前往NetApp Intelligent Services市场了解定价详情"^]。
+* PAYGO 合约使您可以同时备份 Cloud Volumes ONTAP 数据和本地 ONTAP 数据。
+* 您可以从市场页面注册 PAYGO 合同。从市场页面设置您的订阅，然后将该订阅与您的 https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["AWS"^]、 https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html#subscribe["Azure"^]或 GCP 凭据关联。
+* 如果您购买“CVO Professional”套餐，它将包含已获许可的 Cloud Volumes ONTAP 系统的无限备份，并且这些备份不计入许可容量。此套餐不支持备份本地 ONTAP 数据或通过 Freemium 或 Essentials 软件包获得许可的 Cloud Volumes ONTAP 系统；仅支持通过 Professional 软件包获得许可的 Cloud Volumes ONTAP 系统。
++
+请参阅 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP许可主题"^]以了解有关此许可选项的更多信息。
+
+
+
+使用这些链接从您的云提供商市场订阅 NetApp Backup and Recovery 的 PAYGO 合同：
+
+* AWS： https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-0&ref_=ucaf&applicationId=AWSMPContessa["前往NetApp Intelligent Services市场了解定价详情"^]。
+* Azure： https://marketplace.microsoft.com/en-us/product/netapp.cloud-manager["前往NetApp Intelligent Services市场了解定价详情"^]。
 * Google Cloud： https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["前往NetApp Intelligent Services市场了解定价详情"^] 。
 
 
@@ -157,7 +141,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 [[exceeding-license-capacity]]
 == 超出许可证容量
 
-超过许可容量会触发 PAYGO 费率。没有 PAYGO 订阅，您无法创建新的备份，但仍可在没有服务保证的情况下恢复现有备份。请在许可证到期前续订许可证，因为过期的许可证会阻止新备份的创建并中断服务。
+超出您授权的对象存储保护容量会触发 PAYGO 费率。如果没有 PAYGO 订阅，您将无法创建对象存储的新备份，尽管您仍然可以在没有服务保证的情况下还原现有备份。本地快照和到 ONTAP 辅助存储的复制不受影响。在许可证过期之前续订许可证，因为过期的许可证会阻止对象存储的新备份并中断服务。
 
 
 
@@ -167,14 +151,15 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 当您的备份和恢复许可证到期时：
 
 * 现有备份策略的备份和还原将继续正常运行。
-* 您无法创建新的备份策略或将保护扩展到其他工作负载和数据存储区。
+* 您无法创建保护到对象存储的新备份策略，也无法将对象存储保护扩展到其他工作负载和数据存储。
+* 您仍然可以创建和管理不使用对象存储的策略，例如本地快照和复制到 ONTAP 辅助存储的策略。
 * 您无法使用新的 Backup and Recovery 功能和增强功能。
 * NetApp 技术支持的备份和恢复功能不再可用。
 
 
 续订您的许可证，以便：
 
-* 创建和修改备份策略，包括数据库、虚拟机和 Kubernetes 工作负载的应用程序一致性备份策略。
+* 创建和修改保护到对象存储的备份策略，包括数据库、虚拟机和 Kubernetes 工作负载的应用程序一致性备份策略。
 * 使用新的 Backup and Recovery 功能和增强功能。
 * 继续获得 NetApp 技术支持。
 
