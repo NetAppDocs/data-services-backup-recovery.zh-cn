@@ -30,9 +30,9 @@ summary: NetApp Backup and Recovery是一种数据服务，可为您的所有ONT
 * * ONTAP卷工作负载*：
 +
 ** 创建本地快照，复制到二级存储，并将ONTAP卷从本地ONTAP或Cloud Volumes ONTAP系统备份到公共或私有云帐户中的对象存储。
+** 搜索和还原文件和文件夹。
 ** 创建块级、增量永久备份，并将其存储在另一个ONTAP集群和云中的对象存储中。
-** 将NetApp Backup and Recovery与SnapCenter一起使用。
-** 参考link:prev-ontap-protect-overview.html["保护ONTAP卷"]。
+** 请参阅 link:prev-ontap-protect-overview.html["保护ONTAP卷工作负载"]。
 
 
 * *Microsoft SQL Server 工作负载*：
@@ -85,7 +85,6 @@ summary: NetApp Backup and Recovery是一种数据服务，可为您的所有ONT
 ** 在一个地方管理和保护您的 Kubernetes 应用程序和资源。
 ** 使用保护策略来构建增量备份。
 ** 将应用程序和资源恢复到相同或不同的集群和命名空间。
-** 不使用SnapCenter即可使用NetApp Backup and Recovery 。
 ** 参考link:br-use-kubernetes-protect-overview.html["保护 Kubernetes 工作负载"]。
 
 
@@ -128,15 +127,8 @@ NetApp不会向您收取试用版的使用费用。但是，您需要承担与�
 +
 由于NetApp Backup and Recovery保留了源卷的存储效率，因此您需要向云提供商对象存储支付ONTAP效率之后的数据费用（针对应用重复数据删除和压缩后的较少量的数据）。
 
-* 对于使用“搜索和还原”还原数据，您的云提供商会提供某些资源，并且您的搜索请求扫描的数据量会产生每 TiB 成本。  （浏览和恢复不需要这些资源。）
-+
-** 在 AWS 中， https://aws.amazon.com/athena/faqs/["亚马逊雅典娜"^]和 https://aws.amazon.com/glue/faqs/["AWS Glue"^]资源部署在新的 S3 存储桶中。
-** 在 Azure 中， https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapse 工作区"^]和 https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure 数据湖存储"^]在您的存储帐户中配置以存储和分析您的数据。
-** 在 Google Cloud 中，将部署一个新的存储桶，并在帐户/项目级别配置 https://cloud.google.com/bigquery["Google Cloud BigQuery 服务"^]。
-
-
 * 如果您计划从已移动到档案对象存储的备份文件中恢复卷数据，则云提供商会收取额外的每 GiB 检索费和每请求费。
-* 如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 Datalock 和勒索软件保护），那么您也将从云提供商那里产生额外的出口成本。
+* 如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 DataLock 和勒索软件保护），则您还需要向云提供商支付额外费用。
 
 
 *服务费*
@@ -162,8 +154,8 @@ NetApp Backup and Recovery提供免费试用，允许您在限定时间内无需
 您可以从三种授权选项中进行选择：
 
 * *自带许可证 (BYOL)*：从NetApp购买基于期限（1 年、2 年或 3 年）和容量（以 1-TiB 为增量）的许可证。在NetApp Console中输入提供的序列号进行激活。该许可证涵盖您组织中的所有源系统。当期限或容量达到限制时，需要续约。
-* *随用随付（PAYGO）*：通过云提供商的市场订阅，并按每 GiB 备份数据付费，按小时计费。无需预先付款。首次注册即可免费试用 30 天。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html#use-a-netapp-backup-and-recovery-paygo-subscription["使用NetApp Backup and Recovery按需付费订阅"]。
-* *年度合同*：可通过 AWS 和 Azure Marketplace 购买，期限为 1 年、2 年或 3 年。现有两份年度合同可供选择：
+* *随用随付（PAYGO）*：通过云提供商的市场订阅，并按每月计费的每 GiB 备份数据付费。无需预先付款。首次注册即可免费试用 30 天。有关详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html#use-a-netapp-backup-and-recovery-paygo-subscription["使用NetApp Backup and Recovery按需付费订阅"]。
+* *基于期限的合同*：通过 AWS 和 Azure 市场提供，期限为 6 个月或按年递增。有两种年度合同可供选择：
 +
 ** *云备份*：备份Cloud Volumes ONTAP和本地ONTAP数据。
 ** *CVO 专业版*：捆绑了Cloud Volumes ONTAP和NetApp Backup and Recovery， Cloud Volumes ONTAP卷可进行无限备份（备份容量不计入许可证）。
@@ -241,9 +233,13 @@ NOTE: 还支持从主存储到对象存储，而不仅仅是从二级存储到�
 
 * 在 AWS 中， NetApp Console可以实现以下功能： https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 阻止公共访问功能"^]在 S3 铲斗上。
 * 在 Azure 中，NetApp Console 使用具有 Blob 容器存储帐户的新资源组或现有资源组。Console https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["阻止公众访问您的 Blob 数据"]（默认情况下）。
-* 在StorageGRID中，控制台使用现有的存储帐户作为对象存储桶。
+* 在 Google Cloud 中，控制台为 Google Cloud 存储桶使用具有存储帐户的新项目或现有项目。
+* 在StorageGRID中，控制台使用现有的租户帐户来管理 S3 存储桶。
 * 在ONTAP S3 中，控制台使用 S3 存储桶的现有用户帐户。
 
+
+
+CAUTION: 如果直接从云提供商环境中管理或更改云备份文件，则可能会损坏文件并导致不支持的配置。
 
 
 

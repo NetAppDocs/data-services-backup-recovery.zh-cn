@@ -593,7 +593,6 @@
   <block id="015af6eddd6b75dc43fff454de1ee680" category="paragraph"><block ref="4167d6981fc6619a0d8f5d6e353e481b" category="inline-link-rx"></block>。</block>
   <block id="14c403304e8650321be08c9edd75c486" category="inline-link">前往NetApp Intelligent Services市场了解定价详情</block>
   <block id="2351127acb653fd60dafc73c8efcb79d" category="inline-link">AWS Marketplace 页面</block>
-  <block id="c776759ca58ab152a9abc5e0b4f7ae66" category="list-text">“云备份”计划使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。</block>
   <block id="54b98a81c2ba2da3e9c721b03a4585b5" category="inline-link">将订阅与您的 AWS 凭证关联</block>
   <block id="5f0364e373bcb99c02ad1b8359683908" category="inline-link">Cloud Volumes ONTAP许可主题</block>
   <block id="053b4884f108724f51751445f3fa132f" category="inline-link">了解如何添加许可证</block>
@@ -1014,7 +1013,6 @@
   <block id="7d96331ecc4c49d8309c629c038259b6" category="list-text">选择“操作”图标<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>&gt; *删除克隆*。</block>
   <block id="6bf252e4479008373232d625cc16f3f0" category="list-text">要从SnapCenter中删除克隆的资源，即使克隆或其存储不可访问，也请选择“强制删除”。</block>
   <block id="071238f352b79bf42fc764c1c3e7a672" category="list-text">当克隆被删除时，它将从*库存*页面中删除。</block>
-  <block id="920a86bab58426e670d364756915fe89" category="paragraph">3-2-1 方法的优点包括：</block>
   <block id="90611cad8ce642f37b020e9f74335606" category="inline-link-macro">如果从SnapCenter导入，则配置其他项目</block>
   <block id="4be4857ddf5f778e68cf136f6d4a1b8f" category="list-text"><block ref="4be4857ddf5f778e68cf136f6d4a1b8f" category="inline-link-macro-rx"></block></block>
   <block id="d15c46d418dcb12c5418f755f162b739" category="list-text"><block ref="d15c46d418dcb12c5418f755f162b739" category="inline-link-macro-rx"></block></block>
@@ -1274,9 +1272,7 @@
   <block id="3b9135fa974c68d619894497e2801b13" category="list-text">* ONTAP卷工作负载*：</block>
   <block id="2565579856adf676ae32e330c247eaf5" category="list-text">创建本地快照，复制到二级存储，并将ONTAP卷从本地ONTAP或Cloud Volumes ONTAP系统备份到公共或私有云帐户中的对象存储。</block>
   <block id="316cc7c6ce94033b53fda593f26e3d57" category="list-text">创建块级、增量永久备份，并将其存储在另一个ONTAP集群和云中的对象存储中。</block>
-  <block id="74abc889de7cebfe3e016817d53ae60f" category="list-text">将NetApp Backup and Recovery与SnapCenter一起使用。</block>
   <block id="9dc83174d71dfdff6c796190c3dbb058" category="inline-link-macro">保护ONTAP卷</block>
-  <block id="abcd22928fd59d995b5a6963e1d6ab70" category="list-text">参考<block ref="9aac37a163f0c49d3343b243347ef88d" category="inline-link-macro-rx"></block>。</block>
   <block id="ee7710a5af5d07df880c2c007b67faa7" category="list-text">*Microsoft SQL Server 工作负载*：</block>
   <block id="671ccbf99c0713f4f0b10eb83e8f6fe3" category="list-text">从本地ONTAP、 Cloud Volumes ONTAP或Amazon FSx for NetApp ONTAP备份 Microsoft SQL Server 实例和数据库。</block>
   <block id="89cb0f021426c550658eb8d932ca5bc6" category="list-text">还原 Microsoft SQL Server 数据库。</block>
@@ -1320,25 +1316,12 @@
   <block id="fe66ea47b1e195d0a8f311d62ee027d8" category="paragraph">资源费用是向云提供商支付的，用于对象存储容量以及将备份文件写入和读取到云中。</block>
   <block id="da8845e5304a59d7d37af79e23b5072b" category="list-text">对于备份到对象存储，您需要向云提供商支付对象存储费用。</block>
   <block id="c398740eafb0720d5f9680f8ceef95a6" category="paragraph">由于NetApp Backup and Recovery保留了源卷的存储效率，因此您需要向云提供商对象存储支付ONTAP效率之后的数据费用（针对应用重复数据删除和压缩后的较少量的数据）。</block>
-  <block id="855a635321caeb08d8525de5eea56651" category="list-text">对于使用“搜索和还原”还原数据，您的云提供商会提供某些资源，并且您的搜索请求扫描的数据量会产生每 TiB 成本。  （浏览和恢复不需要这些资源。）</block>
-  <block id="13f4833f14110af4cb2943f6ee04ec0c" category="inline-link">亚马逊雅典娜</block>
-  <block id="d27c79824b42388962acf60cbd3cac6a" category="inline-link">AWS Glue</block>
-  <block id="8d8630ce63e489500c1a1b11f72bee42" category="list-text">在 AWS 中，<block ref="d5a3b912b6075cc4f090f53976a7cdd5" category="inline-link-rx"></block>和<block ref="b9cad212d942ecacb38ec39aea6c65ac" category="inline-link-rx"></block>资源部署在新的 S3 存储桶中。</block>
-  <block id="8006ced8739173ca22ba2b0d83f53268" category="inline-link">Azure Synapse 工作区</block>
-  <block id="31f9c16bc3570a56499294176c354ee7" category="inline-link">Azure 数据湖存储</block>
-  <block id="82ba9e045163c7c72098c50671704351" category="list-text">在 Azure 中，<block ref="a3ff4de37e7a195a145416e9f02577ac" category="inline-link-rx"></block>和<block ref="47b506e6a2508a9b210c02fa89bbdc24" category="inline-link-rx"></block>在您的存储帐户中配置以存储和分析您的数据。</block>
-  <block id="9fece9ac1c7d50fbf1a1498b93cbeb15" category="inline-link">Google Cloud BigQuery 服务</block>
   <block id="705d7d5204c001ada8d7869c065a6a70" category="list-text">如果您计划从已移动到档案对象存储的备份文件中恢复卷数据，则云提供商会收取额外的每 GiB 检索费和每请求费。</block>
   <block id="e1b4a0ddcd3124f71fd5c65649282433" category="paragraph">*服务费*</block>
   <block id="032820ef020ebdcb4972d36db7394681" category="list-text">第一个选项是从您的云提供商处订阅，这样您就可以按月付费。</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="inline-xref">许可</block>
-  <block id="30c887a11915f5c1adb97321b93a9e39" category="paragraph">NetApp Backup and Recovery适用于以下消费模式：</block>
-  <block id="146cb6145f5238f0a019636047844250" category="list-text">*年度*：来自云提供商市场的年度合同。</block>
-  <block id="b81dcdb5e6cec4dda0b7fdf2110e5d48" category="paragraph">您将收到一个序列号，请在NetApp Console中输入该序列号以启用该服务。当达到任一限制时，您都需要更新许可证。备份 BYOL 许可证适用于与您的NetApp Console组织或帐户关联的所有源系统。</block>
   <block id="6e26156d53b8aed5293cf52d74acb49c" category="inline-link-macro">了解如何设置许可证</block>
   <block id="520d2c423b38acf3262d3f1e93b53d8a" category="paragraph"><block ref="5f449dd4c94fd29d3e3b83e45dd58382" category="inline-link-macro-rx"></block>。</block>
-  <block id="0f3691e0fad1edbca841aabd38ddfc42" category="paragraph">NetApp Backup and Recovery以按需付费模式提供基于消费的许可。通过云提供商的市场订阅后，您需要按 GiB 为备份数据付费 - 无需预付款。您的云提供商将通过每月账单向您收费。</block>
-  <block id="9757bd87f9a5ff6758600430092b3955" category="paragraph">请注意，当您首次注册 PAYGO 订阅时，可以享受 30 天的免费试用。</block>
   <block id="9504b35cbb481ca2332f36aedcf456c8" category="list-text">ONTAP卷</block>
   <block id="5c1924f6230f429d87dfb7fd242478ba" category="list-text">VMware 虚拟机和数据存储区</block>
   <block id="d97ad1eba4f90ab1f835497c1e04b99f" category="list-text">适用于 AWS 的Cloud Volumes ONTAP 9.8 或更高版本（使用 SAN 和 NAS）</block>
@@ -1354,7 +1337,6 @@
   <block id="ffd285762b9356506becae85785dc749" category="paragraph">备份副本存储在NetApp Console在您的云帐户中创建的对象存储中。每个集群或系统都有一个对象存储，控制台按如下方式命名该对象存储：<block ref="395f30b009fd80d4c1cba9bc07db445d" prefix=" " category="inline-code"></block> 。请确保不要删除此对象存储。</block>
   <block id="e6c344acbe141c46bf8617b9d43d0c2f" category="inline-link">Amazon S3 阻止公共访问功能</block>
   <block id="33bfcd052df4f75c25d08493f7b03ba3" category="inline-link">阻止公众访问您的 Blob 数据</block>
-  <block id="3ce8b78035d781517f18a68a71568d3a" category="list-text">在StorageGRID中，控制台使用现有的存储帐户作为对象存储桶。</block>
   <block id="b1796f12b7578cc7c522f2e0a90e02e5" category="list-text">在ONTAP S3 中，控制台使用 S3 存储桶的现有用户帐户。</block>
   <block id="7121743ce2e9941a0eedd6b158490333" category="section-title">备份副本与您的NetApp Console组织相关联</block>
   <block id="ee82f46e3a70a2e8b8d75fdf4c3764e6" category="inline-link">了解NetApp Console身份和访问</block>
@@ -1414,7 +1396,6 @@
   <block id="4c62e57751652d4b577a25756cfdab04" category="list-text">要应用更改，请重新启动计算机。</block>
   <block id="3a3942a17def38d9bd0471e0ef50fc54" category="paragraph-title">禁用 UAC 远程限制的 PowerShell 7 命令示例：</block>
   <block id="5af774cd9735f1047d099584c2782535" category="paragraph">此示例中的值设置为“1”，表示 UAC 远程限制被禁用。</block>
-  <block id="7126662a353f79c46a7ccefe46dc4c0a" category="inline-link-macro">保护您的ONTAP卷数据</block>
   <block id="ef53d2e08e79af10a2e451632255842d" category="section-title">保护 Microsoft SQL Server 工作负载的要求</block>
   <block id="0acd3a555d2cc1f83c65dc743cf15408" category="paragraph">要将NetApp Backup and Recovery用于 Microsoft SQL Server 工作负载，您需要满足以下主机系统、空间和大小调整前提条件。</block>
   <block id="7d74f3b92b19da5e606d737d339a9679" category="cell">物品</block>
@@ -2629,35 +2610,9 @@
   <block id="42e7ba7061f6a314504fc5939b6ee874" category="inline-link">BlueXP私人模式的 PDF 文档</block>
   <block id="c91b161e73b74151a87e57d1b478a8bf" category="admonition">BlueXP私有模式（传统BlueXP接口）通常用于没有互联网连接的本地环境和安全云区域，其中包括 AWS Secret Cloud、AWS Top Secret Cloud 和 Azure IL6。NetApp继续通过传统的BlueXP界面支持这些环境。有关旧版BlueXP界面中的私人模式文档，请参阅<block ref="48f65378777d422181826aa490861bdb" category="inline-link-rx"></block>。</block>
   <block id="02cb06ba88a3c5f99e8d4b475bd0ac1b" category="inline-link-macro">将本地ONTAP数据备份到ONTAP S3</block>
-  <block id="00b4fe156d0b170f5196995dd8889b0d" category="list-text">不同存储系统上的复制卷</block>
-  <block id="809b026ec469d1b8bfa79721e15f539b" category="list-text">对象存储中的卷备份</block>
-  <block id="094fa5b5a02089cb6ef9dcfe3de478b1" category="paragraph">必要时，您可以将整个卷、文件夹或一个或多个文件从任何备份副本恢复到相同或不同的系统。</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">功能</block>
-  <block id="d7b479d32340f96732225021d096cc62" category="paragraph">*复制功能：*</block>
   <block id="f22d8e98a694bcfdb0dffd92741dd8fc" category="list-text">在ONTAP存储系统之间复制数据以支持备份和灾难恢复。</block>
-  <block id="58598c037819ab3e58b8ee6d0d634246" category="list-text">通过高可用性确保您的 DR 环境的可靠性。</block>
-  <block id="a93efc0932e3e19c7e2e71af88c77fd0" category="list-text">复制的数据是不可变的，直到您使其可写并可供使用为止。</block>
-  <block id="764ff470b127e5611fdd028d01c9e6a6" category="list-text">如果传输失败，复制可以自我修复。</block>
   <block id="66e7c889f1d203b98d4330686da2e2cd" category="list-text">一次将多个FlexVol卷复制到辅助系统。</block>
-  <block id="5cb11ed35306a1eb272c0463127877ee" category="list-text">使用 UI 将复制的卷还原到源系统或其他系统。</block>
-  <block id="2bf6d048601bbabb3479f4ab04bc2658" category="paragraph">看<block ref="79a799fea451e191faa033feefe8bff3" category="inline-link-macro-rx"></block>了解NetApp Backup and Recovery for ONTAP卷不可用的复制功能列表。</block>
-  <block id="8b590f1e30dffdb9f9bfcd672f78e4cc" category="paragraph">*备份到对象功能：*</block>
-  <block id="480780e18005ac0a5e932d9eefb712c5" category="list-text">将数据卷的独立副本备份到低成本的对象存储。</block>
-  <block id="978691ecd52f4541232e2bc2d3a0519b" category="list-text">将单个备份策略应用于群集中的所有卷，或为具有唯一恢复点目标的卷分配不同的备份策略。</block>
-  <block id="913602150aeb49c0e5c994a9ee6fbba1" category="list-text">创建一个备份策略，以应用于集群中创建的所有未来卷。</block>
-  <block id="fb1b06f0a66663d0b3bfa0401405a807" category="list-text">制作不可变的备份文件，以便在保留期内锁定和保护它们。</block>
-  <block id="3f28b1a3a0b3b6c8294e56323ec13e18" category="list-text">将较旧的备份文件分层到档案存储以节省成本。</block>
-  <block id="0dba7856897347ca5b431db6b55637a4" category="list-text">删除备份关系，以便您可以存档不需要的源卷，同时保留卷备份。</block>
-  <block id="70074255acdc2a7ecaceae099892e971" category="list-text">从云备份到云，从本地系统备份到公共云或私有云。</block>
-  <block id="2e266f5c456f5f6206428071c74410a6" category="list-text">备份数据在静态时通过 AES-256 位加密保护，在动态时通过 TLS 1.2 HTTPS 连接保护。</block>
-  <block id="bd72e14abd3526a8879e36ff21989129" category="list-text">使用您自己的客户管理密钥进行数据加密，而不是使用云提供商提供的默认加密密钥。</block>
-  <block id="31225c51d46e8620e15eeda9d9aede1c" category="list-text">支持单个卷最多 4,000 个备份。</block>
-  <block id="2ef86679dc81862bbea0ea37e255ca59" category="paragraph">*恢复功能：*</block>
-  <block id="ca636232aaf17fe5d8fef3b105b4363c" category="list-text">将卷、文件夹或单个文件还原到源系统或其他系统。</block>
-  <block id="e4dccda809ca16eca6edfd9c690a62ee" category="list-text">将数据恢复到使用不同订阅/帐户或位于不同区域的系统。</block>
-  <block id="4c83a0fb55b796cfb06bd7c5684420d7" category="list-text">将卷从云存储快速恢复到Cloud Volumes ONTAP系统或本地系统；非常适合需要尽快提供对卷的访问的灾难恢复情况。</block>
-  <block id="e9cb242f4caca49284730085b7ce225e" category="list-text">在块级别恢复数据，将数据直接放置在您指定的位置，同时保留原始 ACL。</block>
-  <block id="840e1b5937d998542557db1bd7559485" category="list-text">浏览和搜索文件目录，轻松选择单个文件夹和文件进行单个文件恢复。</block>
   <block id="54f562b1543f6d8bb715f54d099b6865" category="section-title">支持备份和恢复操作的系统</block>
   <block id="ca7c95c52bc2356f0b1853481cf44367" category="paragraph">NetApp Backup and Recovery支持ONTAP系统以及公共和私有云提供商。</block>
   <block id="8c4b25218155a1fdb972f4169855d04f" category="section-title">支持的区域</block>
@@ -2674,69 +2629,15 @@
   <block id="d461a54e93e8dcbd189b38f0ff2865bc" category="list-text">FlexVol读写卷</block>
   <block id="bab09e9304b5c4bff1eb4287ce6071b7" category="list-text">FlexGroup卷（需要ONTAP 9.12.1 或更高版本）</block>
   <block id="53356882cec477de26a5ac4371a30b82" category="list-text">SnapLock Enterprise卷（需要ONTAP 9.11.1 或更高版本）</block>
-  <block id="46206fcd0fa4af78eefe04f1bd8d42c6" category="list-text">适用于本地卷的SnapLock Compliance （需要ONTAP 9.14 或更高版本）</block>
   <block id="913b0ac6158d64b39b9d1e539ad326d3" category="list-text">SnapMirror数据保护 (DP) 目标卷</block>
   <block id="aa0373aa24c3795f9860b49e074ec0b5" category="inline-link-macro">ONTAP卷的备份和还原限制</block>
-  <block id="ebdfb969c44f2d0deea1007cbf186b81" category="paragraph">请参阅<block ref="c27bda4e85978f510ddf0a64d91a61ea" category="inline-link-macro-rx"></block>了解其他要求和限制。</block>
-  <block id="9b228e8142c1f49c9a7b1365505bc5d5" category="paragraph">使用NetApp Backup and Recovery与ONTAP系统相关的成本有两种：资源费用和服务费用。这两项费用均针对服务的对象部分备份。</block>
-  <block id="dd49bc28723be22ffdd3f04630c122df" category="paragraph">由于NetApp Backup and Recovery保留了源卷的存储效率，因此您需要向云提供商对象存储支付ONTAP效率之后的数据费用（针对应用重复数据删除和压缩后的较少量的数据）。</block>
-  <block id="fedaab8c05c476a14c09d3ad41bf9a22" category="list-text">在 Google 中，部署了一个新的存储桶，并且<block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block>在帐户/项目级别进行配置。</block>
-  <block id="060b6e252a88502e803f6fdc3115b5d9" category="paragraph">服务费用支付给NetApp ，涵盖创建对象存储备份的成本以及从这些备份中恢复卷或文件的成本。您只需为对象存储中保护的数据付费，该费用按备份到对象存储的ONTAP卷的源逻辑使用容量（ ONTAP效率之前）计算。此容量也称为前端兆字节 (FETB)。</block>
-  <block id="e71616090dfab7da8f9d13556cae146a" category="paragraph">有三种方式可以支付备份服务费用。第一个选项是从您的云提供商处订阅，这样您就可以按月付费。第二种选择是签订年度合同。第三种选择是直接从NetApp购买许可证。</block>
-  <block id="38692e39e588de5b1294ee4cca656080" category="list-text">*BYOL*：从NetApp购买的许可证，可与任何云提供商一起使用。</block>
-  <block id="1e101142b61a711e7fbc92238adf9d20" category="list-text">*PAYGO*：从云提供商的市场按小时订阅。</block>
-  <block id="fce5aebaf837d23e27b8a9d6a54a6467" category="section-title">自带驾照</block>
-  <block id="61f06895b4fcad7d6460158ccfc33c17" category="paragraph">BYOL 是基于期限（1、2 或 3 年）和容量的，以 1 TiB 为增量。您向NetApp付费以使用该服务一段时间（比如 1 年）以及最大容量（比如 10 TiB）。</block>
-  <block id="fa30a346e7851aab7e6525147f4c5168" category="paragraph"><block ref="706a4c6b2a498be3949e082e6d4f63b6" category="inline-link-macro-rx"></block>。</block>
-  <block id="d1517db071086971f3453ded8278c7a1" category="section-title">按需付费订阅</block>
-  <block id="09c7ee4be0db4e9240de27e931212553" category="inline-link-macro">了解如何设置即用即付订阅</block>
-  <block id="96a576a54d2c3c4d072bdc553daf3d6f" category="paragraph"><block ref="6fd6b7c845ebc3a4a36ea7ff44558bd7" category="inline-link-macro-rx"></block>。</block>
-  <block id="421539f25601331f9f5f1e59cdb43e21" category="section-title">年度合同</block>
-  <block id="92e4e78220fae3f6988f7215aa66d0a3" category="paragraph">使用 AWS 时，有两种年度合同可供选择，期限分别为 1 年、2 年或 3 年：</block>
-  <block id="a053c91170710df654435b444528bbe1" category="list-text">“CVO Professional”计划使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括根据此许可证收费的Cloud Volumes ONTAP卷的无限制备份（备份容量不计入许可证）。</block>
-  <block id="ed20f9f9ce04512430634d23ddd27d79" category="paragraph">使用 Azure 时，有两种年度合同可供选择，分别为 1 年、2 年或 3 年：</block>
-  <block id="7ae06a11ea8628ac56c2d7f2a2e9b574" category="paragraph">当您使用 GCP 时，您可以向NetApp请求私人优惠，然后在NetApp Backup and Recovery激活期间从 Google Cloud Marketplace 订阅时选择该计划。</block>
-  <block id="cf6d8dee9b177c1138ae0ee4e07dc2f3" category="inline-link-macro">了解如何制定年度合同</block>
-  <block id="777fe05ca7bc90a3970850986ca81203" category="paragraph"><block ref="8f0468de2ddc8e1633b3a773ef210074" category="inline-link-macro-rx"></block>。</block>
   <block id="4755986530a007b5ad8c149510339cdd" category="inline-link">NetApp SnapMirror云技术</block>
-  <block id="e2e580c2e9f254a0165ca8c00c734a45" category="paragraph">当您在Cloud Volumes ONTAP或本地ONTAP系统上启用NetApp Backup and Recovery时，该服务会对您的数据执行完整备份。初始备份之后，所有附加备份都是增量的，这意味着只备份更改的块和新块。这使得网络流量保持最低限度。对象存储备份建立在<block ref="d8c60b64404c334d98470563ebc11aa0" category="inline-link-rx"></block>。</block>
-  <block id="435d2218ff597c0925356208def09d75" category="admonition">直接从您的云提供商环境采取的任何管理或更改云备份文件的操作都可能损坏文件并导致不受支持的配置。</block>
-  <block id="60d1f390b363130bf24d5d9d598fdaf5" category="paragraph">下图显示了各个组件之间的关系：</block>
   <block id="3f69aec14e246bba4f69cfecc3b8ea5d" category="inline-image-macro">该图显示了NetApp Backup and Recovery如何与源系统上的卷以及复制卷和备份文件所在的二级存储系统和目标对象存储进行通信。</block>
   <block id="13047fce1a12d30a7f141b98a3cae72d" category="paragraph"><block ref="13047fce1a12d30a7f141b98a3cae72d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="39895b41edb7cf3963dcb646a1e20553" category="paragraph">该图显示卷被复制到Cloud Volumes ONTAP系统，但卷也可以复制到本地ONTAP系统。</block>
-  <block id="57739bc049ff58f3d3db6f5281e84b85" category="section-title">备份所在位置</block>
-  <block id="19fe226921eb8023a05c222ee84c5db8" category="paragraph">根据备份类型，备份位于不同的位置：</block>
-  <block id="84b23b52a16a2d456b93cfcd37a9fb17" category="list-text">_复制卷_驻留在二级存储系统上 - Cloud Volumes ONTAP或本地ONTAP系统。</block>
-  <block id="9b1fec5e0f334c7c6734500536c26eec" category="list-text">_备份副本_存储在控制台在您的云帐户中创建的对象存储中。每个集群/系统有一个对象存储，控制台将对象存储命名为：“netapp-backup-clusteruuid”。请确保不要删除此对象存储。</block>
-  <block id="ce6bd8b7e44a144f2c3eefb8fb43c028" category="inline-link-macro">取消注册系统的NetApp Backup and Recovery</block>
-  <block id="dde7812a2b64115f166d47da097a615f" category="paragraph">如果您将来想要更改集群的目标对象存储，则需要<block ref="4b0267ab70996ada4858bf6db6495e68" category="inline-link-macro-rx"></block>，然后使用新的云提供商信息启用NetApp Backup and Recovery 。</block>
-  <block id="47c63e2d9d67be358326c1eff2c87d12" category="section-title">可自定义的备份计划和保留设置</block>
-  <block id="2e15d79bbec0c847d20d0f428a238b39" category="paragraph">您可以选择所有卷的每小时、每天、每周、每月和每年备份的组合。对于对象备份，您还可以选择系统定义的策略之一，提供 3 个月、1 年和 7 年的备份和保留。您使用ONTAP System Manager 或ONTAP CLI 在集群上创建的备份保护策略也将作为选择出现。这包括使用自定义SnapMirror标签创建的策略。</block>
-  <block id="27f4e7945442348457ec28cf1aa6eefd" category="paragraph">一旦达到某个类别或间隔的最大备份数量，较旧的备份就会被删除，以便您始终拥有最新的备份（因此过时的备份不会继续占用空间）。</block>
-  <block id="c1855e2778d4090a158417283de29dbc" category="admonition">数据保护卷备份的保留期与源SnapMirror关系中定义的保留期相同。如果您愿意，可以使用 API 来更改此设置。</block>
-  <block id="01ec9d3adb6b85775aeeda0d6d533e54" category="section-title">备份文件保护设置</block>
-  <block id="8756c7c925830c8c39d9804961d7d40b" category="list-text">_DataLock_ 保护您的备份文件不被修改或删除。</block>
-  <block id="c73b2d161daabc3a9a53d6dd0c4df263" category="list-text">_勒索软件保护_会在创建备份文件时以及恢复备份文件中的数据时扫描您的备份文件以查找勒索软件攻击的证据。</block>
-  <block id="78505512ebd89d20931322ac265d9153" category="paragraph">备份保留期与备份计划保留期相同，再加上最多 31 天的缓冲期。例如，每周备份保留 5 份副本，每个备份文件将锁定 5 周。每月备份保留 6 份副本，每个备份文件将锁定 6 个月。</block>
-  <block id="0518809725b483d8fb74affb68a52a55" category="paragraph">欲了解更多详细信息，请参阅以下信息：</block>
-  <block id="56a32d1b7ebb6e4b6fd9b4fdf452a545" category="inline-link-macro">DataLock 和勒索软件保护的工作原理</block>
-  <block id="4f30a0eb9cef7217d77003e4c6f4b94b" category="list-text"><block ref="a4d8d51cd246c5b36133f351afcd6a36" category="inline-link-macro-rx"></block>。</block>
-  <block id="0b06a344ae5fced9c2d539fce3b1d3a5" category="list-text"><block ref="e041470535c4f2089ff7e958a066947f" category="inline-link-macro-rx"></block>。</block>
-  <block id="668420eb25c0657fa1ed103061b132a1" category="admonition">如果您将备份分层到档案存储，则无法启用 DataLock。</block>
-  <block id="648e07eb3f255382cd68dd1ee61b6561" category="section-title">旧备份文件的存档存储</block>
-  <block id="7082ff4f578c0dfc350f7dba294cc6af" category="paragraph">使用某些云存储时，您可以在一定天数后将较旧的备份文件移动到较便宜的存储类/访问层。您还可以选择立即将备份文件发送到档案存储，而无需写入标准云存储。请注意，如果您启用了 DataLock，则无法使用档案存储。</block>
-  <block id="6ec90db5e840928836ff1cf4549836d3" category="paragraph">如果您的集群使用的是ONTAP 9.10.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and RecoveryUI 中的“S3 Glacier”或“S3 Glacier Deep Archive”存储，以进一步优化成本。<block ref="87cb8f568d5760949ee2966ee02e5cd8" category="inline-link-macro-rx"></block>。</block>
-  <block id="599ba6cb03ddb8ef9064f284619e75fe" category="paragraph">如果您的集群使用的是ONTAP 9.10.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and RecoveryUI 中的“Azure Archive”存储，以进一步优化成本。<block ref="f629fd31d00488edb9dbadb6a7663e7f" category="inline-link-macro-rx"></block>。</block>
-  <block id="355f64b87b3b97a9b5ca79d9730ddeec" category="paragraph">如果您的集群使用的是ONTAP 9.12.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and Recovery UI 中的“_Archive_”存储中，以进一步优化成本。<block ref="a5f5ea528fdc4d7b7927a7bc5e75da85" category="inline-link-macro-rx"></block>。</block>
-  <block id="98c5dd0d4e4b94048525760a7e30fd9f" category="inline-link-macro">了解有关从StorageGRID归档备份文件的更多信息</block>
-  <block id="ddc789c5369e25049124726fc1e7b889" category="section-title">FabricPool分层策略注意事项</block>
   <block id="862c33469bbdb829da4d537ae8e3703f" category="paragraph">当您要备份的卷位于FabricPool聚合上，并且分配了分层策略时，您需要注意以下几点<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block>：</block>
   <block id="e41bdc3c8d9b10f20f980345e66e82c3" category="list-text">FabricPool分层卷的第一次备份需要读取所有本地和所有分层数据（从对象存储）。备份操作不会“重新加热”对象存储中分层的冷数据。</block>
   <block id="f2c141c6bcd73c6e36a18c2335ec48e8" category="paragraph">此操作可能会导致从云提供商读取数据的成本一次性增加。</block>
   <block id="3b4f7847e0c80a6665d11cb27ec353f5" category="list-text">后续备份是增量的，不会产生这种影响。</block>
-  <block id="418dfdb508c036c09d2c850937665491" category="list-text">如果在最初创建卷时将分层策略分配给卷，则您将不会看到此问题。</block>
-  <block id="75968f9094e000b12da4b2ead555a058" category="list-text">在分配之前考虑备份的影响<block ref="a181a603769c1f98ad927e7367c7aa51" prefix=" " category="inline-code"></block>对卷进行分层策略。由于数据是立即分层的，NetApp Backup and Recovery将从云层而不是本地层读取数据。由于并发备份操作共享与云对象存储的网络链接，因此如果网络资源饱和，可能会出现性能下降。在这种情况下，您可能需要主动配置多个网络接口 (LIF) 来减少这种类型的网络饱和。</block>
   <block id="bbf0b1b9c16dc904da9a8179519e7e31" category="list-text">您可以将*卷*（作为新卷）还原到原始系统、使用相同云帐户的其他系统或本地ONTAP系统。</block>
   <block id="a4883a32493cbf65048c6ba0d655088d" category="list-text">您可以将*文件*还原到原始系统中的卷、使用相同云帐户的不同系统中的卷或本地ONTAP系统上的卷。</block>
   <block id="d92c1fbc11ff9a4d0db37653e35a2e52" category="paragraph">总而言之，这些是可用于将卷数据还原到ONTAP系统的有效流程：</block>
@@ -3235,8 +3136,6 @@
   <block id="e6e260ceb36a63c5c858a5939aa0a093" category="paragraph">您可以创建策略来管理本地快照、复制到二级存储以及备份到对象存储。3-2-1 策略的一部分包括创建主存储系统上的实例、数据库、应用程序或虚拟机的快照。</block>
   <block id="6401b61f7f56a390f004be1c6e52452f" category="paragraph">在发现过程中， NetApp Backup and Recovery会分析您组织内的 VMware 工作负载，并评估和导入现有的保护策略、快照以及备份和恢复选项。</block>
   <block id="bd45d990ee6243026d43e7ba09d9dcc7" category="list-text">从SnapCenter Plug-in for VMware vSphere导入现有的保护策略、快照以及备份和恢复选项。</block>
-  <block id="c7216ade1ce2641cd0b5ceae5c192aea" category="paragraph">创建快照或复制卷不收取任何费用——除了存储快照和复制卷所需的磁盘空间。</block>
-  <block id="ec5903fe264ba75792e588ee687f9158" category="paragraph">仅当从对象存储进行备份和恢复时才需要备份许可证。创建快照和复制卷不需要许可证。</block>
   <block id="b26fafb8754488cba5d1c6f4c35f4b89" category="paragraph">NetApp Backup and Recovery开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括主存储系统数据的完整副本。后续传输包含快照中包含的主存储系统数据的差异副本。</block>
   <block id="bb5dc31143cea02e04349aa386dc4c27" category="paragraph">NetApp Backup and Recovery开始对您的卷进行初始备份。复制卷和备份文件的基线传输包括主存储系统数据的完整副本。后续传输包含快照中包含的主存储数据的差异副本。</block>
   <block id="294441075d63ebaf575b2bea27e26a8b" category="paragraph">您可以在卷备份仪表板中查看当前正在备份的所有卷的列表。这包括所有类型的备份，包括快照、复制卷和对象存储中的备份文件。您还可以查看系统中当前未备份的卷。</block>
@@ -3276,12 +3175,7 @@
   <block id="27633467a4d084c1ae2d149610df116e" category="list-text">默认快照策略会创建每小时、每天和每周快照，保留 6 个每小时快照、2 个每天快照和 2 个每周快照。</block>
   <block id="479879a0a56a65760a613ed57fb23158" category="list-text">默认复制策略复制每日和每周快照，保留 7 个每日快照和 52 个每周快照。</block>
   <block id="4781e0ae3fa76dcbea28b4037c95437d" category="list-text">默认备份策略复制每日和每周快照，保留 7 个每日快照和 52 个每周快照。</block>
-  <block id="4505d5dc59ca341c8aa8ef2c0fac02a6" category="list-text">源系统上卷的快照</block>
-  <block id="caec39d67e86a9c850947c8f558df9b9" category="paragraph"><block ref="caec39d67e86a9c850947c8f558df9b9" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4d9a28db017266e35e5d4203c8c74098" category="list-text">从对象存储中的本地快照、复制卷或备份卷恢复特定时间点的数据。</block>
   <block id="45374e4c2372e5efe029c3622265209a" category="list-text">快照存储在源系统的源卷上。</block>
-  <block id="30e07a9dd02dd98f372bd162ec8456ef" category="paragraph">当您为系统启用NetApp Backup and Recovery时，您最初选择的所有卷都将使用您选择的策略进行备份。您可以为快照、复制卷和备份文件选择不同的策略。如果您想要为具有不同恢复点目标 (RPO) 的某些卷分配不同的备份策略，则可以为该集群创建其他策略，并在激活NetApp Backup and Recovery后将这些策略分配给其他卷。</block>
-  <block id="9e813756b5af6bc196c66209061d9d1a" category="paragraph">默认情况下启用计划的勒索软件防护扫描。扫描频率的默认设置为 7 天。扫描仅发生在最新的快照上。可以禁用计划扫描以降低成本。您可以通过“高级设置”页面上的选项，启用或禁用最新快照上的计划勒索软件扫描。如果启用它，则默认每周执行一次扫描。您可以将该计划更改为几天或几周，或者禁用它，以节省成本。</block>
   <block id="02c75a95538b43e9e819f0d1b0cc19f2" category="list-text">快照 -&gt; 已恢复卷</block>
   <block id="68601916ccf016a3cbb9b91a847005f5" category="paragraph">您可以将ONTAP数据从位于二级系统（复制卷）或对象存储（备份文件）中的备份文件还原到以下系统。快照保存在源系统上，并且只能还原到同一系统。</block>
   <block id="8ba8feef9dc91a81337c3e1c3f636d2e" category="admonition">目前，您只能从对象存储中的备份文件恢复文件夹或单个文件。目前不支持从本地快照或位于辅助系统（复制卷）中的备份文件恢复文件和文件夹。</block>
@@ -3299,7 +3193,6 @@
   <block id="38791ac6dfcab3a4a150d9b40eb83c4b" category="paragraph">您可以从三种授权选项中进行选择：</block>
   <block id="24a3699faa66664ca496b9a5bd124662" category="list-text">*自带许可证 (BYOL)*：从NetApp购买基于期限（1 年、2 年或 3 年）和容量（以 1-TiB 为增量）的许可证。在NetApp Console中输入提供的序列号进行激活。该许可证涵盖您组织中的所有源系统。当期限或容量达到限制时，需要续约。</block>
   <block id="248848332301b53df791d76f885827be" category="inline-link">使用NetApp Backup and Recovery按需付费订阅</block>
-  <block id="b2756926bee4401109074cd37d6bbfc7" category="list-text">*年度合同*：可通过 AWS 和 Azure Marketplace 购买，期限为 1 年、2 年或 3 年。现有两份年度合同可供选择：</block>
   <block id="56a16935ca4475c6ad8f6940bbbaa577" category="list-text">*云备份*：备份Cloud Volumes ONTAP和本地ONTAP数据。</block>
   <block id="5051cac88a3b9ad2e2baad101b5e4862" category="list-text">*CVO 专业版*：捆绑了Cloud Volumes ONTAP和NetApp Backup and Recovery， Cloud Volumes ONTAP卷可进行无限备份（备份容量不计入许可证）。</block>
   <block id="c85bf80350e3e2b3024a57e3e63f42af" category="list-text">CVO 专业版计划包含两种收费方式：</block>
@@ -3437,9 +3330,6 @@
   <block id="31c25778a66dd9ff2087fb25f9f003e3" category="list-text">对于 AWS，您可以将备份分层存储到 AWS _S3 Glacier_ 或 _S3 Glacier Deep Archive_ 存储中。<block ref="da672f43205b0c90027c7dfb66aec892" category="inline-link-macro-rx"></block>。</block>
   <block id="cf79bdcd3a75ca2aaf153bfbee77f91f" category="list-text">对于 Azure，您可以将较旧的备份分层存储到 _Azure Archive_ 存储中。<block ref="378f4ee26769b0f22cf8e5c4c18a63bc" category="inline-link-macro-rx"></block>。</block>
   <block id="55746a30fb9b4c5182484dec9b3600d3" category="list-text">您可以将数据从本地ONTAP系统备份到本地ONTAP系统或为 S3 对象存储配置的Cloud Volumes ONTAP系统。<block ref="61d8249673309599fa2a7a8b0c67a195" category="inline-link-macro-rx"></block>。</block>
-  <block id="5cbc97866d11e9b3160156a597fbd5bf" category="list-text">在 AWS 中，控制台可以实现<block ref="b38667957fcdf9b9da65b213e7fb2492" category="inline-link-rx"></block> 在 S3 铲斗上。</block>
-  <block id="108d25df82fe933520bf967ad1d14b85" category="list-text">在 Azure 中，控制台使用新的或现有的资源组，并为 Blob 容器分配存储帐户。控制台<block ref="a7068b8d2b60241ce77a1051f3a66ed5" category="inline-link-rx"></block> 默认情况下。</block>
-  <block id="fc2c90af4df4de3a15611b7cf431a683" category="list-text">在 GCP 中，控制台使用带有 Google Cloud Storage 存储桶存储帐户的新项目或现有项目。</block>
   <block id="96e895b3970ec91a00e97afd2eb59250" category="list-text">在StorageGRID中，控制台使用现有的租户帐户来管理 S3 存储桶。</block>
   <block id="836b4aa41fc8e9938df6b2350419d4f6" category="paragraph"><block ref="ee2d4c64a4d42f71a3357c6cd2b7b94b" category="inline-link-macro-rx"></block>。<block ref="bf09a0f29ffa1dc0ee63da51e58f16ef" category="inline-link-macro-rx"></block>。<block ref="9220ac6939e2eccbf843225c6d0eb5f6" category="inline-link-macro-rx"></block>。</block>
   <block id="ab042cf6b82a1ca2824a55aecccf0f72" category="list-text">选择“下一步”继续。</block>
@@ -4130,7 +4020,6 @@
   <block id="fe6a65d4e5dee2ab8e25b78186c2fa25" category="list-text">ASA r2 仅限 SAN 系统（需要 ONTAP 9.17.1 或更高版本）</block>
   <block id="15c76b732e7da21111f18374ed2e9ae6" category="list-text">*metadata.annotations.protect.trident.netapp.io/skip-vm-freeze*：（_Optional_）此注释仅适用于从虚拟机定义的应用程序，例如在 KubeVirt 环境中，在快照之前会发生文件系统冻结。指定此应用程序是否可以在快照期间写入文件系统。如果设置为 true，应用程序将忽略全局设置，并且可以在快照期间写入文件系统。如果设置为 false，应用程序将忽略全局设置，并在快照期间冻结文件系统。如果指定，但应用程序在应用程序定义中没有虚拟机，则忽略注释。如果未指定，则应用程序遵循<block ref="3047941e3fa7c2760a995edc5fae820b" category="inline-link-rx"></block>。</block>
   <block id="238d7a2bebc2cf898422ec1dbda4a73b" category="paragraph">工作负载是系统内资源的逻辑分组，作为一个单位管理，用于保护、治理、检测和恢复。在 Backup and Recovery 中，工作负载是您保护的单位。其含义取决于数据源：对于 Kubernetes，工作负载是一个应用程序，对于 VM 环境，它是一个虚拟机，对于数据库环境，它是一个数据库。</block>
-  <block id="eb0aff97ddec7b6894c0ea9cc7a6b66c" category="list-text">在 Google Cloud 中，将部署一个新的存储桶，并在帐户/项目级别配置<block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block>。</block>
   <block id="3addfc338787d5dc6d9709962161e00d" category="list-text">第三种选择是直接从 NetApp 购买许可证。请参见 <block ref="ba0ccbd18ea5b5cc8b06635e1ea19aa1" category="inline-xref-macro-rx"></block> 一节了解详细信息。</block>
   <block id="e9ebab79f1c4e6f0b2fa9bfe92e9381d" category="summary">启用 NetApp Backup and Recovery 的预览和隐藏功能。</block>
   <block id="145966dcf8392a62159a1226e54e749e" category="doc">启用 NetApp Backup and Recovery 的预览和隐藏功能</block>
@@ -4160,7 +4049,6 @@
   <block id="7577767aaa58a8a7950977e3a65ee191" category="list-text">重新启动 Backup and Recovery 索引编录容器：</block>
   <block id="e6cce919f01af0ea557dc3414a5f3d13" category="sidebar">启用预览和隐藏功能</block>
   <block id="244ec7a150e9351c3fc76e657044f42c" category="paragraph">如果对对象存储中的备份文件启用了勒索软件保护，则要求您在还原之前运行额外的检查。我们建议执行扫描。</block>
-  <block id="04d519be10632791c717b79e98c10651" category="list-text">如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 Datalock 和勒索软件保护），那么您也将从云提供商那里产生额外的出口成本。</block>
   <block id="1ca7dcaeea297c00bd40d178b2115682" category="list-text">对于备份到对象策略，请设置 Datalock 和 Ransomware 保护设置。有关 Datalock 和 Ransomware 保护的详细信息，请参阅 <block ref="7a234b4add653baca92b7b8d8c25d2af" category="inline-link-macro-rx"></block>。</block>
   <block id="6561c6e3caa260f1bdb6d3649d38be46" category="list-text">对于备份到对象策略，请配置 Datalock 和 Ransomware 保护。有关 Datalock 和 Ransomware 保护的详细信息，请参阅 <block ref="7a234b4add653baca92b7b8d8c25d2af" category="inline-link-macro-rx"></block>。</block>
   <block id="62fe09f51891d84daa25048262b9784e" category="paragraph">勒索软件防护列显示扫描正在进行中。</block>
@@ -4481,7 +4369,6 @@
   <block id="1ce75b5926383de539d27e838bd74b8a" category="paragraph">有关在 NetApp Backup and Recovery 中执行操作所需的角色和权限的详细信息，请参阅<block ref="04b01782baab49091268802b7f1423cb" category="inline-link-rx"></block>。</block>
   <block id="6bb058e639cecc8051a99e8892400bd8" category="section-title">对象存储备份的要求</block>
   <block id="fc0cba16e06b834a59ea2732ce15d74a" category="section-title">保护 ONTAP 卷工作负载的要求</block>
-  <block id="ddaa1c8bd07bda0816a8b44d87c10997" category="paragraph">有关受支持的功能、卷类型、备份和还原目标等信息，请参阅 <block ref="1d638e05920fe33426fac4dc6285a639" category="inline-link-macro-rx"></block>。</block>
   <block id="ba0f269b2bdb85161db3fe51338e6a7b" category="cell">数据库主机</block>
   <block id="bff50f1947dbec1e11bc66d60ca0b1d9" category="cell">支持的存储</block>
   <block id="e042e676706d93b3b14ce12e4d00a002" category="cell">物理服务器</block>
@@ -4519,7 +4406,6 @@
   <block id="47d7a1c349dd710c7b70de2cc5f8bef1" category="admonition">Wasabi 目前是唯一符合条件的 S3 兼容对象存储提供商。其他 S3 兼容的提供商尚未通过验证。</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="811a794fc3af22bb5e0566f56adc0406" category="list-text">S3 兼容存储</block>
-  <block id="29fc78ad7b30ceab82a6fad5327f5e05" category="cell">S3 兼容对象存储</block>
   <block id="d0eb32456912dd737e495d1233503746" category="summary">NetApp Console 审核支持的备份和恢复操作的参考。</block>
   <block id="da8be55f3871d0a372174a9f477823f0" category="inline-link">从"审核"页面审核用户活动</block>
   <block id="199370791c099a5f1bca782c3d1d470c" category="list-text">从备份还原卷或文件</block>
@@ -4800,7 +4686,6 @@
   <block id="7e900a191b889cd4d3e5e777e03f05c2" category="paragraph">有关说明，请参阅 <block ref="68a9f6057ec4c65ff8802aff8473d69f" category="inline-link-macro-rx"></block>。</block>
   <block id="c441e24bb826e395f6d73d8c34600f7c" category="doc">NetApp Backup and Recovery 中的保护旅程规划选项</block>
   <block id="b8af6340cc3d83c6cf07337054a1164f" category="doc">提高 NetApp Backup and Recovery 本地部署中的搜索和还原性能</block>
-  <block id="e0aceca7e5412937958bf3994a724838" category="doc">了解适用于 ONTAP 卷的 NetApp Backup and Recovery</block>
   <block id="10261cd3a3f5ccb15e72d0c1b57c5ebc" category="doc">使用 NetApp Backup and Recovery 中的浏览和还原功能还原 ONTAP 数据</block>
   <block id="a536fe7082ff09f4ede1423eed0fa35f" category="doc">使用 NetApp Backup and Recovery 中的搜索和还原功能还原 ONTAP 数据</block>
   <block id="1e3b1f0d393fcf8ab682a2efc8b9d348" category="doc">ONTAP 数据恢复选项（位于 NetApp Backup and Recovery 中）</block>
@@ -5555,19 +5440,7 @@
   <block id="f5b85452488f795e1cc7d63f67bfb7d2" category="list-text">先应用 PV，然后再应用 PVC，以此应用 YAML 对象（PV 必须存在，PVC 的标签选择器才能绑定到该对象）。然后验证 PVC 声明是否已绑定：</block>
   <block id="8efecd04b299fc5bba0c5bb50d5d5be9" category="doc">了解使用 NetApp Backup and Recovery 的 ONTAP 卷保护</block>
   <block id="4f71909f159d51835688b6425e8e2954" category="paragraph">使用 NetApp Backup and Recovery 来保护和恢复您的 ONTAP 卷数据，并长期存档备份。您可以实施 3-2-1 策略，在两个不同的存储系统上保留三个源数据副本，并在云端保留一个副本。</block>
-  <block id="0689ab1e22f141f6d0b332be634c22e1" category="paragraph">激活后，Backup and Recovery 会创建块级增量永久备份，这些备份存储在另一个 ONTAP 集群和云中的对象存储中。除了源卷之外，您还将拥有：</block>
-  <block id="6a7ed888e1d7d3bf5482fe0b1f2ea0b9" category="paragraph">NetApp Backup and Recovery 使用 NetApp 的 SnapMirror 数据复制技术，通过创建快照并将其传输到备份位置来保持备份同步。</block>
-  <block id="6a0c8b360437bd0ee2dafe71c7b2feb8" category="list-text">通过在两个系统之间使用预共享密钥 (PSK) 设置本机 ONTAP 传输中加密。</block>
-  <block id="d000083e03f72bb134426434cccec919" category="list-text">与<block ref="1b4173389b9a324e425fc3e368d76e05" category="inline-link-rx"></block>相比，NetApp Backup and Recovery 中的复制具有以下特点：</block>
-  <block id="585d31b0d3ae185c11a8cf45849bf9e6" category="list-text">扫描备份文件以查找可能的勒索软件攻击，并自动删除或替换受感染的备份。</block>
-  <block id="5ed078e03bcb78c44d001d18a88e7494" category="paragraph">NetApp Backup and Recovery 使您能够将 ONTAP 卷从以下源系统备份到公共和私有云提供商中的以下辅助系统和对象存储。快照驻留在源系统上。</block>
   <block id="0833ec5461d9380f69e761c64295cac0" category="admonition">"本地 ONTAP 系统"包括 FAS、AFF 和 ONTAP Select 系统。</block>
-  <block id="0313e69612b23cc5b7d817c29885ccb2" category="list-text">如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您已为云备份启用了 DataLock 和勒索软件保护），那么您还将产生云提供商的额外出口费用。</block>
-  <block id="e71c5700dcf5057dd42569654a5e2a71" category="paragraph">如果您的集群使用的是 ONTAP 9.11.1 或更高版本，您可以保护对象存储中的备份免受删除和勒索软件攻击。每个备份策略都提供了一个关于 _DataLock and Ransomware protection_ 的部分，可在特定时间段（即_保留期_）内应用于您的备份文件。</block>
-  <block id="c8ab0f76468a3f7346b0cafb42461352" category="paragraph">当备份目标为 Amazon S3、Azure Blob 或 StorageGRID 时，当前支持此功能。其他存储提供商目标将在未来版本中添加。</block>
-  <block id="9a9dff1788de66c3da5aedcc6674c0a3" category="paragraph">如果您的本地集群使用的是 ONTAP 9.12.1 或更高版本，并且您的 StorageGRID 系统使用的是 11.4 或更高版本，则可以在一定天数后将较旧的备份文件归档到公共云归档存储中。当前支持 AWS S3 Glacier/S3 Glacier Deep Archive 或 Azure Archive 存储层。<block ref="9d6c6b736047d42efebf6aaf5ddd5d73" category="inline-link-macro-rx"></block>。</block>
-  <block id="8ecfbd845f7e9bf3ced1c54be5aca600" category="inline-link-macro">存档旧备份文件的工作原理</block>
-  <block id="bfa90f5af387b21402e298ea28710f6c" category="paragraph">请参阅<block ref="8b98700ed731e5644d80e3fa056f200a" category="inline-link-macro-rx"></block>。</block>
   <block id="b6efddb7069bea0b2914c24edf355b4f" category="paragraph">当您知道源卷名、源系统、存储 VM 和备份文件日期时，请使用"浏览和还原"。您可以从快照、复制卷或存储在对象存储中的备份中还原 ONTAP 数据。</block>
   <block id="c4eb61964eb0db68641fd86989bf219e" category="admonition">将数据从 Azure 存档存储还原到 StorageGRID 系统时，不支持高还原优先级。</block>
   <block id="b2874175a43e2888accd57b63af9cdc8" category="list-text">对于Amazon S3，可以在AWS或本地部署Console代理</block>
@@ -5715,7 +5588,6 @@
   <block id="4171790834a17f92e35176a29fd09458" category="paragraph"><block ref="244560fcf5d380e290ecd4b178a412c9" category="inline-link-rx"></block> <block ref="d8ea6acc45a89d2ab361031769419dd5" category="inline-link-rx"></block> <block ref="6a671fae687ae09ed6ec2eb759a70329" category="inline-link-rx"></block> <block ref="76f9b86225921137bc166f71caebf3f1" category="inline-link-rx"></block> <block ref="ab2445e139747cf732d46d877cc62a64" category="inline-link-rx"></block> <block ref="9c225a8772c7b3c40b62701739b123cf" category="inline-link-rx"></block></block>
   <block id="32fe9a563ca84556ad18ae2933089bed" category="admonition">这些设置仅适用于备份到对象存储。这些设置都不会影响您的快照或复制设置。</block>
   <block id="96700d751785d80f017bf85fc1a4a76c" category="paragraph">每个备份策略都为_Labels &amp; Retention_提供了一个部分，您可以将其应用于备份文件。请注意，应用于卷的快照策略必须为 NetApp Backup and Recovery 所识别的策略之一，否则将不会创建备份文件。</block>
-  <block id="6f8cf279072f687ab049a6dc930dfa1d" category="admonition">应用于卷的快照策略必须包含您在复制策略和备份到对象策略中使用的标签之一。如果未找到匹配的标签，则不会创建备份文件。例如，如果要创建"每周"复制的卷和备份文件，则必须使用创建"每周"快照的快照策略。</block>
   <block id="3853002b75aefc21d388f510cae8f516" category="paragraph">*位置*列显示备份文件（快照）是*本地*（源系统上的快照）、*辅助*（辅助 ONTAP 系统上的复制卷）还是*对象存储*（对象存储中的备份文件）。选择要还原的文件。</block>
   <block id="bf550c792f32f60cca4d833c734e3139" category="paragraph">如果将 PDB 或表空间恢复到特定时间点或 SCN：</block>
   <block id="6d26fc4748876aad896b3483365ea28f" category="list-text"><block ref="d77f3c9db249e472a92ac4b41ecc4805" prefix="" category="inline-code"></block> 不能选择用于时间点恢复。</block>
@@ -6220,7 +6092,6 @@
   <block id="d62e9192a8364f8d716dd3636b3a71f1" category="paragraph">对于所有工作负载，除了存储快照和复制数据所需的磁盘空间外，创建本地快照或复制到 ONTAP 辅助存储不需要任何费用。您只需支付保护对象存储的费用。</block>
   <block id="47b9e13f36f004e69c67f2b5cdbd757f" category="paragraph">对于所有工作负载，仅对受对象存储保护的资源收费。费用基于应用效率之前源工作负载的逻辑已用容量（对于 ONTAP 卷工作负载称为前端 TB（FETB））。对于数据库，这意味着数据库大小；对于虚拟机，这意味着虚拟机大小。对于 Kubernetes 工作负载，费用基于这些应用程序的持久卷的组合大小。</block>
   <block id="9d78b594ffc798524458faaab99dce48" category="paragraph">对于所有工作负载，仅涉及对象存储的备份和还原操作需要备份许可证。创建本地快照并复制到 ONTAP 辅助存储不需要许可证。</block>
-  <block id="13dc5da0f7aa7ae2f943cee57f5c9c6e" category="list-text">*随用随付（PAYGO）*：通过云提供商的市场订阅，并按每 GiB 备份数据付费，按小时计费。无需预先付款。首次注册即可免费试用 30 天。有关详细信息，请参阅<block ref="8edaf8cd3966d935673fb34ac864f172" category="inline-link-rx"></block>。</block>
   <block id="79c164e01ef5305bebeb38be7672f92f" category="paragraph">您可以将数据库还原到其原始位置，也可以在其他注册主机（备用位置）上将其还原为新数据库。</block>
   <block id="8fb144d7137e4a618ca12b318cc351ac" category="list-text">还原到备用位置（其他注册主机）</block>
   <block id="721c491a7e1c01cc9b5d2b9891d67270" category="list-text">当您还原到备用位置时，NetApp Backup and Recovery 会将源数据库的选定备份作为新数据库还原到另一个已注册的主机上。您需要指定目标主机和新数据库的名称。如果您不提供还原规范文件，Backup and Recovery 会自动计算目标主机上数据文件、控制文件和重做日志文件的位置。</block>
@@ -6318,4 +6189,90 @@
   <block id="bc6d0492c51401fb2dbf19ed1efdf743" category="cell">云凭据管理</block>
   <block id="a37f9043116c528dc094be8481838512" category="cell">发现和配置</block>
   <block id="92c0342f0088c494151781581cdebf28" category="sidebar">创建和管理报告</block>
+  <block id="bc5bcedf77e0acce66a279cb724dbd32" category="summary">NetApp Backup and Recovery 支持跨一系列源系统、辅助系统和对象存储目标备份和恢复数据。</block>
+  <block id="c90a5bc7bdea22a409b45cfcf459d7b3" category="doc">NetApp Backup and Recovery 中支持的备份和还原目标</block>
+  <block id="e1fa663563aa2eaa5720a18bc3040672" category="paragraph">查看 NetApp Backup and Recovery 在跨工作负载的备份和恢复操作中所支持的源系统、辅助系统和对象存储目标。</block>
+  <block id="a2664c8fe75ba35451cda6d3d76c3887" category="paragraph">NetApp Backup and Recovery 使您能够将数据从以下源系统备份到公有云和私有云提供商中的以下辅助系统和对象存储。快照驻留在源系统上。</block>
+  <block id="4673e46faba78d14200a232a440349f4" category="cell">Google Cloud NetApp Volumes Flex （仅限 Oracle 数据库和 VMware 工作负载）</block>
+  <block id="13b13feeb79c410e7ea4bc459d2d8402" category="cell">Google Cloud NetApp Volumes Flex</block>
+  <block id="3569ba028d06272de9c6ad7b95cc26a3" category="cell">Amazon FSx for NetApp ONTAP（仅限 Microsoft SQL Server、Oracle Database 和 VMware 工作负载）</block>
+  <block id="5ac62c42b8923cbbcf88a944aa9e62b6" category="cell">Amazon S3（仅来自 Cloud Volumes ONTAP）</block>
+  <block id="4aae266054b7913b4a49b5bba6b2cb50" category="paragraph">您可以将驻留在辅助系统（复制卷）或对象存储（备份文件）中的备份文件、虚拟机、数据库或 Kubernetes 资源中的数据还原到以下系统。快照驻留在源系统上，只能还原到同一系统。</block>
+  <block id="9765ad2ecfd61a46ff868e7596bf496d" category="cell">备份位置（对象存储）</block>
+  <block id="989d412f8649103b82711fd2a6496fb7" category="cell">从对象存储还原时的目标系统（备份）</block>
+  <block id="a7ddc86f51fb1ec04d01ddbf0495d81b" category="cell">从二级系统还原时的目标系统（复制）</block>
+  <block id="5b60dfac2d8db5a3a94b2b467544d041" category="cell">S3 兼容对象存储（仅限 ONTAP 卷）</block>
+  <block id="b7d9fbe736177674448667f5a2d7a739" category="paragraph">请记住以下恢复注意事项：</block>
+  <block id="539cc010bb759ffe50564a29f6fbef9c" category="list-text">从 Cloud Volumes ONTAP （复制）的恢复只能恢复到 Cloud Volumes ONTAP。但是，AWS 中的 Cloud Volumes ONTAP 也支持恢复到 Amazon FSx for NetApp ONTAP。</block>
+  <block id="51ae9820c23af6e8cd2cff960227905e" category="list-text">从本地 ONTAP（复制）的还原只能还原到本地 ONTAP。</block>
+  <block id="626e006ac8db6b446207138d5cf010ce" category="list-text">从第一方 Amazon FSx for NetApp ONTAP 和 Google Cloud NetApp Volumes（复制）的还原只能对各自的第一方系统进行。</block>
+  <block id="d47134834ce37f213033b6021d5688a7" category="list-text">从 Amazon S3 还原到 Amazon FSx for NetApp ONTAP 必须遵循以下顺序：Amazon S3 到 Cloud Volumes ONTAP，然后 Cloud Volumes ONTAP 到 Amazon FSx for NetApp ONTAP。</block>
+  <block id="b5e6dfadbd7f65aec9a1b7927b0e51ab" category="list-text">搜索和还原文件和文件夹。</block>
+  <block id="02b9e49eaf4bb33c44ac78f611508983" category="list-text">请参阅 <block ref="8a2e9895a1e6d62dcba998de2a0437b9" category="inline-link-macro-rx"></block>。</block>
+  <block id="2c5bb5704ae86803ccb12c75db519684" category="list-text">如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您为云备份启用了 DataLock 和勒索软件保护），则您还需要向云提供商支付额外费用。</block>
+  <block id="365539ae3de2669e3c6cab548aad4d26" category="list-text">*随用随付（PAYGO）*：通过云提供商的市场订阅，并按每月计费的每 GiB 备份数据付费。无需预先付款。首次注册即可免费试用 30 天。有关详细信息，请参阅<block ref="8edaf8cd3966d935673fb34ac864f172" category="inline-link-rx"></block>。</block>
+  <block id="8d6692eb9790529eb1ce2fbbddff6c35" category="list-text">*基于期限的合同*：通过 AWS 和 Azure 市场提供，期限为 6 个月或按年递增。有两种年度合同可供选择：</block>
+  <block id="59f6f208376adf1bce2f536112cf63ef" category="list-text">在 Google Cloud 中，控制台为 Google Cloud 存储桶使用具有存储帐户的新项目或现有项目。</block>
+  <block id="80943c1097ace1bb4d5af4689cf9afcf" category="admonition">如果直接从云提供商环境中管理或更改云备份文件，则可能会损坏文件并导致不支持的配置。</block>
+  <block id="9c6ba850dbc3d9fcb476c9a213b67c23" category="inline-link-macro">使用 NetApp Backup and Recovery 保护 ONTAP 卷工作负载</block>
+  <block id="3b0f8e4567bfd1e1fbf7fa8f9cd8a734" category="paragraph">有关受支持的功能、卷类型、备份和还原目标等信息，请参阅 <block ref="de1aaf9ca35d0dc1381861b59f84912c" category="inline-link-macro-rx"></block>。</block>
+  <block id="245d95848deea51172dd8a78d518bb72" category="list-text">启用备份后，无法更改系统的目标对象存储。若要使用其他对象存储，请取消注册系统的 NetApp Backup and Recovery，然后使用新的云提供商信息重新启用它。</block>
+  <block id="4991b5f13a2f9a881f216313186e9fbc" category="admonition">应用于卷的快照策略必须包含您在复制策略和备份到对象策略中使用的标签之一。如果未找到匹配的标签，则不会创建备份文件。例如，如果要创建“每周”复制卷和备份文件，则必须使用创建“每周”快照的快照策略。</block>
+  <block id="728c5bbf053635c51252d7b96c8cadc4" category="admonition">数据保护（DP）卷备份的保留期与源 SnapMirror 关系中定义的保留期相同。您可以使用 API 来更改此设置。</block>
+  <block id="20b5f09fb4a811b9f26058b47bfe6947" category="paragraph">默认情况下，计划勒索软件扫描处于启用状态，并且仅在最新快照上每 7 天运行一次。您可以在“高级设置”页面中更改扫描频率或禁用计划扫描。</block>
+  <block id="af0ef7b1ee324f1d62749c93b481f76b" category="list-text">您的任何卷是否在 FabricPool 聚合上，以及它们的分层策略可能如何影响您的备份</block>
+  <block id="9589f9fd5d35de55dd499ffb91826e70" category="section-title">您的任何卷是否在 FabricPool 聚合上</block>
+  <block id="103a01c1dd28fb74bcec80420aebe98c" category="list-text">如果在最初创建该卷时将分层策略分配给该卷，则不会看到此问题。</block>
+  <block id="5e2deaeefa6f1c03d4ec03158689364f" category="list-text">在将<block ref="a181a603769c1f98ad927e7367c7aa51" prefix=" " category="inline-code"></block>分层策略分配给卷之前，请考虑备份的影响。由于数据是立即分层的，因此 NetApp Backup and Recovery 从云层而不是从本地层读取数据。由于并发备份操作共享到云对象存储的网络链接，因此如果网络资源饱和，可能会发生性能下降。在这种情况下，您可能需要主动配置多个网络接口（LIF）以减少此类型的网络饱和度。</block>
+  <block id="9c8c8d411087d610e1e9ce1ff0c7e980" category="summary">使用 NetApp Backup and Recovery 通过快照、复制卷以及对象存储中的备份来保护 ONTAP 卷，并从任何副本还原卷、文件夹或文件。</block>
+  <block id="e9bbb81f93a1b679521e263112abb886" category="paragraph">为系统启用保护后，Backup and Recovery 将创建卷的块级永久增量副本。除了源卷之外，您还有：</block>
+  <block id="b8fc170da41ebd23c66f0f045a37bf1d" category="list-text">源系统上的卷快照</block>
+  <block id="30afe0018d618b8bfcccdbe80a03e005" category="list-text">其他 ONTAP 存储系统上的复制卷</block>
+  <block id="78bcf5eee9e84defc60720924f66e321" category="list-text">对象存储中的卷的备份</block>
+  <block id="0cc9feb16723b38a72850aad5abff898" category="inline-image-macro">显示备份文件如何作为快照存在于源系统上、作为复制卷存在于二级存储系统上，以及作为备份文件存在于对象存储中的图表。</block>
+  <block id="ba6e3e61a72f6f6032b70e2c76414dd6" category="paragraph"><block ref="ba6e3e61a72f6f6032b70e2c76414dd6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a5b469072a43cc1cddf06dbb4bd1017c" category="paragraph">3-2-1 方法提供以下优势：</block>
+  <block id="f2ffa3fa55f899e706033df6a5ba41e0" category="paragraph">必要时，您可以将整个_卷_、_文件夹_或一个或多个_文件_从任何副本恢复到同一个或不同的系统。</block>
+  <block id="422fba4f433849b23f1147ab355d12ae" category="section-title">保护 ONTAP 卷的工作原理</block>
+  <block id="ff2972105fe0c7ca760b06c505c16d33" category="paragraph">当您为 Cloud Volumes ONTAP 或本地 ONTAP 系统启用备份和恢复时，该服务将执行卷数据的完整基线传输。之后，所有传输都是增量传输：仅传输已更改和新区块，从而将网络流量降至最低。</block>
+  <block id="a1b50fb0a0ffec06d14ade4c285ddd02" category="paragraph">备份和恢复使用 ONTAP SnapMirror 技术来保持副本同步。它会在源卷上创建快照，并将它们传输到复制和备份位置。备份到对象存储是基于<block ref="d8c60b64404c334d98470563ebc11aa0" category="inline-link-rx"></block>构建的。</block>
+  <block id="5fcfb03acf4911468ae3e52adccc1c81" category="paragraph">此图显示了正在复制到 Cloud Volumes ONTAP 系统的卷，但您也可以将卷复制到本地 ONTAP 系统。</block>
+  <block id="1e2f54f90fbfe5b8bf3923424dbe786c" category="paragraph">每种类型的副本都位于不同的位置：</block>
+  <block id="1232eb56786b725e71e597f5638c69a7" category="list-text">_Replicated volumes_ 驻留在辅助存储系统上，该系统可以是 Cloud Volumes ONTAP 或本地 ONTAP 系统。</block>
+  <block id="d9f39eb78a367918d10d8a09468cd8a3" category="list-text">_备份副本_位于您的云帐户或本地的对象存储中。控制台为每个集群创建一个对象存储。有关控制台如何创建和命名对象存储的详细信息，请参阅 <block ref="5e6e54a4c1aee58ff4a3cde83894f65c" category="inline-link-macro-rx"></block>。</block>
+  <block id="ad3db53794caa14ba35fb3edb289bcb1" category="admonition">请勿直接从存储系统或云提供商环境中管理或更改备份文件。此操作可能会损坏文件并导致不支持的配置。</block>
+  <block id="2de700e7aa6f0aa00ac8d5352fde264a" category="inline-link-macro">规划 ONTAP 卷保护</block>
+  <block id="ce387367c849a874a9c6538d9e34097b" category="paragraph">要计划使用的副本和架构，请参阅 <block ref="e72415460ad6c18dc806ff4e573e7a3d" category="inline-link-macro-rx"></block>。</block>
+  <block id="a040e64eed87e6b66545a8f34d387e25" category="list-text">在两个系统之间使用带有预共享密钥 (PSK) 的原生 ONTAP 传输中加密。</block>
+  <block id="636eca9a361767b38ea500ba86e11d8d" category="list-text">在发生传输失败时依靠自我修复复制。</block>
+  <block id="ce43869f7ece4f127e4ffc4061453687" category="list-text">将已复制的卷还原到源系统或其他系统。</block>
+  <block id="4e059effd14908758ebdc2a38ce965e6" category="paragraph">有关使用 Backup and Recovery 进行复制时不可用的<block ref="1b4173389b9a324e425fc3e368d76e05" category="inline-link-rx"></block>中的功能，请参阅 <block ref="dc583eeac7d651921644d26acf4079a9" category="inline-link-macro-rx"></block>。</block>
+  <block id="00ba36a38ffe82e2c5f9ced06c7ef4d2" category="paragraph">*备份到对象存储*</block>
+  <block id="b8430c57682365c32e457558c246810e" category="list-text">将卷的独立副本备份到低成本对象存储，从本地或云系统备份到公共或私有云。</block>
+  <block id="6b28ac02ff2a9de6b423b9f57d6a4d09" category="inline-link-macro">管理 ONTAP 卷的策略</block>
+  <block id="2da43ee6a2c894c2d2a1ded970801ff6" category="list-text">将单个备份策略应用于群集中的所有卷，将不同的策略分配给具有唯一恢复点目标的卷，或创建适用于群集中所有未来卷的策略。请参阅<block ref="52b8e190ff2ac489ffa5a25fec30726f" category="inline-link-macro-rx"></block>。</block>
+  <block id="ebb6db7cc314b11fb210451f53eab51c" category="list-text">使用 DataLock 和勒索软件扫描保护备份免受删除和勒索软件的侵害。请参阅<block ref="59e474928c174b81d0699b94c402588d" category="inline-link-macro-rx"></block>。</block>
+  <block id="455e15f58cbb0262d21e2caa2085d4c9" category="list-text">将较旧的备份分层到归档存储以节省成本。请参阅 <block ref="8acd37db82c05dbdefb110978198e967" category="inline-link-macro-rx"></block>。</block>
+  <block id="8f79d03bc1a765cedef135ab9efe3f50" category="list-text">删除备份关系，以便您可以在保留其备份的同时停用源卷。</block>
+  <block id="6a5df5439ec6831acf77c226048a4ec3" category="list-text">单个卷最多可保留 4,000 个备份。</block>
+  <block id="495b52e91223956cce583d6874431d10" category="list-text">使用静态 AES-256 位加密和传输中的 TLS 1.2 HTTPS 连接保护备份数据，或使用您自己的客户管理密钥，而不是默认的云提供商密钥。</block>
+  <block id="aa1ec7cb01562da3b2fe6b08d32a8cc3" category="paragraph">*还原*</block>
+  <block id="2aeb1300ce8692c53a4415ae2b86664a" category="list-text">从本地快照、复制卷或对象存储中的备份还原特定时间点的数据。</block>
+  <block id="3902046bc9d8f330bd296a2fcbea4052" category="list-text">将卷、文件夹或单个文件还原到源系统或其他系统，包括使用不同订阅或帐户或位于不同区域的系统。</block>
+  <block id="e82e9f1be02429a2ddf979d8fb832eb5" category="list-text">当需要尽快提供对卷的访问时（例如在灾难恢复情况下），执行从对象存储到 Cloud Volumes ONTAP 或本地系统的卷的_快速还原_。</block>
+  <block id="14eb0b4dca680448016ae1d23db73d2a" category="list-text">将块级别的数据直接还原到指定的位置，保留原始 ACL。</block>
+  <block id="f2bc8e28c77f822385ffa2483eb12834" category="list-text">浏览或搜索文件目录以选择要还原的单个文件夹和文件。</block>
+  <block id="784ddbe069ad68cfbd029f2083b2e536" category="paragraph">有关还原选项，请参见<block ref="37f041132ba68784c19dbe8a3c6a5d54" category="inline-link-macro-rx"></block>。</block>
+  <block id="8ba40f85ccfeb32e975d4d93bdca5640" category="list-text">适用于本地卷的 SnapLock Compliance（需要 ONTAP 9.14 或更高版本）</block>
+  <block id="2aa9d37be74ab4d8783f7a3a8561d385" category="paragraph">有关 Backup and Recovery 支持的源系统、辅助系统、对象存储目标、还原目标和区域，请参阅<block ref="2d5dfc22d1e79ba7bd6ba18ffb81cf06" category="inline-link-macro-rx"></block>。如需了解其他要求和限制，请参阅<block ref="a1845bf1ef98236015caabc5bbd8f351" category="inline-link-macro-rx"></block>。</block>
+  <block id="e94e6e5768958058fb727a7416bb95cc" category="section-title">成本和许可</block>
+  <block id="d2bfd254db17a5cf98b9b698781fd1df" category="paragraph">除了创建快照或复制卷所使用的磁盘空间外，您无需支付任何费用。云提供商的资源费用和 NetApp 的服务费用仅适用于备份到对象存储。</block>
+  <block id="3af7ae4765f167ad269d35fc37081c9a" category="paragraph">有关成本和许可选项的详细信息，请参阅<block ref="2ec479b97d9617ba28843d1fe28b2deb" category="inline-link-macro-rx"></block>和<block ref="4f015ba0baafaec00910876ae4fa8c1a" category="inline-link-macro-rx"></block>。</block>
+  <block id="3163b3d4dc92f42d04ad4c79906dcdc3" category="section-title">后续步骤</block>
+  <block id="e72415460ad6c18dc806ff4e573e7a3d" category="list-text"><block ref="e72415460ad6c18dc806ff4e573e7a3d" category="inline-link-macro-rx"></block></block>
+  <block id="cfc2437a7eaf229ddb494253e3dcc60b" category="list-text"><block ref="cfc2437a7eaf229ddb494253e3dcc60b" category="inline-link-macro-rx"></block></block>
+  <block id="52b8e190ff2ac489ffa5a25fec30726f" category="list-text"><block ref="52b8e190ff2ac489ffa5a25fec30726f" category="inline-link-macro-rx"></block></block>
+  <block id="84618cfc7eb2bbb4efbbd7209a02b83b" category="list-text"><block ref="84618cfc7eb2bbb4efbbd7209a02b83b" category="inline-link-macro-rx"></block></block>
+  <block id="37f041132ba68784c19dbe8a3c6a5d54" category="list-text"><block ref="37f041132ba68784c19dbe8a3c6a5d54" category="inline-link-macro-rx"></block></block>
+  <block id="dbc0ac8fb1f3ed243ea3e89e9cfc4781" category="sidebar">支持的备份和还原目标</block>
 </blocks>

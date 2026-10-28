@@ -184,7 +184,7 @@ link:br-start-enable.html#enable-backup-and-recovery-in-netapp-console-local-dep
 
 | 在不同的云提供商中，每个系统使用 6 个以上的存储桶（最多 100 个） | 9.19.1 或更高版本 
 |===
-有关受支持的功能、卷类型、备份和还原目标等信息，请参阅 link:prev-ontap-protect-overview.html["保护您的ONTAP卷数据"]。
+有关受支持的功能、卷类型、备份和还原目标等信息，请参阅 link:prev-ontap-protect-overview.html["使用 NetApp Backup and Recovery 保护 ONTAP 卷工作负载"]。
 
 
 

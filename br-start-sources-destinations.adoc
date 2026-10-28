@@ -1,0 +1,171 @@
+---
+sidebar: sidebar 
+permalink: br-start-sources-destinations.html 
+keywords: supported systems, supported regions, backup destinations, restore destinations, backup sources, secondary system, object storage, Amazon S3, Azure Blob, Google Cloud Storage, StorageGRID, ONTAP S3, Amazon FSx for NetApp ONTAP, Google Cloud NetApp Volumes Flex 
+summary: NetApp Backup and Recovery 支持跨一系列源系统、辅助系统和对象存储目标备份和恢复数据。 
+---
+= NetApp Backup and Recovery 中支持的备份和还原目标
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+查看 NetApp Backup and Recovery 在跨工作负载的备份和恢复操作中所支持的源系统、辅助系统和对象存储目标。
+
+
+
+[[supported-systems-for-backup-and-restore-operations]]
+== 支持备份和恢复操作的系统
+
+NetApp Backup and Recovery支持ONTAP系统以及公共和私有云提供商。
+
+
+
+[[supported-regions]]
+=== 支持的区域
+
+NetApp Backup and Recovery在许多 Amazon Web Services、Microsoft Azure 和 Google Cloud 区域中均支持Cloud Volumes ONTAP 。
+
+https://bluexp.netapp.com/cloud-volumes-global-regions["使用全球区域地图了解更多信息"^]
+
+
+
+[[supported-backup-destinations]]
+=== 支持的备份目标
+
+NetApp Backup and Recovery 使您能够将数据从以下源系统备份到公有云和私有云提供商中的以下辅助系统和对象存储。快照驻留在源系统上。
+
+
+NOTE: Wasabi 目前是唯一符合条件的 S3 兼容对象存储提供商。其他 S3 兼容的提供商尚未通过验证。
+
+[cols="33,33,33"]
+|===
+| 源系统 | 辅助系统（复制） | 目标对象存储（备份） 
+
+
+| AWS 中的Cloud Volumes ONTAP  a| 
+* AWS 中的Cloud Volumes ONTAP
+* 本地ONTAP系统
+
+| Amazon S3 
+
+
+| Azure 中的Cloud Volumes ONTAP  a| 
+* Azure 中的Cloud Volumes ONTAP
+* 本地ONTAP系统
+
+| Azure Blob 
+
+
+| Google 的Cloud Volumes ONTAP  a| 
+* Google 的Cloud Volumes ONTAP
+* 本地ONTAP系统
+
+| Google Cloud Storage 
+
+
+| 本地ONTAP系统  a| 
+* Cloud Volumes ONTAP
+* 本地ONTAP系统
+
+ a| 
+* Amazon S3
+* S3 兼容存储
+* Azure Blob
+* Google Cloud Storage
+* NetAppStorageGRID
+* ONTAP S3
+
+
+
+
+| Google Cloud NetApp Volumes Flex （仅限 Oracle 数据库和 VMware 工作负载） | Google Cloud NetApp Volumes Flex | Google Cloud Storage 
+
+
+| Amazon FSx for NetApp ONTAP（仅限 Microsoft SQL Server、Oracle Database 和 VMware 工作负载） | AWS 中的Cloud Volumes ONTAP | Amazon S3（仅来自 Cloud Volumes ONTAP） 
+|===
+
+NOTE: "本地 ONTAP 系统"包括 FAS、AFF 和 ONTAP Select 系统。
+
+
+
+[[supported-restore-destinations]]
+=== 支持的还原目标
+
+您可以将驻留在辅助系统（复制卷）或对象存储（备份文件）中的备份文件、虚拟机、数据库或 Kubernetes 资源中的数据还原到以下系统。快照驻留在源系统上，只能还原到同一系统。
+
+
+NOTE: Wasabi 目前是唯一符合条件的 S3 兼容对象存储提供商。其他 S3 兼容的提供商尚未通过验证。
+
+[cols="30,35,35"]
+|===
+| 备份位置（对象存储） | 从对象存储还原时的目标系统（备份） | 从二级系统还原时的目标系统（复制） 
+
+
+| Amazon S3  a| 
+* AWS 中的Cloud Volumes ONTAP
+* 本地ONTAP系统
+* Amazon FSx for NetApp ONTAP（仅限 Microsoft SQL Server、Oracle Database 和 VMware 工作负载）
+
+ a| 
+* AWS 中的Cloud Volumes ONTAP
+* 本地ONTAP系统
+* Amazon FSx for NetApp ONTAP
+
+
+
+
+| Azure Blob  a| 
+* Azure 中的Cloud Volumes ONTAP
+* 本地ONTAP系统
+
+ a| 
+* Azure 中的Cloud Volumes ONTAP
+* 本地ONTAP系统
+
+
+
+
+| Google Cloud Storage  a| 
+* Google 的Cloud Volumes ONTAP
+* 本地ONTAP系统
+* Google Cloud NetApp Volumes Flex
+
+ a| 
+* Google 的Cloud Volumes ONTAP
+* 本地ONTAP系统
+* Google Cloud NetApp Volumes Flex
+
+
+
+
+| StorageGRID  a| 
+* 本地ONTAP系统
+* Cloud Volumes ONTAP
+
+| 本地ONTAP系统 
+
+
+| ONTAP S3  a| 
+* 本地ONTAP系统
+* Cloud Volumes ONTAP
+
+| 本地ONTAP系统 
+
+
+| S3 兼容对象存储（仅限 ONTAP 卷） | 本地ONTAP系统 | 本地ONTAP系统 
+|===
+请记住以下恢复注意事项：
+
+* 从 Cloud Volumes ONTAP （复制）的恢复只能恢复到 Cloud Volumes ONTAP。但是，AWS 中的 Cloud Volumes ONTAP 也支持恢复到 Amazon FSx for NetApp ONTAP。
+* 从本地 ONTAP（复制）的还原只能还原到本地 ONTAP。
+* 从第一方 Amazon FSx for NetApp ONTAP 和 Google Cloud NetApp Volumes（复制）的还原只能对各自的第一方系统进行。
+* 从 Amazon S3 还原到 Amazon FSx for NetApp ONTAP 必须遵循以下顺序：Amazon S3 到 Cloud Volumes ONTAP，然后 Cloud Volumes ONTAP 到 Amazon FSx for NetApp ONTAP。
+
+
+
+NOTE: "本地 ONTAP 系统"包括 FAS、AFF 和 ONTAP Select 系统。

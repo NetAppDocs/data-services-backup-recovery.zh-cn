@@ -36,6 +36,8 @@ sidebar:
       url: "/concept-backup-to-cloud.html"
     - title: NetApp Backup and Recovery 要求
       url: "/concept-start-prereq.html"
+    - title: 支持的备份和还原目标
+      url: "/br-start-sources-destinations.html"
     - title: 设置许可
       url: "/br-start-licensing.html"
     - title: 设置安全证书
@@ -58,7 +60,7 @@ sidebar:
       url: "/br-use-dashboard.html"
     - title: 保护ONTAP卷工作负载
       entries:
-      - title: 了解适用于 ONTAP 卷的 NetApp Backup and Recovery
+      - title: 保护ONTAP卷工作负载概述
         url: "/prev-ontap-protect-overview.html"
       - title: 启用 NetApp Backup and Recovery 以保护卷
         url: "/br-start-enable.html"

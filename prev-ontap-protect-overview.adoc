@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: prev-ontap-protect-overview.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。 
+keywords: ontap volumes, protect volumes, back up volumes, restore volumes, snapshots, replication, backup to object storage, 3-2-1, FlexVol, FlexGroup, SnapLock, DataLock, ransomware protection, NetApp Backup and Recovery 
+summary: 使用 NetApp Backup and Recovery 通过快照、复制卷以及对象存储中的备份来保护 ONTAP 卷，并从任何副本还原卷、文件夹或文件。 
 ---
-= 了解使用 NetApp Backup and Recovery 的 ONTAP 卷保护
+= 使用 NetApp Backup and Recovery 保护 ONTAP 卷工作负载
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,211 +16,86 @@ summary: 使用 NetApp Backup and Recovery 保护您的 VMware 工作负载。
 [role="lead"]
 使用 NetApp Backup and Recovery 来保护和恢复您的 ONTAP 卷数据，并长期存档备份。您可以实施 3-2-1 策略，在两个不同的存储系统上保留三个源数据副本，并在云端保留一个副本。
 
+为系统启用保护后，Backup and Recovery 将创建卷的块级永久增量副本。除了源卷之外，您还有：
 
-NOTE: 要切换到NetApp Backup and Recovery工作负载，请参阅link:br-start-switch-ui.html["切换到不同的NetApp Backup and Recovery工作负载"]。
-
-激活后，Backup and Recovery 会创建块级增量永久备份，这些备份存储在另一个 ONTAP 集群和云中的对象存储中。除了源卷之外，您还将拥有：
-
-* 源系统上卷的快照
-* 不同存储系统上的复制卷
-* 对象存储中的卷备份
+* 源系统上的卷快照
+* 其他 ONTAP 存储系统上的复制卷
+* 对象存储中的卷的备份
 
 
-image:diagram-321-overview-unified.png["一张图表显示了备份文件在源系统中以快照形式存在，在辅助存储系统中以复制卷形式存在，以及在对象存储中以备份文件形式存在。"]
+image:diagram-321-overview-unified.png["显示备份文件如何作为快照存在于源系统上、作为复制卷存在于二级存储系统上，以及作为备份文件存在于对象存储中的图表。"]
 
-NetApp Backup and Recovery 使用 NetApp 的 SnapMirror 数据复制技术，通过创建快照并将其传输到备份位置来保持备份同步。
-
-3-2-1 方法的优点包括：
+3-2-1 方法提供以下优势：
 
 * 多个数据副本可防止内部和外部网络安全威胁。
 * 如果一种媒体发生故障，使用不同类型的媒体可以帮助您恢复。
 * 您可以从现场副本快速恢复，如果现场副本受到损害，则可以使用异地副本。
 
 
-必要时，您可以将整个卷、文件夹或一个或多个文件从任何备份副本恢复到相同或不同的系统。
+必要时，您可以将整个_卷_、_文件夹_或一个或多个_文件_从任何副本恢复到同一个或不同的系统。
+
+
+
+[[how-protection-for-ontap-volumes-works]]
+== 保护 ONTAP 卷的工作原理
+
+当您为 Cloud Volumes ONTAP 或本地 ONTAP 系统启用备份和恢复时，该服务将执行卷数据的完整基线传输。之后，所有传输都是增量传输：仅传输已更改和新区块，从而将网络流量降至最低。
+
+备份和恢复使用 ONTAP SnapMirror 技术来保持副本同步。它会在源卷上创建快照，并将它们传输到复制和备份位置。备份到对象存储是基于 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["NetApp SnapMirror云技术"^]构建的。
+
+image:diagram-backup-recovery-general.png["该图显示了NetApp Backup and Recovery如何与源系统上的卷以及复制卷和备份文件所在的二级存储系统和目标对象存储进行通信。"]
+
+此图显示了正在复制到 Cloud Volumes ONTAP 系统的卷，但您也可以将卷复制到本地 ONTAP 系统。
+
+每种类型的副本都位于不同的位置：
+
+* 快照存储在源系统的源卷上。
+* _Replicated volumes_ 驻留在辅助存储系统上，该系统可以是 Cloud Volumes ONTAP 或本地 ONTAP 系统。
+* _备份副本_位于您的云帐户或本地的对象存储中。控制台为每个集群创建一个对象存储。有关控制台如何创建和命名对象存储的详细信息，请参阅 link:concept-backup-to-cloud.html#where-backups-reside-in-object-store-locations["备份在对象存储位置的位置"]。
+
+
+
+CAUTION: 请勿直接从存储系统或云提供商环境中管理或更改备份文件。此操作可能会损坏文件并导致不支持的配置。
+
+要计划使用的副本和架构，请参阅 link:prev-ontap-protect-journey.html["规划 ONTAP 卷保护"]。
 
 
 
 [[features]]
 == 功能
 
-*复制功能：*
+*复制*
 
 * 在ONTAP存储系统之间复制数据以支持备份和灾难恢复。
-* 通过高可用性确保您的 DR 环境的可靠性。
-* 通过在两个系统之间使用预共享密钥 (PSK) 设置本机 ONTAP 传输中加密。
-* 复制的数据是不可变的，直到您使其可写并可供使用为止。
-* 如果传输失败，复制可以自我修复。
-* 与 https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"^]相比，NetApp Backup and Recovery 中的复制具有以下特点：
-+
-** 一次将多个FlexVol卷复制到辅助系统。
-** 使用 UI 将复制的卷还原到源系统或其他系统。
+* 一次将多个FlexVol卷复制到辅助系统。
+* 在两个系统之间使用带有预共享密钥 (PSK) 的原生 ONTAP 传输中加密。
+* 在发生传输失败时依靠自我修复复制。
+* 将已复制的卷还原到源系统或其他系统。
 
 
+有关使用 Backup and Recovery 进行复制时不可用的 https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"^]中的功能，请参阅 link:br-reference-limitations.html#replication-limitations-for-ontap-volumes["ONTAP卷的复制限制"]。
 
+*备份到对象存储*
 
-看link:br-reference-limitations.html["ONTAP卷的复制限制"]了解NetApp Backup and Recovery for ONTAP卷不可用的复制功能列表。
+* 将卷的独立副本备份到低成本对象存储，从本地或云系统备份到公共或私有云。
+* 将单个备份策略应用于群集中的所有卷，将不同的策略分配给具有唯一恢复点目标的卷，或创建适用于群集中所有未来卷的策略。请参阅link:prev-ontap-policy-manage.html["管理 ONTAP 卷的策略"]。
+* 使用 DataLock 和勒索软件扫描保护备份免受删除和勒索软件的侵害。请参阅link:prev-ontap-policy-object-options.html#datalock-and-ransomware-protection-options["DataLock 和勒索软件保护选项"]。
+* 将较旧的备份分层到归档存储以节省成本。请参阅 link:prev-ontap-policy-object-options.html#archival-storage-options["档案存储选项"]。
+* 删除备份关系，以便您可以在保留其备份的同时停用源卷。
+* 单个卷最多可保留 4,000 个备份。
+* 使用静态 AES-256 位加密和传输中的 TLS 1.2 HTTPS 连接保护备份数据，或使用您自己的客户管理密钥，而不是默认的云提供商密钥。
 
-*备份到对象功能：*
 
-* 将数据卷的独立副本备份到低成本的对象存储。
-* 将单个备份策略应用于群集中的所有卷，或为具有唯一恢复点目标的卷分配不同的备份策略。
-* 创建一个备份策略，以应用于集群中创建的所有未来卷。
-* 制作不可变的备份文件，以便在保留期内锁定和保护它们。
-* 扫描备份文件以查找可能的勒索软件攻击，并自动删除或替换受感染的备份。
-* 将较旧的备份文件分层到档案存储以节省成本。
-* 删除备份关系，以便您可以存档不需要的源卷，同时保留卷备份。
-* 从云备份到云，从本地系统备份到公共云或私有云。
-* 备份数据在静态时通过 AES-256 位加密保护，在动态时通过 TLS 1.2 HTTPS 连接保护。
-* 使用您自己的客户管理密钥进行数据加密，而不是使用云提供商提供的默认加密密钥。
-* 支持单个卷最多 4,000 个备份。
+*还原*
 
+* 从本地快照、复制卷或对象存储中的备份还原特定时间点的数据。
+* 将卷、文件夹或单个文件还原到源系统或其他系统，包括使用不同订阅或帐户或位于不同区域的系统。
+* 当需要尽快提供对卷的访问时（例如在灾难恢复情况下），执行从对象存储到 Cloud Volumes ONTAP 或本地系统的卷的_快速还原_。
+* 将块级别的数据直接还原到指定的位置，保留原始 ACL。
+* 浏览或搜索文件目录以选择要还原的单个文件夹和文件。
 
-*恢复功能：*
 
-* 从对象存储中的本地快照、复制卷或备份卷恢复特定时间点的数据。
-* 将卷、文件夹或单个文件还原到源系统或其他系统。
-* 将数据恢复到使用不同订阅/帐户或位于不同区域的系统。
-* 将卷从云存储快速恢复到Cloud Volumes ONTAP系统或本地系统；非常适合需要尽快提供对卷的访问的灾难恢复情况。
-* 在块级别恢复数据，将数据直接放置在您指定的位置，同时保留原始 ACL。
-* 浏览和搜索文件目录，轻松选择单个文件夹和文件进行单个文件恢复。
-
-
-
-
-[[supported-systems-for-backup-and-restore-operations]]
-== 支持备份和恢复操作的系统
-
-NetApp Backup and Recovery支持ONTAP系统以及公共和私有云提供商。
-
-
-
-[[supported-regions]]
-=== 支持的区域
-
-NetApp Backup and Recovery在许多 Amazon Web Services、Microsoft Azure 和 Google Cloud 区域中均支持Cloud Volumes ONTAP 。
-
-https://bluexp.netapp.com/cloud-volumes-global-regions["使用全球区域地图了解更多信息"^]
-
-
-
-[[supported-backup-destinations]]
-=== 支持的备份目标
-
-NetApp Backup and Recovery 使您能够将 ONTAP 卷从以下源系统备份到公共和私有云提供商中的以下辅助系统和对象存储。快照驻留在源系统上。
-
-
-NOTE: Wasabi 目前是唯一符合条件的 S3 兼容对象存储提供商。其他 S3 兼容的提供商尚未通过验证。
-
-[cols="33,33,33"]
-|===
-| 源系统 | 辅助系统（复制） | 目标对象存储（备份） 
-
-
-| AWS 中的Cloud Volumes ONTAP  a| 
-* AWS 中的Cloud Volumes ONTAP
-* 本地ONTAP系统
-
-| Amazon S3 
-
-
-| Azure 中的Cloud Volumes ONTAP  a| 
-* Azure 中的Cloud Volumes ONTAP
-* 本地ONTAP系统
-
-| Azure Blob 
-
-
-| Google 的Cloud Volumes ONTAP  a| 
-* Google 的Cloud Volumes ONTAP
-* 本地ONTAP系统
-
-| Google Cloud Storage 
-
-
-| 本地ONTAP系统  a| 
-* Cloud Volumes ONTAP
-* 本地ONTAP系统
-
- a| 
-* Amazon S3
-* S3 兼容存储
-* Azure Blob
-* Google Cloud Storage
-* StorageGRID
-* ONTAP S3
-
-
-|===
-
-
-[[supported-restore-destinations]]
-=== 支持的还原目标
-
-您可以将ONTAP数据从位于二级系统（复制卷）或对象存储（备份文件）中的备份文件还原到以下系统。快照保存在源系统上，并且只能还原到同一系统。
-
-
-NOTE: Wasabi 目前是唯一符合条件的 S3 兼容对象存储提供商。其他 S3 兼容的提供商尚未通过验证。
-
-[cols="33,33,33"]
-|===
-2+| 备份文件位置 | 目的地系统 
-
-
-| *对象存储（备份）* | *辅助系统（复制）* |  
-
-
-| Amazon S3  a| 
-* AWS 中的Cloud Volumes ONTAP
-* 本地ONTAP系统
-
- a| 
-* AWS 中的Cloud Volumes ONTAP
-* 本地ONTAP系统
-
-
-
-
-| Azure Blob  a| 
-* Azure 中的Cloud Volumes ONTAP
-* 本地ONTAP系统
-
- a| 
-* Azure 中的Cloud Volumes ONTAP
-* 本地ONTAP系统
-
-
-
-
-| Google Cloud Storage  a| 
-* Google 的Cloud Volumes ONTAP
-* 本地ONTAP系统
-
- a| 
-* Google 的Cloud Volumes ONTAP
-* 本地ONTAP系统
-
-
-
-
-| StorageGRID  a| 
-* 本地ONTAP系统
-* Cloud Volumes ONTAP
-
-| 本地ONTAP系统 
-
-
-| ONTAP S3  a| 
-* 本地ONTAP系统
-* Cloud Volumes ONTAP
-
-| 本地ONTAP系统 
-
-
-| S3 兼容对象存储 | 本地ONTAP系统 | 本地ONTAP系统 
-|===
-
-NOTE: "本地 ONTAP 系统"包括 FAS、AFF 和 ONTAP Select 系统。
+有关还原选项，请参见link:prev-ontap-restore.html["恢复ONTAP卷工作负载"]。
 
 
 
@@ -232,233 +107,32 @@ NetApp Backup and Recovery支持以下类型的卷：
 * FlexVol读写卷
 * FlexGroup卷（需要ONTAP 9.12.1 或更高版本）
 * SnapLock Enterprise卷（需要ONTAP 9.11.1 或更高版本）
-* 适用于本地卷的SnapLock Compliance （需要ONTAP 9.14 或更高版本）
+* 适用于本地卷的 SnapLock Compliance（需要 ONTAP 9.14 或更高版本）
 * SnapMirror数据保护 (DP) 目标卷
 
 
 
 NOTE: NetApp Backup and Recovery不支持FlexCache卷的备份。
 
-请参阅link:br-reference-limitations.html["ONTAP卷的备份和还原限制"]了解其他要求和限制。
+有关 Backup and Recovery 支持的源系统、辅助系统、对象存储目标、还原目标和区域，请参阅link:br-start-sources-destinations.html["NetApp Backup and Recovery 中支持的备份和还原目标"]。如需了解其他要求和限制，请参阅link:br-reference-limitations.html["NetApp Backup and Recovery for ONTAP卷的已知限制"]。
 
 
 
-[[cost]]
-== 成本
+[[cost-and-licensing]]
+== 成本和许可
 
-使用NetApp Backup and Recovery与ONTAP系统相关的成本有两种：资源费用和服务费用。这两项费用均针对服务的对象部分备份。
+除了创建快照或复制卷所使用的磁盘空间外，您无需支付任何费用。云提供商的资源费用和 NetApp 的服务费用仅适用于备份到对象存储。
 
-创建快照或复制卷不收取任何费用——除了存储快照和复制卷所需的磁盘空间。
+有关成本和许可选项的详细信息，请参阅link:concept-backup-to-cloud.html#cost["了解NetApp Backup and Recovery"]和link:br-start-licensing.html["设置许可"]。
 
-*资源费用*
 
-资源费用是向云提供商支付的，用于对象存储容量以及将备份文件写入和读取到云中。
 
-* 对于备份到对象存储，您需要向云提供商支付对象存储费用。
-+
-由于NetApp Backup and Recovery保留了源卷的存储效率，因此您需要向云提供商对象存储支付ONTAP效率之后的数据费用（针对应用重复数据删除和压缩后的较少量的数据）。
+[[where-to-go-next]]
+== 后续步骤
 
-* 对于使用“搜索和还原”还原数据，您的云提供商会提供某些资源，并且您的搜索请求扫描的数据量会产生每 TiB 成本。  （浏览和恢复不需要这些资源。）
-+
-** 在 AWS 中， https://aws.amazon.com/athena/faqs/["亚马逊雅典娜"^]和 https://aws.amazon.com/glue/faqs/["AWS Glue"^]资源部署在新的 S3 存储桶中。
-** 在 Azure 中， https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapse 工作区"^]和 https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure 数据湖存储"^]在您的存储帐户中配置以存储和分析您的数据。
-** 在 Google 中，部署了一个新的存储桶，并且 https://cloud.google.com/bigquery["Google Cloud BigQuery 服务"^]在帐户/项目级别进行配置。
-
-
-* 如果您计划从已移动到档案对象存储的备份文件中恢复卷数据，则云提供商会收取额外的每 GiB 检索费和每请求费。
-* 如果您计划在恢复卷数据的过程中扫描备份文件中的勒索软件（如果您已为云备份启用了 DataLock 和勒索软件保护），那么您还将产生云提供商的额外出口费用。
-
-
-*服务费*
-
-服务费用支付给NetApp ，涵盖创建对象存储备份的成本以及从这些备份中恢复卷或文件的成本。您只需为对象存储中保护的数据付费，该费用按备份到对象存储的ONTAP卷的源逻辑使用容量（ ONTAP效率之前）计算。此容量也称为前端兆字节 (FETB)。
-
-有三种方式可以支付备份服务费用。第一个选项是从您的云提供商处订阅，这样您就可以按月付费。第二种选择是签订年度合同。第三种选择是直接从NetApp购买许可证。
-
-
-
-[[licensing]]
-== 许可
-
-NetApp Backup and Recovery适用于以下消费模式：
-
-* *BYOL*：从NetApp购买的许可证，可与任何云提供商一起使用。
-* *PAYGO*：从云提供商的市场按小时订阅。
-* *年度*：来自云提供商市场的年度合同。
-
-
-仅当从对象存储进行备份和恢复时才需要备份许可证。创建快照和复制卷不需要许可证。
-
-
-
-[[bring-your-own-license]]
-=== 自带驾照
-
-BYOL 是基于期限（1、2 或 3 年）和容量的，以 1 TiB 为增量。您向NetApp付费以使用该服务一段时间（比如 1 年）以及最大容量（比如 10 TiB）。
-
-您将收到一个序列号，请在NetApp Console中输入该序列号以启用该服务。当达到任一限制时，您都需要更新许可证。备份 BYOL 许可证适用于与您的NetApp Console组织或帐户关联的所有源系统。
-
-link:br-start-licensing.html["了解如何管理您的 BYOL 许可证"]。
-
-
-
-[[pay-as-you-go-subscription]]
-=== 按需付费订阅
-
-NetApp Backup and Recovery以按需付费模式提供基于消费的许可。通过云提供商的市场订阅后，您需要按 GiB 为备份数据付费 - 无需预付款。您的云提供商将通过每月账单向您收费。
-
-link:br-start-licensing.html["了解如何设置即用即付订阅"]。
-
-请注意，当您首次注册 PAYGO 订阅时，可以享受 30 天的免费试用。
-
-
-
-[[annual-contract]]
-=== 年度合同
-
-使用 AWS 时，有两种年度合同可供选择，期限分别为 1 年、2 年或 3 年：
-
-* “云备份”计划使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
-* “CVO Professional”计划使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括根据此许可证收费的Cloud Volumes ONTAP卷的无限制备份（备份容量不计入许可证）。
-
-
-使用 Azure 时，有两种年度合同可供选择，分别为 1 年、2 年或 3 年：
-
-* “云备份”计划使您能够备份Cloud Volumes ONTAP数据和本地ONTAP数据。
-* “CVO Professional”计划使您能够捆绑Cloud Volumes ONTAP和NetApp Backup and Recovery。这包括根据此许可证收费的Cloud Volumes ONTAP卷的无限制备份（备份容量不计入许可证）。
-
-
-当您使用 GCP 时，您可以向NetApp请求私人优惠，然后在NetApp Backup and Recovery激活期间从 Google Cloud Marketplace 订阅时选择该计划。
-
-link:br-start-licensing.html["了解如何制定年度合同"]。
-
-
-
-[[how-netapp-backup-and-recovery-works]]
-== NetApp Backup and Recovery的工作原理
-
-当您在Cloud Volumes ONTAP或本地ONTAP系统上启用NetApp Backup and Recovery时，该服务会对您的数据执行完整备份。初始备份之后，所有附加备份都是增量的，这意味着只备份更改的块和新块。这使得网络流量保持最低限度。对象存储备份建立在 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["NetApp SnapMirror云技术"^]。
-
-
-CAUTION: 直接从您的云提供商环境采取的任何管理或更改云备份文件的操作都可能损坏文件并导致不受支持的配置。
-
-下图显示了各个组件之间的关系：
-
-image:diagram-backup-recovery-general.png["该图显示了NetApp Backup and Recovery如何与源系统上的卷以及复制卷和备份文件所在的二级存储系统和目标对象存储进行通信。"]
-
-该图显示卷被复制到Cloud Volumes ONTAP系统，但卷也可以复制到本地ONTAP系统。
-
-
-
-[[where-backups-reside]]
-=== 备份所在位置
-
-根据备份类型，备份位于不同的位置：
-
-* 快照存储在源系统的源卷上。
-* _复制卷_驻留在二级存储系统上 - Cloud Volumes ONTAP或本地ONTAP系统。
-* _备份副本_存储在控制台在您的云帐户中创建的对象存储中。每个集群/系统有一个对象存储，控制台将对象存储命名为：“netapp-backup-clusteruuid”。请确保不要删除此对象存储。
-+
-** 在 AWS 中，控制台可以实现 https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 阻止公共访问功能"^] 在 S3 铲斗上。
-** 在 Azure 中，控制台使用新的或现有的资源组，并为 Blob 容器分配存储帐户。控制台 https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["阻止公众访问您的 Blob 数据"] 默认情况下。
-** 在 GCP 中，控制台使用带有 Google Cloud Storage 存储桶存储帐户的新项目或现有项目。
-** 在StorageGRID中，控制台使用现有的租户帐户来管理 S3 存储桶。
-** 在ONTAP S3 中，控制台使用 S3 存储桶的现有用户帐户。
-
-
-
-
-如果您将来想要更改集群的目标对象存储，则需要link:prev-ontap-backup-manage.html["取消注册系统的NetApp Backup and Recovery"]，然后使用新的云提供商信息启用NetApp Backup and Recovery 。
-
-
-
-[[customizable-backup-schedule-and-retention-settings]]
-=== 可自定义的备份计划和保留设置
-
-当您为系统启用NetApp Backup and Recovery时，您最初选择的所有卷都将使用您选择的策略进行备份。您可以为快照、复制卷和备份文件选择不同的策略。如果您想要为具有不同恢复点目标 (RPO) 的某些卷分配不同的备份策略，则可以为该集群创建其他策略，并在激活NetApp Backup and Recovery后将这些策略分配给其他卷。
-
-您可以选择所有卷的每小时、每天、每周、每月和每年备份的组合。对于对象备份，您还可以选择系统定义的策略之一，提供 3 个月、1 年和 7 年的备份和保留。您使用ONTAP System Manager 或ONTAP CLI 在集群上创建的备份保护策略也将作为选择出现。这包括使用自定义SnapMirror标签创建的策略。
-
-
-NOTE: 应用于卷的快照策略必须包含您在复制策略和备份到对象策略中使用的标签之一。如果未找到匹配的标签，则不会创建备份文件。例如，如果要创建"每周"复制的卷和备份文件，则必须使用创建"每周"快照的快照策略。
-
-一旦达到某个类别或间隔的最大备份数量，较旧的备份就会被删除，以便您始终拥有最新的备份（因此过时的备份不会继续占用空间）。
-
-
-TIP: 数据保护卷备份的保留期与源SnapMirror关系中定义的保留期相同。如果您愿意，可以使用 API 来更改此设置。
-
-
-
-[[backup-file-protection-settings]]
-=== 备份文件保护设置
-
-如果您的集群使用的是 ONTAP 9.11.1 或更高版本，您可以保护对象存储中的备份免受删除和勒索软件攻击。每个备份策略都提供了一个关于 _DataLock and Ransomware protection_ 的部分，可在特定时间段（即_保留期_）内应用于您的备份文件。
-
-* _DataLock_ 保护您的备份文件不被修改或删除。
-* _勒索软件保护_会在创建备份文件时以及恢复备份文件中的数据时扫描您的备份文件以查找勒索软件攻击的证据。
-
-
-默认情况下启用计划的勒索软件防护扫描。扫描频率的默认设置为 7 天。扫描仅发生在最新的快照上。可以禁用计划扫描以降低成本。您可以通过“高级设置”页面上的选项，启用或禁用最新快照上的计划勒索软件扫描。如果启用它，则默认每周执行一次扫描。您可以将该计划更改为几天或几周，或者禁用它，以节省成本。
-
-备份保留期与备份计划保留期相同，再加上最多 31 天的缓冲期。例如，每周备份保留 5 份副本，每个备份文件将锁定 5 周。每月备份保留 6 份副本，每个备份文件将锁定 6 个月。
-
-当备份目标为 Amazon S3、Azure Blob 或 StorageGRID 时，当前支持此功能。其他存储提供商目标将在未来版本中添加。
-
-欲了解更多详细信息，请参阅以下信息：
-
-* link:prev-ontap-policy-object-options.html["DataLock 和勒索软件保护的工作原理"]。
-* link:prev-ontap-policy-object-advanced-settings.html["如何在“高级设置”页面中更新勒索软件防护选项"]。
-
-
-
-TIP: 如果您将备份分层到档案存储，则无法启用 DataLock。
-
-
-
-[[archival-storage-for-older-backup-files]]
-=== 旧备份文件的存档存储
-
-使用某些云存储时，您可以在一定天数后将较旧的备份文件移动到较便宜的存储类/访问层。您还可以选择立即将备份文件发送到档案存储，而无需写入标准云存储。请注意，如果您启用了 DataLock，则无法使用档案存储。
-
-* 在 AWS 中，备份从“标准”存储类开始，并在 30 天后转换到“标准-不频繁访问”存储类。
-+
-如果您的集群使用的是ONTAP 9.10.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and RecoveryUI 中的“S3 Glacier”或“S3 Glacier Deep Archive”存储，以进一步优化成本。link:prev-reference-aws-archive-storage-tiers.html["了解有关 AWS 档案存储的更多信息"]。
-
-
-
-* 在 Azure 中，备份与 _Cool_ 访问层相关联。
-+
-如果您的集群使用的是ONTAP 9.10.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and RecoveryUI 中的“Azure Archive”存储，以进一步优化成本。link:prev-reference-azure-archive-storage-tiers.html["了解有关 Azure 档案存储的更多信息"]。
-
-
-
-* 在 GCP 中，备份与 _Standard_ 存储类相关联。
-+
-如果您的集群使用的是ONTAP 9.12.1 或更高版本，您可以选择在一定天数后将旧备份分层到NetApp Backup and Recovery UI 中的“_Archive_”存储中，以进一步优化成本。link:prev-reference-gcp-archive-storage-tiers.html["详细了解 Google 归档存储"]。
-
-* 在StorageGRID中，备份与 _Standard_ 存储类相关联。
-+
-如果您的本地集群使用的是 ONTAP 9.12.1 或更高版本，并且您的 StorageGRID 系统使用的是 11.4 或更高版本，则可以在一定天数后将较旧的备份文件归档到公共云归档存储中。当前支持 AWS S3 Glacier/S3 Glacier Deep Archive 或 Azure Archive 存储层。link:prev-ontap-backup-onprem-storagegrid.html["了解有关从StorageGRID归档备份文件的更多信息"]。
-
-
-
-请参阅link:prev-ontap-policy-object-options.html["存档旧备份文件的工作原理"]。
-
-
-
-[[fabricpool-tiering-policy-considerations]]
-== FabricPool分层策略注意事项
-
-当您要备份的卷位于FabricPool聚合上，并且分配了分层策略时，您需要注意以下几点 `none`：
-
-* FabricPool分层卷的第一次备份需要读取所有本地和所有分层数据（从对象存储）。备份操作不会“重新加热”对象存储中分层的冷数据。
-+
-此操作可能会导致从云提供商读取数据的成本一次性增加。
-
-+
-** 后续备份是增量的，不会产生这种影响。
-** 如果在最初创建卷时将分层策略分配给卷，则您将不会看到此问题。
-
-
-* 在分配之前考虑备份的影响 `all`对卷进行分层策略。由于数据是立即分层的，NetApp Backup and Recovery将从云层而不是本地层读取数据。由于并发备份操作共享与云对象存储的网络链接，因此如果网络资源饱和，可能会出现性能下降。在这种情况下，您可能需要主动配置多个网络接口 (LIF) 来减少这种类型的网络饱和。
+* link:prev-ontap-protect-journey.html["规划 ONTAP 卷保护"]
+* link:br-start-enable.html["为 ONTAP 卷启用 NetApp Backup and Recovery"]
+* link:prev-ontap-policy-manage.html["管理 ONTAP 卷的策略"]
+* link:prev-ontap-backup-manage.html["管理 ONTAP 系统的备份"]
+* link:prev-ontap-restore.html["恢复ONTAP卷工作负载"]
 
