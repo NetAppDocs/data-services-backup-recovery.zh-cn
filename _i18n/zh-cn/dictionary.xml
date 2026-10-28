@@ -716,7 +716,6 @@
   <block id="a34a8fde09044472852b8ae530184af7" category="list-text">从二级存储上的复制资源恢复</block>
   <block id="a1b1d3e1eb4d41f3b8f52d69b7033868" category="list-text">从对象存储备份恢复</block>
   <block id="6e32536aeb87365f67ba5a96c664e861" category="paragraph-title">恢复到这些点</block>
-  <block id="4acf582ba1791858c42c901e8d64f664" category="paragraph">您可以将数据恢复到原始位置；在此私人预览版中不提供恢复到备用位置的功能。</block>
   <block id="485775104c27dcbdf8d49f22f897f823" category="paragraph-title">从对象存储中恢复的注意事项</block>
   <block id="fb1b557500e8d14608e76a0b93711e4c" category="admonition">您将需要向云提供商支付额外的出口费用才能访问备份文件的内容。</block>
   <block id="10f4565a78ebd1822c60902cbb077e98" category="section-title">恢复工作负载的工作原理</block>
@@ -1206,13 +1205,6 @@
   <block id="4b6c3c6a317300967177891eec6ba8fd" category="paragraph">手动创建 Kubernetes 应用程序的备份，为未来的备份和快照建立基线，或确保最新数据受到保护。</block>
   <block id="46b6ecff43461a732d3eda912df73a42" category="list-text">选择*立即备份*。</block>
   <block id="408156cb89b56d3b746dba5ade40b0e4" category="paragraph">控制台创建应用程序的备份并在备份和恢复的*监控*区域中显示进度。该备份是根据与应用程序关联的保护策略创建的。</block>
-  <block id="2f2fda22f167ad6c7dcc0ac3f92cd945" category="summary">在NetApp Backup and Recovery中，创建报告以查看备份状态，包括备份数量、成功备份数量和失败备份数量。您还可以查看每个备份的详细信息，包括备份类型、备份使用的存储系统以及备份的时间。</block>
-  <block id="3b0a91a5ea7b77db2fb83f740b7d1303" category="list-text">选择*创建报告*。</block>
-  <block id="df9d16703353a537518df08cc1ae9663" category="list-text">输入报告范围详细信息：</block>
-  <block id="b2b514343358129a23936d3ca58a5d35" category="list-text">*报告名称*：输入报告的唯一名称。</block>
-  <block id="12f8b86f9f1efb1bb6f1f20f4f141746" category="list-text">*报告类型*：选择您想要按帐户还是按工作量（Microsoft SQL Server）报告。</block>
-  <block id="baeaf9ec5b3f1514a0e74632387b1436" category="list-text">*选择主机*：如果您按工作负载选择，请选择要为其生成报告的主机。</block>
-  <block id="d6b2fc5f6100a1d9ca1a63a42e2b74ee" category="list-text">*选择内容*：选择报告是否包含所有备份的摘要或每个备份的详细信息。  （如果您选择“按帐户”）</block>
   <block id="fb197ee87a0f850dc3b7bb98fe408518" category="inline-link-macro">配置设置</block>
   <block id="e1fb45ea82cb12d1d1dbdee887e2850a" category="summary">NetApp Backup and Recovery使您能够恢复已通过保护策略保护的应用程序。</block>
   <block id="5a870c22146ba310e89eaf52f510bdc8" category="paragraph">出现还原点列表。</block>
@@ -3142,7 +3134,6 @@
   <block id="0f18ca4c27c34246c6bc09d2bbf775c6" category="sidebar">从ONTAP备份还原</block>
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">管理 Microsoft SQL Server 库存</block>
   <block id="41e1a34ea3ba2b687b86e55ec1a7955d" category="sidebar">管理 Microsoft SQL Server 快照</block>
-  <block id="c8ffa42e0e508862d020665c979eb5c0" category="sidebar">创建 Microsoft SQL Server 报告</block>
   <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">管理 Kubernetes 工作负载的执行钩子模板</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="sidebar">监控作业</block>
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">参考</block>
@@ -3848,23 +3839,6 @@
   <block id="5a9e2fbc6e8b2849a76465cd1a86c575" category="doc">一般可用性 (GA) 中支持的 KVM 工作负载</block>
   <block id="2c4d488d266d9d0655ce2e1451e05b2d" category="paragraph">Kubernetes 工作负载支持现已在 NetApp Backup and Recovery 中普遍可用（GA）。本次发布的 Kubernetes 工作负载还引入了以下增强功能：</block>
   <block id="2329c3692bdf2d2f098db291ec4e9427" category="paragraph">*报告支持*：您现在可以为受 NetApp Backup and Recovery 保护的 Kubernetes 集群和应用程序生成保护活动报告。</block>
-  <block id="66330fd6b5a015d85e0b01e96c040005" category="summary">为 Kubernetes 工作负载创建保护报告，以查看保护状态和详细信息，包括成功和失败的备份计数、备份类型、集群健康状况信息等。</block>
-  <block id="d45ba014e75a2424453d999d1ec1584d" category="section-title">创建保护报告</block>
-  <block id="764cb0718c60ad28fec23c72e06cd3eb" category="list-text">*报告类型*：选择是按帐户报告还是按工作负载报告（从列表中选择 Kubernetes）。</block>
-  <block id="32e7d2bef37709329417fce15d4ef70a" category="list-text">*Select cluster*：如果您按工作负载选择，请从要为其生成报告的列表中选择集群，然后选择 *Accept*。选择 *Select all* 为所有集群生成报告。</block>
-  <block id="4aa69b04f720d9cf28bddc129bdda982" category="list-text">输入报告范围：选择是否希望报告包括过去一天、过去 7 天、过去 30 天、最后一个季度或去年的数据。</block>
-  <block id="6966f88ce9330f288d2ff468e8f1bf31" category="section-title">下载保护报告</block>
-  <block id="ca0fab6dece474777af6f27a9ab6f7bf" category="paragraph">下载生成的保护报告，可以是 JSON 文件或 PDF 文档，以便您查看和共享。</block>
-  <block id="16d046f9df08fac82032019de67dd111" category="list-text">在 *Reports* 页面上，选择 *Reports* 菜单以查看生成的保护报告列表。</block>
-  <block id="46d0b33f9602910da192296aa16047c8" category="list-text">对于要下载的报告，请选择操作图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *下载*。</block>
-  <block id="3e67afef1e2a25129f8131a465c1f233" category="list-text">选择 *Download JSON* 以 JSON 格式下载报告。</block>
-  <block id="6a6e83b2656cc80c95ff1d51721fdfdf" category="list-text">选择 *Download PDF* 将报告下载为 PDF 文档。</block>
-  <block id="907ad6bf80ead0c498e1b96eeac0931b" category="section-title">查看防护报告</block>
-  <block id="4282f8fe4c83ccf233576c6529acd9cf" category="list-text">对于要查看的报告，请选择操作图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *查看报告*。</block>
-  <block id="ba033453bbd04ac2ce08fa3e831d97b0" category="paragraph">此时将显示报告详细信息。</block>
-  <block id="a1c5f902308b29e3dc37ca9471a1016c" category="section-title">删除保护报告</block>
-  <block id="ba71a8f948ce2ac60c238f470758a980" category="paragraph">当您不再需要防护报告时，请将其删除。</block>
-  <block id="583b019e08073df7e3a4598861ee7567" category="list-text">对于要删除的报告，请选择"操作"图标 <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Delete*。</block>
   <block id="ea78509096df982db8c5234ed6ea3e7c" category="list-text">选择 *删除* 以确认操作。</block>
   <block id="3b8d8ee10228976bdc630252832886f7" category="list-text">选择一个主机以列出该主机上的可用 VM。要包括来自所有已发现主机的 VM，请在主机列表中选择 *All*。</block>
   <block id="fc20073811aa1e335ccc2bd9d99eebc7" category="list-text">选择要包含在保护组中的单个 VM，或选择 *All* 以将列表中的所有 VM 包含在内。</block>
@@ -3872,7 +3846,6 @@
   <block id="7e6254a3c499887f0d500958fc6584ed" category="paragraph">如果需要在不删除和重新创建保护组的情况下更改该保护组的详细信息，请编辑该保护组。</block>
   <block id="78fa67c28bf09a9555618080f725243c" category="list-text">对保护组中的常规详细信息和 VM 进行任何必要的更改。</block>
   <block id="3573adc4fce66bc7bb13c8f35b9d7e90" category="list-text">如果需要，请更改与保护组关联的策略。</block>
-  <block id="175ddb68a640ea3daeb84c25a2402e6f" category="sidebar">创建和管理保护报告</block>
   <block id="1d30989467a5dda6a77c2158034a190b" category="paragraph">KVM 工作负载支持现已在 NetApp Backup and Recovery 中正式提供（GA）。</block>
   <block id="403eb7104337d3b7cb0c9cbd6a28b588" category="section-title">一般可用性 (GA) 中支持的 Kubernetes 工作负载</block>
   <block id="3103a41775992118299ff5a989897ac4" category="paragraph">不支持以下操作：</block>
@@ -4548,7 +4521,6 @@
   <block id="811a794fc3af22bb5e0566f56adc0406" category="list-text">S3 兼容存储</block>
   <block id="29fc78ad7b30ceab82a6fad5327f5e05" category="cell">S3 兼容对象存储</block>
   <block id="d0eb32456912dd737e495d1233503746" category="summary">NetApp Console 审核支持的备份和恢复操作的参考。</block>
-  <block id="a29588ca393407a53992df452b4d7451" category="doc">审核的备份和恢复操作</block>
   <block id="da8be55f3871d0a372174a9f477823f0" category="inline-link">从"审核"页面审核用户活动</block>
   <block id="199370791c099a5f1bca782c3d1d470c" category="list-text">从备份还原卷或文件</block>
   <block id="732e9096426149869bf78ef0e9e94714" category="list-text">将卷还原为快照</block>
@@ -4579,7 +4551,6 @@
   <block id="67ddca6cd047644d2e1c3f3346bf654b" category="list-text">初始化系统保护</block>
   <block id="2f7e188563796edaa051f5c504c41194" category="list-text">刷新卷备份元数据（计划）</block>
   <block id="1bba399ba8ca257955b82abe9b77a1c8" category="list-text">在卷中启用备份</block>
-  <block id="6b379ae81008ca1fdc4a1bee622b4b94" category="list-text">删除 ANF 快照策略</block>
   <block id="ceb742da8b5f49c43e25068bf4ebfec4" category="list-text">激活系统中的全景保护</block>
   <block id="796522f5baf9f759608770ab7ad25640" category="list-text">修改系统中的全景保护</block>
   <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="section-title">更多信息</block>
@@ -4639,7 +4610,6 @@
   <block id="81bdc0623ea533b24d0e11cb1d26ba25" category="list-text">对于使用 SMB 共享存储虚拟机数据的 Hyper-V 部署，请确保在 ONTAP 系统上启用连续可用性共享属性。有关说明，请参阅<block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block>。</block>
   <block id="fe336167ccf46f9fb348006254d0f3ee" category="list-text">输入集群名称并选择要与集群一起使用的控制台代理。</block>
   <block id="6dd3c7c1ba8e65da85c3e2fe08fa8a94" category="paragraph">*必需的 NetApp Console 角色*备份和恢复超级管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>……<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
-  <block id="44371de0a029c248f1a90987cb1f4534" category="paragraph">*必需的 NetApp Console 角色*备份和恢复超级管理员、备份和恢复备份管理员或备份和恢复还原管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解 <block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>。<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
   <block id="52d42f2d4b51510352e6a5d5264a2324" category="paragraph">*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复还原管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。<block ref="0f393d0ed3fe42bcd53eff5ef49bfe77" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
   <block id="66591c0e71be05bd24e1869944b92db6" category="doc">增强对所有工作负载的多存储桶支持</block>
   <block id="9bf2c1ebc9be74ae2e995a0a4dab1fec" category="paragraph">要了解有关 NetApp Backup and Recovery 的详细信息，请参阅<block ref="a026c5bec08ff7bb5b963e48c0daa63e" category="inline-link-rx"></block>。</block>
@@ -4816,12 +4786,10 @@
   <block id="bac042f679d2f17a81d0d6d37aadcf66" category="list-text"><block ref="a50bdd85c91df76c8278b2b7972cf2e2" category="inline-link-macro-rx"></block>。</block>
   <block id="2dcc97b7b5d7bbb9216b1e9c1d0cbc38" category="inline-link-macro">在 NetApp Backup and Recovery 中管理 Kubernetes 应用程序</block>
   <block id="f9b08ae1eccef4edb6f8cf8e83729eda" category="list-text"><block ref="7a505e7ac488846d15d2ebbd264a01b1" category="inline-link-macro-rx"></block>。</block>
-  <block id="23337653dd09050d55a14abb882d3e7f" category="doc">在 NetApp Backup and Recovery 中管理 Kubernetes 保护报告</block>
   <block id="b75d59ed6e695ac7c7951b21101cf900" category="inline-link-macro">管理 NetApp Backup and Recovery 中的 KVM 保护组</block>
   <block id="426086f918326399d7697355e378bce6" category="doc">在 NetApp Backup and Recovery 中管理 Kubernetes 执行挂钩模板</block>
   <block id="014cdc5a08fd7c5bad41f0da392d3f7b" category="doc">在还原期间修改 Kubernetes 资源（NetApp Backup and Recovery）</block>
   <block id="685d9f05fa8e2a37d148ad281f51ee68" category="doc">Microsoft SQL Server 在 NetApp Backup and Recovery 中的保护工作流</block>
-  <block id="404bc9ed709ff3d64fea2404cf0959d2" category="doc">在 NetApp Backup and Recovery 中创建 Microsoft SQL Server 保护报告</block>
   <block id="42d5af576055aa21949010929e4837db" category="doc">使用 NetApp Backup and Recovery Web UI 还原 Kubernetes 应用程序</block>
   <block id="0ecbe0a8ca59b45c9e922386c2e93a08" category="doc">管理 NetApp Backup and Recovery 中的 VMware 保护组</block>
   <block id="13b01a96c5d11eb4f3c03b640bd403a8" category="doc">在 NetApp Backup and Recovery 中还原 VMware 来宾文件和文件夹</block>
@@ -5174,13 +5142,7 @@
   <block id="e1ef40f1a46abc3ebb82a230d9dbe624" category="list-text">用于保护跨多个 Kubernetes 集群（包括容器和虚拟机）的应用程序的单一控制平面。</block>
   <block id="f93f49117842410931a00a9e5da717df" category="list-text">与 NetApp SnapMirror 的本机集成支持备份和恢复工作流的存储卸载。</block>
   <block id="5c3c0320e466a29396956e43b93a8694" category="paragraph">可以为 Kubernetes 工作负载执行以下任务：</block>
-  <block id="bcb0289c16a67fbfb0e21f6d7f03f054" category="paragraph">在 NetApp Backup and Recovery 中创建 Kubernetes 保护报告，以监控备份状态、备份类型和集群健康状况。</block>
-  <block id="5cec6a2f5940e0a900924a5e4188764f" category="paragraph">创建保护报告以查看集群的保护状态。</block>
   <block id="b3a076e39701c1a6c7a756328efcc7b6" category="list-text">在 NetApp Backup and Recovery 菜单中，选择*报告*。</block>
-  <block id="aa6dea2fb2eb93723e210a770122fd6f" category="list-text">输入报告配置详细信息：选择是一次性运行报告还是定期运行报告。对于计划报告，请选择重复频率并选择开始日期。</block>
-  <block id="a334b38dae3308edaacb960f28f0fc4a" category="list-text">输入电子邮件发送详细信息：仅对于计划的报告，请输入一个或多个电子邮件地址以接收此报告。</block>
-  <block id="d71b658aab251c0a16602cfdeeb169ee" category="paragraph">在 *Settings* 页面上配置电子邮件通知。有关配置电子邮件通知的详细信息，请参见 <block ref="395b0c19462e78afc4e209cde346ef5d" category="inline-link-macro-rx"></block>。</block>
-  <block id="a65ef01654c031729d64f926edfb7eb8" category="paragraph">查看 NetApp Backup and Recovery 中保护报告的交互式详细信息。您可以查看作业摘要信息、数据保护状态、配置详细信息等。</block>
   <block id="f032057dd58cc7937dcc0195fee94c02" category="paragraph">将 KVM 保护组从本地 ONTAP 系统备份到 Amazon Web Services、Azure NetApp Files 或 StorageGRID。备份保护组时，NetApp Backup and Recovery 会备份该组中的虚拟机和存储池，并将备份存储在您的公有云或私有云帐户的对象存储中。</block>
   <block id="5ee7c0d5d7a91804a25ecd0edd61e0d7" category="inline-link-macro">创建 KVM 保护策略</block>
   <block id="9be16c85836779d17217bd4b60140ebc" category="admonition">要运行定时备份，请创建管理备份和还原操作的策略。有关说明，请参阅 <block ref="386add99f2f24ebee93bfd9e6e2f86ca" category="inline-link-macro-rx"></block>。</block>
@@ -5383,7 +5345,6 @@
   <block id="27bb0e289edab1132883935e52645683" category="paragraph">还原 Oracle 数据库工作负载时，将发生以下情况：</block>
   <block id="4e3fce457d1a9a8459a6a5ea98a6e9fc" category="paragraph">根据您的需要，将 Oracle 数据库还原到特定时间点、特定系统更改编号 (SCN) 或最后一个正常状态。您也可以从快照还原数据库并跳过自动恢复过程，例如，如果您希望手动执行恢复。您可以使用数据库名称或特定筛选器搜索数据库。</block>
   <block id="4c82cd55e9c216695cfce74c86a368dd" category="paragraph">*必需的 NetApp Console 角色* 备份和恢复超级管理员或备份和恢复还原管理员角色<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
-  <block id="37141d7af0dc9b5fc98cbb0382dab44e" category="paragraph">不适用于此预览版本中的 Oracle 数据库工作负载。</block>
   <block id="31f78782ca396cf4a28f08976d81c51b" category="paragraph">使用 NetApp Backup and Recovery 创建控制备份频率、计划和保留的 Hyper-V 备份策略。</block>
   <block id="69447293a8590769734416cbc1de503e" category="list-text">*3-2-1 扇出*：主存储（磁盘）到辅助存储（磁盘）到云（对象存储）。跨不同存储系统创建多个数据副本，例如 ONTAP 到 ONTAP 和 ONTAP 到对象存储配置。这可以是云提供商对象存储或私有对象存储。最适合优化数据保护和灾难恢复。此选项不适用于 Amazon FSx for NetApp ONTAP。</block>
   <block id="2b1c387b066ff48cdfc281e5400640f9" category="list-text">*3-2-1 级联*：主存储（磁盘）到辅助存储（磁盘），主存储（磁盘）到云存储（对象存储）。这可以是云提供商对象存储或私有对象存储，例如 StorageGRID。这将创建跨多个系统的数据复制链，以确保冗余性和可靠性。此选项不适用于 Amazon FSx for NetApp ONTAP。</block>
@@ -5421,10 +5382,6 @@
   <block id="904b88ee206b2990c6e5a86debda3616" category="paragraph">要保护 Kubernetes 应用程序，请先在 NetApp Backup and Recovery 中创建应用程序。当您创建应用程序时，NetApp Backup and Recovery 将识别 Kubernetes 集群上正在运行的应用程序。</block>
   <block id="0511bb4c7582ecddab07c60556ddeb77" category="admonition">如果从列表中选择虚拟机，则应用程序定义为静态——稍后不会将新虚拟机添加到应用程序（您需要编辑应用程序以添加和保护它们）。如果使用标签选择器，则无法选择单个虚拟机或编辑生成的列表，但后来与选择器匹配的任何虚拟机都会自动包含在内并受到保护。</block>
   <block id="d56068b27fec2ab6ae86c162a7e949e3" category="paragraph">应用程序已创建，并显示在 Kubernetes 清单的*应用程序*选项卡中的应用程序列表中。NetApp Backup and Recovery 可根据您的设置为应用程序提供保护，您可以在*监控*区域中监控进度。</block>
-  <block id="fb406209c4888f54c2015c163c354b91" category="paragraph">在 NetApp Backup and Recovery 中为 Microsoft SQL Server 工作负载创建报告，以查看备份状态和详细信息，包括成功和失败备份的计数、备份类型、存储系统和时间戳。</block>
-  <block id="221aa46c478bf23cffdd54280aed393a" category="list-text">输入报告范围：选择是否希望报告包含过去一天、过去 7 天、过去 30 天、上一季度或去年的数据。</block>
-  <block id="234d750893e6b8d3bf8c90b4fab1e2e3" category="list-text">输入报告发送详细信息：如果要通过电子邮件发送报告，请选择 *Send report using email*。输入要将报告发送到的电子邮件地址。</block>
-  <block id="064904aaaadfb6c195c362f6d5270baf" category="paragraph">在"设置"页面上配置电子邮件通知。有关配置电子邮件通知的详细信息，请参见<block ref="395b0c19462e78afc4e209cde346ef5d" category="inline-link-macro-rx"></block>。</block>
   <block id="56ec4c243b7d8732ebb3017fd77212db" category="doc">使用自定义资源恢复 Kubernetes 应用程序</block>
   <block id="8de93c15cc1aac67c9764efff22a8c11" category="paragraph">使用自定义资源从快照或备份还原应用程序。将应用程序还原到同一集群时，从现有快照还原的速度通常更快。</block>
   <block id="3afae8d93d814bf6f2377525fe03b6d8" category="list-text">您可以使用高级设置自定义还原操作。如需了解更多信息，请参见 <block ref="7a3143b2dfd83e6320f8bf3cf68e173b" category="inline-link-macro-rx"></block>。</block>
@@ -5740,7 +5697,6 @@
   <block id="a4aa2f0da5fe920e49b4efa7582a1089" category="list-text">为脚本选择超时值。如果脚本无法在此时间段内执行，则还原仍将继续。</block>
   <block id="808c0184b1d838fe3f6240a02adeedf3" category="paragraph">备份和恢复超级管理员或备份和恢复备份管理员<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
   <block id="3079e07efcec8dc4c03ec09df82c5810" category="paragraph">Backup and Recovery 超级管理员或 Backup and Recovery 备份管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
-  <block id="24bd8e8186e76baf41a1a139a325a041" category="paragraph">*必需的 NetApp Console 角色* 备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员、备份和恢复克隆管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>。<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
   <block id="69a43e53caadcedb493c59719fb671f3" category="paragraph">*必需的 NetApp Console 角色* Backup and Recovery 超级管理员、Backup and Recovery 备份管理员、Backup and Recovery 克隆管理员或 Backup and Recovery 查看器角色。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP Admin 角色<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>。</block>
   <block id="a833b9bd73e803116825184a502ff988" category="list-text">（可选）选中该框以*自动修复本地快照、复制和备份上的不匹配标签*。这将创建具有与快照、复制和备份策略中的标签相匹配的标签的快照。</block>
   <block id="13c6aaa719abfb2f3c46b10b2329a40f" category="paragraph">选择要保护的卷。受保护的卷具有以下一项或多项：快照策略、复制策略、备份到对象策略。</block>
@@ -5774,7 +5730,6 @@
   <block id="84069594ae22604a5263ed16cc5c85d7" category="list-text">在*目标设置*部分，执行以下操作：</block>
   <block id="a6bd46b772365e5b6c3e3ebcfb5d88ce" category="list-text">对于 RAC 数据库，选择要在其上运行还原的 RAC 节点。此选项仅适用于 RAC 数据库。</block>
   <block id="f788e090e936649cf2c5c0ff154c27a9" category="list-text">（可选）启用 *控制文件* 选项以还原数据库控制文件。不能为 PDB 或 PDB 表空间的时间点或 SCN 恢复选择此选项。</block>
-  <block id="79d30138f764cb5a18ef350673cd0630" category="list-text">（可选）启用 *Force in place restore* 选项，以在备份后添加新数据文件或在 LVM 磁盘组中添加、删除或重新创建 LUN 时执行就地恢复。这将覆盖外部文件检查；数据库恢复使用您选择的还原选项进行。</block>
   <block id="4a2e39bd630275c8eae0d833bd13f831" category="list-text">（可选）启用*恢复后以读写模式打开数据库或容器数据库*选项，并选择与还原范围匹配的子选项（从无恢复的快照中还原时，这些选项不会出现）：</block>
   <block id="1598545f145b423567a9960785cf8619" category="list-text">*All datafiles*：恢复后以读写模式打开数据库或容器数据库。</block>
   <block id="ebdcd90fa368ddf5616f4eacd06110a8" category="list-text">*PDBs or PDB tablespaces*：恢复后以读写模式打开可插拔数据库。</block>
@@ -6107,7 +6062,6 @@
   <block id="402afb3450325e60e5ac66aa3a09b855" category="list-text">（可选）请参考 <block ref="c12704870bf071e0e07ed4d97d800d3f" category="inline-xref-macro-rx"></block> 查看可用的 SCN 和关联的数据库化身。</block>
   <block id="eec1bb4eef0bc2471da6d24624c8e7af" category="paragraph">将显示指定 SCN 的最近匹配快照。如果多个数据库化身与 SCN 匹配，则显示所有匹配的化身。</block>
   <block id="004ae5ca2de3ea160e921da76ac388d7" category="list-text">如果多个数据库化身与搜索匹配，请选择具有正确化身的快照。</block>
-  <block id="38eb0a9d79c02f31a9749c6e9e2b5e32" category="list-text">如果将 PDB 或表空间还原到特定时间点或 SCN，且归档日志不在配置的位置，请在 *指定外部归档日志文件位置* 字段中指定外部归档日志文件位置。输入以<block ref="6666cd76f96956469e7be39d750cc7d9" prefix=" " category="inline-code"></block>开头的文件系统路径或以<block ref="26b17225b626fb9238849fd60eabdf60" prefix=" " category="inline-code"></block>开头的 ASM 磁盘组。使用文本输入字段旁边的“加号”和“减号”按钮添加或删除位置。当您从无恢复的快照还原时，此字段不会出现。</block>
   <block id="e019cb225a4644922cdd06575b099710" category="section-title">2026年10月12日</block>
   <block id="cd8c5a4fae99d9a57a4e12c8f43a8a84" category="paragraph">您可以通过 <block ref="7689e703f80621bc0155b88d35cddcc8" category="inline-link-macro-rx"></block> 配置 Trident Protect 24.10 来管理数据保护操作期间虚拟机文件系统的冻结和解冻，然后使用以下命令：</block>
   <block id="54ea8878308d39d6d78a01f24a278aa1" category="list-text">*作业监视器自定义日期范围筛选*：您现在可以通过从作业监视器中的日历中选择自定义开始和结束日期来搜索过去 90 天的作业。</block>
@@ -6267,4 +6221,101 @@
   <block id="47b9e13f36f004e69c67f2b5cdbd757f" category="paragraph">对于所有工作负载，仅对受对象存储保护的资源收费。费用基于应用效率之前源工作负载的逻辑已用容量（对于 ONTAP 卷工作负载称为前端 TB（FETB））。对于数据库，这意味着数据库大小；对于虚拟机，这意味着虚拟机大小。对于 Kubernetes 工作负载，费用基于这些应用程序的持久卷的组合大小。</block>
   <block id="9d78b594ffc798524458faaab99dce48" category="paragraph">对于所有工作负载，仅涉及对象存储的备份和还原操作需要备份许可证。创建本地快照并复制到 ONTAP 辅助存储不需要许可证。</block>
   <block id="13dc5da0f7aa7ae2f943cee57f5c9c6e" category="list-text">*随用随付（PAYGO）*：通过云提供商的市场订阅，并按每 GiB 备份数据付费，按小时计费。无需预先付款。首次注册即可免费试用 30 天。有关详细信息，请参阅<block ref="8edaf8cd3966d935673fb34ac864f172" category="inline-link-rx"></block>。</block>
+  <block id="79c164e01ef5305bebeb38be7672f92f" category="paragraph">您可以将数据库还原到其原始位置，也可以在其他注册主机（备用位置）上将其还原为新数据库。</block>
+  <block id="8fb144d7137e4a618ca12b318cc351ac" category="list-text">还原到备用位置（其他注册主机）</block>
+  <block id="721c491a7e1c01cc9b5d2b9891d67270" category="list-text">当您还原到备用位置时，NetApp Backup and Recovery 会将源数据库的选定备份作为新数据库还原到另一个已注册的主机上。您需要指定目标主机和新数据库的名称。如果您不提供还原规范文件，Backup and Recovery 会自动计算目标主机上数据文件、控制文件和重做日志文件的位置。</block>
+  <block id="1064bf4cf4bd9c959ca81cc3b25a4e9a" category="paragraph">还原到备用位置时，请记住以下受支持和不受支持的还原方案：</block>
+  <block id="365c28e4293d605d3530d045be814644" category="paragraph">*支持的备用位置还原方案*</block>
+  <block id="e237c81b519f332a737b0dce2b1a2ef4" category="list-text">将单个完整的 Oracle 数据库恢复到单个目标主机</block>
+  <block id="6a2608f4d11f081fdebbc09abe46642a" category="list-text">恢复到特定时间点、特定 SCN 或最新备份</block>
+  <block id="8e97ae91561608ac0fd0ac7c07606c71" category="list-text">当所选恢复点所需的归档日志未包含在备份中时，使用外部归档日志目录</block>
+  <block id="b56b90364db9d9cf399e478f9b6bd728" category="paragraph">*不支持的备用位置还原方案*</block>
+  <block id="9cc6342760879fb0472201373353e9b8" category="list-text">仅表空间还原，包括还原 PDB 内的表空间</block>
+  <block id="f0b23952bff8d317f8fd2e9c083b96ad" category="list-text">仅 PDB 还原到其他容器数据库（CDB）</block>
+  <block id="ed4a8bbaceb377ddbc1b397f86eda428" category="list-text">从二级存储还原</block>
+  <block id="057422fe1ce47d45d4dec8d9477849da" category="list-text">从对象存储还原</block>
+  <block id="c6dbf560d90e4cd93f9d8b2687ef373a" category="list-text">（可选）启用 *强制就地恢复* 选项，以便在备份后添加新数据文件或在 LVM 磁盘组中添加、删除或重新创建 LUN 时执行就地恢复。这将覆盖外部文件检查；数据库恢复使用您选择的还原选项进行。</block>
+  <block id="ba524493176975ecc0b7a9cc2e9e6ece" category="list-text">如果将数据库恢复到特定时间点或 SCN，并且归档日志不在配置的位置，请在 *指定外部归档日志文件位置* 字段中指定外部归档日志文件位置。输入以<block ref="6666cd76f96956469e7be39d750cc7d9" prefix=" " category="inline-code"></block>开头的文件系统路径或以<block ref="26b17225b626fb9238849fd60eabdf60" prefix=" " category="inline-code"></block>开头的 ASM 磁盘组。使用文本输入字段旁边的“加号”和“减号”按钮添加或删除位置。在不执行恢复的情况下从快照还原时，此字段不会出现。</block>
+  <block id="1cc66ef9269665f32d600ff1e9c3e514" category="inline-xref">支持和不支持的场景</block>
+  <block id="7e86c747a522ca35e240fc06086cd2cb" category="paragraph">在其他注册主机上将数据库还原为新数据库。在开始之前，请先查看 <block ref="ffc87a72406c087fbf4d484f0c06dc8d" category="inline-xref-macro-rx"></block>。</block>
+  <block id="38b76ba0679c671583852a983649d2b1" category="list-text">*目标主机*：选择要在其中创建新数据库的注册主机。</block>
+  <block id="07ade3fdc562da3622685cfe4d342752" category="list-text">*目标数据库*：输入目标数据库的名称。默认情况下，名称以源数据库的名称开头，您可以对其进行编辑。</block>
+  <block id="e5134fc357bb4259a19d0e042f3c53ef" category="list-text">*自定义目标数据库参数*：启用此选项可上传自定义还原规范文件以自定义目标数据库参数。</block>
+  <block id="4f1c1a0f97fa27a917002a2b3aef4a69" category="list-text">*还原规范文件*：如果启用了*自定义目标数据库参数*选项，请提供还原规范文件以控制还原文件在目标主机上的位置。您可以下载默认还原规范文件并进行自定义，以更改身份验证和日志位置等目标数据库详细信息。</block>
+  <block id="706711bcb5a199990037bb0d2a40b277" category="paragraph">如果不提供还原规范文件，Backup and Recovery 会自动计算数据文件、控制文件和重做日志文件的位置。</block>
+  <block id="bb7b669713321160cf3407453dc64346" category="paragraph">还原操作完成后，检查*清单*页面以确认新数据库已列出。如果未列出数据库，请刷新目标主机。</block>
+  <block id="51ad6f0621384c48bf862d7e1b154c5e" category="summary">在 NetApp Backup and Recovery 中，为您的工作负载创建报告，以查看保护状态、作业状态、使用情况和审核详细信息。</block>
+  <block id="604f9b75dc3ff7018984ea7307b7c8f5" category="doc">在 NetApp Backup and Recovery 中创建和管理报告</block>
+  <block id="6d2bb02231b43012835cacd7cfc47e33" category="paragraph">在 NetApp Backup and Recovery 中创建报告，以确认您的工作负载受到保护，并查找需要注意的备份。报告显示成功和失败备份的计数、备份类型、存储系统、集群运行状况和时间戳。运行一次报告或按计划运行报告，然后查看、下载或删除生成的报告。</block>
+  <block id="515c43c2c3766fa9928436ddf1ca72b7" category="paragraph">*必需的 NetApp Console 角色* 备份和恢复超级管理员、备份和恢复备份管理员、备份和恢复恢复管理员或备份和恢复克隆管理员。如果要保护存储在 Cloud Volumes ONTAP 集群上的数据，则还需要 Cloud Volumes ONTAP 管理员角色。了解<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>。<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block></block>
+  <block id="4130611968b439ece96b9ce259d858c8" category="section-title">您可以创建的报告类型</block>
+  <block id="3ddc99e55a6760911d07633de025b1b9" category="paragraph">选择可以解答您的问题的报告类型，例如工作负载是否受到保护、您被收取了什么费用或哪些作业失败。</block>
+  <block id="67617c3dd7048bff7de2a5db0e9bb12c" category="cell">报告类型</block>
+  <block id="4af39b8c609e94299d6c11ef13a2428c" category="cell">保护概述</block>
+  <block id="f07a382899601719890d5ef2b4d50501" category="cell">全面概述您的保护状态，包括清单和恢复摘要。</block>
+  <block id="e5ad2d3ac3b6d6874e05db026017a384" category="cell">使用情况和费用</block>
+  <block id="384119f24f8f456a79c6f58b8ed6686c" category="cell">每个工作负载或资源的使用和收费详细信息。</block>
+  <block id="15db00e4ed79529e92bab2ee3f9da76a" category="cell">状态摘要</block>
+  <block id="a78322982cad282eaebffbf0daa924c2" category="cell">所有计划和按需作业的状态，以及每个作业的详细信息。</block>
+  <block id="0a29b8411ae20f6e019552e89a9d9c2c" category="cell">审核报告</block>
+  <block id="0573e56c3371f6d235f5750fadd942fb" category="cell">在系统中执行的所有操作和事件的审计跟踪。</block>
+  <block id="4f64237bee72bb58ff4152fa48632885" category="cell">Kubernetes 概述</block>
+  <block id="c1444a8945e771334fdd5d6b79465169" category="cell">Kubernetes 集群、应用程序和命名空间的保护和备份状态。</block>
+  <block id="df63e1970b7cb20512cb62b542bcd3f8" category="section-title">创建报告</block>
+  <block id="1fb8957ab66a03627a71f783a560d425" category="paragraph">创建报告以查看您的帐户、特定代理、特定主机或特定工作负载的保护状态。您可以一次性运行报告，也可以按照定期计划运行报告。</block>
+  <block id="734b52fab7f64c9be1c559c0678065b1" category="list-text">从 NetApp Backup and Recovery 菜单中，选择 *报告*，然后在出现 *保护报告* 页面时选择 *转到新报告*。</block>
+  <block id="de0babb507a81450a45b1e601c460a14" category="list-text">选择*添加报告*。</block>
+  <block id="2417616426e11a03f1e57feee6278e1b" category="list-text">在*选择报告类型*中，选择报告类型并选择*继续*。</block>
+  <block id="3bc4555ba922f30ee63cdb5245df412d" category="list-text">在 *报告名称* 中输入报告的唯一名称。</block>
+  <block id="1a5a003389974914e09a7c33b5110cdf" category="paragraph">此名称必须介于 3 到 100 个字符之间，只能包含字母、数字、空格、下划线 (_) 和连字符 (-)，并且必须以字母开头。</block>
+  <block id="3e2044adad48f4ff429ba6f04b988082" category="list-text">在*范围*下，选择报告收集数据的级别：</block>
+  <block id="66a657863c9ddf42405f906e806f1933" category="list-text">*按账号*：包括账号中的所有内容。无需进一步输入。</block>
+  <block id="ace172ea88647489ca738bff6e6c3ed5" category="list-text">*按代理*：在*代理*中，选择一个或多个 Console 代理。报告仅包括由所选代理管理的资源。</block>
+  <block id="30d916fe44967250e49a970e3e98a49a" category="list-text">*按主机*：在*选择主机*中，选择一个或多个主机，然后选择*接受*。将此选项用于在主机上运行的工作负载，例如 Microsoft SQL Server 和 Oracle 数据库。</block>
+  <block id="65731f6854cbe29f50d55c2b94de3068" category="list-text">*按工作负载*：在*工作负载*中，选择一种或多种工作负载类型。</block>
+  <block id="98cbecaadbfa01c2ae848ecdfbad28e8" category="admonition">*按工作负载*列表不包括 ONTAP 卷。要为 ONTAP 卷创建报告，请使用*按帐户*或*按代理*范围。</block>
+  <block id="a50b45cce8fbc76deeadb89cda0896e2" category="list-text">在*频率*下，选择运行报告的频率：</block>
+  <block id="a6acd9053e801b4812a37a2072b838b6" category="list-text">*一次*：运行一次报告。这是默认值。</block>
+  <block id="85107a14e3640a6a8a6870c1e32b5592" category="list-text">*按计划*：反复运行报告。在*运行间隔*中，选择一个频率。定时报告会显示在*定时报告*选项卡上。</block>
+  <block id="a879df1524333889b8555457d0e51344" category="list-text">在*报告交付选项*下，可选择启用*报告运行时通过电子邮件发送报告结果*。</block>
+  <block id="6a40d700c28098528cb12121dd82719b" category="paragraph">默认情况下，此选项处于禁用状态。默认情况下，报告将发送给组织中的所有用户。要向特定收件人发送报告，请在 *通知* 下的 *设置* 页面上配置电子邮件通知。有关配置电子邮件通知的详细信息，请参阅 <block ref="395b0c19462e78afc4e209cde346ef5d" category="inline-link-macro-rx"></block>。</block>
+  <block id="bda8436c5a08e46b7566f4961bb0852e" category="list-text">在*保留*下，在*保留时间*中，选择报告在删除前保留多长时间。默认值为 30 天。</block>
+  <block id="2e852fccf44065ea54571f82013b950b" category="paragraph">报告将显示在*生成的报告*列表的顶部。报告准备就绪后，将显示成功消息，您可以下载或删除报告。</block>
+  <block id="5c887b4fb339d7787d46d96a37bc57be" category="paragraph">*生成的报告*列表显示每个报告的名称、类型、范围、生成时间和用户。*范围*列总结了报告涵盖的内容，例如“1 个帐户”或“1 个代理”。在*范围*列中选择*查看*以打开报告。对于一次性报告，范围显示为 N/A。</block>
+  <block id="6ce0de604c64ab72bce8be38d2e5c09f" category="section-title">以 JSON、PDF、Excel 或 CSV 格式下载报告</block>
+  <block id="e56ee02314aabd036aab264c58429e5a" category="paragraph">下载生成的报告以进行离线审核，或与无权访问 NetApp Console 的其他人共享。</block>
+  <block id="7ba876de16e3cf2053e555b7cbf7e338" category="list-text">在*生成的报告*选项卡上，找到要下载的报告。</block>
+  <block id="963be51d2aba603b805b33b15795f485" category="list-text">在报告的行中，选择*下载*，然后选择一种格式：</block>
+  <block id="c627f8d34f0b8f445c8e784824cfd61e" category="list-text">*下载 JSON*</block>
+  <block id="8d35356708b90f345700540d4abf3476" category="list-text">*下载 PDF*</block>
+  <block id="b4cf8700bd0dfaae798df1c87c44e4a4" category="list-text">*下载 Excel*</block>
+  <block id="87feefa117b5425db41179239216b443" category="list-text">*下载 CSV*</block>
+  <block id="8d4a53ba5f0afbb3fb889378c487bae3" category="paragraph">您还可以使用报告页面上的*下载*菜单。</block>
+  <block id="a85337a093dd0014661473eab91f5b43" category="paragraph">准备大型报告可能需要更长时间。</block>
+  <block id="65cc2a33d248c5ee8c76006bc589d138" category="section-title">查看报告详细信息</block>
+  <block id="95e5c819c8faa88e1b1047187548fb6c" category="paragraph">查看 NetApp Backup and Recovery 中生成的报告的详细信息，包括汇总、库存计数和详细信息表。</block>
+  <block id="aff23fa93b85f19cb4f97549fabff756" category="list-text">在*生成的报告*选项卡上，选择要查看的报告的名称。</block>
+  <block id="d252ddfe92dc24a574df61d816f20d34" category="list-text">展开*清单*以查看系统、SVM、卷、主机、实例和存储桶的计数。</block>
+  <block id="0aac72659cb4e0fbc677aa9b79c0f2b3" category="list-text">向下滚动以查看报告表。显示的表格取决于报告类型。</block>
+  <block id="34a4728d76624a8b20f2e9206c3676d1" category="list-text">（可选）要选择表格显示的列，请选择表格标题行右端的列图标，选择或清除列，然后选择*应用*。</block>
+  <block id="8d9031888b1f50907129eed4539672bf" category="paragraph">*资源名称*列始终保持打开状态。选择*恢复默认值*返回默认列。</block>
+  <block id="33ba74bad2824fc822667c7b5f6c5ed7" category="list-text">要返回到报告列表，请选择页面顶端的*报告*。</block>
+  <block id="2a14d8a91ebcbbc17b47e92bbeaac522" category="section-title">删除报告</block>
+  <block id="c3a67a228eb815d50e86710028379d6f" category="paragraph">删除生成的报告，将其从*生成的报告*列表中移除。报告也会在保留期结束时自动删除。</block>
+  <block id="b6dda75cadf45032a2f7b669c2ed698b" category="list-text">在*生成的报告*选项卡上，找到要删除的报告。</block>
+  <block id="2fa51b5441e39836a4d481ba656b724e" category="list-text">在报告的行中，选择删除图标。</block>
+  <block id="a7c30a61f2dfd07dcaa1e6279e7f43b8" category="admonition">在注销系统之前，请下载完整的“保护概述”报告。该报告列出了您现有的备份及其 UUID。如果保留备份，则需要这些 UUID 才能还原备份。</block>
+  <block id="3adbdb3ac060038aa0e6e6c138ef9873" category="cell">类别</block>
+  <block id="06df33001c1d7187fdd81ea1f5b277aa" category="cell">操作</block>
+  <block id="6be8f3086a30e59e908d53eb620b51dd" category="cell">还原和恢复</block>
+  <block id="0005178bc39ba0a7b9382f06bfe6ee94" category="cell">备份和快照操作</block>
+  <block id="b28c63848752299be56246c93b04e6a1" category="list-text">删除 Azure NetApp Files 快照策略</block>
+  <block id="f7b50daf9c05ce3fe48e43ff058feddb" category="cell">保护和复制</block>
+  <block id="873f85f8fb4189e515617ad5355ee394" category="cell">全景保护</block>
+  <block id="c33199d1fc51518b3e58d77a81f7d924" category="cell">备份迁移</block>
+  <block id="46f90459a6f8819d9dbc64e4be0730d9" category="cell">Cyber Vault 管理</block>
+  <block id="d490fcefdb771dde30c4187c4f40784a" category="cell">对象存储管理</block>
+  <block id="bc6d0492c51401fb2dbf19ed1efdf743" category="cell">云凭据管理</block>
+  <block id="a37f9043116c528dc094be8481838512" category="cell">发现和配置</block>
+  <block id="92c0342f0088c494151781581cdebf28" category="sidebar">创建和管理报告</block>
 </blocks>

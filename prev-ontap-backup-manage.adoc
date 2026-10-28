@@ -406,6 +406,9 @@ NOTE: 删除备份关系后，无法删除单个卷备份文件。但是，可�
 
 注销系统的 NetApp Backup and Recovery 会停止存储系统的未来备份，并将其从 NetApp Backup and Recovery 中删除。在此过程中，您可以选择保留或删除现有备份。
 
+
+IMPORTANT: 在注销系统之前，请下载完整的“保护概述”报告。该报告列出了您现有的备份及其 UUID。如果保留备份，则需要这些 UUID 才能还原备份。
+
 .关于此任务
 * 请注意，除非您<<删除备份,删除备份>>。
 * 要还原现有备份，请参阅 link:prev-ontap-restore-cli.html["使用 ONTAP 命令行界面还原 ONTAP 数据"^]。
