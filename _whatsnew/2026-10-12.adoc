@@ -1,6 +1,17 @@
-= Hyper-V 工作负载增强功能
+= 常规 NetApp Backup and Recovery 增强功能
 :allow-uri-read: 
 
+
+
+
+[[general-netapp-backup-and-recovery-enhancement]]
+=== 常规 NetApp Backup and Recovery 增强功能
+
+在此版本中，NetApp Backup and Recovery 为所有工作负载引入了以下许可增强功能：
+
+*许可变更*：使用磁盘到磁盘或磁盘到磁盘扇出架构的备份不再收费。收费仅适用于备份到对象存储，包括使用 3-2-1 或磁盘到对象存储架构的备份。
+
+要了解有关许可的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html["设置NetApp Backup and Recovery 的许可"]。
 
 
 
@@ -25,14 +36,3 @@
 *自动归档日志管理*：在数据库还原和克隆操作期间，NetApp Backup and Recovery 会自动发现并装载所需的归档日志，然后在操作完成后将其卸载。支持主、辅助和对象存储日志源。
 
 要了解有关保护 Oracle Database 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Oracle 数据库工作负载"]。
-
-
-
-[[microsoft-sql-server-workloads-enhancement]]
-=== Microsoft SQL Server 工作负载增强
-
-在此版本中，Microsoft SQL Server 工作负载引入了以下增强功能：
-
-*许可变更*：使用磁盘到磁盘或磁盘到磁盘扇出架构的备份不再收费。收费仅适用于备份到对象存储，包括使用 3-2-1 或磁盘到对象存储架构的备份。
-
-要了解有关保护 Microsoft SQL Server 工作负载的详细信息，请参阅 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-mssql-protect-overview.html["了解如何使用 NetApp Backup and Recovery 保护 Microsoft SQL Server 工作负载"]。

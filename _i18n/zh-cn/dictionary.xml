@@ -5917,11 +5917,7 @@
   <block id="b77bf9dc680cf2db1d8b3d5f6156585b" category="list-text">*NetApp MetroCluster 支持*：NetApp Backup and Recovery 现在使您能够保护由 NetApp MetroCluster 镜像的 Hyper-V 虚拟机。</block>
   <block id="7ed9eebaad97e0f936b753873e6ff586" category="list-text">*针对 SAN VM 的跨区磁盘保护*：对于 CIFS 和 SAN 配置，您现在可以保护连接到保护组中每个 VM 的每个磁盘。这包括分布在多个 ONTAP 卷或 ONTAP 存储系统（跨区磁盘）上的文件，以及仅限于单个位置的文件。</block>
   <block id="82dd01a289cf98e9d962781faec1018b" category="paragraph">*自动归档日志管理*：在数据库还原和克隆操作期间，NetApp Backup and Recovery 会自动发现并装载所需的归档日志，然后在操作完成后将其卸载。支持主、辅助和对象存储日志源。</block>
-  <block id="5f1a7ddd55d2a0b34003e08fe7cacdaf" category="section-title">Microsoft SQL Server 工作负载增强</block>
-  <block id="32d770e78ed41453037389dce2e33d9c" category="paragraph">在此版本中，Microsoft SQL Server 工作负载引入了以下增强功能：</block>
   <block id="92337d8e70dfe880909b2051333e2fe4" category="paragraph">*许可变更*：使用磁盘到磁盘或磁盘到磁盘扇出架构的备份不再收费。收费仅适用于备份到对象存储，包括使用 3-2-1 或磁盘到对象存储架构的备份。</block>
-  <block id="2f75ea4c51ce88400f5201fdeb2ccb9d" category="inline-link">了解如何使用 NetApp Backup and Recovery 保护 Microsoft SQL Server 工作负载</block>
-  <block id="a5e96f4320434690f042cf906acacdcd" category="paragraph">要了解有关保护 Microsoft SQL Server 工作负载的详细信息，请参阅<block ref="36e999a623e2068d9719d9ca1143b559" category="inline-link-rx"></block>。</block>
   <block id="7065e852c4b6888b4e74708a90ddb20d" category="list-text">Oracle Database 工作负载不需要许可证，因为它处于预览发布状态。</block>
   <block id="e28980c3ae4b3c703cc7a4f8d25ecda7" category="admonition">对于 CIFS 和 SAN 配置，Backup and Recovery 会自动保护连接到保护组中每个 VM 的每个磁盘。这包括分布在多个 ONTAP 卷或 ONTAP 存储系统（跨越磁盘）上的文件，以及限制在单个位置的文件（非跨越磁盘）。</block>
   <block id="c138f0fc5add74f3ad77a943271dcc42" category="section-title">查看有关可用的 Oracle Database 还原点的信息</block>
@@ -6298,4 +6294,6 @@
   <block id="5af099efa04197b8148cd4c53d100646" category="list-text">*仅在主服务器上备份*</block>
   <block id="e2d9ce30ebfec7057c448e8a44f805e1" category="list-text">*仅待机备份*</block>
   <block id="ec521975a51b13a00e3d392d7acdf5f5" category="paragraph">如果未启用 *Data Guard settings*，则将备份主数据库和备用数据库。将策略分配给资源后，无法禁用 *Data Guard settings*。</block>
+  <block id="ce6934326bbfd4652849311e1ed89fe6" category="paragraph">在此版本中，NetApp Backup and Recovery 为所有工作负载引入了以下许可增强功能：</block>
+  <block id="83b090108fa1e810d92771b23b7b0267" category="paragraph">要了解有关许可的详细信息，请参阅<block ref="aa1a103ec550203513cdef85cd5672c0" category="inline-link-rx"></block>。</block>
 </blocks>
