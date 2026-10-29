@@ -71,3 +71,6 @@ NOTE: NetApp Backup and Recovery对备份和保护组使用相同的策略。
 . 选择计划层级。
 . 选择*备份*。
 
+
+
+NOTE: 对于 Oracle Data Guard 数据库，NetApp Backup and Recovery 会在备份启动时检查每个数据库的当前角色，并遵循策略中的 *Data Guard settings*。在切换或故障转移后，下一次备份将使用新角色。

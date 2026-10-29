@@ -25,6 +25,9 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 
 立即从现有快照创建克隆。使用此方法可创建不会从快照连续刷新的一次性克隆。
 
+
+NOTE: 在 Oracle Data Guard 配置中，您可以克隆受保护的主数据库或受保护的物理备用数据库。克隆是一个独立的数据库，不是 Oracle Data Guard 配置的一部分。如果克隆备用数据库，则在刷新主机之前，新数据库将列为 *Data Guard Standby*。刷新主机后，它将被列为常规数据库。
+
 .步骤
 . 从NetApp Console菜单中，选择“保护”>“备份和恢复”。
 . 在“工作负载”下，选择“Oracle”磁贴。
@@ -68,6 +71,9 @@ summary: 使用 NetApp Backup and Recovery 克隆 Oracle 数据库工作负载�
 
 
 NOTE: 创建具有刷新计划的即时快照和克隆仅适用于完整的数据库克隆。它不适用于 PDB 克隆。
+
+
+NOTE: 在 Oracle Data Guard 配置中，您可以克隆受保护的主数据库或受保护的物理备用数据库。克隆是一个独立的数据库，不是 Oracle Data Guard 配置的一部分。如果克隆备用数据库，则在刷新主机之前，新数据库将列为 *Data Guard Standby*。刷新主机后，它将被列为常规数据库。
 
 .步骤
 . 从NetApp Console菜单中，选择“保护”>“备份和恢复”。

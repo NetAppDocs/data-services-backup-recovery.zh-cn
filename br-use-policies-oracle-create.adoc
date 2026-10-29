@@ -137,7 +137,16 @@ NOTE: 出现的字段根据所选的提供商和架构而有所不同。
 [%collapsible]
 ====
 ** *RMAN 目录设置*：启用*使用 Oracle Recovery Manager (RMAN) 进行目录备份*选项，以自动为 Oracle 数据库备份和恢复操作编制元数据目录。元数据根据您为数据库选择的*配置 RMAN 目录*设置（默认情况下在目标控制文件中）进行存储。请参阅link:br-start-configure-oracle-database.html["配置 Oracle 数据库"]以更改数据库的这些设置。
-** *Data Guard 设置*：选择是否要在策略中启用 Data Guard 设置，并在保护 Oracle Data Guard 部署中的数据库时选择是否备份主、辅助或主和辅助。您可以使用保护组来保护 Oracle Data Guard 部署中的数据库。
+** *Data Guard 设置*：选择 *启用 Data Guard 设置* 以选择要备份的 Oracle Data Guard 数据库：
++
+*** *备份主用和备用*（默认）
+*** *仅在主服务器上备份*
+*** *仅待机备份*
++
+如果未启用 *Data Guard settings*，则将备份主数据库和备用数据库。将策略分配给资源后，无法禁用 *Data Guard settings*。
+
+
+
 ** *备份验证*：选择是否要启用备份验证，以及是立即启用还是稍后启用。此功能可确保备份有效且可成功还原。我们建议您启用此选项，以确保备份的完整性。默认情况下，如果配置了辅助存储，则从辅助存储运行备份验证。如果未配置辅助存储，则从主存储运行备份验证。
 +
 此外，配置以下选项：

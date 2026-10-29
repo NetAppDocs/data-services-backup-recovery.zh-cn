@@ -21,4 +21,6 @@ NetApp Backup and Recovery 预览版中的 Oracle 数据库工作负载不支持
 * 通过将数据库还原到特定时间点或 SCN 来执行不完整恢复后，如果您以后需要还原到该恢复之前的某个时间点，则还必须在还原目标设置中选择 *控制文件*。如果不还原控制文件，则无法将数据库还原到先前未完成恢复之前的某个时间点。
 * 在适用于 NetApp Console 本地部署的 Backup and Recovery 预览版本中，仅 ONTAP S3 和 StorageGRID 目标支持备份到对象存储。此预览版本不支持备份归档。
 * 脱机备份
+* 当前不支持将 Oracle Data Guard 配置中当前处于备用状态的数据库还原到原始位置。请改为将其还原到其他位置。
+* 不支持使用 RAC 的 Oracle Data Guard 配置和 Oracle Active Data Guard 配置。
 

@@ -5966,12 +5966,9 @@
   <block id="0b988f352bf3178a56bb9dbb7aa6f591" category="section-title">查看 Oracle 数据库清单</block>
   <block id="13b17d82aa76831194bc5fedd9ef5155" category="paragraph">查看有关您在备份和恢复清单中发现的 Oracle 数据库资源的详细信息。</block>
   <block id="ef09861f0e356e1256cc79b90af82a9c" category="list-text">要查看发现的 Oracle 数据库主机，请选择 *主机* 选项卡。</block>
-  <block id="acb5a0c1d6543fd64291bcd931b0212a" category="paragraph">您可以使用此视图查看详细信息，例如每个主机名、每个主机托管的数据库数量、部署模型（例如集群、Oracle Data Guard 或独立）以及其他信息。</block>
   <block id="5ef22a9f4e63d5ea6dccdceaf60cc129" category="list-text">要查看为保护 Oracle 数据库资源而创建的保护组，请选择*保护组*选项卡。</block>
   <block id="4636080fe3dd6af1a05f50e6b8612fcd" category="list-text">要查看每个 Oracle 数据库主机托管的数据库，请选择*数据库*选项卡。</block>
   <block id="88b5a8e3aeecbee62ee44ae9949af352" category="paragraph">此视图显示详细信息，包括每个数据库是单个实例还是集群或高可用性配置的一部分。</block>
-  <block id="c567e32a931e50ea00e322c45bada4f9" category="list-text">选择要应用于保护组的*备份策略*。如果包含的数据库是 Oracle Data Guard 配置的一部分，请选择启用了 Data Guard 选项的备份策略。</block>
-  <block id="e07c044b43b8ab05fce956dd78928ec0" category="list-text">*Data Guard 设置*：选择是否要在策略中启用 Data Guard 设置，并在保护 Oracle Data Guard 部署中的数据库时选择是否备份主、辅助或主和辅助。您可以使用保护组来保护 Oracle Data Guard 部署中的数据库。</block>
   <block id="debe14f2792fef47d8b9076e14c82cb3" category="section-title">插件安装要求</block>
   <block id="3cf57a2a4d07542c89b05ad643bb219e" category="list-text">使用 SSH 登录主机的能力。</block>
   <block id="1bcf5153145f75a86a1ad16ea9b03c7a" category="list-text">Root 权限，或非 root 用户的 sudo 访问权限。</block>
@@ -6275,4 +6272,30 @@
   <block id="84618cfc7eb2bbb4efbbd7209a02b83b" category="list-text"><block ref="84618cfc7eb2bbb4efbbd7209a02b83b" category="inline-link-macro-rx"></block></block>
   <block id="37f041132ba68784c19dbe8a3c6a5d54" category="list-text"><block ref="37f041132ba68784c19dbe8a3c6a5d54" category="inline-link-macro-rx"></block></block>
   <block id="dbc0ac8fb1f3ed243ea3e89e9cfc4781" category="sidebar">支持的备份和还原目标</block>
+  <block id="e92c60b9dce59b8a708c12a44c8cd00c" category="list-text">当前不支持将 Oracle Data Guard 配置中当前处于备用状态的数据库还原到原始位置。请改为将其还原到其他位置。</block>
+  <block id="d0ea0d089a51f4912e025340deac9c94" category="list-text">不支持使用 RAC 的 Oracle Data Guard 配置和 Oracle Active Data Guard 配置。</block>
+  <block id="8ead40bfdf058563a49a6088340c0a5e" category="admonition">如果您的数据库处于 Oracle Data Guard 配置中，请将主主机和备用主机添加为单独的主机。</block>
+  <block id="cb3202cc77d4d07b32f7413c59f5764b" category="paragraph">您可以使用此视图查看详细信息，例如每个主机名、每个主机托管的数据库数量、部署模型（例如集群、Data Guard 或独立）以及其他信息。</block>
+  <block id="024c370a5e2df8680dde3adb456bc63b" category="paragraph">Oracle Data Guard 数据库标记为 *Data Guard Primary* 或 *Data Guard Standby*。默认情况下，备用数据库是隐藏的。要显示它们，请在 *Type* 筛选器中选择 *Data Guard Standby*。每个 Oracle Data Guard 数据库名称都显示为 Oracle SID，后跟括号中的数据库名称，例如，<block ref="6a829caf0294d3176c613fc594dbcc91" prefix=" " category="inline-code"></block>。</block>
+  <block id="a4acb54c369f0c50a25853f5f2d72387" category="paragraph">切换或故障转移后，选择*主机*选项卡，然后为受影响的主机选择*刷新*以更新显示的角色。</block>
+  <block id="8e3defa486fd6395b3186f053883b5d7" category="admonition">对于 Oracle Data Guard 数据库，NetApp Backup and Recovery 会在备份启动时检查每个数据库的当前角色，并遵循策略中的 *Data Guard settings*。在切换或故障转移后，下一次备份将使用新角色。</block>
+  <block id="848e936049005dc765ef08314cfe45b8" category="admonition">在 Oracle Data Guard 配置中，您可以克隆受保护的主数据库或受保护的物理备用数据库。克隆是一个独立的数据库，不是 Oracle Data Guard 配置的一部分。如果克隆备用数据库，则在刷新主机之前，新数据库将列为 *Data Guard Standby*。刷新主机后，它将被列为常规数据库。</block>
+  <block id="326535fa9507ec810eb8c39ff9808048" category="section-title">Oracle Data Guard 支持</block>
+  <block id="f8524f96f354b3f8d4fca9e30727bfd6" category="paragraph">NetApp Backup and Recovery 可以保护具有单实例主数据库和一个处于挂载状态的物理备用数据库的 Oracle Data Guard 配置。</block>
+  <block id="2ef07622f2dfb8abf76b043b142d62c6" category="section-title">支持的任务</block>
+  <block id="75089d6e1e93d883e04ed0b3a24ca3c9" category="paragraph">默认情况下不列出备用数据库。要列出它们，请选择*显示 Data Guard 备用数据库*。如果选择的数据库是 Oracle Data Guard 配置的一部分，则 NetApp Backup and Recovery 还会在同一配置中添加其他数据库。只有在数据库被发现、可以受到保护且不在其他保护组中时，它才会执行此操作。</block>
+  <block id="03d1a38bd67097c9f65b44addd6c10b1" category="inline-link-macro">创建和管理 Oracle Database 备份策略</block>
+  <block id="8f7f8bda280de96a8d2ea204f01f0e79" category="list-text">选择要应用于保护组的*备份策略*。如果该组包含 Oracle Data Guard 数据库，请使用策略中的 *Data Guard 设置* 来选择要备份的数据库。请参阅<block ref="dbb202f56fddd64d485e7ab84741d680" category="inline-link-macro-rx"></block>。</block>
+  <block id="cb4a9fdc969151f53f537c85ddd4e60a" category="admonition">如果在创建保护组后添加备用主机，请编辑保护组并保存。NetApp Backup and Recovery 会自动添加备用主机。在备用主机中，仅将备用数据库添加到该组。该主机上需要不同备份类型的另一个数据库会导致该主机的备份失败。</block>
+  <block id="d5ead59a8fc743551f9007e24cadba9a" category="paragraph">*有关恢复 Oracle Data Guard 数据库的重要说明*</block>
+  <block id="616672565c96137c7a96fd54acc8e9da" category="list-text">在还原之前，请确保数据库角色是最新的。如果发生切换或故障切换，请选择*主机*选项卡，然后首先为主机选择*刷新*。可用的还原选项取决于数据库现在的角色。</block>
+  <block id="b211c3a6078492ed458135e880352629" category="list-text">如果数据库当前处于备用状态，则无法将其还原到原始位置，无论备份时它具有何种角色。将其还原到其他位置。</block>
+  <block id="d93c32f5f94e7a9c136c20e11c78def2" category="list-text">如果数据库当前为备用，则无法还原仅存在于二级存储或对象存储中的快照。</block>
+  <block id="368ff82501bf375fe962ae7b3740bb7b" category="list-text">您可以在数据库成为主数据库后，将数据库处于备用状态时创建的备份还原到原始位置。</block>
+  <block id="ae3633e4eb4a82b89a3980ff858610f1" category="admonition">还原主数据库不会改变备用数据库。在时间点或 SCN 还原后使用<block ref="d25b8c1b3f7ba3e06913b87e4360ec6d" prefix=" " category="inline-code"></block>打开主数据库时，它会启动一个新的数据库化身。如果备用数据库已经应用了超过该点的重做，则备用数据库上的重做应用将停止并报错，并且备用数据库将保持其早期状态。要恢复保护，请在还原后使用 Oracle 工具重新建立备用数据库。</block>
+  <block id="a593f44359692a4c6bb8088242bffe01" category="list-text">*Data Guard 设置*：选择 *启用 Data Guard 设置* 以选择要备份的 Oracle Data Guard 数据库：</block>
+  <block id="030c52c41fd1981a36ae43013d3e78c3" category="list-text">*备份主用和备用*（默认）</block>
+  <block id="5af099efa04197b8148cd4c53d100646" category="list-text">*仅在主服务器上备份*</block>
+  <block id="e2d9ce30ebfec7057c448e8a44f805e1" category="list-text">*仅待机备份*</block>
+  <block id="ec521975a51b13a00e3d392d7acdf5f5" category="paragraph">如果未启用 *Data Guard settings*，则将备份主数据库和备用数据库。将策略分配给资源后，无法禁用 *Data Guard settings*。</block>
 </blocks>
